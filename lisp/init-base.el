@@ -19,6 +19,12 @@
 (if (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 
+(defun fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen
+		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+
+(fullscreen)
 
 ;;不产生备份
 (setq make-backup-files nil)
@@ -79,6 +85,22 @@
 
 ;; 输入法切换时不出现问题
 (global-set-key (kbd "C-SPC") nil)
+
+
+(use-package savehist
+    :init
+    (progn
+      ;; Minibuffer history
+      (setq savehist-file (concat "~/.emacs.d/" "savehist")
+            enable-recursive-minibuffers t ; Allow commands in minibuffers
+            history-length 1000
+            savehist-additional-variables '(mark-ring
+                                            global-mark-ring
+                                            search-ring
+                                            regexp-search-ring
+                                            extended-command-history)
+            savehist-autosave-interval 60)
+      (savehist-mode t)))
 
 
 (provide 'init-base)

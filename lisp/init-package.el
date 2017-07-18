@@ -132,6 +132,7 @@ But you may use safer HTTPS instead.")
 
 (require-package 'multiple-cursors)
 (require-package 'evil-mc)
+(require-package 'switch-window)
 
 
 (provide 'init-package)

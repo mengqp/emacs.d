@@ -50,6 +50,7 @@
 
         "ws" 'split-window-vertically
         "wv" 'split-window-horizontally
+	"ww" 'switch-window
 
         "x0" 'delete-window
         "x1" 'delete-other-windows

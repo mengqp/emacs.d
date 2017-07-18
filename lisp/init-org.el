@@ -108,6 +108,10 @@
   (evil-leader/set-key
    ":" 'org-set-tags
    "RET" 'org-insert-todo-heading
+   "tc" 'org-table-create
+
+   (which-key-add-key-based-replacements
+     ", t" "table")
    )
   )
 
