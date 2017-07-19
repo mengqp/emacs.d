@@ -2,40 +2,46 @@
 ;; ;; But I need global-mode-string,
 ;; ;; @see http://www.delorie.com/gnu/docs/elisp-manual-21/elisp_360.html
 ;; ;; use setq-default to set it for /all/ modes
-  (defun zilongshanren/update-persp-name ()
-    (when (bound-and-true-p persp-mode)
-      ;; There are multiple implementations of
-      ;; persp-mode with different APIs
-      (progn
-             (or (not (string= persp-nil-name (safe-persp-name (get-frame-persp))))
-                 "Default")
-             (let ((name (safe-persp-name (get-frame-persp))))
-               (propertize (concat "[" name "] ")
-                           'face 'font-lock-preprocessor-face
-                           'help-echo "Current Layout name.")))))
+  ;; (defun zilongshanren/update-persp-name ()
+  ;;   (when (bound-and-true-p persp-mode)
+  ;;     ;; There are multiple implementations of
+  ;;     ;; persp-mode with different APIs
+  ;;     (progn
+  ;;            (or (not (string= persp-nil-name (safe-persp-name (get-frame-persp))))
+  ;;                "Default")
+  ;;            (let ((name (safe-persp-name (get-frame-persp))))
+  ;;              (propertize (concat "[" name "] ")
+  ;;                          'face 'font-lock-preprocessor-face
+  ;;                          'help-echo "Current Layout name.")))))
 
 
-  (defun spaceline--unicode-number (str)
-    "Return a nice unicode representation of a single-digit number STR."
-    (cond
-     ((string= "1" str) "➊")
-     ((string= "2" str) "➋")
-     ((string= "3" str) "➌")
-     ((string= "4" str) "➍")
-     ((string= "5" str) "➎")
-     ((string= "6" str) "➏")
-     ((string= "7" str) "➐")
-     ((string= "8" str) "➑")
-     ((string= "9" str) "➒")
-     ((string= "0" str) "➓")))
+  ;; (defun spaceline--unicode-number (str)
+  ;;   "Return a nice unicode representation of a single-digit number STR."
+  ;;   (cond
+  ;;    ((string= "1" str) "➊")
+  ;;    ((string= "2" str) "➋")
+  ;;    ((string= "3" str) "➌")
+  ;;    ((string= "4" str) "➍")
+  ;;    ((string= "5" str) "➎")
+  ;;    ((string= "6" str) "➏")
+  ;;    ((string= "7" str) "➐")
+  ;;    ((string= "8" str) "➑")
+  ;;    ((string= "9" str) "➒")
+  ;;    ((string= "0" str) "➓")))
 
-  (defun window-number-mode-line ()
-    "The current window number. Requires `window-numbering-mode' to be enabled."
-    (when (bound-and-true-p window-numbering-mode)
-      (let* ((num (window-numbering-get-number))
-             (str (when num (int-to-string num))))
-        (spaceline--unicode-number str))))
+  ;; (defun window-number-mode-line ()
+  ;;   "The current window number. Requires `window-numbering-mode' to be enabled."
+  ;;   (when (bound-and-true-p window-numbering-mode)
+  ;;     (let* ((num (window-numbering-get-number))
+  ;;            (str (when num (int-to-string num))))
+  ;;       (spaceline--unicode-number str))))
 
+ (setq evil-normal-state-tag   (propertize "[N]" 'face '((:background "DarkGoldenrod2" :foreground "black")))
+          evil-emacs-state-tag    (propertize "[E]" 'face '((:background "SkyBlue2" :foreground "black")))
+          evil-insert-state-tag   (propertize "[I]" 'face '((:background "chartreuse3") :foreground "white"))
+          evil-motion-state-tag   (propertize "[M]" 'face '((:background "plum3") :foreground "white"))
+          evil-visual-state-tag   (propertize "[V]" 'face '((:background "gray" :foreground "black")))
+          evil-operator-state-tag (propertize "[O]" 'face '((:background "purple"))))
 
   (defun buffer-encoding-abbrev ()
     "The line ending convention used in the buffer."
@@ -104,7 +110,7 @@
                           'face
                           'font-lock-type-face))
                  " "
-                 '(:eval (zilongshanren/update-persp-name))
+                 ;; '(:eval (zilongshanren/update-persp-name))
 
                  ;; "%1 "
                  ;; the buffer name; the file name as a tool tip
@@ -146,8 +152,11 @@
                  ;; the current major mode for the buffer.
                  '(:eval (propertize "%m" 'face 'font-lock-string-face
                                      'help-echo buffer-file-coding-system))
+
 		 " -"
-                 '(:eval (propertize (format "%s" buffer-file-coding-system) 'face 'font-lock-string-face) )
+                 '(:eval (when (> (window-width) 80)
+                           (buffer-encoding-abbrev)))
+                 ;; '(:eval (propertize (format "%s" buffer-file-coding-system) 'face 'font-lock-string-face) )
 		 "- "
 
                  "%1 "
@@ -179,8 +188,7 @@
                  (propertize "%02c" 'face 'font-lock-type-face)
                  ") "
 
-                 ;; '(:eval (when (> (window-width) 80)
-                 ;;           (buffer-encoding-abbrev)))
+
                  mode-line-end-spaces
                  ;; add the time, with the date and the emacs uptime in the tooltip
                  '(:eval (propertize (format-time-string "%H:%M")
