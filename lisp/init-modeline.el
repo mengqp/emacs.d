@@ -105,12 +105,12 @@
 
 (setq-default mode-line-format
 	      (list
-	       " %1"
-	       '(:eval (propertize
-			(window-number-mode-line)
-			'face
-			'font-lock-type-face))
-	       " "
+	       ;; " %1"
+	       ;; '(:eval (propertize
+	       ;; 		(window-number-mode-line)
+	       ;; 		'face
+	       ;; 		'font-lock-type-face))
+	       ;; " "
 	       ;; '(:eval (zilongshanren/update-persp-name))
 
 	       ;; "%1 "
