@@ -11,8 +11,8 @@ But you may use safer HTTPS instead.")
 			 ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
                           ("org-cn"   . "https://elpa.zilongshanren.com/org/")
                           ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
-                          ;; ("melpa" . "https://melpa.org/packages/")
-                          ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+                          ("melpa" . "https://melpa.org/packages/")
+                          ("melpa-stable" . "https://stable.melpa.org/packages/")
                           ))
 
 
@@ -68,6 +68,8 @@ But you may use safer HTTPS instead.")
 (require-package 'helm-projectile)
 
 (require-package 'popup)
+(require-package 'expand-region)
+(require-package 'dired+)
 
 
 (require-package 'projectile)

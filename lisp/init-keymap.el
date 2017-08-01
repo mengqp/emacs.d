@@ -47,6 +47,7 @@
         "pf" 'counsel-projectile-find-file
         "pd" 'counsel-projectile-find-dir
 	"po" 'org-projectile:project-todo-completing-read
+	"pb" 'counsel-projectile-switch-to-buffer
 
         "ws" 'split-window-vertically
         "wv" 'split-window-horizontally

@@ -111,4 +111,7 @@
 (setq-default mode-line-misc-info
 	      (assq-delete-all 'which-function-mode mode-line-misc-info))
 
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
 (provide 'init-base)
