@@ -59,7 +59,10 @@
   (setq fci-rule-color "darkblue")
   :config
   (add-hook 'prog-mode-hook 'fci-mode)
+  (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
+
   )
+
 
 ;;在minibuffer里启用自动补全函数和变量
 (icomplete-mode 1)
@@ -85,6 +88,10 @@
 
 ;; 输入法切换时不出现问题
 (global-set-key (kbd "C-SPC") nil)
+
+(require 'cnfonts)
+;; 让 cnfonts 随着 Emacs 自动生效。
+(cnfonts-enable)
 
 
 (use-package savehist

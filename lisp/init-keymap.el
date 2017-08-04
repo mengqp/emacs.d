@@ -104,6 +104,7 @@
        "jl" 'ace-jump-line-mode
 
        "ls" 'linum-mode
+       "l RET" 'toggle-truncate-lines
 
        "mk" 'bookmark-set
        "mm" 'counsel-bookmark-goto

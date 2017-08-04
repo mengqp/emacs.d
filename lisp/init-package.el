@@ -8,11 +8,11 @@ But you may use safer HTTPS instead.")
 
 
 (setq package-archives '(
-			 ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-                          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-                          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
+			 ;; ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
+                         ;;  ("org-cn"   . "https://elpa.zilongshanren.com/org/")
+                         ;;  ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
                           ("melpa" . "https://melpa.org/packages/")
-                          ("melpa-stable" . "https://stable.melpa.org/packages/")
+                          ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
                           ))
 
 
@@ -45,7 +45,8 @@ But you may use safer HTTPS instead.")
 (require-package 'color-theme-sanityinc-tomorrow)
 (require-package 'cyberpunk-theme)
 
-(require-package 'chinese-fonts-setup)
+;; (require-package 'chinese-fonts-setup)
+(require-package 'cnfonts)
 
 (require-package 'linum-relative)
 (require-package 'fill-column-indicator)

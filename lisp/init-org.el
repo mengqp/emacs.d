@@ -4,6 +4,8 @@
 (with-eval-after-load 'org
   (message "org")
 
+  (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+
   (require 'org-projectile)
   (org-projectile:per-repo)
   (setq org-projectile:per-repo-filename "readme.org")
