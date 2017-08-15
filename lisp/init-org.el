@@ -6,6 +6,21 @@
 
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
+  (setq org-capture-templates
+	'(
+	  ("j" "Journal 日常工作记录" entry (file+datetree "~/ecode/org/journal.org")
+	   "* %?\nEntered on %U\n %i\n %a")
+	  ("t" "Todo gdt" entry (file+headline "~/ecode/org/gtd.org" "Tasks")
+	   "* TODO %?\n %i\n %a")
+	  ("w" "week 周报或是会议记录等" entry (file+datetree "~/ecode/org/week.org")
+	   "* %?\nEntered on %U\n %i\n %a")
+	  ("m" "memo 备忘 加班记录等" entry (file+datetree "~/ecode/org/memo.org")
+	   "* %?\nEntered on %U\n %i\n %a")
+	  ))
+
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-agenda-files :maxlevel . 9))))
+
   (require 'org-projectile)
   (org-projectile:per-repo)
   (setq org-projectile:per-repo-filename "readme.org")
@@ -111,6 +126,8 @@
    ":" 'org-set-tags
    "RET" 'org-insert-todo-heading
    "tc" 'org-table-create
+   "s" 'org-schedule
+   "d" 'org-deadline
 
    (which-key-add-key-based-replacements
      ", t" "table")

@@ -121,6 +121,9 @@ of an error, just add the package to a list of missing packages."
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(org-agenda-files
+   (quote
+    ("~/ecode/org/gtd.org" "~/ecode/org/week.org" "~/ecode/em770/readme.org" "~/ecode/epduhmi/readme.org" "~/ecode/epduhmi/3352/asrc/readme.org" "~/ecode/epduhmi/3352/dsrc/readme.org")))
  '(package-selected-packages
    (quote
     (use-package window-numbering which-key spaceline smex smartparens realgud popwin org-projectile linum-relative hungry-delete helm-projectile helm-make helm-cscope helm-c-yasnippet helm-ag google-c-style git-gutter general flycheck-ycmd flycheck-package evil-visualstar evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-leader evil-escape diminish company-ycmd color-theme-solarized ace-jump-mode ace-jump-helm-line)))

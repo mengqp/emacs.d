@@ -43,6 +43,9 @@
 
         "gs" 'magit-status
 
+	"oc" 'org-capture
+	"oa" 'org-agenda
+
 
         "pf" 'counsel-projectile-find-file
         "pd" 'counsel-projectile-find-dir
