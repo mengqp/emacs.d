@@ -11,6 +11,8 @@
   ;;       ("M-x" . counsel-M-x))
   :config
   (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t
+	ivy-count-format "%d/%d ")
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)

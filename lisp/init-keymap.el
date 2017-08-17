@@ -4,8 +4,10 @@
   (general-evil-setup t)
   ;; 全局
   (nvmap :prefix "SPC"
-	 ;; "SPC" 'helm-M-x
 	 "SPC" 'counsel-M-x
+	 "TAB" 'previous-buffer
+	 "." 'counsel-projectile-find-file
+
 	 "1" 'select-window-1
 	 "2" 'select-window-2
 	 "3" 'select-window-3
@@ -16,26 +18,16 @@
 	 "8" 'select-window-8
 	 "9" 'select-window-9
 
-	 "ac" 'helm-calcul-expression
 
-	 ;; "bb" 'helm-buffers-list
-	 ;; "bb" 'helm-mini
 	 "bb" 'ivy-switch-buffer
 	 "bd" 'kill-buffer
-	 "TAB" 'previous-buffer
 
-	 ;; "cc" 'helm-make-projectile
-	 "cC" 'compile
-	 ;; "cm" 'helm-make
+	 "cc" 'compile
 	 "ck" 'kill-compilation
 	 "cr" 'recompile
 	 "cd" 'mengqp/close-compilation-window
 
-	 ;; "ff" 'helm-find-files  ;;
 	 "ff" 'counsel-find-file  ;;
-	 ;; "f/" 'helm-find
-	 ;; "f/" 'counsel-find
-	 ;; "fr" 'helm-recentf  ;;
 	 "fr" 'counsel-recentf  ;;
 	 "fdi" 'mengqp/open-init-file
 	 "fdp" 'mengqp/open-init-package-file
@@ -46,21 +38,16 @@
 	 "oc" 'org-capture
 	 "oa" 'org-agenda
 
-
 	 "pf" 'counsel-projectile-find-file
 	 "pd" 'counsel-projectile-find-dir
-	 "po" 'org-projectile:project-todo-completing-read
 	 "pb" 'counsel-projectile-switch-to-buffer
 
 	 "ws" 'split-window-vertically
 	 "wv" 'split-window-horizontally
 	 "ww" 'switch-window
+	 "wd" 'delete-window
+	 "wo" 'delete-other-windows
 
-	 "x0" 'delete-window
-	 "x1" 'delete-other-windows
-
-	 ;; "/" 'helm-do-ag-project-root
-	 ;; "/" 'counsel-git-find-my-file
 	 "/" 'counsel-projectile-ag
 	 )
 
