@@ -1,6 +1,7 @@
 
 (use-package ivy :ensure t
   :diminish (ivy-mode . "")
+  :defer t
   :bind
   ("M-x" . counsel-M-x)
   ;; (:map ivy-mode-map

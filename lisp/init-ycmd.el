@@ -6,14 +6,24 @@
 (add-hook 'c++-mode-hook 'ycmd-mode)
 (add-hook 'c-mode-hook 'ycmd-mode)
 
-(with-eval-after-load 'ycmd
+;; (with-eval-after-load 'ycmd
+(use-package ycmd
+  :init
   (set-variable 'ycmd-server-command '("python" "/home/mengqp/DotFiles/ycmd/ycmd"))
   (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
   (setq ycmd-extra-conf-handler (quote load))
-  (require 'company-ycmd)
-  (company-ycmd-setup)
-  (require 'flycheck-ycmd)
-  (flycheck-ycmd-setup)
+  :config
+  (use-package company-ycmd
+    :config
+    (company-ycmd-setup)
+    )
+  (use-package flycheck-ycmd
+    :config
+    (flycheck-ycmd-setup)
+    )
+
+  ;; (require 'company-ycmd)
+  ;; (require 'flycheck-ycmd)
   )
 ;; (set-variable 'ycmd-server-command '("python" "/home/mengqp/DotFiles/ycmd/ycmd"))
 ;; (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")

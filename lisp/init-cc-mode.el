@@ -1,29 +1,50 @@
 ;;; init-cc-mode.el --- 关于c和c++的配置
 
-;;; 设置编码风格
-(require 'google-c-style)
-;;; 定义tab和缩进
-(defun mengqp/google-c-mode-hook ()
-  (setq c-basic-offset 4          ;; 基本缩进宽度
-        indent-tabs-mode nil       ;; 禁止空格替换Tab
-        tab-width 4
-        ))     ;; 默认Tab宽度
-
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c++-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
-(add-hook 'c++-mode-common-hook 'google-make-newline-indent)
-(add-hook 'c-mode-hook 'mengqp/google-c-mode-hook)
-(add-hook 'c++-mode-hook 'mengqp/google-c-mode-hook)
-
 (defun mengqp/close-compilation-window ()
   "Close the window containing the '*compilation*' buffer."
   (interactive)
   (when compilation-last-buffer
     (delete-windows-on compilation-last-buffer)))
 
-;;;; set gdb multi-windows when open
 (setq gdb-many-windows t)
+
+(use-package google-c-style
+  :defer t
+  :init
+  (progn
+;;; 定义tab和缩进
+    (defun mengqp/google-c-mode-hook ()
+      (setq c-basic-offset 4          ;; 基本缩进宽度
+	    indent-tabs-mode nil       ;; 禁止空格替换Tab
+	    tab-width 4
+	    ))     ;; 默认Tab宽度
+
+    (add-hook 'c-mode-common-hook 'google-set-c-style)
+    (add-hook 'c++-mode-common-hook 'google-set-c-style)
+    (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+    (add-hook 'c++-mode-common-hook 'google-make-newline-indent)
+    (add-hook 'c-mode-hook 'mengqp/google-c-mode-hook)
+    (add-hook 'c++-mode-hook 'mengqp/google-c-mode-hook)
+    )
+  )
+;; ;;; 设置编码风格
+;; (require 'google-c-style)
+;; ;;; 定义tab和缩进
+;; (defun mengqp/google-c-mode-hook ()
+;;   (setq c-basic-offset 4          ;; 基本缩进宽度
+;;         indent-tabs-mode nil       ;; 禁止空格替换Tab
+;;         tab-width 4
+;;         ))     ;; 默认Tab宽度
+
+;; (add-hook 'c-mode-common-hook 'google-set-c-style)
+;; (add-hook 'c++-mode-common-hook 'google-set-c-style)
+;; (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+;; (add-hook 'c++-mode-common-hook 'google-make-newline-indent)
+;; (add-hook 'c-mode-hook 'mengqp/google-c-mode-hook)
+;; (add-hook 'c++-mode-hook 'mengqp/google-c-mode-hook)
+
+
+;;;; set gdb multi-windows when open
 
 ;;;; customize the gdb multi-windows
 ;; (defadvice gdb-setup-windows (after my-setup-gdb-windows activate)

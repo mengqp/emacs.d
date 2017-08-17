@@ -1,7 +1,11 @@
 
-(require 'xcscope)
+;; (require 'xcscope)
+(use-package
+  :config
+  (cscope-setup)
+  )
 
-(cscope-setup)
+;; (cscope-setup)
 
 ;; (require 'helm-cscope)
 

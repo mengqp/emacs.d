@@ -57,51 +57,44 @@ of an error, just add the package to a list of missing packages."
 (let ((file-name-handler-alist nil))
 
 ;;; package here
-(require 'init-autoload)
-(require 'init-modeline)
+;; (require 'init-autoload)
 (require 'cl-lib)
 
 (require 'init-package)
 
+;;ui
 (require 'init-base)
+(require 'init-modeline)
 (require 'init-color-theme)
+
+;;tool
 (require 'init-hungry-delete)
 (require 'init-smartparens)
-
 (require 'init-evil)
 (require 'init-company)
 (require 'init-smex)
 (require 'init-window-numbering)
-;; (require 'init-helm)
-
 (require 'init-ivy)
-
 (require 'init-popwin)
 (require 'init-projectile)
-(require 'init-cc-mode)
 (require 'init-yasnippet)
 (require 'init-ycmd)
-;; (require 'init-irony)
 (require 'init-flycheck)
 (require 'init-ace-jump)
-(require 'init-org)
-
-
+(require 'init-git)
+(require 'init-mc)
 (require 'init-func)
 (require 'init-keymap)
+(require 'init-which-key)
+(require 'init-shell)
 
-(require 'init-idle-require)
-(setq idle-require-idle-delay 1)
-(setq idle-require-symbols '(
-			     init-which-key
-			     init-git
-			     init-shell
-			     init-mc
-			     ))
-(idle-require-mode 1) ;; starts loading
-
+;;
+(require 'init-cc-mode)
+(require 'init-org)
 
 )
+
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 ;; (server-start)
 (custom-set-variables
@@ -123,7 +116,7 @@ of an error, just add the package to a list of missing packages."
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-files
    (quote
-    ("~/ecode/org/gtd.org" "~/ecode/org/week.org" "~/ecode/em770/readme.org" "~/ecode/epduhmi/readme.org" "~/ecode/epduhmi/3352/asrc/readme.org" "~/ecode/epduhmi/3352/dsrc/readme.org")))
+    ("~/ecode/org/gtd.org" "~/ecode/em770/readme.org" "~/ecode/epduhmi/readme.org" "~/ecode/epduhmi/3352/asrc/readme.org" "~/ecode/epduhmi/3352/dsrc/readme.org")))
  '(package-selected-packages
    (quote
     (use-package window-numbering which-key spaceline smex smartparens realgud popwin org-projectile linum-relative hungry-delete helm-projectile helm-make helm-cscope helm-c-yasnippet helm-ag google-c-style git-gutter general flycheck-ycmd flycheck-package evil-visualstar evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-leader evil-escape diminish company-ycmd color-theme-solarized ace-jump-mode ace-jump-helm-line)))

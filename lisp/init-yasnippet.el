@@ -1,78 +1,28 @@
 ;; (require 'yasnippet)
 
+(use-package yasnippet
+  :defer t
+  :init
+  (progn
+    (add-hook 'org-mode-hook #'yas-minor-mode)
+    (add-hook 'c-mode-hook #'yas-minor-mode)
+    (add-hook 'c++-mode-hook #'yas-minor-mode)
+    (add-hook 'git-commit-mode-hook #'yas-minor-mode)
+    (add-hook 'text-mode-hook #'yas-minor-mode)
+    )
 
-;; (add-hook 'prog-mode-hook #'yas-minor-mode)
-(add-hook 'org-mode-hook #'yas-minor-mode)
-(add-hook 'c-mode-hook #'yas-minor-mode)
-(add-hook 'c++-mode-hook #'yas-minor-mode)
-(add-hook 'git-commit-mode-hook #'yas-minor-mode)
-(add-hook 'text-mode-hook #'yas-minor-mode)
-
-(with-eval-after-load 'yasnippet
-  (message "yasnippet")
   (setq yas-snippet-dirs
 	'("~/DotFiles/mysnippets"))
 
+  :config
+  (message "yasnippet")
   (yas-reload-all)
-  (require 'helm-c-yasnippet)
-  (setq helm-yas-space-match-any-greedy t)
 
-  ;; (yas-global-mode 1)
-
-  ;; (add-hook 'c-mode-hook
-  ;;           #'(lambda ()
-  ;;               (yas-activate-extra-mode 'c-mode)))
-  ;; (add-hook 'c++-mode-hook
-  ;;           #'(lambda ()
-  ;;               (yas-activate-extra-mode 'c-mode)))
-  ;;(setq yas/root-directory "~/.emacs.d/snippets")
-  ;;(yas/load-directory yas/root-directory)
-
-  ;; (global-set-key "\C-o" 'aya-open-line)
-
-  ;; (defun aya-open-line ()
-  ;;   "Call `open-line', unless there are abbrevs or snippets at point.
-  ;; In that case expand them.  If there's a snippet expansion in progress,
-  ;; move to the next field. Call `open-line' if nothing else applies."
-  ;;   (interactive)
-  ;;   (cond ((expand-abbrev))
-
-  ;;         ((yas--snippets-at-point)
-  ;;          (yas-next-field-or-maybe-expand))
-
-  ;;         ((ignore-errors
-  ;;            (yas-expand)))
-
-  ;;         (t
-  ;;          (open-line 1))))
-
-;;; use popup menu for yas-choose-value
-  ;; (require 'popup)
-
-  ;; add some shotcuts in popup menu mode
-  ;; (define-key popup-menu-keymap (kbd "M-n") 'popup-next)
-  ;; (define-key popup-menu-keymap (kbd "TAB") 'popup-next)
-  ;; (define-key popup-menu-keymap (kbd "<tab>") 'popup-next)
-  ;; (define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
-  ;; (define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
-
-  ;; (defun yas-popup-isearch-prompt (prompt choices &optional display-fn)
-  ;;   (when (featurep 'popup)
-  ;;     (popup-menu*
-  ;;      (mapcar
-  ;;       (lambda (choice)
-  ;;         (popup-make-item
-  ;;          (or (and display-fn (funcall display-fn choice))
-  ;;              choice)
-  ;;          :value choice))
-  ;;       choices)
-  ;;      :prompt prompt
-  ;;      ;; start isearch mode immediately
-  ;;      :isearch t
-  ;;      )))
-
-  ;; (setq yas-prompt-functions '(yas-popup-isearch-prompt yas-ido-prompt yas-no-prompt))
-
+  (use-package helm-c-yasnippet
+    :defer t
+    :init
+    (setq helm-yas-space-match-any-greedy t)
+    )
 
   (defun check-expansion ()
     (save-excursion
@@ -148,7 +98,6 @@
 
   (define-key evil-insert-state-map (kbd "M-j") 'yas-expand)
   (define-key evil-emacs-state-map (kbd "M-j") 'yas-expand)
-
   )
 
 (provide 'init-yasnippet)

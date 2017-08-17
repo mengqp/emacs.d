@@ -1,4 +1,6 @@
-(require 'ace-jump-mode)
+;; (require 'ace-jump-mode)
+(use-package ace-jump-mode
+  :defer t)
 ;; (require 'ace-jump-helm-line)
 ;; (eval-after-load "helm"
 ;; '(define-key helm-map (kbd "C-s") 'ace-jump-helm-line))

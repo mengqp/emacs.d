@@ -19,12 +19,12 @@
 (if (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 
-(defun fullscreen ()
-  (interactive)
-  (set-frame-parameter nil 'fullscreen
-		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+;; (defun fullscreen ()
+;;   (interactive)
+;;   (set-frame-parameter nil 'fullscreen
+;; 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 
-(fullscreen)
+;; (fullscreen)
 
 ;;不产生备份
 (setq make-backup-files nil)
@@ -51,7 +51,7 @@
 (setq ivy-initial-inputs-alist nil)
 
 ;;80列
-(require 'fill-column-indicator)
+;; (require 'fill-column-indicator)
 (use-package fill-column-indicator
   :init
   (setq fci-rule-column 80)
@@ -89,9 +89,12 @@
 ;; 输入法切换时不出现问题
 (global-set-key (kbd "C-SPC") nil)
 
-(require 'cnfonts)
-;; 让 cnfonts 随着 Emacs 自动生效。
-(cnfonts-enable)
+(use-package cnfonts
+  :config
+  ;; 让 cnfonts 随着 Emacs 自动生效。
+  (cnfonts-enable)
+  )
+;; (require 'cnfonts)
 
 
 (use-package savehist

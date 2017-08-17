@@ -1,11 +1,24 @@
 
 ;; (require 'org)
-
-(with-eval-after-load 'org
+(use-package org
+  :defer t
+  :init
+  :config
   (message "org")
 
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
+  (setq org-agenda-files (file-expand-wildcards "~/ecode/org/*.org"))
+  ;; 设置agent文件表
+  (setq org-agenda-files (list "~/ecode/em770/readme.org"
+			       "~/ecode/epduhmi/readme.org"
+			       "~/ecode/epduhmi/3352/asrc/readme.org"
+			       "~/ecode/epduhmi/3352/dsrc/readme.org"
+			       "~/ecode/org/journal.org"
+			       "~/ecode/org/gtd.org"
+			       "~/ecode/org/week.org"
+			       "~/ecode/org/memo.org"
+			       ))
   (setq org-capture-templates
 	'(
 	  ("j" "Journal 日常工作记录" entry (file+datetree "~/ecode/org/journal.org")
@@ -18,15 +31,15 @@
 	   "* %?\nEntered on %U\n %i\n %a")
 	  ))
 
-(setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                 (org-agenda-files :maxlevel . 9))))
+  (setq org-refile-targets (quote ((nil :maxlevel . 9)
+				   (org-agenda-files :maxlevel . 9))))
 
   (require 'org-projectile)
   (org-projectile:per-repo)
   (setq org-projectile:per-repo-filename "readme.org")
-  (setq org-agenda-files (append org-agenda-files (org-projectile:todo-files)))
-  (global-set-key (kbd "C-c c") 'org-capture)
-  (global-set-key (kbd "C-c n p") 'org-projectile:project-todo-completing-read)
+  ;; (setq org-agenda-files (append org-agenda-files (org-projectile:todo-files)))
+  ;; (global-set-key (kbd "C-c c") 'org-capture)
+  ;; (global-set-key (kbd "C-c n p") 'org-projectile:project-todo-completing-read)
 
   (setq org-src-fontify-natively t)
 
@@ -47,12 +60,6 @@
 		(sequence "RELEASE(r@/!)" "|" "CANCELLED(c@/!)")
 		)))
 
-  ;; 设置agent文件表
-  (setq org-agenda-files (list "~/ecode/em770/readme.org"
-			       "~/ecode/epduhmi/readme.org"
-			       "~/ecode/epduhmi/3352/asrc/readme.org"
-			       "~/ecode/epduhmi/3352/dsrc/readme.org"
-			       ))
 
   ;; (require 'org-id)
   (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
@@ -65,16 +72,16 @@
    case, the CUSTOM_ID of the entry is returned."
     (interactive)
     (org-with-point-at pom
-      ;; (let ((id (org-entry-get nil "CUSTOM_ID")))
-      (let ((id (org-entry-get nil "CUSTOM_ID")))
-	(cond
-	 ((and id (stringp id) (string-match "\\S-" id))
-	  id)
-	 (create
-	  (setq id (org-id-new (concat prefix "h")))
-	  (org-entry-put pom "CUSTOM_ID" id)
-	  (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
-	  id)))))
+		       ;; (let ((id (org-entry-get nil "CUSTOM_ID")))
+		       (let ((id (org-entry-get nil "CUSTOM_ID")))
+			 (cond
+			  ((and id (stringp id) (string-match "\\S-" id))
+			   id)
+			  (create
+			   (setq id (org-id-new (concat prefix "h")))
+			   (org-entry-put pom "CUSTOM_ID" id)
+			   (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
+			   id)))))
   ;; (defun eos/org-add-ids-to-headlines-in-file ()
   ;;   "Add CUSTOM_ID properties to all headlines in the
   ;;    current file which do not already have one."
@@ -123,15 +130,18 @@
   (define-key evil-normal-state-map (kbd "t") 'org-todo)
 
   (evil-leader/set-key
-   ":" 'org-set-tags
-   "RET" 'org-insert-todo-heading
-   "tc" 'org-table-create
-   "s" 'org-schedule
-   "d" 'org-deadline
+    ":" 'org-set-tags
+    "RET" 'org-insert-todo-heading
+    "tc" 'org-table-create
+    ;; "s" 'org-schedule
+    ;; "d" 'org-deadline
 
-   (which-key-add-key-based-replacements
-     ", t" "table")
-   )
+    (which-key-add-key-based-replacements
+      ", t" "table")
+    )
+  )
+
+(with-eval-after-load 'org
   )
 
 

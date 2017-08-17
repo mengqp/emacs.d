@@ -1,10 +1,10 @@
 ;;开启evil模式
-(require 'evil)
-(require 'evil-numbers)
-(require 'evil-leader)
-(require 'evil-visualstar)
-(require 'evil-matchit)
-(require 'evil-escape)
+;; (require 'evil)
+;; (require 'evil-numbers)
+;; (require 'evil-leader)
+;; (require 'evil-visualstar)
+;; (require 'evil-matchit)
+;; (require 'evil-escape)
 
 (use-package evil
   :init
@@ -31,6 +31,7 @@
   )
 
 (use-package evil-numbers
+  :defer t
   :init
   ;; +/- 代替
   (define-key evil-normal-state-map (kbd "+") 'evil-numbers/inc-at-pt)
