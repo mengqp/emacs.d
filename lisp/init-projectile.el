@@ -1,5 +1,8 @@
 
-(projectile-mode t)
+(use-package projectile
+  :config
+  (projectile-mode t)
+  )
 
 ;; (defvar mengqp/projectile-project-name "readme.org")
 

@@ -27,6 +27,7 @@
     (add-hook 'c++-mode-hook 'mengqp/google-c-mode-hook)
     )
   )
+
 ;; ;;; 设置编码风格
 ;; (require 'google-c-style)
 ;; ;;; 定义tab和缩进

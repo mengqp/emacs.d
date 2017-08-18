@@ -21,3 +21,5 @@ smex-items
 savehist
 tramp
 .mc-lists.el
+custom.el
+cnfonts

@@ -1,9 +1,13 @@
-(require 'window-numbering)
-(require 'switch-window)
 
-(setq window-numbering-assign-func
-      (lambda () (when (equal (buffer-name) "*Calculator*") 9)))
-(window-numbering-mode t)
+
+
+(use-package window-numbering
+  :init
+  (setq window-numbering-assign-func
+	(lambda () (when (equal (buffer-name) "*Calculator*") 9)))
+  :config
+  (window-numbering-mode t)
+  )
 
 (use-package switch-window
   :init

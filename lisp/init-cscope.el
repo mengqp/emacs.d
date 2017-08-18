@@ -1,6 +1,6 @@
 
 ;; (require 'xcscope)
-(use-package
+(use-package xcscope
   :config
   (cscope-setup)
   )

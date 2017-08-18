@@ -5,8 +5,7 @@
 (use-package magit
   :defer t)
 
-(use-package evil-magit
-  :defer t)
+(use-package evil-magit)
 
 (use-package git-gutter
   :defer t

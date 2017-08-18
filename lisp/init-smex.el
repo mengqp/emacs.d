@@ -1,4 +1,7 @@
-(require 'smex)
-(global-set-key (kbd "M-x") 'smex)
+
+(use-package smex
+  :config
+  (global-set-key (kbd "M-x") 'smex)
+  )
 
 (provide 'init-smex)

@@ -3,12 +3,14 @@
 ;; (add-hook 'c++-mode-hook 'ycmd-mode)
 ;; (add-hook 'c-mode-hook 'ycmd-mode)
 
-(add-hook 'c++-mode-hook 'ycmd-mode)
-(add-hook 'c-mode-hook 'ycmd-mode)
 
 ;; (with-eval-after-load 'ycmd
 (use-package ycmd
+  :defer t
   :init
+  (add-hook 'c++-mode-hook 'ycmd-mode)
+  (add-hook 'c-mode-hook 'ycmd-mode)
+
   (set-variable 'ycmd-server-command '("python" "/home/mengqp/DotFiles/ycmd/ycmd"))
   (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
   (setq ycmd-extra-conf-handler (quote load))

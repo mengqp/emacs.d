@@ -31,7 +31,7 @@
   )
 
 (use-package evil-numbers
-  :defer t
+  ;; :defer t
   :init
   ;; +/- 代替
   (define-key evil-normal-state-map (kbd "+") 'evil-numbers/inc-at-pt)
