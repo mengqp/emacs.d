@@ -6,6 +6,22 @@
   :config
   (message "org")
 
+  (use-package org-pomodoro
+    ;; :commands org-pomodoro
+    :init
+    (setq org-pomodoro-killed-sound t)
+    (setq org-pomodoro-length 3)
+    (setq org-pomodoro-format "•%s")
+    (setq org-pomodoro-short-break-format "•%s")
+    :config
+     (add-hook 'org-pomodoro-finished-hook
+     	       (lambda ()
+     		 (mukhali/terminal-notifier-notify "Pomodoro" "time-for-relax")))
+     (add-hook 'org-pomodoro-short-break-finished-hook
+     	       (lambda ()
+     		 (mukhali/terminal-notifier-notify "Break-Completed" "ready-for-another?")))
+
+    )
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
   (setq org-agenda-files (file-expand-wildcards "~/ecode/org/*.org"))

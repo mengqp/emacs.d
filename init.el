@@ -75,7 +75,7 @@ of an error, just add the package to a list of missing packages."
 (require 'init-smex)
 (require 'init-window-numbering)
 (require 'init-ivy)
-(require 'init-popwin)
+;; (require 'init-popwin)
 (require 'init-projectile)
 (require 'init-yasnippet)
 (require 'init-ycmd)
@@ -86,7 +86,7 @@ of an error, just add the package to a list of missing packages."
 (require 'init-func)
 (require 'init-keymap)
 (require 'init-which-key)
-(require 'init-shell)
+;; (require 'init-shell)
 
 ;;
 (require 'init-cc-mode)

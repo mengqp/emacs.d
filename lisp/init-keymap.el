@@ -37,6 +37,7 @@
 
 	 "oc" 'org-capture
 	 "oa" 'org-agenda
+	 "op" 'org-pomodoro
 
 	 "pf" 'counsel-projectile-find-file
 	 "pd" 'counsel-projectile-find-dir

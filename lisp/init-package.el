@@ -68,6 +68,8 @@ But you may use safer HTTPS instead.")
 (require-package 'helm-make)
 (require-package 'helm-projectile)
 
+(require-package 'org-pomodoro)
+
 (require-package 'popup)
 (require-package 'expand-region)
 (require-package 'dired+)
