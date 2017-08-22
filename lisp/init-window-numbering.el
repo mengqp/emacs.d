@@ -2,6 +2,7 @@
 
 
 (use-package window-numbering
+  :ensure t
   :init
   (setq window-numbering-assign-func
 	(lambda () (when (equal (buffer-name) "*Calculator*") 9)))
@@ -10,6 +11,7 @@
   )
 
 (use-package switch-window
+  :ensure t
   :init
   (setq switch-window-shortcut-style 'qwerty)
   (setq switch-window-qwerty-shortcuts

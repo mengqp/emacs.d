@@ -1,4 +1,5 @@
 (use-package general
+  :ensure t
   :init
   :config
   (general-evil-setup t)

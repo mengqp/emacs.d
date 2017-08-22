@@ -1,5 +1,6 @@
 ;; (require 'ace-jump-mode)
 (use-package ace-jump-mode
+  :ensure t
   :defer t)
 ;; (require 'ace-jump-helm-line)
 ;; (eval-after-load "helm"

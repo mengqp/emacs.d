@@ -3,11 +3,14 @@
 ;; (require 'git-gutter)
 
 (use-package magit
+  :ensure t
   :defer t)
 
-(use-package evil-magit)
+(use-package evil-magit
+  :ensure t)
 
 (use-package git-gutter
+  :ensure t
   :defer t
   :init
   (add-hook 'c-mode-hook 'git-gutter-mode)

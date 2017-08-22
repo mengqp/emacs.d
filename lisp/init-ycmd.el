@@ -6,6 +6,7 @@
 
 ;; (with-eval-after-load 'ycmd
 (use-package ycmd
+  :ensure t
   :defer t
   :init
   (add-hook 'c++-mode-hook 'ycmd-mode)
@@ -16,10 +17,12 @@
   (setq ycmd-extra-conf-handler (quote load))
   :config
   (use-package company-ycmd
+    :ensure t
     :config
     (company-ycmd-setup)
     )
   (use-package flycheck-ycmd
+    :ensure t
     :config
     (flycheck-ycmd-setup)
     )

@@ -7,6 +7,7 @@
 ;; (require 'evil-escape)
 
 (use-package evil
+  :ensure t
   :init
   :config
   (evil-mode t)
@@ -31,6 +32,7 @@
   )
 
 (use-package evil-numbers
+  :ensure t
   ;; :defer t
   :init
   ;; +/- 代替
@@ -40,18 +42,21 @@
 
 ;;
 (use-package evil-leader
+  :ensure t
   :init
   (global-evil-leader-mode)
   (evil-leader/set-leader ",")
   )
 
 (use-package evil-visualstar
+  :ensure t
   :init
   (global-evil-visualstar-mode)
   )
 
 
 (use-package evil-matchit
+  :ensure t
   :init
   (setq evilmi-ignore-comments nil)
   :config
@@ -59,6 +64,7 @@
   )
 
 (use-package evil-escape
+  :ensure t
   :init
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.2)

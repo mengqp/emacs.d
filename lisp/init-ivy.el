@@ -1,5 +1,6 @@
 
-(use-package ivy :ensure t
+(use-package ivy
+  :ensure t
   :diminish (ivy-mode . "")
   :defer t
   :bind

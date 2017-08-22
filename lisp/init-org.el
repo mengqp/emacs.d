@@ -1,25 +1,28 @@
 
 ;; (require 'org)
 (use-package org
+  :ensure t
   :defer t
   :init
   :config
   (message "org")
 
   (use-package org-pomodoro
+    :ensure t
+    :defer t
     ;; :commands org-pomodoro
     :init
     (setq org-pomodoro-killed-sound t)
-    (setq org-pomodoro-length 3)
+    (setq org-pomodoro-length 25)
     (setq org-pomodoro-format "•%s")
     (setq org-pomodoro-short-break-format "•%s")
-    :config
-     (add-hook 'org-pomodoro-finished-hook
-     	       (lambda ()
-     		 (mukhali/terminal-notifier-notify "Pomodoro" "time-for-relax")))
-     (add-hook 'org-pomodoro-short-break-finished-hook
-     	       (lambda ()
-     		 (mukhali/terminal-notifier-notify "Break-Completed" "ready-for-another?")))
+    ;; :config
+     ;; (add-hook 'org-pomodoro-finished-hook
+     ;; 	       (lambda ()
+     ;; 		 (mukhali/terminal-notifier-notify "Pomodoro" "time-for-relax")))
+     ;; (add-hook 'org-pomodoro-short-break-finished-hook
+     ;; 	       (lambda ()
+     ;; 		 (mukhali/terminal-notifier-notify "Break-Completed" "ready-for-another?")))
 
     )
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
@@ -28,6 +31,7 @@
   ;; 设置agent文件表
   (setq org-agenda-files (list "~/ecode/em770/readme.org"
 			       "~/ecode/epduhmi/readme.org"
+			       "~/ecode/em761/readme.org"
 			       "~/ecode/epduhmi/3352/asrc/readme.org"
 			       "~/ecode/epduhmi/3352/dsrc/readme.org"
 			       "~/ecode/org/journal.org"
@@ -50,9 +54,11 @@
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
 				   (org-agenda-files :maxlevel . 9))))
 
-  (require 'org-projectile)
-  (org-projectile:per-repo)
-  (setq org-projectile:per-repo-filename "readme.org")
+  (use-package org-projectile
+    :config
+    (org-projectile:per-repo)
+    (setq org-projectile:per-repo-filename "readme.org")
+    )
   ;; (setq org-agenda-files (append org-agenda-files (org-projectile:todo-files)))
   ;; (global-set-key (kbd "C-c c") 'org-capture)
   ;; (global-set-key (kbd "C-c n p") 'org-projectile:project-todo-completing-read)
@@ -156,10 +162,6 @@
       ", t" "table")
     )
   )
-
-(with-eval-after-load 'org
-  )
-
 
 
 (provide 'init-org)

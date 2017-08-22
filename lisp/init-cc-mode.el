@@ -9,6 +9,7 @@
 (setq gdb-many-windows t)
 
 (use-package google-c-style
+  :ensure t
   :defer t
   :init
   (progn

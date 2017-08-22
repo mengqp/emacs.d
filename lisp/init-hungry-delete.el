@@ -1,5 +1,8 @@
-(require 'hungry-delete)
 
-(global-hungry-delete-mode)
+(use-package hungry-delete
+  :ensure t
+  :config
+  (global-hungry-delete-mode)
+  )
 
 (provide 'init-hungry-delete)

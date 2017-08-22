@@ -11,7 +11,12 @@
 ;;     )
 ;; (require 'spacemacs-theme)
 ;; (load-theme 'spacemacs-dark t)
-(add-hook 'after-init-hook
-	  (lambda () (load-theme 'cyberpunk t)))
+
+(use-package cyberpunk-theme
+  :ensure t
+  :config
+  (add-hook 'after-init-hook
+	    (lambda () (load-theme 'cyberpunk t)))
+  )
 
 (provide 'init-color-theme)

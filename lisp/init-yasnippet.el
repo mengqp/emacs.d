@@ -1,6 +1,7 @@
 ;; (require 'yasnippet)
 
 (use-package yasnippet
+  :ensure t
   :defer t
   :init
   (progn
@@ -19,6 +20,7 @@
   (yas-reload-all)
 
   (use-package helm-c-yasnippet
+    :ensure t
     :defer t
     :init
     (setq helm-yas-space-match-any-greedy t)
@@ -96,7 +98,7 @@
   ;; (define-key yas-keymap [(control tab)] 'yas-next-field)
   ;; (define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
 
-  (define-key evil-insert-state-map (kbd "M-j") 'yas-expand)
+  ;; (define-key evil-insert-state-map (kbd "M-j") 'yas-expand)
   ;; (define-key evil-emacs-state-map (kbd "M-j") 'yas-expand)
   )
 

@@ -8,6 +8,7 @@
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 ;;; c和c++
 (use-package flycheck
+  :ensure t
   :defer t
   :init
   (add-hook 'c-mode-hook 'flycheck-mode)
