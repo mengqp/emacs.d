@@ -5,8 +5,9 @@
   :defer t
   :bind
   ("M-x" . counsel-M-x)
+  ("C-s" . swiper)
   ;; (:map ivy-mode-map
-  ;;       ("C-'" . ivy-avy))
+  ;;       ("C-s" . swiper))
 
   ;; (:map ivy-mode-map
   ;;       ("M-x" . counsel-M-x))

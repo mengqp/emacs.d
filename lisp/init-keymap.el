@@ -44,11 +44,15 @@
 	 "pd" 'counsel-projectile-find-dir
 	 "pb" 'counsel-projectile-switch-to-buffer
 
+	 "qq" 'save-buffers-kill-emacs
+
 	 "ws" 'split-window-vertically
 	 "wv" 'split-window-horizontally
 	 "ww" 'switch-window
 	 "wd" 'delete-window
 	 "wo" 'delete-other-windows
+
+
 
 	 "/" 'counsel-projectile-ag
 	 )
@@ -99,7 +103,7 @@
 	 "l RET" 'toggle-truncate-lines
 
 	 "mk" 'bookmark-set
-	 "mm" 'counsel-bookmark-goto
+	 "mm" 'counsel-bookmark
 
 
 	 "sc" 'shell-command
@@ -107,7 +111,7 @@
 	 ;; "sj" 'mengqp/helm-jump-in-buffer
 	 "sj" 'counsel-imenu
 	 ;; "ss" 'mengqp/helm-file-smart-do-search
-	 "ss" 'swiper
+	 ;; "ss" 'swiper
 	 "sS" 'ivy-resume
 
 	 "yy" 'helm-yas-complete
