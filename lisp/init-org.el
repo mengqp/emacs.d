@@ -29,16 +29,27 @@
 
   (setq org-agenda-files (file-expand-wildcards "~/ecode/org/*.org"))
   ;; 设置agent文件表
-  (setq org-agenda-files (list "~/ecode/em770/readme.org"
-			       "~/ecode/epduhmi/readme.org"
-			       "~/ecode/em761/readme.org"
-			       "~/ecode/epduhmi/3352/asrc/readme.org"
-			       "~/ecode/epduhmi/3352/dsrc/readme.org"
-			       "~/ecode/org/journal.org"
-			       "~/ecode/org/gtd.org"
-			       "~/ecode/org/week.org"
-			       "~/ecode/org/memo.org"
-			       ))
+  (when *linux*
+    (setq org-agenda-files (list "~/ecode/em770/readme.org"
+				 "~/ecode/epduhmi/readme.org"
+				 "~/ecode/em761/readme.org"
+				 "~/ecode/epduhmi/3352/asrc/readme.org"
+				 "~/ecode/epduhmi/3352/dsrc/readme.org"
+				 "~/ecode/org/journal.org"
+				 "~/ecode/org/gtd.org"
+				 "~/ecode/org/week.org"
+				 "~/ecode/org/memo.org"
+				 ))
+    )
+
+  (when *win64*
+    (setq org-agenda-files (list "~/ecode/org/journal.org"
+				 "~/ecode/org/gtd.org"
+				 "~/ecode/org/week.org"
+				 "~/ecode/org/memo.org"
+				 ))
+    )
+
   (setq org-capture-templates
 	'(
 	  ("j" "Journal 日常工作记录" entry (file+datetree "~/ecode/org/journal.org")

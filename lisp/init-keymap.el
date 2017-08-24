@@ -22,6 +22,7 @@
 
 	 "bb" 'ivy-switch-buffer
 	 "bd" 'kill-buffer
+	 "bs" 'mengqp/switch-scratch-buf
 
 	 "cc" 'compile
 	 "ck" 'kill-compilation

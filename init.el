@@ -4,6 +4,11 @@
 ;; don't GC during startup to save time
 (setq gc-cons-threshold most-positive-fixnum)
 
+
+(setq *linux* (eq system-type 'gnu/linux) )
+(setq *win64* (eq system-type 'windows-nt) )
+
+
 (setq emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
@@ -78,7 +83,9 @@ of an error, just add the package to a list of missing packages."
 ;; (require 'init-popwin)
 (require 'init-projectile)
 (require 'init-yasnippet)
+(when *linux*
 (require 'init-ycmd)
+  )
 (require 'init-flycheck)
 (require 'init-ace-jump)
 (require 'init-git)
@@ -97,55 +104,3 @@ of an error, just add the package to a list of missing packages."
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 ;; (server-start)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
- '(custom-safe-themes
-   (quote
-    ("bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
- '(fci-rule-color "#383838")
- '(git-gutter:added-sign "++")
- '(git-gutter:deleted-sign "--")
- '(git-gutter:modified-sign "  ")
- '(nrepl-message-colors
-   (quote
-    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
- '(org-agenda-files
-   (quote
-    ("~/ecode/org/gtd.org" "~/ecode/em770/readme.org" "~/ecode/epduhmi/readme.org" "~/ecode/epduhmi/3352/asrc/readme.org" "~/ecode/epduhmi/3352/dsrc/readme.org")))
- '(package-selected-packages
-   (quote
-    (use-package window-numbering which-key spaceline smex smartparens realgud popwin org-projectile linum-relative hungry-delete helm-projectile helm-make helm-cscope helm-c-yasnippet helm-ag google-c-style git-gutter general flycheck-ycmd flycheck-package evil-visualstar evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-leader evil-escape diminish company-ycmd color-theme-solarized ace-jump-mode ace-jump-helm-line)))
- '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
- '(vc-annotate-background "#2B2B2B")
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#BC8383")
-     (40 . "#CC9393")
-     (60 . "#DFAF8F")
-     (80 . "#D0BF8F")
-     (100 . "#E0CF9F")
-     (120 . "#F0DFAF")
-     (140 . "#5F7F5F")
-     (160 . "#7F9F7F")
-     (180 . "#8FB28F")
-     (200 . "#9FC59F")
-     (220 . "#AFD8AF")
-     (240 . "#BFEBBF")
-     (260 . "#93E0E3")
-     (280 . "#6CA0A3")
-     (300 . "#7CB8BB")
-     (320 . "#8CD0D3")
-     (340 . "#94BFF3")
-     (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

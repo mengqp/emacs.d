@@ -23,4 +23,10 @@
   (find-file "~/.emacs.d/lisp/init-keymap.el")
     )
 
+(defun mengqp/switch-scratch-buf ()
+  "open init keymap file to config"
+  (interactive)
+  (switch-to-buffer "*scratch*")
+    )
+
 (provide 'init-func)
