@@ -1,6 +1,6 @@
 ;;这就一个进行基本配置的文件
 
-;; ---------------------------------gui ----------------------------------------
+;; ;; ---------------------------------gui ----------------------------------------
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 (setq inhibit-startup-screen t)
@@ -53,13 +53,13 @@
 ;;80列
 ;; (require 'fill-column-indicator)
 (use-package fill-column-indicator
+  :defer t
   :init
+  (add-hook 'prog-mode-hook 'fci-mode)
+  (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
   (setq fci-rule-column 80)
   (setq fci-rule-width 3)
   (setq fci-rule-color "darkblue")
-  :config
-  (add-hook 'prog-mode-hook 'fci-mode)
-  (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
 
   )
 
@@ -79,7 +79,9 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; --------------------------------coding --------------------------------------
-(require 'unicad)
+(use-package unicad
+  :defer t)
+;; (require 'unicad)
 
 
 ;; --------------------------------other  --------------------------------------
@@ -90,6 +92,7 @@
 (global-set-key (kbd "C-SPC") nil)
 
 (use-package cnfonts
+  ;; :defer t
   :config
   ;; 让 cnfonts 随着 Emacs 自动生效。
   (cnfonts-enable)
@@ -121,7 +124,12 @@
 (setq-default mode-line-misc-info
 	      (assq-delete-all 'which-function-mode mode-line-misc-info))
 
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
+(use-package expand-region
+  :commands er/expand-region
+  :init
+  (global-set-key (kbd "C-=") 'er/expand-region)
+
+  )
+;; (require 'expand-region)
 
 (provide 'init-base)

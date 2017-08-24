@@ -4,10 +4,13 @@
 
 (use-package magit
   :ensure t
-  :defer t)
+  :defer t
+  :config
 
-(use-package evil-magit
+  (use-package evil-magit
   :ensure t)
+  )
+
 
 (use-package git-gutter
   :ensure t
