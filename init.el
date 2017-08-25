@@ -104,4 +104,6 @@ of an error, just add the package to a list of missing packages."
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-;; (server-start)
+(when *win64*
+  (server-start)
+  )
