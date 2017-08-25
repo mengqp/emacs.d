@@ -1,9 +1,9 @@
 
 ;; (require 'xcscope)
-(use-package xcscope
-  :config
-  (cscope-setup)
-  )
+;; (use-package xcscope
+;;   :config
+;;   (cscope-setup)
+;;   )
 
 ;; (cscope-setup)
 

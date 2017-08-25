@@ -1,5 +1,11 @@
 ;;; init-cc-mode.el --- 关于c和c++的配置
 
+;; (setq init-cc-mode-hook '(c-mode-hook
+;; 		     c++-mode-hook
+;; 		     ))
+
+
+
 (defun mengqp/close-compilation-window ()
   "Close the window containing the '*compilation*' buffer."
   (interactive)
@@ -28,6 +34,55 @@
     (add-hook 'c++-mode-hook 'mengqp/google-c-mode-hook)
     )
   )
+
+(use-package xcscope
+  :defer t
+  :config
+  (cscope-setup)
+  )
+
+
+(use-package ycmd
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'c++-mode-hook 'ycmd-mode)
+  (add-hook 'c-mode-hook 'ycmd-mode)
+
+  (set-variable 'ycmd-server-command '("python" "/home/mengqp/DotFiles/ycmd/ycmd"))
+  (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
+  (setq ycmd-extra-conf-handler (quote load))
+  :config
+  (use-package company-ycmd
+    :ensure t
+    :config
+    (company-ycmd-setup)
+    )
+  (use-package flycheck-ycmd
+    :ensure t
+    :config
+    (flycheck-ycmd-setup)
+    )
+
+  (general-define-key :states '(normal motion)
+		      :keymaps '(c++-mode-map
+				 c-mode-map)
+                    :prefix ","
+		    "gg" 'ycmd-goto
+		    "gs" 'helm-cscope-find-this-symbol
+		    "gd" 'helm-cscope-find-global-definition
+		    "gc" 'helm-cscope-find-called-function
+		    "gC" 'helm-cscope-find-calling-this-function
+		    "gi" 'cscope-index-files
+		    "ga" 'projectile-find-other-file
+		    "gA" 'projectile-find-other-file-other-window
+
+		    (which-key-add-key-based-replacements
+		      ", g" "goto")
+                    )
+
+  )
+
 
 ;; ;;; 设置编码风格
 ;; (require 'google-c-style)

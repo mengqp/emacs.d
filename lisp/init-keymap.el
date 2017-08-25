@@ -82,14 +82,14 @@
 	 "fe" 'end-of-defun
 	 "fr" 'recover-this-file
 
-	 "gg" 'ycmd-goto
-	 "gs" 'helm-cscope-find-this-symbol
-	 "gd" 'helm-cscope-find-global-definition
-	 "gc" 'helm-cscope-find-called-function
-	 "gC" 'helm-cscope-find-calling-this-function
-	 "gi" 'cscope-index-files
-	 "ga" 'projectile-find-other-file
-	 "gA" 'projectile-find-other-file-other-window
+	 ;; "gg" 'ycmd-goto
+	 ;; "gs" 'helm-cscope-find-this-symbol
+	 ;; "gd" 'helm-cscope-find-global-definition
+	 ;; "gc" 'helm-cscope-find-called-function
+	 ;; "gC" 'helm-cscope-find-calling-this-function
+	 ;; "gi" 'cscope-index-files
+	 ;; "ga" 'projectile-find-other-file
+	 ;; "gA" 'projectile-find-other-file-other-window
 
 	 "hf" 'find-function
 	 "hv" 'find-variable

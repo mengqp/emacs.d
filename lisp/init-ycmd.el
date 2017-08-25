@@ -5,31 +5,43 @@
 
 
 ;; (with-eval-after-load 'ycmd
-(use-package ycmd
-  :ensure t
-  :defer t
-  :init
-  (add-hook 'c++-mode-hook 'ycmd-mode)
-  (add-hook 'c-mode-hook 'ycmd-mode)
+;; (use-package ycmd
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   (add-hook 'c++-mode-hook 'ycmd-mode)
+;;   (add-hook 'c-mode-hook 'ycmd-mode)
 
-  (set-variable 'ycmd-server-command '("python" "/home/mengqp/DotFiles/ycmd/ycmd"))
-  (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
-  (setq ycmd-extra-conf-handler (quote load))
-  :config
-  (use-package company-ycmd
-    :ensure t
-    :config
-    (company-ycmd-setup)
-    )
-  (use-package flycheck-ycmd
-    :ensure t
-    :config
-    (flycheck-ycmd-setup)
-    )
+;;   (set-variable 'ycmd-server-command '("python" "/home/mengqp/DotFiles/ycmd/ycmd"))
+;;   (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
+;;   (setq ycmd-extra-conf-handler (quote load))
+;;   :config
+;;   (use-package company-ycmd
+;;     :ensure t
+;;     :config
+;;     (company-ycmd-setup)
+;;     )
+;;   (use-package flycheck-ycmd
+;;     :ensure t
+;;     :config
+;;     (flycheck-ycmd-setup)
+;;     )
 
-  ;; (require 'company-ycmd)
-  ;; (require 'flycheck-ycmd)
-  )
+;;   (general-define-key :states '(normal motion)
+;; 		      :keymaps '(c++-mode-map
+;; 				 c-mode-map)
+;;                     :prefix ","
+;; 		    "gg" 'ycmd-goto
+;; 		    "gs" 'helm-cscope-find-this-symbol
+;; 		    "gd" 'helm-cscope-find-global-definition
+;; 		    "gc" 'helm-cscope-find-called-function
+;; 		    "gC" 'helm-cscope-find-calling-this-function
+;; 		    "gi" 'cscope-index-files
+;; 		    "ga" 'projectile-find-other-file
+;; 		    "gA" 'projectile-find-other-file-other-window
+;;                     )
+
+;;   )
 ;; (set-variable 'ycmd-server-command '("python" "/home/mengqp/DotFiles/ycmd/ycmd"))
 ;; (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
 ;; (setq ycmd-extra-conf-handler (quote load))

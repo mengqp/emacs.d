@@ -35,31 +35,25 @@
 				 "~/ecode/em761/readme.org"
 				 "~/ecode/epduhmi/3352/asrc/readme.org"
 				 "~/ecode/epduhmi/3352/dsrc/readme.org"
-				 "~/ecode/org/journal.org"
-				 "~/ecode/org/gtd.org"
-				 "~/ecode/org/week.org"
-				 "~/ecode/org/memo.org"
+				 "~/ecode/org/"
 				 ))
     )
 
   (when *win64*
-    (setq org-agenda-files (list "~/ecode/org/journal.org"
-				 "~/ecode/org/gtd.org"
-				 "~/ecode/org/week.org"
-				 "~/ecode/org/memo.org"
+    (setq org-agenda-files (list "~/ecode/org/"
 				 ))
     )
 
   (setq org-capture-templates
 	'(
 	  ("j" "Journal 日常工作记录" entry (file+datetree "~/ecode/org/journal.org")
-	   "* %?\nEntered on %U\n %i\n %a")
+	   "*  %? \nEntered on %U\n %i\n ")
 	  ("t" "Todo gdt" entry (file+headline "~/ecode/org/gtd.org" "Tasks")
-	   "* TODO %?\n %i\n %a")
-	  ("w" "week 周报或是会议记录等" entry (file+datetree "~/ecode/org/week.org")
-	   "* %?\nEntered on %U\n %i\n %a")
-	  ("m" "memo 备忘 加班记录等" entry (file+datetree "~/ecode/org/memo.org")
-	   "* %?\nEntered on %U\n %i\n %a")
+	   "* TODO [#B] %? \n %i\n %a")
+	  ("m" "meet 会议记录" entry (file+datetree "~/ecode/org/meet.org")
+	   "* %? \nEntered on %U\n %i\n ")
+	  ("M" "memo 备忘 加班记录等" entry (file+datetree "~/ecode/org/memo.org")
+	   "* %? \nEntered on %U\n %i\n ")
 	  ))
 
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
@@ -76,7 +70,17 @@
 
   (setq org-src-fontify-natively t)
 
-  (setq org-tag-alist '(("@bug" . ?b) ("@feature" . ?f) ("@repeat" . ?r) ("@invalid" . ?i) ("@wontfix" . ?w) ("@discuss" . ?d) ("@suspend" . ?s) ("@close" . ?c) ("@Fixed" . ?F)))
+  (setq org-tag-alist '(
+			("@bug" . ?b)
+			("@feature" . ?f)
+			("@repeat" . ?r)
+			("@invalid" . ?i)
+			("@wontfix" . ?w)
+			("@discuss" . ?d)
+			("@suspend" . ?s)
+			("@close" . ?c)
+			("@Fixed" . ?F)
+			))
   ;; 不同tag外观
   (setq org-tag-faces
 	'(("@bug" . (:background "red" :foreground "white" :weight bold))
@@ -159,19 +163,51 @@
     (insert (number-to-string num))
     )
 
-  (define-key evil-normal-state-map (kbd "T") 'mengqp/evil-org-insert-todo-at-end)
-  (define-key evil-normal-state-map (kbd "t") 'org-todo)
+  ;; (define-key evil-normal-state-map (kbd "T") 'mengqp/evil-org-insert-todo-at-end)
+  ;; (define-key evil-normal-state-map (kbd "t") 'org-todo)
+  (general-define-key :states '(normal motion)
+		      :keymaps '(org-mode-map)
+		      "T" 'mengqp/evil-org-insert-todo-at-end
+		      "t" 'org-todo
 
-  (evil-leader/set-key
-    ":" 'org-set-tags
-    "RET" 'org-insert-todo-heading
-    "tc" 'org-table-create
-    ;; "s" 'org-schedule
-    ;; "d" 'org-deadline
+		      )
 
-    (which-key-add-key-based-replacements
-      ", t" "table")
+  (general-define-key :states '(normal motion)
+		      :keymaps '(org-mode-map)
+		      :prefix ","
+		      ":" 'org-set-tags
+		      "RET" 'org-insert-todo-heading
+		      "tc" 'org-table-create
+		      "." 'org-time-stamp
+		      "s" 'org-schedule
+		      "d" 'org-deadline
+
+
+		      (which-key-add-key-based-replacements
+			", t" "table")
+		      )
+  ;; (evil-leader/set-key
+  ;;   ":" 'org-set-tags
+  ;;   "RET" 'org-insert-todo-heading
+  ;;   "tc" 'org-table-create
+  ;;   ;; "s" 'org-schedule
+  ;;   ;; "d" 'org-deadline
+
+  ;;   (which-key-add-key-based-replacements
+  ;;     ", t" "table")
+  ;;   )
+
+  (use-package org-journal
+    :ensure t
+    :init
+    (setq org-journal-dir "~/ecode/org/journal/")
+    (setq org-journal-file-format "%Y-%m-%d.org")
+    (defvar org-journal-date-format "%A %d-%m-%Y"
+      "Date format string for journal headings.")
+    (setq org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'")
     )
+
+
   )
 
 

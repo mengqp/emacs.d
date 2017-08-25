@@ -73,19 +73,20 @@ of an error, just add the package to a list of missing packages."
 (require 'init-color-theme)
 
 ;;tool
+(require 'init-calendar)
 (require 'init-hungry-delete)
 (require 'init-smartparens)
 (require 'init-evil)
 (require 'init-company)
-(require 'init-smex)
+;; (require 'init-smex)
 (require 'init-window-numbering)
 (require 'init-ivy)
 ;; (require 'init-popwin)
 (require 'init-projectile)
 (require 'init-yasnippet)
-(when *linux*
-(require 'init-ycmd)
-  )
+;; (when *linux*
+;; (require 'init-ycmd)
+;;   )
 (require 'init-flycheck)
 (require 'init-ace-jump)
 (require 'init-git)
