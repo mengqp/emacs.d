@@ -112,7 +112,7 @@
 	 ;; "sj" 'mengqp/helm-jump-in-buffer
 	 "sj" 'counsel-imenu
 	 ;; "ss" 'mengqp/helm-file-smart-do-search
-	 ;; "ss" 'swiper
+	 "ss" 'swiper
 	 "sS" 'ivy-resume
 
 	 "yy" 'helm-yas-complete

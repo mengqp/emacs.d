@@ -197,15 +197,15 @@
   ;;     ", t" "table")
   ;;   )
 
-  (use-package org-journal
-    :ensure t
-    :init
-    (setq org-journal-dir "~/ecode/org/journal/")
-    (setq org-journal-file-format "%Y-%m-%d.org")
-    (defvar org-journal-date-format "%A %d-%m-%Y"
-      "Date format string for journal headings.")
-    (setq org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'")
-    )
+  ;; (use-package org-journal
+  ;;   :ensure t
+  ;;   :init
+  ;;   (setq org-journal-dir "~/ecode/org/journal/")
+  ;;   (setq org-journal-file-format "%Y-%m-%d.org")
+  ;;   (defvar org-journal-date-format "%A %d-%m-%Y"
+  ;;     "Date format string for journal headings.")
+  ;;   (setq org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'")
+  ;;   )
 
 
   )

@@ -25,8 +25,8 @@
 ;; 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 
 ;; (fullscreen)
-(setq default-buffer-file-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
+;; (setq default-buffer-file-coding-system 'utf-8)
+;; (prefer-coding-system 'utf-8)
 
 ;;不产生备份
 (setq make-backup-files nil)

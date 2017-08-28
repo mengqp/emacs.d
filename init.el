@@ -73,7 +73,7 @@ of an error, just add the package to a list of missing packages."
 (require 'init-color-theme)
 
 ;;tool
-(require 'init-calendar)
+;; (require 'init-calendar)
 (require 'init-hungry-delete)
 (require 'init-smartparens)
 (require 'init-evil)
