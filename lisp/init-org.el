@@ -181,6 +181,10 @@
 		      "." 'org-time-stamp
 		      "s" 'org-schedule
 		      "d" 'org-deadline
+		      (when *win64*
+			"mp" 'org-mobile-push
+			"mg" 'org-mobile-pull
+			)
 
 
 		      (which-key-add-key-based-replacements

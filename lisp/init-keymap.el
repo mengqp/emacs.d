@@ -44,6 +44,7 @@
 	 "pf" 'counsel-projectile-find-file
 	 "pd" 'counsel-projectile-find-dir
 	 "pb" 'counsel-projectile-switch-to-buffer
+	 "pp" 'projectile-switch-project
 
 	 "qq" 'save-buffers-kill-emacs
 
