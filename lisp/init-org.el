@@ -171,7 +171,8 @@
 		      "t" 'org-todo
 
 		      )
-
+  (autoload 'org-mobile-pull "org-mobile" "" t)
+  (autoload 'org-mobile-push "org-mobile" "" t)
   (general-define-key :states '(normal motion)
 		      :keymaps '(org-mode-map)
 		      :prefix ","
@@ -181,10 +182,8 @@
 		      "." 'org-time-stamp
 		      "s" 'org-schedule
 		      "d" 'org-deadline
-		      (when *win64*
-			"mp" 'org-mobile-push
-			"mg" 'org-mobile-pull
-			)
+		      "mp" 'org-mobile-push
+		      "mg" 'org-mobile-pull
 
 
 		      (which-key-add-key-based-replacements
@@ -197,6 +196,13 @@
     (setq org-mobile-directory "E:/Nutstore/org")
     ;; 同步到本地电脑的坚果云专用目录
     (setq org-mobile-inbox-for-pull "E:/Nutstore/org/index.org")
+    (general-define-key :states '(normal motion)
+			:keymaps '(org-mode-map)
+			:prefix ","
+			"mp" 'org-mobile-push
+			"mg" 'org-mobile-pull
+			)
+
     )
 
   ;; (use-package org-journal
