@@ -186,16 +186,12 @@
 		      (which-key-add-key-based-replacements
 			", t" "table")
 		      )
-  ;; (evil-leader/set-key
-  ;;   ":" 'org-set-tags
-  ;;   "RET" 'org-insert-todo-heading
-  ;;   "tc" 'org-table-create
-  ;;   ;; "s" 'org-schedule
-  ;;   ;; "d" 'org-deadline
 
-  ;;   (which-key-add-key-based-replacements
-  ;;     ", t" "table")
-  ;;   )
+  (when *win64*
+      (setq org-mobile-directory "E:\Nutstore\org")
+    ;; 同步到本地电脑的坚果云专用目录
+      (setq org-mobile-inbox-for-pull "E:\Nutstore\org\index.org")
+    )
 
   ;; (use-package org-journal
   ;;   :ensure t

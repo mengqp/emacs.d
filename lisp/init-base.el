@@ -19,12 +19,14 @@
 (if (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 
-;; (defun fullscreen ()
-;;   (interactive)
-;;   (set-frame-parameter nil 'fullscreen
-;; 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+(defun fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen
+		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 
-;; (fullscreen)
+(when *linux*
+  (fullscreen)
+  )
 ;; (setq default-buffer-file-coding-system 'utf-8)
 ;; (prefer-coding-system 'utf-8)
 
@@ -133,5 +135,22 @@
 
   )
 ;; (require 'expand-region)
+
+;; (add-hook 'after-init-hook 'org-agenda)
+;; (add-hook 'after-init-hook
+;; 	  (lambda ()
+;; 	    (setq org-agenda-window-setup 'current-window)
+;; 	    (org-agenda nil "a")
+;; 	    ))
+
+;; (use-package dashboard
+;;     :ensure t
+;;     :diminish dashboard-mode
+;;     :config
+;;     (setq dashboard-banner-logo-title "mengqp")
+;;     (setq dashboard-startup-banner "~/DotFiles/mengqp-arch.jpg")
+;;     (setq dashboard-items '((agenda . 20)))
+
+;;     (dashboard-setup-startup-hook))
 
 (provide 'init-base)
