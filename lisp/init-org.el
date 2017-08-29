@@ -188,9 +188,11 @@
 		      )
 
   (when *win64*
-      (setq org-mobile-directory "E:\Nutstore\org")
+    (message "org-dic")
+    (setq org-directory "~/ecode/org")
+    (setq org-mobile-directory "E:/Nutstore/org")
     ;; 同步到本地电脑的坚果云专用目录
-      (setq org-mobile-inbox-for-pull "E:\Nutstore\org\index.org")
+    (setq org-mobile-inbox-for-pull "E:/Nutstore/org/index.org")
     )
 
   ;; (use-package org-journal
