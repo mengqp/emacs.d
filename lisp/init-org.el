@@ -31,7 +31,6 @@
   ;; 设置agent文件表
   (when *linux*
     (setq org-agenda-files (list "~/ecode/em770/readme.org"
-				 "~/ecode/epduhmi/readme.org"
 				 "~/ecode/em761/readme.org"
 				 "~/ecode/epduhmi/3352/asrc/readme.org"
 				 "~/ecode/epduhmi/3352/dsrc/readme.org"
@@ -40,7 +39,11 @@
     )
 
   (when *win64*
-    (setq org-agenda-files (list "~/ecode/org/"
+    (setq org-agenda-files (list "E:/svn/org"
+				 "E:/svn/em761/readme.org"
+				 "E:/svn/epduhmi/3352/asrc/readme.org"
+				 "E:/svn/epduhmi/3352/dsrc/readme.org"
+				 "E:/svn/em770/readme.org"
 				 ))
     )
 
