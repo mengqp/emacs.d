@@ -15,6 +15,7 @@
 (use-package git-gutter
   :ensure t
   :defer t
+  :diminish git-gutter-mode
   :init
   (add-hook 'c-mode-hook 'git-gutter-mode)
   (add-hook 'c++-mode-hook 'git-gutter-mode)

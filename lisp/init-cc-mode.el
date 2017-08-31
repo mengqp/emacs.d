@@ -45,6 +45,7 @@
 (use-package ycmd
   :ensure t
   :defer t
+  :diminish ycmd-mode
   :init
   (add-hook 'c++-mode-hook 'ycmd-mode)
   (add-hook 'c-mode-hook 'ycmd-mode)

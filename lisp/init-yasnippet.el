@@ -3,6 +3,7 @@
 (use-package yasnippet
   :ensure t
   :defer t
+  :diminish yas-minor-mode
   :init
   (progn
     (add-hook 'org-mode-hook #'yas-minor-mode)

@@ -1,20 +1,24 @@
-;; ;; @see http://emacs-fu.blogspot.com/2011/08/customizing-mode-line.html
-;; ;; But I need global-mode-string,
-;; ;; @see http://www.delorie.com/gnu/docs/elisp-manual-21/elisp_360.html
-;; ;; use setq-default to set it for /all/ modes
-;; (defun zilongshanren/update-persp-name ()
-;;   (when (bound-and-true-p persp-mode)
-;;     ;; There are multiple implementations of
-;;     ;; persp-mode with different APIs
-;;     (progn
-;;            (or (not (string= persp-nil-name (safe-persp-name (get-frame-persp))))
-;;                "Default")
-;;            (let ((name (safe-persp-name (get-frame-persp))))
-;;              (propertize (concat "[" name "] ")
-;;                          'face 'font-lock-preprocessor-face
-;;                          'help-echo "Current Layout name.")))))
+
+;; (use-package smart-mode-line
+;;   :ensure t
+;;   :init
+;;   (setq sml/theme 'dark)
+;;   (setq sml/no-confirm-load-theme t)
+;;   :config
+;;   (sml/setup)
+;;   )
 
 
+(defun mengqp/simplify-major-mode-name ()
+  "Return simplifyed major mode name"
+  (let* ((major-name (format-mode-line "%m"))
+         (replace-table '(Emacs-Lisp "Lisp"
+                                     Shell ">"
+                                     Org "Org"
+                                     ))
+         (replace-name (plist-get replace-table (intern major-name))))
+    (if replace-name replace-name major-name
+        )))
 ;; (defun spaceline--unicode-number (str)
 ;;   "Return a nice unicode representation of a single-digit number STR."
 ;;   (cond
@@ -80,25 +84,25 @@
 	   (throw 'break (default-value 'evil-shift-width)))))
     (concat "TS:" (int-to-string (or mode-indent-level 0)))))
 
-(require 'flycheck)
-(setq my-flycheck-mode-line
-      '(:eval
-	(pcase flycheck-last-status-change
-	  ((\` not-checked) nil)
-	  ((\` no-checker) (propertize " -" 'face 'warning))
-	  ((\` running) (propertize " ✷" 'face 'success))
-	  ((\` errored) (propertize " !" 'face 'error))
-	  ((\` finished)
-	   (let* ((error-counts (flycheck-count-errors flycheck-current-errors))
-		  (no-errors (cdr (assq 'error error-counts)))
-		  (no-warnings (cdr (assq 'warning error-counts)))
-		  (face (cond (no-errors 'error)
-			      (no-warnings 'warning)
-			      (t 'success))))
-	     (propertize (format "[%s/%s]" (or no-errors 0) (or no-warnings 0))
-			 'face face)))
-	  ((\` interrupted) " -")
-	  ((\` suspicious) '(propertize " ?" 'face 'warning)))))
+;; (require 'flycheck)
+;; (setq my-flycheck-mode-line
+;;       '(:eval
+;; 	(pcase flycheck-last-status-change
+;; 	  ((\` not-checked) nil)
+;; 	  ((\` no-checker) (propertize " -" 'face 'warning))
+;; 	  ((\` running) (propertize " ✷" 'face 'success))
+;; 	  ((\` errored) (propertize " !" 'face 'error))
+;; 	  ((\` finished)
+;; 	   (let* ((error-counts (flycheck-count-errors flycheck-current-errors))
+;; 		  (no-errors (cdr (assq 'error error-counts)))
+;; 		  (no-warnings (cdr (assq 'warning error-counts)))
+;; 		  (face (cond (no-errors 'error)
+;; 			      (no-warnings 'warning)
+;; 			      (t 'success))))
+;; 	     (propertize (format "[%s/%s]" (or no-errors 0) (or no-warnings 0))
+;; 			 'face face)))
+;; 	  ((\` interrupted) " -")
+;; 	  ((\` suspicious) '(propertize " ?" 'face 'warning)))))
 
 (setq-default mode-line-misc-info
 	      (assq-delete-all 'which-func-mode mode-line-misc-info))
@@ -113,62 +117,70 @@
 	       ;; " "
 	       ;; '(:eval (zilongshanren/update-persp-name))
 
+	       ;; evil state
+	       '(:eval evil-mode-line-tag)
+
 	       ;; "%1 "
 	       ;; the buffer name; the file name as a tool tip
-	       '(:eval (propertize "%b " 'face 'font-lock-keyword-face
+	       ;; evil state
+	       "["
+	       '(:eval (propertize "%b" 'face 'font-lock-keyword-face
 				   'help-echo (buffer-file-name)))
 
-
-	       " [" ;; insert vs overwrite mode, input-method in a tooltip
-	       '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
-				   'face 'font-lock-preprocessor-face
-				   'help-echo (concat "Buffer is in "
-						      (if overwrite-mode
-							  "overwrite"
-							"insert") " mode")))
-
-	       ;; was this buffer modified since the last save?
-	       '(:eval (when (buffer-modified-p)
-			 (concat "," (propertize "Mod"
-						 'face 'font-lock-warning-face
-						 'help-echo "Buffer has been modified"))))
-
-	       ;; is this buffer read-only?
-	       '(:eval (when buffer-read-only
-			 (concat "," (propertize "RO"
-						 'face 'font-lock-type-face
-						 'help-echo "Buffer is read-only"))))
+	       ;; line and column
+	       ":" ;; '%02' to set to 2 chars at least; prevents flickering
+	       (propertize "%l" 'face 'font-lock-type-face)
 	       "] "
+	       ;; ","
+	       ;; (propertize "%02c" 'face 'font-lock-type-face)
+	       ;; ") "
+
+
+	       ;; " [" ;; insert vs overwrite mode, input-method in a tooltip
+	       ;; '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
+	       ;; 			   'face 'font-lock-preprocessor-face
+	       ;; 			   'help-echo (concat "Buffer is in "
+	       ;; 					      (if overwrite-mode
+	       ;; 						  "overwrite"
+	       ;; 						"insert") " mode")))
+
+	       ;; ;; was this buffer modified since the last save?
+	       ;; '(:eval (when (buffer-modified-p)
+	       ;; 		 (concat "," (propertize "Mod"
+	       ;; 					 'face 'font-lock-warning-face
+	       ;; 					 'help-echo "Buffer has been modified"))))
+
+	       ;; ;; is this buffer read-only?
+	       ;; '(:eval (when buffer-read-only
+	       ;; 		 (concat "," (propertize "RO"
+	       ;; 					 'face 'font-lock-type-face
+	       ;; 					 'help-echo "Buffer is read-only"))))
+	       ;; "] "
 
 	       ;; ;; anzu
 	       ;; ;; anzu--mode-line-format
 
 	       ;; relative position, size of file
-	       "["
-	       (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
-	       "/"
-	       (propertize "%I" 'face 'font-lock-constant-face) ;; size
-	       "] "
+	       ;; " ["
+	       ;; ;; (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
+	       ;; ;; "/"
+	       ;; (propertize "%I" 'face 'font-lock-constant-face) ;; size
+	       ;; "] "
 
 	       ;; the current major mode for the buffer.
-	       '(:eval (propertize "%m" 'face 'font-lock-string-face
-				   'help-echo buffer-file-coding-system))
+	       ;; '(:eval (propertize "%m" 'face 'font-lock-string-face
+	       ;; 			   'help-echo buffer-file-coding-system))
+	        '(:eval (propertize (mengqp/simplify-major-mode-name) 'face 'font-lock-string-face
+                      'help-echo buffer-file-coding-system))
 
-	       " -"
-	       '(:eval (when (> (window-width) 80)
-			 (buffer-encoding-abbrev)))
-	       ;; '(:eval (propertize (format "%s" buffer-file-coding-system) 'face 'font-lock-string-face) )
-	       "- "
 
-	       "%1 "
-	       my-flycheck-mode-line
-	       "%1 "
-	       ;; evil state
-	       '(:eval evil-mode-line-tag)
+	       ;; "%1 "
+	       ;; my-flycheck-mode-line
+	       ;; "%1 "
 
 	       ;; minor modes
-	       ;; '(:eval (when (> (window-width) 90)
-	       ;;           minor-mode-alist))
+	       '(:eval (when (> (window-width) 90)
+	                 minor-mode-alist))
 	       " "
 	       ;; git info
 	       '(:eval (when (> (window-width) 120)
@@ -183,14 +195,16 @@
 	       (mode-line-fill 'mode-line 20)
 
 	       ;; '(:eval (mengqp/display-mode-indent-width))
-	       ;; line and column
-	       " (" ;; '%02' to set to 2 chars at least; prevents flickering
-	       (propertize "%02l" 'face 'font-lock-type-face) ","
-	       (propertize "%02c" 'face 'font-lock-type-face)
-	       ") "
 
 
 	       mode-line-end-spaces
+
+	       " "
+	       '(:eval (when (> (window-width) 80)
+			 (buffer-encoding-abbrev)))
+	       ;; '(:eval (propertize (format "%s" buffer-file-coding-system) 'face 'font-lock-string-face) )
+	       " "
+
 	       ;; add the time, with the date and the emacs uptime in the tooltip
 	       '(:eval (propertize (format-time-string "%H:%M")
 				   'help-echo

@@ -1,6 +1,7 @@
 
 (use-package smartparens
   :ensure t
+  :diminish smartparens-mode
   :config
   ;; enable the default configuration
   (use-package smartparens-config)

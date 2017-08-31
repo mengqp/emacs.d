@@ -50,13 +50,13 @@
   (setq org-capture-templates
 	'(
 	  ("j" "Journal 日常工作记录" entry (file+datetree "~/ecode/org/journal.org")
-	   "*  %? \nEntered on %U\n %i\n ")
+	   "*  %? \n %i\n ")
 	  ("t" "Todo gdt" entry (file+headline "~/ecode/org/gtd.org" "Tasks")
 	   "* TODO [#B] %? \n %i\n %a")
 	  ("m" "meet 会议记录" entry (file+datetree "~/ecode/org/meet.org")
-	   "* %? \nEntered on %U\n %i\n ")
+	   "* %? \n %i\n ")
 	  ("M" "memo 备忘 加班记录等" entry (file+datetree "~/ecode/org/memo.org")
-	   "* %? \nEntered on %U\n %i\n ")
+	   "* %?  %i\n ")
 	  ))
 
   (setq org-refile-targets (quote ((nil :maxlevel . 9)

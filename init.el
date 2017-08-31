@@ -4,52 +4,49 @@
 ;; don't GC during startup to save time
 (setq gc-cons-threshold most-positive-fixnum)
 
+(setq emacs-load-start-time (current-time))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
 (setq *linux* (eq system-type 'gnu/linux) )
 (setq *win64* (eq system-type 'windows-nt) )
 
 
-(setq emacs-load-start-time (current-time))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
+;; ;; Function to collect information of packages.
+;; (defvar missing-packages-list nil
+;;   "List of packages that `try-require' can't find.")
 
- ;; Function to collect information of packages.
-(defvar missing-packages-list nil
-  "List of packages that `try-require' can't find.")
+;; (defvar package-init-statistic nil "Package loading statistics")
 
-(defvar package-init-statistic nil "Package loading statistics")
-
-;; attempt to load a feature/library, failing silently
-(defun try-require (feature &optional click)
-  "Attempt to load a library or module. Return true if the
-library given as argument is successfully loaded. If not, instead
-of an error, just add the package to a list of missing packages."
-  (condition-case err
-      ;; protected form
-      (let ((timestamp (current-time))
-            (package (if (stringp feature) feature (symbol-name feature))))
-        (if (stringp feature)
-            (load-library feature)
-          (require feature))
-        (if click
-            (add-to-list 'package-init-statistic
-                         (cons (if (stringp feature) feature (symbol-name feature))
-                               (float-time (time-since timestamp)))))
-        (message "Checking for library `%s'... Found, cost %.2f seconds"
-                 feature (float-time (time-since timestamp))))
-    ;; error handler
-    (file-error  ; condition
-     (progn
-       (message "Checking for library `%s'... Missing" feature)
-       (add-to-list 'missing-packages-list feature 'append))
-     nil)))
+;; ;; attempt to load a feature/library, failing silently
+;; (defun try-require (feature &optional click)
+;;   "Attempt to load a library or module. Return true if the
+;; library given as argument is successfully loaded. If not, instead
+;; of an error, just add the package to a list of missing packages."
+;;   (condition-case err
+;;       ;; protected form
+;;       (let ((timestamp (current-time))
+;;             (package (if (stringp feature) feature (symbol-name feature))))
+;;         (if (stringp feature)
+;;             (load-library feature)
+;;           (require feature))
+;;         (if click
+;;             (add-to-list 'package-init-statistic
+;;                          (cons (if (stringp feature) feature (symbol-name feature))
+;;                                (float-time (time-since timestamp)))))
+;;         (message "Checking for library `%s'... Found, cost %.2f seconds"
+;;                  feature (float-time (time-since timestamp))))
+;;     ;; error handler
+;;     (file-error  ; condition
+;;      (progn
+;;        (message "Checking for library `%s'... Missing" feature)
+;;        (add-to-list 'missing-packages-list feature 'append))
+;;      nil)))
 
 ;; *Message* buffer should be writable in 24.4+
 (defadvice switch-to-buffer (after switch-to-buffer-after-hack activate)
   (if (string= "*Messages*" (buffer-name))
       (read-only-mode -1)))
 
-;; open debug when "C-g"
- ;; (setq debug-on-quit t)
 
 (package-initialize)
 
@@ -78,15 +75,10 @@ of an error, just add the package to a list of missing packages."
 (require 'init-smartparens)
 (require 'init-evil)
 (require 'init-company)
-;; (require 'init-smex)
 (require 'init-window-numbering)
 (require 'init-ivy)
-;; (require 'init-popwin)
 (require 'init-projectile)
 (require 'init-yasnippet)
-;; (when *linux*
-;; (require 'init-ycmd)
-;;   )
 (require 'init-flycheck)
 (require 'init-ace-jump)
 (require 'init-git)

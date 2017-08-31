@@ -3,6 +3,7 @@
 (use-package company
   :ensure t
   :defer t
+  :diminish company-mode
   :init
   (add-hook 'after-init-hook 'global-company-mode)
   ;; 设置等待时间
