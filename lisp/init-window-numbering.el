@@ -31,6 +31,12 @@
   	  (equal (buffer-name) "*scratch*"))) ;when return t, run auto switch
   (setq switch-window-default-window-size '(0.8 . 0.6)) ;80% width and 60% height of frame
   (setq switch-window-input-style 'minibuffer)
+  :config
+  (use-package golden-ratio
+    :ensure t
+    :config
+    (golden-ratio-mode 1)
+    )
   )
 
 (provide 'init-window-numbering)

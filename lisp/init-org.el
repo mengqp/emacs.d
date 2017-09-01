@@ -62,11 +62,11 @@
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
 				   (org-agenda-files :maxlevel . 9))))
 
-  (use-package org-projectile
-    :config
-    (org-projectile:per-repo)
-    (setq org-projectile:per-repo-filename "readme.org")
-    )
+  ;; (use-package org-projectile
+  ;;   :config
+  ;;   (org-projectile:per-repo)
+  ;;   (setq org-projectile:per-repo-filename "readme.org")
+  ;;   )
   ;; (setq org-agenda-files (append org-agenda-files (org-projectile:todo-files)))
   ;; (global-set-key (kbd "C-c c") 'org-capture)
   ;; (global-set-key (kbd "C-c n p") 'org-projectile:project-todo-completing-read)

@@ -36,6 +36,7 @@ But you may use safer HTTPS instead.")
 
 (require-package 'use-package)
 (require-package 'general)
+(require-package 'diminish)
 
 (require-package 'color-theme)
 (require-package 'color-theme-solarized)
@@ -106,7 +107,6 @@ But you may use safer HTTPS instead.")
 (require-package 'popwin)
 (require-package 'powerline)
 (require-package 'spaceline)
-(require-package 'diminish)
 
 
 
