@@ -37,14 +37,14 @@
     (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
     )
 
-  ;;
-  (use-package evil-leader
-    :ensure t
-    :diminish evil-leader-mode
-    :init
-    (global-evil-leader-mode)
-    (evil-leader/set-leader ",")
-    )
+  ;; ;;
+  ;; (use-package evil-leader
+  ;;   :ensure t
+  ;;   :diminish evil-leader-mode
+  ;;   :init
+  ;;   (global-evil-leader-mode)
+  ;;   (evil-leader/set-leader ",")
+  ;;   )
 
   (use-package evil-visualstar
     :ensure t

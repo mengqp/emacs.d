@@ -72,6 +72,8 @@
 	 "bc" 'set-buffer-file-coding-system
 	 "bs" 'save-buffer
 
+	 "cc" 'evil-save-and-close
+
 	 ;; "eb" 'eval-buffer
 	 ;; "ee" 'eval-expression
 	 ;; "el" 'mengqp/toggle-flycheck-error-list
@@ -105,6 +107,7 @@
 	 "l RET" 'toggle-truncate-lines
 
 	 "mk" 'bookmark-set
+	 "md" 'bookmark-delete
 	 "mm" 'counsel-bookmark
 
 
