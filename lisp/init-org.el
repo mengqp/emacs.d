@@ -185,12 +185,27 @@
 		      "." 'org-time-stamp
 		      "s" 'org-schedule
 		      "d" 'org-deadline
-		      "mp" 'org-mobile-push
-		      "mg" 'org-mobile-pull
+		      ;; "mp" 'org-mobile-push
+		      ;; "mg" 'org-mobile-pull
+		      "cc" 'org-ctrl-c-ctrl-c
+		      "ck" 'org-kill-note-or-show-branches
 
+		      (which-key-add-key-based-replacements
+			", c" "note")
 
 		      (which-key-add-key-based-replacements
 			", t" "table")
+		      )
+
+  (general-define-key :states '(normal motion)
+		      :keymaps '(org-capture-mode-map)
+		      :prefix ","
+		      "cc" 'org-capture-finalize
+		      "ck" 'org-capture-kill
+		      "cw" 'org-capture-refile
+
+		      (which-key-add-key-based-replacements
+			", c" "capture")
 		      )
 
   (when *win64*
