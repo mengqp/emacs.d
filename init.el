@@ -68,6 +68,7 @@
 (require 'init-base)
 (require 'init-modeline)
 (require 'init-color-theme)
+(require 'init-pyim)
 
 ;;tool
 ;; (require 'init-calendar)
