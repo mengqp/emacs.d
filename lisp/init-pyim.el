@@ -35,7 +35,7 @@
   ;; (pyim-isearch-mode 1)
 
   ;; 使用 pupup-el 来绘制选词框
-  (setq pyim-page-tooltip 'popup)
+  (setq pyim-page-tooltip 'pos-tip)
 
   ;; 选词框显示5个候选词
   (setq pyim-page-length 5)
