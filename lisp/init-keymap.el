@@ -72,11 +72,11 @@
 	 "bc" 'set-buffer-file-coding-system
 	 "bs" 'save-buffer
 
-	 "eb" 'eval-buffer
-	 "ee" 'eval-expression
-	 "el" 'mengqp/toggle-flycheck-error-list
-	 "en" 'flycheck-next-error
-	 "ep" 'flycheck-previous-error
+	 ;; "eb" 'eval-buffer
+	 ;; "ee" 'eval-expression
+	 ;; "el" 'mengqp/toggle-flycheck-error-list
+	 ;; "en" 'flycheck-next-error
+	 ;; "ep" 'flycheck-previous-error
 
 
 	 "fb" 'beginning-of-defun

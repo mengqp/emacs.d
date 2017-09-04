@@ -56,7 +56,7 @@
 
 ;;80列
 ;; (require 'fill-column-indicator)
-(use-package fill-column-indicator
+(use-package fillred-column-indicator
   :defer t
   :init
   (add-hook 'prog-mode-hook 'fci-mode)
@@ -86,16 +86,26 @@
   )
 
 
+(use-package recentf
+  :ensure nil
+  :init
+  (setq recentf-max-saved-items 200)
+
+  ;; lazy load recentf
+  ;; (add-hook 'after-init-hook 'recentf-mode)
+  (add-hook 'find-file-hook (lambda () (unless recentf-mode
+					 (recentf-mode)
+					 (recentf-track-opened-file))))
+  :config
+  (add-to-list 'recentf-exclude (expand-file-name package-user-dir))
+  (add-to-list 'recentf-exclude "COMMIT_EDITMSG\\'"))
+
+
 ;;在minibuffer里启用自动补全函数和变量
 (icomplete-mode 1)
 ;;允许minibuffer自由变化其宽度大小
 (setq resize-mini-windows t)
 
-
-;; 最近的文件
-;; (require 'recentf)
-;; (recentf-mode 1)
-;; (setq recentf-max-menu-items 1000)
 
 ;; 清楚白块
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -123,19 +133,17 @@
 
 
 (use-package savehist
-    :init
-    (progn
-      ;; Minibuffer history
-      (setq savehist-file (concat "~/.emacs.d/" "savehist")
-            enable-recursive-minibuffers t ; Allow commands in minibuffers
-            history-length 1000
-            savehist-additional-variables '(mark-ring
-                                            global-mark-ring
-                                            search-ring
-                                            regexp-search-ring
-                                            extended-command-history)
-            savehist-autosave-interval 60)
-      (savehist-mode t)))
+  :ensure nil
+  :init
+  (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
+        history-length 1000
+        savehist-additional-variables '(mark-ring
+                                        global-mark-ring
+                                        search-ring
+                                        regexp-search-ring
+                                        extended-command-history)
+        savehist-autosave-interval 60)
+  (add-hook 'after-init-hook 'savehist-mode))
 
 
 ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/

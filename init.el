@@ -89,7 +89,8 @@
 ;; (require 'init-shell)
 
 ;;
-(require 'init-cc-mode)
+(require 'init-c)
+(require 'init-lisp)
 (require 'init-org)
 
 

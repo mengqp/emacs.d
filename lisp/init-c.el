@@ -1,4 +1,4 @@
-;;; init-cc-mode.el --- 关于c和c++的配置
+;;; init-c.el --- 关于c和c++的配置
 
 ;; (setq init-cc-mode-hook '(c-mode-hook
 ;; 		     c++-mode-hook
@@ -38,6 +38,7 @@
 (use-package aggressive-indent
   :ensure t
   :defer t
+  :diminish aggressive-indent-mode
   :init
   (add-hook 'c-mode-hook #'aggressive-indent-mode)
   (add-hook 'c++-mode-hook #'aggressive-indent-mode)
@@ -45,6 +46,7 @@
 
 (use-package highlight-parentheses
   :ensure t
+  :diminish highlight-parentheses-mode
   :init
   (add-hook 'c-mode-hook #'highlight-parentheses-mode)
   (add-hook 'c++-mode-hook #'highlight-parentheses-mode)
@@ -94,9 +96,15 @@
 		    "gi" 'cscope-index-files
 		    "ga" 'projectile-find-other-file
 		    "gA" 'projectile-find-other-file-other-window
+		    "el" 'mengqp/toggle-flycheck-error-list
+		    "en" 'flycheck-next-error
+		    "ep" 'flycheck-previous-error
 
 		    (which-key-add-key-based-replacements
 		      ", g" "goto")
+
+		    (which-key-add-key-based-replacements
+		      ", e" "error")
                     )
 
   )
@@ -154,4 +162,4 @@
 
 
 
-(provide 'init-cc-mode)
+(provide 'init-c)
