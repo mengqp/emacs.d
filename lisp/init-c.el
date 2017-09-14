@@ -77,6 +77,7 @@
     :ensure t
     :config
     (company-ycmd-setup)
+    (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
     )
   (use-package flycheck-ycmd
     :ensure t

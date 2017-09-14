@@ -9,7 +9,7 @@
   ;; 设置等待时间
   (setq company-idle-delay 0.08)
   ;; 补全起始长度
-  (setq company-minimum-prefix-length 2)
+  (setq company-minimum-prefix-length 1)
 
   :config
   (global-company-mode t)
