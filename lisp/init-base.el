@@ -43,7 +43,11 @@
 (show-paren-mode t)
 
 ;;文件在改变时自动加载
-(global-auto-revert-mode t)
+(use-package autorevert
+  :diminish auto-revert-mode
+  :config
+  (global-auto-revert-mode t)
+  )
 
 ;; 以 y/n代表 yes/no
 (fset 'yes-or-no-p 'y-or-n-p)

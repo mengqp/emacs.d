@@ -9,6 +9,8 @@
 	 "TAB" 'previous-buffer
 	 "." 'counsel-projectile-find-file
 
+	 "ac" 'calc
+
 	 ;; "1" 'select-window-1
 	 ;; "2" 'select-window-2
 	 ;; "3" 'select-window-3

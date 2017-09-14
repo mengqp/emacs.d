@@ -166,6 +166,11 @@
     (insert (number-to-string num))
     )
 
+  (use-package org-mind-map
+    :defer t
+    :ensure t
+    )
+
   ;; (define-key evil-normal-state-map (kbd "T") 'mengqp/evil-org-insert-todo-at-end)
   ;; (define-key evil-normal-state-map (kbd "t") 'org-todo)
   (general-define-key :states '(normal motion)
