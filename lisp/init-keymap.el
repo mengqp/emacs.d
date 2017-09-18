@@ -2,6 +2,7 @@
   :ensure t
   :init
   :config
+
   (general-evil-setup t)
   ;; 全局
   (nvmap :prefix "SPC"

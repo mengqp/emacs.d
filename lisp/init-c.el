@@ -35,23 +35,23 @@
     )
   )
 
-(use-package aggressive-indent
-  :ensure t
-  :defer t
-  :diminish aggressive-indent-mode
-  :init
-  (add-hook 'c-mode-hook #'aggressive-indent-mode)
-  (add-hook 'c++-mode-hook #'aggressive-indent-mode)
-  )
+;; (use-package aggressive-indent
+;;   :ensure t
+;;   :defer t
+;;   :diminish aggressive-indent-mode
+;;   :init
+;;   (add-hook 'c-mode-hook #'aggressive-indent-mode)
+;;   (add-hook 'c++-mode-hook #'aggressive-indent-mode)
+;;   )
 
-(use-package highlight-parentheses
-  :ensure t
-  :diminish highlight-parentheses-mode
-  :init
-  (add-hook 'c-mode-hook #'highlight-parentheses-mode)
-  (add-hook 'c++-mode-hook #'highlight-parentheses-mode)
+;; (use-package highlight-parentheses
+;;   :ensure t
+;;   :diminish highlight-parentheses-mode
+;;   :init
+;;   (add-hook 'c-mode-hook #'highlight-parentheses-mode)
+;;   (add-hook 'c++-mode-hook #'highlight-parentheses-mode)
 
-  )
+;;   )
 
 
 (use-package xcscope

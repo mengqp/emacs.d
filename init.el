@@ -68,7 +68,8 @@
 (require 'init-base)
 (require 'init-modeline)
 (require 'init-color-theme)
-(require 'init-pyim)
+;; 去掉中文的输入，如果有必要，直接使用
+;; (require 'init-pyim)
 
 ;;tool
 ;; (require 'init-calendar)
