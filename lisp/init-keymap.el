@@ -9,6 +9,7 @@
 	 "SPC" 'counsel-M-x
 	 "TAB" 'previous-buffer
 	 "." 'counsel-projectile-find-file
+	 "," 'switch-window
 
 	 "ac" 'calc
 

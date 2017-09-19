@@ -12,7 +12,12 @@
   :init
   :config
   (evil-mode t)
-  ;; (define-key evil-normal-state-map (kbd "C-]") 'helm-cscope-find-this-symbol)
+  (define-key evil-normal-state-map (kbd "t") 'ace-jump-char-mode)
+  ;; (general-define-key :states '(normal motion)
+  ;; 		      :keymaps '(evil-mode-map)
+  ;; 		      "f" 'ace-jump-char-mode
+  ;; 		      )
+
 
   ;;实现代码折叠
   (use-package hideshow
