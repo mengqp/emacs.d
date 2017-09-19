@@ -39,6 +39,7 @@
 	 "fdk" 'mengqp/open-init-keymap-file
 
 	 "gs" 'magit-status
+	 "gb" 'magit-blame
 
 	 "oc" 'org-capture
 	 "oa" 'org-agenda
