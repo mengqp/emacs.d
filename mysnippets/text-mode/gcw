@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: git commit wontfix
+# key: gcw
+# --
+`(magit-get-current-branch)` wontfix $0

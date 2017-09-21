@@ -14,7 +14,7 @@
     )
 
   (setq yas-snippet-dirs
-	'("~/DotFiles/mysnippets"))
+	'("~/.emacs.d/mysnippets"))
 
   :config
   (message "yasnippet")

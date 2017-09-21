@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: ifdefelse
+# key: ifde
+# --
+#ifdef ${1:MACRO}
+
+$2
+#else
+$0
+
+#endif // $1

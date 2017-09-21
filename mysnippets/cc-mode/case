@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name : case : {...}
+# key: case
+# --
+case ${1:constexpr}://${2:comment}
+{
+    $0
+    }
+    break;

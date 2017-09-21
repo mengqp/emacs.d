@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: git commit bug
+# key: gcb
+# --
+`(magit-get-current-branch)` bug $0

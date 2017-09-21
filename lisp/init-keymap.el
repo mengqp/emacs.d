@@ -6,10 +6,10 @@
   (general-evil-setup t)
   ;; 全局
   (nvmap :prefix "SPC"
-	 "SPC" 'counsel-M-x
+	 "SPC" 'switch-window
 	 "TAB" 'previous-buffer
 	 "." 'counsel-projectile-find-file
-	 "," 'switch-window
+	 ":" 'counsel-M-x
 
 	 "ac" 'calc
 

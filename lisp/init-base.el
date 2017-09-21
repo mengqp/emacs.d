@@ -175,6 +175,12 @@
   :defer t
   :diminish abbrev-mode
   )
+
+;; (use-package pomodoro
+;;   :ensure t
+;;   :config
+;;   (pomodoro-add-to-mode-line)
+;;   )
 ;; (require 'expand-region)
 
 ;; (add-hook 'after-init-hook 'org-agenda)

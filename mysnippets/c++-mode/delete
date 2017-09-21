@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: delete
+# key: dl
+# --
+if( NULL != ${1:pointer} )
+{
+    delete $1;
+    $1 = NULL;
+}

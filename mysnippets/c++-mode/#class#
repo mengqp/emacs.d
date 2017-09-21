@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: class
+# key: cls
+# --
+/*******************************************************************************
+*功能描述:
+*******************************************************************************/
+class ${1:C`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}
+{
+public:
+    /* 构造函数 */
+    ${2:explicit} ${1:$(yas/substr yas-text "[^: ]*")}(${3:void});
+    /* 析构函数 */
+    ${4:virtual} ~${1:$(yas/substr yas-text "[^: ]*")}(${5:void});
+};
+$0

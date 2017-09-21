@@ -57,6 +57,8 @@
 	   "* %? \n %i\n ")
 	  ("M" "memo 备忘 加班记录等" entry (file+datetree "~/ecode/org/memo.org")
 	   "* %?  %i\n ")
+	  ("i" "idea 乱七八糟的想法" entry (file+datetree "~/ecode/org/idea.org")
+	   "* %? \n \nEntered on %U\n %i\n ")
 	  ))
 
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
