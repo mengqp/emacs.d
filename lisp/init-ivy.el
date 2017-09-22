@@ -27,7 +27,12 @@
   ;; configure regexp engine.
   (setq ivy-re-builders-alist
 	  ;; allow input not in order
-        '((t   . ivy--regex-ignore-order))))
+        '((t   . ivy--regex-ignore-order)))
+
+  (use-package counsel-projectile
+    :ensure t
+    )
+  )
 
 
 (provide 'init-ivy)

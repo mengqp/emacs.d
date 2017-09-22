@@ -38,106 +38,106 @@ But you may use safer HTTPS instead.")
 (require-package 'general)
 (require-package 'diminish)
 
-(require-package 'color-theme)
-(require-package 'color-theme-solarized)
-(require-package 'monokai-theme)
-(require-package 'zenburn-theme)
-(require-package 'spacemacs-theme)
-(require-package 'color-theme-sanityinc-tomorrow)
-(require-package 'cyberpunk-theme)
+;; (require-package 'color-theme)
+;; (require-package 'color-theme-solarized)
+;; (require-package 'monokai-theme)
+;; (require-package 'zenburn-theme)
+;; (require-package 'spacemacs-theme)
+;; (require-package 'color-theme-sanityinc-tomorrow)
+;; (require-package 'cyberpunk-theme)
 
 ;; (require-package 'chinese-fonts-setup)
-(require-package 'cnfonts)
+;; (require-package 'cnfonts)
 
-(require-package 'linum-relative)
-(require-package 'fill-column-indicator)
-
-
-(require-package 'which-key)
+;; (require-package 'linum-relative)
+;; (require-package 'fill-column-indicator)
 
 
-(require-package 'ivy)
-(require-package 'counsel)
-(require-package 'swiper)
-(require-package 'counsel-projectile)
-(require-package 'ivy-todo)
+;; (require-package 'which-key)
 
 
-(require-package 'helm)
-(require-package 'helm-ag)
-(require-package 'helm-cscope)
-(require-package 'helm-make)
-(require-package 'helm-projectile)
-
-(require-package 'org-pomodoro)
-
-(require-package 'popup)
-(require-package 'expand-region)
-(require-package 'dired+)
+;; (require-package 'ivy)
+;; (require-package 'counsel)
+;; (require-package 'swiper)
+;; (require-package 'counsel-projectile)
+;; (require-package 'ivy-todo)
 
 
-(require-package 'projectile)
-(require-package 'org-projectile)
+;; (require-package 'helm)
+;; (require-package 'helm-ag)
+;; (require-package 'helm-cscope)
+;; (require-package 'helm-make)
+;; (require-package 'helm-projectile)
 
-(require-package 'evil)
-(require-package 'evil-numbers)
-(require-package 'evil-leader)
-(require-package 'evil-visualstar)
-(require-package 'evil-search-highlight-persist)
-(require-package 'evil-matchit)
-(require-package 'evil-org)
-(require-package 'evil-escape)
-(require-package 'evil-nerd-commenter)
+;; (require-package 'org-pomodoro)
 
-(require-package 'xcscope)
-(require-package 'company)
-
-(require-package 'google-c-style)
-(require-package 'smex)
-
-(require-package 'window-numbering)
-
-(require-package 'ace-jump-mode)
-(require-package 'ace-jump-helm-line)
+;; (require-package 'popup)
+;; (require-package 'expand-region)
+;; (require-package 'dired+)
 
 
-(require-package 'smartparens)
-(require-package 'flymake)
-(require-package 'hungry-delete)
-(require-package 'popwin)
-(require-package 'powerline)
-(require-package 'spaceline)
+;; (require-package 'projectile)
+;; (require-package 'org-projectile)
+
+;; (require-package 'evil)
+;; (require-package 'evil-numbers)
+;; (require-package 'evil-leader)
+;; (require-package 'evil-visualstar)
+;; (require-package 'evil-search-highlight-persist)
+;; (require-package 'evil-matchit)
+;; (require-package 'evil-org)
+;; (require-package 'evil-escape)
+;; (require-package 'evil-nerd-commenter)
+
+;; (require-package 'xcscope)
+;; (require-package 'company)
+
+;; (require-package 'google-c-style)
+;; (require-package 'smex)
+
+;; (require-package 'window-numbering)
+
+;; (require-package 'ace-jump-mode)
+;; (require-package 'ace-jump-helm-line)
+
+
+;; (require-package 'smartparens)
+;; (require-package 'flymake)
+;; (require-package 'hungry-delete)
+;; (require-package 'popwin)
+;; (require-package 'powerline)
+;; (require-package 'spaceline)
 
 
 
-(require-package 'yasnippet)
+;; (require-package 'yasnippet)
 
-(require-package 'irony)
-(require-package 'company-irony)
-(require-package 'company-irony-c-headers)
-(require-package 'flycheck-irony)
+;; (require-package 'irony)
+;; (require-package 'company-irony)
+;; (require-package 'company-irony-c-headers)
+;; (require-package 'flycheck-irony)
 
-(require-package 'ycmd)
-(require-package 'company-ycmd)
-(require-package 'flycheck-ycmd)
+;; (require-package 'ycmd)
+;; (require-package 'company-ycmd)
+;; (require-package 'flycheck-ycmd)
 
 
-(require-package 'magit)
-(require-package 'evil-magit)
-(require-package 'git-gutter)
+;; (require-package 'magit)
+;; (require-package 'evil-magit)
+;; (require-package 'git-gutter)
 
-(require-package 'realgud)
-(require-package 'flycheck-package)
-(require-package 'package-lint)
-(require-package 'helm-c-yasnippet)
+;; (require-package 'realgud)
+;; (require-package 'flycheck-package)
+;; (require-package 'package-lint)
+;; (require-package 'helm-c-yasnippet)
 
-(require-package 'persp-mode)
+;; (require-package 'persp-mode)
 
-(require-package 'exec-path-from-shell)
+;; (require-package 'exec-path-from-shell)
 
-(require-package 'multiple-cursors)
-(require-package 'evil-mc)
-(require-package 'switch-window)
+;; (require-package 'multiple-cursors)
+;; (require-package 'evil-mc)
+;; (require-package 'switch-window)
 
 
 (provide 'init-package)

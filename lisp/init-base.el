@@ -61,14 +61,18 @@
 ;;80列
 ;; (require 'fill-column-indicator)
 (use-package fillred-column-indicator
-  :defer t
-  :init
-  (add-hook 'prog-mode-hook 'fci-mode)
-  (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
-  (setq fci-rule-column 80)
-  (setq fci-rule-width 3)
-  (setq fci-rule-color "darkblue")
-
+  ;; :ensure t
+  ;; :defer t
+  :config
+  (use-package fill-column-indicator
+    :defer t
+    :init
+    (add-hook 'prog-mode-hook 'fci-mode)
+    (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
+    (setq fci-rule-column 80)
+    (setq fci-rule-width 3)
+    (setq fci-rule-color "darkblue")
+    )
   )
 
 (use-package all-the-icons
@@ -128,6 +132,7 @@
 (global-set-key (kbd "C-SPC") nil)
 
 (use-package cnfonts
+  :ensure t
   ;; :defer t
   :config
   ;; 让 cnfonts 随着 Emacs 自动生效。

@@ -76,6 +76,10 @@
     :config
     (evil-escape-mode t)
     )
+
+  (use-package evil-mc
+    :ensure t
+    )
   )
 
 
