@@ -39,8 +39,13 @@ If the error list is visible, hide it.  Otherwise, show it."
 	(quit-window nil window)
       (flycheck-list-errors)))
 
-  (eval-after-load 'flycheck
-    '(flycheck-package-setup))
+  (use-package flycheck-package
+    :ensure t
+    :config
+    (flycheck-package-setup)
+    )
+  ;;(eval-after-load 'flycheck
+  ;;  '(flycheck-package-setup))
   ;; (require 'flycheck-pos-tip)
   ;; (with-eval-after-load 'flycheck
   ;;   (flycheck-pos-tip-mode))

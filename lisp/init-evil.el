@@ -80,6 +80,9 @@
   (use-package evil-mc
     :ensure t
     )
+
+  (use-package evil-nerd-commenter
+    :ensure t)
   )
 
 

@@ -68,9 +68,13 @@
 
 
 (use-package xcscope
+  :ensure t
   :defer t
   :config
   (cscope-setup)
+  (use-package helm-cscope
+    :ensure t
+    :defer t)
   )
 
 
