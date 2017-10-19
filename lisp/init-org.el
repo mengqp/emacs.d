@@ -35,6 +35,7 @@
 				 "~/ecode/epduhmi/3352/asrc/readme.org"
 				 "~/ecode/epduhmi/3352/dsrc/readme.org"
 				 "~/ecode/org/"
+				 "~/ecode/pdt/docs/org/issue.org"
 				 ))
     )
 
@@ -44,6 +45,7 @@
 				 "E:/svn/epduhmi/3352/asrc/readme.org"
 				 "E:/svn/epduhmi/3352/dsrc/readme.org"
 				 "E:/svn/em770/readme.org"
+				 "E:/svn/pdt/docs/org/issue.org"
 				 ))
     )
 
