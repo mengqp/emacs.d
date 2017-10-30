@@ -36,6 +36,7 @@
 				 "~/ecode/epduhmi/3352/dsrc/readme.org"
 				 "~/ecode/org/"
 				 "~/ecode/pdt/docs/org/issue.org"
+				 "~/project/zlg/docs/org/issue.org"
 				 ))
     )
 
@@ -46,6 +47,7 @@
 				 "E:/svn/epduhmi/3352/dsrc/readme.org"
 				 "E:/svn/em770/readme.org"
 				 "E:/svn/pdt/docs/org/issue.org"
+				 "F:/项目/zlg/docs/org/issue.org"
 				 ))
     )
 
@@ -181,6 +183,10 @@
 		      :keymaps '(org-mode-map)
 		      "T" 'mengqp/evil-org-insert-todo-at-end
 		      "t" 'org-todo
+		      ">" 'outline-demote
+		      "<" 'outline-promote
+		      "B" 'org-backward-heading-same-level
+		      "F" 'org-forward-heading-same-level
 
 		      )
   (autoload 'org-mobile-pull "org-mobile" "" t)
@@ -188,12 +194,8 @@
   (general-define-key :states '(normal motion)
 		      :keymaps '(org-mode-map)
 		      :prefix ","
-		      ":" 'org-set-tags
 		      "RET" 'org-insert-todo-heading
 		      "tc" 'org-table-create
-		      "." 'org-time-stamp
-		      "s" 'org-schedule
-		      "d" 'org-deadline
 		      ;; "mp" 'org-mobile-push
 		      ;; "mg" 'org-mobile-pull
 		      "cc" 'org-ctrl-c-ctrl-c
@@ -204,6 +206,27 @@
 
 		      (which-key-add-key-based-replacements
 			", t" "table")
+		      )
+
+  (general-define-key :states '(normal motion)
+		      :keymaps '(org-mode-map)
+		      :prefix ";"
+		      "." 'org-time-stamp
+		      ":" 'org-set-tags
+		      "s" 'org-schedule
+		      "d" 'org-deadline
+		      "p" 'outline-previous-visible-heading
+		      "n" 'outline-next-visible-heading
+		      "u" 'outline-up-heading
+		      "-" 'org-ctrl-c-minus
+		      "*" 'org-ctrl-c-start
+		      "h" 'org-metaright
+		      "l" 'org-metaleft
+		      "j" 'org-metaup
+		      "k" 'org-metadown
+		      "w" 'org-refile
+
+
 		      )
 
   (general-define-key :states '(normal motion)

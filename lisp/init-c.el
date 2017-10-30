@@ -94,7 +94,7 @@
     :ensure t
     :config
     (company-ycmd-setup)
-    (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
+    ;; (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
     )
   (use-package flycheck-ycmd
     :ensure t
@@ -114,6 +114,7 @@
 		    "gi" 'cscope-index-files
 		    "ga" 'projectile-find-other-file
 		    "gA" 'projectile-find-other-file-other-window
+		    "gb" 'gdb
 		    "el" 'mengqp/toggle-flycheck-error-list
 		    "en" 'flycheck-next-error
 		    "ep" 'flycheck-previous-error

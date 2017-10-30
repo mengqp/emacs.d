@@ -12,7 +12,17 @@
   :init
   :config
   (evil-mode t)
-  (define-key evil-normal-state-map (kbd "t") 'ace-jump-char-mode)
+  (define-key evil-normal-state-map (kbd "go") 'ace-jump-char-mode)
+  (define-key evil-ex-completion-map (kbd "C-a") 'move-beginning-of-line)
+  (define-key evil-ex-completion-map (kbd "C-b") 'backward-char)
+  (define-key evil-ex-completion-map (kbd "M-p") 'previous-complete-history-element)
+  (define-key evil-ex-completion-map (kbd "M-n") 'next-complete-history-element)
+  (define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
+  (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
+  (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
+
+
+
   ;; (general-define-key :states '(normal motion)
   ;; 		      :keymaps '(evil-mode-map)
   ;; 		      "f" 'ace-jump-char-mode

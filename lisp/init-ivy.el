@@ -11,6 +11,9 @@
 
   ;; (:map ivy-mode-map
   ;;       ("M-x" . counsel-M-x))
+  :init
+  (setq magit-completing-read-function 'ivy-completing-read)
+  (setq projectile-completion-system 'ivy)
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t

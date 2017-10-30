@@ -42,6 +42,8 @@
 	 "gs" 'magit-status
 	 "gb" 'magit-blame
 
+	 "mx" 'counsel-M-x
+
 	 "oc" 'org-capture
 	 "oa" 'org-agenda
 	 "op" 'org-pomodoro
@@ -66,7 +68,7 @@
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
-  ;; 本文件
+  ;; 本文件 侧重基本功能
   (nvmap :prefix ","
 	 ;; ","  'evilnc-comment-or-uncomment-lines
 	 ;; "+" 'evil-numbers/inc-at-pt
@@ -102,6 +104,7 @@
 	 "hf" 'find-function
 	 "hv" 'find-variable
 	 "hm" 'helm-man-woman
+	 "hl" 'highlight-symbol-at-point
 
 	 "jj" 'ace-jump-char-mode
 	 "jc" 'ace-jump-char-mode
@@ -124,6 +127,8 @@
 	 "ss" 'swiper
 	 "sS" 'ivy-resume
 
+	 "ww" 'save-buffer
+
 	 "yy" 'helm-yas-complete
 
 	 ;;"zz" 'paste-from-x-clipboard ; used frequently
@@ -131,7 +136,7 @@
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
-  ;; 本文件
+  ;; 本文件 侧重一些模块功能
   (nvmap :prefix ";"
 	 ";"  'evilnc-comment-or-uncomment-lines
 	 )
