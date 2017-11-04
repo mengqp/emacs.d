@@ -20,6 +20,10 @@
     (setq org-pomodoro-length 25)
     (setq org-pomodoro-format "•%s")
     (setq org-pomodoro-short-break-format "•%s")
+    (setq-default mode-line-format
+              (cons '(pomodoro-mode-line-string pomodoro-mode-line-string)
+                    mode-line-format))
+
     ;; :config
      ;; (add-hook 'org-pomodoro-finished-hook
      ;; 	       (lambda ()
@@ -201,16 +205,9 @@
 		      :prefix ","
 		      "RET" 'org-insert-todo-heading
 		      "tc" 'org-table-create
-		      ;; "mp" 'org-mobile-push
-		      ;; "mg" 'org-mobile-pull
 		      "cc" 'org-ctrl-c-ctrl-c
 		      "ck" 'org-kill-note-or-show-branches
 
-		      ;; (which-key-add-key-based-replacements
-		      ;; 	", c" "note")
-
-		      ;; (which-key-add-key-based-replacements
-		      ;; 	", t" "table")
 		      )
 
   (which-key-add-major-mode-key-based-replacements 'org-mode
