@@ -165,6 +165,8 @@
 	      (assq-delete-all 'which-function-mode mode-line-misc-info))
 
 (use-package expand-region
+  :ensure t
+  :defer t
   :commands er/expand-region
   :init
   (global-set-key (kbd "C-=") 'er/expand-region)
@@ -180,6 +182,13 @@
 (use-package abbrev
   :defer t
   :diminish abbrev-mode
+  )
+
+(use-package dynamic-spaces
+  :ensure t
+  :init
+  (add-hook 'c-mode-common-hook 'dynamic-spaces-mode)
+  (add-hook 'c++-mode-common-hook 'dynamic-spaces-mode)
   )
 
 ;; (use-package pomodoro

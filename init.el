@@ -87,7 +87,7 @@
 (require 'init-mc)
 (require 'init-func)
 (require 'init-keymap)
-(require 'init-which-key)
+;; (require 'init-which-key)
 ;; (require 'init-shell)
 
 ;;

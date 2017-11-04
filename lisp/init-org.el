@@ -7,6 +7,10 @@
   :config
   (message "org")
 
+  (use-package htmlize
+    :ensure t
+    )
+
   (use-package org-pomodoro
     :ensure t
     :defer t
@@ -27,26 +31,28 @@
     )
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
-  (setq org-agenda-files (file-expand-wildcards "~/ecode/org/*.org"))
+  ;; (setq org-agenda-files (file-expand-wildcards "~/ecode/org/*.org"))
   ;; 设置agent文件表
   (when *linux*
     (setq org-agenda-files (list "~/ecode/em770/readme.org"
-				 "~/ecode/em761/readme.org"
+				 "~/ecode/em761/docs/org/issue761.org"
+				 "~/ecode/em761/docs/org/disscuss761.org"
 				 "~/ecode/epduhmi/3352/asrc/readme.org"
 				 "~/ecode/epduhmi/3352/dsrc/readme.org"
 				 "~/ecode/org/"
-				 "~/ecode/pdt/docs/org/issue.org"
+				 "~/ecode/pdt/docs/org/issuepdt.org"
 				 "~/project/zlg/docs/org/issue.org"
 				 ))
     )
 
   (when *win64*
     (setq org-agenda-files (list "E:/svn/org"
-				 "E:/svn/em761/readme.org"
+				 "E:/svn/em761/docs/org/issue761.org"
+				 "E:/svn/em761/docs/org/disscuss761.org"
 				 "E:/svn/epduhmi/3352/asrc/readme.org"
 				 "E:/svn/epduhmi/3352/dsrc/readme.org"
 				 "E:/svn/em770/readme.org"
-				 "E:/svn/pdt/docs/org/issue.org"
+				 "E:/svn/pdt/docs/org/issuepdt.org"
 				 "F:/项目/zlg/docs/org/issue.org"
 				 ))
     )
@@ -187,10 +193,9 @@
 		      "<" 'outline-promote
 		      "B" 'org-backward-heading-same-level
 		      "F" 'org-forward-heading-same-level
-
 		      )
-  (autoload 'org-mobile-pull "org-mobile" "" t)
-  (autoload 'org-mobile-push "org-mobile" "" t)
+
+
   (general-define-key :states '(normal motion)
 		      :keymaps '(org-mode-map)
 		      :prefix ","
@@ -201,12 +206,16 @@
 		      "cc" 'org-ctrl-c-ctrl-c
 		      "ck" 'org-kill-note-or-show-branches
 
-		      (which-key-add-key-based-replacements
-			", c" "note")
+		      ;; (which-key-add-key-based-replacements
+		      ;; 	", c" "note")
 
-		      (which-key-add-key-based-replacements
-			", t" "table")
+		      ;; (which-key-add-key-based-replacements
+		      ;; 	", t" "table")
 		      )
+
+  (which-key-add-major-mode-key-based-replacements 'org-mode
+    ", c" "note"
+    ", t" "table")
 
   (general-define-key :states '(normal motion)
 		      :keymaps '(org-mode-map)
@@ -240,8 +249,11 @@
 			", c" "capture")
 		      )
 
+
   (when *win64*
     (message "org-dic")
+    (autoload 'org-mobile-pull "org-mobile" "" t)
+    (autoload 'org-mobile-push "org-mobile" "" t)
     (setq org-directory "~/ecode/org")
     (setq org-mobile-directory "E:/Nutstore/org")
     ;; 同步到本地电脑的坚果云专用目录

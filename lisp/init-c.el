@@ -102,31 +102,36 @@
     (flycheck-ycmd-setup)
     )
 
-  (general-define-key :states '(normal motion)
-		      :keymaps '(c++-mode-map
-				 c-mode-map)
-                    :prefix ","
-		    "gg" 'ycmd-goto
-		    "gs" 'helm-cscope-find-this-symbol
-		    "gd" 'helm-cscope-find-global-definition
-		    "gc" 'helm-cscope-find-called-function
-		    "gC" 'helm-cscope-find-calling-this-function
-		    "gi" 'cscope-index-files
-		    "ga" 'projectile-find-other-file
-		    "gA" 'projectile-find-other-file-other-window
-		    "gb" 'gdb
+
+  )
+
+(general-define-key :states '(normal motion)
+		    :keymaps '(c++-mode-map
+			       c-mode-map)
+		    :prefix ";"
+		    "g" 'ycmd-goto
+		    "s" 'helm-cscope-find-this-symbol
+		    "d" 'helm-cscope-find-global-definition
+		    "c" 'helm-cscope-find-called-function
+		    "C" 'helm-cscope-find-calling-this-function
+		    "i" 'cscope-index-files
+		    "a" 'projectile-find-other-file
+		    "A" 'projectile-find-other-file-other-window
+		    "b" 'gdb
 		    "el" 'mengqp/toggle-flycheck-error-list
 		    "en" 'flycheck-next-error
 		    "ep" 'flycheck-previous-error
 
-		    (which-key-add-key-based-replacements
-		      ", g" "goto")
+		    ;; (which-key-add-key-based-replacements
+		    ;;   ", g" "goto")
 
-		    (which-key-add-key-based-replacements
-		      ", e" "error")
-                    )
+		    ;; (which-key-add-key-based-replacements
+		    ;;   ", e" "error")
+		    )
 
-  )
+(which-key-add-major-mode-key-based-replacements 'c++-mode
+    "; e" "error"
+    )
 
 
 ;; ;;; 设置编码风格
