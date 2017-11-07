@@ -196,6 +196,7 @@
 	 "ul" 'unhighlight-regexp
 
 	 "ww" 'save-buffer
+	 "wq" 'evil-save-and-close
 
 	 "yy" 'helm-yas-complete
 
