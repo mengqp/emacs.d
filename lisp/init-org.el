@@ -242,9 +242,12 @@
 		      "ck" 'org-capture-kill
 		      "cw" 'org-capture-refile
 
-		      (which-key-add-key-based-replacements
-			", c" "capture")
+		      ;; (which-key-add-key-based-replacements
+		      ;; 	", c" "capture")
 		      )
+
+  (which-key-add-major-mode-key-based-replacements 'org-capture-mode
+    ", c" "capture")
 
 
     (message "org-dic")
