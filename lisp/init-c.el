@@ -70,6 +70,9 @@
 (use-package xcscope
   :ensure t
   :defer t
+  :init
+  (add-hook 'c++-mode-hook 'cscope-minor-mode)
+  (add-hook 'c-mode-hook 'cscope-minor-mode)
   :config
   (cscope-setup)
   (use-package helm-cscope
@@ -86,9 +89,10 @@
   (add-hook 'c++-mode-hook 'ycmd-mode)
   (add-hook 'c-mode-hook 'ycmd-mode)
 
-  (set-variable 'ycmd-server-command '("python" "/home/mengqp/DotFiles/ycmd/ycmd"))
+  (set-variable 'ycmd-server-command '("python" "/root/DotFiles/ycmd/ycmd"))
   (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
   (setq ycmd-extra-conf-handler (quote load))
+  (setq ycmd-startup-timeout 10)
   :config
   (use-package company-ycmd
     :ensure t
