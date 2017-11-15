@@ -1,4 +1,10 @@
 
+(use-package smex
+  :ensure t
+  :config
+  ;; (global-set-key (kbd "M-x") 'smex)
+  )
+
 (use-package ivy
   :ensure t
   :diminish (ivy-mode . "")
