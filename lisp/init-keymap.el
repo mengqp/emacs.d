@@ -145,7 +145,7 @@
 	 "bc" 'set-buffer-file-coding-system
 	 "bs" 'save-buffer
 
-	 "cc" 'evil-save-and-close
+	 ;; "cc" 'evil-save-and-close
 
 	 ;; "eb" 'eval-buffer
 	 ;; "ee" 'eval-expression
@@ -193,7 +193,10 @@
 	 "ss" 'swiper
 	 "sS" 'ivy-resume
 
+	 "ul" 'unhighlight-regexp
+
 	 "ww" 'save-buffer
+	 "wq" 'evil-save-and-close
 
 	 "yy" 'helm-yas-complete
 
