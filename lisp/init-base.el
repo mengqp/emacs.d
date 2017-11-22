@@ -76,22 +76,24 @@
   )
   ;; )
 
-(use-package all-the-icons
-  :ensure t
-  :init
-  :config
-  (use-package all-the-icons-dired
+(when *linux*
+  (use-package all-the-icons
     :ensure t
-    :defer t
     :init
-    (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
-    )
-  (use-package all-the-icons-ivy
-    :ensure t
     :config
-    (all-the-icons-ivy-setup)
-    )
+    (use-package all-the-icons-dired
+      :ensure t
+      :defer t
+      :init
+      (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+      )
+    (use-package all-the-icons-ivy
+      :ensure t
+      :config
+      (all-the-icons-ivy-setup)
+      )
 
+    )
   )
 
 

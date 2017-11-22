@@ -113,6 +113,8 @@
 	 "oc" 'org-capture
 	 "oa" 'org-agenda
 	 "op" 'org-pomodoro
+	 "omp" 'org-mobile-push
+	 "omg" 'org-mobile-pull
 
 	 "pf" 'counsel-projectile-find-file
 	 "pd" 'counsel-projectile-find-dir

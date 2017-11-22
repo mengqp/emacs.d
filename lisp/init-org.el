@@ -261,15 +261,15 @@
       (setq org-mobile-inbox-for-pull "~/nutdata/org/index.org")
       )
 
-    (autoload 'org-mobile-pull "org-mobile" "" t)
-    (autoload 'org-mobile-push "org-mobile" "" t)
-    ;; 同步到本地电脑的坚果云专用目录
-    (general-define-key :states '(normal motion)
-			:keymaps '(org-mode-map)
-			:prefix ","
-			"mp" 'org-mobile-push
-			"mg" 'org-mobile-pull
-			)
+    ;; (autoload 'org-mobile-pull "org-mobile" "" t)
+    ;; (autoload 'org-mobile-push "org-mobile" "" t)
+    ;; ;; 同步到本地电脑的坚果云专用目录
+    ;; (general-define-key :states '(normal motion)
+    ;; 			:keymaps '(org-mode-map)
+    ;; 			:prefix ","
+    ;; 			"mp" 'org-mobile-push
+    ;; 			"mg" 'org-mobile-pull
+    ;; 			)
 
 
   ;; (use-package org-journal
