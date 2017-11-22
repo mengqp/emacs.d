@@ -139,7 +139,7 @@
  :font (font-spec :name "-ADBO-Source Code Pro-ultrabold-normal-normal-*-*-*-*-*-m-0-iso10646-1"
                   :weight 'normal
                   :slant 'normal
-                  :size 11.5))
+                  :size 12.5))
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font
    (frame-parameter nil 'font)
@@ -147,7 +147,7 @@
    (font-spec :name "-WenQ-文泉驿正黑-normal-normal-normal-*-*-*-*-*-*-0-iso10646-1"
               :weight 'normal
               :slant 'normal
-              :size 13.5)))
+              :size 15.0)))
 
 
 ;; (use-package cnfonts

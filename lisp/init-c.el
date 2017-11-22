@@ -80,40 +80,73 @@
     :defer t)
   )
 
-
-(use-package ycmd
+(use-package irony
   :ensure t
   :defer t
-  :diminish ycmd-mode
+  :diminish irony-mode
   :init
-  (add-hook 'c++-mode-hook 'ycmd-mode)
-  (add-hook 'c-mode-hook 'ycmd-mode)
+  (add-hook 'c++-mode-hook 'irony-mode)
+  (add-hook 'c-mode-hook 'irony-mode)
+  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
-  (set-variable 'ycmd-server-command '("python" "/root/DotFiles/ycmd/ycmd"))
-  (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
-  (setq ycmd-extra-conf-handler (quote load))
-  (setq ycmd-startup-timeout 10)
   :config
-  (use-package company-ycmd
+  (use-package company-irony
     :ensure t
     :config
-    (company-ycmd-setup)
-    ;; (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
+    (eval-after-load 'company
+      '(add-to-list 'company-backends 'company-irony))
     )
-  (use-package flycheck-ycmd
+  (use-package flycheck-irony
     :ensure t
     :config
-    (flycheck-ycmd-setup)
+    (eval-after-load 'flycheck
+      '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
     )
 
+  ;; (use-package company-irony-c-headers
+  ;;   :ensure t
+  ;;   :config
+  ;;   (eval-after-load 'company
+  ;;   '(add-to-list
+  ;;     'company-backends '(company-irony-c-headers company-irony)))
+  ;;   )
 
   )
+
+
+;; (use-package ycmd
+;;   :ensure t
+;;   :defer t
+;;   :diminish ycmd-mode
+;;   :init
+;;   (add-hook 'c++-mode-hook 'ycmd-mode)
+;;   (add-hook 'c-mode-hook 'ycmd-mode)
+
+;;   (set-variable 'ycmd-server-command '("python" "/root/DotFiles/ycmd/ycmd"))
+;;   (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
+;;   (setq ycmd-extra-conf-handler (quote load))
+;;   (setq ycmd-startup-timeout 10)
+;;   :config
+;;   (use-package company-ycmd
+;;     :ensure t
+;;     :config
+;;     (company-ycmd-setup)
+;;     ;; (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
+;;     )
+;;   (use-package flycheck-ycmd
+;;     :ensure t
+;;     :config
+;;     (flycheck-ycmd-setup)
+;;     )
+
+
+;;   )
 
 (general-define-key :states '(normal motion)
 		    :keymaps '(c++-mode-map
 			       c-mode-map)
 		    :prefix ";"
-		    "g" 'ycmd-goto
+		    ;; "g" 'ycmd-goto
 		    "s" 'helm-cscope-find-this-symbol
 		    "d" 'helm-cscope-find-global-definition
 		    "c" 'helm-cscope-find-called-function
