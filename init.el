@@ -15,6 +15,7 @@
 ;; (defvar missing-packages-list nil
 ;;   "List of packages that `try-require' can't find.")
 
+
 ;; (defvar package-init-statistic nil "Package loading statistics")
 
 ;; ;; attempt to load a feature/library, failing silently
