@@ -1,7 +1,7 @@
 ;;; init—lisp.el
 
 (use-package elisp-mode
-  :ensure nil
+;;  :ensure nil
   :config
   (message "elisp")
   (general-define-key :states '(normal motion)

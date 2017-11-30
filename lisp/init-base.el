@@ -98,12 +98,12 @@
 
 
 (use-package recentf
-  :ensure nil
+ ;; :ensure nil
   :init
   (setq recentf-max-saved-items 200)
 
   ;; lazy load recentf
-  ;; (add-hook 'after-init-hook 'recentf-mode)
+  (add-hook 'after-init-hook 'recentf-mode)
   (add-hook 'find-file-hook (lambda () (unless recentf-mode
 					 (recentf-mode)
 					 (recentf-track-opened-file))))
@@ -165,7 +165,7 @@
 
 
 (use-package savehist
-  :ensure nil
+  ;;:ensure nil
   :init
   (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
         history-length 1000
