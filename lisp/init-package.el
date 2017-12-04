@@ -8,7 +8,8 @@ But you may use safer HTTPS instead.")
 
 
 (setq package-archives '(
-			 ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
+			 ;; ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
+			 ("melpa-cn-stable" . "http://elpa.emacs-china.org/melpa-stable/")
                           ("org-cn"   . "https://elpa.zilongshanren.com/org/")
                           ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
                           ;; ("melpa" . "https://melpa.org/packages/")
@@ -35,6 +36,7 @@ But you may use safer HTTPS instead.")
 (package-initialize)
 
 (require-package 'use-package)
+(require 'use-package)
 (require-package 'general)
 (require-package 'diminish)
 
