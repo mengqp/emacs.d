@@ -73,6 +73,8 @@
 	   "* %?  %i\n ")
 	  ("i" "idea 乱七八糟的想法" entry (file+datetree "~/ecode/org/idea.org")
 	   "* %? \n \nEntered on %U\n %i\n ")
+	  ("s" "Summarize 总结" entry (file+headline "~/ecode/org/summarize.org" "summarize")
+	   "*  %? \n %i\n ")
 	  ))
 
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
@@ -226,8 +228,8 @@
 		      "u" 'outline-up-heading
 		      "-" 'org-ctrl-c-minus
 		      "*" 'org-ctrl-c-start
-		      "h" 'org-metaright
-		      "l" 'org-metaleft
+		      "l" 'org-metaright
+		      "h" 'org-metaleft
 		      "j" 'org-metaup
 		      "k" 'org-metadown
 		      "w" 'org-refile
