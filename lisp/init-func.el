@@ -5,6 +5,16 @@
   (find-file "~/.emacs.d/init.el")
     )
 
+;; Dos2Unix/Unix2Dos
+(defun dos2unix ()
+  "Convert the current buffer to UNIX file format."
+  (interactive)
+  (set-buffer-file-coding-system 'undecided-unix nil))
+
+(defun unix2dos ()
+  "Convert the current buffer to DOS file format."
+  (interactive)
+  (set-buffer-file-coding-system 'undecided-dos nil))
 ;; (defun mengqp/find-readme
 ;;   "find root/readme.org in the project"
 ;;   (interactive)

@@ -109,7 +109,9 @@
 					 (recentf-track-opened-file))))
   :config
   (add-to-list 'recentf-exclude (expand-file-name package-user-dir))
-  (add-to-list 'recentf-exclude "COMMIT_EDITMSG\\'"))
+  (add-to-list 'recentf-exclude "COMMIT_EDITMSG\\'")
+  (add-to-list 'recentf-exclude "bookmarks")
+  )
 
 
 ;;在minibuffer里启用自动补全函数和变量
