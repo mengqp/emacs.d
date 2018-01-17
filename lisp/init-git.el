@@ -20,6 +20,10 @@
     (magit-define-popup-action 'magit-dispatch-popup
 ?G "GitFlow" #'magit-gitflow-popup ?!))
 
+  ;; Walk through git revisions of a file
+  (use-package git-timemachine
+    :ensure t)
+
   (defun git-push-coding-request()
     "push current branch to coding develop branch request"
     "git push origin banana:mr/master/banana"
