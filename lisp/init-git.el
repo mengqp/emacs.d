@@ -22,7 +22,8 @@
 
   ;; Walk through git revisions of a file
   (use-package git-timemachine
-    :ensure t)
+    :ensure t
+    :diminish git-timemachine-mode)
 
   (defun git-push-coding-request()
     "push current branch to coding develop branch request"

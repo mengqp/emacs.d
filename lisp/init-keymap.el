@@ -118,6 +118,8 @@
 
 	 "gs" 'magit-status
 	 "gb" 'magit-blame
+	 "gf" 'magit-gitflow-popup
+	 "gt" 'git-timemachine
 
 	 "hf" 'find-function
 	 "hv" 'find-variable
