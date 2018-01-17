@@ -12,10 +12,9 @@
 
    ;; Gitflow externsion for Magit
   (use-package magit-gitflow
-    :ensure t
     :diminish magit-gitflow-mode
-    ;; :bind (:map magit-status-mode-map
-    ;;             ("G" . magit-gitflow-popup))
+    :bind (:map magit-status-mode-map
+                ("G" . magit-gitflow-popup))
     :init (add-hook 'magit-mode-hook #'turn-on-magit-gitflow)
     :config
     (magit-define-popup-action 'magit-dispatch-popup
