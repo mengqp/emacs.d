@@ -97,6 +97,7 @@
 (require 'init-c)
 (require 'init-lisp)
 (require 'init-org)
+(require 'init-ahk)
 ;; (require 'init-w3m)
 
 
