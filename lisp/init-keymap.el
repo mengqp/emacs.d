@@ -13,6 +13,12 @@
   (setq which-key-prefix-prefix "+" )
 
   (which-key-add-key-based-replacements
+    "SPC [" "previous")
+
+  (which-key-add-key-based-replacements
+    "SPC [" "next")
+
+  (which-key-add-key-based-replacements
     "SPC a" "app")
 
   (which-key-add-key-based-replacements
@@ -22,13 +28,22 @@
     "SPC c" "compile")
 
   (which-key-add-key-based-replacements
+    "SPC e" "shell")
+
+  (which-key-add-key-based-replacements
     "SPC f" "files")
 
   (which-key-add-key-based-replacements
     "SPC g" "git")
 
   (which-key-add-key-based-replacements
-    "SPC p" "org")
+    "SPC h" "help")
+
+  (which-key-add-key-based-replacements
+    "SPC m" "bookmark")
+
+  (which-key-add-key-based-replacements
+    "SPC o" "org")
 
   (which-key-add-key-based-replacements
     "SPC p" "project")
@@ -73,26 +88,22 @@
   ;; 全局
   (nvmap :prefix "SPC"
 	 "SPC" 'switch-window
-	 "TAB" 'previous-buffer
+	 ;; "TAB" 'previous-buffer
 	 "." 'counsel-projectile-find-file
 	 ":" 'counsel-M-x
 
+	 "[b" 'switch-to-prev-buffer
+	 "]b" 'switch-to-next-buffer
+
 	 "ac" 'calc
-
-	 ;; "1" 'select-window-1
-	 ;; "2" 'select-window-2
-	 ;; "3" 'select-window-3
-	 ;; "4" 'select-window-4
-	 ;; "5" 'select-window-5
-	 ;; "6" 'select-window-6
-	 ;; "7" 'select-window-7
-	 ;; "8" 'select-window-8
-	 ;; "9" 'select-window-9
-
 
 	 "bb" 'ivy-switch-buffer
 	 "bd" 'kill-buffer
-	 "bs" 'mengqp/switch-scratch-buf
+	 ;; "bs" 'mengqp/switch-scratch-buf
+
+	 "eh" 'eshell-here
+	 "ee" 'ansi-term
+	 "ea" 'shell
 
 	 "cc" 'compile
 	 "ck" 'kill-compilation
@@ -107,8 +118,18 @@
 
 	 "gs" 'magit-status
 	 "gb" 'magit-blame
+	 "gf" 'magit-gitflow-popup
+	 "gt" 'git-timemachine
 
-	 "mx" 'counsel-M-x
+	 "hf" 'find-function
+	 "hv" 'find-variable
+	 "hm" 'helm-man-woman
+
+	 ;; "mx" 'counsel-M-x
+	 "mk" 'bookmark-set
+	 "md" 'bookmark-delete
+	 "mm" 'counsel-bookmark
+
 
 	 "oc" 'org-capture
 	 "oa" 'org-agenda
@@ -128,7 +149,7 @@
 	 "ww" 'switch-window
 	 "wd" 'delete-window
 	 "wo" 'delete-other-windows
-
+	 "wo" 'quit-window
 
 
 	 "/" 'counsel-projectile-ag
@@ -138,41 +159,17 @@
   ;; all keywords arguments are still supported
   ;; 本文件 侧重基本功能
   (nvmap :prefix ","
-	 ;; ","  'evilnc-comment-or-uncomment-lines
-	 ;; "+" 'evil-numbers/inc-at-pt
-	 ;; "-" 'evil-numbers/dec-at-pt
-
-	 ;;"aa" 'copy-to-x-clipboard ; used frequently
-
 	 "bc" 'set-buffer-file-coding-system
 	 "bs" 'save-buffer
 
-	 ;; "cc" 'evil-save-and-close
-
-	 ;; "eb" 'eval-buffer
-	 ;; "ee" 'eval-expression
-	 ;; "el" 'mengqp/toggle-flycheck-error-list
-	 ;; "en" 'flycheck-next-error
-	 ;; "ep" 'flycheck-previous-error
-
+	 "ch" 'highlight-symbol-at-point
+	 "cu" 'unhighlight-regexp
 
 	 "fb" 'beginning-of-defun
 	 "fe" 'end-of-defun
 	 "fr" 'recover-this-file
-
-	 ;; "gg" 'ycmd-goto
-	 ;; "gs" 'helm-cscope-find-this-symbol
-	 ;; "gd" 'helm-cscope-find-global-definition
-	 ;; "gc" 'helm-cscope-find-called-function
-	 ;; "gC" 'helm-cscope-find-calling-this-function
-	 ;; "gi" 'cscope-index-files
-	 ;; "ga" 'projectile-find-other-file
-	 ;; "gA" 'projectile-find-other-file-other-window
-
-	 "hf" 'find-function
-	 "hv" 'find-variable
-	 "hm" 'helm-man-woman
-	 "hl" 'highlight-symbol-at-point
+	 "fd" 'unix2dos
+	 "fu" 'dos2unix
 
 	 "jj" 'ace-jump-char-mode
 	 "jc" 'ace-jump-char-mode
@@ -182,20 +179,13 @@
 	 "ls" 'linum-mode
 	 "l RET" 'toggle-truncate-lines
 
-	 "mk" 'bookmark-set
-	 "md" 'bookmark-delete
-	 "mm" 'counsel-bookmark
-
 
 	 "sc" 'shell-command
 	 "sd" 'sudo-edit
-	 ;; "sj" 'mengqp/helm-jump-in-buffer
 	 "sj" 'counsel-imenu
-	 ;; "ss" 'mengqp/helm-file-smart-do-search
 	 "ss" 'swiper
 	 "sS" 'ivy-resume
 
-	 "ul" 'unhighlight-regexp
 
 	 "ww" 'save-buffer
 	 "wq" 'evil-save-and-close
