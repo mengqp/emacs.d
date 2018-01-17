@@ -88,6 +88,7 @@
 (require 'init-mc)
 (require 'init-func)
 (require 'init-keymap)
+(require 'init-popwin)
 ;; (require 'init-tree)
 ;; (require 'init-which-key)
 ;; (require 'init-shell)
