@@ -168,6 +168,8 @@
 	 "fb" 'beginning-of-defun
 	 "fe" 'end-of-defun
 	 "fr" 'recover-this-file
+	 "fd" 'unix2dos
+	 "fu" 'dos2unix
 
 	 "jj" 'ace-jump-char-mode
 	 "jc" 'ace-jump-char-mode
