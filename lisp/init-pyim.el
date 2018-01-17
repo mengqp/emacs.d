@@ -49,7 +49,7 @@
 
   (global-set-key (kbd "C-\\") 'toggle-input-method)
   :bind
-  (("M-j" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
+  (("M-i" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
    ("C-;" . pyim-delete-word-from-personal-buffer))
 
 

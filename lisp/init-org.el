@@ -38,7 +38,7 @@
   ;; (setq org-agenda-files (file-expand-wildcards "~/ecode/org/*.org"))
   ;; 设置agent文件表
   (when *linux*
-    (setq org-agenda-files (list "~/ecode/em770/readme_770.org"
+    (setq org-agenda-files (list "~/ecode/em770/docs/org/issue_770.org"
 				 "~/ecode/em761/docs/org/issue761.org"
 				 "~/ecode/em761/docs/org/disscuss761.org"
 				 "~/ecode/epduhmi/3352/asrc/readme_epdu_a.org"
@@ -55,7 +55,7 @@
 				 "E:/svn/em761/docs/org/disscuss761.org"
 				 "E:/svn/epduhmi/3352/asrc/readme_epdu_a.org"
 				 "E:/svn/epduhmi/3352/dsrc/readme_epdu_d.org"
-				 "E:/svn/em770/readme_770.org"
+				 "E:/svn/em770/docs/org/issue_770.org"
 				 "E:/svn/pdt/docs/org/issuepdt.org"
 				 "F:/项目/zlg/docs/org/issue_zlg.org"
 				 ))
@@ -182,10 +182,10 @@
     (insert (number-to-string num))
     )
 
-  (use-package org-mind-map
-    :defer t
-    :ensure t
-    )
+  ;; (use-package org-mind-map
+  ;;   :defer t
+  ;;   :ensure t
+  ;;   )
 
   ;; (define-key evil-normal-state-map (kbd "T") 'mengqp/evil-org-insert-todo-at-end)
   ;; (define-key evil-normal-state-map (kbd "t") 'org-todo)
