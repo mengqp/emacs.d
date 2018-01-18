@@ -89,6 +89,7 @@
 (require 'init-func)
 (require 'init-keymap)
 (require 'init-popwin)
+(require 'init-lsp)
 ;; (require 'init-tree)
 ;; (require 'init-which-key)
 ;; (require 'init-shell)
