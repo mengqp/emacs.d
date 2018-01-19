@@ -143,12 +143,19 @@
 
 
   )
+;; (use-package cquery
+;;   ;; :init
+;;   ;; (add-hook 'c++-mode-hook 'cquery-mode)
+;;   ;; (add-hook 'c-mode-hook 'cquery-mode)
+;;   :config
+;;   (setq cquery-executable "/usr/bin/cquery")
+;;   )
 
 (general-define-key :states '(normal motion)
 		    :keymaps '(c++-mode-map
 			       c-mode-map)
 		    :prefix ";"
-		    "g" 'ycmd-goto
+		    ;; "g" 'ycmd-goto
 		    "s" 'helm-cscope-find-this-symbol
 		    "d" 'helm-cscope-find-global-definition
 		    "c" 'helm-cscope-find-called-function
