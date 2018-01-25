@@ -8,9 +8,9 @@ But you may use safer HTTPS instead.")
 
 
 (setq package-archives '(
-			 ("melpa-cn-stable" . "http://elpa.emacs-china.org/melpa-stable/")
-			 ;; ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-                          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
+			 ;; ("melpa-cn-stable" . "http://elpa.emacs-china.org/melpa-stable/")
+			 ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
+			  ("org-cn"   . "https://elpa.zilongshanren.com/org/")
                           ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
                           ;; ("melpa" . "https://melpa.org/packages/")
                           ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
