@@ -140,18 +140,16 @@
     (when (not (display-graphic-p))
       (setq flycheck-indication-mode nil))
     )
-
-
   )
 
-(use-package cquery
-  :ensure t
-  ;; :init
-  ;; (add-hook 'c++-mode-hook 'cquery-mode)
-  ;; (add-hook 'c-mode-hook 'cquery-mode)
-  :config
-  (setq cquery-executable "/usr/bin/cquery")
-  )
+;; (use-package cquery
+;;   :ensure t
+;;   :init
+;;   (add-hook 'c++-mode-hook #'lsp-cquery-enable)
+;;   (add-hook 'c-mode-hook #'lsp-cquery-enable)
+;;   :config
+;;   (setq cquery-executable "/usr/bin/cquery")
+;;   )
 
 (general-define-key :states '(normal motion)
 		    :keymaps '(c++-mode-map

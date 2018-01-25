@@ -41,6 +41,11 @@
   (use-package counsel-projectile
     :ensure t
     )
+  (use-package ivy-xref
+    :ensure t
+    :config
+    (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
+    )
   )
 
 
