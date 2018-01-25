@@ -11,8 +11,9 @@
   :ensure t
   :defer t
   :init
-  (add-hook 'c-mode-hook 'flycheck-mode)
-  (add-hook 'c++-mode-hook 'flycheck-mode)
+  ;; (add-hook 'c-mode-hook 'flycheck-mode)
+  ;; (add-hook 'c++-mode-hook 'flycheck-mode)
+  (add-hook 'after-init-hook #'global-flycheck-mode)
   :config
 ;;; 保存的时候自动检查
   (setq flycheck-check-syntax-automatically '(mode-enabled save))

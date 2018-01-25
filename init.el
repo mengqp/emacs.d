@@ -1,14 +1,21 @@
-;;; mengqp emacs confing
+;;; init.el --- Config for mengqp -*- coding: utf-8-unix -*-
+;;; Commentary:
 
-(defvar best-gc-cons-threshold 4000000 "Best default gc threshold value. Should't be too big.")
+;; Copyright (C) 2017-2018 by mengqp
+
+
+;;; Code:
+;;; Best default gc threshold value. Should't be too big
+(defvar best-gc-cons-threshold 4000000)
+
 ;; don't GC during startup to save time
 (setq gc-cons-threshold most-positive-fixnum)
 
-(setq emacs-load-start-time (current-time))
+(defvar emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
-(setq *linux* (eq system-type 'gnu/linux) )
-(setq *win64* (eq system-type 'windows-nt) )
+(defvar *linux* (eq system-type 'gnu/linux) )
+(defvar *win64* (eq system-type 'windows-nt) )
 
 
 ;; ;; Function to collect information of packages.
@@ -45,6 +52,7 @@
 
 ;; *Message* buffer should be writable in 24.4+
 (defadvice switch-to-buffer (after switch-to-buffer-after-hack activate)
+  "*Message* buffer should be writable."
   (if (string= "*Messages*" (buffer-name))
       (read-only-mode -1)))
 
@@ -110,3 +118,5 @@
 (when *win64*
   (server-start)
   )
+
+;;; init.el ends here
