@@ -20,6 +20,8 @@
   :init
   (setq magit-completing-read-function 'ivy-completing-read)
   (setq projectile-completion-system 'ivy)
+  ;; 去除 M-x 里面的 ^
+  (setq ivy-initial-inputs-alist nil)
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t

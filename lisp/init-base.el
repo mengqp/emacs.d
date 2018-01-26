@@ -1,5 +1,10 @@
+;;; init-base.el --- base function mengqp -*- coding: utf-8-unix -*-
+;;; Commentary:
+
+;; Copyright (C) 2017-2018 by mengqp
 ;;这就一个进行基本配置的文件
 
+;;; Code:
 ;; ;; ---------------------------------gui ----------------------------------------
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
@@ -22,6 +27,7 @@
 
 (when *linux*
   (defun fullscreen ()
+    "fullscreen"
     (interactive)
     (set-frame-parameter nil 'fullscreen
 			 (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
@@ -57,9 +63,6 @@
 
 ;;指针不要闪
 (blink-cursor-mode -1)
-
-; 去除 M-x 里面的 ^
-(setq ivy-initial-inputs-alist nil)
 
 ;;80列
 ;; (require 'fill-column-indicator)
@@ -123,18 +126,19 @@
 (setq resize-mini-windows t)
 
 
-;; 清楚白块
+;; 清除白块
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; --------------------------------coding --------------------------------------
 ;; (use-package unicad
 ;;   :defer t)
-(require 'unicad)
+;; (require 'unicad)
+(load-file "./unicad.el")
 
 
 ;; --------------------------------other  --------------------------------------
 ;; 去除一个警告
-(setq exec-path-from-shell-check-startup-files nil)
+;; (setq exec-path-from-shell-check-startup-files nil)
 
 ;; 输入法切换时不出现问题
 (global-set-key (kbd "C-SPC") nil)
@@ -204,7 +208,7 @@
 
 
 ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
-(which-func-mode)
+(which-function-mode)
 ;; when editing js file, this feature is very useful
 (setq-default header-line-format
 	      '((which-func-mode ("" which-func-format " "))))
@@ -226,17 +230,7 @@
   :diminish undo-tree-mode
   )
 
-(use-package abbrev
-  :defer t
-  :diminish abbrev-mode
-  )
 
-(use-package dynamic-spaces
-  :ensure t
-  :init
-  (add-hook 'c-mode-common-hook 'dynamic-spaces-mode)
-  (add-hook 'c++-mode-common-hook 'dynamic-spaces-mode)
-  )
 
 ;; (use-package pomodoro
 ;;   :ensure t
@@ -263,3 +257,5 @@
 ;;     (dashboard-setup-startup-hook))
 
 (provide 'init-base)
+
+;;; init-base.el ends here

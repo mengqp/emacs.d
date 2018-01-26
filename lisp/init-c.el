@@ -142,6 +142,14 @@
     )
   )
 
+(use-package dynamic-spaces
+  :ensure t
+  :init
+  (add-hook 'c-mode-common-hook 'dynamic-spaces-mode)
+  (add-hook 'c++-mode-common-hook 'dynamic-spaces-mode)
+  )
+
+
 ;; (use-package cquery
 ;;   :ensure t
 ;;   :init
