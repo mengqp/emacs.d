@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "cquery" "cquery.el" (23145 13055 421735 0))
+;;;### (autoloads nil "cquery" "cquery.el" (23146 33528 202111 666000))
 ;;; Generated autoloads from cquery.el
  (autoload 'lsp-cquery-enable "cquery")
 
