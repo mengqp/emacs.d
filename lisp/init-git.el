@@ -1,7 +1,12 @@
+;;; init-git.el --- git function  -*- coding: utf-8-unix -*-
+;;; Commentary:
+;;; Copyright (C) 2017-2018 by mengqp
+
 ;; (require 'magit)
 ;; (require 'evil-magit)
 ;; (require 'git-gutter)
 
+;;; Code:
 (use-package magit
   :ensure t
   :defer t
@@ -28,8 +33,8 @@
 
   (defun git-push-coding-request()
     "push current branch to coding develop branch request"
-    "git push origin banana:mr/master/banana"
     (interactive)
+    ;; "git push origin banana:mr/master/banana."
     (run-hooks 'magit-credential-hook)
     ;; (magit-run-git-async
     ;; (magit-start-git nil
@@ -39,24 +44,24 @@
     ;; (print (magit-get-current-branch))
     )
 
-  (defun git-pull-coding-request( source args )
-  "push current branch to coding develop branch request"
-  "git push origin banana:mr/master/banana"
-  (interactive
-   (list (magit-read-remote-branch "Pull" nil nil nil t)
-                     (magit-pull-arguments)))
-  (run-hooks 'magit-credential-hook)
-  ;; (magit-run-git-async
-  ;; (magit-start-git nil
-  (shell-command-to-string "git checkout develop")
-  (shell-command-to-string "git pull")
-  ;; (shell-command-to-string (format "git pull origin %s" arg))
-  (magit-git-pull source args)
-  ;; (magit-branch-delete (format":mr/develop/%d" 116))
-  (magit-branch-delete)
-  ;; (shell-command-to-string "git push")
-    ;; (print (magit-get-current-branch))
-  )
+  ;; (defun git-pull-coding-request( source args )
+  ;; "push current branch to coding develop branch request"
+  ;; "git push origin banana:mr/master/banana"
+  ;; (interactive
+  ;;  (list (magit-read-remote-branch "Pull" nil nil nil t)
+  ;;                    (magit-pull-arguments)))
+  ;; (run-hooks 'magit-credential-hook)
+  ;; ;; (magit-run-git-async
+  ;; ;; (magit-start-git nil
+  ;; (shell-command-to-string "git checkout develop")
+  ;; (shell-command-to-string "git pull")
+  ;; ;; (shell-command-to-string (format "git pull origin %s" arg))
+  ;; (magit-git-pull source args)
+  ;; ;; (magit-branch-delete (format":mr/develop/%d" 116))
+  ;; (magit-branch-delete)
+  ;; ;; (shell-command-to-string "git push")
+  ;;   ;; (print (magit-get-current-branch))
+  ;; )
 
 
   ;; (git-push-coding-request)
@@ -73,6 +78,7 @@
   (add-hook 'c-mode-hook 'git-gutter-mode)
   (add-hook 'c++-mode-hook 'git-gutter-mode)
   (add-hook 'org-mode-hook 'git-gutter-mode)
+  (add-hook 'lisp-mode-hook 'git-gutter-mode)
   :config
   (custom-set-variables
    '(git-gutter:modified-sign "==") ;; two space
@@ -86,3 +92,5 @@
 
 
 (provide 'init-git)
+
+;;; init-git.el ends here

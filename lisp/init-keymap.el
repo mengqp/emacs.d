@@ -120,6 +120,8 @@
 	 "gb" 'magit-blame
 	 "gf" 'magit-gitflow-popup
 	 "gt" 'git-timemachine
+	 "gc" 'magit-checkout-file
+	 "gp" 'git-push-coding-request
 
 	 "hf" 'find-function
 	 "hv" 'find-variable
