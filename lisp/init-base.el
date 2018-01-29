@@ -133,7 +133,7 @@
 ;; (use-package unicad
 ;;   :defer t)
 ;; (require 'unicad)
-(load-file "./unicad.el")
+(load-file "~/.emacs.d/lisp/unicad.el")
 
 
 ;; --------------------------------other  --------------------------------------

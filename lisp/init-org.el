@@ -1,4 +1,8 @@
+;;; init-org.el --- Config by mengqp -*- coding: utf-8-unix -*-
+;;; Commentary:
+;; Copyright (C) 2017-2018 by mengqp
 
+;;; Code:
 ;; (require 'org)
 (use-package org
   :ensure t
@@ -170,7 +174,7 @@
 
 
   (defun mengqp/evil-org-insert-todo-at-end ()
-    "add TODO # at the org end"
+    "add TODO # at the org end ."
     (interactive)
     (goto-char (point-max))
     (re-search-backward "^\*+ [A-Z]+ #")
@@ -289,3 +293,5 @@
 
 
 (provide 'init-org)
+
+;;; init-org.el ends here
