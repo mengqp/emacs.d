@@ -44,7 +44,7 @@
   (when *linux*
     (setq org-agenda-files (list "~/ecode/em770/docs/org/issue_770.org"
 				 "~/ecode/em761/docs/org/issue761.org"
-				 "~/ecode/em761/docs/org/disscuss761.org"
+				 ;; "~/ecode/em761/docs/org/disscuss761.org"
 				 "~/ecode/epduhmi/3352/asrc/readme_epdu_a.org"
 				 "~/ecode/epduhmi/3352/dsrc/readme_epdu_d.org"
 				 "~/ecode/org/"
@@ -56,7 +56,7 @@
   (when *win64*
     (setq org-agenda-files (list "E:/svn/org"
 				 "E:/svn/em761/docs/org/issue761.org"
-				 "E:/svn/em761/docs/org/disscuss761.org"
+				 ;; "E:/svn/em761/docs/org/disscuss761.org"
 				 "E:/svn/epduhmi/3352/asrc/readme_epdu_a.org"
 				 "E:/svn/epduhmi/3352/dsrc/readme_epdu_d.org"
 				 "E:/svn/em770/docs/org/issue_770.org"

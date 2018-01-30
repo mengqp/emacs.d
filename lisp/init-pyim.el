@@ -1,5 +1,8 @@
-;;; init-pyim.el
+;;; init-pyim.el --- Config by mengqp -*- coding: utf-8-unix -*-
 
+;;; Commentary:
+
+;;; Code:
 (use-package pyim
   :ensure t
   :init
@@ -48,6 +51,11 @@
 
 
   (global-set-key (kbd "C-\\") 'toggle-input-method)
+
+  ;; (general-define-key :states '(insert)
+  ;; 		      :prefix ","
+  ;; 		      "," 'pyim-convert-code-at-point
+  ;; 		      )
   :bind
   (("M-i" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
    ("C-;" . pyim-delete-word-from-personal-buffer))
@@ -57,4 +65,4 @@
 
 
 (provide 'init-pyim)
-;;; ends init-pyim.el
+;;; init-pyim.el ends here

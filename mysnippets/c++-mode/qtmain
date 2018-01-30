@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: qtmain
+# key: qtmain
+# --
+#include "$0"
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    $1 w;
+    w.show();
+
+    return a.exec();
+}
