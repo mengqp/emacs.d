@@ -56,6 +56,19 @@
 
   ;; (which-key-add-key-based-replacements
   ;;   "SPC x" "delete")
+  (which-key-add-key-based-replacements
+    ", b" "buffer")
+
+  (which-key-add-key-based-replacements
+    ", bw" "buffer whitespace")
+
+  (which-key-add-key-based-replacements
+    ", i" "insert")
+  (which-key-add-key-based-replacements
+    ", it" "table")
+
+  (which-key-add-key-based-replacements
+    ", id" "date")
 
   ;; (which-key-add-key-based-replacements
   ;;   ", e" "errors/eval")
@@ -68,6 +81,9 @@
 
   (which-key-add-key-based-replacements
     ", h" "help")
+
+  (which-key-add-key-based-replacements
+    ", it" "table")
 
   (which-key-add-key-based-replacements
     ", j" "jump")
@@ -163,15 +179,23 @@
   (nvmap :prefix ","
 	 "bc" 'set-buffer-file-coding-system
 	 "bs" 'save-buffer
+	 "bwt" 'delete-trailing-whitespace
+	 "bwc" 'whitespace-cleanup
+	 "bwv" 'whitespace-mode
 
-	 "ch" 'highlight-symbol-at-point
-	 "cu" 'unhighlight-regexp
 
 	 "fb" 'beginning-of-defun
 	 "fe" 'end-of-defun
 	 "fr" 'recover-this-file
 	 "fd" 'unix2dos
 	 "fu" 'dos2unix
+
+	 "h." 'highlight-symbol-at-point
+	 "hu" 'unhighlight-regexp
+
+	 "itc" 'table-insert
+	 "itr" 'table-insert-row
+	 "itc" 'table-insert-column
 
 	 "jj" 'ace-jump-char-mode
 	 "jc" 'ace-jump-char-mode
@@ -180,6 +204,7 @@
 
 	 "ls" 'linum-mode
 	 "l RET" 'toggle-truncate-lines
+	 "ln" 'whitespace-newline-mode
 
 
 	 "sc" 'shell-command

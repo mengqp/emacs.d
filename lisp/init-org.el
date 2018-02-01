@@ -118,7 +118,7 @@
 	  ))
   ;; 设置todo
   (setq org-todo-keywords
-	(quote ((sequence "TODO(t)" "STARTED(s)" "ISSUE(i@/!)" "|" "ISSUECLOSE(I@/!)" "DONE(d!/!)")
+	(quote ((sequence "TODO(t)" "STARTED(s)" "ISSUE(i@/!)" "|" "ISSUECLOSE(I@/!)" "DONE(d@/!)")
 		(sequence "RELEASE(r@/!)" "|" "CANCELLED(c@/!)")
 		)))
 

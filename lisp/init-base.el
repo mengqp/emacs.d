@@ -64,6 +64,12 @@
 ;;指针不要闪
 (blink-cursor-mode -1)
 
+;; remember cursor position, for emacs 25.1 or later
+(save-place-mode 1)
+
+;; backup in one place. flat, no tree structure
+(setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
+
 ;;80列
 ;; (require 'fill-column-indicator)
 ;; (use-package fillred-column-indicator
@@ -231,6 +237,21 @@
   )
 
 
+(setq hippie-expand-try-functions-list
+      '(
+        try-expand-dabbrev
+        try-expand-dabbrev-all-buffers
+        ;; try-expand-dabbrev-from-kill
+        try-complete-lisp-symbol-partially
+        try-complete-lisp-symbol
+        try-complete-file-name-partially
+        try-complete-file-name
+        ;; try-expand-all-abbrevs
+        ;; try-expand-list
+        ;; try-expand-line
+        ))
+
+(global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; (use-package pomodoro
 ;;   :ensure t
