@@ -76,7 +76,7 @@
 ;;ui
 (require 'init-base)
 (require 'init-modeline)
-(require 'init-color-theme)
+(require 'init-theme)
 
 ;;tool
 (require 'init-calendar)
@@ -84,7 +84,7 @@
 (require 'init-smartparens)
 (require 'init-evil)
 (require 'init-company)
-(require 'init-window-numbering)
+(require 'init-window)
 (require 'init-ivy)
 (require 'init-projectile)
 (require 'init-yasnippet)
@@ -94,7 +94,7 @@
 (require 'init-mc)
 (require 'init-func)
 (require 'init-keymap)
-(require 'init-popwin)
+;; (require 'init-popwin)
 ;; (require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
 ;; (require 'init-pyim)

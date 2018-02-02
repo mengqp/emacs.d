@@ -48,4 +48,4 @@
   )
 
 
-(provide 'init-color-theme)
+(provide 'init-theme)

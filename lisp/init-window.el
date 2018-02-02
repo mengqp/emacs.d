@@ -40,4 +40,4 @@
     )
   )
 
-(provide 'init-window-numbering)
+(provide 'init-window)

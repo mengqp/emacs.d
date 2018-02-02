@@ -85,11 +85,6 @@
 (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
 
 ;;80列
-;; (require 'fill-column-indicator)
-;; (use-package fillred-column-indicator
-  ;; :ensure t
-  ;; :defer t
-  ;; :config
 (use-package fill-column-indicator
   :ensure t
   ;; :defer t
