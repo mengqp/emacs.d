@@ -8,11 +8,16 @@
 ;; ;; ---------------------------------gui ----------------------------------------
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
+(setq ring-bell-function 'ignore)
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
 
 ;; Show a marker in the left fringe for lines not in the buffer
 (setq indicate-empty-lines t)
+
+;; 设置透明
+(set-frame-parameter (selected-frame) 'alpha '(80 . 80))
+(add-to-list 'default-frame-alist '(alpha . (80 . 80)))
 
 ;; NO tool bar
 (if (fboundp 'tool-bar-mode)
@@ -47,6 +52,15 @@
 ;;当前行高亮
 (global-hl-line-mode 1)
 ;; (set-face-background 'hl-line "#3e4446")
+;; 末尾加空行
+(setq require-final-newline t)
+
+;; 平滑滚动
+(setq scroll-margin 0
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
+;; 关闭Tooltip
+(tooltip-mode -1)
 
 ;;显示括号匹配
 (show-paren-mode t)

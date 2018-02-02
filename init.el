@@ -95,9 +95,9 @@
 (require 'init-func)
 (require 'init-keymap)
 (require 'init-popwin)
-(require 'init-lsp)
+;; (require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
-(require 'init-pyim)
+;; (require 'init-pyim)
 ;; (require 'init-abbrev)
 ;; (require 'init-tree)
 ;; (require 'init-which-key)

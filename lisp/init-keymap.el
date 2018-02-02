@@ -193,7 +193,7 @@
 	 "h." 'highlight-symbol-at-point
 	 "hu" 'unhighlight-regexp
 
-	 "itc" 'table-insert
+	 "itt" 'table-insert
 	 "itr" 'table-insert-row
 	 "itc" 'table-insert-column
 

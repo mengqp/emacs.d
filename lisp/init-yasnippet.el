@@ -7,8 +7,8 @@
   :init
   (progn
     (add-hook 'org-mode-hook #'yas-minor-mode)
-    (add-hook 'c-mode-hook #'yas-minor-mode)
-    (add-hook 'c++-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'c-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'c++-mode-hook #'yas-minor-mode)
     (add-hook 'git-commit-mode-hook #'yas-minor-mode)
     (add-hook 'text-mode-hook #'yas-minor-mode)
     )
