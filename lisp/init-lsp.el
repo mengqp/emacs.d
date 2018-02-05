@@ -10,7 +10,6 @@
     ;; :ensure t
     )
 
-  (diminish 'eldoc-mode)
 
   (use-package lsp-ui
     :ensure t

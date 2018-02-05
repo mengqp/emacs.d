@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name : el
+# key: once
+# --
+;;; ${1:`(file-name-nondirectory (buffer-file-name))`} --- ${2:xxx} -*- coding: utf-8-unix -*-
+
+;;; Commentary:
+
+;;; Code:
+
+;;; $1 ends here

@@ -16,8 +16,8 @@
 (setq indicate-empty-lines t)
 
 ;; 设置透明
-(set-frame-parameter (selected-frame) 'alpha '(80 . 80))
-(add-to-list 'default-frame-alist '(alpha . (80 . 80)))
+(set-frame-parameter (selected-frame) 'alpha '(100 . 100))
+(add-to-list 'default-frame-alist '(alpha . (100 . 100)))
 
 ;; NO tool bar
 (if (fboundp 'tool-bar-mode)
@@ -222,13 +222,19 @@
   (add-hook 'after-init-hook 'savehist-mode))
 
 
-;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
-(which-function-mode)
-;; when editing js file, this feature is very useful
-(setq-default header-line-format
-	      '((which-func-mode ("" which-func-format " "))))
-(setq-default mode-line-misc-info
-	      (assq-delete-all 'which-function-mode mode-line-misc-info))
+(use-package which-func
+  :init
+  (add-hook 'prog-major-mode #'which-function-mode)
+  :config
+  ;; ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
+  (which-function-mode)
+  ;; when editing js file, this feature is very useful
+  (setq-default header-line-format
+		'((which-func-mode ("" which-func-format " "))))
+  (setq-default mode-line-misc-info
+		(assq-delete-all 'which-function-mode mode-line-misc-info))
+
+  )
 
 (use-package expand-region
   :ensure t
@@ -245,22 +251,29 @@
   :diminish undo-tree-mode
   )
 
+(use-package diminish
+  :ensure t
+  :config
+  (diminish 'eldoc-mode)
+  (diminish 'abbrev-mode)
+  )
 
-(setq hippie-expand-try-functions-list
-      '(
-        try-expand-dabbrev
-        try-expand-dabbrev-all-buffers
-        ;; try-expand-dabbrev-from-kill
-        try-complete-lisp-symbol-partially
-        try-complete-lisp-symbol
-        try-complete-file-name-partially
-        try-complete-file-name
-        ;; try-expand-all-abbrevs
-        ;; try-expand-list
-        ;; try-expand-line
-        ))
 
-(global-set-key (kbd "M-/") 'hippie-expand)
+;; (setq hippie-expand-try-functions-list
+;;       '(
+;;         try-expand-dabbrev
+;;         try-expand-dabbrev-all-buffers
+;;         ;; try-expand-dabbrev-from-kill
+;;         try-complete-lisp-symbol-partially
+;;         try-complete-lisp-symbol
+;;         try-complete-file-name-partially
+;;         try-complete-file-name
+;;         ;; try-expand-all-abbrevs
+;;         ;; try-expand-list
+;;         ;; try-expand-line
+;;         ))
+
+;; (global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; (use-package pomodoro
 ;;   :ensure t

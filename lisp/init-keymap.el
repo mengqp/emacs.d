@@ -154,6 +154,7 @@
 	 "op" 'org-pomodoro
 	 "omp" 'org-mobile-push
 	 "omg" 'org-mobile-pull
+	 "oc" 'cfw:open-org-calendar
 
 	 "pf" 'counsel-projectile-find-file
 	 "pd" 'counsel-projectile-find-dir
@@ -177,50 +178,52 @@
   ;; all keywords arguments are still supported
   ;; 本文件 侧重基本功能
   (nvmap :prefix ","
-	 "bc" 'set-buffer-file-coding-system
-	 "bs" 'save-buffer
-	 "bwt" 'delete-trailing-whitespace
-	 "bwc" 'whitespace-cleanup
-	 "bwv" 'whitespace-mode
+    "," 'ace-jump-char-mode
+
+    "bc" 'set-buffer-file-coding-system
+    "bs" 'save-buffer
+    "bwt" 'delete-trailing-whitespace
+    "bwc" 'whitespace-cleanup
+    "bwv" 'whitespace-mode
 
 
-	 "fb" 'beginning-of-defun
-	 "fe" 'end-of-defun
-	 "fr" 'recover-this-file
-	 "fd" 'unix2dos
-	 "fu" 'dos2unix
+    "fb" 'beginning-of-defun
+    "fe" 'end-of-defun
+    "fr" 'recover-this-file
+    "fd" 'unix2dos
+    "fu" 'dos2unix
 
-	 "h." 'highlight-symbol-at-point
-	 "hu" 'unhighlight-regexp
+    "h." 'highlight-symbol-at-point
+    "hu" 'unhighlight-regexp
 
-	 "itt" 'table-insert
-	 "itr" 'table-insert-row
-	 "itc" 'table-insert-column
+    "itt" 'table-insert
+    "itr" 'table-insert-row
+    "itc" 'table-insert-column
 
-	 "jj" 'ace-jump-char-mode
-	 "jc" 'ace-jump-char-mode
-	 "jw" 'ace-jump-word-mode
-	 "jl" 'ace-jump-line-mode
+    "jj" 'ace-jump-char-mode
+    "jc" 'ace-jump-char-mode
+    "jw" 'ace-jump-word-mode
+    "jl" 'ace-jump-line-mode
 
-	 "ls" 'linum-mode
-	 "l RET" 'toggle-truncate-lines
-	 "ln" 'whitespace-newline-mode
-
-
-	 "sc" 'shell-command
-	 "sd" 'sudo-edit
-	 "sj" 'counsel-imenu
-	 "ss" 'swiper
-	 "sS" 'ivy-resume
+    "ls" 'linum-mode
+    "l RET" 'toggle-truncate-lines
+    "ln" 'whitespace-newline-mode
 
 
-	 "ww" 'save-buffer
-	 "wq" 'evil-save-and-close
+    "sc" 'shell-command
+    "sd" 'sudo-edit
+    "sj" 'counsel-imenu
+    "ss" 'swiper
+    "sS" 'ivy-resume
 
-	 "yy" 'helm-yas-complete
 
-	 ;;"zz" 'paste-from-x-clipboard ; used frequently
-	 )
+    "ww" 'save-buffer
+    "wq" 'evil-save-and-close
+
+    "yy" 'helm-yas-complete
+
+    ;;"zz" 'paste-from-x-clipboard ; used frequently
+    )
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported

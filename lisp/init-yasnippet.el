@@ -7,17 +7,20 @@
   :init
   (progn
     (add-hook 'org-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'c-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'c++-mode-hook #'yas-minor-mode)
+    (add-hook 'c-mode-hook #'yas-minor-mode)
+    (add-hook 'c++-mode-hook #'yas-minor-mode)
     (add-hook 'git-commit-mode-hook #'yas-minor-mode)
     (add-hook 'text-mode-hook #'yas-minor-mode)
+    (add-hook 'lisp-mode-hook #'yas-minor-mode)
+    (add-hook 'emacs-lisp-mode-hook #'yas-minor-mode)
+
     )
 
   (setq yas-snippet-dirs
 	'("~/.emacs.d/mysnippets"))
 
   :config
-  (add-to-list 'company-backends 'company-yasnippet)
+  ;; (add-to-list 'company-backends 'company-yasnippet)
   ;; (message "yasnippet")
   (yas-reload-all)
 
@@ -100,7 +103,7 @@
   ;; (define-key yas-keymap [(control tab)] 'yas-next-field)
   ;; (define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
 
-  ;; (define-key evil-insert-state-map (kbd "M-j") 'yas-expand)
+  (define-key evil-insert-state-map (kbd "M-j") 'yas-expand)
   ;; (define-key evil-emacs-state-map (kbd "M-j") 'yas-expand)
   (define-key evil-insert-state-map (kbd "TAB") 'tab-indent-or-complete)
   (define-key evil-insert-state-map (kbd "TAB") 'tab-indent-or-complete)

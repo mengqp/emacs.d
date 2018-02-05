@@ -1,5 +1,8 @@
-;;; init-calendar
+;;; init-calendar.el --- calendar  -*- coding: utf-8-unix -*-
 
+;;; Commentary:
+
+;;; Code:
 ;; (use-package calfw
 ;;   :ensure t
 ;;   :config
@@ -7,9 +10,11 @@
 ;;     :ensure t)
 ;;   )
 
+
 ;; ** emacs-calfw
 (use-package holidays
   :ensure nil
+  :defer t
   :config
   (defvar eh-calendar-holidays nil)
   (setq eh-calendar-holidays
@@ -66,6 +71,7 @@
 
 (use-package calendar
   :ensure t
+  :defer t
   :config
   (setq calendar-month-name-array
         ["一月" "二月" "三月" "四月" "五月" "六月"
@@ -78,8 +84,13 @@
 
 (use-package calfw
   :ensure t
+  :defer t
+  :init
+  (autoload 'cfw:open-org-calendar "calfw" nil t)
   :config
-  (use-package cal-china-x :ensure t)
+  (use-package cal-china-x
+    :ensure t
+    :defer t)
 
   (defvar eh-calfw-org-file nil)
   (setq eh-calfw-org-file "~/ecode/org/calfw.org")
@@ -115,6 +126,8 @@
 
   (use-package org-agenda
     :ensure nil
+    ;; :init
+    ;; (add-hook 'org-mode-hook #'org-agenda-mode)
     :config
     (unless (member eh-calfw-org-file org-agenda-files)
       (push eh-calfw-org-file org-agenda-files))
@@ -126,9 +139,13 @@
             '("c" "calfw2org" entry (file+headline "~/ecode/org/calfw.org" "Schedule")
               "* %?\n %(cfw:org-capture-day)\n %a"))
       (setq org-capture-templates
-            (append org-capture-templates (list cfw:org-capture-template))))))
+            (append org-capture-templates (list cfw:org-capture-template)))))
+
+
+  )
+
 
 
 
 (provide 'init-calendar)
-;;; init-calendar ends here
+;;; init-calendar.el ends here

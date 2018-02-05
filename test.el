@@ -38,3 +38,7 @@
 ;; 	    ;; 	    (magit-get-current-branch) (magit-get-current-branch))  )
 ;; 	     )
 ;; (shell-command-to-string "ls")
+
+(file-name-sans-extension (buffer-file-name))
+(buffer-file-name)
+(file-name-nondirectory (buffer-file-name))

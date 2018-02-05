@@ -1,18 +1,18 @@
-;;; init-c.el --- 关于c和c++的配置
+;;; /root/.emacs.d/lisp/init-c.el(buffer-file-name) ends here
+;;; init-c.el --- 关于c c++的配置 -*- coding: utf-8-unix -*-
 
-;; (setq init-cc-mode-hook '(c-mode-hook
-;; 		     c++-mode-hook
-;; 		     ))
+;;; Commentary:
 
+;;; Code:
 
-
+;;; Code:
 (defun mengqp/close-compilation-window ()
   "Close the window containing the '*compilation*' buffer."
   (interactive)
   (when compilation-last-buffer
     (delete-windows-on compilation-last-buffer)))
 
-(setq gdb-many-windows t)
+(defvar gdb-many-windows t)
 
 (use-package google-c-style
   :ensure t
@@ -241,3 +241,5 @@
 
 
 (provide 'init-c)
+
+;;; init-c.el ends here
