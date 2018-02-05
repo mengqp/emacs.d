@@ -114,7 +114,7 @@
 ;;   )
 
 
-(when *linux
+(when *linux*
   (use-package ycmd
     :ensure t
     :defer t
