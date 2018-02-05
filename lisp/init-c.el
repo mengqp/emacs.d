@@ -114,34 +114,36 @@
 ;;   )
 
 
-(use-package ycmd
-  :ensure t
-  :defer t
-  :diminish ycmd-mode
-  :init
-  (add-hook 'c++-mode-hook 'ycmd-mode)
-  (add-hook 'c-mode-hook 'ycmd-mode)
+(when *linux
+  (use-package ycmd
+    :ensure t
+    :defer t
+    :diminish ycmd-mode
+    :init
+    (add-hook 'c++-mode-hook 'ycmd-mode)
+    (add-hook 'c-mode-hook 'ycmd-mode)
 
-  (set-variable 'ycmd-server-command '("python" "/root/DotFiles/ycmd/ycmd"))
-  (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
-  (setq ycmd-extra-conf-handler (quote load))
-  (setq ycmd-startup-timeout 10)
-  :config
-  (use-package company-ycmd
-    :ensure t
+    (set-variable 'ycmd-server-command '("python" "/root/DotFiles/ycmd/ycmd"))
+    (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
+    (setq ycmd-extra-conf-handler (quote load))
+    (setq ycmd-startup-timeout 10)
     :config
-    (company-ycmd-setup)
-    (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
+    (use-package company-ycmd
+      :ensure t
+      :config
+      (company-ycmd-setup)
+      (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
+      )
+    (use-package flycheck-ycmd
+      :ensure t
+      :config
+      (flycheck-ycmd-setup)
+      (when (not (display-graphic-p))
+	(setq flycheck-indication-mode nil))
+      )
     )
-  (use-package flycheck-ycmd
-    :ensure t
-    :config
-    (flycheck-ycmd-setup)
-    (when (not (display-graphic-p))
-      (setq flycheck-indication-mode nil))
-    )
+
   )
-
 (use-package dynamic-spaces
   :ensure t
   :init

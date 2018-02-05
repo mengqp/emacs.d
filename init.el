@@ -78,8 +78,10 @@
 
 ;;ui
 (try-require 'init-base)
-(try-require 'init-modeline)
-;; (try-require 'init-theme)
+(when *linux*
+  (try-require 'init-modeline)
+  (try-require 'init-theme)
+  )
 
 ;;tool
 (try-require 'init-calendar)
