@@ -67,7 +67,7 @@
 ;; Which means on every .el and .elc file loaded during start up, it has to runs those regexps against the filename.
 (let ((ts-init (current-time)))
   (setq missing-packages-list nil
-        package-init-statistic nil)
+	package-init-statistic nil)
 (let ((file-name-handler-alist nil))
 
 ;;; package here
@@ -78,7 +78,7 @@
 
 ;;ui
 (try-require 'init-base)
-;; (try-require 'init-modeline)
+(try-require 'init-modeline)
 ;; (try-require 'init-theme)
 
 ;;tool
