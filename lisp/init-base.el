@@ -149,6 +149,20 @@
 ;;   :defer t)
 ;; (require 'unicad)
 (load-file "~/.emacs.d/lisp/unicad.el")
+(when *win64*
+  (prefer-coding-system 'cp950)
+  (prefer-coding-system 'gb2312)
+  (prefer-coding-system 'cp936)
+  ;;(prefer-coding-system 'gb18030)
+					;(prefer-coding-system 'utf-16le-with-signature)
+  (prefer-coding-system 'utf-16)
+  ;; 新建文件使用utf-8-unix方式
+  ;; 如果不写下面两句，只写
+  ;; (prefer-coding-system 'utf-8)
+  ;; 这一句的话，新建文件以utf-8编码，行末结束符平台相关
+  (prefer-coding-system 'utf-8-dos)
+  (prefer-coding-system 'utf-8-unix)
+  )
 
 
 ;; --------------------------------other  --------------------------------------
