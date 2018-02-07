@@ -149,7 +149,7 @@
 	 "mm" 'counsel-bookmark
 
 
-	 "oc" 'org-capture
+	 "oo" 'org-capture
 	 "oa" 'org-agenda
 	 "op" 'org-pomodoro
 	 "omp" 'org-mobile-push

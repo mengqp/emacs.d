@@ -20,6 +20,12 @@
 ;;   (interactive)
 ;;   (projectile-find-file "readme.org")
 ;;     )
+(defun mengqp/clearM ()
+    "clear buffer's ^M."
+  (interactive)
+  (replace-string "" "")
+
+    )
 
 (defun mengqp/open-init-package-file ()
   "open init package file to config"
