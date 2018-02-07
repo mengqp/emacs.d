@@ -105,15 +105,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
 		))
 
   (setq org-agenda-files org-agenda-text-search-extra-files)
-  (setq org-agenda-files (list "E:/svn/org"
-			       "E:/svn/em761/docs/org/issue761.org"
-			       ;; "E:/svn/em761/docs/org/disscuss761.org"
-			       "E:/svn/epduhmi/3352/asrc/readme_epdu_a.org"
-			       "E:/svn/epduhmi/3352/dsrc/readme_epdu_d.org"
-			       "E:/svn/em770/docs/org/issue_770.org"
-			       "E:/svn/pdt/docs/org/issuepdt.org"
-			       "F:/项目/zlg/docs/org/issue_zlg.org"
-			       ))
   )
 
 (setq org-capture-templates
