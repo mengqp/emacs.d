@@ -107,6 +107,9 @@
 (setq-default mode-line-misc-info
 	      (assq-delete-all 'which-func-mode mode-line-misc-info))
 
+;; 自动刷新vc状态
+(setq auto-revert-check-vc-info t)
+
 (setq-default mode-line-format
 	      (list
 	       ;; " %1"
