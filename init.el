@@ -112,7 +112,9 @@
 (try-require 'init-c)
 (try-require 'init-lisp)
 (try-require 'init-org)
-(try-require 'init-ahk)
+(when *win64*
+  (try-require 'init-ahk)
+  )
 ;; (try-require 'init-w3m)
 
 

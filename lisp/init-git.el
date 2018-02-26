@@ -15,6 +15,9 @@
   (use-package evil-magit
     :ensure t)
 
+  (use-package orgit
+    :ensure t)
+
    ;; Gitflow externsion for Magit
   (use-package magit-gitflow
     :ensure t

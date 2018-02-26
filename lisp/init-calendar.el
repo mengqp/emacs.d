@@ -93,7 +93,7 @@
     :defer t)
 
   (defvar eh-calfw-org-file nil)
-  (setq eh-calfw-org-file "~/ecode/org/calfw.org")
+  (setq eh-calfw-org-file "~/nutdata/myorg/general/calfw.org")
 
   ;; 日历表格边框设置
   (setq cfw:fchar-junction ?+
@@ -136,7 +136,7 @@
       :config
       ;; 为calfw设置一个capture模板并添加到org-capture-templates
       (setq cfw:org-capture-template
-            '("c" "calfw2org" entry (file+headline "~/ecode/org/calfw.org" "Schedule")
+            '("c" "calfw2org" entry (file+headline "~/nutdata/myorg/general/calfw.org" "Schedule")
               "* %?\n %(cfw:org-capture-day)\n %a"))
       (setq org-capture-templates
             (append org-capture-templates (list cfw:org-capture-template)))))

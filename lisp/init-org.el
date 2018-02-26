@@ -15,6 +15,8 @@
     :ensure t
     )
 
+
+
   (use-package org-pomodoro
     :ensure t
     :defer t
@@ -65,17 +67,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
 ;; 设置agent文件表
 
 (when *linux*
-  ;; (setq org-agenda-files (list "~/ecode/em770/docs/org/issue_770.org"
-  ;; 				 "~/ecode/em761/docs/org/issue761.org"
-  ;; 				 ;; "~/ecode/em761/docs/org/disscuss761.org"
-  ;; 				 "~/ecode/epduhmi/3352/asrc/readme_epdu_a.org"
-  ;; 				 "~/ecode/epduhmi/3352/dsrc/readme_epdu_d.org"
-  ;; 				 ;; "~/ecode/org/"
-  ;; 				 "~/ecode/pdt/docs/org/issuepdt.org"
-  ;; 				 "~/project/zlg/docs/org/issue_zlg.org"
-  ;; 				 org-agenda-text-search-extra-files
-
-  ;; 				 ))
   (setq org-agenda-text-search-extra-files
 	(append
 	 (sa-find-org-file-recursively "~/nutdata/myorg/" "org")
@@ -83,7 +74,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
 	 (sa-find-org-file-recursively "~/ecode/em761/docs/org/" "org")
 	 (sa-find-org-file-recursively "~/ecode/epduhmi/3352/asrc/docs/org" "org")
 	 (sa-find-org-file-recursively "~/ecode/epduhmi/3352/dsrc/docs/org" "org")
-	 (sa-find-org-file-recursively "~/ecode/pdt/docs/org" "org")
 	 (sa-find-org-file-recursively "~/ecode/pdt/docs/org" "org")
 	 (sa-find-org-file-recursively "~/project/zlg/docs/org/" "org")
 		))
@@ -109,22 +99,38 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
 (setq org-capture-templates
       '(
-	("j" "Journal 日常工作记录" entry (file+datetree "~/ecode/org/journal.org")
+	("j" "Journal 日常工作记录" entry (file+datetree "~/nutdata/myorg/general/journal.org")
 	 "*  %? \n %i\n ")
-	("t" "Todo gdt" entry (file+headline "~/ecode/org/gtd.org" "Tasks")
+	("t" "Todo gdt" entry (file+headline "~/nutdata/myorg/general/gtd.org" "Tasks")
 	 "* TODO [#B] %? \n %i\n %a")
-	("m" "meet 会议记录" entry (file+datetree "~/ecode/org/meet.org")
+	("m" "meet 会议记录" entry (file+datetree "~/nutdata/myorg/general/meet.org")
 	 "* %? \n %i\n ")
-	("M" "memo 备忘 加班记录等" entry (file+datetree "~/ecode/org/memo.org")
+	("M" "memo 备忘 加班记录等" entry (file+datetree "~/nutdata/myorg/general/memo.org")
 	 "* %?  %i\n ")
-	("i" "idea 乱七八糟的想法" entry (file+datetree "~/ecode/org/idea.org")
+	("i" "idea 乱七八糟的想法" entry (file+datetree "~/nutdata/myorg/general/idea.org")
 	 "* %? \n \nEntered on %U\n %i\n ")
-	("s" "Summarize 总结" entry (file+headline "~/ecode/org/summarize.org" "summarize")
+	("s" "Summarize 总结" entry (file+headline "~/nutdata/myorg/general/summarize.org" "summarize")
 	 "*  %? \n %i\n ")
 	))
 
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
 				 (org-agenda-files :maxlevel . 9))))
+
+  ;; (use-package org-brain
+  ;;   :ensure t
+  ;;   :init
+  ;;   (setq org-brain-path "~/nutdata/myorg/brain")
+  ;;   ;; For Evil users
+  ;;   ;; (eval-after-load 'evil
+  ;;   ;;   (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
+  ;;   :config
+  ;;   (setq org-id-track-globally t)
+  ;;   (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+  ;;   (push '("b" "Brain" plain (function org-brain-goto-end)
+  ;; 	    "* %i%?" :empty-lines 1)
+  ;; 	  org-capture-templates)
+  ;;   (setq org-brain-visualize-default-choices 'all)
+  ;;   (setq org-brain-title-max-length 12))
 
 ;; (use-package org-projectile
 ;;   :config
