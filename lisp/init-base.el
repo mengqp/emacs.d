@@ -117,6 +117,13 @@
     )
   )
 
+(when *linux*
+  (use-package fcitx
+    :ensure t
+    :config
+    (fcitx-default-setup)
+    ))
+
 
 (use-package recentf
  ;; :ensure nil
