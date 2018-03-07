@@ -243,19 +243,19 @@
   (add-hook 'after-init-hook 'savehist-mode))
 
 
-(use-package which-func
-  :init
-  (add-hook 'prog-major-mode #'which-function-mode)
-  :config
+;; (use-package which-func
+;;   :init
+;;   (add-hook 'prog-major-mode #'which-function-mode)
+;;   :config
   ;; ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
-  (which-function-mode)
+  ;; (which-function-mode)
   ;; when editing js file, this feature is very useful
-  (setq-default header-line-format
-		'((which-func-mode ("" which-func-format " "))))
-  (setq-default mode-line-misc-info
-		(assq-delete-all 'which-function-mode mode-line-misc-info))
+  ;; (setq-default header-line-format
+  ;; 		'((which-func-mode ("" which-func-format " "))))
+  ;; (setq-default mode-line-misc-info
+  ;; 		(assq-delete-all 'which-function-mode mode-line-misc-info))
 
-  )
+  ;; )
 
 (use-package expand-region
   :ensure t

@@ -112,6 +112,7 @@
 (try-require 'init-c)
 (try-require 'init-lisp)
 (try-require 'init-org)
+;; (try-require 'init-tex)
 (when *win64*
   (try-require 'init-ahk)
   )
