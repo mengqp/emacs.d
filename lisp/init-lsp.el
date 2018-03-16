@@ -6,8 +6,14 @@
   :init
   (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
   :config
-  (use-package lsp-flycheck
-    ;; :ensure t
+  ;; (use-package lsp-flycheck
+  ;;   ;; :ensure t
+  ;;   )
+
+  (use-package company-lsp
+    :ensure t
+    :config
+    (push 'company-lsp company-backends)
     )
 
 

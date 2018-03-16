@@ -142,8 +142,8 @@
 	(setq flycheck-indication-mode nil))
       )
     )
-
   )
+
 (use-package dynamic-spaces
   :ensure t
   :init
@@ -158,7 +158,30 @@
 ;;   (add-hook 'c++-mode-hook #'lsp-cquery-enable)
 ;;   (add-hook 'c-mode-hook #'lsp-cquery-enable)
 ;;   :config
+
+;;   (use-package company-lsp
+;;     :ensure t
+;;     :config
+;;     (push 'company-lsp company-backends)
+;;     )
+
+
+;;   (use-package lsp-ui
+;;     :ensure t
+;;     :init
+;;     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+;;     )
+
 ;;   (setq cquery-executable "/usr/bin/cquery")
+;;   (setq cquery-project-roots '("opt/qt-everywhere-opensource-src-4.7.3/" "~/Dev/llvm"))
+;;   (setq cquery-extra-init-params
+;; 	'(:cacheFormat "msgpack" :completion (:detailedLabel t) :xref (:container t)
+;; 		       :diagnostics (:frequencyMs 5000)))
+
+;;   (use-package ivy-xref
+;;     :ensure t
+;;     :init
+;;     (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
 ;;   )
 
 (general-define-key :states '(normal motion)
