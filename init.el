@@ -5,11 +5,12 @@
 
 
 ;;; Code:
-;;; Best default gc threshold value. Should't be too big
-(defvar best-gc-cons-threshold 4000000)
+;; ;;; Best default gc threshold value. Should't be too big
+;; (defvar best-gc-cons-threshold 4000000)
 
-;; don't GC during startup to save time
-(setq gc-cons-threshold most-positive-fixnum)
+;; ;; don't GC during startup to save time
+;; (setq gc-cons-threshold most-positive-fixnum)
+(setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
 
 (defvar emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
@@ -79,7 +80,7 @@
 ;;ui
 (try-require 'init-base)
 (when *linux*
-  (try-require 'init-modeline)
+  ;; (try-require 'init-modeline)
   (try-require 'init-theme)
   )
 

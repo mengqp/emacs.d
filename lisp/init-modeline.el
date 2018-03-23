@@ -1,3 +1,52 @@
+;;; init-modeline.el --- modeline -*- coding: utf-8-unix -*-
+
+;;; Copyright © 2018 - 2018 mengqp.
+
+;; Author: mengqp
+;; URL:
+;; Version:$(4:0.0.1)
+;; Keywords:
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Commentary:
+;;
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation; either version 2, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
+;; Floor, Boston, MA 02110-1301, USA.
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Code:
+;; (use-package spaceline
+;;   :ensure t
+;;   :config
+;;   (require 'spaceline-config)
+;;   (spaceline-spacemacs-theme)
+;;   (use-package spaceline-all-the-icons
+;;     :ensure t
+;;     :after spaceline
+;;     :config
+;;     (spaceline-all-the-icons-theme))
+
+;;   (spaceline-toggle-which-function-on)
+;;     ;; spaceline-toggle-<name>-on
+
+;;   )
 
 ;; (use-package smart-mode-line
 ;;   :ensure t
@@ -7,7 +56,6 @@
 ;;   :config
 ;;   (sml/setup)
 ;;   )
-
 
 (defun mengqp/simplify-major-mode-name ()
   "Return simplifyed major mode name"
@@ -19,26 +67,6 @@
          (replace-name (plist-get replace-table (intern major-name))))
     (if replace-name replace-name major-name
         )))
-;; (defun spaceline--unicode-number (str)
-;;   "Return a nice unicode representation of a single-digit number STR."
-;;   (cond
-;;    ((string= "1" str) "➊")
-;;    ((string= "2" str) "➋")
-;;    ((string= "3" str) "➌")
-;;    ((string= "4" str) "➍")
-;;    ((string= "5" str) "➎")
-;;    ((string= "6" str) "➏")
-;;    ((string= "7" str) "➐")
-;;    ((string= "8" str) "➑")
-;;    ((string= "9" str) "➒")
-;;    ((string= "0" str) "➓")))
-
-;; (defun window-number-mode-line ()
-;;   "The current window number. Requires `window-numbering-mode' to be enabled."
-;;   (when (bound-and-true-p window-numbering-mode)
-;;     (let* ((num (window-numbering-get-number))
-;;            (str (when num (int-to-string num))))
-;;       (spaceline--unicode-number str))))
 
 (setq evil-normal-state-tag   (propertize "[N]" 'face '((:background "DarkGoldenrod2" :foreground "black")))
       evil-emacs-state-tag    (propertize "[E]" 'face '((:background "SkyBlue2" :foreground "black")))
@@ -84,25 +112,6 @@
 	   (throw 'break (default-value 'evil-shift-width)))))
     (concat "TS:" (int-to-string (or mode-indent-level 0)))))
 
-;; (require 'flycheck)
-;; (setq my-flycheck-mode-line
-;;       '(:eval
-;; 	(pcase flycheck-last-status-change
-;; 	  ((\` not-checked) nil)
-;; 	  ((\` no-checker) (propertize " -" 'face 'warning))
-;; 	  ((\` running) (propertize " ✷" 'face 'success))
-;; 	  ((\` errored) (propertize " !" 'face 'error))
-;; 	  ((\` finished)
-;; 	   (let* ((error-counts (flycheck-count-errors flycheck-current-errors))
-;; 		  (no-errors (cdr (assq 'error error-counts)))
-;; 		  (no-warnings (cdr (assq 'warning error-counts)))
-;; 		  (face (cond (no-errors 'error)
-;; 			      (no-warnings 'warning)
-;; 			      (t 'success))))
-;; 	     (propertize (format "[%s/%s]" (or no-errors 0) (or no-warnings 0))
-;; 			 'face face)))
-;; 	  ((\` interrupted) " -")
-;; 	  ((\` suspicious) '(propertize " ?" 'face 'warning)))))
 
 (which-function-mode)
 (setq-default header-line-format
@@ -110,8 +119,8 @@
 (setq-default mode-line-misc-info
 	      (assq-delete-all 'which-func-mode mode-line-misc-info))
 
-;; 自动刷新vc状态
-(setq auto-revert-check-vc-info t)
+;; ;; 自动刷新vc状态
+;; (setq auto-revert-check-vc-info t)
 
 (setq-default mode-line-format
 	      (list
@@ -220,7 +229,6 @@
 
 
 
-
 (provide 'init-modeline)
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-modeline.el ends here

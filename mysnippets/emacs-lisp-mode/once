@@ -4,11 +4,11 @@
 # --
 ;;; ${1:`(file-name-nondirectory (buffer-file-name))`} --- ${2:xxx} -*- coding: utf-8-unix -*-
 
-;;; Copyright © $(3:2018) - $3 mengqp.
+;;; Copyright © ${3:2018} - $3 mengqp.
 
 ;; Author: mengqp
 ;; URL:
-;; Version:$(4:0.0.1)
+;; Version:${4:0.0.1}
 ;; Keywords:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

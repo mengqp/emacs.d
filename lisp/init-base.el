@@ -16,8 +16,8 @@
 (setq indicate-empty-lines t)
 
 ;; 设置透明
-(set-frame-parameter (selected-frame) 'alpha '(100 . 100))
-(add-to-list 'default-frame-alist '(alpha . (100 . 100)))
+(set-frame-parameter (selected-frame) 'alpha '(80 . 100))
+(add-to-list 'default-frame-alist '(alpha . (80 . 100)))
 
 ;; NO tool bar
 (if (fboundp 'tool-bar-mode)
@@ -85,16 +85,25 @@
 (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
 
 ;;80列
-(use-package fill-column-indicator
+;; (use-package fill-column-indicator
+;;   :ensure t
+;;   ;; :defer t
+;;   :init
+;;   (add-hook 'prog-mode-hook 'fci-mode)
+;;   (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
+;;   (setq fci-rule-column 80)
+;;   (setq fci-rule-width 3)
+;;   (setq fci-rule-color "darkblue")
+;;   )
+
+(use-package column-enforce-mode
   :ensure t
-  ;; :defer t
+  :diminish column-enforce-mode
   :init
-  (add-hook 'prog-mode-hook 'fci-mode)
-  (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
-  (setq fci-rule-column 80)
-  (setq fci-rule-width 3)
-  (setq fci-rule-color "darkblue")
-  )
+  (add-hook 'prog-mode-hook 'column-enforce-mode)
+  :config
+  (setq column-enforce-column 81)
+)
   ;; )
 
 (when *linux*
