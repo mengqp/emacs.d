@@ -16,8 +16,8 @@
 (setq indicate-empty-lines t)
 
 ;; 设置透明
-(set-frame-parameter (selected-frame) 'alpha '(80 . 100))
-(add-to-list 'default-frame-alist '(alpha . (80 . 100)))
+;; (set-frame-parameter (selected-frame) 'alpha '(80 . 100))
+;; (add-to-list 'default-frame-alist '(alpha . (80 . 100)))
 
 ;; NO tool bar
 (if (fboundp 'tool-bar-mode)
@@ -28,6 +28,9 @@
 ;; no menu bar
 (if (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
+
+;; 关闭Tooltip
+(tooltip-mode -1)
 
 
 (when *linux*
@@ -59,8 +62,6 @@
 (setq scroll-margin 0
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
-;; 关闭Tooltip
-(tooltip-mode -1)
 
 ;;显示括号匹配
 (show-paren-mode t)
