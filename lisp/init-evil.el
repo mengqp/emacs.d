@@ -111,6 +111,17 @@
 
   (use-package evil-nerd-commenter
     :ensure t)
+
+  (use-package evil-snipe
+    :ensure t
+    :init
+    (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
+    :config
+    (evil-snipe-mode +1)
+    (evil-snipe-override-mode +1)
+
+    )
+
   )
 
 
