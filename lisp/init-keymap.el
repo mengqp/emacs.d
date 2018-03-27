@@ -72,6 +72,11 @@
 
   ;; (which-key-add-key-based-replacements
   ;;   ", e" "errors/eval")
+  (which-key-add-key-based-replacements
+    ", c" "coding")
+
+  (which-key-add-key-based-replacements
+    ", c2" "unixdosconvert")
 
   (which-key-add-key-based-replacements
     ", f" "function")
@@ -180,18 +185,20 @@
   (nvmap :prefix ","
     "," 'ace-jump-char-mode
 
-    "bc" 'set-buffer-file-coding-system
     "bs" 'save-buffer
     "bwt" 'delete-trailing-whitespace
     "bwc" 'whitespace-cleanup
     "bwv" 'whitespace-mode
 
+    "cd" 'describe-current-coding-system
+    "cc" 'set-buffer-file-coding-system
+    "c2d" 'unix2dos
+    "c2u" 'dos2unix
+
 
     "fb" 'beginning-of-defun
     "fe" 'end-of-defun
     "fr" 'recover-this-file
-    "fd" 'unix2dos
-    "fu" 'dos2unix
 
     "h." 'highlight-symbol-at-point
     "hu" 'unhighlight-regexp
