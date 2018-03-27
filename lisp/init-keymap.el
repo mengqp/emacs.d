@@ -136,7 +136,7 @@
 	 "gb" 'magit-blame
 	 "gf" 'magit-gitflow-popup
 	 "gt" 'git-timemachine
-	 "gc" 'magit-checkout-file
+	 "gc" 'magit-file-checkout
 	 "gp" 'git-push-coding-request
 
 	 "hf" 'find-function
