@@ -101,7 +101,7 @@
 ;; (try-require 'init-popwin)
 ;; (try-require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
-;; (try-require 'init-pyim)
+(try-require 'init-pyim)
 ;; (try-require 'init-abbrev)
 ;; (try-require 'init-tree)
 ;; (try-require 'init-which-key)

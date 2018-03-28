@@ -154,12 +154,12 @@
     )
   )
 
-(when *linux*
-  (use-package fcitx
-    :ensure t
-    :config
-    (fcitx-default-setup)
-    ))
+;; (when *linux*
+;;   (use-package fcitx
+;;     :ensure t
+;;     :config
+;;     (fcitx-default-setup)
+;;     ))
 
 
 (use-package recentf
