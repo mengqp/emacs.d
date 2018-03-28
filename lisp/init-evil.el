@@ -114,6 +114,7 @@
 
   (use-package evil-snipe
     :ensure t
+    :diminish evil-snipe-mode evil-snipe-override-mode evil-snipe-local-mode
     :init
     (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
     :config
