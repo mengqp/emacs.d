@@ -24,7 +24,7 @@
   (when *win64*
     (use-package company-childframe
       :ensure t
-      :dinimish company-childframe-mode
+      :diminish company-childframe-mode
       :config
       (company-childframe-mode 1)
       )
