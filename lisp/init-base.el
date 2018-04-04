@@ -93,6 +93,9 @@
 ;;显示括号匹配
 (show-paren-mode t)
 
+;; show cursor position within line
+(column-number-mode 1)
+
 ;;文件在改变时自动加载
 (use-package autorevert
   :diminish auto-revert-mode
@@ -315,6 +318,9 @@
   (diminish 'eldoc-mode)
   (diminish 'abbrev-mode)
   )
+
+;; (use-package repeater
+;;   :ensure t)
 
 
 ;; (setq hippie-expand-try-functions-list
