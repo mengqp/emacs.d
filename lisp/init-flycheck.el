@@ -86,6 +86,12 @@ If the error list is visible, hide it.  Otherwise, show it."
 
   )
 
+(use-package flycheck-pos-tip
+  :ensure t
+  :after flycheck
+  :config
+  (add-hook 'flycheck-mode-hook #'flycheck-pos-tip-mode))
+
 
 
 (provide 'init-flycheck)
