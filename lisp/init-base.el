@@ -319,6 +319,12 @@
   (diminish 'abbrev-mode)
   )
 
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  )
+
 ;; (use-package repeater
 ;;   :ensure t)
 
