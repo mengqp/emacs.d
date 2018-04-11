@@ -50,5 +50,15 @@
   ;;   )
   )
 
+(when *win64*
+  (use-package ivy-posframe
+    :ensure t
+    :after ivy-mode
+    :init
+    (setq ivy-display-function #'ivy-posframe-display)
+    :config
+    (ivy-posframe-enable)
+    )
+  )
 
 (provide 'init-ivy)
