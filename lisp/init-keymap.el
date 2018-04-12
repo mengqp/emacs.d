@@ -16,7 +16,7 @@
     "SPC [" "previous")
 
   (which-key-add-key-based-replacements
-    "SPC [" "next")
+    "SPC ]" "next")
 
   (which-key-add-key-based-replacements
     "SPC a" "app")
@@ -25,7 +25,7 @@
     "SPC b" "buffers")
 
   (which-key-add-key-based-replacements
-    "SPC c" "compile")
+    "SPC c" "code")
 
   (which-key-add-key-based-replacements
     "SPC e" "shell")
