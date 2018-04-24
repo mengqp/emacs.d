@@ -69,7 +69,7 @@
 
 (use-package golden-ratio
   :ensure t
-  :after switch-window window-numbering
+  :after switch-window
   :diminish golden-ratio-mode
   :config
   (golden-ratio-mode 1)

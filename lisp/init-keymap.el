@@ -183,7 +183,8 @@
   ;; all keywords arguments are still supported
   ;; 本文件 侧重基本功能
   (nvmap :prefix ","
-    "," 'ace-jump-char-mode
+    ;; "," 'ace-jump-char-mode
+    "," 'avy-goto-char
 
     "bs" 'save-buffer
     "bwt" 'delete-trailing-whitespace
@@ -207,10 +208,10 @@
     "itr" 'table-insert-row
     "itc" 'table-insert-column
 
-    "jj" 'ace-jump-char-mode
-    "jc" 'ace-jump-char-mode
-    "jw" 'ace-jump-word-mode
-    "jl" 'ace-jump-line-mode
+    ;; "jj" 'ace-jump-char-mode
+    ;; "jc" 'ace-jump-char-mode
+    "jw" 'avy-goto-char-2
+    "jl" 'avy-goto-line
 
     "ls" 'linum-mode
     "l RET" 'toggle-truncate-lines

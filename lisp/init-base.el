@@ -325,6 +325,12 @@
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   )
 
+(use-package real-auto-save
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook 'real-auto-save-mode)
+  )
+
 ;; (use-package repeater
 ;;   :ensure t)
 
