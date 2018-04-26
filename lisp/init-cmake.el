@@ -1,4 +1,4 @@
-;;; init-lisp.el --- xxx -*- coding: utf-8-unix -*-
+;;; init-cmake.el --- xxx -*- coding: utf-8-unix -*-
 
 ;;; Copyright © 2018 - 2018 mengqp.
 
@@ -32,24 +32,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(use-package elisp-mode
-  :init
-  (setq auto-mode-alist (cons '("\\.ahk$" . emacs-lisp-mode) auto-mode-alist))
-  (setq auto-mode-alist (cons '("\\.ahk$" . lisp-interaction-mode) auto-mode-alist))
-  :config
-  (general-define-key :states '(normal motion)
-		      :keymaps '(lisp-interaction-mode-map
-				 emacs-lisp-mode-map)
-		      :prefix ","
+(use-package cmake-mode
+  :ensure t
+  :mode (
+	 ("CMakeLists\\.txt\\'" . cmake-mode)
+	 ("\\.cmake\\'" . cmake-mode)
+	 ))
 
-		      "eb" 'eval-buffer
-		      "ee" 'eval-expression
-
-		      (which-key-add-key-based-replacements
-			", e" "eval")
-		      )
-  )
-
-(provide 'init-lisp)
+(provide 'init-cmake)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-lisp.el ends here
+;;; init-cmake.el ends here

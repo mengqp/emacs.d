@@ -80,7 +80,7 @@
 ;;ui
 (try-require 'init-base)
 (when *linux*
-  ;; (try-require 'init-modeline)
+  (try-require 'init-modeline)
   (try-require 'init-theme)
   )
 
@@ -91,13 +91,13 @@
 (try-require 'init-evil)
 (try-require 'init-company)
 (try-require 'init-window)
-(try-require 'init-ivy)
 (try-require 'init-projectile)
 (try-require 'init-yasnippet)
 (try-require 'init-flycheck)
 (try-require 'init-ace-jump)
 (try-require 'init-git)
 (try-require 'init-mc)
+(try-require 'init-cmake)
 ;; (try-require 'init-popwin)
 ;; (try-require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
@@ -106,6 +106,7 @@
 ;; (try-require 'init-tree)
 ;; (try-require 'init-which-key)
 ;; (try-require 'init-shell)
+(try-require 'init-ivy)
 (try-require 'init-func)
 (try-require 'init-keymap)
 

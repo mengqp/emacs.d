@@ -69,7 +69,7 @@ But you may use safer HTTPS instead.")
 (package-initialize)
 
 (require-package 'use-package)
-(require 'use-package)
+;; (require 'use-package)
 (require-package 'general)
 (require-package 'diminish)
 

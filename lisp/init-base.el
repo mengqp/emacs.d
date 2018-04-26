@@ -137,25 +137,25 @@
 )
   ;; )
 
-(when *linux*
-  (use-package all-the-icons
-    :ensure t
-    :init
-    :config
-    (use-package all-the-icons-dired
-      :ensure t
-      :defer t
-      :init
-      (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
-      )
-    (use-package all-the-icons-ivy
-      :ensure t
-      :config
-      (all-the-icons-ivy-setup)
-      )
+;; (when *linux*
+;;   (use-package all-the-icons
+;;     :ensure t
+;;     :init
+;;     :config
+;;     (use-package all-the-icons-dired
+;;       :ensure t
+;;       :defer t
+;;       :init
+;;       (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+;;       )
+;;     (use-package all-the-icons-ivy
+;;       :ensure t
+;;       :config
+;;       (all-the-icons-ivy-setup)
+;;       )
 
-    )
-  )
+;;     )
+;;   )
 
 ;; (when *linux*
 ;;   (use-package fcitx
@@ -325,12 +325,11 @@
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   )
 
-(use-package real-auto-save
-  :ensure t
-  :init
-  (add-hook 'prog-mode-hook 'real-auto-save-mode)
-  )
-
+;; (use-package real-auto-save
+;;   :ensure t
+;;   :init
+;;   (add-hook 'prog-mode-hook 'real-auto-save-mode)
+;;   )
 ;; (use-package repeater
 ;;   :ensure t)
 

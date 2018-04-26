@@ -9,8 +9,6 @@
   :defer t
   :init
   :config
-  (message "org")
-
   (use-package htmlize
     :ensure t
     )

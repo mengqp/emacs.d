@@ -35,7 +35,6 @@
 (use-package evil
   :ensure t
   :diminish evil-mode
-  :init
   :config
   (evil-mode t)
   (define-key evil-normal-state-map (kbd "go") 'ace-jump-char-mode)
@@ -71,7 +70,7 @@
 
   (use-package evil-numbers
     :ensure t
-    ;; :defer t
+    :defer t
     :init
     ;; +/- 代替
     (define-key evil-normal-state-map (kbd "+") 'evil-numbers/inc-at-pt)
@@ -120,13 +119,8 @@
     :config
     (evil-snipe-mode +1)
     (evil-snipe-override-mode +1)
-
     )
-
   )
-
-
-
 (provide 'init-evil)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-evil.el ends here
