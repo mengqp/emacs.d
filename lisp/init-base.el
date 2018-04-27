@@ -85,6 +85,13 @@
 ;; 末尾加空行
 (setq require-final-newline t)
 
+(use-package ws-butler
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook #'ws-butler-mode)
+  )
+
+
 ;; 平滑滚动
 (setq scroll-margin 0
       scroll-conservatively 100000
