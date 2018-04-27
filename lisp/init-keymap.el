@@ -201,6 +201,7 @@
 	 "pp" 'projectile-switch-project
 
 	 "qq" 'save-buffers-kill-emacs
+	 "qr" 'restart-emacs
 
 	 "ws" 'split-window-vertically
 	 "wv" 'split-window-horizontally

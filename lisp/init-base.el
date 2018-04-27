@@ -87,6 +87,7 @@
 
 (use-package ws-butler
   :ensure t
+  :diminish ws-butler-mode
   :init
   (add-hook 'prog-mode-hook #'ws-butler-mode)
   )
@@ -330,6 +331,11 @@
   :ensure t
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  )
+
+(use-package restart-emacs
+  :ensure t
+  :defer t
   )
 
 ;; (use-package real-auto-save
