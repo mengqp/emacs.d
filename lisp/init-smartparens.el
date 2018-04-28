@@ -34,11 +34,13 @@
 ;;; Code:
 (use-package smartparens
   :ensure t
+  :defer t
   :diminish smartparens-mode smartparens-global-mode
+  :init
+  (add-hook 'prog-mode-hook 'smartparens-mode)
   :config
   ;; enable the default configuration
   (use-package smartparens-config)
-  (smartparens-global-mode t)
 
   )
 (provide 'init-smartparens)

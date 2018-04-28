@@ -1,4 +1,4 @@
-;;; init-projectile.el --- xxx -*- coding: utf-8-unix -*-
+;;; init-coding.el --- xxx -*- coding: utf-8-unix -*-
 
 ;;; Copyright © 2018 - 2018 mengqp.
 
@@ -32,23 +32,24 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(use-package projectile
-  :ensure t
-  :diminish projectile-mode
-  :defer t
-  :init
-  (general-define-key :states '(normal motion)
-		      :keymaps '(c++-mode-map
-				 c-mode-map)
-		      :prefix ";"
-		      "a" 'projectile-find-other-file
-		      "A" 'projectile-find-other-file-other-window
-		      )
-  :config
-  (projectile-mode t)
-
+(load-file "~/.emacs.d/lisp/unicad.elc")
+(when *win64*
+  (prefer-coding-system 'cp950)
+  (prefer-coding-system 'gb2312)
+  (prefer-coding-system 'cp936)
+  ;;(prefer-coding-system 'gb18030)
+					;(prefer-coding-system 'utf-16le-with-signature)
+  (prefer-coding-system 'utf-16)
+  ;; 新建文件使用utf-8-unix方式
+  ;; 如果不写下面两句，只写
+  ;; (prefer-coding-system 'utf-8)
+  ;; 这一句的话，新建文件以utf-8编码，行末结束符平台相关
+  (prefer-coding-system 'utf-8-dos)
+  (prefer-coding-system 'utf-8-unix)
   )
 
-(provide 'init-projectile)
+
+
+(provide 'init-coding)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-projectile.el ends here
+;;; init-coding.el ends here

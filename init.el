@@ -78,7 +78,10 @@
 (try-require 'init-package)
 
 ;;ui
+(try-require 'init-ui)
 (try-require 'init-base)
+(try-require 'init-coding)
+(try-require 'init-cnfonts)
 (when *linux*
   (try-require 'init-modeline)
   (try-require 'init-theme)

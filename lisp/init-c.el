@@ -105,6 +105,18 @@
   (use-package helm-cscope
     :ensure t
     :defer t)
+
+  (general-define-key :states '(normal motion)
+		      :keymaps '(c++-mode-map
+				 c-mode-map)
+		      :prefix ";"
+		      "s" 'helm-cscope-find-this-symbol
+		      "d" 'helm-cscope-find-global-definition
+		      "c" 'helm-cscope-find-called-function
+		      "C" 'helm-cscope-find-calling-this-function
+		      "i" 'cscope-index-files
+		      )
+
   )
 
 ;; (use-package irony
@@ -154,6 +166,7 @@
     (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
     (setq ycmd-extra-conf-handler (quote load))
     (setq ycmd-startup-timeout 10)
+
     :config
     (use-package company-ycmd
       :ensure t
@@ -168,6 +181,14 @@
       (when (not (display-graphic-p))
 	(setq flycheck-indication-mode nil))
       )
+
+    (general-define-key :states '(normal motion)
+			:keymaps '(c++-mode-map
+				   c-mode-map)
+			:prefix ";"
+			"g" 'ycmd-goto
+			)
+
     )
   )
 
@@ -215,30 +236,8 @@
 		    :keymaps '(c++-mode-map
 			       c-mode-map)
 		    :prefix ";"
-		    "g" 'ycmd-goto
-		    "s" 'helm-cscope-find-this-symbol
-		    "d" 'helm-cscope-find-global-definition
-		    "c" 'helm-cscope-find-called-function
-		    "C" 'helm-cscope-find-calling-this-function
-		    "i" 'cscope-index-files
-		    "a" 'projectile-find-other-file
-		    "A" 'projectile-find-other-file-other-window
 		    "b" 'gdb
-		    "el" 'mengqp/toggle-flycheck-error-list
-		    "en" 'flycheck-next-error
-		    "ep" 'flycheck-previous-error
-
-		    ;; (which-key-add-key-based-replacements
-		    ;;   ", g" "goto")
-
-		    ;; (which-key-add-key-based-replacements
-		    ;;   ", e" "error")
 		    )
-
-(which-key-add-major-mode-key-based-replacements 'c++-mode
-    "; e" "error"
-    )
-
 
 ;; ;;; 设置编码风格
 ;; (require 'google-c-style)

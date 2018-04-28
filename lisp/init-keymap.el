@@ -32,6 +32,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+;; 输入法切换时不出现问题
+(global-set-key (kbd "C-SPC") nil)
 
 (use-package which-key
   :ensure t
@@ -248,7 +250,7 @@
     "jw" 'avy-goto-char-2
     "jl" 'avy-goto-line
 
-    "ls" 'linum-mode
+    "ll" 'linum-mode
     "l RET" 'toggle-truncate-lines
     "ln" 'whitespace-newline-mode
 

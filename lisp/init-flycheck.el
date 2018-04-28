@@ -83,6 +83,20 @@ If the error list is visible, hide it.  Otherwise, show it."
   ;; (require 'flycheck-pos-tip)
   ;; (with-eval-after-load 'flycheck
   ;;   (flycheck-pos-tip-mode))
+  (general-define-key :states '(normal motion)
+		      :keymaps '(c++-mode-map
+				 c-mode-map)
+		      :prefix ";"
+		      "el" 'mengqp/toggle-flycheck-error-list
+		      "en" 'flycheck-next-error
+		      "ep" 'flycheck-previous-error
+
+		      )
+
+  (which-key-add-major-mode-key-based-replacements 'c++-mode
+    "; e" "error"
+    )
+
 
   )
 
@@ -95,8 +109,5 @@ If the error list is visible, hide it.  Otherwise, show it."
 
 
 (provide 'init-flycheck)
-
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-flycheck.el ends here

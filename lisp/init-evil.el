@@ -35,8 +35,10 @@
 (use-package evil
   :ensure t
   :diminish evil-mode
+  :defer t
+  :init
+  (add-hook 'after-init-hook #'evil-mode)
   :config
-  (evil-mode t)
   (define-key evil-normal-state-map (kbd "go") 'ace-jump-char-mode)
   (define-key evil-ex-completion-map (kbd "C-a") 'move-beginning-of-line)
   (define-key evil-ex-completion-map (kbd "C-b") 'backward-char)

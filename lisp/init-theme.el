@@ -48,7 +48,8 @@
 
 (use-package cyberpunk-theme
   :ensure t
-  :config
+  :defer t
+  :init
   (add-hook 'after-init-hook
 	    (lambda () (load-theme 'cyberpunk t)))
   )
@@ -85,8 +86,5 @@
 
 
 (provide 'init-theme)
-
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-theme.el ends here
