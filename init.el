@@ -73,7 +73,6 @@
 
 ;;; package here
 ;; (try-require 'init-autoload)
-(try-require 'cl-lib)
 
 (try-require 'init-package)
 

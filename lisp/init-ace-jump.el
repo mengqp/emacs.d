@@ -64,6 +64,7 @@
 
 (use-package ace-pinyin
   :ensure t
+  :diminish ace-pinyin-global-mode
   :after avy
   :config
   (use-package pinyinlib
