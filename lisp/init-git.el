@@ -44,18 +44,18 @@
     :ensure t
     :diminish git-timemachine-mode)
 
-  (defun git-push-coding-request()
-    "push current branch to coding develop branch request"
-    (interactive)
-    ;; "git push origin banana:mr/master/banana."
-    (run-hooks 'magit-credential-hook)
-    ;; (magit-run-git-async
-    ;; (magit-start-git nil
-    (shell-command-to-string
-     (format "git push origin %s:mr/develop/%s"
-	     (magit-get-current-branch) (magit-get-current-branch))  )
-    ;; (print (magit-get-current-branch))
-    )
+  ;; (defun git-push-coding-request()
+  ;;   "push current branch to coding develop branch request"
+  ;;   (interactive)
+  ;;   ;; "git push origin banana:mr/master/banana."
+  ;;   (run-hooks 'magit-credential-hook)
+  ;;   ;; (magit-run-git-async
+  ;;   ;; (magit-start-git nil
+  ;;   (shell-command-to-string
+  ;;    (format "git push origin %s:mr/develop/%s"
+  ;; 	     (magit-get-current-branch) (magit-get-current-branch))  )
+  ;;   ;; (print (magit-get-current-branch))
+  ;;   )
 
   ;; (defun git-pull-coding-request( source args )
   ;; "push current branch to coding develop branch request"
