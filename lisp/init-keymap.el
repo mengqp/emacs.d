@@ -230,6 +230,7 @@
 
     "cd" 'describe-current-coding-system
     "cc" 'set-buffer-file-coding-system
+    "cr" 'revert-buffer-with-coding-system
     "c2d" 'unix2dos
     "c2u" 'dos2unix
 
