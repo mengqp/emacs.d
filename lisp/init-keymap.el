@@ -198,12 +198,12 @@
 	 "omg" 'org-mobile-pull
 	 "oc" 'cfw:open-org-calendar
 
-	 "pf" 'counsel-projectile-find-file
 	 "pd" 'counsel-projectile-find-dir
 	 "pb" 'counsel-projectile-switch-to-buffer
 	 "pp" 'projectile-switch-project
 	 "pa" 'counsel-projectile-ag
 	 "pr" 'counsel-projectile-rg
+	 "pfi" 'mengqp/org-projectile-find-issue
 
 	 "qq" 'save-buffers-kill-emacs
 	 "qr" 'restart-emacs

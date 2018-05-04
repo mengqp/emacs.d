@@ -33,7 +33,6 @@
 ;;
 ;;; Code:
 
-(autoload compilation-last-buffer "compile" "" t)
 (use-package compile
   :defer t
   :config
