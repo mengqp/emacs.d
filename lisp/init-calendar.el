@@ -105,7 +105,7 @@
         cfw:fchar-top-left-corner ?+
         cfw:fchar-top-right-corner ?+)
 
-  (setq cfw:gettext-alist
+  (defconst cfw:gettext-alist
         '(("Today" . "t:今天")
           ("Month" . "M:一月")
           ("Week" . "W:一周")
@@ -114,6 +114,8 @@
 
   (use-package calfw-org
     :ensure t
+    :commands (calfw cfw:open-calendar-buffer)
+    :commands (calfw cfw:org-create-source)
     :config
     (defun eh-calendar ()
       (interactive)
@@ -124,22 +126,22 @@
         ;; orgmode source
         (cfw:org-create-source "Green")))))
 
-  (use-package org-agenda
-    :ensure nil
-    ;; :init
-    ;; (add-hook 'org-mode-hook #'org-agenda-mode)
-    :config
-    (unless (member eh-calfw-org-file org-agenda-files)
-      (push eh-calfw-org-file org-agenda-files))
-    (use-package org-capture
-      :ensure nil
-      :config
-      ;; 为calfw设置一个capture模板并添加到org-capture-templates
-      (setq cfw:org-capture-template
-            '("c" "calfw2org" entry (file+headline "~/nutdata/myorg/general/calfw.org" "Schedule")
-              "* %?\n %(cfw:org-capture-day)\n %a"))
-      (setq org-capture-templates
-            (append org-capture-templates (list cfw:org-capture-template)))))
+  ;; (use-package org-agenda
+  ;;   :ensure nil
+  ;;   ;; :init
+  ;;   ;; (add-hook 'org-mode-hook #'org-agenda-mode)
+  ;;   :config
+  ;;   (unless (member eh-calfw-org-file org-agenda-files)
+  ;;     (push eh-calfw-org-file org-agenda-files))
+  ;;   (use-package org-capture
+  ;;     :ensure nil
+  ;;     :config
+  ;;     ;; 为calfw设置一个capture模板并添加到org-capture-templates
+  ;;     (setq cfw:org-capture-template
+  ;;           '("c" "calfw2org" entry (file+headline "~/nutdata/myorg/general/calfw.org" "Schedule")
+  ;;             "* %?\n %(cfw:org-capture-day)\n %a"))
+  ;;     (setq org-capture-templates
+  ;;           (append org-capture-templates (list cfw:org-capture-template)))))
 
 
   )

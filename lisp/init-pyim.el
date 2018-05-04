@@ -5,6 +5,7 @@
 ;;; Code:
 (use-package pyim
   :ensure t
+  :commands (pyim pyim-restart-1)
   :init
 
   :config

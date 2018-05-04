@@ -34,8 +34,8 @@
 ;;; Code:
 (use-package elisp-mode
   :init
-  (setq auto-mode-alist (cons '("\\.ahk$" . emacs-lisp-mode) auto-mode-alist))
-  (setq auto-mode-alist (cons '("\\.ahk$" . lisp-interaction-mode) auto-mode-alist))
+  (setq auto-mode-alist (cons '("\\.el$" . emacs-lisp-mode) auto-mode-alist))
+  ;; (setq auto-mode-alist (cons '("\\.ahk$" . lisp-interaction-mode) auto-mode-alist))
   :config
   (general-define-key :states '(normal motion)
 		      :keymaps '(lisp-interaction-mode-map

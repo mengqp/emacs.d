@@ -32,6 +32,7 @@
   (use-package magit-gitflow
     :ensure t
     :diminish magit-gitflow-mode
+    :commands (magit-popup magit-define-popup-action)
     :bind (:map magit-status-mode-map
                 ("G" . magit-gitflow-popup))
     :init (add-hook 'magit-mode-hook #'turn-on-magit-gitflow)

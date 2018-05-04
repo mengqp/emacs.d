@@ -62,6 +62,7 @@
   (use-package hideshow
     :defer t
     :diminish hs-minor-mode
+    :commands (evil-states evil-emacs-state)
     :init
     (add-hook 'prog-mode-hook
 	      (lambda()
@@ -93,7 +94,7 @@
     :ensure t
     :diminish evil-matchit-mode
     :init
-    (setq evilmi-ignore-comments nil)
+    (defvar evilmi-ignore-comments nil)
     :config
     (global-evil-matchit-mode 1)
     )

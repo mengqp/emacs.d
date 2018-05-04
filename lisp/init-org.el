@@ -1,33 +1,56 @@
-;;; init-org.el --- Config by mengqp -*- coding: utf-8-unix -*-
-;;; Commentary:
-;; Copyright (C) 2017-2018 by mengqp
+;;; init-org.el --- xxx -*- coding: utf-8-unix -*-
 
+;;; Copyright © 2018 - 2018 mengqp.
+
+;; Author: mengqp
+;; URL:
+;; Version:0.0.1
+;; Keywords:
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Commentary:
+;;
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation; either version 2, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
+;; Floor, Boston, MA 02110-1301, USA.
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ;;; Code:
-;; (require 'org)
-(use-package org
+
+(use-package htmlize
   :ensure t
   :defer t
+  :after org
+  )
+
+(use-package org-pomodoro
+  :ensure t
+  :defer t
+  :after org
   :init
-  :config
-  (use-package htmlize
-    :ensure t
-    )
-
-
-
-  (use-package org-pomodoro
-    :ensure t
-    :defer t
-    ;; :commands org-pomodoro
-    :init
-    (setq org-pomodoro-killed-sound t)
-    (setq org-pomodoro-length 25)
-    (setq org-pomodoro-format "•%s")
-    (setq org-pomodoro-short-break-format "•%s")
-    (setq-default mode-line-format
-              (cons '(pomodoro-mode-line-string pomodoro-mode-line-string)
-                    mode-line-format))
-
+  (setq org-pomodoro-killed-sound t)
+  (setq org-pomodoro-length 25)
+  (setq org-pomodoro-format "•%s")
+  (setq org-pomodoro-short-break-format "•%s")
+  (setq-default mode-line-format
+		(cons '(pomodoro-mode-line-string pomodoro-mode-line-string)
+		      mode-line-format))
     ;; :config
      ;; (add-hook 'org-pomodoro-finished-hook
      ;; 	       (lambda ()
@@ -37,6 +60,14 @@
      ;; 		 (mukhali/terminal-notifier-notify "Break-Completed" "ready-for-another?")))
 
     )
+
+
+(use-package org
+  :ensure t
+  :defer t
+  :init
+  :config
+
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   ;; recursively find .org files in provided directory
   ;; modified from an Emacs Lisp Intro example
@@ -61,9 +92,31 @@ If FILEXT is provided, return files with extension FILEXT instead."
 			  org-file-list) ; add files found to result
 (add-to-list 'org-file-list org-file)))))))
 
-  ;; (setq org-agenda-files (file-expand-wildcards "~/ecode/org/*.org"))
-;; 设置agent文件表
+(autoload 'projectile-project-root "projectile" "" t)
+(defun mengqp/org-projectile-find (name)
+  "Find project org as NAME."
+  (defvar org-root-files
+    (sa-find-org-file-recursively
+     (concat (projectile-project-root) "docs/org") "org")
+    )
+  (defvar org-files-num 0)
+  (while (< org-files-num (length org-root-files))
+    (defvar file-name (nth org-files-num org-root-files))
+    (if (string-match name file-name)
+  	(find-file file-name)
+      )
 
+    (setq org-files-num (+ org-files-num 1))
+    )
+  )
+
+(defun mengqp/org-projectile-find-issue ()
+  "Find issue."
+  (interactive)
+  (mengqp/org-projectile-find "issue")
+    )
+
+;; 设置agent文件表
 (when *linux*
   (setq org-agenda-text-search-extra-files
 	(append
@@ -95,7 +148,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
   (setq org-agenda-files org-agenda-text-search-extra-files)
   )
 
-(setq org-capture-templates
+(defconst org-capture-templates
       '(
 	("j" "Journal 日常工作记录" entry (file+datetree "~/nutdata/myorg/general/journal.org")
 	 "*  %? \n %i\n ")
@@ -170,26 +223,26 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
 
 ;; (require 'org-id)
-(setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
+(defvar org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
 (defun eos/org-custom-id-get (&optional pom create prefix)
-  "Get the CUSTOM_ID property of the entry at point-or-marker POM.
-   If POM is nil, refer to the entry at point. If the entry does
-   not have an CUSTOM_ID, the function returns nil. However, when
+  "Get the as POM.
+  If POM is nil,  Refer to the entry at point.  If the entry does
+   not have an CUSTOM_ID, the function returns nil.  However, when
    CREATE is non nil, create a CUSTOM_ID if none is present
-   already. PREFIX will be passed through to `org-id-new'. In any
+   already.  PREFIX will be passed through to `org-id-new'.  In any
    case, the CUSTOM_ID of the entry is returned."
-    (interactive)
-    (org-with-point-at pom
-		       ;; (let ((id (org-entry-get nil "CUSTOM_ID")))
-		       (let ((id (org-entry-get nil "CUSTOM_ID")))
-			 (cond
-			  ((and id (stringp id) (string-match "\\S-" id))
-			   id)
-			  (create
-			   (setq id (org-id-new (concat prefix "h")))
-			   (org-entry-put pom "CUSTOM_ID" id)
-			   (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
-			   id)))))
+  (interactive)
+  (org-with-point-at pom
+		     ;; (let ((id (org-entry-get nil "CUSTOM_ID")))
+		     (let ((id (org-entry-get nil "CUSTOM_ID")))
+		       (cond
+			((and id (stringp id) (string-match "\\S-" id))
+			 id)
+			(create
+			 (setq id (org-id-new (concat prefix "h")))
+			 (org-entry-put pom "CUSTOM_ID" id)
+			 (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
+			 id)))))
   ;; (defun eos/org-add-ids-to-headlines-in-file ()
   ;;   "Add CUSTOM_ID properties to all headlines in the
   ;;    current file which do not already have one."
@@ -225,13 +278,13 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (goto-char (point-max))
     (re-search-backward "^\*+ [A-Z]+ #")
     (re-search-forward "#")
-    (setq num (string-to-number (current-word)))
+    (defvar mengqp/evil-org-num (string-to-number (current-word)))
     ;; (let num (string-to-number (current-word)))
-    (setq num (+ num 1))
+    (setq mengqp/evil-org-num (+ mengqp/evil-org-num 1))
     (goto-char (point-max))
     (org-insert-todo-heading "DONE")
     (insert "#")
-    (insert (number-to-string num))
+    (insert (number-to-string mengqp/evil-org-num))
     )
 
   ;; (use-package org-mind-map
@@ -302,27 +355,15 @@ If FILEXT is provided, return files with extension FILEXT instead."
     ", c" "capture")
 
 
-    (message "org-dic")
     (setq org-directory "~/ecode/org")
     (when *win64*
-      (setq org-mobile-directory "E:/Nutstore/org")
-      (setq org-mobile-inbox-for-pull "E:/Nutstore/org/index.org")
+      (defconst org-mobile-directory "E:/Nutstore/org")
+      (defconst org-mobile-inbox-for-pull "E:/Nutstore/org/index.org")
       )
     (when *linux*
-      (setq org-mobile-directory "~/nutdata/org")
-      (setq org-mobile-inbox-for-pull "~/nutdata/org/index.org")
+      (defconst org-mobile-directory "~/nutdata/org")
+      (defconst org-mobile-inbox-for-pull "~/nutdata/org/index.org")
       )
-
-    ;; (autoload 'org-mobile-pull "org-mobile" "" t)
-    ;; (autoload 'org-mobile-push "org-mobile" "" t)
-    ;; ;; 同步到本地电脑的坚果云专用目录
-    ;; (general-define-key :states '(normal motion)
-    ;; 			:keymaps '(org-mode-map)
-    ;; 			:prefix ","
-    ;; 			"mp" 'org-mobile-push
-    ;; 			"mg" 'org-mobile-pull
-    ;; 			)
-
 
   ;; (use-package org-journal
   ;;   :ensure t
@@ -339,5 +380,5 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
 
 (provide 'init-org)
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-org.el ends here

@@ -86,6 +86,7 @@
 (use-package recentf
  ;; :ensure nil
   :defer t
+  :commands (recentf recentf-track-opened-file)
   :init
   ;; lazy load recentf
   (add-hook 'after-init-hook 'recentf-mode)

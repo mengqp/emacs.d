@@ -138,6 +138,7 @@
 
 (use-package general
   :ensure t
+  :commands (init-keymap nvmap)
   :init
   :config
 
@@ -201,6 +202,8 @@
 	 "pd" 'counsel-projectile-find-dir
 	 "pb" 'counsel-projectile-switch-to-buffer
 	 "pp" 'projectile-switch-project
+	 "pa" 'counsel-projectile-ag
+	 "pr" 'counsel-projectile-rg
 
 	 "qq" 'save-buffers-kill-emacs
 	 "qr" 'restart-emacs

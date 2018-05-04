@@ -15,22 +15,24 @@
 (defvar emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
-(defvar *linux* (eq system-type 'gnu/linux) )
-(defvar *win64* (eq system-type 'windows-nt) )
+(defconst *linux* (eq system-type 'gnu/linux) )
+(defconst *win64* (eq system-type 'windows-nt) )
 
 
 ;; ;; Function to collect information of packages.
-;; (defvar missing-packages-list nil
-;;   "List of packages that `try-require' can't find.")
+(defvar missing-packages-list nil
+  "List of packages that `try-require' can't find.")
 
 
-;; (defvar package-init-statistic nil "Package loading statistics")
+(defvar package-init-statistic nil "Package loading statistics.")
 
 ;; attempt to load a feature/library, failing silently
 (defun try-require (feature &optional click)
-  "Attempt to load a library or module. Return true if the
-  library given as argument is successfully loaded. If not, instead
-  of an error, just add the package to a list of missing packages."
+  "Package name as FEATURE.  as CLICK.
+Attempt to load a library or module.
+ Return true if the library given as argument is successfully loaded.
+ If not, instead of an error,
+just add the package to a list of missing packages."
   (condition-case err
       ;; protected form
       (let ((timestamp (current-time))
@@ -75,6 +77,7 @@
 ;; (try-require 'init-autoload)
 
 (try-require 'init-package)
+(try-require 'init-autoload)
 
 ;;ui
 (try-require 'init-ui)

@@ -33,11 +33,16 @@
 ;;
 ;;; Code:
 
-(defun mengqp/close-compilation-window ()
-  "Close the window containing the '*compilation*' buffer."
-  (interactive)
-  (when compilation-last-buffer
-    (delete-windows-on compilation-last-buffer)))
+(autoload compilation-last-buffer "compile" "" t)
+(use-package compile
+  :defer t
+  :config
+  (defun mengqp/close-compilation-window ()
+    "Close the window containing the '*compilation*' buffer."
+    (interactive)
+    (when compilation-last-buffer
+      (delete-windows-on compilation-last-buffer)))
+  )
 
 (defvar gdb-many-windows t)
 
@@ -48,7 +53,7 @@
   (progn
 ;;; 定义tab和缩进
     (defun mengqp/google-c-mode-hook ()
-      (setq c-basic-offset 4          ;; 基本缩进宽度
+      (setq-default c-basic-offset 4          ;; 基本缩进宽度
 	    indent-tabs-mode nil       ;; 禁止空格替换Tab
 	    tab-width 4
 	    ))     ;; 默认Tab宽度

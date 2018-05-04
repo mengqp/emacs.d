@@ -36,6 +36,8 @@
 (use-package company
   :ensure t
   :defer t
+  :commands (company company-select-next)
+  :commands (company company-select-previous)
   :diminish company-mode
   :init
   (add-hook 'after-init-hook 'global-company-mode)

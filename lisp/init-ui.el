@@ -94,12 +94,14 @@
 )
 
 (when *linux*
-  (defun fullscreen ()
-    "fullscreen"
-    (interactive)
-    (set-frame-parameter nil 'fullscreen
-			 (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
-  (fullscreen)
+  (set-frame-parameter nil 'fullscreen
+		       (if (frame-parameter nil 'fullscreen) nil 'fullboth))
+  ;; (defun fullscreen ()
+  ;;   "Fullscreen."
+  ;;   ;; (interactive)
+  ;;   (set-frame-parameter nil 'fullscreen
+  ;; 			 (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+  ;; (fullscreen)
   )
 (when *win64*
   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)

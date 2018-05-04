@@ -38,6 +38,9 @@
 ;;; c和c++
 (use-package flycheck
   :ensure t
+  :commands (flycheck flycheck-display-error-messages-unless-error-list)
+  :commands (flycheck flycheck-list-errors)
+  :commands (flycheck flycheck-get-error-list-window)
   :defer t
   :init
   ;; (add-hook 'c-mode-hook 'flycheck-mode)
