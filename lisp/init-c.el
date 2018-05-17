@@ -52,7 +52,7 @@
   (progn
 ;;; 定义tab和缩进
     (defun mengqp/google-c-mode-hook ()
-      (setq-default c-basic-offset 4          ;; 基本缩进宽度
+      (setq c-basic-offset 4          ;; 基本缩进宽度
 	    indent-tabs-mode nil       ;; 禁止空格替换Tab
 	    tab-width 4
 	    ))     ;; 默认Tab宽度

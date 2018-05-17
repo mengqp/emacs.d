@@ -265,6 +265,9 @@
     "ss" 'swiper
     "sS" 'ivy-resume
 
+    "tt" 'mengqp/insert-time
+    "td" 'mengqp/insert-date
+
 
     "ww" 'save-buffer
     "wq" 'evil-save-and-close

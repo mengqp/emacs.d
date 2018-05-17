@@ -63,17 +63,22 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (sa-find-org-file-recursively
      (concat (projectile-project-root) "docs/org") "org")
     )
-  (defvar org-files-num 0)
+  (setq org-files-num 0)
   (while (< org-files-num (length org-root-files))
-    (defvar file-name (nth org-files-num org-root-files))
+    (setq file-name (nth org-files-num org-root-files))
     (if (string-match name file-name)
-	(find-file file-name)
+	(progn
+	  (print file-name)
+	  (find-file file-name)
+	  )
       )
 
     (setq org-files-num (+ org-files-num 1))
     )
   )
 
+
+;;;###autoload (autoload 'evil-mode "evil" nil t)
 (defun mengqp/org-projectile-find-issue ()
   "Find issue."
   (interactive)
@@ -279,7 +284,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (goto-char (point-max))
     (re-search-backward "^\*+ [A-Z]+ #")
     (re-search-forward "#")
-    (defvar mengqp/evil-org-num (string-to-number (current-word)))
+    (setq mengqp/evil-org-num (string-to-number (current-word)))
     ;; (let num (string-to-number (current-word)))
     (setq mengqp/evil-org-num (+ mengqp/evil-org-num 1))
     (goto-char (point-max))
