@@ -10,7 +10,7 @@
 
 ;; ;; don't GC during startup to save time
 ;; (setq gc-cons-threshold most-positive-fixnum)
-(setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
+;; (setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
 
 (defvar emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
@@ -104,7 +104,7 @@ just add the package to a list of missing packages."
 (try-require 'init-mc)
 (try-require 'init-cmake)
 ;; (try-require 'init-popwin)
-;; (try-require 'init-lsp)
+(try-require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
 (try-require 'init-pyim)
 (try-require 'init-abbrev)

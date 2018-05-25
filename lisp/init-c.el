@@ -116,7 +116,7 @@
 		      :prefix ";"
 		      "s" 'helm-cscope-find-this-symbol
 		      "d" 'helm-cscope-find-global-definition
-		      "c" 'helm-cscope-find-called-function
+		      ;; "c" 'helm-cscope-find-called-function
 		      "C" 'helm-cscope-find-calling-this-function
 		      "i" 'cscope-index-files
 		      )
@@ -157,43 +157,110 @@
 ;;   )
 
 
+;; (when *linux*
+;;   (use-package ycmd
+;;     :ensure t
+;;     :defer t
+;;     :diminish ycmd-mode
+;;     :init
+;;     (add-hook 'c++-mode-hook 'ycmd-mode)
+;;     (add-hook 'c-mode-hook 'ycmd-mode)
+
+;;     (set-variable 'ycmd-server-command '("python" "/root/DotFiles/ycmd/ycmd"))
+;;     (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
+;;     (setq ycmd-extra-conf-handler (quote load))
+;;     (setq ycmd-startup-timeout 10)
+
+;;     :config
+;;     (use-package company-ycmd
+;;       :ensure t
+;;       :config
+;;       (company-ycmd-setup)
+;;       (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
+;;       )
+;;     (use-package flycheck-ycmd
+;;       :ensure t
+;;       :config
+;;       (flycheck-ycmd-setup)
+;;       (when (not (display-graphic-p))
+;; 	(setq flycheck-indication-mode nil))
+;;       )
+
+;;     (general-define-key :states '(normal motion)
+;; 			:keymaps '(c++-mode-map
+;; 				   c-mode-map)
+;; 			:prefix ";"
+;; 			"g" 'ycmd-goto
+;; 			)
+
+;;     )
+  ;; )
+
 (when *linux*
-  (use-package ycmd
+  (defun ccls//enable ()
+    (condition-case nil
+	(lsp-ccls-enable)
+      (user-error nil)))
+
+
+  (use-package ccls
     :ensure t
-    :defer t
-    :diminish ycmd-mode
+    :commands lsp-ccls-enable
     :init
-    (add-hook 'c++-mode-hook 'ycmd-mode)
-    (add-hook 'c-mode-hook 'ycmd-mode)
-
-    (set-variable 'ycmd-server-command '("python" "/root/DotFiles/ycmd/ycmd"))
-    (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
-    (setq ycmd-extra-conf-handler (quote load))
-    (setq ycmd-startup-timeout 10)
-
+    (add-hook 'c-mode-common-hook #'ccls//enable)
     :config
-    (use-package company-ycmd
-      :ensure t
+    ;; (add-hook 'ccls-tree-mode-hook #'evil-motion-state)
+    (evil-set-initial-state 'ccls-tree-mode 'emacs)
+
+    (setq ccls-executable "/usr/bin/ccls")
+    (use-package projectile
       :config
-      (company-ycmd-setup)
-      (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
-      )
-    (use-package flycheck-ycmd
-      :ensure t
-      :config
-      (flycheck-ycmd-setup)
-      (when (not (display-graphic-p))
-	(setq flycheck-indication-mode nil))
+      (setq projectile-project-root-files-top-down-recurring
+	    (append '("compile_commands.json"
+		      ".ccls")
+		    projectile-project-root-files-top-down-recurring))
       )
 
+    (use-package ivy-xref
+      :ensure t
+      :after ivy
+      :init
+      (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
+
+      )
+
+    ;; (ccls-xref-find-custom "$ccls/base")
+    ;; (ccls-xref-find-custom "$ccls/callers")
+    ;; (ccls-xref-find-custom "$ccls/derived")
+    ;; (ccls-xref-find-custom "$ccls/vars")
+
+    ;; ;; Alternatively, use lsp-ui-peek interface
+    ;; (lsp-ui-peek-find-custom 'base "$ccls/base")
+    ;; (lsp-ui-peek-find-custom 'callers "$ccls/callers")
+    ;; (lsp-ui-peek-find-custom 'random "$ccls/random") ;; jump to a random declaration
+
+    ;; (setq ccls-sem-highlight-method 'font-lock)
+    ;; alternatively, (setq ccls-sem-highlight-method 'overlay)
+
+    ;; For rainbow semantic highlighting
+    ;; (ccls-use-default-rainbow-sem-highlight)
+
+    (setq ccls-extra-init-params '(:completion (:detailedLabel t)))
     (general-define-key :states '(normal motion)
 			:keymaps '(c++-mode-map
 				   c-mode-map)
 			:prefix ";"
-			"g" 'ycmd-goto
+			"g" 'xref-find-definitions
+			"r" 'xref-find-references
+			"m" 'lisp-ui-menu
+			"cm" 'ccls-member-hierarchy
+			"cc" 'ccls-call-hierarchy
+			"cp" 'ccls-inheritance-hierarchy
 			)
 
+
     )
+
   )
 
 (use-package dynamic-spaces

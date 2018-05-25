@@ -59,7 +59,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
 (autoload 'projectile-project-root "projectile" "" t)
 (defun mengqp/org-projectile-find (name)
   "Find project org as NAME."
-  (defvar org-root-files
+  (setq org-root-files
     (sa-find-org-file-recursively
      (concat (projectile-project-root) "docs/org") "org")
     )
@@ -157,7 +157,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
   (defconst org-capture-templates
     '(
       ("j" "Journal 日常工作记录" entry (file+datetree "~/nutdata/myorg/general/journal.org")
-       "*  %? \n %i\n ")
+       "*  %? \n %U\n %i\n ")
       ("t" "Todo gdt" entry (file+headline "~/nutdata/myorg/general/gtd.org" "Tasks")
        "* TODO [#B] %? \n %i\n %a")
       ("m" "meet 会议记录" entry (file+datetree "~/nutdata/myorg/general/meet.org")
