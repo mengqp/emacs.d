@@ -8,7 +8,7 @@
 ;; ;;; Best default gc threshold value. Should't be too big
 ;; (defvar best-gc-cons-threshold 4000000)
 
-;; ;; don't GC during startup to save time
+;; don't GC during startup to save time
 ;; (setq gc-cons-threshold most-positive-fixnum)
 ;; (setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
 
@@ -91,7 +91,7 @@ just add the package to a list of missing packages."
 
 ;;tool
 (try-require 'init-calendar)
-(try-require 'init-hungry-delete)
+;; (try-require 'init-hungry-delete)
 (try-require 'init-smartparens)
 (try-require 'init-evil)
 (try-require 'init-company)
@@ -101,7 +101,7 @@ just add the package to a list of missing packages."
 (try-require 'init-flycheck)
 (try-require 'init-ace-jump)
 (try-require 'init-git)
-(try-require 'init-mc)
+;; (try-require 'init-mc)
 (try-require 'init-cmake)
 ;; (try-require 'init-popwin)
 (try-require 'init-lsp)

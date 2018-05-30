@@ -56,7 +56,7 @@
 
 (progn
   ;; auto insert closing bracket
-  (electric-pair-mode 1)
+  ;; (electric-pair-mode 1)
   ;;显示括号匹配
   (show-paren-mode t)
   ;; show cursor position within line
@@ -205,6 +205,14 @@
   :ensure t
   :defer t
   )
+
+(use-package hungry-delete
+  :ensure t
+  :diminish hungry-delete-mode
+  :config
+  (global-hungry-delete-mode)
+  )
+
 
 ;; (use-package real-auto-save
 ;;   :ensure t

@@ -41,6 +41,7 @@
   :config
   ;; enable the default configuration
   (use-package smartparens-config)
+  (smartparens-strict-mode t)
 
   )
 (provide 'init-smartparens)

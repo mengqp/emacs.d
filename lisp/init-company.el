@@ -56,13 +56,16 @@
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous)
 
-  (when *win64*
-    (use-package company-childframe
-      :ensure t
-      :diminish company-childframe-mode
+  (use-package company-childframe
+    :ensure t
+    :diminish company-childframe-mode
+    :config
+    (company-childframe-mode 1)
+    (use-package desktop
       :config
-      (company-childframe-mode 1)
-      )
+      (push '(company-childframe-mode . nil)
+	    desktop-minor-mode-table
+	    ))
     )
   )
 

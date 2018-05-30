@@ -37,6 +37,8 @@
 
 (use-package which-key
   :ensure t
+  ;; :defer t
+  ;; :after general-override-mode
   :diminish which-key-mode
   :config
   (which-key-mode)
@@ -138,10 +140,10 @@
 
 (use-package general
   :ensure t
+  :defer t
   :commands (init-keymap nvmap)
-  :init
+  :after evil
   :config
-
   (general-evil-setup t)
   ;; 全局
   (nvmap :prefix "SPC"
@@ -204,6 +206,7 @@
 	 "pa" 'counsel-projectile-ag
 	 "pr" 'counsel-projectile-rg
 	 "pfi" 'mengqp/org-projectile-find-issue
+	 "pft" 'mengqp/org-projectile-find-todo
 
 	 "qq" 'save-buffers-kill-emacs
 	 "qr" 'restart-emacs
@@ -254,7 +257,7 @@
     "jw" 'avy-goto-char-2
     "jl" 'avy-goto-line
 
-    "ll" 'linum-mode
+    "ll" 'display-line-numbers-mode
     "l RET" 'toggle-truncate-lines
     "ln" 'whitespace-newline-mode
 

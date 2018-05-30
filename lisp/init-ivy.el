@@ -88,6 +88,7 @@
 (when *win64*
   (use-package ivy-posframe
     :ensure t
+    :disabled t
     :after ivy-mode
     :init
     (setq ivy-display-function #'ivy-posframe-display)

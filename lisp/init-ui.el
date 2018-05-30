@@ -55,9 +55,10 @@
   ;; 关闭Tooltip
   (tooltip-mode -1)
   ;; 平滑滚动
-  (setq scroll-margin 0
-	scroll-conservatively 100000
-	scroll-preserve-screen-position 1)
+  ;; (setq scroll-margin 0
+  ;; 	scroll-conservatively 100000
+  ;; 	scroll-preserve-screen-position 1)
+  (pixel-scroll-mode t)
   )
 
 ;; 设置透明
@@ -99,7 +100,7 @@
   ;; (defun fullscreen ()
   ;;   "Fullscreen."
   ;;   ;; (interactive)
-  ;;   (set-frame-parameter nil 'fullscreen
+  ;;   (set-frame-parameter               nil              'fullscreen
   ;; 			 (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
   ;; (fullscreen)
   )

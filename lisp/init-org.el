@@ -85,6 +85,13 @@ If FILEXT is provided, return files with extension FILEXT instead."
   (mengqp/org-projectile-find "issue")
   )
 
+;;;###autoload (autoload 'evil-mode "evil" nil t)
+(defun mengqp/org-projectile-find-todo ()
+  "Find todo."
+  (interactive)
+  (mengqp/org-projectile-find "todo")
+  )
+
 (use-package htmlize
   :ensure t
   :defer t
@@ -310,26 +317,12 @@ If FILEXT is provided, return files with extension FILEXT instead."
 		      "F" 'org-forward-heading-same-level
 		      )
 
-
-  (general-define-key :states '(normal motion)
-		      :keymaps '(org-mode-map)
-		      :prefix ","
-		      "RET" 'org-insert-todo-heading
-		      "tc" 'org-table-create
-		      "cc" 'org-ctrl-c-ctrl-c
-		      "ck" 'org-kill-note-or-show-branches
-
-		      )
-
-  (which-key-add-major-mode-key-based-replacements 'org-mode
-    ", c" "note"
-    ", t" "table")
-
   (general-define-key :states '(normal motion)
 		      :keymaps '(org-mode-map)
 		      :prefix ";"
 		      "." 'org-time-stamp
 		      ":" 'org-set-tags
+		      "RET" 'org-insert-todo-heading
 		      "s" 'org-schedule
 		      "d" 'org-deadline
 		      "p" 'outline-previous-visible-heading
@@ -342,6 +335,9 @@ If FILEXT is provided, return files with extension FILEXT instead."
 		      "j" 'org-metaup
 		      "k" 'org-metadown
 		      "w" 'org-refile
+		      "tc" 'org-table-create
+		      "cc" 'org-ctrl-c-ctrl-c
+		      "ck" 'org-kill-note-or-show-branches
 
 
 		      )

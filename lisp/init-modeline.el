@@ -113,11 +113,11 @@
 ;;     (concat "TS:" (int-to-string (or mode-indent-level 0)))))
 
 
-;; (which-function-mode)
-;; (setq-default header-line-format
-;; 	      '((which-func-mode ("" which-func-format " "))))
-;; (setq-default mode-line-misc-info
-;; 	      (assq-delete-all 'which-func-mode mode-line-misc-info))
+(which-function-mode)
+(setq-default header-line-format
+	      '((which-func-mode ("" which-func-format " "))))
+(setq mode-line-misc-info
+	      (assq-delete-all 'which-func-mode mode-line-misc-info))
 
 ;; ;; ;; 自动刷新vc状态
 ;; ;; (setq auto-revert-check-vc-info t)

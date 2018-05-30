@@ -125,7 +125,18 @@
     (evil-snipe-mode +1)
     (evil-snipe-override-mode +1)
     )
+
+  (use-package evil-mc
+    :ensure t
+    :defer t
+    :diminish evil-mc-mode
+    :after evil-mode
+    :config
+    (global-evil-mc-mode 1)
+    )
+
   )
+
 (provide 'init-evil)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-evil.el ends here
