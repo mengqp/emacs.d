@@ -144,8 +144,8 @@ just add the package to a list of missing packages."
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(when *win64*
-  (server-start)
-  )
+;; (when *win64*
+;;   (server-start)
+;;   )
 
 ;;; init.el ends here
