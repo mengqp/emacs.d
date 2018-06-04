@@ -129,9 +129,9 @@
   ;; 			 (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
   ;; (fullscreen)
   )
-(when *win64*
-  (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
-  )
+;; (when *win64*
+;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
+;;   )
 
 
 
