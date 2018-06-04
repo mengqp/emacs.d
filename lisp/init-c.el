@@ -106,20 +106,46 @@
   (add-hook 'c-mode-hook 'cscope-minor-mode)
   :config
   (cscope-setup)
-  (use-package helm-cscope
-    :ensure t
-    :defer t)
 
   (general-define-key :states '(normal motion)
-		      :keymaps '(c++-mode-map
-				 c-mode-map)
-		      :prefix ";"
-		      "s" 'helm-cscope-find-this-symbol
-		      "d" 'helm-cscope-find-global-definition
-		      ;; "c" 'helm-cscope-find-called-function
-		      "C" 'helm-cscope-find-calling-this-function
-		      "i" 'cscope-index-files
-		      )
+  		      :keymaps '(c++-mode-map
+  				 c-mode-map)
+  		      :prefix ";"
+  		      "s" 'cscope-find-this-symbol
+  		      "d" 'cscope-find-global-definition
+  		      ;; "c" 'helm-cscope-find-called-function
+  		      "C" 'cscope-find-calling-this-function
+  		      "i" 'cscope-index-files
+  		      )
+
+  (define-key cscope-list-entry-keymap [return] nil)
+  (define-key cscope-list-entry-keymap [o] nil)
+  (define-key cscope-list-entry-keymap [q] nil)
+  (general-define-key :states '(normal motion insert)
+  		      :keymaps '(cscope-list-entry-keymap)
+		      "\r" 'cscope-select-entry-one-window
+		      "o" 'cscope-select-entry-other-window
+		      "q" 'cscope-bury-buffer
+  		      )
+  (evil-set-initial-state 'cscope-list-entry-mode 'emacs)
+
+
+  ;; (general-define-key :states '(normal motion)
+  ;; (setq cscope-program “gtags-cscope”)
+  ;; (use-package helm-cscope
+  ;;   :ensure t
+  ;;   :defer t)
+
+  ;; (general-define-key :states '(normal motion)
+  ;; 		      :keymaps '(c++-mode-map
+  ;; 				 c-mode-map)
+  ;; 		      :prefix ";"
+  ;; 		      "s" 'helm-cscope-find-this-symbol
+  ;; 		      "d" 'helm-cscope-find-global-definition
+  ;; 		      ;; "c" 'helm-cscope-find-called-function
+  ;; 		      "C" 'helm-cscope-find-calling-this-function
+  ;; 		      "i" 'cscope-index-files
+  ;; 		      )
 
   )
 
@@ -252,7 +278,7 @@
 			:prefix ";"
 			"g" 'xref-find-definitions
 			"r" 'xref-find-references
-			"m" 'lisp-ui-menu
+			"m" 'lsp-ui-imenu
 			"cm" 'ccls-member-hierarchy
 			"cc" 'ccls-call-hierarchy
 			"cp" 'ccls-inheritance-hierarchy

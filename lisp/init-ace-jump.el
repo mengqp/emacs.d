@@ -32,6 +32,29 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+(use-package avy
+  :ensure t
+  :defer t
+  )
+
+(use-package ace-pinyin
+  :ensure t
+  :diminish ace-pinyin-mode
+  :after avy
+  :config
+  (use-package pinyinlib
+    :ensure t
+    )
+  (ace-pinyin-global-mode t)
+  )
+
+(use-package evil-avy
+  :ensure t
+  :after avy
+  :config
+  (evil-avy-mode t)
+)
+
 
 ;; ;; (require 'ace-jump-mode)
 ;; (use-package ace-jump-mode
@@ -56,30 +79,6 @@
 ;; (ace-jump-helm-line-autoshow-mode +1)
 ;; ;; use `linum-mode' to show
 ;; (setq ace-jump-helm-line-autoshow-mode-use-linum t)
-
-(use-package avy
-  :ensure t
-  :defer t
-  )
-
-(use-package ace-pinyin
-  :ensure t
-  :diminish ace-pinyin-mode
-  :after avy
-  :config
-  (use-package pinyinlib
-    :ensure t
-    )
-  (ace-pinyin-global-mode t)
-  )
-
-(use-package evil-avy
-  :ensure t
-  :after avy
-  :config
-  (evil-avy-mode t)
-)
-
 (provide 'init-ace-jump)
 
 

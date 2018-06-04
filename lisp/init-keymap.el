@@ -185,7 +185,8 @@
 
 	 "hf" 'find-function
 	 "hv" 'find-variable
-	 "hm" 'helm-man-woman
+	 "hm" 'man
+	 "hw" 'woman
 
 	 ;; "mx" 'counsel-M-x
 	 "mk" 'bookmark-set
@@ -275,7 +276,7 @@
     "ww" 'save-buffer
     "wq" 'evil-save-and-close
 
-    "yy" 'helm-yas-complete
+    "yy" 'ivy-yasnippet
 
     ;;"zz" 'paste-from-x-clipboard ; used frequently
     )

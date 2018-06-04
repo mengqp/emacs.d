@@ -46,7 +46,7 @@
   ;; (add-hook 'c-mode-hook 'flycheck-mode)
   ;; (add-hook 'c++-mode-hook 'flycheck-mode)
   ;; (add-hook 'after-init-hook #'global-flycheck-mode)
-  (add-hook 'prog-mode-hook #'global-flycheck-mode)
+  (add-hook 'prog-mode-hook #'flycheck-mode)
   :config
 ;;; 保存的时候自动检查
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
@@ -105,8 +105,9 @@ If the error list is visible, hide it.  Otherwise, show it."
 
 (use-package flycheck-pos-tip
   :ensure t
+  :defer t
   :after flycheck
-  :config
+  :init
   (add-hook 'flycheck-mode-hook #'flycheck-pos-tip-mode))
 
 

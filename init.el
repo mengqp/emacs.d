@@ -102,7 +102,7 @@ just add the package to a list of missing packages."
 (try-require 'init-ace-jump)
 (try-require 'init-git)
 ;; (try-require 'init-mc)
-(try-require 'init-cmake)
+;; (try-require 'init-cmake)
 ;; (try-require 'init-popwin)
 (try-require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
@@ -119,6 +119,7 @@ just add the package to a list of missing packages."
 (try-require 'init-c)
 (try-require 'init-lisp)
 (try-require 'init-org)
+(try-require 'init-python)
 ;; (try-require 'init-tex)
 (when *win64*
   (try-require 'init-ahk)

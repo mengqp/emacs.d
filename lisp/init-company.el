@@ -50,6 +50,7 @@
 
   :config
   ;; (global-company-mode t)
+  ;; (add-to-list 'company-backends '(company-yasnippet))
 
   (define-key company-active-map (kbd "M-n") nil)
   (define-key company-active-map (kbd "M-p") nil)

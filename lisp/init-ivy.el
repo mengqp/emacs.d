@@ -72,8 +72,8 @@
   (setq ivy-initial-inputs-alist nil)
   ;; configure regexp engine.
   (setq ivy-re-builders-alist
-	  ;; allow input not in order
-        '((t   . ivy--regex-ignore-order)))
+	;; allow input not in order
+	'((t   . ivy--regex-ignore-order)))
 
   (use-package counsel-projectile
     :ensure t
@@ -85,16 +85,19 @@
   ;;   )
   )
 
-(when *win64*
-  (use-package ivy-posframe
-    :ensure t
-    :disabled t
-    :after ivy-mode
-    :init
-    (setq ivy-display-function #'ivy-posframe-display)
-    :config
-    (ivy-posframe-enable)
-    )
+(use-package ivy-posframe
+  :ensure t
+  :disabled t
+  :after ivy
+  :init
+  (setq ivy-display-function #'ivy-posframe-display)
+  :config
+  ;; (setq ivy-display-function #'ivy-posframe-display-at-frame-center)
+  (setq ivy-display-function #'ivy-posframe-display-at-window-center)
+  ;; (setq ivy-display-function #'ivy-posframe-display-at-frame-bottom-left)
+  ;; (setq ivy-display-function #'ivy-posframe-display-at-window-bottom-left)
+  ;; (setq ivy-display-function #'ivy-posframe-display-at-point)
+  (ivy-posframe-enable)
   )
 
 (provide 'init-ivy)

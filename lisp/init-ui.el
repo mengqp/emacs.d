@@ -61,6 +61,31 @@
   (pixel-scroll-mode t)
   )
 
+(use-package display-line-numbers
+  :ensure nil
+  :init
+  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+  :config
+  ;; config built-in "display-line-number-mode" (require Emacs >= 26)
+  (setq-default display-line-numbers-width 2)
+  (setq-default display-line-numbers-type 'relative)
+  (setq display-line-numbers-current-absolute t)
+  ;; advanced linum style (optional)
+  ;; (use-package linum-highlight-current-line-number
+  ;;   :config
+  ;;   (setq linum-format 'linum-highlight-current-line-number))
+  ;; enable line numbering (or "linum-mode")
+  ;; (let ((hook-list '(sh-mode-hook
+  ;; 		     cmake-mode-hook
+  ;; 		     matlab-mode-hook
+  ;; 		     python-mode-hook
+  ;; 		     c-mode-common-hook
+  ;; 		     makefile-gmake-mode-hook   ; Gnome
+  ;; 		     makefile-bsdmake-mode-hook ; OS X
+  ;; 		     ess-mode-hook)))  ; R
+  ;;   (dolist (hook-element hook-list)
+  ;;     (add-hook hook-element 'display-line-numbers-mode)))
+  )
 ;; 设置透明
 ;; (set-frame-parameter (selected-frame) 'alpha '(80 . 100))
 ;; (add-to-list 'default-frame-alist '(alpha . (80 . 100)))
