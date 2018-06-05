@@ -112,6 +112,7 @@ just add the package to a list of missing packages."
 ;; (try-require 'init-which-key)
 ;; (try-require 'init-shell)
 (try-require 'init-ivy)
+(try-require 'init-layout)
 (try-require 'init-func)
 (try-require 'init-keymap)
 

@@ -78,6 +78,9 @@
     "SPC h" "help")
 
   (which-key-add-key-based-replacements
+    "SPC l" "layout")
+
+  (which-key-add-key-based-replacements
     "SPC m" "bookmark")
 
   (which-key-add-key-based-replacements
@@ -187,6 +190,20 @@
 	 "hv" 'find-variable
 	 "hm" 'man
 	 "hw" 'woman
+
+	 "l0" 'eyebrowse-switch-to-window-config-0
+	 "l1" 'eyebrowse-switch-to-window-config-1
+	 "l2" 'eyebrowse-switch-to-window-config-2
+	 "l3" 'eyebrowse-switch-to-window-config-3
+	 "l4" 'eyebrowse-switch-to-window-config-4
+	 "l5" 'eyebrowse-switch-to-window-config-5
+	 "l6" 'eyebrowse-switch-to-window-config-6
+	 "l7" 'eyebrowse-switch-to-window-config-7
+	 "l8" 'eyebrowse-switch-to-window-config-8
+	 "l9" 'eyebrowse-switch-to-window-config-9
+	 "l[" 'eyebrowse-prev-window-config
+	 "l]" 'eyebrowse-next-window-config
+	 "lc" 'eyebrowse-close-window-config
 
 	 ;; "mx" 'counsel-M-x
 	 "mk" 'bookmark-set
