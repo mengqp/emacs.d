@@ -64,15 +64,15 @@
   ;; (add-to-list 'company-backends 'company-yasnippet)
   ;; (message "yasnippet")
   (yas-reload-all)
-  (setq yas-prompt-functions '(yas-x-prompt yas-dropdown-prompt))
+  (setq yas-prompt-functions '(yas-completing-prompt))
   (general-define-key
    :keymap '(yas-minor-mode-map)
    "M-j" 'yas-expand
    )
   (use-package ivy-yasnippet
     :ensure t
-    :config
-    (set ivy-yasnippet-expand-keys 'nil)
+    ;; :config
+    ;; (set ivy-yasnippet-expand-keys 'nil)
     )
 
 
