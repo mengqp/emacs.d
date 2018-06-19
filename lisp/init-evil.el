@@ -37,6 +37,7 @@
   :diminish evil-mode
   :defer t
   :init
+  (setq evil-want-integration nil)
   (add-hook 'after-init-hook #'evil-mode)
   :config
   (define-key evil-normal-state-map (kbd "go") 'ace-jump-char-mode)
@@ -134,6 +135,13 @@
     :config
     (global-evil-mc-mode 1)
     )
+
+  ;; (use-package evil-collection
+  ;;   :after evil
+  ;;   :ensure t
+  ;;   :custom (evil-collection-setup-minibuffer t)
+  ;;   :config
+  ;;   (evil-collection-init))
 
   )
 

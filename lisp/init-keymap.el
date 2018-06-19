@@ -237,7 +237,7 @@
 	 "wo" 'quit-window
 
 
-	 "/" 'counsel-projectile-ag
+	 "/" 'counsel-projectile-rg
 	 )
 
   ;; {{ Use `SPC` as leader key

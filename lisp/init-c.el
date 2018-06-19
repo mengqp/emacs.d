@@ -245,6 +245,7 @@
 	    (append '("compile_commands.json"
 		      ".ccls")
 		    projectile-project-root-files-top-down-recurring))
+      (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
       )
 
     (use-package ivy-xref
@@ -271,7 +272,15 @@
     ;; For rainbow semantic highlighting
     ;; (ccls-use-default-rainbow-sem-highlight)
 
-    (setq ccls-extra-init-params '(:completion (:detailedLabel t)))
+    (setq ccls-extra-init-params
+	  '(
+	    :clang (:extraArgs ("-D__cpp_deduction_guides=0" "-Wno-macro-redefined"))
+	    :completion (:detailedLabel t)
+	    :diagnostics (:frequencyMs 5000)
+	    :index (:initialReparseForDependency :json-false)))
+
+
+    ;; (setq ccls-extra-init-params '(:completion (:detailedLabel t)))
     (general-define-key :states '(normal motion)
 			:keymaps '(c++-mode-map
 				   c-mode-map)
