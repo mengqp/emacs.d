@@ -83,17 +83,29 @@
 ;; remember cursor position, for emacs 25.1 or later
 (save-place-mode 1)
 
+(use-package super-save
+  :ensure t
+  :hook (after-init . super-save-mode)
+  :init
+
+  (setq super-save-auto-save-when-idle t)
+  (setq auto-save-default nil)
+  (setq super-save-idle-duration 1)
+  )
+
+
 (use-package recentf
  ;; :ensure nil
   :defer t
   :commands (recentf recentf-track-opened-file)
+  :hook (find-file . (lambda () (unless recentf-mode
+  					 (recentf-mode)
+  					 (recentf-track-opened-file))))
   :init
-  ;; lazy load recentf
-  (add-hook 'after-init-hook 'recentf-mode)
-  (add-hook 'find-file-hook (lambda () (unless recentf-mode
-					 (recentf-mode)
-					 (recentf-track-opened-file))))
   (setq recentf-max-saved-items 200)
+  (setq recentf-auto-cleanup 'never)
+  (setq recentf-max-menu-items 15)
+
   :config
   (add-to-list 'recentf-exclude (expand-file-name package-user-dir))
   (add-to-list 'recentf-exclude "COMMIT_EDITMSG\\'")
@@ -102,8 +114,9 @@
 (use-package savehist
   ;;:ensure nil
   :defer t
+  :hook
+  (after-init . savehist-mode)
   :init
-  (add-hook 'after-init-hook 'savehist-mode)
   (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
         history-length 1000
         savehist-additional-variables '(mark-ring
@@ -148,26 +161,10 @@
 
   )
 
-
 ;;在minibuffer里启用自动补全函数和变量
 ;; (icomplete-mode 1)
 ;;允许minibuffer自由变化其宽度大小
 ;; (setq resize-mini-windows t)
-
-
-
-;; --------------------------------coding --------------------------------------
-;; (use-package unicad
-;;   :defer t)
-;; (require 'unicad)
-
-;; --------------------------------other  --------------------------------------
-;; 去除一个警告
-;; (setq exec-path-from-shell-check-startup-files nil)
-
-
-
-
 
 ;; (use-package which-func
 ;;   :init
@@ -187,8 +184,8 @@
   :ensure t
   :defer t
   :commands er/expand-region
-  :init
-  (global-set-key (kbd "C-=") 'er/expand-region)
+  :bind
+  ("C-=" . er/expand-region)
   )
 
 (use-package undo-tree
@@ -209,24 +206,13 @@
 (use-package hungry-delete
   :ensure t
   :diminish hungry-delete-mode
-  :config
-  (global-hungry-delete-mode)
+  :hook (after-init . global-hungry-delete-mode)
   )
 
 (use-package smart-tabs-mode
   :ensure t
   ;; :defer t
   )
-
-
-;; (use-package real-auto-save
-;;   :ensure t
-;;   :init
-;;   (add-hook 'prog-mode-hook 'real-auto-save-mode)
-;;   )
-;; (use-package repeater
-;;   :ensure t)
-
 
 ;; (setq hippie-expand-try-functions-list
 ;;       '(

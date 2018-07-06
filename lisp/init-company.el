@@ -38,9 +38,19 @@
   :defer t
   :commands (company company-select-next)
   :commands (company company-select-previous)
+  :commands (company company-search-candidates)
   :diminish company-mode
+  :hook (after-init . global-company-mode)
+  :bind
+  (:map company-active-map
+	("M-n" . nil)
+	("M-p" . nil)
+	("C-p" . company-select-previous)
+	("C-n" . company-select-next)
+	("C-s" . company-search-candidates)
+	)
   :init
-  (add-hook 'after-init-hook 'global-company-mode)
+  ;; (add-hook 'after-init-hook 'global-company-mode)
   ;; 设置等待时间
   ;; (setq company-idle-delay 0.08)
   (setq company-idle-delay 0.1)
@@ -52,10 +62,11 @@
   ;; (global-company-mode t)
   ;; (add-to-list 'company-backends '(company-yasnippet))
 
-  (define-key company-active-map (kbd "M-n") nil)
-  (define-key company-active-map (kbd "M-p") nil)
-  (define-key company-active-map (kbd "C-n") #'company-select-next)
-  (define-key company-active-map (kbd "C-p") #'company-select-previous)
+  ;; (define-key company-active-map (kbd "M-n") nil)
+  ;; (define-key company-active-map (kbd "M-p") nil)
+  ;; (define-key company-active-map (kbd "C-n") #'company-select-next)
+  ;; (define-key company-active-map (kbd "C-p") #'company-select-previous)
+  ;; (define-key company-active-map (kbd "C-s") #'company-search-candidates)
 
   (use-package company-childframe
     :ensure t

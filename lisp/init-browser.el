@@ -33,9 +33,10 @@
 ;;
 ;;; Code:
 ;; (use-package eaf
-  ;; :ensure t
-  ;; )
+;;   ;; :ensure t
+;;   )
 
+;; (load-file "~/.emacs.d/elpa/emacs-application-framework/eaf.el")
 
 (provide 'init-browser)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

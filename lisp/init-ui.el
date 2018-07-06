@@ -32,6 +32,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+;; 设置基本界面
 (progn
   (setq use-file-dialog nil)
   (setq use-dialog-box nil)
@@ -61,6 +62,7 @@
   (pixel-scroll-mode t)
   )
 
+;; 设置相对行号
 (use-package display-line-numbers
   :ensure nil
   :init
@@ -70,29 +72,15 @@
   (setq-default display-line-numbers-width 2)
   (setq-default display-line-numbers-type 'relative)
   (setq display-line-numbers-current-absolute t)
-  ;; advanced linum style (optional)
-  ;; (use-package linum-highlight-current-line-number
-  ;;   :config
-  ;;   (setq linum-format 'linum-highlight-current-line-number))
-  ;; enable line numbering (or "linum-mode")
-  ;; (let ((hook-list '(sh-mode-hook
-  ;; 		     cmake-mode-hook
-  ;; 		     matlab-mode-hook
-  ;; 		     python-mode-hook
-  ;; 		     c-mode-common-hook
-  ;; 		     makefile-gmake-mode-hook   ; Gnome
-  ;; 		     makefile-bsdmake-mode-hook ; OS X
-  ;; 		     ess-mode-hook)))  ; R
-  ;;   (dolist (hook-element hook-list)
-  ;;     (add-hook hook-element 'display-line-numbers-mode)))
   )
-;; 设置透明
-;; (set-frame-parameter (selected-frame) 'alpha '(80 . 100))
-;; (add-to-list 'default-frame-alist '(alpha . (80 . 100)))
 
 ;;当前行高亮
 (global-hl-line-mode 1)
 ;; (set-face-background 'hl-line "#3e4446")
+
+;; 设置透明
+;; (set-frame-parameter (selected-frame) 'alpha '(80 . 100))
+;; (add-to-list 'default-frame-alist '(alpha . (80 . 100)))
 
 ;;指针不要闪
 (blink-cursor-mode -1)
@@ -117,6 +105,8 @@
   (add-hook 'prog-mode-hook 'column-enforce-mode)
   :config
   (setq column-enforce-column 81)
+  ;; ;; By default column-enforce-mode will mark comments that exceed the limit. You can allow long comments in your code with:
+  ;; (setq column-enforce-comments nil)
 )
 
 (when *linux*

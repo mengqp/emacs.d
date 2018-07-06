@@ -90,7 +90,7 @@ just add the package to a list of missing packages."
   )
 
 ;;tool
-(try-require 'init-calendar)
+;; (try-require 'init-calendar)
 ;; (try-require 'init-hungry-delete)
 (try-require 'init-smartparens)
 (try-require 'init-evil)
@@ -103,7 +103,7 @@ just add the package to a list of missing packages."
 (try-require 'init-git)
 ;; (try-require 'init-mc)
 ;; (try-require 'init-cmake)
-;; (try-require 'init-popwin)
+(try-require 'init-popwin)
 (try-require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
 (try-require 'init-pyim)
