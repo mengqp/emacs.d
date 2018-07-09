@@ -86,11 +86,12 @@
 (use-package super-save
   :ensure t
   :hook (after-init . super-save-mode)
+  :diminish super-save-mode
   :init
 
   (setq super-save-auto-save-when-idle t)
   (setq auto-save-default nil)
-  (setq super-save-idle-duration 1)
+  (setq super-save-idle-duration 3)
   )
 
 

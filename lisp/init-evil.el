@@ -139,9 +139,14 @@
   (use-package evil-collection
     :after evil
     :ensure t
-    :custom (evil-collection-setup-minibuffer t)
-    :config
-    (evil-collection-init))
+    ;; :custom (evil-collection-setup-minibuffer t)
+    :custom (evil-collection-company-use-tng nil)
+    ;; :custom (evil-collection-outline-bind-tab-p nil)
+    ;; :custom (evil-collection-term-sync-state-and-mode-p nil)
+    ;; :custom (evil-collection-setup-debugger-keys nil)
+    :init
+    (evil-collection-init)
+    )
 
   )
 

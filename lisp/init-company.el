@@ -47,7 +47,7 @@
 	("M-p" . nil)
 	("C-p" . company-select-previous)
 	("C-n" . company-select-next)
-	("C-s" . company-search-candidates)
+	;; ("C-s" . company-search-candidates)
 	)
   :init
   ;; (add-hook 'after-init-hook 'global-company-mode)
@@ -68,16 +68,17 @@
   ;; (define-key company-active-map (kbd "C-p") #'company-select-previous)
   ;; (define-key company-active-map (kbd "C-s") #'company-search-candidates)
 
-  (use-package company-childframe
+  (use-package company-posframe
     :ensure t
-    :diminish company-childframe-mode
+    :diminish company-posframe-mode
     :config
-    (company-childframe-mode 1)
+    (company-posframe-mode 1)
     (use-package desktop
       :config
       (push '(company-childframe-mode . nil)
 	    desktop-minor-mode-table
 	    ))
+
     )
   )
 
