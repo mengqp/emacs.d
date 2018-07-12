@@ -123,6 +123,13 @@
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
 ;;   )
 
+(use-package    feebleline
+  :ensure       t
+  :custom       (feebleline-show-git-branch             t)
+                (feebleline-show-dir                    t)
+                (feebleline-show-time                   t)
+                (feebleline-show-previous-buffer        nil)
+  :config       (feebleline-mode 1))
 
 
 (provide 'init-ui)

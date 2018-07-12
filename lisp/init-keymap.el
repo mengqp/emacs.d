@@ -120,6 +120,11 @@
     ", c2" "unixdosconvert")
 
   (which-key-add-key-based-replacements
+    ", e" "edit")
+  (which-key-add-key-based-replacements
+    ", es" "smartparens")
+
+  (which-key-add-key-based-replacements
     ", f" "function")
 
   ;; (which-key-add-key-based-replacements
@@ -258,6 +263,13 @@
     "c2d" 'unix2dos
     "c2u" 'dos2unix
 
+    "esu" 'sp-splice-sexp
+    "eswr" 'sp-wrap-round
+    "esws" 'sp-wrap-square
+    "esws" 'sp-wrap-curly
+    "esr" 'sp-rewrap-sexp
+    "esb" 'sp-forward-barf-sexp
+    "ess" 'sp-forward-slurp-sexp
 
     "fb" 'beginning-of-defun
     "fe" 'end-of-defun
@@ -304,7 +316,20 @@
   (nvmap :prefix ";"
 	 ";"  'evilnc-comment-or-uncomment-lines
 	 )
+
+  ;; {{ Use `SPC` as leader key
+  ;; all keywords arguments are still supported
+  ;; 本文件 侧重一些模块功能
+  (nvmap :prefix "]"
+	 "p"  'sp-down-sexp
+	 )
+
+  (nvmap :prefix "["
+	 "p"  'sp-up-sexp
+	 )
   )
+
+
 ;; (require 'general)
 ;; (general-evil-setup t)
 ;; {{ Use `SPC` as leader key
