@@ -227,18 +227,19 @@
 ;; 					   (emacs-uptime "Uptime:%hh"))))
 	       ;; ))
 
-;; (use-package moody
-;;   :ensure t
-;;   :config
-;;   (setq x-underline-at-descent-line t)
-;;   (moody-replace-mode-line-buffer-identification)
-;;   (moody-replace-vc-mode))
+(use-package moody
+  :ensure t
+  :config
+  (setq x-underline-at-descent-line t)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode))
 
-(use-package    feebleline
-  :ensure       t
+(use-package feebleline
+  :ensure t
   :custom
   (feebleline-show-git-branch t)
   (feebleline-show-dir nil)
+  (feebleline-show-directory nil)
   (feebleline-show-time nil)
   (feebleline-show-previous-buffer nil)
   :config
