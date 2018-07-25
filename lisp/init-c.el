@@ -188,6 +188,7 @@
     :ensure t
     :defer t
     :diminish ycmd-mode
+    ;; :disabled t
     :init
     (add-hook 'c++-mode-hook 'ycmd-mode)
     (add-hook 'c-mode-hook 'ycmd-mode)
@@ -227,81 +228,82 @@
     )
   )
 
-;; (when *linux*
-;;   (defun ccls//enable ()
-;;     (condition-case nil
-;; 	(lsp-ccls-enable)
-;;       (user-error nil)))
+(when *linux*
+  (defun ccls//enable ()
+    (condition-case nil
+	(lsp-ccls-enable)
+      (user-error nil)))
 
 
-;;   (use-package ccls
-;;     :ensure t
-;;     :commands lsp-ccls-enable
-;;     :init
-;;     (add-hook 'c-mode-common-hook #'ccls//enable)
-;;     :config
-;;     ;; (add-hook 'ccls-tree-mode-hook #'evil-motion-state)
-;;     (evil-set-initial-state 'ccls-tree-mode 'emacs)
+  (use-package ccls
+    :ensure t
+    :disabled t
+    :commands lsp-ccls-enable
+    :init
+    (add-hook 'c-mode-common-hook #'ccls//enable)
+    :config
+    ;; (add-hook 'ccls-tree-mode-hook #'evil-motion-state)
+    (evil-set-initial-state 'ccls-tree-mode 'emacs)
 
-;;     (setq ccls-executable "/usr/bin/ccls")
-;;     (use-package projectile
-;;       :config
-;;       (setq projectile-project-root-files-top-down-recurring
-;; 	    (append '("compile_commands.json"
-;; 		      ".ccls")
-;; 		    projectile-project-root-files-top-down-recurring))
-;;       (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
-;;       )
+    (setq ccls-executable "/usr/bin/ccls")
+    (use-package projectile
+      :config
+      (setq projectile-project-root-files-top-down-recurring
+	    (append '("compile_commands.json"
+		      ".ccls")
+		    projectile-project-root-files-top-down-recurring))
+      (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
+      )
 
-;;     (use-package ivy-xref
-;;       :ensure t
-;;       :after ivy
-;;       :init
-;;       (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
+    (use-package ivy-xref
+      :ensure t
+      :after ivy
+      :init
+      (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
 
-;;       )
+      )
 
-;;     ;; (ccls-xref-find-custom "$ccls/base")
-;;     ;; (ccls-xref-find-custom "$ccls/callers")
-;;     ;; (ccls-xref-find-custom "$ccls/derived")
-;;     ;; (ccls-xref-find-custom "$ccls/vars")
+    ;; (ccls-xref-find-custom "$ccls/base")
+    ;; (ccls-xref-find-custom "$ccls/callers")
+    ;; (ccls-xref-find-custom "$ccls/derived")
+    ;; (ccls-xref-find-custom "$ccls/vars")
 
-;;     ;; ;; Alternatively, use lsp-ui-peek interface
-;;     ;; (lsp-ui-peek-find-custom 'base "$ccls/base")
-;;     ;; (lsp-ui-peek-find-custom 'callers "$ccls/callers")
-;;     ;; (lsp-ui-peek-find-custom 'random "$ccls/random") ;; jump to a random declaration
+    ;; ;; Alternatively, use lsp-ui-peek interface
+    ;; (lsp-ui-peek-find-custom 'base "$ccls/base")
+    ;; (lsp-ui-peek-find-custom 'callers "$ccls/callers")
+    ;; (lsp-ui-peek-find-custom 'random "$ccls/random") ;; jump to a random declaration
 
-;;     ;; (setq ccls-sem-highlight-method 'font-lock)
-;;     ;; alternatively, (setq ccls-sem-highlight-method 'overlay)
+    ;; (setq ccls-sem-highlight-method 'font-lock)
+    ;; alternatively, (setq ccls-sem-highlight-method 'overlay)
 
-;;     ;; For rainbow semantic highlighting
-;;     ;; (ccls-use-default-rainbow-sem-highlight)
+    ;; For rainbow semantic highlighting
+    ;; (ccls-use-default-rainbow-sem-highlight)
 
-;;     (setq ccls-extra-init-params
-;; 	  '(
-;; 	    :clang (:extraArgs ("-D__cpp_deduction_guides=0" "-Wno-macro-redefined"))
-;; 	    :completion (:detailedLabel t)
-;; 	    :diagnostics (:frequencyMs 5000)
-;; 	    :index (:initialReparseForDependency :json-false)))
-
-
-;;     ;; (setq ccls-extra-init-params '(:completion (:detailedLabel t)))
-;;     (general-define-key :states '(normal motion)
-;; 			:keymaps '(c++-mode-map
-;; 				   c-mode-map)
-;; 			:prefix ";"
-;; 			"g" 'xref-find-definitions
-;; 			"r" 'xref-find-references
-;; 			"m" 'lsp-ui-imenu
-;; 			"cm" 'ccls-member-hierarchy
-;; 			"cc" 'ccls-call-hierarchy
-;; 			"cp" 'ccls-inheritance-hierarchy
-;; 			)
+    (setq ccls-extra-init-params
+	  '(
+	    :clang (:extraArgs ("-D__cpp_deduction_guides=0" "-Wno-macro-redefined"))
+	    :completion (:detailedLabel t)
+	    :diagnostics (:frequencyMs 5000)
+	    :index (:initialReparseForDependency :json-false)))
 
 
-;;     )
+    ;; (setq ccls-extra-init-params '(:completion (:detailedLabel t)))
+    (general-define-key :states '(normal motion)
+			:keymaps '(c++-mode-map
+				   c-mode-map)
+			:prefix ";"
+			"g" 'xref-find-definitions
+			"r" 'xref-find-references
+			"m" 'lsp-ui-imenu
+			"cm" 'ccls-member-hierarchy
+			"cc" 'ccls-call-hierarchy
+			"cp" 'ccls-inheritance-hierarchy
+			)
 
-;;   )
+
+    )
+
+  )
 
 (use-package dynamic-spaces
   :ensure t
@@ -311,37 +313,44 @@
   )
 
 
-;; (use-package cquery
-;;   :ensure t
-;;   :init
-;;   (add-hook 'c++-mode-hook #'lsp-cquery-enable)
-;;   (add-hook 'c-mode-hook #'lsp-cquery-enable)
-;;   :config
+(use-package cquery
+  :ensure t
+  :disabled t
+  :init
+  (add-hook 'c++-mode-hook #'lsp-cquery-enable)
+  (add-hook 'c-mode-hook #'lsp-cquery-enable)
+  :config
 
-;;   (use-package company-lsp
-;;     :ensure t
-;;     :config
-;;     (push 'company-lsp company-backends)
-;;     )
+  (use-package company-lsp
+    :ensure t
+    :config
+    (push 'company-lsp company-backends)
+    )
 
 
-;;   (use-package lsp-ui
-;;     :ensure t
-;;     :init
-;;     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-;;     )
+  (use-package lsp-ui
+    :ensure t
+    :init
+    (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+    )
 
-;;   (setq cquery-executable "/usr/bin/cquery")
-;;   (setq cquery-project-roots '("opt/qt-everywhere-opensource-src-4.7.3/" "~/Dev/llvm"))
-;;   (setq cquery-extra-init-params
-;; 	'(:cacheFormat "msgpack" :completion (:detailedLabel t) :xref (:container t)
-;; 		       :diagnostics (:frequencyMs 5000)))
+  (with-eval-after-load 'projectile
+  (setq projectile-project-root-files-top-down-recurring
+        (append '("compile_commands.json"
+                  ".cquery")
+                projectile-project-root-files-top-down-recurring)))
 
-;;   (use-package ivy-xref
-;;     :ensure t
-;;     :init
-;;     (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
-;;   )
+  (setq cquery-executable "/usr/bin/cquery")
+  ;; (setq cquery-project-roots '("opt/qt-everywhere-opensource-src-4.7.3/" "~/Dev/llvm"))
+  (setq cquery-extra-init-params
+	'(:cacheFormat "msgpack" :completion (:detailedLabel t) :xref (:container t)
+		       :diagnostics (:frequencyMs 5000)))
+
+  (use-package ivy-xref
+    :ensure t
+    :init
+    (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
+  )
 
 (general-define-key :states '(normal motion)
 		    :keymaps '(c++-mode-map

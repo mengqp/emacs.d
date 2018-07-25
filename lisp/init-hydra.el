@@ -1,4 +1,4 @@
-;;; init-browser.el --- xxx -*- coding: utf-8-unix -*-
+;;; init-hydra.el --- xxx -*- coding: utf-8-unix -*-
 
 ;;; Copyright © 2018 - 2018 mengqp.
 
@@ -32,15 +32,17 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(use-package eaf
-  ;; :ensure t
-  :load-path "~/.emacs.d/elpa/emacs-application-framework/"
-  )
- ;; (setq browse-url-browser-function 'xwidget-webkit-browse-url)
 
-;; (load-file "~/.emacs.d/elpa/emacs-application-framework/eaf.el")
-;; (require 'eaf)
+(use-package hydra
+  :defer t
+  :ensure t
+  :config
+  (defhydra hydra-zoom (global-map "<f2>")
+  "zoom"
+  ("g" text-scale-increase "in")
+  ("l" text-scale-decrease "out"))
+)
 
-(provide 'init-browser)
+(provide 'init-hydra)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-browser.el ends here
+;;; init-hydra.el ends here

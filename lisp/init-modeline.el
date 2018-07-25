@@ -234,16 +234,16 @@
   (moody-replace-mode-line-buffer-identification)
   (moody-replace-vc-mode))
 
-(use-package feebleline
-  :ensure t
-  :custom
-  (feebleline-show-git-branch t)
-  (feebleline-show-dir nil)
-  (feebleline-show-directory nil)
-  (feebleline-show-time nil)
-  (feebleline-show-previous-buffer nil)
-  :config
-  (feebleline-mode 1))
+;; (use-package feebleline
+;;   :ensure t
+;;   :custom
+;;   (feebleline-show-git-branch t)
+;;   (feebleline-show-dir nil)
+;;   (feebleline-show-directory nil)
+;;   (feebleline-show-time nil)
+;;   (feebleline-show-previous-buffer nil)
+;;   :config
+;;   (feebleline-mode 1))
 
 (provide 'init-modeline)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

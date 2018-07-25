@@ -150,6 +150,7 @@
 
   (use-package evil-smartparens
     :ensure t
+    :diminish evil-smartparens-mode
     :init
     (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
     )

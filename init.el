@@ -104,10 +104,11 @@ just add the package to a list of missing packages."
 ;; (try-require 'init-mc)
 ;; (try-require 'init-cmake)
 (try-require 'init-popwin)
-(try-require 'init-lsp)
+;; (try-require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
 (try-require 'init-pyim)
 (try-require 'init-abbrev)
+(try-require 'init-hydra)
 ;; (try-require 'init-tree)
 ;; (try-require 'init-which-key)
 ;; (try-require 'init-shell)

@@ -263,13 +263,14 @@
     "c2d" 'unix2dos
     "c2u" 'dos2unix
 
-    "esu" 'sp-splice-sexp
-    "eswr" 'sp-wrap-round
-    "esws" 'sp-wrap-square
-    "esws" 'sp-wrap-curly
-    "esr" 'sp-rewrap-sexp
-    "esb" 'sp-forward-barf-sexp
-    "ess" 'sp-forward-slurp-sexp
+    ;; "esu" 'sp-splice-sexp
+    ;; "eswr" 'sp-wrap-round
+    ;; "esws" 'sp-wrap-square
+    ;; "esws" 'sp-wrap-curly
+    ;; "esr" 'sp-rewrap-sexp
+    ;; "esb" 'sp-forward-barf-sexp
+    ;; "ess" 'sp-forward-slurp-sexp
+    "es" 'init-sp-menu/body
 
     "fb" 'beginning-of-defun
     "fe" 'end-of-defun
