@@ -60,7 +60,7 @@
   ;;显示括号匹配
   (show-paren-mode t)
   ;; show cursor position within line
-  (column-number-mode 1)
+  ;; (column-number-mode 1)
 
   (use-package rainbow-delimiters
     :ensure t

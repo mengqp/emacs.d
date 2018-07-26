@@ -104,7 +104,7 @@ just add the package to a list of missing packages."
 ;; (try-require 'init-mc)
 ;; (try-require 'init-cmake)
 (try-require 'init-popwin)
-;; (try-require 'init-lsp)
+(try-require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
 (try-require 'init-pyim)
 (try-require 'init-abbrev)
@@ -113,7 +113,7 @@ just add the package to a list of missing packages."
 ;; (try-require 'init-which-key)
 ;; (try-require 'init-shell)
 (try-require 'init-ivy)
-(try-require 'init-browser)
+;; (try-require 'init-browser)
 (try-require 'init-layout)
 (try-require 'init-func)
 (try-require 'init-keymap)
@@ -123,6 +123,7 @@ just add the package to a list of missing packages."
 (try-require 'init-lisp)
 (try-require 'init-org)
 (try-require 'init-python)
+(try-require 'init-css)
 ;; (try-require 'init-tex)
 (when *win64*
   (try-require 'init-ahk)
