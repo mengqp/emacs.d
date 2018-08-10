@@ -38,7 +38,7 @@
 ;;   :init
 ;;   ;; (require 'color-theme-solarized)
 ;;   ;; (load-theme 'solarized t)
-;;   ;; (set-frame-parameter nil 'background-mode 'dark)    ;;选择solarized dark
+;;   ;; (set-frame-parameter nil 'background-mode 'dark)    ;;选择 solarized dark
 ;;   ;; (enable-theme 'solarized)
 ;;   (require 'spacemacs-theme)
 ;;   (load-theme 'spacemacs-dark t)
@@ -46,8 +46,18 @@
 ;; (require 'spacemacs-theme)
 ;; (load-theme 'spacemacs-dark t)
 
+(use-package solarized-theme
+  :ensure t
+  :disabled t
+  :defer t
+  :init
+  (add-hook 'after-init-hook
+	    (lambda () (load-theme 'solarized-dark t)))
+  )
+
 (use-package cyberpunk-theme
   :ensure t
+  ;; :disabled t
   :defer t
   :init
   (add-hook 'after-init-hook

@@ -12,8 +12,8 @@
   :defer t
   :config
 
-  (use-package evil-magit
-    :ensure t)
+  ;; (use-package evil-magit
+  ;;   :ensure t)
 
   (use-package orgit
     :ensure t

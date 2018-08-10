@@ -140,6 +140,9 @@
     ", j" "jump")
 
   (which-key-add-key-based-replacements
+    ", l" "line")
+
+  (which-key-add-key-based-replacements
     ", s" "search/shell/sudo")
 
   )
@@ -283,7 +286,7 @@
     "itr" 'table-insert-row
     "itc" 'table-insert-column
 
-    ;; "jj" 'ace-jump-char-mode
+    "jj" 'avy-goto-line
     ;; "jc" 'ace-jump-char-mode
     "jw" 'avy-goto-char-2
     "jl" 'avy-goto-line

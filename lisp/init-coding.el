@@ -40,10 +40,10 @@
   ;;(prefer-coding-system 'gb18030)
 					;(prefer-coding-system 'utf-16le-with-signature)
   (prefer-coding-system 'utf-16)
-  ;; 新建文件使用utf-8-unix方式
+  ;; 新建文件使用 utf-8-unix 方式
   ;; 如果不写下面两句，只写
   ;; (prefer-coding-system 'utf-8)
-  ;; 这一句的话，新建文件以utf-8编码，行末结束符平台相关
+  ;; 这一句的话，新建文件以 utf-8 编码，行末结束符平台相关
   (prefer-coding-system 'utf-8-dos)
   (prefer-coding-system 'utf-8-unix)
   )

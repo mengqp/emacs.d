@@ -10,11 +10,34 @@
 
   :config
 
+  ;; (load-file "~/srcp/liberime/liberime-config.el")
+  ;; (defun setup-liberime ()
+  ;;   ;; incase hooks not running
+  ;;   (interactive)
+  ;;   (liberime-start "~/.config/fcitx/rime/build/" "~/.emacs.d/rime/")
+  ;;   (liberime-get-schema-list)
+  ;;   (liberime-search "wode" nil)
+
+  ;;   ;; (liberime-select-schema "luna_pinyin_simp"))
+  ;;   (liberime-select-schema "wubi86"))
+  ;; (use-package liberime
+  ;;   :load-path "~/srcp/liberime/build/liberime.so"
+  ;;   :config
+  ;;   (defun setup-liberime ()
+  ;;     ;; incase hooks not running
+  ;;     (interactive)
+  ;;     (liberime-start "~/.config/fcitx/rime/build/" "~/.emacs.d/rime/")
+  ;;     (liberime-get-schema-list)
+  ;;     (liberime-select-schema "wubi86")))
+  ;; (setq default-input-method "pyim")
+  ;; (setq pyim-default-scheme 'rime)
+  ;; work with pyim
+  ;; (add-hook 'pyim-load-hook 'setup-liberime) ;; or set with use-package
+
   ;; 五笔用户使用 wbdict 词库
   (use-package pyim-wbdict
     :ensure t
     :config
-    (message "wb")
     (pyim-wbdict-gbk-enable))
 
   (setq default-input-method "pyim")
@@ -43,7 +66,7 @@
   ;; (setq x-gtk-use-system-tooltips t)
   (setq pyim-page-tooltip 'child-frame)
 
-  ;; 选词框显示5个候选词
+  ;; 选词框显示 5 个候选词
   (setq pyim-page-length 5)
 
   ;; 让 Emacs 启动时自动加载 pyim 词库

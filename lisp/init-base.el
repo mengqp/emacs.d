@@ -60,7 +60,7 @@
   ;;显示括号匹配
   (show-paren-mode t)
   ;; show cursor position within line
-  ;; (column-number-mode 1)
+  (column-number-mode 1)
 
   (use-package rainbow-delimiters
     :ensure t
@@ -71,6 +71,12 @@
     (set-face-foreground 'rainbow-delimiters-depth-2-face "cyan")
     )
   )
+
+(use-package pangu-spacing
+  :ensure t
+  :config
+  (setq pangu-spacing-real-insert-separtor t)
+  (global-pangu-spacing-mode 1))
 
 ;;文件在改变时自动加载
 (use-package autorevert
@@ -91,7 +97,7 @@
 
   (setq super-save-auto-save-when-idle t)
   (setq auto-save-default nil)
-  (setq super-save-idle-duration 3)
+  (setq super-save-idle-duration 2)
   )
 
 

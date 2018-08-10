@@ -117,6 +117,7 @@ just add the package to a list of missing packages."
 (try-require 'init-layout)
 (try-require 'init-func)
 (try-require 'init-keymap)
+(try-require 'init-realgud)
 
 ;;
 (try-require 'init-c)

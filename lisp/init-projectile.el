@@ -45,6 +45,8 @@
 		      "A" 'projectile-find-other-file-other-window
 		      )
   :config
+
+  (setq projectile-completion-system 'ivy)
   (projectile-mode t)
 
   )

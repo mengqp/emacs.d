@@ -50,12 +50,12 @@
   :defer t
   :init
   (progn
-;;; 定义tab和缩进
+;;; 定义 tab 和缩进
     (defun mengqp/google-c-mode-hook ()
       (setq c-basic-offset 4          ;; 基本缩进宽度
-	    indent-tabs-mode nil       ;; 禁止空格替换Tab
+	    indent-tabs-mode nil       ;; 禁止空格替换 Tab
 	    tab-width 4
-	    ))     ;; 默认Tab宽度
+	    ))     ;; 默认 Tab 宽度
 
     (add-hook 'c-mode-common-hook 'google-set-c-style)
     (add-hook 'c++-mode-common-hook 'google-set-c-style)
@@ -203,7 +203,7 @@
       :ensure t
       :config
       (company-ycmd-setup)
-      (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
+      ;; (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
       )
     (use-package flycheck-ycmd
       :ensure t
@@ -361,12 +361,12 @@
 
 ;; ;;; 设置编码风格
 ;; (require 'google-c-style)
-;; ;;; 定义tab和缩进
+;; ;;; 定义 tab 和缩进
 ;; (defun mengqp/google-c-mode-hook ()
 ;;   (setq c-basic-offset 4          ;; 基本缩进宽度
-;;         indent-tabs-mode nil       ;; 禁止空格替换Tab
+;;         indent-tabs-mode nil       ;; 禁止空格替换 Tab
 ;;         tab-width 4
-;;         ))     ;; 默认Tab宽度
+;;         ))     ;; 默认 Tab 宽度
 
 ;; (add-hook 'c-mode-common-hook 'google-set-c-style)
 ;; (add-hook 'c++-mode-common-hook 'google-set-c-style)

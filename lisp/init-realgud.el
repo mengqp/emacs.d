@@ -1,4 +1,4 @@
-;;; init-css.el --- xxx -*- coding: utf-8-unix -*-
+;;; init-realgud.el --- xxx -*- coding: utf-8-unix -*-
 
 ;;; Copyright © 2018 - 2018 mengqp.
 
@@ -32,16 +32,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-
-(use-package css-mode
-  :ensure nil
+(use-package realgud
+  :ensure t
   :defer t
-  :init
-  (add-to-list 'auto-mode-alist '("\\.qss$" . css-mode))
   )
 
 
-
-(provide 'init-css)
+(provide 'init-realgud)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-css.el ends here
+;;; init-realgud.el ends here

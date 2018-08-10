@@ -63,16 +63,16 @@
   )
 
 ;; 设置相对行号
-(use-package display-line-numbers
-  :ensure nil
-  :init
-  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
-  :config
-  ;; config built-in "display-line-number-mode" (require Emacs >= 26)
-  (setq-default display-line-numbers-width 2)
-  (setq-default display-line-numbers-type 'relative)
-  (setq display-line-numbers-current-absolute t)
-  )
+;; (use-package display-line-numbers
+;;   :ensure nil
+;;   :init
+;;   (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+;;   :config
+;;   ;; config built-in "display-line-number-mode" (require Emacs >= 26)
+;;   (setq-default display-line-numbers-width 2)
+;;   (setq-default display-line-numbers-type 'relative)
+;;   (setq display-line-numbers-current-absolute t)
+;;   )
 
 ;;当前行高亮
 (global-hl-line-mode 1)
