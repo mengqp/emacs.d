@@ -80,6 +80,12 @@
 	    ))
 
     )
+
+  (use-package company-english-helper
+    :ensure nil
+    :defer t
+    :commands (company-english-helper toggle-company-english-helper)
+    )
   )
 
 ;;颜色

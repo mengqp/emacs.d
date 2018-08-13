@@ -304,6 +304,7 @@
 
     "tt" 'mengqp/insert-time
     "td" 'mengqp/insert-date
+    "te" 'toggle-company-english-helper
 
 
     "ww" 'save-buffer

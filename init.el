@@ -14,6 +14,7 @@
 
 (defvar emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
 
 (defconst *linux* (eq system-type 'gnu/linux) )
 (defconst *win64* (eq system-type 'windows-nt) )
