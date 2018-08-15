@@ -43,14 +43,14 @@
   (setq backup-inhibited t)
   ;; backup in one place. flat, no tree structure
   (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
-   )
+  )
 
 (progn
   ;; 末尾加空行
   (setq require-final-newline t)
   ;; 清除白块
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
-  ;; 以 y/n代表 yes/no
+  ;; 以 y/n 代表 yes/no
   (fset 'yes-or-no-p 'y-or-n-p)
   )
 
@@ -74,6 +74,8 @@
 
 (use-package pangu-spacing
   :ensure t
+  :diminish global-pangu-spacing-mode
+  :diminish pangu-spacing-mode
   :config
   (setq pangu-spacing-real-insert-separtor t)
   (global-pangu-spacing-mode 1))
@@ -89,25 +91,29 @@
 ;; remember cursor position, for emacs 25.1 or later
 (save-place-mode 1)
 
-(use-package super-save
-  :ensure t
-  :hook (after-init . super-save-mode)
-  :diminish super-save-mode
-  :init
+;; (use-package super-save
+;;   :ensure t
+;;   :hook (prog-mode . super-save-mode)
+;;   :diminish super-save-mode
+;;   :init
+;;   (setq super-save-auto-save-when-idle t)
+;;   (setq auto-save-default nil)
+;;   (setq super-save-idle-duration 2)
+;;   )
 
-  (setq super-save-auto-save-when-idle t)
-  (setq auto-save-default nil)
-  (setq super-save-idle-duration 2)
+(use-package auto-save
+  :config
+  (auto-save-enable)              ;; 开启自动保存功能
+  (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
   )
 
-
 (use-package recentf
- ;; :ensure nil
+  ;; :ensure nil
   :defer t
   :commands (recentf recentf-track-opened-file)
   :hook (find-file . (lambda () (unless recentf-mode
-  					 (recentf-mode)
-  					 (recentf-track-opened-file))))
+				  (recentf-mode)
+				  (recentf-track-opened-file))))
   :init
   (setq recentf-max-saved-items 200)
   (setq recentf-auto-cleanup 'never)
@@ -118,6 +124,8 @@
   (add-to-list 'recentf-exclude "COMMIT_EDITMSG\\'")
   (add-to-list 'recentf-exclude "bookmarks")
 
+  )
+
 (use-package savehist
   ;;:ensure nil
   :defer t
@@ -125,80 +133,47 @@
   (after-init . savehist-mode)
   :init
   (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
-        history-length 1000
-        savehist-additional-variables '(mark-ring
-                                        global-mark-ring
-                                        search-ring
-                                        regexp-search-ring
-                                        extended-command-history)
-        savehist-autosave-interval 60)
+	history-length 1000
+	savehist-additional-variables '(mark-ring
+					global-mark-ring
+					search-ring
+					regexp-search-ring
+					extended-command-history)
+	savehist-autosave-interval 60)
   )
 
-
-
-  ;; )
-
-;; (when *linux*
-;;   (use-package all-the-icons
-;;     :ensure t
-;;     :init
-;;     :config
-;;     (use-package all-the-icons-dired
-;;       :ensure t
-;;       :defer t
-;;       :init
-;;       (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
-;;       )
-;;     (use-package all-the-icons-ivy
-;;       :ensure t
-;;       :config
-;;       (all-the-icons-ivy-setup)
-;;       )
-
-;;     )
-;;   )
-
-;; (when *linux*
-;;   (use-package fcitx
-;;     :ensure t
-;;     :config
-;;     (fcitx-default-setup)
-;;     ))
-
-
-  )
-
-;;在minibuffer里启用自动补全函数和变量
+;;在 minibuffer 里启用自动补全函数和变量
 ;; (icomplete-mode 1)
-;;允许minibuffer自由变化其宽度大小
+;;允许 minibuffer 自由变化其宽度大小
 ;; (setq resize-mini-windows t)
 
 ;; (use-package which-func
 ;;   :init
 ;;   (add-hook 'prog-major-mode #'which-function-mode)
 ;;   :config
-  ;; ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
-  ;; (which-function-mode)
-  ;; when editing js file, this feature is very useful
-  ;; (setq-default header-line-format
-  ;; 		'((which-func-mode ("" which-func-format " "))))
-  ;; (setq-default mode-line-misc-info
-  ;; 		(assq-delete-all 'which-function-mode mode-line-misc-info))
+;; ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
+;; (which-function-mode)
+;; when editing js file, this feature is very useful
+;; (setq-default header-line-format
+;; 		'((which-func-mode ("" which-func-format " "))))
+;; (setq-default mode-line-misc-info
+;; 		(assq-delete-all 'which-function-mode mode-line-misc-info))
 
-  ;; )
+;; )
 
 (use-package expand-region
   :ensure t
   :defer t
   :commands er/expand-region
-  :bind
-  ("C-=" . er/expand-region)
+  :bind ("C-=" . er/expand-region)
   )
 
 (use-package undo-tree
   :ensure t
   :defer t
   :diminish undo-tree-mode
+  :config
+  (undo-tree-mode 1)
   )
 
 (use-package eldoc

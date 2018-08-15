@@ -1,4 +1,4 @@
-;;; init-c.el --- xxx -*- coding: utf-8-unix -*-
+;;; init-cc.el --- xxx -*- coding: utf-8-unix -*-
 
 ;;; Copyright © 2018 - 2018 mengqp.
 
@@ -411,6 +411,6 @@
 
 
 
-(provide 'init-c)
+(provide 'init-cc)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-c.el ends here
+;;; init-cc.el ends here

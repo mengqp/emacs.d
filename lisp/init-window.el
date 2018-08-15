@@ -52,6 +52,7 @@
 (use-package switch-window
   :ensure t
   :defer t
+  :bind ("M-o". switch-window)
   :init
   (setq switch-window-shortcut-style 'qwerty)
   (setq switch-window-qwerty-shortcuts

@@ -33,7 +33,7 @@
 ;;
 ;;; Code:
 ;; 输入法切换时不出现问题
-(global-set-key (kbd "C-SPC") nil)
+;; (global-set-key (kbd "C-SPC") nil)
 
 (use-package which-key
   :ensure t
@@ -158,95 +158,95 @@
   (general-evil-setup t)
   ;; 全局
   (nvmap :prefix "SPC"
-	 "SPC" 'switch-window
-	 ;; "TAB" 'previous-buffer
-	 "." 'counsel-projectile-find-file
-	 ":" 'counsel-M-x
+    "SPC" 'switch-window
+    ;; "TAB" 'previous-buffer
+    "." 'counsel-projectile-find-file
+    ":" 'counsel-M-x
 
-	 "[b" 'switch-to-prev-buffer
-	 "]b" 'switch-to-next-buffer
+    "[b" 'switch-to-prev-buffer
+    "]b" 'switch-to-next-buffer
 
-	 "ac" 'calc
+    "ac" 'calc
 
-	 "bb" 'ivy-switch-buffer
-	 "bd" 'kill-buffer
-	 ;; "bs" 'mengqp/switch-scratch-buf
+    "bb" 'ivy-switch-buffer
+    "bd" 'kill-buffer
+    ;; "bs" 'mengqp/switch-scratch-buf
 
-	 "eh" 'eshell-here
-	 "ee" 'ansi-term
-	 "ea" 'shell
+    "eh" 'eshell-here
+    "ee" 'ansi-term
+    "ea" 'shell
 
-	 "cc" 'compile
-	 "ck" 'kill-compilation
-	 "cr" 'recompile
-	 "cd" 'mengqp/close-compilation-window
+    "cc" 'compile
+    "ck" 'kill-compilation
+    "cr" 'recompile
+    "cd" 'mengqp/close-compilation-window
 
-	 "ff" 'counsel-find-file  ;;
-	 "fr" 'counsel-recentf  ;;
-	 "fdi" 'mengqp/open-init-file
-	 "fdp" 'mengqp/open-init-package-file
-	 "fdk" 'mengqp/open-init-keymap-file
+    "ff" 'counsel-find-file  ;;
+    "fr" 'counsel-recentf  ;;
+    "fdi" 'mengqp/open-init-file
+    "fdp" 'mengqp/open-init-package-file
+    "fdk" 'mengqp/open-init-keymap-file
 
-	 "gs" 'magit-status
-	 "gb" 'magit-blame
-	 "gf" 'magit-gitflow-popup
-	 "gt" 'git-timemachine
-	 "gc" 'magit-file-checkout
-	 "gp" 'git-push-coding-request
+    "gs" 'magit-status
+    "gb" 'magit-blame
+    "gf" 'magit-gitflow-popup
+    "gt" 'git-timemachine
+    "gc" 'magit-file-checkout
+    "gp" 'git-push-coding-request
 
-	 "hf" 'find-function
-	 "hv" 'find-variable
-	 "hm" 'man
-	 "hw" 'woman
+    "hf" 'find-function
+    "hv" 'find-variable
+    "hm" 'man
+    "hw" 'woman
 
-	 "l0" 'eyebrowse-switch-to-window-config-0
-	 "l1" 'eyebrowse-switch-to-window-config-1
-	 "l2" 'eyebrowse-switch-to-window-config-2
-	 "l3" 'eyebrowse-switch-to-window-config-3
-	 "l4" 'eyebrowse-switch-to-window-config-4
-	 "l5" 'eyebrowse-switch-to-window-config-5
-	 "l6" 'eyebrowse-switch-to-window-config-6
-	 "l7" 'eyebrowse-switch-to-window-config-7
-	 "l8" 'eyebrowse-switch-to-window-config-8
-	 "l9" 'eyebrowse-switch-to-window-config-9
-	 "l[" 'eyebrowse-prev-window-config
-	 "l]" 'eyebrowse-next-window-config
-	 "lc" 'eyebrowse-close-window-config
+    "l0" 'eyebrowse-switch-to-window-config-0
+    "l1" 'eyebrowse-switch-to-window-config-1
+    "l2" 'eyebrowse-switch-to-window-config-2
+    "l3" 'eyebrowse-switch-to-window-config-3
+    "l4" 'eyebrowse-switch-to-window-config-4
+    "l5" 'eyebrowse-switch-to-window-config-5
+    "l6" 'eyebrowse-switch-to-window-config-6
+    "l7" 'eyebrowse-switch-to-window-config-7
+    "l8" 'eyebrowse-switch-to-window-config-8
+    "l9" 'eyebrowse-switch-to-window-config-9
+    "l[" 'eyebrowse-prev-window-config
+    "l]" 'eyebrowse-next-window-config
+    "lc" 'eyebrowse-close-window-config
 
-	 ;; "mx" 'counsel-M-x
-	 "mk" 'bookmark-set
-	 "md" 'bookmark-delete
-	 "mm" 'counsel-bookmark
-
-
-	 "oo" 'org-capture
-	 "oa" 'org-agenda
-	 "op" 'org-pomodoro
-	 "omp" 'org-mobile-push
-	 "omg" 'org-mobile-pull
-	 "oc" 'cfw:open-org-calendar
-
-	 "pd" 'counsel-projectile-find-dir
-	 "pb" 'counsel-projectile-switch-to-buffer
-	 "pp" 'projectile-switch-project
-	 "pa" 'counsel-projectile-ag
-	 "pr" 'counsel-projectile-rg
-	 "pfi" 'mengqp/org-projectile-find-issue
-	 "pft" 'mengqp/org-projectile-find-todo
-
-	 "qq" 'save-buffers-kill-emacs
-	 "qr" 'restart-emacs
-
-	 "ws" 'split-window-vertically
-	 "wv" 'split-window-horizontally
-	 "ww" 'switch-window
-	 "wd" 'delete-window
-	 "wo" 'delete-other-windows
-	 "wo" 'quit-window
+    ;; "mx" 'counsel-M-x
+    "mk" 'bookmark-set
+    "md" 'bookmark-delete
+    "mm" 'counsel-bookmark
 
 
-	 "/" 'counsel-projectile-rg
-	 )
+    "oo" 'org-capture
+    "oa" 'org-agenda
+    "op" 'org-pomodoro
+    "omp" 'org-mobile-push
+    "omg" 'org-mobile-pull
+    "oc" 'cfw:open-org-calendar
+
+    "pd" 'counsel-projectile-find-dir
+    "pb" 'counsel-projectile-switch-to-buffer
+    "pp" 'projectile-switch-project
+    "pa" 'counsel-projectile-ag
+    "pr" 'counsel-projectile-rg
+    "pfi" 'mengqp/org-projectile-find-issue
+    "pft" 'mengqp/org-projectile-find-todo
+
+    "qq" 'save-buffers-kill-emacs
+    "qr" 'restart-emacs
+
+    "ws" 'split-window-vertically
+    "wv" 'split-window-horizontally
+    "ww" 'switch-window
+    "wd" 'delete-window
+    "wo" 'delete-other-windows
+    "wo" 'quit-window
+
+
+    "/" 'counsel-projectile-rg
+    )
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
@@ -319,19 +319,19 @@
   ;; all keywords arguments are still supported
   ;; 本文件 侧重一些模块功能
   (nvmap :prefix ";"
-	 ";"  'evilnc-comment-or-uncomment-lines
-	 )
+    ";"  'evilnc-comment-or-uncomment-lines
+    )
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
   ;; 本文件 侧重一些模块功能
   (nvmap :prefix "]"
-	 "p"  'sp-down-sexp
-	 )
+    "p"  'sp-down-sexp
+    )
 
   (nvmap :prefix "["
-	 "p"  'sp-up-sexp
-	 )
+    "p"  'sp-up-sexp
+    )
   )
 
 

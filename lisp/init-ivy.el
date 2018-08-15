@@ -76,6 +76,7 @@
 	'((t   . ivy--regex-ignore-order)))
 
   (use-package counsel-projectile
+    :disabled t
     :ensure t
     )
   ;; (use-package ivy-xref
@@ -87,7 +88,6 @@
 
 (use-package ivy-posframe
   :ensure t
-  :disabled t
   :after ivy
   :init
   (setq ivy-display-function #'ivy-posframe-display)
