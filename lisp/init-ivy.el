@@ -39,6 +39,15 @@
   ;; (global-set-key (kbd "M-x") 'smex)
   )
 
+(use-package counsel
+  :ensure t
+  :defer t)
+
+(use-package swiper
+  :ensure t
+  :defer t)
+
+
 (use-package ivy
   :ensure t
   :diminish (ivy-mode . "")
@@ -76,8 +85,9 @@
 	'((t   . ivy--regex-ignore-order)))
 
   (use-package counsel-projectile
-    :disabled t
+    ;; :disabled t
     :ensure t
+    :preface (setq projectile-keymap-prefix (kbd "C-c p"))
     )
   ;; (use-package ivy-xref
   ;;   :ensure t
