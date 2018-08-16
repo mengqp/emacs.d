@@ -158,13 +158,11 @@
   (general-evil-setup t)
   ;; 全局
   (nvmap :prefix "SPC"
-    "SPC" 'switch-window
+    ;; "SPC" 'switch-window
     ;; "TAB" 'previous-buffer
     "." 'counsel-projectile-find-file
-    ":" 'counsel-M-x
+    ;; ":" 'counsel-M-x
 
-    "[b" 'switch-to-prev-buffer
-    "]b" 'switch-to-next-buffer
 
     "ac" 'calc
 
@@ -245,7 +243,8 @@
     "wo" 'quit-window
 
 
-    "/" 'counsel-projectile-rg
+    ;; "/" 'counsel-projectile-rg
+    "/" 'counsel-projectile-ag
     )
 
   ;; {{ Use `SPC` as leader key
@@ -266,13 +265,6 @@
     "c2d" 'unix2dos
     "c2u" 'dos2unix
 
-    ;; "esu" 'sp-splice-sexp
-    ;; "eswr" 'sp-wrap-round
-    ;; "esws" 'sp-wrap-square
-    ;; "esws" 'sp-wrap-curly
-    ;; "esr" 'sp-rewrap-sexp
-    ;; "esb" 'sp-forward-barf-sexp
-    ;; "ess" 'sp-forward-slurp-sexp
     "es" 'init-sp-menu/body
 
     "fb" 'beginning-of-defun
@@ -327,10 +319,12 @@
   ;; 本文件 侧重一些模块功能
   (nvmap :prefix "]"
     "p"  'sp-down-sexp
+    "b" 'switch-to-next-buffer
     )
 
   (nvmap :prefix "["
     "p"  'sp-up-sexp
+    "b" 'switch-to-prev-buffer
     )
   )
 

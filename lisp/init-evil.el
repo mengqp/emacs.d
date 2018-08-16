@@ -118,15 +118,15 @@
   (use-package evil-nerd-commenter
     :ensure t)
 
-  (use-package evil-snipe
-    :ensure t
-    :diminish evil-snipe-mode evil-snipe-override-mode evil-snipe-local-mode
-    :init
-    (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
-    :config
-    (evil-snipe-mode +1)
-    (evil-snipe-override-mode +1)
-    )
+  ;; (use-package evil-snipe
+  ;;   :ensure t
+  ;;   :diminish evil-snipe-mode evil-snipe-override-mode evil-snipe-local-mode
+  ;;   :init
+  ;;   (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
+  ;;   :config
+  ;;   (evil-snipe-mode +1)
+  ;;   (evil-snipe-override-mode +1)
+  ;;   )
 
   (use-package evil-mc
     :ensure t
@@ -149,12 +149,12 @@
   ;;   (evil-collection-init)
   ;;   )
 
-  (use-package evil-smartparens
-    :ensure t
-    :diminish evil-smartparens-mode
-    :init
-    (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
-    )
+  ;; (use-package evil-smartparens
+  ;;   :ensure t
+  ;;   :diminish evil-smartparens-mode
+  ;;   :init
+  ;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+  ;;   )
 
   )
 

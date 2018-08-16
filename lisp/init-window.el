@@ -57,7 +57,7 @@
   (setq switch-window-shortcut-style 'qwerty)
   (setq switch-window-qwerty-shortcuts
 	'("a" "s" "d" "f" "q" "w" "e" "r" ))
-  (setq switch-window-increase 12) ;Increase or decrease this number.
+  ;; (setq switch-window-increase 12) ;Increase or decrease this number.
   (setq switch-window-threshold 2)
   ;; (setq switch-window-minibuffer-shortcut ?z)
   ;; (setq switch-window-auto-resize-window

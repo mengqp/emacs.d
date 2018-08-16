@@ -37,23 +37,23 @@
   :defer t
   )
 
-(use-package ace-pinyin
-  :ensure t
-  :diminish ace-pinyin-mode
-  :after avy
-  :config
-  (use-package pinyinlib
-    :ensure t
-    )
-  (ace-pinyin-global-mode t)
-  )
+;; (use-package ace-pinyin
+;;   :ensure t
+;;   :diminish ace-pinyin-mode
+;;   :after avy
+;;   :config
+;;   (use-package pinyinlib
+;;     :ensure t
+;;     )
+;;   (ace-pinyin-global-mode t)
+;;   )
 
-(use-package evil-avy
-  :ensure t
-  :after avy
-  :config
-  (evil-avy-mode t)
-)
+;; (use-package evil-avy
+;;   :ensure t
+;;   :after avy
+;;   :config
+;;   (evil-avy-mode t)
+;; )
 
 
 ;; ;; (require 'ace-jump-mode)

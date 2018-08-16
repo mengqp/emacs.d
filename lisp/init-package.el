@@ -74,8 +74,8 @@ But you may use safer HTTPS instead.")
 (require-package 'use-package)
 ;; (use-package general
 ;;   :ensure t)
-;; (use-package diminish
-;;   :ensure t)
+(use-package diminish
+  :ensure t)
 
 (provide 'init-package)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
