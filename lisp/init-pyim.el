@@ -49,14 +49,14 @@
   ;; 2. 光标前是汉字字符时，才能输入中文。
   ;; 3. 使用 M-j 快捷键，强制将光标前的拼音字符串转换为中文。
   (setq-default pyim-english-input-switch-functions
-  		'(pyim-probe-dynamic-english
-  		  ;; pyim-probe-isearch-mode
-  		  pyim-probe-program-mode
-  		  pyim-probe-org-structure-template))
+		'(pyim-probe-dynamic-english
+		  ;; pyim-probe-isearch-mode
+		  pyim-probe-program-mode
+		  pyim-probe-org-structure-template))
 
   (setq-default pyim-punctuation-half-width-functions
-  		'(pyim-probe-punctuation-line-beginning
-  		  pyim-probe-punctuation-after-punctuation))
+		'(pyim-probe-punctuation-line-beginning
+		  pyim-probe-punctuation-after-punctuation))
 
   ;; 开启拼音搜索功能
   ;; (pyim-isearch-mode 1)

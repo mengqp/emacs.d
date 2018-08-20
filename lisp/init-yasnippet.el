@@ -71,6 +71,7 @@
    )
   (use-package ivy-yasnippet
     :ensure t
+    :defer t
     ;; :config
     ;; (set ivy-yasnippet-expand-keys 'nil)
     )
