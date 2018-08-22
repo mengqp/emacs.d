@@ -6,10 +6,18 @@
 (use-package pyim
   :ensure t
   :commands (pyim pyim-restart-1)
+  :bind
+  (("M-i" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
+   ;; ("C-;" . pyim-delete-word-from-personal-buffer))
+   ("C-;" . pyim-convert-code-at-point))
+
+  :defer t
   :init
-
+  ;; 让 Emacs 启动时自动加载 pyim 词库
+  ;; (add-hook 'emacs-startup-hook
+  ;; 	    #'(lambda () (pyim-restart-1 t)))
   :config
-
+   (setq pyim-dcache-prefer-emacs-thread nil)
   ;; (load-file "~/srcp/liberime/liberime-config.el")
   ;; (defun setup-liberime ()
   ;;   ;; incase hooks not running
@@ -69,10 +77,6 @@
   ;; 选词框显示 5 个候选词
   (setq pyim-page-length 5)
 
-  ;; 让 Emacs 启动时自动加载 pyim 词库
-  (add-hook 'emacs-startup-hook
-	    #'(lambda () (pyim-restart-1 t)))
-
 
   (global-set-key (kbd "C-\\") 'toggle-input-method)
 
@@ -80,11 +84,6 @@
   ;; 		      :prefix ","
   ;; 		      "," 'pyim-convert-code-at-point
   ;; 		      )
-  :bind
-  (("M-i" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
-   ;; ("C-;" . pyim-delete-word-from-personal-buffer))
-   ("C-;" . pyim-convert-code-at-point))
-
 
   )
 
