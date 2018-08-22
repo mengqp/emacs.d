@@ -93,12 +93,20 @@
 
 (use-package super-save
   :ensure t
-  :hook (prog-mode . super-save-mode)
   :diminish super-save-mode
   :init
+  (add-hook 'c-mode-hook 'super-save-mode )
+  (add-hook 'c++-mode-hook 'super-save-mode )
+  (add-hook 'org-mode-hook 'super-save-mode )
+  (add-hook 'lisp-mode-hook 'super-save-mode)
+  (add-hook 'emacs-lisp-mode-hook 'super-save-mode)
+
   (setq super-save-auto-save-when-idle t)
   (setq auto-save-default nil)
   (setq super-save-idle-duration 2)
+  :config
+  ;; hook (prog-mode . super-save-mode)
+
   )
 
 ;; (use-package auto-save
