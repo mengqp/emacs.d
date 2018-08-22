@@ -60,7 +60,7 @@
   :config
   ;; (general-evil-setup t)
   (general-create-definer moon--default-leader
-    :states '(normal visual insert emacs jpnb)
+    :states '(normal visual )
     :keymaps 'override
     :prefix "SPC")
 
@@ -69,7 +69,7 @@
     :keymaps 'override)
 
   (general-create-definer moon--default-local-leader
-    :states '(normal visual insert emacs jpnb)
+    :states '(normal visual )
     :keymaps 'override
     :prefix ",")
 
