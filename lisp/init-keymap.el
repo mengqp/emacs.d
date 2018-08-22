@@ -50,144 +50,92 @@
   ;; (i.e., commands that represent a sub-map).
   (setq which-key-prefix-prefix "+" )
 
-  (which-key-add-key-based-replacements
-    "SPC [" "previous")
-
-  (which-key-add-key-based-replacements
-    "SPC ]" "next")
-
-  (which-key-add-key-based-replacements
-    "SPC a" "app")
-
-  (which-key-add-key-based-replacements
-    "SPC b" "buffers")
-
-  (which-key-add-key-based-replacements
-    "SPC c" "code")
-
-  (which-key-add-key-based-replacements
-    "SPC e" "shell")
-
-  (which-key-add-key-based-replacements
-    "SPC f" "files")
-
-  (which-key-add-key-based-replacements
-    "SPC g" "git")
-
-  (which-key-add-key-based-replacements
-    "SPC h" "help")
-
-  (which-key-add-key-based-replacements
-    "SPC l" "layout")
-
-  (which-key-add-key-based-replacements
-    "SPC m" "bookmark")
-
-  (which-key-add-key-based-replacements
-    "SPC o" "org")
-
-  (which-key-add-key-based-replacements
-    "SPC p" "project")
-
-  (which-key-add-key-based-replacements
-    "SPC q" "quit")
-
-  (which-key-add-key-based-replacements
-    "SPC w" "window")
-
-  ;; (which-key-add-key-based-replacements
-  ;;   "SPC x" "delete")
-  (which-key-add-key-based-replacements
-    ", b" "buffer")
-
-  (which-key-add-key-based-replacements
-    ", bw" "buffer whitespace")
-
-  (which-key-add-key-based-replacements
-    ", i" "insert")
-  (which-key-add-key-based-replacements
-    ", it" "table")
-
-  (which-key-add-key-based-replacements
-    ", id" "date")
-
-  ;; (which-key-add-key-based-replacements
-  ;;   ", e" "errors/eval")
-  (which-key-add-key-based-replacements
-    ", c" "coding")
-
-  (which-key-add-key-based-replacements
-    ", c2" "unixdosconvert")
-
-  (which-key-add-key-based-replacements
-    ", e" "edit")
-  (which-key-add-key-based-replacements
-    ", es" "smartparens")
-
-  (which-key-add-key-based-replacements
-    ", f" "function")
-
-  ;; (which-key-add-key-based-replacements
-  ;;   ", g" "goto")
-
-  (which-key-add-key-based-replacements
-    ", h" "help")
-
-  (which-key-add-key-based-replacements
-    ", it" "table")
-
-  (which-key-add-key-based-replacements
-    ", j" "jump")
-
-  (which-key-add-key-based-replacements
-    ", l" "line")
-
-  (which-key-add-key-based-replacements
-    ", s" "search/shell/sudo")
-
   )
-
-
 
 (use-package general
   :ensure t
   :defer t
-  :commands (init-keymap nvmap)
-  :after evil
+  ;; :commands (init-keymap nvmap)
+  ;; :after evil
   :config
   ;; (general-evil-setup t)
-  (general-define-key
-   :keymaps '(normal visual emacs)
-   :prefix "SPC"
-   :non-normal-prefix "M-m"
+  (general-create-definer moon--default-leader
+    :states '(normal visual insert emacs jpnb)
+    :keymaps 'override
+    :prefix "SPC")
+
+  (general-create-definer moon-global-leader
+    :prefix "M-SPC"
+    :keymaps 'override)
+
+  (general-create-definer moon--default-local-leader
+    :states '(normal visual insert emacs jpnb)
+    :keymaps 'override
+    :prefix ",")
+
+  (general-create-definer moon-local-leader
+    :prefix "M-,"
+    :keymaps 'override)
+
+  (defmacro moon-default-leader (&rest args)
+  "Define for both default leader and global leader."
+  (declare (indent defun))
+  `(progn
+     (moon--default-leader
+      ,@args)
+     (moon-global-leader
+      ,@args)))
+
+  (defmacro moon-default-local-leader (&rest args)
+    "Define for both default leader and global leader."
+    (declare (indent defun))
+    `(progn
+       (moon--default-local-leader
+	,@args)
+       (moon-local-leader
+	,@args)))
+
+
+  (moon-default-leader
+   ;; general-define-key
+   ;; :keymaps '(normal visual emacs)
+   ;; :prefix "SPC"
+   ;; :global-prefix "M-m"
+   ;; :non-normal-prefix "M-m"
+
 
    ;; "SPC" 'switch-window
    ;; "TAB" 'previous-buffer
    "." 'counsel-projectile-find-file
    ;; ":" 'counsel-M-x
 
-
+   "a" '(:ignore t :wk ("a" . "app"))
    "ac" 'calc
 
+   "b" '(:ignore t :wk ("b" . "buffers"))
    "bb" 'ivy-switch-buffer
    "bd" 'kill-buffer
    ;; "bs" 'mengqp/switch-scratch-buf
 
-   "eh" 'eshell-here
-   "ee" 'ansi-term
-   "ea" 'shell
-
+   "c" '(:ignore t :wk ("c" . "compile"))
    "cc" 'compile
    "ck" 'kill-compilation
    "cr" 'recompile
    "cd" 'mengqp/close-compilation-window
 
+   "e" '(:ignore t :wk ("e" . "shell"))
+   "eh" 'eshell-here
+   "ee" 'ansi-term
+   "ea" 'shell
+
+   "f" '(:ignore t :wk ("f" . "files"))
    "ff" 'counsel-find-file  ;;
    "fr" 'counsel-recentf  ;;
    "fdi" 'mengqp/open-init-file
    "fdp" 'mengqp/open-init-package-file
    "fdk" 'mengqp/open-init-keymap-file
 
+   "g" '(:ignore t :wk ("g" . "git"))
    "gs" 'magit-status
    "gb" 'magit-blame
    "gf" 'magit-gitflow-popup
@@ -196,11 +144,13 @@
    "gp" 'git-push-coding-request
    "glb" 'magit-log-buffer-file
 
+   "h" '(:ignore t :wk ("h" . "help"))
    "hf" 'find-function
    "hv" 'find-variable
    "hm" 'man
    "hw" 'woman
 
+   "l" '(:ignore t :wk ("l" . "layout"))
    "l0" 'eyebrowse-switch-to-window-config-0
    "l1" 'eyebrowse-switch-to-window-config-1
    "l2" 'eyebrowse-switch-to-window-config-2
@@ -215,12 +165,13 @@
    "l]" 'eyebrowse-next-window-config
    "lc" 'eyebrowse-close-window-config
 
+   "m" '(:ignore t :wk ("m" . "bookmark"))
    ;; "mx" 'counsel-M-x
    "mk" 'bookmark-set
    "md" 'bookmark-delete
    "mm" 'counsel-bookmark
 
-
+   "o" '(:ignore t :wk ("o" . "org"))
    "oo" 'org-capture
    "oa" 'org-agenda
    "op" 'org-pomodoro
@@ -228,6 +179,7 @@
    "omg" 'org-mobile-pull
    "oc" 'cfw:open-org-calendar
 
+   "p" '(:ignore t :wk ("p" . "project"))
    "pd" 'counsel-projectile-find-dir
    "pb" 'counsel-projectile-switch-to-buffer
    "pp" 'projectile-switch-project
@@ -236,9 +188,11 @@
    "pfi" 'mengqp/org-projectile-find-issue
    "pft" 'mengqp/org-projectile-find-todo
 
+   "q" '(:ignore t :wk ("q" . "quit"))
    "qq" 'save-buffers-kill-emacs
    "qr" 'restart-emacs
 
+   "w" '(:ignore t :wk ("w" . "window"))
    "ws" 'split-window-vertically
    "wv" 'split-window-horizontally
    "ww" 'switch-window
@@ -252,109 +206,115 @@
 
    )
 
+
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
   ;; 本文件 侧重基本功能
-  (general-define-key
-   :keymaps '(normal visual emacs)
-   :prefix ","
-   :non-normal-prefix "C-m"
+  (moon-default-local-leader
+   ;; general-define-key
+   ;; :global-prefix "C-M-m"
+   ;; :keymaps '(normal visual emacs)
+   ;; :prefix ","
+   ;; :global-prefix "C-m"
+   ;; :non-normal-prefix "C-m"
    ;; "," 'ace-jump-char-mode
    "," 'avy-goto-char
+   ;; "," 'avy-goto-char-2
 
+   "b" '(:ignore t :wk ("b" . "buffer"))
+   "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
    "bs" 'save-buffer
    "bwt" 'delete-trailing-whitespace
    "bwc" 'whitespace-cleanup
    "bwv" 'whitespace-mode
 
+   "c" '(:ignore t :wk ("c" . "coding"))
+   "c2" '(:ignore t :wk ("2" . "convert"))
    "cd" 'describe-current-coding-system
    "cc" 'set-buffer-file-coding-system
    "cr" 'revert-buffer-with-coding-system
    "c2d" 'unix2dos
    "c2u" 'dos2unix
 
+   "e" '(:ignore t :wk ("e" . "edit"))
    "es" 'init-sp-menu/body
 
+   "f" '(:ignore t :wk ("f" . "file&func"))
    "fb" 'beginning-of-defun
    "fe" 'end-of-defun
    "fr" 'recover-this-file
 
+   "h" '(:ignore t :wk ("h" . "help"))
    "h." 'highlight-symbol-at-point
    "hu" 'unhighlight-regexp
 
+   "i" '(:ignore t :wk ("i" . "insert"))
+   "it" '(:ignore t :wk ("t" . "table"))
    "itt" 'table-insert
    "itr" 'table-insert-row
    "itc" 'table-insert-column
 
+   "j" '(:ignore t :wk ("j" . "jump"))
    "jj" 'avy-goto-line
    ;; "jc" 'ace-jump-char-mode
    "jw" 'avy-goto-char-2
    "jl" 'avy-goto-line
 
+   "l" '(:ignore t :wk ("l" . "line"))
    "ll" 'display-line-numbers-mode
    "l RET" 'toggle-truncate-lines
    "ln" 'whitespace-newline-mode
 
 
+   "s" '(:ignore t :wk ("s" . "search&shell&sudo"))
    "sc" 'shell-command
    "sd" 'sudo-edit
    "sj" 'counsel-imenu
    "ss" 'swiper
    "sS" 'ivy-resume
 
+   "t" '(:ignore t :wk ("t" . "toggle"))
    "tt" 'mengqp/insert-time
    "td" 'mengqp/insert-date
    "te" 'toggle-company-english-helper
 
-
+   "w" '(:ignore t :wk ("w" . "evilw"))
    "ww" 'save-buffer
    "wq" 'evil-save-and-close
 
+   "y" '(:ignore t :wk ("y" . "yasnippet"))
    "yy" 'ivy-yasnippet
    )
 
 
-   ;;"zz" 'paste-from-x-clipboard ; used frequently
-
-  ;;  )
-  ;; (nvmap :prefix ","
-  ;;   )
+  ;; {{ Use `SPC` as leader key
+  ;; all keywords arguments are still supported
+  ;; 本文件 侧重一些模块功能
+  (general-define-key
+   :keymaps '(normal visual emacs)
+   :prefix ";"
+   :non-normal-prefix "M-;"
+   ";"  'evilnc-comment-or-uncomment-lines
+   )
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
   ;; 本文件 侧重一些模块功能
-   (general-define-key
-    :keymaps '(normal visual emacs)
-    :prefix ";"
-    :non-normal-prefix "M-;"
-    ";"  'evilnc-comment-or-uncomment-lines
-    )
+  (general-define-key
+   :keymaps '(normal visual)
+   :prefix "]"
+   "p"  'sp-down-sexp
+   "b" 'switch-to-next-buffer
+   )
 
-  ;; {{ Use `SPC` as leader key
-  ;; all keywords arguments are still supported
-  ;; 本文件 侧重一些模块功能
-   (general-define-key
-    :keymaps '(normal)
-    :prefix "]"
-    "p"  'sp-down-sexp
-    "b" 'switch-to-next-buffer
-    )
-
-   (general-define-key
-    :keymaps '(normal)
-    :prefix "["
-    "p"  'sp-up-sexp
-    "b" 'switch-to-prev-buffer
-    )
+  (general-define-key
+   :keymaps '(normal visual)
+   :prefix "["
+   "p"  'sp-up-sexp
+   "b" 'switch-to-prev-buffer
+   )
 
   )
-
-
-;; (require 'general)
-;; (general-evil-setup t)
-;; {{ Use `SPC` as leader key
-;; all keywords arguments are still supported
-
 
 (provide 'init-keymap)
 
