@@ -32,14 +32,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+(global-set-key (kbd "M-e") 'evil-local-mode)
+
 (use-package evil
   :ensure t
   :diminish evil-mode
+  :commands(evil-core evil-local-mode )
   :defer t
   :init
   (setq evil-want-integration nil)
-  (add-hook 'after-init-hook #'evil-mode)
+  ;; (add-hook 'after-init-hook #'evil-mode)
   ;; (add-hook 'prog-mode-hook #'evil-mode )
+  (add-hook 'prog-mode-hook 'evil-local-mode )
   :config
   (define-key evil-normal-state-map (kbd "go") 'ace-jump-char-mode)
   (define-key evil-ex-completion-map (kbd "C-a") 'move-beginning-of-line)
@@ -65,6 +69,7 @@
     :defer t
     :diminish hs-minor-mode
     :commands (evil-states evil-emacs-state)
+    :after evil-mode
     :init
     (add-hook 'prog-mode-hook
 	      (lambda()
@@ -77,6 +82,8 @@
 
   (use-package evil-numbers
     :ensure t
+    :commands (evil-numbers  evil-numbers/inc-at-pt)
+    :commands (evil-numbers  evil-numbers/dec-at-pt)
     :defer t
     :init
     ;; +/- 代替
@@ -85,11 +92,11 @@
     )
 
 
-  (use-package evil-visualstar
-    :ensure t
-    :init
-    (global-evil-visualstar-mode)
-    )
+  ;; (use-package evil-visualstar
+  ;;   :ensure t
+  ;;   :init
+  ;;   (global-evil-visualstar-mode)
+  ;;   )
 
 
   (use-package evil-matchit
@@ -103,6 +110,7 @@
 
   (use-package evil-escape
     :ensure t
+    ;; :after evil-mode
     :diminish evil-escape-mode
     :init
     (setq-default evil-escape-key-sequence "jk")
@@ -111,12 +119,9 @@
     (evil-escape-mode t)
     )
 
-  (use-package evil-mc
-    :ensure t
-    )
-
   (use-package evil-nerd-commenter
-    :ensure t)
+    :ensure t
+    :defer t)
 
   ;; (use-package evil-snipe
   ;;   :ensure t
@@ -132,13 +137,12 @@
     :ensure t
     :defer t
     :diminish evil-mc-mode
-    :after evil-mode
     :config
     (global-evil-mc-mode 1)
     )
 
   ;; (use-package evil-collection
-  ;;   :after evil
+  ;;   :after evil-mode
   ;;   :ensure t
   ;;   ;; :custom (evil-collection-setup-minibuffer t)
   ;;   :custom (evil-collection-company-use-tng nil)
@@ -151,6 +155,7 @@
 
   (use-package evil-smartparens
     :ensure t
+    ;; :after evil-mode
     :diminish evil-smartparens-mode
     :init
     (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
