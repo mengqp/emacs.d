@@ -91,21 +91,21 @@
 ;; remember cursor position, for emacs 25.1 or later
 (save-place-mode 1)
 
-;; (use-package super-save
-;;   :ensure t
-;;   :hook (prog-mode . super-save-mode)
-;;   :diminish super-save-mode
-;;   :init
-;;   (setq super-save-auto-save-when-idle t)
-;;   (setq auto-save-default nil)
-;;   (setq super-save-idle-duration 2)
-;;   )
-
-(use-package auto-save
-  :config
-  (auto-save-enable)              ;; 开启自动保存功能
-  (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
+(use-package super-save
+  :ensure t
+  :hook (prog-mode . super-save-mode)
+  :diminish super-save-mode
+  :init
+  (setq super-save-auto-save-when-idle t)
+  (setq auto-save-default nil)
+  (setq super-save-idle-duration 2)
   )
+
+;; (use-package auto-save
+;;   :config
+;;   (auto-save-enable)              ;; 开启自动保存功能
+;;   (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
+;;   )
 
 (use-package recentf
   ;; :ensure nil

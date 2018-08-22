@@ -191,6 +191,7 @@
     "gt" 'git-timemachine
     "gc" 'magit-file-checkout
     "gp" 'git-push-coding-request
+    "glb" 'magit-log-buffer-file
 
     "hf" 'find-function
     "hv" 'find-variable

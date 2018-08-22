@@ -33,6 +33,7 @@
 ;;
 ;;; Code:
 
+
 (defun mengqp/open-init-file ()
   "Open init file to config."
   (interactive)

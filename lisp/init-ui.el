@@ -40,6 +40,7 @@
   (setq inhibit-startup-screen t)
   (setq inhibit-startup-echo-area-message t)
 
+  (setq inhibit-splash-screen t)
   ;; Show a marker in the left fringe for lines not in the buffer
   (setq indicate-empty-lines t)
 
@@ -53,7 +54,7 @@
   (if (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 
-  ;; 关闭Tooltip
+  ;; 关闭 Tooltip
   (tooltip-mode -1)
   ;; 平滑滚动
   ;; (setq scroll-margin 0
@@ -85,7 +86,7 @@
 ;;指针不要闪
 (blink-cursor-mode -1)
 
-;;80列
+;;80 列
 ;; (use-package fill-column-indicator
 ;;   :ensure t
 ;;   ;; :defer t
