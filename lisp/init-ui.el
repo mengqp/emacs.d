@@ -55,7 +55,7 @@
   (menu-bar-mode -1))
 
   ;; 关闭 Tooltip
-  (tooltip-mode -1)
+  (tooltip-mode t)
   ;; 平滑滚动
   ;; (setq scroll-margin 0
   ;; 	scroll-conservatively 100000
