@@ -69,7 +69,7 @@ But you may use safer HTTPS instead.")
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
-(package-initialize)
+;; (package-initialize)
 
 (require-package 'use-package)
 ;; (use-package general
