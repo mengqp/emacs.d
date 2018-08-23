@@ -84,11 +84,6 @@
 	;; allow input not in order
 	'((t   . ivy--regex-ignore-order)))
 
-  (use-package counsel-projectile
-    ;; :disabled t
-    :ensure t
-    :preface (setq projectile-keymap-prefix (kbd "C-c p"))
-    )
   ;; (use-package ivy-xref
   ;;   :ensure t
   ;;   :config

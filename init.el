@@ -12,6 +12,13 @@
 ;; (setq gc-cons-threshold most-positive-fixnum)
 ;; (setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
 
+(setq gc-cons-threshold 402653184
+      gc-cons-percentage 0.6)
+
+(defvar doom--file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
+
+
 (defvar emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
@@ -105,7 +112,7 @@ just add the package to a list of missing packages."
 ;; (try-require 'init-mc)
 ;; (try-require 'init-cmake)
 (try-require 'init-popwin)
-(try-require 'init-lsp)
+;; (try-require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
 (try-require 'init-pyim)
 (try-require 'init-abbrev)
@@ -120,11 +127,11 @@ just add the package to a list of missing packages."
 (try-require 'init-keymap)
 
 ;;
-(try-require 'init-realgud)
+;; (try-require 'init-realgud)
 (try-require 'init-cc)
-(try-require 'init-lisp)
+;; (try-require 'init-lisp)
 (try-require 'init-org)
-(try-require 'init-python)
+;; (try-require 'init-python)
 (try-require 'init-css)
 ;; (try-require 'init-tex)
 (when *win64*
@@ -153,5 +160,9 @@ just add the package to a list of missing packages."
 ;; (when *win64*
 ;;   (server-start)
 ;;   )
+
+(setq file-name-handler-alist doom--file-name-handler-alist)
+(setq gc-cons-threshold 16777216
+      gc-cons-percentage 0.1)
 
 ;;; init.el ends here

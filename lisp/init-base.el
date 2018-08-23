@@ -74,6 +74,7 @@
 
 (use-package pangu-spacing
   :ensure t
+  :defer 3
   :diminish global-pangu-spacing-mode
   :diminish pangu-spacing-mode
   :config
@@ -83,6 +84,7 @@
 ;;文件在改变时自动加载
 (use-package autorevert
   :diminish auto-revert-mode
+  :defer 5
   :config
   (global-auto-revert-mode t)
   )
@@ -112,7 +114,7 @@
 (use-package real-auto-save
   :ensure t
   :diminish real-auto-save-mode
-  :defer t
+  :defer 5
   :hook (prog-mode . real-auto-save-mode)
 )
 
@@ -188,6 +190,7 @@
   :defer t
   :diminish undo-tree-mode
   :config
+  (setq x-wait-for-event-timeout nil)
   (undo-tree-mode 1)
   )
 
@@ -213,8 +216,12 @@
 
 (use-package exec-path-from-shell
   :ensure t
-  :disabled t
+  :defer t;
+  ;; :disabled t
   :config
+  (setq exec-path-from-shell-check-startup-files nil)
+  (dolist (var '("SSH_AUTH_SOCK" "SSH_AGENT_PID" "GPG_AGENT_INFO" "LANG" "LC_CTYPE"))
+    (add-to-list 'exec-path-from-shell-variables var))
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize))
   )

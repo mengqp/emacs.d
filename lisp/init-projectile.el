@@ -37,6 +37,7 @@
   :diminish projectile-mode
   :defer t
   :init
+  (setq projectile-keymap-prefix (kbd "C-c p"))
   (general-define-key :states '(normal motion)
 		      :keymaps '(c++-mode-map
 				 c-mode-map)
