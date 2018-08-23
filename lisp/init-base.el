@@ -93,26 +93,28 @@
 ;; remember cursor position, for emacs 25.1 or later
 (save-place-mode 1)
 
-;; (use-package super-save
-;;   :ensure t
-;;   :diminish super-save-mode
-;;   :init
-;;   (add-hook 'c-mode-hook 'super-save-mode )
-;;   (add-hook 'c++-mode-hook 'super-save-mode )
-;;   (add-hook 'org-mode-hook 'super-save-mode )
-;;   (add-hook 'lisp-mode-hook 'super-save-mode)
-;;   (add-hook 'emacs-lisp-mode-hook 'super-save-mode)
+(use-package super-save
+  :ensure t
+  :disabled t
+  :diminish super-save-mode
+  :init
+  (add-hook 'c-mode-hook 'super-save-mode )
+  (add-hook 'c++-mode-hook 'super-save-mode )
+  (add-hook 'org-mode-hook 'super-save-mode )
+  (add-hook 'lisp-mode-hook 'super-save-mode)
+  (add-hook 'emacs-lisp-mode-hook 'super-save-mode)
 
-;;   (setq super-save-auto-save-when-idle t)
-;;   (setq auto-save-default nil)
-;;   (setq super-save-idle-duration 2)
-;;   :config
-;;   ;; hook (prog-mode . super-save-mode)
+  (setq super-save-auto-save-when-idle t)
+  (setq auto-save-default nil)
+  (setq super-save-idle-duration 2)
+  :config
+  ;; hook (prog-mode . super-save-mode)
 
-;;   )
+  )
 
 (use-package real-auto-save
   :ensure t
+  :disabled t
   :diminish real-auto-save-mode
   :defer 5
   :hook (prog-mode . real-auto-save-mode)

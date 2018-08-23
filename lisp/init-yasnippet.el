@@ -47,19 +47,19 @@
   :commands (company company-complete-selection)
   :diminish yas-minor-mode
   :init
-  ;; (progn
-  ;;   (add-hook 'org-mode-hook #'yas-minor-mode)
-  ;;   (add-hook 'c-mode-hook #'yas-minor-mode)
-  ;;   (add-hook 'c++-mode-hook #'yas-minor-mode)
-  ;;   (add-hook 'git-commit-mode-hook #'yas-minor-mode)
-  ;;   (add-hook 'lisp-mode-hook #'yas-minor-mode)
-  ;;   (add-hook 'emacs-lisp-mode-hook #'yas-minor-mode)
-
-  ;;   )
-
   (setq yas-snippet-dirs
 	'("~/.emacs.d/mysnippets"))
-  (add-hook 'prog-mode-hook #'yas-minor-mode)
+  (progn
+    ;; (add-hook 'org-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'c-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'c++-mode-hook #'yas-minor-mode)
+    (add-hook 'git-commit-mode-hook #'yas-minor-mode)
+    (add-hook 'prog-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'lisp-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'emacs-lisp-mode-hook #'yas-minor-mode)
+
+    )
+
 
   :config
   ;; (add-to-list 'company-backends 'company-yasnippet)
