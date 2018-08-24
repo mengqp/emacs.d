@@ -120,11 +120,13 @@
   :hook (prog-mode . real-auto-save-mode)
 )
 
-;; (use-package auto-save
-;;   :config
-;;   (auto-save-enable)              ;; 开启自动保存功能
-;;   (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
-;;   )
+(use-package auto-save
+  ;; :disabled t
+  :defer 2
+  :config
+  (auto-save-enable)              ;; 开启自动保存功能
+  (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
+  )
 
 (use-package recentf
   ;; :ensure nil
