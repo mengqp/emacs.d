@@ -32,7 +32,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(global-set-key (kbd "M-e") 'evil-local-mode)
+(global-set-key (kbd "s-z") 'evil-local-mode)
 
 (use-package evil
   :ensure t
