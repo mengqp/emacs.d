@@ -56,6 +56,7 @@
   (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
   (define-key evil-insert-state-map (kbd "C-n") 'next-line)
   (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
+  (define-key evil-insert-state-map (kbd "C-y") 'yank)
 
 
 
