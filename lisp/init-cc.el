@@ -188,7 +188,7 @@
     :ensure t
     :defer t
     :diminish ycmd-mode
-    ;; :disabled t
+    :disabled t
     :init
     (add-hook 'c++-mode-hook 'ycmd-mode)
     (add-hook 'c-mode-hook 'ycmd-mode)
@@ -237,7 +237,7 @@
 
   (use-package ccls
     :ensure t
-    :disabled t
+    ;; :disabled t
     :commands lsp-ccls-enable
     :init
     (add-hook 'c-mode-common-hook #'ccls//enable)
@@ -292,8 +292,10 @@
 			:keymaps '(c++-mode-map
 				   c-mode-map)
 			:prefix ";"
-			"g" 'xref-find-definitions
-			"r" 'xref-find-references
+			;; "g" 'xref-find-definitions
+			"g" 'lsp-ui-peek-find-definitions
+			;; "r" 'xref-find-references
+			"r" 'lsp-ui-peek-find-references
 			"m" 'lsp-ui-imenu
 			"cm" 'ccls-member-hierarchy
 			"cc" 'ccls-call-hierarchy

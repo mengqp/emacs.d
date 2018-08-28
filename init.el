@@ -116,7 +116,7 @@ just add the package to a list of missing packages."
 ;; (try-require 'init-mc)
 ;; (try-require 'init-cmake)
 ;; (try-require 'init-popwin)
-;; (try-require 'init-lsp)
+(try-require 'init-lsp)
 ;; 去掉中文的输入，如果有必要，直接使用
 ;; (try-require 'init-tree)
 ;; (try-require 'init-which-key)
@@ -127,7 +127,7 @@ just add the package to a list of missing packages."
 (try-require 'init-keymap)
 
 ;;
-;; (try-require 'init-realgud)
+(try-require 'init-realgud)
 (try-require 'init-cc)
 ;; (try-require 'init-lisp)
 (try-require 'init-org)
