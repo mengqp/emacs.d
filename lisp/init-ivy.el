@@ -91,19 +91,19 @@
   ;;   )
   )
 
-;; (use-package ivy-posframe
-;;   :ensure t
-;;   :after ivy
-;;   :init
-;;   (setq ivy-display-function #'ivy-posframe-display)
-;;   :config
-;;   ;; (setq ivy-display-function #'ivy-posframe-display-at-frame-center)
-;;   (setq ivy-display-function #'ivy-posframe-display-at-window-center)
-;;   ;; (setq ivy-display-function #'ivy-posframe-display-at-frame-bottom-left)
-;;   ;; (setq ivy-display-function #'ivy-posframe-display-at-window-bottom-left)
-;;   ;; (setq ivy-display-function #'ivy-posframe-display-at-point)
-;;   (ivy-posframe-enable)
-;;   )
+(use-package ivy-posframe
+  :ensure t
+  :after ivy
+  :init
+  (setq ivy-display-function #'ivy-posframe-display)
+  :config
+  ;; (setq ivy-display-function #'ivy-posframe-display-at-frame-center)
+  (setq ivy-display-function #'ivy-posframe-display-at-window-center)
+  ;; (setq ivy-display-function #'ivy-posframe-display-at-frame-bottom-left)
+  ;; (setq ivy-display-function #'ivy-posframe-display-at-window-bottom-left)
+  ;; (setq ivy-display-function #'ivy-posframe-display-at-point)
+  (ivy-posframe-enable)
+  )
 
 (provide 'init-ivy)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

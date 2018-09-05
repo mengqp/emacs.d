@@ -34,6 +34,8 @@
 ;;; Code:
 ;; 输入法切换时不出现问题
 ;; (global-set-key (kbd "C-SPC") nil)
+(global-unset-key (kbd "C-SPC"))
+(global-set-key (kbd "S-SPC") 'set-mark-command)
 
 (use-package which-key
   :ensure t
@@ -74,7 +76,7 @@
     :prefix ",")
 
   (general-create-definer moon-local-leader
-    :prefix "M-,"
+    :prefix "M-m"
     :keymaps 'override)
 
   (defmacro moon-default-leader (&rest args)

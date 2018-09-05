@@ -100,6 +100,7 @@
 
 (use-package xcscope
   :ensure t
+  ;; :disabled t
   :defer t
   :init
   (add-hook 'c++-mode-hook 'cscope-minor-mode)
@@ -188,7 +189,7 @@
     :ensure t
     :defer t
     :diminish ycmd-mode
-    :disabled t
+    ;; :disabled t
     :init
     (add-hook 'c++-mode-hook 'ycmd-mode)
     (add-hook 'c-mode-hook 'ycmd-mode)
@@ -212,6 +213,9 @@
       (when (not (display-graphic-p))
 	(setq flycheck-indication-mode nil))
       )
+
+    (use-package ivy-ycmd
+      :ensure t)
 
     ;; (use-package ycmd-eldoc
     ;;   :init
@@ -237,7 +241,7 @@
 
   (use-package ccls
     :ensure t
-    ;; :disabled t
+    :disabled t
     :commands lsp-ccls-enable
     :init
     (add-hook 'c-mode-common-hook #'ccls//enable)
@@ -300,6 +304,7 @@
 			"cm" 'ccls-member-hierarchy
 			"cc" 'ccls-call-hierarchy
 			"cp" 'ccls-inheritance-hierarchy
+			;; "n" 'ccls-navigate
 			)
 
 
@@ -307,12 +312,12 @@
 
   )
 
-(use-package dynamic-spaces
-  :ensure t
-  :init
-  (add-hook 'c-mode-common-hook 'dynamic-spaces-mode)
-  (add-hook 'c++-mode-common-hook 'dynamic-spaces-mode)
-  )
+;; (use-package dynamic-spaces
+;;   :ensure t
+;;   :init
+;;   (add-hook 'c-mode-common-hook 'dynamic-spaces-mode)
+;;   (add-hook 'c++-mode-common-hook 'dynamic-spaces-mode)
+;;   )
 
 
 (use-package cquery

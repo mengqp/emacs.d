@@ -230,6 +230,14 @@
     (exec-path-from-shell-initialize))
   )
 
+(use-package adaptive-wrap
+  :ensure t
+  :defer t
+  ;; :hook (after-init . adaptive-wrap-prefix-mode)
+  :config
+  (adaptive-wrap-prefix-mode t)
+  )
+
 ;; (setq hippie-expand-try-functions-list
 ;;       '(
 ;;         try-expand-dabbrev

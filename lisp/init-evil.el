@@ -45,6 +45,7 @@
   ;; (add-hook 'prog-mode-hook #'evil-mode )
   (add-hook 'prog-mode-hook 'evil-local-mode )
   (add-hook 'org-mode-hook 'evil-local-mode )
+  (add-hook 'nxml-mode-hook 'evil-local-mode )
   :config
   (define-key evil-normal-state-map (kbd "go") 'ace-jump-char-mode)
   (define-key evil-ex-completion-map (kbd "C-a") 'move-beginning-of-line)
