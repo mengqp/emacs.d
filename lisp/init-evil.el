@@ -95,11 +95,11 @@
     )
 
 
-  ;; (use-package evil-visualstar
-  ;;   :ensure t
-  ;;   :init
-  ;;   (global-evil-visualstar-mode)
-  ;;   )
+  (use-package evil-visualstar
+    :ensure t
+    :init
+    (global-evil-visualstar-mode)
+    )
 
 
   (use-package evil-matchit
@@ -139,6 +139,7 @@
   (use-package evil-mc
     :ensure t
     :defer t
+    :disabled t
     :diminish evil-mc-mode
     :config
     (global-evil-mc-mode 1)
@@ -158,6 +159,7 @@
 
   (use-package evil-smartparens
     :ensure t
+    :disabled t
     ;; :after evil-mode
     :diminish evil-smartparens-mode
     :init

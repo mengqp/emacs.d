@@ -69,6 +69,7 @@ just add the package to a list of missing packages."
 
 
 (package-initialize)
+(setq package-enable-at-startup nil)
 
 ;; @see https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
 ;; Normally file-name-handler-alist is set to
@@ -90,6 +91,7 @@ just add the package to a list of missing packages."
 ;;ui
 (try-require 'init-ui)
 (try-require 'init-base)
+(try-require 'init-edit)
 (try-require 'init-coding)
 (try-require 'init-cnfonts)
 (when *linux*

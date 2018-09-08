@@ -43,7 +43,7 @@
       (delete-windows-on compilation-last-buffer)))
   )
 
-(defvar gdb-many-windows t)
+;; (defvar gdb-many-windows t)
 
 (use-package google-c-style
   :ensure t
@@ -76,19 +76,20 @@
   :config
   (add-to-list
    'aggressive-indent-dont-indent-if
-   '(and (derived-mode-p 'c++-mode)
+   '(and (derived-mode-p 'cc-mode)
 	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
 			     (thing-at-point 'line)))))
-  (add-to-list
-   'aggressive-indent-dont-indent-if
-   '(and (derived-mode-p 'c-mode)
-  	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
-  			     (thing-at-point 'line)))))
+  ;; (add-to-list
+  ;;  'aggressive-indent-dont-indent-if
+  ;;  '(and (derived-mode-p 'c-mode)
+  ;; 	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
+  ;; 			     (thing-at-point 'line)))))
 
 
   )
 
 (use-package highlight-parentheses
+  :disabled t
   :ensure t
   :diminish highlight-parentheses-mode
   :init
@@ -128,7 +129,7 @@
 		      "o" 'cscope-select-entry-other-window
 		      "q" 'quit-window
   		      )
-  (evil-set-initial-state 'cscope-list-entry-mode 'emacs)
+  ;; (evil-set-initial-state 'cscope-list-entry-mode 'emacs)
 
 
   ;; (general-define-key :states '(normal motion)
@@ -383,11 +384,11 @@
 ;; (add-hook 'c++-mode-hook 'mengqp/google-c-mode-hook)
 
 
-;;;; set gdb multi-windows when open
+;; ;; set gdb multi-windows when open
 
-;;;; customize the gdb multi-windows
+;; ;; customize the gdb multi-windows
 ;; (defadvice gdb-setup-windows (after my-setup-gdb-windows activate)
-;;   "my gdb UI"
+;;   "My gdb UI."
 ;;   (gdb-get-buffer-create 'gdb-stack-buffer)
 ;;   (set-window-dedicated-p (selected-window) nil)
 ;;   (switch-to-buffer gud-comint-buffer)

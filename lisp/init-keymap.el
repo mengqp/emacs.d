@@ -203,8 +203,8 @@
    "wo" 'quit-window
 
 
-   ;; "/" 'counsel-projectile-rg
-   "/" 'counsel-projectile-ag
+   "/" 'counsel-projectile-rg
+   ;; "/" 'counsel-projectile-ag
 
    )
 

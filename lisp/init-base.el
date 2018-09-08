@@ -153,6 +153,7 @@
   :hook
   (after-init . savehist-mode)
   :init
+  (setq savehist-file (expand-file-name "savehist" user-emacs-directory))
   (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
 	history-length 1000
 	savehist-additional-variables '(mark-ring
@@ -182,21 +183,15 @@
 
 ;; )
 
-(use-package expand-region
-  :ensure t
-  :defer t
-  :commands er/expand-region
-  :bind ("C-=" . er/expand-region)
-  )
 
-(use-package undo-tree
-  :ensure t
-  :defer t
-  :diminish undo-tree-mode
-  :config
-  (setq x-wait-for-event-timeout nil)
-  (undo-tree-mode 1)
-  )
+;; (use-package undo-tree
+;;   :ensure t
+;;   :defer t
+;;   :diminish undo-tree-mode
+;;   :config
+;;   (setq x-wait-for-event-timeout nil)
+;;   (undo-tree-mode 1)
+;;   )
 
 (use-package eldoc
   :diminish eldoc-mode
@@ -231,6 +226,7 @@
   )
 
 (use-package adaptive-wrap
+  :disabled t
   :ensure t
   :defer t
   ;; :hook (after-init . adaptive-wrap-prefix-mode)
