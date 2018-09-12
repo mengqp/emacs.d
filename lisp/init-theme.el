@@ -55,6 +55,34 @@
 	    (lambda () (load-theme 'solarized-dark t)))
   )
 
+(use-package tao-theme
+  :ensure t
+  :disabled t
+  :defer t
+  :init
+  (add-hook 'after-init-hook
+	    (lambda ()
+	      (load-theme 'tao-yin t)
+	      ;; (load-theme 'tao-yang t)
+	      ))
+  )
+
+(use-package color-identifiers-mode
+  :ensure t
+  :disabled t
+  :defer t
+  :init
+  (add-hook 'after-init-hook 'global-color-identifiers-mode)
+)
+
+(use-package focus
+  :ensure t
+  :disabled t
+  :defer t
+  :init
+  (add-hook 'prog-mode-hook 'focus-mode)
+  )
+
 (use-package cyberpunk-theme
   :ensure t
   ;; :disabled t

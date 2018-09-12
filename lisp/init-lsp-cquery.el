@@ -1,4 +1,4 @@
-;;; init-ycmd.el --- xxx -*- coding: utf-8-unix -*-
+;;; init-lsp-cquery.el --- xxx -*- coding: utf-8-unix -*-
 
 ;;; Copyright © 2018 - 2018 mengqp.
 
@@ -32,51 +32,45 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(use-package ycmd
+(use-package cquery
   :ensure t
-  :defer t
-  :diminish ycmd-mode
-  ;; :disabled t
+  :disabled t
   :init
-  (add-hook 'c++-mode-hook 'ycmd-mode)
-  (add-hook 'c-mode-hook 'ycmd-mode)
-
-  (set-variable 'ycmd-server-command '("python" "/usr/share/ycmd/ycmd"))
-  ;; (set-variable 'ycmd-global-config "~/DotFiles/ycmd/cpp/ycm/.ycm_extra_conf.py")
-  (setq ycmd-extra-conf-handler (quote load))
-  (setq ycmd-startup-timeout 10)
-
+  (add-hook 'c++-mode-hook #'lsp-cquery-enable)
+  (add-hook 'c-mode-hook #'lsp-cquery-enable)
   :config
-  (use-package company-ycmd
+
+  (use-package company-lsp
     :ensure t
     :config
-    (company-ycmd-setup)
-    ;; (add-to-list 'company-backends '(company-yasnippet  company-ycmd))
+    (push 'company-lsp company-backends)
     )
-  (use-package flycheck-ycmd
+
+
+  (use-package lsp-ui
     :ensure t
-    :config
-    (flycheck-ycmd-setup)
-    (when (not (display-graphic-p))
-      (setq flycheck-indication-mode nil))
+    :init
+    (add-hook 'lsp-mode-hook 'lsp-ui-mode)
     )
 
-  (use-package ivy-ycmd
-    :ensure t)
+  (with-eval-after-load 'projectile
+  (setq projectile-project-root-files-top-down-recurring
+        (append '("compile_commands.json"
+                  ".cquery")
+                projectile-project-root-files-top-down-recurring)))
 
-  ;; (use-package ycmd-eldoc
-  ;;   :init
-  ;;   (add-hook 'ycmd-mode-hook 'ycmd-eldoc-setup)
-  ;;   )
+  (setq cquery-executable "/usr/bin/cquery")
+  ;; (setq cquery-project-roots '("opt/qt-everywhere-opensource-src-4.7.3/" "~/Dev/llvm"))
+  (setq cquery-extra-init-params
+	'(:cacheFormat "msgpack" :completion (:detailedLabel t) :xref (:container t)
+		       :diagnostics (:frequencyMs 5000)))
 
-  (general-define-key :states '(normal motion)
-		      :keymaps '(c++-mode-map
-				 c-mode-map)
-		      :prefix ";"
-		      "g" 'ycmd-goto
-		      )
-
+  (use-package ivy-xref
+    :ensure t
+    :init
+    (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
   )
-(provide 'init-ycmd)
+
+(provide 'init-lsp-cquery)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-ycmd.el ends here
+;;; init-lsp-cquery.el ends here

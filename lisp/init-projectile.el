@@ -47,9 +47,18 @@
 		      )
   :config
 
+
   (setq projectile-completion-system 'ivy)
   (projectile-mode t)
 
+
+  )
+
+(use-package counsel-projectile
+  ;; :disabled t
+  :ensure t
+  :defer t
+  :preface (setq projectile-keymap-prefix (kbd "C-c p"))
   )
 
 (provide 'init-projectile)

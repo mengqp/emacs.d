@@ -34,8 +34,8 @@
 ;;; Code:
 ;; 输入法切换时不出现问题
 ;; (global-set-key (kbd "C-SPC") nil)
-(global-unset-key (kbd "C-SPC"))
-(global-set-key (kbd "S-SPC") 'set-mark-command)
+;; (global-unset-key (kbd "C-SPC"))
+;; (global-set-key (kbd "S-SPC") 'set-mark-command)
 
 (use-package which-key
   :ensure t
@@ -200,7 +200,7 @@
    "ww" 'switch-window
    "wd" 'delete-window
    "wo" 'delete-other-windows
-   "wo" 'quit-window
+   "wq" 'quit-window
 
 
    "/" 'counsel-projectile-rg
@@ -296,7 +296,8 @@
    :keymaps '(normal visual emacs)
    :prefix ";"
    :non-normal-prefix "M-;"
-   ";"  'evilnc-comment-or-uncomment-lines
+   ;; ";"  'evilnc-comment-or-uncomment-lines
+   ";" 'comment-line
    )
 
   ;; {{ Use `SPC` as leader key

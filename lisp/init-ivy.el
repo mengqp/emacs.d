@@ -52,6 +52,7 @@
   :ensure t
   :diminish (ivy-mode . "")
   :commands (magit-utils magit-completing-read-function)
+  :commands (magit-utils magit-completing-read-function)
   :defer t
   :bind
   ("M-x" . counsel-M-x)
@@ -63,7 +64,7 @@
   ;;       ("M-x" . counsel-M-x))
   :init
   (defvar magit-completing-read-function 'ivy-completing-read)
-  (setq projectile-completion-system 'ivy)
+  ;; (setq projectile-completion-system 'ivy)
   ;; 去除 M-x 里面的 ^
   (setq ivy-initial-inputs-alist nil)
   :config
@@ -84,11 +85,6 @@
 	;; allow input not in order
 	'((t   . ivy--regex-ignore-order)))
 
-  ;; (use-package ivy-xref
-  ;;   :ensure t
-  ;;   :config
-  ;;   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
-  ;;   )
   )
 
 (use-package ivy-posframe
@@ -103,6 +99,14 @@
   ;; (setq ivy-display-function #'ivy-posframe-display-at-window-bottom-left)
   ;; (setq ivy-display-function #'ivy-posframe-display-at-point)
   (ivy-posframe-enable)
+  )
+
+(use-package ivy-xref
+  :ensure t
+  :after ivy
+  :init
+  (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
+
   )
 
 (provide 'init-ivy)

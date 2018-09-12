@@ -45,6 +45,9 @@
     :ensure t
     :diminish git-timemachine-mode)
 
+  (use-package magit-todos
+    :ensure t)
+
   ;; (defun git-push-coding-request()
   ;;   "push current branch to coding develop branch request"
   ;;   (interactive)
