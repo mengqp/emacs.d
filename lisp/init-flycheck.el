@@ -35,7 +35,7 @@
 
 ;;; 全局语法检查
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
-;;; c和c++
+;;; c 和 c++
 (use-package flycheck
   :ensure t
   :commands (flycheck flycheck-display-error-messages-unless-error-list)
@@ -60,21 +60,21 @@
 		 (reusable-frames . visible)
 		 (window-height   . 0.33)))
 
-;;; 显示errors
+;;; 显示 errors
   (setq flycheck-display-errors-function
 	#'flycheck-display-error-messages-unless-error-list)
 
-  ;; 删除Modline FlyC 显示为 e
+  ;; 删除 Modline FlyC 显示为 e
   (setq flycheck-mode-line-prefix "e")
 
-  ;; toggle flycheck window
-  (defun mengqp/toggle-flycheck-error-list ()
-    "Toggle flycheck's error list window.
-If the error list is visible, hide it.  Otherwise, show it."
-    (interactive)
-    (-if-let (window (flycheck-get-error-list-window))
-	(quit-window nil window)
-      (flycheck-list-errors)))
+;;   ;; toggle flycheck window
+;;   (defun mengqp/toggle-flycheck-error-list ()
+;;     "Toggle flycheck's error list window.
+;; If the error list is visible, hide it.  Otherwise, show it."
+;;     (interactive)
+;;     (-if-let (window (flycheck-get-error-list-window))
+;; 	(quit-window nil window)
+;;       (flycheck-list-errors)))
 
   ;; (use-package flycheck-package
   ;;   :ensure t
@@ -86,19 +86,19 @@ If the error list is visible, hide it.  Otherwise, show it."
   ;; (require 'flycheck-pos-tip)
   ;; (with-eval-after-load 'flycheck
   ;;   (flycheck-pos-tip-mode))
-  (general-define-key :states '(normal motion)
-		      :keymaps '(c++-mode-map
-				 c-mode-map)
-		      :prefix ";"
-		      "el" 'mengqp/toggle-flycheck-error-list
-		      "en" 'flycheck-next-error
-		      "ep" 'flycheck-previous-error
+  ;; (general-define-key :states '(normal motion)
+  ;; 		      :keymaps '(c++-mode-map
+  ;; 				 c-mode-map)
+  ;; 		      :prefix ";"
+  ;; 		      "el" 'mengqp/toggle-flycheck-error-list
+  ;; 		      "en" 'flycheck-next-error
+  ;; 		      "ep" 'flycheck-previous-error
 
-		      )
+  ;; 		      )
 
-  (which-key-add-major-mode-key-based-replacements 'c++-mode
-    "; e" "error"
-    )
+  ;; (which-key-add-major-mode-key-based-replacements 'c++-mode
+  ;;   "; e" "error"
+  ;;   )
 
 
   )
