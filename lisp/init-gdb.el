@@ -78,5 +78,7 @@
   :ensure t
   :defer t
   )
+
+(provide 'init-gdb)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-gdb.el ends here

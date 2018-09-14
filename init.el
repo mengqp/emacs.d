@@ -132,6 +132,7 @@ just add the package to a list of missing packages."
   ;; (try-require 'init-lsp-ccls)
   ;; (try-require 'init-lsp-cquery)
   (try-require 'init-ycmd)
+  (try-require 'init-gdb)
   )
 (try-require 'init-cscope)
 
