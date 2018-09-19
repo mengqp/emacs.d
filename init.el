@@ -80,89 +80,91 @@ just add the package to a list of missing packages."
 (let ((ts-init (current-time)))
   (setq missing-packages-list nil
 	package-init-statistic nil)
-(let ((file-name-handler-alist nil))
+  (let ((file-name-handler-alist nil))
 
 ;;; package here
-;; (try-require 'init-autoload)
+    ;; (try-require 'init-autoload)
 
-(try-require 'init-package)
-(try-require 'init-autoload)
+    (try-require 'init-package)
+    (try-require 'init-elget)
+    (try-require 'init-autoload)
 
-;;ui
-(try-require 'init-ui)
-(try-require 'init-base)
-(try-require 'init-edit)
-(try-require 'init-coding)
-(try-require 'init-cnfonts)
-(when *linux*
-  (try-require 'init-modeline)
-  (try-require 'init-theme)
-  (try-require 'init-pyim)
-  (try-require 'init-abbrev)
-  (try-require 'init-hydra)
-  (try-require 'init-layout)
+    ;;ui
+    (try-require 'init-ui)
+    (try-require 'init-base)
+    (try-require 'init-edit)
+    (try-require 'init-coding)
+    (try-require 'init-cnfonts)
+    (when *linux*
+      (try-require 'init-modeline)
+      (try-require 'init-theme)
+      (try-require 'init-pyim)
+      (try-require 'init-abbrev)
+      (try-require 'init-hydra)
+      (try-require 'init-layout)
+      )
+
+    ;;tool
+    ;; (try-require 'init-calendar)
+    ;; (try-require 'init-hungry-delete)
+    (try-require 'init-smartparens)
+    (try-require 'init-evil)
+    (try-require 'init-company)
+    (try-require 'init-window)
+    (try-require 'init-projectile)
+    (try-require 'init-yasnippet)
+    (try-require 'init-flycheck)
+    (try-require 'init-ace-jump)
+    (try-require 'init-git)
+    ;; (try-require 'init-mc)
+    ;; (try-require 'init-cmake)
+    ;; (try-require 'init-popwin)
+    ;; 去掉中文的输入，如果有必要，直接使用
+    ;; (try-require 'init-tree)
+    ;; (try-require 'init-which-key)
+    ;; (try-require 'init-shell)
+    (try-require 'init-ivy)
+    ;; (try-require 'init-browser)
+    (try-require 'init-func)
+    (try-require 'init-keymap)
+
+    (when *linux*
+      ;; (try-require 'init-lsp)
+      ;; (try-require 'init-lsp-ccls)
+      ;; (try-require 'init-lsp-cquery)
+      (try-require 'init-ycmd)
+      (try-require 'init-gdb)
+      )
+    (try-require 'init-cscope)
+
+    ;;
+    ;; (try-require 'init-realgud)
+    (try-require 'init-cc)
+    ;; (try-require 'init-lisp)
+    (try-require 'init-org)
+    ;; (try-require 'init-python)
+    (try-require 'init-css)
+    ;; (try-require 'init-tex)
+    (when *win64*
+      (try-require 'init-ahk)
+      )
+    ;; (try-require 'init-w3m)
+
+
+    )
+
+  (message "\n\nShowing package initialization statistics:\n%s"
+	   (mapconcat (lambda (x)
+			(format "package %s cost %.2f seconds" (car x) (cdr x)))
+		      (reverse package-init-statistic)
+		      "\n"
+		      ))
+  (message "Finished startup in %.2f seconds,  %d packages missing%s\n\n"
+	   (float-time (time-since ts-init)) (length missing-packages-list)
+	   (if missing-packages-list
+	       ". Refer to `missing-packages-list` for missing packages."
+	     "."))
   )
-
-;;tool
-;; (try-require 'init-calendar)
-;; (try-require 'init-hungry-delete)
-(try-require 'init-smartparens)
-(try-require 'init-evil)
-(try-require 'init-company)
-(try-require 'init-window)
-(try-require 'init-projectile)
-(try-require 'init-yasnippet)
-(try-require 'init-flycheck)
-(try-require 'init-ace-jump)
-(try-require 'init-git)
-;; (try-require 'init-mc)
-;; (try-require 'init-cmake)
-;; (try-require 'init-popwin)
-;; 去掉中文的输入，如果有必要，直接使用
-;; (try-require 'init-tree)
-;; (try-require 'init-which-key)
-;; (try-require 'init-shell)
-(try-require 'init-ivy)
-;; (try-require 'init-browser)
-(try-require 'init-func)
-(try-require 'init-keymap)
-
-(when *linux*
-  ;; (try-require 'init-lsp)
-  ;; (try-require 'init-lsp-ccls)
-  ;; (try-require 'init-lsp-cquery)
-  (try-require 'init-ycmd)
-  (try-require 'init-gdb)
-  )
-(try-require 'init-cscope)
-
-;;
-;; (try-require 'init-realgud)
-(try-require 'init-cc)
-;; (try-require 'init-lisp)
-(try-require 'init-org)
-;; (try-require 'init-python)
-(try-require 'init-css)
-;; (try-require 'init-tex)
-(when *win64*
-  (try-require 'init-ahk)
-  )
-;; (try-require 'init-w3m)
-
-
-)
-
-(message "\n\nShowing package initialization statistics:\n%s"
-	 (mapconcat (lambda (x)
-		      (format "package %s cost %.2f seconds" (car x) (cdr x)))
-		    (reverse package-init-statistic)
-		    "\n"
-		    ))
-(message "Finished startup in %.2f seconds,  %d packages missing%s\n\n"
-	 (float-time (time-since ts-init)) (length missing-packages-list)
-	 (if missing-packages-list
-	     ". Refer to `missing-packages-list` for missing packages."
-	   ".")))
 
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

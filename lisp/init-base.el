@@ -118,7 +118,7 @@
   :diminish real-auto-save-mode
   :defer 5
   :hook (prog-mode . real-auto-save-mode)
-)
+  )
 
 (use-package auto-save
   ;; :disabled t
@@ -210,6 +210,7 @@
 
 (use-package smart-tabs-mode
   :ensure t
+  :hook (after-prog . global-hungry-delete-mode)
   ;; :defer t
   )
 

@@ -129,7 +129,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
-  ;; 设置agent文件表
+  ;; 设置 agent 文件表
   (when *linux*
     (setq org-agenda-text-search-extra-files
 	  (append
@@ -218,7 +218,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
 			("@close" . ?c)
 			("@Fixed" . ?F)
 			))
-  ;; 不同tag外观
+  ;; 不同 tag 外观
   (setq org-tag-faces
 	'(("@bug" . (:background "red" :foreground "white" :weight bold))
 	  ("@feature" . (:background "DarkOrange" :foreground "white" :weight bold))
@@ -228,7 +228,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
 	  ("@repeat" . (:background "SkyBlue" :foreground "black" :weight bold))
 	  ("@invalid" . (:background "SkyBlue" :foreground "black" :weight bold))
 	  ))
-  ;; 设置todo
+  ;; 设置 todo
   (setq org-todo-keywords
 	(quote ((sequence "TODO(t)" "STARTED(s)" "ISSUE(i@/!)" "|" "ISSUECLOSE(I@/!)" "DONE(d@/!)")
 		(sequence "RELEASE(r@/!)" "|" "CANCELLED(c@/!)")
@@ -357,7 +357,9 @@ If FILEXT is provided, return files with extension FILEXT instead."
     ", c" "capture")
 
 
-  (setq org-directory "~/ecode/org")
+  (setq org-directory "~/nutdata/org/")
+  ;; (advice-add 'org-agenda-quit :before 'org-mobile-push)
+  ;; (advice-add 'org-agenda-quit :before 'org-mobile-pull)
   (when *win64*
     (defconst org-mobile-directory "E:/Nutstore/org")
     (defconst org-mobile-inbox-for-pull "E:/Nutstore/org/index.org")
