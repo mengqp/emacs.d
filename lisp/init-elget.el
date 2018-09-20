@@ -35,15 +35,27 @@
 
 (use-package el-get
   :ensure t
+  :defer t
   :config
   (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
   (el-get-bundle auto-save
-		 :url "https://www.emacswiki.org/emacs/download/auto-save.el"
-		 )
+    :url "https://www.emacswiki.org/emacs/download/auto-save.el"
+    )
 
   (el-get-bundle company-english-helper
-  		 :url "https://github.com/manateelazycat/company-english-helper.git"
-		 )
+    :url "https://github.com/manateelazycat/company-english-helper.git"
+    )
+
+  (el-get-bundle aweshell
+    :url "https://github.com/manateelazycat/aweshell.git"
+    )
+
+  ;; (el-get-bundle color-rg
+  ;;   :url"https://github.com/manateelazycat/color-rg.git"
+  ;;   )
+  ;; (use-package color-rg
+  ;;   :defer t
+  ;;   )
 
 
   ;; Simple package names
