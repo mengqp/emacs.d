@@ -40,7 +40,7 @@
   (eyebrowse-mode t)
   ;; (eyebrowse-setup-opinionated-keys)
 
-)
+  )
 
 
 (provide 'init-layout)

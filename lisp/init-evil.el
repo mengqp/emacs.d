@@ -52,13 +52,18 @@
   (define-key evil-ex-completion-map (kbd "C-b") 'backward-char)
   (define-key evil-ex-completion-map (kbd "M-p") 'previous-complete-history-element)
   (define-key evil-ex-completion-map (kbd "M-n") 'next-complete-history-element)
-  (define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
-  (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
-  (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
-  (define-key evil-insert-state-map (kbd "C-n") 'next-line)
-  (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
-  (define-key evil-insert-state-map (kbd "C-y") 'yank)
+  ;; (define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
+  ;; (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
+  ;; (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
+  ;; (define-key evil-insert-state-map (kbd "C-n") 'next-line)
+  ;; (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
+  ;; (define-key evil-insert-state-map (kbd "C-y") 'yank)
 
+  ;; remove all keybindings from insert-state keymap,it is VERY VERY important
+  (setcdr evil-insert-state-map nil)
+  ;;;把 emacs 模式下的按键绑定到 Insert 模式下
+  (define-key evil-insert-state-map
+    (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
 
 
   ;; (general-define-key :states '(normal motion)
