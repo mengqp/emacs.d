@@ -64,12 +64,9 @@
   ;;;把 emacs 模式下的按键绑定到 Insert 模式下
   (define-key evil-insert-state-map
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
+  ;; but [escape] should switch back to normal state
+  (define-key evil-insert-state-map [escape] 'evil-normal-state)
 
-
-  ;; (general-define-key :states '(normal motion)
-  ;; 		      :keymaps '(evil-mode-map)
-  ;; 		      "f" 'ace-jump-char-mode
-  ;; 		      )
 
 
   ;;实现代码折叠
