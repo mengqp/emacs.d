@@ -50,6 +50,14 @@
     :url "https://github.com/manateelazycat/aweshell.git"
     )
 
+  (el-get-bundle insert-translated-name
+    :url "https://github.com/manateelazycat/insert-translated-name.git"
+    )
+  (el-get-bundle awesome-tray
+    :url "https://github.com/manateelazycat/awesome-tray.git"
+    )
+
+
   ;; (el-get-bundle color-rg
   ;;   :url"https://github.com/manateelazycat/color-rg.git"
   ;;   )

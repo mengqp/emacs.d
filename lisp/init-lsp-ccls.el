@@ -34,6 +34,7 @@
 ;;; Code:
 
 (defun ccls//enable ()
+  "Enable ccls."
   (condition-case nil
       (lsp-ccls-enable)
     (user-error nil)))
@@ -47,7 +48,7 @@
   (add-hook 'c-mode-common-hook #'ccls//enable)
   :config
   ;; (add-hook 'ccls-tree-mode-hook #'evil-motion-state)
-  (evil-set-initial-state 'ccls-tree-mode 'emacs)
+  ;; (evil-set-initial-state 'ccls-tree-mode 'emacs)
 
   (setq ccls-executable "/usr/bin/ccls")
   (use-package projectile
@@ -58,6 +59,11 @@
 		  projectile-project-root-files-top-down-recurring))
     (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
     )
+
+  ;; (ccls-navigate "D") ;; roughly sp-down-sexp
+  ;; (ccls-navigate "L")
+  ;; (ccls-navigate "R")
+  ;; (ccls-navigate "U")
 
   ;; (ccls-xref-find-custom "$ccls/base")
   ;; (ccls-xref-find-custom "$ccls/callers")

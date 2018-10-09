@@ -88,6 +88,7 @@
   )
 
 (use-package ivy-posframe
+  :disabled t
   :ensure t
   :after ivy
   :init

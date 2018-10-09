@@ -119,7 +119,7 @@
 ;; (setq mode-line-misc-info
 ;; 	      (assq-delete-all 'which-func-mode mode-line-misc-info))
 
-;; ;; ;; 自动刷新vc状态
+;; ;; ;; 自动刷新 vc 状态
 ;; ;; (setq auto-revert-check-vc-info t)
 
 ;; (setq-default mode-line-format
@@ -225,7 +225,7 @@
 ;; 				   'help-echo
 ;; 				   (concat (format-time-string "%c; ")
 ;; 					   (emacs-uptime "Uptime:%hh"))))
-	       ;; ))
+;; ))
 
 (use-package moody
   :ensure t
@@ -233,6 +233,15 @@
   (setq x-underline-at-descent-line t)
   (moody-replace-mode-line-buffer-identification)
   (moody-replace-vc-mode))
+
+(use-package awesome-tray
+  :init
+  :disabled t
+  (setq awesome-tray-mode-line-active-color "Gray")
+  (setq awesome-tray-active-modules '("git" "mode-name" "location"))
+  (add-hook 'after-init-hook 'awesome-tray-mode)
+  :config
+  )
 
 ;; (use-package feebleline
 ;;   :ensure t

@@ -43,24 +43,26 @@
   ;; :config
   )
 
-(use-package eglot
-  :ensure t
-  :defer t
-  :init
-  (add-hook 'c-mode-common-hook 'eglot-ensure)
-  ;; (add-hook 'c-mode-hook 'eglot-ensure)
-  ;; (add-to-list 'eglot-server-programs
-  ;; 	       '((c++ mode c-mode) . (eglot-cquery "ccls")))
-  :config
-  (add-to-list 'eglot-server-programs '((c++ mode c-mode) . (eglot-cquery "ccls")))
-  (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
+;; (use-package eglot
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   (add-hook 'c-mode-common-hook 'eglot-ensure)
+;;   ;; (add-hook 'c-mode-hook 'eglot-ensure)
+;;   ;; (add-to-list 'eglot-server-programs
+;;   ;; 	       '((c++ mode c-mode) . (eglot-cquery "ccls")))
+;;   :config
+;;   (add-to-list 'eglot-server-programs '((c++ mode c-mode) . (eglot-cquery "ccls")))
+;;   (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
 
-  )
+;;   )
 
 (use-package company-lsp
   :ensure t
   :defer t
+  :init
   :config
+  (add-hook 'lsp-mode-hook 'company-lsp-mode)
   (push 'company-lsp company-backends)
   (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
   )

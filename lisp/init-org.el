@@ -358,8 +358,8 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
 
   (setq org-directory "~/nutdata/org/")
-  ;; (advice-add 'org-agenda-quit :before 'org-mobile-push)
-  ;; (advice-add 'org-agenda-quit :before 'org-mobile-pull)
+  (advice-add 'org-agenda-quit :before 'org-mobile-push)
+  (advice-add 'org-agenda-quit :before 'org-mobile-pull)
   (when *win64*
     (defconst org-mobile-directory "E:/Nutstore/org")
     (defconst org-mobile-inbox-for-pull "E:/Nutstore/org/index.org")

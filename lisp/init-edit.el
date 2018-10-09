@@ -51,6 +51,19 @@
   :bind ("C-=" . er/expand-region)
   )
 
+(use-package visual-regexp
+  :ensure t
+
+  )
+
+(global-superword-mode t)
+;; (use-package insert-translated-name
+;;   ;; :defer t
+;;   ;; :init
+;;   ;; :config
+;;   ;; (setq insert-translated-name-translate-engine "youdao")
+;;   )
+
 (provide 'init-edit)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-edit.el ends here
