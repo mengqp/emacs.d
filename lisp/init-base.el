@@ -77,9 +77,12 @@
   :defer 3
   :diminish global-pangu-spacing-mode
   :diminish pangu-spacing-mode
+  :init
+  (add-hook 'prog-mode-hook #'pangu-spacing-mode)
   :config
   (setq pangu-spacing-real-insert-separtor t)
-  (global-pangu-spacing-mode 1))
+  ;; (global-pangu-spacing-mode 1)
+  )
 
 ;;文件在改变时自动加载
 (use-package autorevert

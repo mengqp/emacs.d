@@ -61,8 +61,8 @@
   :ensure t
   :defer t
   :init
-  :config
   (add-hook 'lsp-mode-hook 'company-lsp-mode)
+  :config
   (push 'company-lsp company-backends)
   (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
   )

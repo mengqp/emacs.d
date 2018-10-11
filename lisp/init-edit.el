@@ -56,7 +56,13 @@
 
   )
 
-(global-superword-mode t)
+(use-package superword-mode
+  :defer t
+  :diminish superword-mode
+  ;; :init
+  ;; (add-hook 'prog-mode-hook #'superword-mode)
+  )
+
 ;; (use-package insert-translated-name
 ;;   ;; :defer t
 ;;   ;; :init

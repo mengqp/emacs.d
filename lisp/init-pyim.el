@@ -17,7 +17,7 @@
   ;; (add-hook 'emacs-startup-hook
   ;; 	    #'(lambda () (pyim-restart-1 t)))
   :config
-   (setq pyim-dcache-prefer-emacs-thread nil)
+  (setq pyim-dcache-prefer-emacs-thread nil)
   ;; (load-file "~/srcp/liberime/liberime-config.el")
   ;; (defun setup-liberime ()
   ;;   ;; incase hooks not running
@@ -46,7 +46,9 @@
   (use-package pyim-wbdict
     :ensure t
     :config
-    (pyim-wbdict-gbk-enable))
+    ;; (pyim-wbdict-gbk-enable)
+    (pyim-wbdict-v98-enable)
+    )
 
   (setq default-input-method "pyim")
   (setq pyim-default-scheme 'wubi)

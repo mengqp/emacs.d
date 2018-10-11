@@ -275,6 +275,7 @@
     "sj" 'counsel-imenu
     "ss" 'swiper
     "sS" 'ivy-resume
+    "sr" 'vr/replace
 
     "t" '(:ignore t :wk ("t" . "toggle"))
     "tt" 'mengqp/insert-time
