@@ -27,3 +27,4 @@ server
 places
 network-security.data
 el-get
+custom.el
