@@ -150,11 +150,11 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (setq org-agenda-text-search-extra-files
 	  (append
 	   (sa-find-org-file-recursively "E:/Nutstore/myorg/" "org")
-	   (sa-find-org-file-recursively "E:/svn/em761/docs/org/" "org")
-	   (sa-find-org-file-recursively "E:/svn/em770/docs/org/" "org")
-	   (sa-find-org-file-recursively "E:/svn/epduhmi/3352/asrc/docs/org" "org")
-	   (sa-find-org-file-recursively "E:/svn/epduhmi/3352/dsrc/docs/org" "org")
-	   (sa-find-org-file-recursively "E:/svn/pdt/docs/org/" "org")
+	   (sa-find-org-file-recursively "D:/svn/em761/docs/org/" "org")
+	   (sa-find-org-file-recursively "D:/svn/em770/docs/org/" "org")
+	   (sa-find-org-file-recursively "D:/svn/epduhmi/3352/asrc/docs/org" "org")
+	   (sa-find-org-file-recursively "D:/svn/epduhmi/3352/dsrc/docs/org" "org")
+	   (sa-find-org-file-recursively "D:/svn/pdt/docs/org/" "org")
 	   (sa-find-org-file-recursively "F:/项目/zlg/docs/org/" "org")
 	   ))
 
