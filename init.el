@@ -68,7 +68,7 @@ just add the package to a list of missing packages."
       (read-only-mode -1)))
 
 
-(package-initialize)
+;; (package-initialize)
 (setq package-enable-at-startup nil)
 
 ;; @see https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
@@ -134,11 +134,11 @@ just add the package to a list of missing packages."
       ;; (try-require 'init-lsp-cquery)
       (try-require 'init-ycmd)
       (try-require 'init-gdb)
-      (try-require 'init-plantuml)
       )
     (try-require 'init-cscope)
 
     ;;
+    (try-require 'init-plantuml)
     ;; (try-require 'init-realgud)
     (try-require 'init-cc)
     ;; (try-require 'init-lisp)

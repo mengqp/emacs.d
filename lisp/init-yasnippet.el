@@ -50,7 +50,7 @@
   (setq yas-snippet-dirs
 	'("~/.emacs.d/mysnippets"))
   (progn
-    ;; (add-hook 'org-mode-hook #'yas-minor-mode)
+    (add-hook 'org-mode-hook #'yas-minor-mode)
     ;; (add-hook 'c-mode-hook #'yas-minor-mode)
     ;; (add-hook 'c++-mode-hook #'yas-minor-mode)
     (add-hook 'git-commit-mode-hook #'yas-minor-mode)
