@@ -68,7 +68,10 @@ just add the package to a list of missing packages."
       (read-only-mode -1)))
 
 
-;; (package-initialize)
+(when *win64*
+  ;; 因为 win 下用的是 26
+  (package-initialize)
+  )
 (setq package-enable-at-startup nil)
 
 ;; @see https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
