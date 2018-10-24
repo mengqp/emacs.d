@@ -28,7 +28,7 @@
 
     )
 
-   ;; Gitflow externsion for Magit
+  ;; Gitflow externsion for Magit
   (use-package magit-gitflow
     :ensure t
     :diminish magit-gitflow-mode
@@ -38,15 +38,17 @@
     :init (add-hook 'magit-mode-hook #'turn-on-magit-gitflow)
     :config
     (magit-define-popup-action 'magit-dispatch-popup
-?G "GitFlow" #'magit-gitflow-popup ?!))
+      ?G "GitFlow" #'magit-gitflow-popup ?!))
 
   ;; Walk through git revisions of a file
   (use-package git-timemachine
     :ensure t
     :diminish git-timemachine-mode)
 
-  (use-package magit-todos
-    :ensure t)
+  (when *linux*
+    (use-package magit-todos
+      :ensure t)
+    )
 
   ;; (defun git-push-coding-request()
   ;;   "push current branch to coding develop branch request"
