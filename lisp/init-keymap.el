@@ -238,6 +238,7 @@
     "cr" 'revert-buffer-with-coding-system
     "c2d" 'unix2dos
     "c2u" 'dos2unix
+    "cf" 'clang-format-buffer
 
     "e" '(:ignore t :wk ("e" . "edit"))
     "es" 'init-sp-menu/body

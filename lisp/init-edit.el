@@ -63,6 +63,10 @@
   ;; (add-hook 'prog-mode-hook #'superword-mode)
   )
 
+(use-package format-all
+  :ensure t
+  :defer t)
+
 ;; (use-package insert-translated-name
 ;;   ;; :defer t
 ;;   ;; :init
