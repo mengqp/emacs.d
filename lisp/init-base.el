@@ -240,6 +240,7 @@
 
 (use-package aggressive-indent
   :ensure t
+  :disabled t
   :defer t
   :diminish aggressive-indent-mode
   :init
