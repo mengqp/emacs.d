@@ -133,7 +133,7 @@ just add the package to a list of missing packages."
 
     (when *linux*
       (try-require 'init-lsp)
-      (try-require 'init-lsp-ccls)
+      ;; (try-require 'init-lsp-ccls)
       ;; (try-require 'init-lsp-cquery)
       ;; (try-require 'init-ycmd)
       (try-require 'init-gdb)

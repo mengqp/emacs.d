@@ -33,19 +33,13 @@
 ;;
 ;;; Code:
 
-(defun ccls//enable ()
-  "Enable ccls."
-  (condition-case nil
-      (lsp-ccls-enable)
-    (user-error nil)))
-
 
 (use-package ccls
   :ensure t
   ;; :disabled t
   :commands lsp-ccls-enable
   :init
-  (add-hook 'c-mode-common-hook #'ccls//enable)
+  (add-hook 'c-mode-common-hook #'lsp-ccls-enable)
   :config
   ;; (add-hook 'ccls-tree-mode-hook #'evil-motion-state)
   ;; (evil-set-initial-state 'ccls-tree-mode 'emacs)
@@ -94,11 +88,9 @@
 		      :keymaps '(c++-mode-map
 				 c-mode-map)
 		      :prefix ";"
-		      ;; "g" 'xref-find-definitions
-		      "d" 'lsp-ui-peek-find-definitions
-		      ;; "r" 'xref-find-references
-		      "r" 'lsp-ui-peek-find-references
-		      "m" 'lsp-ui-imenu
+		      "d" 'xref-find-definitions
+		      "r" 'xref-find-references
+		      ;; "m" 'lsp-ui-imenu
 		      "cm" 'ccls-member-hierarchy
 		      "cc" 'ccls-call-hierarchy
 		      "cp" 'ccls-inheritance-hierarchy

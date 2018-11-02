@@ -65,7 +65,10 @@
 
 (use-package format-all
   :ensure t
-  :defer t)
+  :defer t
+  ;; :init
+  ;; (add-hook 'prog-mode-hook #'format-all-mode )
+  )
 
 ;; (use-package insert-translated-name
 ;;   ;; :defer t
