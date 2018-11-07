@@ -65,7 +65,7 @@
 	#'flycheck-display-error-messages-unless-error-list)
 
   ;; 删除 Modline FlyC 显示为 e
-  (setq flycheck-mode-line-prefix "e")
+  (setq flycheck-mode-line-prefix "!")
 
 ;;   ;; toggle flycheck window
 ;;   (defun mengqp/toggle-flycheck-error-list ()
