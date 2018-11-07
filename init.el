@@ -89,7 +89,7 @@ just add the package to a list of missing packages."
     ;; (try-require 'init-autoload)
 
     (try-require 'init-package)
-    (try-require 'init-elget)
+    ;; (try-require 'init-elget)
     (try-require 'init-autoload)
 
     ;;ui
@@ -125,7 +125,7 @@ just add the package to a list of missing packages."
     ;; 去掉中文的输入，如果有必要，直接使用
     ;; (try-require 'init-tree)
     ;; (try-require 'init-which-key)
-    (try-require 'init-shell)
+    ;; (try-require 'init-shell)
     (try-require 'init-ivy)
     ;; (try-require 'init-browser)
     (try-require 'init-func)
