@@ -28,3 +28,4 @@ places
 network-security.data
 el-get
 custom.el
+*.elc

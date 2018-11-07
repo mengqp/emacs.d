@@ -32,7 +32,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(load-file "~/.emacs.d/lisp/unicad.elc")
+;; (load-file "~/.emacs.d/lisp/unicad.elc")
+(use-package unicad)
 (when *win64*
   (prefer-coding-system 'cp950)
   (prefer-coding-system 'gb2312)
