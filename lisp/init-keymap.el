@@ -146,6 +146,7 @@
     "gc" 'magit-file-checkout
     "gp" 'git-push-coding-request
     "glb" 'magit-log-buffer-file
+    "gll" 'magit-log-all
 
     "h" '(:ignore t :wk ("h" . "help"))
     "hf" 'find-function

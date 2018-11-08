@@ -124,6 +124,7 @@
   )
 
 (use-package auto-save
+  :load-path "~/.emacs.d/site-lisp/auto-save/"
   ;; :disabled t
   :defer 2
   :config
