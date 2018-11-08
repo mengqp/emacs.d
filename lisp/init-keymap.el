@@ -39,7 +39,7 @@
 
 (use-package which-key
   :ensure t
-  ;; :defer t
+  :defer 2
   ;; :after general-override-mode
   :diminish which-key-mode
   :config

@@ -36,12 +36,12 @@
 (use-package hydra
   :defer t
   :ensure t
-  :config
-  (defhydra hydra-zoom (global-map "<f2>")
-    "zoom"
-    ("g" text-scale-increase "in")
-    ("l" text-scale-decrease "out"))
-;; ;;; -*- lexical-binding: t; -*-
+;;   :config
+;;   (defhydra hydra-zoom (global-map "<f2>")
+;;     "zoom"
+;;     ("g" text-scale-increase "in")
+;;     ("l" text-scale-decrease "out"))
+;; ;; ;;; -*- lexical-binding: t; -*-
 ;;   (defhydra hydra-f1 (:color teal
 ;; 			     :hint nil)
 ;;     "

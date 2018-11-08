@@ -63,10 +63,10 @@ _}_: {}
     ("s" sp-forward-slurp-sexp)
     ("q" nil "quit")
     )
-(defun init-sp-menu-func ()
-  (interactive)
-  (init-sp-menu)
-  )
+  (defun init-sp-menu-func ()
+    (interactive)
+    (init-sp-menu)
+    )
 
   )
 

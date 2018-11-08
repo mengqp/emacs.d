@@ -34,7 +34,7 @@
 ;;; Code:
 (use-package eyebrowse
   :ensure t
-  ;; :defer t
+  :defer t
   ;; :after evil
   :config
   (eyebrowse-mode t)
