@@ -48,18 +48,21 @@ just add the package to a list of missing packages."
 	(if (stringp feature)
 	    (load-library feature)
 	  (require feature))
-	(if click
-	    (add-to-list 'package-init-statistic
-			 (cons (if (stringp feature) feature (symbol-name feature))
-			       (float-time (time-since timestamp)))))
-	(message "Checking for library `%s'... Found, cost %.2f seconds"
-		 feature (float-time (time-since timestamp))))
+	;; (if click
+	;;     (add-to-list 'package-init-statistic
+	;; 		 (cons (if (stringp feature) feature (symbol-name feature))
+	;; 		       (float-time (time-since timestamp)))))
+	;; (message "Checking for library `%s'... Found, cost %.2f seconds"
+	;; 	 feature (float-time (time-since timestamp)))
+	)
     ;; error handler
     (file-error  ; condition
      (progn
        (message "Checking for library `%s'... Missing" feature)
        (add-to-list 'missing-packages-list feature 'append))
-     nil)))
+     nil)
+    )
+  )
 
 ;; *Message* buffer should be writable in 24.4+
 (defadvice switch-to-buffer (after switch-to-buffer-after-hack activate)
@@ -102,7 +105,7 @@ just add the package to a list of missing packages."
       (try-require 'init-modeline)
       (try-require 'init-theme)
       (try-require 'init-pyim)
-      (try-require 'init-abbrev)
+      ;; (try-require 'init-abbrev)
       (try-require 'init-hydra)
       (try-require 'init-layout)
       )
@@ -110,7 +113,7 @@ just add the package to a list of missing packages."
     ;;tool
     ;; (try-require 'init-calendar)
     ;; (try-require 'init-hungry-delete)
-    (try-require 'init-smartparens)
+    ;; (try-require 'init-smartparens)
     (try-require 'init-evil)
     (try-require 'init-company)
     (try-require 'init-window)
@@ -157,17 +160,18 @@ just add the package to a list of missing packages."
 
     )
 
-  (message "\n\nShowing package initialization statistics:\n%s"
-	   (mapconcat (lambda (x)
-			(format "package %s cost %.2f seconds" (car x) (cdr x)))
-		      (reverse package-init-statistic)
-		      "\n"
-		      ))
-  (message "Finished startup in %.2f seconds,  %d packages missing%s\n\n"
-	   (float-time (time-since ts-init)) (length missing-packages-list)
-	   (if missing-packages-list
-	       ". Refer to `missing-packages-list` for missing packages."
-	     "."))
+  ;; (message "\n\nShowing package initialization statistics:\n%s"
+  ;; 	   (mapconcat (lambda (x)
+  ;; 			(format "package %s cost %.2f seconds" (car x) (cdr x)))
+  ;; 		      (reverse package-init-statistic)
+  ;; 		      "\n"
+  ;; 		      ))
+  ;; (message "Finished startup in %.2f seconds,  %d packages missing%s\n\n"
+  ;; 	   (float-time (time-since ts-init)) (length missing-packages-list)
+  ;; 	   (if missing-packages-list
+  ;; 	       ". Refer to `missing-packages-list` for missing packages."
+  ;; 	     "."))
+
   )
 
 

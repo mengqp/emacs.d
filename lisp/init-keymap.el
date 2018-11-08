@@ -241,7 +241,7 @@
     "cf" 'clang-format-buffer
 
     "e" '(:ignore t :wk ("e" . "edit"))
-    "es" 'init-sp-menu/body
+    ;; "es" 'init-sp-menu/body
 
     "f" '(:ignore t :wk ("f" . "file&func"))
     "fb" 'beginning-of-defun
@@ -309,14 +309,14 @@
   (general-define-key
    :keymaps '(normal visual)
    :prefix "]"
-   "p"  'sp-down-sexp
+   ;; "p"  'sp-down-sexp
    "b" 'switch-to-next-buffer
    )
 
   (general-define-key
    :keymaps '(normal visual)
    :prefix "["
-   "p"  'sp-up-sexp
+   ;; "p"  'sp-up-sexp
    "b" 'switch-to-prev-buffer
    )
 
