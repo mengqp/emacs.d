@@ -54,7 +54,7 @@
     ;; (add-hook 'c-mode-hook #'yas-minor-mode)
     ;; (add-hook 'c++-mode-hook #'yas-minor-mode)
     (add-hook 'git-commit-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'prog-mode-hook #'yas-minor-mode)
+    (add-hook 'prog-mode-hook #'yas-minor-mode)
     ;; (add-hook 'lisp-mode-hook #'yas-minor-mode)
     ;; (add-hook 'emacs-lisp-mode-hook #'yas-minor-mode)
 
