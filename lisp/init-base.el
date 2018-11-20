@@ -80,7 +80,7 @@
   :init
   (add-hook 'prog-mode-hook #'pangu-spacing-mode)
   :config
-  (setq pangu-spacing-real-insert-separtor t)
+  (setq pangu-spacing-real-insert-separtor nil)
   ;; (global-pangu-spacing-mode 1)
   )
 
