@@ -85,7 +85,7 @@
 
 (use-package ccls
   :load-path "~/.emacs.d/site-lisp/ccls/"
-  :ensure t
+  ;; :ensure t
   ;; :disabled t
   :commands lsp-ccls-enable
   :init
