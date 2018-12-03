@@ -239,7 +239,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
 	  ))
   ;; 设置 todo
   (setq org-todo-keywords
-	(quote ((sequence "TODO(t)" "STARTED(s)" "ISSUE(i@/!)" "|" "ISSUECLOSE(I@/!)" "DONE(d@/!)")
+	(quote ((sequence "TODO(t)" "ISSUE(i@/!)" "|" "ISSUECLOSE(I@/!)" "DONE(d@/!)" "SUSPEND(s@/!)")
 		(sequence "RELEASE(r@/!)" "|" "CANCELLED(c@/!)")
 		)))
 
