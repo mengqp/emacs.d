@@ -1,3 +1,6 @@
 [submodule "site-lisp/company-english-helper"]
 	path = site-lisp/company-english-helper
 	url = https://github.com/manateelazycat/company-english-helper.git
+[submodule "ccls"]
+	path = site-lisp/ccls
+	url = https://github.com/MaskRay/emacs-ccls.git
