@@ -15,18 +15,18 @@
   ;; (use-package evil-magit
   ;;   :ensure t)
 
-  (use-package orgit
-    :ensure t
-    :config
-    (general-define-key :states '(insert normal motion)
-			:keymaps '(magit-mode-map magit-log-mode-map magit-revision-mode-map)
-			:prefix ";"
-			"s" 'org-store-link
-			"i" 'org-insert-link
+  ;; (use-package orgit
+  ;;   :ensure t
+  ;;   :config
+  ;;   (general-define-key :states '(insert normal motion)
+  ;; 			:keymaps '(magit-mode-map magit-log-mode-map magit-revision-mode-map)
+  ;; 			:prefix ";"
+  ;; 			"s" 'org-store-link
+  ;; 			"i" 'org-insert-link
 
-			)
+  ;; 			)
 
-    )
+  ;;   )
 
   ;; Gitflow externsion for Magit
   (use-package magit-gitflow
