@@ -4,3 +4,12 @@
 [submodule "ccls"]
 	path = site-lisp/ccls
 	url = https://github.com/MaskRay/emacs-ccls.git
+[submodule "site-lisp/lsp-mode"]
+	path = site-lisp/lsp-mode
+	url = https://github.com/emacs-lsp/lsp-mode.git
+[submodule "site-lisp/lsp-ui"]
+	path = site-lisp/lsp-ui
+	url = https://github.com/emacs-lsp/lsp-ui.git
+[submodule "site-lisp/company-lsp"]
+	path = site-lisp/company-lsp
+	url = https://github.com/tigersoldier/company-lsp.git

@@ -21,7 +21,16 @@
 
 (defvar emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
+
+(defun add-subdirs-to-load-path (dir)
+  "Recursive add directories to `load-path'."
+  (let ((default-directory (file-name-as-directory dir)))
+    (add-to-list 'load-path dir)
+    (normal-top-level-add-subdirs-to-load-path)))
+
+(add-subdirs-to-load-path "~/.emacs.d/site-lisp/")
+
+;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
 
 (defconst *linux* (eq system-type 'gnu/linux) )
 (defconst *win64* (eq system-type 'windows-nt) )

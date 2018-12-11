@@ -34,9 +34,8 @@
 ;;; Code:
 
 (use-package lsp-mode
-  :ensure t
+  :load-path "~/.emacs.d/site-lisp/lsp-mode/"
   :defer t
-  ;; :disabled t
   :diminish lsp-mode
   :init
   (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
@@ -46,45 +45,41 @@
   (setq create-lockfiles nil)
 
   (use-package company-lsp
-    :ensure t
-    ;; :defer t
-    ;; :init
-    ;; (add-hook 'lsp-mode-hook 'company-lsp-mode)
     :config
     (push 'company-lsp company-backends)
     (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
     )
 
   (use-package lsp-ui
-    :ensure t
-    ;; :defer t
-    :bind (:map lsp-ui-mode-map
-  		([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
-  		([remap xref-find-references] . lsp-ui-peek-find-references))
     :init
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+    :config
+    (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+    (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+
+
     )
 
   )
 
-(use-package eglot
-  :ensure t
-  :disabled t
-  :defer t
-  :init
-  (add-hook 'c-mode-common-hook 'eglot-ensure)
-  ;; (add-hook 'c-mode-hook 'eglot-ensure)
-  ;; (add-to-list 'eglot-server-programs
-  ;; 	       '((c++ mode c-mode) . (eglot-cquery "ccls")))
-  :config
-  (add-to-list 'eglot-server-programs '((c++ mode c-mode) . (eglot-cquery "ccls")))
-  (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
+;; (use-package eglot
+;;   :ensure t
+;;   :disabled t
+;;   :defer t
+;;   :init
+;;   (add-hook 'c-mode-common-hook 'eglot-ensure)
+;;   ;; (add-hook 'c-mode-hook 'eglot-ensure)
+;;   ;; (add-to-list 'eglot-server-programs
+;;   ;; 	       '((c++ mode c-mode) . (eglot-cquery "ccls")))
+;;   :config
+;;   (add-to-list 'eglot-server-programs '((c++ mode c-mode) . (eglot-cquery "ccls")))
+;;   (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
 
-  )
+;;   )
 
 
 (use-package ccls
-  :load-path "~/.emacs.d/site-lisp/ccls/"
+  ;; :load-path "~/.emacs.d/site-lisp/ccls/"
   ;; :ensure t
   ;; :disabled t
   :commands lsp-ccls-enable
