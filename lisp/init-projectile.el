@@ -46,11 +46,9 @@
 		      "A" 'projectile-find-other-file-other-window
 		      )
   :config
-
-
   (setq projectile-completion-system 'ivy)
+  (setq projectile-indexing-method 'hybrid)
   (projectile-mode t)
-
 
   )
 
