@@ -13,3 +13,6 @@
 [submodule "site-lisp/company-lsp"]
 	path = site-lisp/company-lsp
 	url = https://github.com/tigersoldier/company-lsp.git
+[submodule "site-lisp/auto-save"]
+	path = site-lisp/auto-save
+	url = https://github.com/manateelazycat/auto-save.git
