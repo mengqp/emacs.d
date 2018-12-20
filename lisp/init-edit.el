@@ -56,6 +56,14 @@
 
   )
 
+(use-package auto-save
+  :defer 2
+  :config
+  (setq auto-save-delete-trailing-whitespace t)
+  (auto-save-enable)              ;; 开启自动保存功能
+  (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
+  )
+
 (use-package superword-mode
   :defer t
   :diminish superword-mode

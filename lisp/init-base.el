@@ -48,8 +48,8 @@
 (progn
   ;; 末尾加空行
   (setq require-final-newline t)
-  ;; 清除白块
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  ;; ;; 清除白块
+  ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
   ;; 以 y/n 代表 yes/no
   (fset 'yes-or-no-p 'y-or-n-p)
   )
@@ -121,15 +121,6 @@
   :diminish real-auto-save-mode
   :defer 5
   :hook (prog-mode . real-auto-save-mode)
-  )
-
-(use-package auto-save
-  :load-path "~/.emacs.d/site-lisp/auto-save/"
-  ;; :disabled t
-  :defer 2
-  :config
-  (auto-save-enable)              ;; 开启自动保存功能
-  (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
   )
 
 (use-package recentf
