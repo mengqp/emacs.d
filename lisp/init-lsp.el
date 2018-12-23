@@ -34,15 +34,18 @@
 ;;; Code:
 
 (use-package lsp-mode
-  :load-path "~/.emacs.d/site-lisp/lsp-mode/"
+  ;; :load-path "~/.emacs.d/site-lisp/lsp-mode/"
   :defer t
   :diminish lsp-mode
   :init
   (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
   :config
+  (require 'lsp-clients)
+  (setq lsp-auto-guess-root t)
   (setq lsp-inhibit-message t)
   (setq lsp-message-project-root-warning t)
   (setq create-lockfiles nil)
+  (setq lsp-prefer-flymake nil)
 
   (use-package company-lsp
     :config
@@ -83,21 +86,22 @@
   ;; :ensure t
   ;; :disabled t
   :commands lsp-ccls-enable
-  :init
-  (add-hook 'c-mode-common-hook #'lsp-ccls-enable)
+  :hook ((c-mode c++-mode objc-mode) .
+         (lambda () (require 'ccls) (lsp)))
+  ;; :init
+  ;; (add-hook 'c-mode-common-hook (lambda () (require 'ccls) (lsp)))
   :config
-  ;; (add-hook 'ccls-tree-mode-hook #'evil-motion-state)
-  ;; (evil-set-initial-state 'ccls-tree-mode 'emacs)
 
   (setq ccls-executable "/usr/bin/ccls")
-  (use-package projectile
-    :config
-    (setq projectile-project-root-files-top-down-recurring
-	  (append '("compile_commands.json"
-		    ".ccls")
-		  projectile-project-root-files-top-down-recurring))
-    (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
-    )
+
+  ;; (use-package projectile
+  ;;   :config
+  ;;   (setq projectile-project-root-files-top-down-recurring
+  ;; 	  (append '("compile_commands.json"
+  ;; 		    ".ccls")
+  ;; 		  projectile-project-root-files-top-down-recurring))
+  ;;   (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
+  ;;   )
 
   ;; (ccls-navigate "D") ;; roughly sp-down-sexp
   ;; (ccls-navigate "L")
@@ -145,6 +149,11 @@
 
   )
 
+;; lsp-auto-require-clients defaults to t, lsp-clients is required and clangd is registered.
+;; If you don't want to see prompt for the choice between ccls and clangd for every new file
+(with-eval-after-load 'lsp-clients
+  (remhash 'clangd lsp-clients)
+  )
 
 (provide 'init-lsp)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

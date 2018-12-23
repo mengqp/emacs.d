@@ -143,7 +143,8 @@
     "gb" 'magit-blame
     "gf" 'magit-gitflow-popup
     "gt" 'git-timemachine
-    "gc" 'magit-file-checkout
+    "gcc" 'magit-file-checkout
+    "gcb" 'magit-branch-checkout
     "gp" 'git-push-coding-request
     "glb" 'magit-log-buffer-file
     "gll" 'magit-log-all
