@@ -140,14 +140,15 @@
 
     "g" '(:ignore t :wk ("g" . "git"))
     "gs" 'magit-status
-    "gb" 'magit-blame
-    "gf" 'magit-gitflow-popup
-    "gt" 'git-timemachine
+    "gbl" 'magit-blame
+    "gbc" 'magit-branch-checkout
     "gcc" 'magit-file-checkout
-    "gcb" 'magit-branch-checkout
-    "gp" 'git-push-coding-request
+    "gf" 'magit-gitflow-popup
     "glb" 'magit-log-buffer-file
     "gll" 'magit-log-all
+    "gm" 'magit-merge
+    "gp" 'git-push-coding-request
+    "gt" 'git-timemachine
 
     "h" '(:ignore t :wk ("h" . "help"))
     "hf" 'find-function
