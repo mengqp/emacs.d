@@ -141,12 +141,13 @@
     "g" '(:ignore t :wk ("g" . "git"))
     "gs" 'magit-status
     "gbl" 'magit-blame
-    "gbc" 'magit-branch-checkout
+    "gbb" 'magit-branch-checkout
     "gcc" 'magit-file-checkout
+    "gbd" 'magit-branch-delete
     "gf" 'magit-gitflow-popup
     "glb" 'magit-log-buffer-file
     "gll" 'magit-log-all
-    "gm" 'magit-merge
+    "gm" 'magit-merge-plain
     "gp" 'git-push-coding-request
     "gt" 'git-timemachine
 
