@@ -23,3 +23,7 @@
 	url = https://github.com/manateelazycat/auto-save.git
 	ignore=untracked
 
+[submodule "site-lisp/thing-edit"]
+	path = site-lisp/thing-edit
+	url = https://github.com/manateelazycat/thing-edit.git
+	ignore=untracked
