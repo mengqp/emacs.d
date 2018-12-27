@@ -250,10 +250,10 @@
   :hook (after-init . doom-modeline-init)
   :config
   ;; How tall the mode-line should be (only respected in GUI Emacs).
-  (setq doom-modeline-height 15)
+  (setq doom-modeline-height 10)
 
   ;; How wide the mode-line bar should be (only respected in GUI Emacs).
-  (setq doom-modeline-bar-width 2)
+  (setq doom-modeline-bar-width 1)
   ;; Determines the style used by `doom-modeline-buffer-file-name'.
   ;;
   ;; Given ~/Projects/FOSS/emacs/lisp/comint.el

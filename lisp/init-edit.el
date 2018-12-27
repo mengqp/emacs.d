@@ -84,6 +84,26 @@
 
   )
 
+(use-package anzu
+  :ensure t
+  :config
+  (global-anzu-mode t)
+
+  (set-face-attribute 'anzu-mode-line nil
+		      :foreground "yellow" :weight 'bold)
+
+  (custom-set-variables
+   '(anzu-mode-lighter "")
+   '(anzu-deactivate-region t)
+   '(anzu-search-threshold 1000)
+   '(anzu-replace-threshold 50)
+   '(anzu-replace-to-string-separator " => ")
+   )
+
+  (global-set-key [remap query-replace] 'anzu-query-replace)
+  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+  )
+
 (use-package awesome-pair
   :disabled t
   :init
