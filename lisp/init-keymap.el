@@ -245,7 +245,8 @@
     "cf" 'clang-format-buffer
 
     "e" '(:ignore t :wk ("e" . "edit"))
-    ;; "es" 'init-sp-menu/body
+    "es" 'init-sp-menu/body
+    "et" 'init-te-menu/body
 
     "f" '(:ignore t :wk ("f" . "file&func"))
     "fb" 'beginning-of-defun
