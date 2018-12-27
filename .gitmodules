@@ -27,3 +27,6 @@
 	path = site-lisp/thing-edit
 	url = https://github.com/manateelazycat/thing-edit.git
 	ignore=untracked
+[submodule "site-lisp/awesome-pair"]
+	path = site-lisp/awesome-pair
+	url = https://github.com/manateelazycat/awesome-pair.git

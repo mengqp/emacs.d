@@ -78,6 +78,16 @@
   ;; (add-hook 'prog-mode-hook #'format-all-mode )
   )
 
+(use-package thing-edit
+  :defer t
+
+
+  )
+
+(use-package awesome-pair
+  :defer t
+  )
+
 ;; (use-package insert-translated-name
 ;;   ;; :defer t
 ;;   ;; :init
