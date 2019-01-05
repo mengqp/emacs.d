@@ -31,3 +31,7 @@
 	path = site-lisp/awesome-pair
 	url = https://github.com/manateelazycat/awesome-pair.git
 	ignore=untracked
+[submodule "site-lisp/lazy-search"]
+	path = site-lisp/lazy-search
+	url = https://github.com/manateelazycat/lazy-search.git
+	ignore=untracked
