@@ -20,8 +20,9 @@
 
 
 (defvar emacs-load-start-time (current-time))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
+(setq load-prefer-newer t)
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 (defun add-subdirs-to-load-path (dir)
   "Recursive add directories to `load-path'."
   (let ((default-directory (file-name-as-directory dir)))
@@ -144,13 +145,13 @@ just add the package to a list of missing packages."
     (try-require 'init-keymap)
 
     (when *linux*
-      (try-require 'init-lsp)
+      ;; (try-require 'init-lsp)
       ;; (try-require 'init-lsp-ccls)
       ;; (try-require 'init-lsp-cquery)
-      ;; (try-require 'init-ycmd)
+      (try-require 'init-ycmd)
       (try-require 'init-gdb)
       )
-    ;; (try-require 'init-cscope)
+    (try-require 'init-cscope)
 
     ;;
     (try-require 'init-plantuml)
