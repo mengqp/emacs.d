@@ -33,7 +33,32 @@
 ;;
 ;;; Code:
 
+(use-package aggressive-indent
+  :ensure t
+  ;; :disabled t
+  :defer t
+  :diminish aggressive-indent-mode
+  :init
+  (add-hook 'prog-mode-hook #'aggressive-indent-mode)
+  ;; (add-hook 'c-mode-hook #'aggressive-indent-mode)
+  ;; (add-hook 'c++-mode-hook #'aggressive-indent-mode)
+  :config
+  (setq aggressive-indent-modes-to-prefer-defun '(emacs-lisp-mode lisp-mode scheme-mode clojure-mode c-mode c++-mode))
+  (setq aggressive-indent-dont-electric-modes t)
+  (setq aggressive-indent-sit-for-time 0.5)
+  (add-to-list
+   'aggressive-indent-dont-indent-if
+   '(and (derived-mode-p 'cc-mode)
+	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
+			     (thing-at-point 'line)))))
+  ;; (add-to-list
+  ;;  'aggressive-indent-dont-indent-if
+  ;;  '(and (derived-mode-p 'c-mode)
+  ;; 	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
+  ;; 			     (thing-at-point 'line)))))
 
+
+  )
 
 (use-package multiple-cursors
   :ensure t
@@ -132,6 +157,11 @@
   (define-key awesome-pair-mode-map (kbd "M-n") 'awesome-pair-jump-right)
   ;; (define-key awesome-pair-mode-map (kbd "M-:") 'awesome-pair-jump-out-pair-and-newline)
 
+  )
+
+(use-package lazy-search
+  :config
+  (global-set-key (kbd "M-s") 'lazy-search)
   )
 
 ;; (use-package insert-translated-name

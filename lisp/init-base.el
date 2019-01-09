@@ -230,29 +230,6 @@
   (adaptive-wrap-prefix-mode t)
   )
 
-(use-package aggressive-indent
-  :ensure t
-  :disabled t
-  :defer t
-  :diminish aggressive-indent-mode
-  :init
-  (add-hook 'prog-mode-hook #'aggressive-indent-mode)
-  ;; (add-hook 'c-mode-hook #'aggressive-indent-mode)
-  ;; (add-hook 'c++-mode-hook #'aggressive-indent-mode)
-  :config
-  (add-to-list
-   'aggressive-indent-dont-indent-if
-   '(and (derived-mode-p 'cc-mode)
-	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
-			     (thing-at-point 'line)))))
-  ;; (add-to-list
-  ;;  'aggressive-indent-dont-indent-if
-  ;;  '(and (derived-mode-p 'c-mode)
-  ;; 	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
-  ;; 			     (thing-at-point 'line)))))
-
-
-  )
 
 (use-package highlight-parentheses
   :disabled t

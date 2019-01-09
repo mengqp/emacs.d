@@ -133,6 +133,7 @@
 
     "f" '(:ignore t :wk ("f" . "files"))
     "ff" 'counsel-find-file  ;;
+    "f." 'find-file-at-point
     "fr" 'counsel-recentf  ;;
     "fdi" 'mengqp/open-init-file
     "fdp" 'mengqp/open-init-package-file
@@ -225,7 +226,7 @@
     ;; :global-prefix "C-m"
     ;; :non-normal-prefix "C-m"
     ;; "," 'ace-jump-char-mode
-    "," 'avy-goto-char
+    "," 'avy-goto-char-2
     ;; "," 'avy-goto-char-2
 
     "b" '(:ignore t :wk ("b" . "buffer"))

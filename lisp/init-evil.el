@@ -48,11 +48,11 @@
   (add-hook 'nxml-mode-hook 'evil-local-mode )
   :config
   (define-key evil-normal-state-map (kbd "go") 'ace-jump-char-mode)
-  (define-key evil-ex-completion-map (kbd "C-a") 'move-beginning-of-line)
-  (define-key evil-ex-completion-map (kbd "C-b") 'backward-char)
-  (define-key evil-ex-completion-map (kbd "M-p") 'previous-complete-history-element)
-  (define-key evil-ex-completion-map (kbd "M-n") 'next-complete-history-element)
-  ;; (define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
+  ;; (define-key evil-ex-completion-map (kbd "C-a") 'move-beginning-of-line)
+  ;; (define-key evil-ex-completion-map (kbd "C-b") 'backward-char)
+  ;; (define-key evil-ex-completion-map (kbd "M-p") 'previous-complete-history-element)
+  ;; (define-key evil-ex-completion-map (kbd "M-n") 'next-complete-history-element)
+  ;; ;; (define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
   ;; (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
   ;; (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
   ;; (define-key evil-insert-state-map (kbd "C-n") 'next-line)
@@ -75,6 +75,7 @@
     :diminish hs-minor-mode
     :commands (evil-states evil-emacs-state)
     :after evil-mode
+    :after evil-local-mode
     :init
     (add-hook 'prog-mode-hook
 	      (lambda()
