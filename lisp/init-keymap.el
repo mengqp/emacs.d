@@ -140,7 +140,7 @@
     "fdk" 'mengqp/open-init-keymap-file
 
     "g" '(:ignore t :wk ("g" . "git"))
-    "gs" 'magit-status
+    "gst" 'magit-status
     "gbl" 'magit-blame
     "gbb" 'magit-branch-checkout
     "gcc" 'magit-file-checkout
@@ -296,7 +296,7 @@
     "y" '(:ignore t :wk ("y" . "yasnippet"))
     "yy" 'ivy-yasnippet
     )
-
+  
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported

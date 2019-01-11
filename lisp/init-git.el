@@ -9,9 +9,11 @@
 ;;; Code:
 (use-package magit
   :ensure t
-  :defer t
-  :config
 
+  :bind (("C-x g" . magit-status)
+         ("C-x M-g" . magit-dispatch-popup)
+	 ("C-c M-g" . magit-file-popup))
+  :config
   ;; (use-package evil-magit
   ;;   :ensure t)
 
@@ -88,6 +90,11 @@
   )
 
 
+;; Git-Svn extension for Magit
+(use-package magit-svn
+  :ensure t
+  :diminish magit-svn-mode
+  :hook (magit-mode . magit-svn-mode))
 
 (use-package git-gutter
   :ensure t

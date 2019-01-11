@@ -35,7 +35,7 @@
 
 (use-package aggressive-indent
   :ensure t
-  ;; :disabled t
+  :disabled t
   :defer t
   :diminish aggressive-indent-mode
   :init
@@ -58,6 +58,41 @@
   ;; 			     (thing-at-point 'line)))))
 
 
+  )
+
+;; An all-in-one comment command to rule them all
+(use-package comment-dwim-2
+  :ensure t
+  :defer t
+  :bind ([remap comment-dwim] . comment-dwim-2)) ;
+
+;; Edit multiple regions in the same way simultaneously
+(use-package iedit
+  :ensure t
+  :bind
+  (("C-;" . iedit-mode)
+   ("C-x r RET" . iedit-rectangle-mode)
+   :map isearch-mode-map ("C-;" . iedit-mode-from-isearch)
+   :map esc-map ("C-;" . iedit-execute-last-modification)
+   :map help-map ("C-;" . iedit-mode-toggle-on-function))
+  )
+
+;; Move to the beginning/end of line or code
+(use-package mwim
+  :ensure t
+  :bind (([remap move-beginning-of-line] . mwim-beginning-of-code-or-line)
+	 ([remap move-end-of-line] . mwim-end-of-code-or-line))
+  )
+
+;; https://github.com/emacs-evil/goto-chg/issues/3
+;; Goto last change
+(use-package goto-chg
+  :ensure t
+  :bind ("C-," . goto-last-change)
+  :preface
+  (defmacro undo-tree-node-p (n)
+    (let ((len (length (undo-tree-make-node nil nil))))
+      `(and (vectorp ,n) (= (length ,n) ,len))))
   )
 
 (use-package multiple-cursors
@@ -130,7 +165,7 @@
   )
 
 (use-package awesome-pair
-  :disabled t
+  ;; :disabled t
   :init
   (add-hook 'prog-mode-hook #'awesome-pair-mode )
   :config

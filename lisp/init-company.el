@@ -42,13 +42,24 @@
   :diminish company-mode
   :hook (after-init . global-company-mode)
   :bind
-  (:map company-active-map
-	("M-n" . nil)
-	("M-p" . nil)
-	("C-p" . company-select-previous)
-	("C-n" . company-select-next)
-	;; ("C-s" . company-search-candidates)
-	)
+  (("M-/" . company-complete)
+   ;; ("C-c C-y" . company-yasnippet)
+   ("<backtab>" . company-yasnippet)
+   :map company-active-map
+   ("C-p" . company-select-previous)
+   ("C-n" . company-select-next)
+   ("<tab>" . company-complete-common-or-cycle)
+     ;; ("C-c C-y" . my-company-yasnippet)
+   :map company-search-map
+   ("C-p" . company-select-previous)
+   ("C-n" . company-select-next))
+  ;; (:map company-active-map
+  ;; 	("M-n" . nil)
+  ;; 	("M-p" . nil)
+  ;; 	("C-p" . company-select-previous)
+  ;; 	("C-n" . company-select-next)
+  ;; 	;; ("C-s" . company-search-candidates)
+  ;; 	)
   :init
   ;; (add-hook 'after-init-hook 'global-company-mode)
   ;; 设置等待时间

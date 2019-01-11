@@ -179,14 +179,14 @@
 ;; )
 
 
-;; (use-package undo-tree
-;;   :ensure t
-;;   :defer t
-;;   :diminish undo-tree-mode
-;;   :config
-;;   (setq x-wait-for-event-timeout nil)
-;;   (undo-tree-mode 1)
-;;   )
+(use-package undo-tree
+  :ensure t
+  :defer t
+  :diminish undo-tree-mode
+  :config
+  (setq x-wait-for-event-timeout nil)
+  (undo-tree-mode 1)
+  )
 
 (use-package eldoc
   :diminish eldoc-mode

@@ -36,7 +36,10 @@
   :ensure t
   :diminish projectile-mode
   :defer t
-  :init
+  :hook (after-init . projectile-mode)
+  ;; :init
+
+  :config
   (setq projectile-keymap-prefix (kbd "C-c p"))
   (general-define-key :states '(normal motion)
 		      :keymaps '(c++-mode-map
@@ -45,7 +48,6 @@
 		      "a" 'projectile-find-other-file
 		      "A" 'projectile-find-other-file-other-window
 		      )
-  :config
   (setq projectile-completion-system 'ivy)
   (setq projectile-indexing-method 'hybrid)
   (projectile-mode t)

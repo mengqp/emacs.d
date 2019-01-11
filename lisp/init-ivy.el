@@ -35,35 +35,71 @@
 
 (use-package smex
   :ensure t
-  :config
+ ;; :config
   ;; (global-set-key (kbd "M-x") 'smex)
   )
 
 (use-package counsel
   :ensure t
-  :defer t)
-
-(use-package swiper
-  :ensure t
-  :defer t)
-
-
-(use-package ivy
-  :ensure t
-  :diminish (ivy-mode . "")
   :commands (magit-utils magit-completing-read-function)
   :commands (magit-utils magit-completing-read-function)
-  :defer t
+  :hook ((after-init . ivy-mode)
+	 (ivy-mode . counsel-mode))
   :bind
-  ("M-x" . counsel-M-x)
-  ("C-s" . swiper)
-  ;; (:map ivy-mode-map
-  ;;       ("C-s" . swiper))
+  (
+   ("M-x" . counsel-M-x)
+   ("C-s" . swiper)
+   ("C-S-s" . swiper-all)
 
-  ;; (:map ivy-mode-map
-  ;;       ("M-x" . counsel-M-x))
+   ("C-c C-r" . ivy-resume)
+   ("C-c v p" . ivy-push-view)
+   ("C-c v o" . ivy-pop-view)
+   ("C-c v ." . ivy-switch-view)
+   :map counsel-mode-map
+   ([remap swiper] . counsel-grep-or-swiper)
+   ("C-x C-r" . counsel-recentf)
+   ("C-x j" . counsel-mark-ring)
+
+   ("C-c L" . counsel-load-library)
+   ("C-c P" . counsel-package)
+   ("C-c f" . counsel-find-library)
+   ("C-c g" . counsel-grep)
+   ("C-c h" . counsel-command-history)
+   ("C-c i" . counsel-git)
+   ("C-c j" . counsel-git-grep)
+   ("C-c l" . counsel-locate)
+   ("C-c r" . counsel-rg)
+   ("C-c z" . counsel-fzf)
+
+   ("C-c c L" . counsel-load-library)
+   ("C-c c P" . counsel-package)
+   ("C-c c a" . counsel-apropos)
+   ("C-c c e" . counsel-colors-emacs)
+   ("C-c c f" . counsel-find-library)
+   ("C-c c g" . counsel-grep)
+   ("C-c c h" . counsel-command-history)
+   ("C-c c i" . counsel-git)
+   ("C-c c j" . counsel-git-grep)
+   ("C-c c l" . counsel-locate)
+   ("C-c c m" . counsel-minibuffer-history)
+   ("C-c c o" . counsel-outline)
+   ("C-c c p" . counsel-pt)
+   ("C-c c r" . counsel-rg)
+   ("C-c c s" . counsel-ag)
+   ("C-c c t" . counsel-load-theme)
+   ("C-c c u" . counsel-unicode-char)
+   ("C-c c w" . counsel-colors-web)
+   ("C-c c z" . counsel-fzf)
+   )
   :init
-  (defvar magit-completing-read-function 'ivy-completing-read)
+  ;; Integration with `projectile'
+  (with-eval-after-load 'projectile
+    (setq projectile-completion-system 'ivy))
+
+  ;; Integration with `magit'
+  (with-eval-after-load 'magit
+    (setq magit-completing-read-function 'ivy-completing-read))
+
   ;; (setq projectile-completion-system 'ivy)
   ;; 去除 M-x 里面的 ^
   (setq ivy-initial-inputs-alist nil)
@@ -86,6 +122,31 @@
 	'((t   . ivy--regex-ignore-order)))
 
   )
+
+;; (use-package swiper
+;;   :ensure t
+;;   ;; :defer t
+;;   )
+
+
+;; (use-package ivy
+;;   :ensure t
+;;   :diminish (ivy-mode . "")
+
+;;   ;; :defer t
+;;   :bind
+;;   (
+
+
+;;      )
+;;   ;; (:map ivy-mode-map
+;;   ;;       ("C-s" . swiper))
+
+;;   ;; (:map ivy-mode-map
+;;   ;;       ("M-x" . counsel-M-x))
+;;   :init
+
+;;   )
 
 (use-package ivy-posframe
   :disabled t

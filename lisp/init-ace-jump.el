@@ -35,8 +35,19 @@
 (use-package avy
   :ensure t
   :defer t
+  :bind (("C-:" . avy-goto-char)
+         ("C-'" . avy-goto-char-2)
+         ("M-g f" . avy-goto-line)
+         ("M-g w" . avy-goto-word-1)
+	 ("M-g e" . avy-goto-word-0))
   )
 
+;; Kill text between the point and the character CHAR
+(use-package avy-zap
+  :ensure t
+  :defer t
+  :bind (("M-z" . avy-zap-to-char-dwim)
+	 ("M-Z" . avy-zap-up-to-char-dwim)))
 ;; (use-package ace-pinyin
 ;;   :ensure t
 ;;   :diminish ace-pinyin-mode

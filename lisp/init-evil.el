@@ -73,9 +73,11 @@
   (use-package hideshow
     :defer t
     :diminish hs-minor-mode
-    :commands (evil-states evil-emacs-state)
-    :after evil-mode
-    :after evil-local-mode
+    :bind (:map hs-minor-mode-map
+		("C-`" . hs-toggle-hiding))
+    ;; :commands (evil-states evil-emacs-state)
+    ;; :after evil-mode
+    ;; :after evil-local-mode
     :init
     (add-hook 'prog-mode-hook
 	      (lambda()
