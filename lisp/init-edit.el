@@ -199,6 +199,34 @@
   (global-set-key (kbd "M-s") 'lazy-search)
   )
 
+
+(use-package crux
+  :ensure t
+  :defer t
+  :bind
+  (
+   ("C-k" . crux-smart-kill-line)
+   ("S-<return>" . crux-smart-open-line-above)
+   ("M-RET" . crux-smart-open-line)
+   ("C-c d" . crux-duplicate-current-line-or-region)
+   ("C-M-z" . crux-indent-defun)
+   ("C-^" . crux-top-join-line)
+   )
+  )
+
+(use-package key-chord
+  :ensure t
+  :config
+  (key-chord-mode t)
+  (key-chord-define-global "jj" 'avy-goto-word-1)
+  (key-chord-define-global "jl" 'avy-goto-line)
+  (key-chord-define-global "jk" 'avy-goto-char)
+  (key-chord-define-global "JJ" 'crux-switch-to-previous-buffer)
+  (key-chord-define-global "ji" 'imenu)
+  (key-chord-define-global "uu" 'undo-tree-visualize)
+
+
+  )
 ;; (use-package insert-translated-name
 ;;   ;; :defer t
 ;;   ;; :init
