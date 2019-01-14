@@ -224,8 +224,7 @@
   (key-chord-define-global "JJ" 'crux-switch-to-previous-buffer)
   (key-chord-define-global "ji" 'imenu)
   (key-chord-define-global "uu" 'undo-tree-visualize)
-
-
+  (key-chord-define-global ";;" 'comment-dwim-2)
   )
 ;; (use-package insert-translated-name
 ;;   ;; :defer t
