@@ -49,27 +49,13 @@
   (
    ("M-x" . counsel-M-x)
    ("C-s" . swiper)
-   ("C-S-s" . swiper-all)
 
-   ("C-c C-r" . ivy-resume)
-   ("C-c v p" . ivy-push-view)
-   ("C-c v o" . ivy-pop-view)
-   ("C-c v ." . ivy-switch-view)
    :map counsel-mode-map
    ([remap swiper] . counsel-grep-or-swiper)
    ("C-x C-r" . counsel-recentf)
    ("C-x j" . counsel-mark-ring)
 
-   ("C-c L" . counsel-load-library)
-   ("C-c P" . counsel-package)
-   ("C-c f" . counsel-find-library)
-   ("C-c g" . counsel-grep)
-   ("C-c h" . counsel-command-history)
-   ("C-c i" . counsel-git)
-   ("C-c j" . counsel-git-grep)
-   ("C-c l" . counsel-locate)
    ("C-c r" . counsel-rg)
-   ("C-c z" . counsel-fzf)
 
    ("C-c c L" . counsel-load-library)
    ("C-c c P" . counsel-package)

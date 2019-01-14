@@ -225,6 +225,7 @@
   (key-chord-define-global "ji" 'imenu)
   (key-chord-define-global "uu" 'undo-tree-visualize)
   (key-chord-define-global ";;" 'comment-dwim-2)
+  (key-chord-define-global "zz" 'avy-zap-to-char-dwim)
   )
 ;; (use-package insert-translated-name
 ;;   ;; :defer t

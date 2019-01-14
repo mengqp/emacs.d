@@ -141,13 +141,13 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (setq org-agenda-text-search-extra-files
 	  (append
 	   (sa-find-org-file-recursively "~/nutdata/myorg/" "org")
-	   (sa-find-org-file-recursively "~/ecode/em770/01docs/org/" "org")
-	   (sa-find-org-file-recursively "~/ecode/em761/docs/org/" "org")
-	   (sa-find-org-file-recursively "~/ecode/EM761_BV2/01docs/org/" "org")
-	   (sa-find-org-file-recursively "~/ecode/epduhmi/3352/asrc/01docs/org" "org")
-	   (sa-find-org-file-recursively "~/ecode/epduhmi/3352/dsrc/01docs/org" "org")
-	   (sa-find-org-file-recursively "~/ecode/pdt/docs/org" "org")
-	   (sa-find-org-file-recursively "~/project/zlg/docs/org/" "org")
+	   ;; (sa-find-org-file-recursively "~/ecode/em770/01docs/org/" "org")
+	   ;; (sa-find-org-file-recursively "~/ecode/em761/docs/org/" "org")
+	   ;; (sa-find-org-file-recursively "~/ecode/EM761_BV2/01docs/org/" "org")
+	   ;; (sa-find-org-file-recursively "~/ecode/epduhmi/3352/asrc/01docs/org" "org")
+	   ;; (sa-find-org-file-recursively "~/ecode/epduhmi/3352/dsrc/01docs/org" "org")
+	   ;; (sa-find-org-file-recursively "~/ecode/pdt/docs/org" "org")
+	   ;; (sa-find-org-file-recursively "~/project/zlg/docs/org/" "org")
 	   ))
 
     (setq org-agenda-files org-agenda-text-search-extra-files)
@@ -158,13 +158,13 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (setq org-agenda-text-search-extra-files
 	  (append
 	   (sa-find-org-file-recursively "E:/Nutstore/myorg/" "org")
-	   (sa-find-org-file-recursively "D:/svn/em761/docs/org/" "org")
-	   (sa-find-org-file-recursively "D:/svn/em770/01docs/org/" "org")
-	   (sa-find-org-file-recursively "D:/svn/EM761_BV2/01docs/org/" "org")
-	   (sa-find-org-file-recursively "D:/svn/epduhmi/3352/asrc/docs/01org" "org")
-	   (sa-find-org-file-recursively "D:/svn/epduhmi/3352/dsrc/docs/01org" "org")
-	   (sa-find-org-file-recursively "D:/svn/pdt/docs/org/" "org")
-	   (sa-find-org-file-recursively "F:/项目/zlg/docs/org/" "org")
+	   ;; (sa-find-org-file-recursively "D:/svn/em761/docs/org/" "org")
+	   ;; (sa-find-org-file-recursively "D:/svn/em770/01docs/org/" "org")
+	   ;; (sa-find-org-file-recursively "D:/svn/EM761_BV2/01docs/org/" "org")
+	   ;; (sa-find-org-file-recursively "D:/svn/epduhmi/3352/asrc/docs/01org" "org")
+	   ;; (sa-find-org-file-recursively "D:/svn/epduhmi/3352/dsrc/docs/01org" "org")
+	   ;; (sa-find-org-file-recursively "D:/svn/pdt/docs/org/" "org")
+	   ;; (sa-find-org-file-recursively "F:/项目/zlg/docs/org/" "org")
 	   ))
 
     (setq org-agenda-files org-agenda-text-search-extra-files)
