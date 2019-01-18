@@ -74,10 +74,10 @@
 		    "b" 'gdb
 		    )
 
-(use-package realgud
-  :ensure t
-  :defer t
-  )
+;; (use-package realgud
+;;   :ensure t
+;;   :defer t
+;;   )
 
 (provide 'init-gdb)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

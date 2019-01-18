@@ -208,24 +208,28 @@
    ("C-k" . crux-smart-kill-line)
    ("S-<return>" . crux-smart-open-line-above)
    ("M-RET" . crux-smart-open-line)
-   ("C-c d" . crux-duplicate-current-line-or-region)
+   ;; ("C-c d" . crux-duplicate-current-line-or-region)
    ("C-M-z" . crux-indent-defun)
    ("C-^" . crux-top-join-line)
    )
+  :chords
+  (
+   ;; ("JJ" . crux-switch-to-previous-buffer)
+   ;; ("dd" . crux-kill-whole-line)
+   ;; ("cl" . crux-duplicate-current-line-or-region)
+   ;; ("cd" . crux-duplicate-and-comment-current-line-or-region)
+   )
   )
+
 
 (use-package key-chord
   :ensure t
   :config
   (key-chord-mode t)
-  (key-chord-define-global "jj" 'avy-goto-word-1)
-  (key-chord-define-global "jl" 'avy-goto-line)
-  (key-chord-define-global "jk" 'avy-goto-char)
-  (key-chord-define-global "JJ" 'crux-switch-to-previous-buffer)
-  (key-chord-define-global "ji" 'imenu)
-  (key-chord-define-global "uu" 'undo-tree-visualize)
-  (key-chord-define-global ";;" 'comment-dwim-2)
-  (key-chord-define-global "zz" 'avy-zap-to-char-dwim)
+  ;; (key-chord-define-global "ji" 'imenu)
+  ;; (key-chord-define-global ";;" 'comment-dwim-2)
+  ;; (key-chord-define-global "f." 'find-file-at-point)
+
   )
 ;; (use-package insert-translated-name
 ;;   ;; :defer t

@@ -132,6 +132,15 @@ If FILEXT is provided, return files with extension FILEXT instead."
   :ensure t
   :defer t
   :init
+  :bind
+  (
+   ("C-c o a" . org-agenda )
+   ("C-c o o" . org-capture)
+   :map org-mode-map
+   ("C-c T" . mengqp/evil-org-insert-todo-at-end )
+   ("C-c ." . org-time-stamp )
+
+   )
   :config
 
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))

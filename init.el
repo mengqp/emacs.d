@@ -101,7 +101,7 @@
   ;; (require 'init-calendar)
   ;; (require 'init-hungry-delete)
   ;; (require 'init-smartparens)
-  ;; (require 'init-evil)
+  (require 'init-evil)
   (require 'init-company)
   (require 'init-window)
   (require 'init-projectile)

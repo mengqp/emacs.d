@@ -19,40 +19,28 @@
   ;; 	    #'(lambda () (pyim-restart-1 t)))
   :config
   (setq pyim-dcache-prefer-emacs-thread nil)
-  ;; (load-file "~/srcp/liberime/liberime-config.el")
-  ;; (defun setup-liberime ()
-  ;;   ;; incase hooks not running
-  ;;   (interactive)
-  ;;   (liberime-start "~/.config/fcitx/rime/build/" "~/.emacs.d/rime/")
-  ;;   (liberime-get-schema-list)
-  ;;   (liberime-search "wode" nil)
+  (setq pyim-debug t)
 
-  ;;   ;; (liberime-select-schema "luna_pinyin_simp"))
-  ;;   (liberime-select-schema "wubi86"))
-  ;; (use-package liberime
-  ;;   :load-path "~/srcp/liberime/build/liberime.so"
-  ;;   :config
-  ;;   (defun setup-liberime ()
-  ;;     ;; incase hooks not running
-  ;;     (interactive)
-  ;;     (liberime-start "~/.config/fcitx/rime/build/" "~/.emacs.d/rime/")
-  ;;     (liberime-get-schema-list)
-  ;;     (liberime-select-schema "wubi86")))
-  ;; (setq default-input-method "pyim")
-  ;; (setq pyim-default-scheme 'rime)
-  ;; work with pyim
-  ;; (add-hook 'pyim-load-hook 'setup-liberime) ;; or set with use-package
-
-  ;; 五笔用户使用 wbdict 词库
-  (use-package pyim-wbdict
-    :ensure t
+  (use-package liberime
+    :load-path "/root/.emacs.d/site-lisp/liberime/build/liberime.so"
     :config
-    ;; (pyim-wbdict-gbk-enable)
-    (pyim-wbdict-v98-enable)
+    (liberime-start "/usr/share/rime-data" "/root/.emacs.d/rime/") ;
+    (liberime-select-schema "wubi86")
+
     )
 
+  ;; 五笔用户使用 wbdict 词库
+  ;; (use-package pyim-wbdict
+  ;;   :disabled t
+  ;;   :ensure t
+  ;;   :config
+  ;;   ;; (pyim-wbdict-gbk-enable)
+  ;;   (pyim-wbdict-v98-enable)
+  ;;   )
+
   (setq default-input-method "pyim")
-  (setq pyim-default-scheme 'wubi)
+  (setq pyim-default-scheme 'rime)
+  ;; (setq pyim-default-scheme 'wubi)
 
   ;; 设置 pyim 探针设置，这是 pyim 高级功能设置，可以实现 *无痛* 中英文切换 :-)
   ;; 我自己使用的中英文动态切换规则是：
@@ -82,12 +70,6 @@
 
 
   (global-set-key (kbd "C-\\") 'toggle-input-method)
-
-  ;; (general-define-key :states '(insert)
-  ;; 		      :prefix ","
-  ;; 		      "," 'pyim-convert-code-at-point
-  ;; 		      )
-
   )
 
 

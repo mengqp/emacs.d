@@ -47,6 +47,7 @@
 
   (which-key-setup-side-window-bottom)
   (which-key-setup-minibuffer)
+  (setq which-key-use-C-h-commands nil)
 
   ;; Set the prefix string that will be inserted in front of prefix commands
   ;; (i.e., commands that represent a sub-map).
@@ -226,7 +227,7 @@
     ;; :global-prefix "C-m"
     ;; :non-normal-prefix "C-m"
     ;; "," 'ace-jump-char-mode
-    "," 'avy-goto-char-2
+    "," 'avy-goto-word-1
     ;; "," 'avy-goto-char-2
 
     "b" '(:ignore t :wk ("b" . "buffer"))
@@ -296,7 +297,7 @@
     "y" '(:ignore t :wk ("y" . "yasnippet"))
     "yy" 'ivy-yasnippet
     )
-  
+
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported

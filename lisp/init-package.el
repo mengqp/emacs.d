@@ -77,6 +77,10 @@ But you may use safer HTTPS instead.")
 (use-package diminish
   :ensure t)
 
+(use-package use-package-chords
+  :ensure t
+  :config (key-chord-mode 1))
+
 (provide 'init-package)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-package.el ends here
