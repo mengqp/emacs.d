@@ -14,12 +14,13 @@
 
   :defer t
   :init
+  (setq pyim-title "pyim")
   ;; 让 Emacs 启动时自动加载 pyim 词库
   ;; (add-hook 'emacs-startup-hook
   ;; 	    #'(lambda () (pyim-restart-1 t)))
   :config
   (setq pyim-dcache-prefer-emacs-thread nil)
-  (setq pyim-debug t)
+  ;; (setq pyim-debug t)
 
   (use-package liberime
     :load-path "/root/.emacs.d/site-lisp/liberime/build/liberime.so"

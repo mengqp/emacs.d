@@ -78,6 +78,7 @@
 ;;; package here
   ;; (try-require 'init-autoload)
 
+  (require 'cl)
   (require 'init-package)
   ;; (require 'init-elget)
   (require 'init-autoload)
@@ -95,6 +96,7 @@
     ;; (require 'init-abbrev)
     (require 'init-hydra)
     (require 'init-layout)
+    ;; (require 'init-dap)
     )
 
   ;;tool
