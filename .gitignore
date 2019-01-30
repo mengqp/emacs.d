@@ -30,3 +30,6 @@ el-get
 custom.el
 *.elc
 .lsp-session-v1
+semanticdb
+rime
+srecode-map.el
