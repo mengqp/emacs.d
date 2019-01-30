@@ -201,6 +201,11 @@
     "qq" 'save-buffers-kill-emacs
     "qr" 'restart-emacs
 
+    "st" 'color-rg-search-project-with-type
+    "ss" 'color-rg-search-symbol-with-type
+    "sdi" 'color-rg-search-input
+    "sds" 'color-rg-search-symbol
+
     "w" '(:ignore t :wk ("w" . "window"))
     "ws" 'split-window-vertically
     "wv" 'split-window-horizontally
@@ -210,7 +215,7 @@
     "wq" 'quit-window
 
 
-    "/" 'counsel-projectile-rg
+    "/" 'color-rg-search-project
     ;; "/" 'counsel-projectile-ag
 
     )
@@ -302,13 +307,6 @@
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
   ;; 本文件 侧重一些模块功能
-  (general-define-key
-   :keymaps '(normal visual emacs)
-   :prefix ";"
-   :non-normal-prefix "M-;"
-   ;; ";"  'evilnc-comment-or-uncomment-lines
-   ";" 'comment-line
-   )
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported

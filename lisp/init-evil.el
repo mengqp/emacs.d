@@ -127,9 +127,16 @@
     (evil-escape-mode t)
     )
 
-  ;; (use-package evil-nerd-commenter
-  ;;   :ensure t
-  ;;   :defer t)
+  (use-package evil-nerd-commenter
+    :ensure t
+    :after evil
+    :config
+    (general-define-key
+     :keymaps '(normal visual emacs)
+     :prefix ";"
+     ";"  'evilnc-comment-or-uncomment-lines
+     )
+    )
 
   ;; (use-package evil-snipe
   ;;   :ensure t

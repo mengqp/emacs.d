@@ -96,6 +96,8 @@
     ;; (require 'init-abbrev)
     (require 'init-hydra)
     (require 'init-layout)
+    (require 'init-color-rg)
+
     ;; (require 'init-dap)
     )
 

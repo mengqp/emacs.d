@@ -38,6 +38,8 @@
 [submodule "site-lisp/color-rg"]
 	path = site-lisp/color-rg
 	url = https://github.com/manateelazycat/color-rg.git
+	ignore=untracked
 [submodule "site-lisp/liberime"]
 	path = site-lisp/liberime
 	url = https://gitlab.com/liberime/liberime.git
+	ignore=untracked

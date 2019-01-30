@@ -231,6 +231,13 @@
   ;; (key-chord-define-global "f." 'find-file-at-point)
 
   )
+
+(use-package electric-operator
+  :ensure t
+  :commands  (electric-operator electric-operator-mode )
+  :defer t
+  :hook (prog-mode . electric-operator-mode)
+  )
 ;; (use-package insert-translated-name
 ;;   ;; :defer t
 ;;   ;; :init

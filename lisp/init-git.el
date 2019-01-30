@@ -10,9 +10,9 @@
 (use-package magit
   :ensure t
 
-  :bind (("C-x g" . magit-status)
-         ("C-x M-g" . magit-dispatch-popup)
-	 ("C-c M-g" . magit-file-popup))
+  ;; :bind (("C-x g" . magit-status)
+  ;;        ("C-x M-g" . magit-dispatch-popup)
+  ;; 	 ("C-c M-g" . magit-file-popup))
   :config
   ;; (use-package evil-magit
   ;;   :ensure t)
