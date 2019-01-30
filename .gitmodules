@@ -35,3 +35,9 @@
 	path = site-lisp/lazy-search
 	url = https://github.com/manateelazycat/lazy-search.git
 	ignore=untracked
+[submodule "site-lisp/color-rg"]
+	path = site-lisp/color-rg
+	url = https://github.com/manateelazycat/color-rg.git
+[submodule "site-lisp/liberime"]
+	path = site-lisp/liberime
+	url = https://gitlab.com/liberime/liberime.git
