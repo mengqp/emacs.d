@@ -222,21 +222,25 @@
   )
 
 
-(use-package key-chord
-  :ensure t
-  :config
-  (key-chord-mode t)
-  ;; (key-chord-define-global "ji" 'imenu)
-  ;; (key-chord-define-global ";;" 'comment-dwim-2)
-  ;; (key-chord-define-global "f." 'find-file-at-point)
+;; (use-package key-chord
+;;   :ensure t
+;;   :disabled t
+;;   :config
+;;   (key-chord-mode t)
+;;   ;; (key-chord-define-global "ji" 'imenu)
+;;   ;; (key-chord-define-global ";;" 'comment-dwim-2)
+;;   ;; (key-chord-define-global "f." 'find-file-at-point)
 
-  )
+;;   )
 
 (use-package electric-operator
   :ensure t
   :commands  (electric-operator electric-operator-mode )
   :defer t
-  :hook (prog-mode . electric-operator-mode)
+  :hook (prog-mode. electric-operator-mode)
+  :config
+  (electric-operator-add-rules-for-mode 'lisp-mode
+					(cons "-" nil))
   )
 ;; (use-package insert-translated-name
 ;;   ;; :defer t

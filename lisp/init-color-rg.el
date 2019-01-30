@@ -33,6 +33,14 @@
 ;;
 ;;; Code:
 (use-package color-rg
+  :defer t
+  :commands ( color-rg color-rg-search-input )
+  :commands ( color-rg color-rg-search-symbol)
+  :commands ( color-rg color-rg-search-project )
+  :commands ( color-rg color-rg-search-symbol-with-type )
+  :commands ( color-rg color-rg-search-project-with-type )
+  :config
+  (evil-set-initial-state 'color-rg-mode 'emacs)
   ;; :defer t
 
 
