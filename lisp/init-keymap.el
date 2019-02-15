@@ -201,8 +201,9 @@
     "qq" 'save-buffers-kill-emacs
     "qr" 'restart-emacs
 
-    "st" 'color-rg-search-project-with-type
-    "ss" 'color-rg-search-symbol-with-type
+    "sp" 'color-rg-search-project-with-type
+    "st" 'color-rg-search-symbol-with-type
+    "ss" 'color-rg-search-project
     "sdi" 'color-rg-search-input
     "sds" 'color-rg-search-symbol
 
@@ -215,7 +216,8 @@
     "wq" 'quit-window
 
 
-    "/" 'color-rg-search-project
+    ;; "/" 'color-rg-search-project
+    "/" 'counsel-projectile-rg
     ;; "/" 'counsel-projectile-ag
 
     )

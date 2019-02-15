@@ -7,6 +7,10 @@
 ;; (require 'git-gutter)
 
 ;;; Code:
+(use-package magit-popup
+  :ensure t
+  )
+
 (use-package magit
   :ensure t
 
@@ -29,7 +33,6 @@
   ;; 			)
 
   ;;   )
-
   ;; Gitflow externsion for Magit
   (use-package magit-gitflow
     :ensure t
