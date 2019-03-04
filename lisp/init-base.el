@@ -68,6 +68,7 @@
     :init
     (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
     :config
+    (set-face-foreground 'rainbow-delimiters-depth-1-face "DeepPink")
     (set-face-foreground 'rainbow-delimiters-depth-2-face "cyan")
     )
   )

@@ -41,7 +41,7 @@
   (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
   :config
   (require 'lsp-clients)
-  (setq lsp-auto-guess-root t)
+  ;; (setq lsp-auto-guess-root t)
   (setq lsp-inhibit-message t)
   (setq lsp-message-project-root-warning t)
   (setq create-lockfiles nil)
@@ -93,6 +93,7 @@
   ;; (add-hook 'c-mode-common-hook (lambda () (require 'ccls) (lsp)))
   :config
 
+  (setq projectile-require-project-root t)
   (setq ccls-executable "/usr/bin/ccls")
 
   ;; (use-package projectile

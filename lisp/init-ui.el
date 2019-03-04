@@ -103,7 +103,8 @@
   :defer t
   :diminish column-enforce-mode
   :init
-  (add-hook 'prog-mode-hook 'column-enforce-mode)
+  ;; (add-hook 'prog-mode-hook 'column-enforce-mode)
+  (add-hook 'cc-mode-hook 'column-enforce-mode)
   :config
   (setq column-enforce-column 81)
   ;; ;; By default column-enforce-mode will mark comments that exceed the limit. You can allow long comments in your code with:

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: sh head
+# key: sh
+# --
+#!/bin/sh
+
+#description: $1
+
+#code
+$0

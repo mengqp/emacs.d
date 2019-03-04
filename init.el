@@ -126,13 +126,13 @@
   (require 'init-keymap)
 
   (when *linux*
-    (require 'init-lsp)
+    ;; (require 'init-lsp)
     ;; (require 'init-lsp-ccls)
     ;; (require 'init-lsp-cquery)
-    ;; (require 'init-ycmd)
+    (require 'init-ycmd)
     (require 'init-gdb)
     )
-  ;; (require 'init-cscope)
+  (require 'init-cscope)
 
   ;;
   (require 'init-plantuml)
