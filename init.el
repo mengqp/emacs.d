@@ -63,7 +63,6 @@
   (require 'init-const)
   (require 'cl)
   (require 'init-package)
-  (require 'init-autoload)
 
   ;;ui
   (require 'init-ui)
