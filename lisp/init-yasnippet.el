@@ -36,7 +36,7 @@
 
 (use-package yasnippet
   :ensure t
-  :defer t
+  :defer 5
   :commands (yasnippet yas-reload-all)
   :commands (yasnippet yas-expand)
   :commands (yasnippet yas-next-field)

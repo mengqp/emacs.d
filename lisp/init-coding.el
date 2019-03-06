@@ -35,9 +35,9 @@
 ;; (load-file "~/.emacs.d/lisp/unicad.elc")
 (use-package unicad)
 (when *win64*
-  (prefer-coding-system 'cp950)
-  (prefer-coding-system 'gb2312)
-  (prefer-coding-system 'cp936)
+  ;; (prefer-coding-system 'cp950)
+  ;; (prefer-coding-system 'gb2312)
+  ;; (prefer-coding-system 'cp936)
   ;;(prefer-coding-system 'gb18030)
 					;(prefer-coding-system 'utf-16le-with-signature)
   (prefer-coding-system 'utf-8)
@@ -45,8 +45,8 @@
   ;; 如果不写下面两句，只写
   ;; (prefer-coding-system 'utf-8)
   ;; 这一句的话，新建文件以 utf-8 编码，行末结束符平台相关
-  (prefer-coding-system 'utf-8-dos)
-  (prefer-coding-system 'utf-8-unix)
+  ;; (prefer-coding-system 'utf-8-dos)
+  ;; (prefer-coding-system 'utf-8-unix)
   )
 
 

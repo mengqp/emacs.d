@@ -40,13 +40,13 @@
   ;;        ("M-g f" . avy-goto-line)
   ;;        ("M-g w" . avy-goto-word-1)
   ;; 	 ("M-g e" . avy-goto-word-0))
-  :chords
-  (
-   ;; ("jj" . avy-goto-word-1)
-   ;; ("jk" . avy-goto-char)
-   ;; ("jl" . avy-goto-line)
+  ;; :chords
+  ;; (
+  ;;  ;; ("jj" . avy-goto-word-1)
+  ;;  ;; ("jk" . avy-goto-char)
+  ;;  ;; ("jl" . avy-goto-line)
 
-   )
+  ;;  )
 
   )
 
@@ -59,10 +59,10 @@
 	 ("M-Z" . avy-zap-up-to-char-dwim)
 	 )
 
-  :chords
-  (
-   ;; ("df" . avy-zap-to-char-dwim)
-   )
+  ;; :chords
+  ;; (
+  ;;  ;; ("df" . avy-zap-to-char-dwim)
+  ;;  )
 
   )
 

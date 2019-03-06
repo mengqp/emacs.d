@@ -157,13 +157,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (setq org-agenda-text-search-extra-files
 	  (append
 	   (sa-find-org-file-recursively "~/nutdata/myorg/" "org")
-	   ;; (sa-find-org-file-recursively "~/ecode/em770/01docs/org/" "org")
-	   ;; (sa-find-org-file-recursively "~/ecode/em761/docs/org/" "org")
-	   ;; (sa-find-org-file-recursively "~/ecode/EM761_BV2/01docs/org/" "org")
-	   ;; (sa-find-org-file-recursively "~/ecode/epduhmi/3352/asrc/01docs/org" "org")
-	   ;; (sa-find-org-file-recursively "~/ecode/epduhmi/3352/dsrc/01docs/org" "org")
-	   ;; (sa-find-org-file-recursively "~/ecode/pdt/docs/org" "org")
-	   ;; (sa-find-org-file-recursively "~/project/zlg/docs/org/" "org")
 	   ))
 
     (setq org-agenda-files org-agenda-text-search-extra-files)
@@ -174,13 +167,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (setq org-agenda-text-search-extra-files
 	  (append
 	   (sa-find-org-file-recursively "E:/Nutstore/myorg/" "org")
-	   ;; (sa-find-org-file-recursively "D:/svn/em761/docs/org/" "org")
-	   ;; (sa-find-org-file-recursively "D:/svn/em770/01docs/org/" "org")
-	   ;; (sa-find-org-file-recursively "D:/svn/EM761_BV2/01docs/org/" "org")
-	   ;; (sa-find-org-file-recursively "D:/svn/epduhmi/3352/asrc/docs/01org" "org")
-	   ;; (sa-find-org-file-recursively "D:/svn/epduhmi/3352/dsrc/docs/01org" "org")
-	   ;; (sa-find-org-file-recursively "D:/svn/pdt/docs/org/" "org")
-	   ;; (sa-find-org-file-recursively "F:/项目/zlg/docs/org/" "org")
 	   ))
 
     (setq org-agenda-files org-agenda-text-search-extra-files)
@@ -204,31 +190,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
 				   (org-agenda-files :maxlevel . 9))))
-
-  ;; (use-package org-brain
-  ;;   :ensure t
-  ;;   :init
-  ;;   (setq org-brain-path "~/nutdata/myorg/brain")
-  ;;   ;; For Evil users
-  ;;   ;; (eval-after-load 'evil
-  ;;   ;;   (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
-  ;;   :config
-  ;;   (setq org-id-track-globally t)
-  ;;   (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
-  ;;   (push '("b" "Brain" plain (function org-brain-goto-end)
-  ;; 	    "* %i%?" :empty-lines 1)
-  ;; 	  org-capture-templates)
-  ;;   (setq org-brain-visualize-default-choices 'all)
-  ;;   (setq org-brain-title-max-length 12))
-
-  ;; (use-package org-projectile
-  ;;   :config
-  ;;   (org-projectile:per-repo)
-  ;;   (setq org-projectile:per-repo-filename "readme.org")
-  ;;   )
-  ;; (setq org-agenda-files (append org-agenda-files (org-projectile:todo-files)))
-  ;; (global-set-key (kbd "C-c c") 'org-capture)
-  ;; (global-set-key (kbd "C-c n p") 'org-projectile:project-todo-completing-read)
 
   (setq org-src-fontify-natively t)
 
@@ -393,17 +354,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (defconst org-mobile-directory "~/nutdata/org")
     (defconst org-mobile-inbox-for-pull "~/nutdata/org/index.org")
     )
-
-  ;; (use-package org-journal
-  ;;   :ensure t
-  ;;   :init
-  ;;   (setq org-journal-dir "~/ecode/org/journal/")
-  ;;   (setq org-journal-file-format "%Y-%m-%d.org")
-  ;;   (defvar org-journal-date-format "%A %d-%m-%Y"
-  ;;     "Date format string for journal headings.")
-  ;;   (setq org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'")
-  ;;   )
-
 
   )
 

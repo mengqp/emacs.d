@@ -94,7 +94,6 @@
   (require 'init-flycheck)
   (require 'init-ace-jump)
   (require 'init-git)
-  ;; (require 'init-mc)
   ;; (require 'init-cmake)
   ;; (require 'init-popwin)
   ;; 去掉中文的输入，如果有必要，直接使用
@@ -108,8 +107,6 @@
 
   (when *linux*
     ;; (require 'init-lsp)
-    ;; (require 'init-lsp-ccls)
-    ;; (require 'init-lsp-cquery)
     (require 'init-ycmd)
     ;; (require 'init-gdb)
     )

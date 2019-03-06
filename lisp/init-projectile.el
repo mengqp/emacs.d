@@ -38,10 +38,10 @@
   :defer t
   :hook (after-init . projectile-mode)
   ;; :init
-  :chords
-  (
-   (";a" . projectile-find-other-file)
-   )
+  ;; :chords
+  ;; (
+  ;;  (";a" . projectile-find-other-file)
+  ;;  )
   :config
   (setq projectile-keymap-prefix (kbd "C-c p"))
   (general-define-key :states '(normal motion)

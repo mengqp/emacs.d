@@ -32,7 +32,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(global-set-key (kbd "s-z") 'evil-local-mode)
+;; (global-set-key (kbd "s-z") 'evil-local-mode)
 
 (use-package evil
   :ensure t
@@ -40,25 +40,10 @@
   :commands(evil-core evil-local-mode )
   :defer t
   :init
-  (setq evil-want-integration nil)
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
   (add-hook 'after-init-hook #'evil-mode)
-  ;; (add-hook 'prog-mode-hook #'evil-mode )
-  ;; (add-hook 'prog-mode-hook 'evil-local-mode )
-  ;; (add-hook 'org-mode-hook 'evil-local-mode )
-  ;; (add-hook 'nxml-mode-hook 'evil-local-mode )
   :config
-  (define-key evil-normal-state-map (kbd "go") 'ace-jump-char-mode)
-  ;; (define-key evil-ex-completion-map (kbd "C-a") 'move-beginning-of-line)
-  ;; (define-key evil-ex-completion-map (kbd "C-b") 'backward-char)
-  ;; (define-key evil-ex-completion-map (kbd "M-p") 'previous-complete-history-element)
-  ;; (define-key evil-ex-completion-map (kbd "M-n") 'next-complete-history-element)
-  ;; ;; (define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
-  ;; (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
-  ;; (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
-  ;; (define-key evil-insert-state-map (kbd "C-n") 'next-line)
-  ;; (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
-  ;; (define-key evil-insert-state-map (kbd "C-y") 'yank)
-
   ;; remove all keybindings from insert-state keymap,it is VERY VERY important
   (setcdr evil-insert-state-map nil)
   ;;;把 emacs 模式下的按键绑定到 Insert 模式下
@@ -66,8 +51,6 @@
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
   ;; but [escape] should switch back to normal state
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
-
-
 
   ;;实现代码折叠
   (use-package hideshow
@@ -138,16 +121,6 @@
      )
     )
 
-  ;; (use-package evil-snipe
-  ;;   :ensure t
-  ;;   :diminish evil-snipe-mode evil-snipe-override-mode evil-snipe-local-mode
-  ;;   :init
-  ;;   (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
-  ;;   :config
-  ;;   (evil-snipe-mode +1)
-  ;;   (evil-snipe-override-mode +1)
-  ;;   )
-
   (use-package evil-mc
     :ensure t
     :defer t
@@ -158,7 +131,7 @@
     )
 
   (use-package evil-collection
-    :after evil-mode
+    ;; :after evil-mode
     :ensure t
     ;; :custom (evil-collection-setup-minibuffer t)
     :custom (evil-collection-company-use-tng nil)
@@ -169,16 +142,6 @@
     :config
     (evil-collection-init)
     )
-
-  (use-package evil-smartparens
-    :ensure t
-    :disabled t
-    ;; :after evil-mode
-    :diminish evil-smartparens-mode
-    :init
-    (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
-    )
-
   )
 
 (provide 'init-evil)

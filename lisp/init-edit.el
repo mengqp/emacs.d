@@ -40,8 +40,6 @@
   :diminish aggressive-indent-mode
   :init
   (add-hook 'prog-mode-hook #'aggressive-indent-mode)
-  ;; (add-hook 'c-mode-hook #'aggressive-indent-mode)
-  ;; (add-hook 'c++-mode-hook #'aggressive-indent-mode)
   :config
   (setq aggressive-indent-modes-to-prefer-defun '(emacs-lisp-mode lisp-mode scheme-mode clojure-mode c-mode c++-mode))
   (setq aggressive-indent-dont-electric-modes t)
@@ -51,49 +49,42 @@
    '(and (derived-mode-p 'cc-mode)
 	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
 			     (thing-at-point 'line)))))
-  ;; (add-to-list
-  ;;  'aggressive-indent-dont-indent-if
-  ;;  '(and (derived-mode-p 'c-mode)
-  ;; 	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
-  ;; 			     (thing-at-point 'line)))))
-
-
   )
 
-;; An all-in-one comment command to rule them all
-(use-package comment-dwim-2
-  :ensure t
-  :defer t
-  :bind ([remap comment-dwim] . comment-dwim-2)) ;
+;; ;; An all-in-one comment command to rule them all
+;; (use-package comment-dwim-2
+;;   :ensure t
+;;   :defer t
+;;   :bind ([remap comment-dwim] . comment-dwim-2)) ;
 
-;; Edit multiple regions in the same way simultaneously
-(use-package iedit
-  :ensure t
-  :bind
-  (("C-;" . iedit-mode)
-   ("C-x r RET" . iedit-rectangle-mode)
-   :map isearch-mode-map ("C-;" . iedit-mode-from-isearch)
-   :map esc-map ("C-;" . iedit-execute-last-modification)
-   :map help-map ("C-;" . iedit-mode-toggle-on-function))
-  )
+;; ;; Edit multiple regions in the same way simultaneously
+;; (use-package iedit
+;;   :ensure t
+;;   :bind
+;;   (("C-;" . iedit-mode)
+;;    ("C-x r RET" . iedit-rectangle-mode)
+;;    :map isearch-mode-map ("C-;" . iedit-mode-from-isearch)
+;;    :map esc-map ("C-;" . iedit-execute-last-modification)
+;;    :map help-map ("C-;" . iedit-mode-toggle-on-function))
+;;   )
 
-;; Move to the beginning/end of line or code
-(use-package mwim
-  :ensure t
-  :bind (([remap move-beginning-of-line] . mwim-beginning-of-code-or-line)
-	 ([remap move-end-of-line] . mwim-end-of-code-or-line))
-  )
+;; ;; Move to the beginning/end of line or code
+;; (use-package mwim
+;;   :ensure t
+;;   :bind (([remap move-beginning-of-line] . mwim-beginning-of-code-or-line)
+;; 	 ([remap move-end-of-line] . mwim-end-of-code-or-line))
+;;   )
 
-;; https://github.com/emacs-evil/goto-chg/issues/3
-;; Goto last change
-(use-package goto-chg
-  :ensure t
-  :bind ("C-," . goto-last-change)
-  :preface
-  (defmacro undo-tree-node-p (n)
-    (let ((len (length (undo-tree-make-node nil nil))))
-      `(and (vectorp ,n) (= (length ,n) ,len))))
-  )
+;; ;; https://github.com/emacs-evil/goto-chg/issues/3
+;; ;; Goto last change
+;; (use-package goto-chg
+;;   :ensure t
+;;   :bind ("C-," . goto-last-change)
+;;   :preface
+;;   (defmacro undo-tree-node-p (n)
+;;     (let ((len (length (undo-tree-make-node nil nil))))
+;;       `(and (vectorp ,n) (= (length ,n) ,len))))
+;;   )
 
 (use-package multiple-cursors
   :ensure t
@@ -111,25 +102,16 @@
   :bind ("C-=" . er/expand-region)
   )
 
-(use-package visual-regexp
-  :ensure t
+;; (use-package visual-regexp
+;;   :ensure t
+;;   )
 
-  )
-
-(use-package auto-save
-  :defer 2
-  :config
-  (setq auto-save-delete-trailing-whitespace t)
-  (auto-save-enable)              ;; 开启自动保存功能
-  (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
-  )
-
-(use-package superword-mode
-  :defer t
-  :diminish superword-mode
-  ;; :init
-  ;; (add-hook 'prog-mode-hook #'superword-mode)
-  )
+;; (use-package superword-mode
+;;   :defer t
+;;   :diminish superword-mode
+;;   ;; :init
+;;   ;; (add-hook 'prog-mode-hook #'superword-mode)
+;;   )
 
 (use-package format-all
   :ensure t
@@ -138,31 +120,35 @@
   ;; (add-hook 'prog-mode-hook #'format-all-mode )
   )
 
-(use-package thing-edit
-  :defer t
+;; (use-package thing-edit
+;;   :defer t
+;;   )
 
-
-  )
-
-(use-package anzu
+(use-package hungry-delete
   :ensure t
-  :config
-  (global-anzu-mode t)
-
-  (set-face-attribute 'anzu-mode-line nil
-		      :foreground "yellow" :weight 'bold)
-
-  (custom-set-variables
-   '(anzu-mode-lighter "")
-   '(anzu-deactivate-region t)
-   '(anzu-search-threshold 1000)
-   '(anzu-replace-threshold 50)
-   '(anzu-replace-to-string-separator " => ")
-   )
-
-  (global-set-key [remap query-replace] 'anzu-query-replace)
-  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+  :diminish hungry-delete-mode
+  :hook (after-init . global-hungry-delete-mode)
   )
+
+;; (use-package anzu
+;;   :ensure t
+;;   :config
+;;   (global-anzu-mode t)
+
+;;   (set-face-attribute 'anzu-mode-line nil
+;; 		      :foreground "yellow" :weight 'bold)
+
+;;   (custom-set-variables
+;;    '(anzu-mode-lighter "")
+;;    '(anzu-deactivate-region t)
+;;    '(anzu-search-threshold 1000)
+;;    '(anzu-replace-threshold 50)
+;;    '(anzu-replace-to-string-separator " => ")
+;;    )
+
+;;   (global-set-key [remap query-replace] 'anzu-query-replace)
+;;   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+;;   )
 
 (use-package awesome-pair
   ;; :disabled t
@@ -177,7 +163,7 @@
   (define-key awesome-pair-mode-map (kbd "}") 'awesome-pair-close-curly)
 
   (define-key awesome-pair-mode-map (kbd "%") 'awesome-pair-match-paren)
-  (define-key awesome-pair-mode-map (kbd "\"") 'awesome-pair-double-quote)
+  ;; (define-key awesome-pair-mode-map (kbd "\"") 'awesome-pair-double-quote)
 
   ;; (define-key awesome-pair-mode-map (kbd "M-o") 'awesome-pair-backward-delete)
   ;; (define-key awesome-pair-mode-map (kbd "C-k") 'awesome-pair-kill)
@@ -188,8 +174,8 @@
   (define-key awesome-pair-mode-map (kbd "M-(") 'awesome-pair-wrap-round)
   (define-key awesome-pair-mode-map (kbd "M-)") 'awesome-pair-unwrap)
 
-  (define-key awesome-pair-mode-map (kbd "M-p") 'awesome-pair-jump-left)
-  (define-key awesome-pair-mode-map (kbd "M-n") 'awesome-pair-jump-right)
+  ;; (define-key awesome-pair-mode-map (kbd "M-p") 'awesome-pair-jump-left)
+  ;; (define-key awesome-pair-mode-map (kbd "M-n") 'awesome-pair-jump-right)
   ;; (define-key awesome-pair-mode-map (kbd "M-:") 'awesome-pair-jump-out-pair-and-newline)
 
   )
@@ -200,26 +186,26 @@
   )
 
 
-(use-package crux
-  :ensure t
-  :defer t
-  :bind
-  (
-   ("C-k" . crux-smart-kill-line)
-   ("S-<return>" . crux-smart-open-line-above)
-   ("M-RET" . crux-smart-open-line)
-   ;; ("C-c d" . crux-duplicate-current-line-or-region)
-   ("C-M-z" . crux-indent-defun)
-   ("C-^" . crux-top-join-line)
-   )
-  :chords
-  (
-   ;; ("JJ" . crux-switch-to-previous-buffer)
-   ;; ("dd" . crux-kill-whole-line)
-   ;; ("cl" . crux-duplicate-current-line-or-region)
-   ;; ("cd" . crux-duplicate-and-comment-current-line-or-region)
-   )
-  )
+;; (use-package crux
+;;   :ensure t
+;;   :defer t
+;;   :bind
+;;   (
+;;    ("C-k" . crux-smart-kill-line)
+;;    ("S-<return>" . crux-smart-open-line-above)
+;;    ("M-RET" . crux-smart-open-line)
+;;    ;; ("C-c d" . crux-duplicate-current-line-or-region)
+;;    ("C-M-z" . crux-indent-defun)
+;;    ("C-^" . crux-top-join-line)
+;;    )
+;;   :chords
+;;   (
+;;    ;; ("JJ" . crux-switch-to-previous-buffer)
+;;    ;; ("dd" . crux-kill-whole-line)
+;;    ;; ("cl" . crux-duplicate-current-line-or-region)
+;;    ;; ("cd" . crux-duplicate-and-comment-current-line-or-region)
+;;    )
+;;   )
 
 
 ;; (use-package key-chord
@@ -233,15 +219,15 @@
 
 ;;   )
 
-(use-package electric-operator
-  :ensure t
-  :commands  (electric-operator electric-operator-mode )
-  :defer t
-  :hook (prog-mode. electric-operator-mode)
-  :config
-  (electric-operator-add-rules-for-mode 'lisp-mode
-					(cons "-" nil))
-  )
+;; (use-package electric-operator
+;;   :ensure t
+;;   :commands  (electric-operator electric-operator-mode )
+;;   :defer t
+;;   :hook (prog-mode. electric-operator-mode)
+;;   :config
+;;   (electric-operator-add-rules-for-mode 'lisp-mode
+;; 					(cons "-" nil))
+;;   )
 
 (use-package symbol-overlay
   :ensure t

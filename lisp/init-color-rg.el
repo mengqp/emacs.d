@@ -41,9 +41,6 @@
   :commands ( color-rg color-rg-search-project-with-type )
   :config
   (evil-set-initial-state 'color-rg-mode 'emacs)
-  ;; :defer t
-
-
   )
 
 
