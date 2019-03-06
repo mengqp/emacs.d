@@ -49,21 +49,6 @@
 (advice-add #'package-initialize :after #'add-subdirs-to-load-path)
 
 (update-load-path)
-
-;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
-;; (defun add-subdirs-to-load-path (dir)
-;;   "Recursive add directories to `load-path'."
-;;   (let ((default-directory (file-name-as-directory dir)))
-;;     (add-to-list 'load-path dir)
-;;     (normal-top-level-add-subdirs-to-load-path)))
-
-;; (add-subdirs-to-load-path "~/.emacs.d/site-lisp/")
-
-;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
-
-(defconst *linux* (eq system-type 'gnu/linux) )
-(defconst *win64* (eq system-type 'windows-nt) )
-
 (package-initialize)
 
 
@@ -75,12 +60,9 @@
 ;; Which means on every .el and .elc file loaded during start up, it has to runs those regexps against the filename.
 (let ((file-name-handler-alist nil))
 
-;;; package here
-  ;; (try-require 'init-autoload)
-
+  (require 'init-const)
   (require 'cl)
   (require 'init-package)
-  ;; (require 'init-elget)
   (require 'init-autoload)
 
   ;;ui
