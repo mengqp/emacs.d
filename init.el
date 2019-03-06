@@ -130,7 +130,7 @@
     ;; (require 'init-lsp-ccls)
     ;; (require 'init-lsp-cquery)
     (require 'init-ycmd)
-    (require 'init-gdb)
+    ;; (require 'init-gdb)
     )
   (require 'init-cscope)
 

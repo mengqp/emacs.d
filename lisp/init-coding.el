@@ -40,7 +40,7 @@
   (prefer-coding-system 'cp936)
   ;;(prefer-coding-system 'gb18030)
 					;(prefer-coding-system 'utf-16le-with-signature)
-  (prefer-coding-system 'utf-16)
+  (prefer-coding-system 'utf-8)
   ;; 新建文件使用 utf-8-unix 方式
   ;; 如果不写下面两句，只写
   ;; (prefer-coding-system 'utf-8)

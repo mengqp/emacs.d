@@ -61,6 +61,11 @@
   ;; 	scroll-conservatively 100000
   ;; 	scroll-preserve-screen-position 1)
   (pixel-scroll-mode t)
+  ;;当前行高亮
+  (global-hl-line-mode 1)
+  ;;指针不要闪
+  (blink-cursor-mode -1)
+
   )
 
 ;; 设置相对行号
@@ -75,16 +80,12 @@
 ;;   (setq display-line-numbers-current-absolute t)
 ;;   )
 
-;;当前行高亮
-(global-hl-line-mode 1)
 ;; (set-face-background 'hl-line "#3e4446")
 
 ;; 设置透明
 ;; (set-frame-parameter (selected-frame) 'alpha '(80 . 100))
 ;; (add-to-list 'default-frame-alist '(alpha . (80 . 100)))
 
-;;指针不要闪
-(blink-cursor-mode -1)
 
 ;;80 列
 ;; (use-package fill-column-indicator
@@ -124,6 +125,10 @@
 ;; (when *win64*
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
 ;;   )
+
+(use-package symbol-overlay
+  :ensure t
+  :defer t)
 
 
 

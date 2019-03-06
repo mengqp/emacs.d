@@ -127,6 +127,13 @@ If FILEXT is provided, return files with extension FILEXT instead."
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
  )
 
+(use-package toc-org
+  :defer t
+  :ensure t
+  :init
+  (add-hook 'org-mode-hook 'toc-org-mode)
+)
+
 
 (use-package org
   :ensure t

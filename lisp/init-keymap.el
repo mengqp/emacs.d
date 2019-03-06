@@ -263,8 +263,10 @@
     "fr" 'recover-this-file
 
     "h" '(:ignore t :wk ("h" . "help"))
-    "h." 'highlight-symbol-at-point
-    "hu" 'unhighlight-regexp
+    ;; "h." 'highlight-symbol-at-point
+    ;; "hu" 'unhighlight-regexp
+    "h." 'symbol-overlay-put
+    "hu" 'symbol-overlay-remove-all
 
     "i" '(:ignore t :wk ("i" . "insert"))
     "it" '(:ignore t :wk ("t" . "table"))
