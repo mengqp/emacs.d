@@ -242,6 +242,21 @@
   (electric-operator-add-rules-for-mode 'lisp-mode
 					(cons "-" nil))
   )
+
+(use-package symbol-overlay
+  :ensure t
+  :defer t)
+
+(use-package column-enforce-mode
+  :ensure t
+  :defer t
+  :diminish column-enforce-mode
+  :init
+  (add-hook 'cc-mode-hook 'column-enforce-mode)
+  :config
+  (setq column-enforce-column 81)
+)
+
 ;; (use-package insert-translated-name
 ;;   ;; :defer t
 ;;   ;; :init

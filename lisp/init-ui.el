@@ -57,78 +57,23 @@
   ;; 关闭 Tooltip
   (tooltip-mode t)
   ;; 平滑滚动
-  ;; (setq scroll-margin 0
-  ;; 	scroll-conservatively 100000
-  ;; 	scroll-preserve-screen-position 1)
   (pixel-scroll-mode t)
   ;;当前行高亮
   (global-hl-line-mode 1)
   ;;指针不要闪
   (blink-cursor-mode -1)
-
   )
 
-;; 设置相对行号
-;; (use-package display-line-numbers
-;;   :ensure nil
-;;   :init
-;;   (add-hook 'prog-mode-hook #'display-line-numbers-mode)
-;;   :config
-;;   ;; config built-in "display-line-number-mode" (require Emacs >= 26)
-;;   (setq-default display-line-numbers-width 2)
-;;   (setq-default display-line-numbers-type 'relative)
-;;   (setq display-line-numbers-current-absolute t)
-;;   )
-
-;; (set-face-background 'hl-line "#3e4446")
-
-;; 设置透明
-;; (set-frame-parameter (selected-frame) 'alpha '(80 . 100))
-;; (add-to-list 'default-frame-alist '(alpha . (80 . 100)))
-
-
-;;80 列
-;; (use-package fill-column-indicator
-;;   :ensure t
-;;   ;; :defer t
-;;   :init
-;;   (add-hook 'prog-mode-hook 'fci-mode)
-;;   (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
-;;   (setq fci-rule-column 80)
-;;   (setq fci-rule-width 3)
-;;   (setq fci-rule-color "darkblue")
-;;   )
-
-(use-package column-enforce-mode
-  :ensure t
-  :defer t
-  :diminish column-enforce-mode
-  :init
-  ;; (add-hook 'prog-mode-hook 'column-enforce-mode)
-  (add-hook 'cc-mode-hook 'column-enforce-mode)
-  :config
-  (setq column-enforce-column 81)
-  ;; ;; By default column-enforce-mode will mark comments that exceed the limit. You can allow long comments in your code with:
-  ;; (setq column-enforce-comments nil)
-)
 
 (when *linux*
   (set-frame-parameter nil 'fullscreen
 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth))
-  ;; (defun fullscreen ()
-  ;;   "Fullscreen."
-  ;;   ;; (interactive)
-  ;;   (set-frame-parameter               nil              'fullscreen
-  ;; 			 (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
-  ;; (fullscreen)
   )
+
 ;; (when *win64*
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
 ;;   )
 
-(use-package symbol-overlay
-  :ensure t
-  :defer t)
 
 
 
