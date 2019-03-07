@@ -106,8 +106,8 @@
   (require 'init-keymap)
 
   (when *linux*
-    ;; (require 'init-lsp)
-    (require 'init-ycmd)
+    (require 'init-lsp)
+    ;; (require 'init-ycmd)
     ;; (require 'init-gdb)
     )
   (require 'init-cscope)
