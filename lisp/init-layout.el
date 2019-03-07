@@ -35,9 +35,9 @@
 (use-package eyebrowse
   :ensure t
   :defer t
-  ;; :after evil
-  :config
-  (eyebrowse-mode t)
+  :hook (after-init . eyebrowse-mode)
+  ;; :config
+  ;; (eyebrowse-mode t)
   ;; (eyebrowse-setup-opinionated-keys)
 
   )

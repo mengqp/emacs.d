@@ -161,9 +161,9 @@
   (define-key awesome-pair-mode-map (kbd ")") 'awesome-pair-close-round)
   (define-key awesome-pair-mode-map (kbd "]") 'awesome-pair-close-bracket)
   (define-key awesome-pair-mode-map (kbd "}") 'awesome-pair-close-curly)
+  (define-key awesome-pair-mode-map (kbd "\"") 'awesome-pair-double-quote)
 
   (define-key awesome-pair-mode-map (kbd "%") 'awesome-pair-match-paren)
-  ;; (define-key awesome-pair-mode-map (kbd "\"") 'awesome-pair-double-quote)
 
   ;; (define-key awesome-pair-mode-map (kbd "M-o") 'awesome-pair-backward-delete)
   ;; (define-key awesome-pair-mode-map (kbd "C-k") 'awesome-pair-kill)
