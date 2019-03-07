@@ -43,3 +43,6 @@
 	path = site-lisp/liberime
 	url = https://gitlab.com/liberime/liberime.git
 	ignore=untracked
+[submodule "site-lisp/yasnippet-snippets"]
+	path = site-lisp/yasnippet-snippets
+	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
