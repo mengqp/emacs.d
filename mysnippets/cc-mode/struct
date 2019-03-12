@@ -1,8 +1,0 @@
-#name : struct ... { ... }
-# key: struct
-# --
-/* $2 */
-struct ${1:name}
-{
-    $0
-};

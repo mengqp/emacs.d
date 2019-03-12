@@ -37,6 +37,7 @@
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 ;;; c 和 c++
 (use-package flycheck
+  ;; :disabled t
   :ensure t
   :commands (flycheck flycheck-display-error-messages-unless-error-list)
   :commands (flycheck flycheck-list-errors)

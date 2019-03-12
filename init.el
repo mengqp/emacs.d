@@ -79,6 +79,7 @@
     (require 'init-layout)
     (require 'init-color-rg)
 
+    (require 'init-evil)
     ;; (require 'init-dap)
     )
 
@@ -86,7 +87,6 @@
   ;; (require 'init-calendar)
   ;; (require 'init-hungry-delete)
   ;; (require 'init-smartparens)
-  (require 'init-evil)
   (require 'init-company)
   (require 'init-window)
   (require 'init-projectile)
@@ -110,7 +110,7 @@
     ;; (require 'init-ycmd)
     ;; (require 'init-gdb)
     )
-  (require 'init-cscope)
+  ;; (require 'init-cscope)
 
   ;;
   (require 'init-plantuml)

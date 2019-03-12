@@ -77,12 +77,12 @@
 ;;   (ace-pinyin-global-mode t)
 ;;   )
 
-;; (use-package evil-avy
-;;   :ensure t
-;;   :after avy
-;;   :config
-;;   (evil-avy-mode t)
-;; )
+(use-package evil-avy
+  :ensure t
+  :after avy
+  :config
+  (evil-avy-mode t)
+)
 
 
 ;; ;; (require 'ace-jump-mode)

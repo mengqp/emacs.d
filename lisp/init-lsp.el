@@ -34,6 +34,7 @@
 ;;; Code:
 
 (use-package lsp-mode
+  ;; :disabled t
   ;; :load-path "~/.emacs.d/site-lisp/lsp-mode/"
   :defer t
   :diminish lsp-mode
@@ -46,6 +47,7 @@
   (setq lsp-message-project-root-warning t)
   (setq create-lockfiles nil)
   (setq lsp-prefer-flymake nil)
+  (flymake-mode-off)
 
   (use-package company-lsp
     :config
@@ -54,10 +56,38 @@
     )
 
   (use-package lsp-ui
+    :custom-face
+    (lsp-ui-doc-background ((t (:background nil))))
+    (lsp-ui-doc-header ((t (:inherit (font-lock-string-face italic)))))
     :init
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+    (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
+     (setq lsp-ui-doc-enable t
+           lsp-ui-doc-header t
+           lsp-ui-doc-include-signature t
+           lsp-ui-doc-position 'top
+           ;; lsp-ui-doc-use-webkit t
+           lsp-ui-doc-border (face-foreground 'default)
+
+           lsp-ui-sideline-enable t
+           lsp-ui-sideline-ignore-duplicate t
+           lsp-ui-sideline-show-diagnostics nil
+           lsp-ui-sideline-show-symbol t
+           lsp-ui-sideline-show-hover t
+	   lsp-ui-sideline-show-code-actions t
+	   lsp-ui-sideline-delay 0.5
+
+	   lsp-ui-imenu-enable nil
+	   lsp-ui-imenu-kind-position 'left
+	   )
+
     :config
-    (setq lsp-ui-sideline-enable nil)
+
+    (require 'imenu)
+    ;; (setq lsp-ui-sideline-enable nil)
+    ;; (lsp-ui-imenu-enable nil)
+    ;; (setq lsp-ui-imenu-enable nil)
+    ;; (setq lsp-ui-imenu nil)
     (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
     (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
 
@@ -76,7 +106,7 @@
 ;;   ;; (add-to-list 'eglot-server-programs
 ;;   ;; 	       '((c++ mode c-mode) . (eglot-cquery "ccls")))
 ;;   :config
-;;   (add-to-list 'eglot-server-programs '((c++ mode c-mode) . (eglot-cquery "ccls")))
+;;   (add-to-list 'eglot-server-programs '((c++-mode c-mode) . (eglot-cquery "ccls")))
 ;;   (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
 
 ;;   )
