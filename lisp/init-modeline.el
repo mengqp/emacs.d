@@ -53,8 +53,8 @@
 (use-package doom-modeline
   :ensure t
   :defer t
-  :hook (after-init . doom-modeline-init)
-  :config
+  :hook (after-init . doom-modeline-mode)
+  :init
   ;; How tall the mode-line should be (only respected in GUI Emacs).
   (setq doom-modeline-height 10)
 

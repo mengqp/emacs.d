@@ -133,6 +133,7 @@
   (use-package evil-collection
     ;; :after evil-mode
     :ensure t
+    :disabled t
     ;; :custom (evil-collection-setup-minibuffer t)
     :custom (evil-collection-company-use-tng nil)
     ;; :custom (evil-collection-outline-bind-tab-p nil)

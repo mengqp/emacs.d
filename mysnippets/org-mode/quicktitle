@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: author
+# key: <qt
+# --
+
+#+TITLE: $1
+#+STYLE: <link rel="stylesheet" type="text/css" href="" />
+#+OPTIONS: ^:nil
+#+AUTHOR: mengqp
+
+* Table of Contents                                         :TOC_4_org:noexport:
+
+$0

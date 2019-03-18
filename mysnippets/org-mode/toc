@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: author
+# key: <toc
+# --
+* Table of Contents                                         :TOC_4_org:noexport:
