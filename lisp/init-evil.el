@@ -143,6 +143,14 @@
     :config
     (evil-collection-init)
     )
+
+  (use-package evil-avy
+    :ensure t
+    :after avy
+    :config
+    (evil-avy-mode t)
+    )
+
   )
 
 (provide 'init-evil)

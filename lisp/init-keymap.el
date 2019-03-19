@@ -301,7 +301,7 @@
 
     "w" '(:ignore t :wk ("w" . "evilw"))
     "ww" 'save-buffer
-    "wq" 'evil-save-and-close
+    ;; "wq" 'evil-save-and-close
 
     "y" '(:ignore t :wk ("y" . "yasnippet"))
     "yy" 'ivy-yasnippet

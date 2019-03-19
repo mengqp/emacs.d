@@ -107,13 +107,14 @@
 
   (when *linux*
     (require 'init-lsp)
+
+    (require 'init-plantuml)
     ;; (require 'init-ycmd)
     ;; (require 'init-gdb)
     )
   ;; (require 'init-cscope)
 
   ;;
-  (require 'init-plantuml)
   ;; (require 'init-realgud)
   (require 'init-cc)
   ;; (require 'init-lisp)
