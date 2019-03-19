@@ -15,9 +15,9 @@
   :ensure t
   :defer 5
 
-  ;; :bind (("C-x g" . magit-status)
-  ;;        ("C-x M-g" . magit-dispatch-popup)
-  ;; 	 ("C-c M-g" . magit-file-popup))
+  :bind (("C-x g" . magit-status)
+         ("C-x M-g" . magit-dispatch-popup)
+  	 ("C-c g" . magit-file-dispatch ))
   :config
   ;; (use-package evil-magit
   ;;   :ensure t)

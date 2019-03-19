@@ -116,8 +116,8 @@
     "ac" 'calc
 
     "b" '(:ignore t :wk ("b" . "buffers"))
-    "bb" 'ivy-switch-buffer
-    "bd" 'kill-buffer
+    ;; "bb" 'ivy-switch-buffer
+    ;; "bd" 'kill-buffer
     ;; "bs" 'mengqp/switch-scratch-buf
 
     "c" '(:ignore t :wk ("c" . "compile"))
@@ -133,24 +133,24 @@
     ;; "ea" 'shell
 
     "f" '(:ignore t :wk ("f" . "files"))
-    "ff" 'counsel-find-file  ;;
-    "f." 'find-file-at-point
-    "fr" 'counsel-recentf  ;;
+    ;; "ff" 'counsel-find-file  ;;
+    ;; "f." 'find-file-at-point
+    ;; "fr" 'counsel-recentf  ;;
     "fdi" 'mengqp/open-init-file
     "fdp" 'mengqp/open-init-package-file
     "fdk" 'mengqp/open-init-keymap-file
 
     "g" '(:ignore t :wk ("g" . "git"))
-    "gst" 'magit-status
-    "gbl" 'magit-blame
-    "gbb" 'magit-branch-checkout
-    "gcc" 'magit-file-checkout
-    "gbd" 'magit-branch-delete
-    "gf" 'magit-gitflow-popup
-    "glb" 'magit-log-buffer-file
-    "gll" 'magit-log-all
-    "gm" 'magit-merge-plain
-    "gp" 'git-push-coding-request
+    ;; "gst" 'magit-status
+    ;; "gbl" 'magit-blame
+    ;; "gbb" 'magit-branch-checkout
+    ;; "gcc" 'magit-file-checkout
+    ;; "gbd" 'magit-branch-delete
+    ;; "gf" 'magit-gitflow-popup
+    ;; "glb" 'magit-log-buffer-file
+    ;; "gll" 'magit-log-all
+    ;; "gm" 'magit-merge-plain
+    ;; "gp" 'git-push-coding-request
     "gt" 'git-timemachine
 
     "h" '(:ignore t :wk ("h" . "help"))
@@ -183,9 +183,9 @@
     "o" '(:ignore t :wk ("o" . "org"))
     "oo" 'org-capture
     "oa" 'org-agenda
-    "op" 'org-pomodoro
-    "omp" 'org-mobile-push
-    "omg" 'org-mobile-pull
+    ;; "op" 'org-pomodoro
+    ;; "omp" 'org-mobile-push
+    ;; "omg" 'org-mobile-pull
     "oc" 'cfw:open-org-calendar
 
     "p" '(:ignore t :wk ("p" . "project"))
