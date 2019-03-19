@@ -69,8 +69,8 @@
   (require 'init-base)
   (require 'init-edit)
   (require 'init-coding)
-  (require 'init-cnfonts)
   (when *linux*
+    (require 'init-cnfonts)
     (require 'init-modeline)
     (require 'init-theme)
     (require 'init-pyim)
