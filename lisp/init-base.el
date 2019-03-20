@@ -51,10 +51,6 @@
   )
 
 (progn
-  ;; auto insert closing bracket
-  (when *win64*
-    (electric-pair-mode 1)
-    )
   ;;显示括号匹配
   (show-paren-mode t)
   ;; show cursor position within line

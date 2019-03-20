@@ -189,16 +189,16 @@
     "oc" 'cfw:open-org-calendar
 
     "p" '(:ignore t :wk ("p" . "project"))
-    "pd" 'counsel-projectile-find-dir
-    "pb" 'counsel-projectile-switch-to-buffer
-    "pp" 'projectile-switch-project
+    ;; "pd" 'counsel-projectile-find-dir
+    ;; "pb" 'counsel-projectile-switch-to-buffer
+    ;; "pp" 'projectile-switch-project
     "pa" 'counsel-projectile-ag
     "pr" 'counsel-projectile-rg
     "pfi" 'mengqp/org-projectile-find-issue
     "pft" 'mengqp/org-projectile-find-todo
 
     "q" '(:ignore t :wk ("q" . "quit"))
-    "qq" 'save-buffers-kill-emacs
+    ;; "qq" 'save-buffers-kill-emacs
     "qr" 'restart-emacs
 
     "sp" 'color-rg-search-project-with-type
@@ -208,12 +208,12 @@
     "sds" 'color-rg-search-symbol
 
     "w" '(:ignore t :wk ("w" . "window"))
-    "ws" 'split-window-vertically
-    "wv" 'split-window-horizontally
-    "ww" 'switch-window
-    "wd" 'delete-window
-    "wo" 'delete-other-windows
-    "wq" 'quit-window
+    ;; "ws" 'split-window-vertically
+    ;; "wv" 'split-window-horizontally
+    ;; "ww" 'switch-window
+    ;; "wd" 'delete-window
+    ;; "wo" 'delete-other-windows
+    ;; "wq" 'quit-window
 
 
     ;; "/" 'color-rg-search-project
@@ -239,27 +239,27 @@
 
     "b" '(:ignore t :wk ("b" . "buffer"))
     "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
-    "bs" 'save-buffer
+    ;; "bs" 'save-buffer
     "bwt" 'delete-trailing-whitespace
     "bwc" 'whitespace-cleanup
     "bwv" 'whitespace-mode
 
     "c" '(:ignore t :wk ("c" . "coding"))
     "c2" '(:ignore t :wk ("2" . "convert"))
-    "cd" 'describe-current-coding-system
-    "cc" 'set-buffer-file-coding-system
-    "cr" 'revert-buffer-with-coding-system
+    ;; "cd" 'describe-current-coding-system
+    ;; "cc" 'set-buffer-file-coding-system
+    ;; "cr" 'revert-buffer-with-coding-system
     "c2d" 'unix2dos
     "c2u" 'dos2unix
     "cf" 'clang-format-buffer
 
-    "e" '(:ignore t :wk ("e" . "edit"))
-    "es" 'init-sp-menu/body
-    "et" 'init-te-menu/body
+    ;; "e" '(:ignore t :wk ("e" . "edit"))
+    ;; "es" 'init-sp-menu/body
+    ;; "et" 'init-te-menu/body
 
     "f" '(:ignore t :wk ("f" . "file&func"))
-    "fb" 'beginning-of-defun
-    "fe" 'end-of-defun
+    ;; "fb" 'beginning-of-defun
+    ;; "fe" 'end-of-defun
     "fr" 'recover-this-file
 
     "h" '(:ignore t :wk ("h" . "help"))
@@ -278,7 +278,7 @@
     "jj" 'avy-goto-line
     ;; "jc" 'ace-jump-char-mode
     "jw" 'avy-goto-char-2
-    "jl" 'avy-goto-line
+    ;; "jl" 'avy-goto-line
 
     "l" '(:ignore t :wk ("l" . "line"))
     "ll" 'display-line-numbers-mode
@@ -290,7 +290,7 @@
     "sc" 'shell-command
     "sd" 'sudo-edit
     "sj" 'counsel-imenu
-    "ss" 'swiper
+    ;; "ss" 'swiper
     "sS" 'ivy-resume
     "sr" 'vr/replace
 
@@ -300,7 +300,7 @@
     "te" 'toggle-company-english-helper
 
     "w" '(:ignore t :wk ("w" . "evilw"))
-    "ww" 'save-buffer
+    ;; "ww" 'save-buffer
     ;; "wq" 'evil-save-and-close
 
     "y" '(:ignore t :wk ("y" . "yasnippet"))
@@ -315,19 +315,19 @@
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
   ;; 本文件 侧重一些模块功能
-  (general-define-key
-   :keymaps '(normal visual)
-   :prefix "]"
-   ;; "p"  'sp-down-sexp
-   "b" 'switch-to-next-buffer
-   )
+  ;; (general-define-key
+  ;;  :keymaps '(normal visual)
+  ;;  :prefix "]"
+  ;;  ;; "p"  'sp-down-sexp
+  ;;  "b" 'switch-to-next-buffer
+  ;;  )
 
-  (general-define-key
-   :keymaps '(normal visual)
-   :prefix "["
-   ;; "p"  'sp-up-sexp
-   "b" 'switch-to-prev-buffer
-   )
+  ;; (general-define-key
+  ;;  :keymaps '(normal visual)
+  ;;  :prefix "["
+  ;;  ;; "p"  'sp-up-sexp
+  ;;  "b" 'switch-to-prev-buffer
+  ;;  )
 
   )
 
