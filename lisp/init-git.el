@@ -13,7 +13,7 @@
 
 (use-package magit
   :ensure t
-  :defer 5
+  :defer t
 
   :bind (("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup)

@@ -36,7 +36,10 @@
 
 (use-package yasnippet
   :ensure t
-  :defer 5
+  :defer t
+  :bind
+  ( "M-j" . 'yas-expand)
+
   :commands (yasnippet yas-reload-all)
   :commands (yasnippet yas-expand)
   :commands (yasnippet yas-next-field)
@@ -50,12 +53,12 @@
   (setq yas-snippet-dirs
 	'("~/.emacs.d/mysnippets"))
   (progn
-    (add-hook 'org-mode-hook #'yas-minor-mode)
-    (add-hook 'shell-script-mode #'yas-minor-mode)
+    ;; (add-hook 'org-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'shell-script-mode #'yas-minor-mode)
     ;; (add-hook 'c-mode-hook #'yas-minor-mode)
     ;; (add-hook 'c++-mode-hook #'yas-minor-mode)
-    (add-hook 'git-commit-mode-hook #'yas-minor-mode)
-    (add-hook 'prog-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'git-commit-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'prog-mode-hook #'yas-minor-mode)
     ;; (add-hook 'lisp-mode-hook #'yas-minor-mode)
     ;; (add-hook 'emacs-lisp-mode-hook #'yas-minor-mode)
 
@@ -63,28 +66,16 @@
 
 
   :config
+  (yas-minor-mode)
   ;; (add-to-list 'company-backends 'company-yasnippet)
   ;; (message "yasnippet")
   (yas-reload-all)
   (setq yas-prompt-functions '(yas-completing-prompt))
-  (general-define-key
-   :keymap '(yas-minor-mode-map)
-   "M-j" 'yas-expand
-   )
+
   (use-package ivy-yasnippet
     :ensure t
     :defer t
-    ;; :config
-    ;; (set ivy-yasnippet-expand-keys 'nil)
     )
-
-
-  ;; (use-package helm-c-yasnippet
-  ;;   :ensure t
-  ;;   :defer t
-  ;;   :init
-  ;;   (setq helm-yas-space-match-any-greedy t)
-  ;;   )
 
   ;; (defun check-expansion ()
   ;;   (save-excursion
