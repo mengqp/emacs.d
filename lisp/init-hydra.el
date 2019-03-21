@@ -32,170 +32,211 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+;; (use-package thing-edit
+;;   ;; :defer t
+;;   ;; :init
+;;   ;; (global-set-key (kbd "your-keys") peng-thing-edit-map)
+;;   ;; :config
+;;   )
 
 (use-package hydra
   :defer t
   :ensure t
-;;   :config
-;;   (defhydra hydra-zoom (global-map "<f2>")
-;;     "zoom"
-;;     ("g" text-scale-increase "in")
-;;     ("l" text-scale-decrease "out"))
-;; ;; ;;; -*- lexical-binding: t; -*-
-;;   (defhydra hydra-f1 (:color teal
-;; 			     :hint nil)
-;;     "
-;;    _l_: locate  _p_: ivy-push-view    _o_: org          _h_: hs
-;;    _a_: ag      _P_: ivy-pop-view     _y_: yasnippet
-;;    _z_: fzf     _r_: rg               _c_: flycheck
-;;    _g_: git     _i_: imenu            _F_: recentf
-;;   "
-;;     ("b" ivy-switch-buffer)
-;;     ("B" goto-ibuffer)
-;;     ("f" counsel-find-file)
-;;     ("F" counsel-recentf)
-;;     ("l" counsel-locate)
-;;     ("a" counsel-ag)
-;;     ("z" counsel-fzf)
-;;     ("i" counsel-imenu)
-;;     ("g" counsel-git)
-;;     ("o" hydra-org/body)
-;;     ("p" ivy-push-view)
-;;     ("P" ivy-pop-view)
-;;     ("y" company-yasnippet)
-;;     ("H" (hs-minor-mode -1))
-;;     ("h" (progn
-;; 	   (hs-minor-mode)
-;; 	   (hs-toggle-hiding)
-;; 	   (hydra-esc/body)))
-;;     ("r" counsel-rg)
-;;     ("c" flycheck-list-errors)
-;;     ("d" dired-jump)
-;;     ("<escape>" hydra-esc/body)
-;;     ("<f1>" nil)
-;;     ("M-<SPC>" nil))
+  :config
+  ;; (defhydra hydra-thing-edit ()
+  ;;   "thing-edit"
+  ;;   ("w"  thing-copy-word "Copy Word")
+  ;;   ("s"  thing-copy-symbol "Copy Symbol")
+  ;;   ("f"  thing-copy-filename "Copy Filename")
+  ;;   ("x"  thing-copy-sexp "Copy Sexp")
+  ;;   ("g"  thing-copy-page "Copy Page")
+  ;;   ("t"  thing-copy-sentence "Copy Sentence")
+  ;;   ("o"  thing-copy-whitespace "Copy Whitespace")
+  ;;   ("i"  thing-copy-list "Copy List")
+  ;;   ("c"  thing-copy-comment "Copy Comment")
+  ;;   ("h"  thing-copy-defun "Copy Function")
+  ;;   ("p"  thing-copy-parentheses "Copy Parentheses")
+  ;;   ("l"  thing-copy-line "Copy Line")
+  ;;   ("a"  thing-copy-to-line-beginning "Copy To Line Begin")
+  ;;   ("e"  thing-copy-to-line-end "Copy To Line End")
+  ;;   ;; Cut
+  ;;   ("W"  thing-cut-word "Cut Word")
+  ;;   ("S"  thing-cut-symbol "Cut Symbol")
+  ;;   ("F"  thing-cut-filename "Cut Filename")
+  ;;   ("X"  thing-cut-sexp "Cut Sexp")
+  ;;   ("G"  thing-cut-page "Cut Page")
+  ;;   ("T"  thing-cut-sentence "Cut Sentence")
+  ;;   ("O"  thing-cut-whitespace "Cut Whitespace")
+  ;;   ("I"  thing-cut-list "Cut List")
+  ;;   ("C"  thing-cut-comment "Cut Comment")
+  ;;   ("H"  thing-cut-defun "Cut Function")
+  ;;   ("P"  thing-cut-parentheses "Cut Parentheses")
+  ;;   ("L"  thing-cut-line "Cut Line")
+  ;;   ("A"  thing-cut-to-line-beginning "Cut To Line Begin")
+  ;;   ("E"  thing-cut-to-line-end "Cut To Line End")
+  ;;   )
+  ;; (global-set-key (kbd "M-H") #'hydra-thing-edit/body)
+
+  ;;   :config
+  ;;   (defhydra hydra-zoom (global-map "<f2>")
+  ;;     "zoom"
+  ;;     ("g" text-scale-increase "in")
+  ;;     ("l" text-scale-decrease "out"))
+  ;; ;; ;;; -*- lexical-binding: t; -*-
+  ;;   (defhydra hydra-f1 (:color teal
+  ;; 			     :hint nil)
+  ;;     "
+  ;;    _l_: locate  _p_: ivy-push-view    _o_: org          _h_: hs
+  ;;    _a_: ag      _P_: ivy-pop-view     _y_: yasnippet
+  ;;    _z_: fzf     _r_: rg               _c_: flycheck
+  ;;    _g_: git     _i_: imenu            _F_: recentf
+  ;;   "
+  ;;     ("b" ivy-switch-buffer)
+  ;;     ("B" goto-ibuffer)
+  ;;     ("f" counsel-find-file)
+  ;;     ("F" counsel-recentf)
+  ;;     ("l" counsel-locate)
+  ;;     ("a" counsel-ag)
+  ;;     ("z" counsel-fzf)
+  ;;     ("i" counsel-imenu)
+  ;;     ("g" counsel-git)
+  ;;     ("o" hydra-org/body)
+  ;;     ("p" ivy-push-view)
+  ;;     ("P" ivy-pop-view)
+  ;;     ("y" company-yasnippet)
+  ;;     ("H" (hs-minor-mode -1))
+  ;;     ("h" (progn
+  ;; 	   (hs-minor-mode)
+  ;; 	   (hs-toggle-hiding)
+  ;; 	   (hydra-esc/body)))
+  ;;     ("r" counsel-rg)
+  ;;     ("c" flycheck-list-errors)
+  ;;     ("d" dired-jump)
+  ;;     ("<escape>" hydra-esc/body)
+  ;;     ("<f1>" nil)
+  ;;     ("M-<SPC>" nil))
 
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;   (defhydra hydra-org (:color pink
-;; 			      :hint nil)
-;;     "
-;; 			  Org
-;;    -------------------------------------------------------------
-;;    ^Move^          Title^               ^Time^            ^Operator^
-;;    _p_: 不分级别    _<left>_: 子树降级     _s_: scheduled    _m_: mark
-;;    _n_: 不分级别    _<right>_:子树升级     _t_: state        _q_: tag
-;;    _f_: 同一级别    _<up>_:   子树上移     _d_: deadline
-;;    _b_: 同一级别    _<down>_: 子树下移     _i_: 开始计时
-;;    _U_: 上一级别    _*_:      设为标题     _o_: 停止计时
-;;    _O_: 大纲预览    _/_:      搜索大纲     _._: 时间戳
-;;  "
-;;     ("j" next-line)
-;;     ("k" previous-line)
-;;     ("h" backward-char)
-;;     ("l" forward-char)
-;;     ("u" undo)
-;;     ("I" beginning-of-line :exit t)
-;;     ("a" forward-char :exit t)
-;;     ("A" end-of-line :exit t)
-;;     ("c" (emacs-ckm "c") :exit t)
-;;     ("y" (emacs-ckm "m") :exit t)
-;;     ("r" hydra-emacs/r/body :exit t)
-;;     ("R" hydra-emacs/R/body :exit t)
-;;     (";" eval-last-sexp)
-;;     ("p" org-previous-visible-heading)
-;;     ("n" org-next-visible-heading)
-;;     ("f" org-forward-heading-same-level)
-;;     ("b" org-backward-heading-same-level)
-;;     ("U" outline-up-heading)
-;;     ("O" org-goto)
-;;     ("<left>"  org-shiftmetaleft)
-;;     ("<right>" org-shiftmetaright)
-;;     ("<up>"    org-shiftmetaup)
-;;     ("<down>" org-shiftmetadown)
-;;     ("*" org-ctrl-c-star)
-;;     ("/" org-sparse-tree)
-;;     ("s" org-schedule)
-;;     ("d" org-deadline)
-;;     ("t" org-todo)
-;;     ("i" org-clock-in)
-;;     ("o" org-clock-out)
-;;     ("." org-time-stamp)
-;;     ("m" org-ctrl-c-ctrl-c)
-;;     ("q" org-set-tags-command)
-;;     ("<escape>" hydra-esc/body :exit t))
+  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;   (defhydra hydra-org (:color pink
+  ;; 			      :hint nil)
+  ;;     "
+  ;; 			  Org
+  ;;    -------------------------------------------------------------
+  ;;    ^Move^          Title^               ^Time^            ^Operator^
+  ;;    _p_: 不分级别    _<left>_: 子树降级     _s_: scheduled    _m_: mark
+  ;;    _n_: 不分级别    _<right>_:子树升级     _t_: state        _q_: tag
+  ;;    _f_: 同一级别    _<up>_:   子树上移     _d_: deadline
+  ;;    _b_: 同一级别    _<down>_: 子树下移     _i_: 开始计时
+  ;;    _U_: 上一级别    _*_:      设为标题     _o_: 停止计时
+  ;;    _O_: 大纲预览    _/_:      搜索大纲     _._: 时间戳
+  ;;  "
+  ;;     ("j" next-line)
+  ;;     ("k" previous-line)
+  ;;     ("h" backward-char)
+  ;;     ("l" forward-char)
+  ;;     ("u" undo)
+  ;;     ("I" beginning-of-line :exit t)
+  ;;     ("a" forward-char :exit t)
+  ;;     ("A" end-of-line :exit t)
+  ;;     ("c" (emacs-ckm "c") :exit t)
+  ;;     ("y" (emacs-ckm "m") :exit t)
+  ;;     ("r" hydra-emacs/r/body :exit t)
+  ;;     ("R" hydra-emacs/R/body :exit t)
+  ;;     (";" eval-last-sexp)
+  ;;     ("p" org-previous-visible-heading)
+  ;;     ("n" org-next-visible-heading)
+  ;;     ("f" org-forward-heading-same-level)
+  ;;     ("b" org-backward-heading-same-level)
+  ;;     ("U" outline-up-heading)
+  ;;     ("O" org-goto)
+  ;;     ("<left>"  org-shiftmetaleft)
+  ;;     ("<right>" org-shiftmetaright)
+  ;;     ("<up>"    org-shiftmetaup)
+  ;;     ("<down>" org-shiftmetadown)
+  ;;     ("*" org-ctrl-c-star)
+  ;;     ("/" org-sparse-tree)
+  ;;     ("s" org-schedule)
+  ;;     ("d" org-deadline)
+  ;;     ("t" org-todo)
+  ;;     ("i" org-clock-in)
+  ;;     ("o" org-clock-out)
+  ;;     ("." org-time-stamp)
+  ;;     ("m" org-ctrl-c-ctrl-c)
+  ;;     ("q" org-set-tags-command)
+  ;;     ("<escape>" hydra-esc/body :exit t))
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;   ;; Info
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;   (defhydra hydra-info (:color red
-;; 			       :hint nil)
-;;     "
-;;   _]_ forward  (next logical node)       _l_ast (←)                 _u_p (↑)                           _f_ollow reference
-;;   _[_ backward (prev logical node)       _r_eturn (→)               _m_enu (↓) (C-u for new window)    _d_irectory
-;;   _n_ext (same level only)               _H_istory                  _g_oto (C-u for new window)        _a_propos
-;;   _p_rev (same level only)               _b_eginning of buffer      _e_nd of buffer                    _s_earch (_S_ case sensitive)
-;;   _i_dex item                            _,_ next index item        virtual _I_ndex
-;;  "
-;;     ("]"   Info-forward-node)
-;;     ("["   Info-backward-node)
-;;     ("n"   Info-next)
-;;     ("p"   Info-prev)
-;;     ("s"   Info-search)
-;;     ("S"   Info-search-case-sensitively)
+  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;   ;; Info
+  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;   (defhydra hydra-info (:color red
+  ;; 			       :hint nil)
+  ;;     "
+  ;;   _]_ forward  (next logical node)       _l_ast (←)                 _u_p (↑)                           _f_ollow reference
+  ;;   _[_ backward (prev logical node)       _r_eturn (→)               _m_enu (↓) (C-u for new window)    _d_irectory
+  ;;   _n_ext (same level only)               _H_istory                  _g_oto (C-u for new window)        _a_propos
+  ;;   _p_rev (same level only)               _b_eginning of buffer      _e_nd of buffer                    _s_earch (_S_ case sensitive)
+  ;;   _i_dex item                            _,_ next index item        virtual _I_ndex
+  ;;  "
+  ;;     ("]"   Info-forward-node)
+  ;;     ("["   Info-backward-node)
+  ;;     ("n"   Info-next)
+  ;;     ("p"   Info-prev)
+  ;;     ("s"   Info-search)
+  ;;     ("S"   Info-search-case-sensitively)
 
-;;     ("l"   Info-history-back)
-;;     ("r"   Info-history-forward)
-;;     ("H"   Info-history)
+  ;;     ("l"   Info-history-back)
+  ;;     ("r"   Info-history-forward)
+  ;;     ("H"   Info-history)
 
-;;     ("u"   Info-up)
-;;     ("m"   Info-menu)
-;;     ("g"   Info-goto-node)
-;;     ("b"   beginning-of-buffer)
-;;     ("e"   end-of-buffer)
+  ;;     ("u"   Info-up)
+  ;;     ("m"   Info-menu)
+  ;;     ("g"   Info-goto-node)
+  ;;     ("b"   beginning-of-buffer)
+  ;;     ("e"   end-of-buffer)
 
-;;     ("f"   Info-follow-reference)
-;;     ("i"   Info-index)
-;;     (","   Info-index-next)
-;;     ("I"   Info-virtual-index)
+  ;;     ("f"   Info-follow-reference)
+  ;;     ("i"   Info-index)
+  ;;     (","   Info-index-next)
+  ;;     ("I"   Info-virtual-index)
 
-;;     ("d"   Info-directory)
-;;     ("a"   info-apropos)
+  ;;     ("d"   Info-directory)
+  ;;     ("a"   info-apropos)
 
-;;     ("?"   Info-summary "Info summary")
-;;     ("h"   Info-help "Info help")
-;;     ("q"   Info-exit "Info exit")
-;;     ("C-g" nil "cancel" :color blue))
+  ;;     ("?"   Info-summary "Info summary")
+  ;;     ("h"   Info-help "Info help")
+  ;;     ("q"   Info-exit "Info exit")
+  ;;     ("C-g" nil "cancel" :color blue))
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;   ;; hydra-esc
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;   (defun goto-ibuffer ()
-;;     "打开并跳转到 Ibuffer"
-;;     (interactive)
-;;     (progn
-;;       (ibuffer-list-buffers)
-;;       (while (not (string-equal "*Ibuffer*" (buffer-name)))
-;; 	(other-window 1))))
+  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;   ;; hydra-esc
+  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;   (defun goto-ibuffer ()
+  ;;     "打开并跳转到 Ibuffer"
+  ;;     (interactive)
+  ;;     (progn
+  ;;       (ibuffer-list-buffers)
+  ;;       (while (not (string-equal "*Ibuffer*" (buffer-name)))
+  ;; 	(other-window 1))))
 
-;;   (defun lzl-look-forward-char (arg char)
-;;     "查找字符"
-;;     (interactive "*p\ncZap: ")
-;;     (setq search-forward-char char)
-;;     (search-forward
-;;      (char-to-string char) nil nil arg))
+  ;;   (defun lzl-look-forward-char (arg char)
+  ;;     "查找字符"
+  ;;     (interactive "*p\ncZap: ")
+  ;;     (setq search-forward-char char)
+  ;;     (search-forward
+  ;;      (char-to-string char) nil nil arg))
 
-;;   (defun lzl-emacs-get (lzl-move lzl-arg2)
-;;     "删除或者保存 region 中的数据"
-;;     (setq emacs-ckm-point (point))
-;;     (if (string-match lzl-arg2 "<p")
-;; 	(end-of-line))
-;;     (if (string-match lzl-arg2 ">nckm")
-;; 	(beginning-of-line))
-;;     (funcall lzl-kill-or-save (point)
-;; 	     (progn
-;; 	       (call-interactively lzl-move)
-;; 	       (point)))
+  ;;   (defun lzl-emacs-get (lzl-move lzl-arg2)
+  ;;     "删除或者保存 region 中的数据"
+  ;;     (setq emacs-ckm-point (point))
+  ;;     (if (string-match lzl-arg2 "<p")
+  ;; 	(end-of-line))
+  ;;     (if (string-match lzl-arg2 ">nckm")
+  ;; 	(beginning-of-line))
+  ;;     (funcall lzl-kill-or-save (point)
+  ;; 	     (progn
+  ;; 	       (call-interactively lzl-move)
+  ;; 	       (point)))
 ;;     (let ((num (prefix-numeric-value current-prefix-arg)))
 ;;       (if (<= num 0)
 ;; 	  (setq num (- 1 num)))

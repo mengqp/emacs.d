@@ -75,15 +75,15 @@
     (require 'init-theme)
     (require 'init-pyim)
     ;; (require 'init-abbrev)
-    (require 'init-hydra)
+    ;; (require 'init-hydra)
     (require 'init-layout)
     (require 'init-color-rg)
 
-    (require 'init-evil)
     ;; (require 'init-dap)
     )
 
   ;;tool
+  (require 'init-evil)
   ;; (require 'init-calendar)
   ;; (require 'init-hungry-delete)
   ;; (require 'init-smartparens)
