@@ -34,6 +34,8 @@
 ;;; Code:
 (require 'package)
 
+(package-initialize)
+
 ;; Set it to `t' to use safer HTTPS to download packages
 (defvar melpa-use-https-repo nil
   "By default, HTTP is used to download packages.
