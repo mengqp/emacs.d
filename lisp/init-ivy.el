@@ -77,7 +77,7 @@
    ("C-c c w" . counsel-colors-web)
    ("C-c c z" . counsel-fzf)
    )
-   
+
   :init
   ;; Integration with `projectile'
   (with-eval-after-load 'projectile
@@ -136,7 +136,7 @@
 ;;   )
 
 (use-package ivy-posframe
-  :disabled t
+  ;; :disabled t
   :ensure t
   :after ivy
   :init

@@ -25,7 +25,9 @@
   (use-package liberime
     :load-path "/root/.emacs.d/site-lisp/liberime/build/liberime.so"
     :config
-    (liberime-start "/usr/share/rime-data" "/root/.emacs.d/rime/") ;
+    (liberime-start (expand-file-name "/usr/share/rime-data")
+		    (expand-file-name "~/.emacs.d/rime"))
+    ;; (liberime-start "/usr/share/rime-data" "/root/.emacs.d/rime/") ;
     (liberime-select-schema "wubi86")
 
     )

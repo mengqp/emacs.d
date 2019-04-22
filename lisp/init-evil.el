@@ -130,19 +130,19 @@
     (global-evil-mc-mode 1)
     )
 
-  (use-package evil-collection
-    ;; :after evil-mode
-    :ensure t
-    :disabled t
-    ;; :custom (evil-collection-setup-minibuffer t)
-    :custom (evil-collection-company-use-tng nil)
-    ;; :custom (evil-collection-outline-bind-tab-p nil)
-    ;; :custom (evil-collection-term-sync-state-and-mode-p nil)
-    ;; :custom (evil-collection-setup-debugger-keys nil)
-    ;; :init
-    :config
-    (evil-collection-init)
-    )
+  ;; (use-package evil-collection
+  ;;   ;; :after evil-mode
+  ;;   :ensure t
+  ;;   :disabled t
+  ;;   ;; :custom (evil-collection-setup-minibuffer t)
+  ;;   :custom (evil-collection-company-use-tng nil)
+  ;;   ;; :custom (evil-collection-outline-bind-tab-p nil)
+  ;;   ;; :custom (evil-collection-term-sync-state-and-mode-p nil)
+  ;;   ;; :custom (evil-collection-setup-debugger-keys nil)
+  ;;   ;; :init
+  ;;   :config
+  ;;   (evil-collection-init)
+  ;;   )
 
   (use-package evil-avy
     :ensure t

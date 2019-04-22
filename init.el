@@ -77,6 +77,7 @@
     ;; (require 'init-hydra)
     (require 'init-layout)
     (require 'init-color-rg)
+    (require 'init-spell)
 
     ;; (require 'init-dap)
     )
@@ -85,7 +86,7 @@
   (require 'init-evil)
   ;; (require 'init-calendar)
   ;; (require 'init-hungry-delete)
-  ;; (require 'init-smartparens)
+  (require 'init-smartparens)
   (require 'init-company)
   (require 'init-window)
   (require 'init-projectile)
@@ -93,7 +94,7 @@
   (require 'init-flycheck)
   (require 'init-ace-jump)
   (require 'init-git)
-  ;; (require 'init-cmake)
+  (require 'init-cmake)
   ;; (require 'init-popwin)
   ;; 去掉中文的输入，如果有必要，直接使用
   ;; (require 'init-tree)

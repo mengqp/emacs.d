@@ -128,7 +128,7 @@
 
 
   ;; auto insert closing bracket
-  (electric-pair-mode 1)
+  ;; (electric-pair-mode 1)
   (use-package awesome-pair
     :disabled t
     :init

@@ -43,6 +43,8 @@
   ;; :after general-override-mode
   :diminish which-key-mode
   :config
+
+
   (which-key-mode)
 
   (which-key-setup-side-window-bottom)
@@ -61,6 +63,13 @@
   ;; :commands (init-keymap nvmap)
   ;; :after evil
   :config
+
+  (use-package which-key-posframe
+    :ensure t
+    :config
+    (which-key-posframe-mode)
+    ;; (setq which-key-posframe-poshandler 'posframe-poshandler-window-bottom-left-corner)
+    )
   ;; (general-evil-setup t)
   (general-create-definer moon--default-leader
     :states '(normal visual )
@@ -77,7 +86,7 @@
     :prefix ",")
 
   (general-create-definer moon-local-leader
-    :prefix "M-m"
+    :prefix "M-,"
     :keymaps 'override)
 
   (defmacro moon-default-leader (&rest args)
@@ -253,6 +262,9 @@
     "c2u" 'dos2unix
     "cf" 'clang-format-buffer
 
+    "dd" 'avy-zap-to-char-dwim
+    "dD" 'avy-zap-up-to-char-dwim
+
     ;; "e" '(:ignore t :wk ("e" . "edit"))
     ;; "es" 'init-sp-menu/body
     ;; "et" 'init-te-menu/body
@@ -287,6 +299,7 @@
 
 
     "s" '(:ignore t :wk ("s" . "search&shell&sudo"))
+    "sp" 'init-sp-menu/body
     "sc" 'shell-command
     "sd" 'sudo-edit
     "sj" 'counsel-imenu
