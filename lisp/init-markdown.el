@@ -1,4 +1,4 @@
-;;; init-plantuml.el --- xxx -*- coding: utf-8-unix -*-
+;;; init-markdown.el --- xxx -*- coding: utf-8-unix -*-
 
 ;;; Copyright © 2018 - 2018 mengqp.
 
@@ -32,35 +32,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(use-package plantuml-mode
-  :commands (org-src org-src-lang-modes)
-  :commands (plantuml-mode org-src-lang-modes)
+(use-package markdown-mode
   :ensure t
   :defer t
-  :init
-  ;; Enable plantuml-mode for PlantUML files
-  (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
-
-  :config
-
-  (setq plantuml-jar-path "~/nutdata/linux/app/plantuml.jar")
-  (add-to-list
-   'org-src-lang-modes '("plantuml" . plantuml))
-
-  ;; active Org-babel languages
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '(;; other Babel languages
-     (plantuml . t)))
-
-  (setq org-plantuml-jar-path
-	(expand-file-name "~/nutdata/linux/app/plantuml.jar"))
-
-  )
-
-
-
-
-(provide 'init-plantuml)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+(provide 'init-markdown)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-plantuml.el ends here
+;;; init-abbrev.el ends here

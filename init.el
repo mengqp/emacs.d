@@ -122,6 +122,7 @@
   ;; (require 'init-python)
   (require 'init-css)
   ;; (require 'init-tex)
+  (require 'init-markdown)
   (when *win64*
     (require 'init-ahk)
     )

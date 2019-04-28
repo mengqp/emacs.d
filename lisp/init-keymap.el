@@ -65,6 +65,7 @@
   :config
 
   (use-package which-key-posframe
+    :disabled t
     :ensure t
     :config
     (which-key-posframe-mode)

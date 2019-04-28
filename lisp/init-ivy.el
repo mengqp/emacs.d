@@ -136,7 +136,7 @@
 ;;   )
 
 (use-package ivy-posframe
-  ;; :disabled t
+  :disabled t
   :ensure t
   :after ivy
   :init

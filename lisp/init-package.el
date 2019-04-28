@@ -82,6 +82,13 @@ But you may use safer HTTPS instead.")
 ;; (use-package use-package-chords
 ;;   :ensure t
 ;;   :config (key-chord-mode 1))
+(use-package dash-functional
+  :ensure t)
+(use-package ht
+  :ensure t)
+(use-package spinner
+  :ensure t)
+
 
 (provide 'init-package)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -46,3 +46,4 @@
 [submodule "site-lisp/yasnippet-snippets"]
 	path = site-lisp/yasnippet-snippets
 	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
+	ignore=untracked
