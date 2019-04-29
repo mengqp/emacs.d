@@ -43,7 +43,7 @@
 
   :config
 
-  (setq plantuml-jar-path "~/nutdata/linux/app/plantuml.jar")
+  (setq plantuml-jar-path "~/nutdata/linux/DotFiles/app/plantuml.jar")
   (add-to-list
    'org-src-lang-modes '("plantuml" . plantuml))
 
@@ -54,7 +54,7 @@
      (plantuml . t)))
 
   (setq org-plantuml-jar-path
-	(expand-file-name "~/nutdata/linux/app/plantuml.jar"))
+	(expand-file-name "~/nutdata/linux/DotFiles/app/plantuml.jar"))
 
   )
 

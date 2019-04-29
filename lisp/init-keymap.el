@@ -261,7 +261,8 @@
     ;; "cr" 'revert-buffer-with-coding-system
     "c2d" 'unix2dos
     "c2u" 'dos2unix
-    "cf" 'clang-format-buffer
+    ;; "cf" 'clang-format-buffer
+    "cf" 'format-all-buffer
 
     "dd" 'avy-zap-to-char-dwim
     "dD" 'avy-zap-up-to-char-dwim
