@@ -39,7 +39,6 @@
   :defer t
   :bind
   ( "M-j" . 'yas-expand)
-
   :commands (yasnippet yas-reload-all)
   :commands (yasnippet yas-expand)
   :commands (yasnippet yas-next-field)
@@ -51,9 +50,11 @@
   :diminish yas-minor-mode
   :init
   (setq yas-snippet-dirs
-	'("~/.emacs.d/mysnippets"))
+	'("~/.emacs.d/mysnippets"
+	  "~/.emacs.d/site-lisp/yasnippet-snippets/snippets"
+	  ))
   (progn
-    ;; (add-hook 'org-mode-hook #'yas-minor-mode)
+    (add-hook 'org-mode-hook #'yas-minor-mode)
     ;; (add-hook 'shell-script-mode #'yas-minor-mode)
     ;; (add-hook 'c-mode-hook #'yas-minor-mode)
     ;; (add-hook 'c++-mode-hook #'yas-minor-mode)

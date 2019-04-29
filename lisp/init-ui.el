@@ -64,6 +64,11 @@
   (blink-cursor-mode -1)
   )
 
+;; (set-frame-parameter nil 'alpha '(50 . 100))
+;; (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+;; (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+(set-frame-parameter nil 'alpha '(80 . 100))
+
 
 (when *linux*
   (set-frame-parameter nil 'fullscreen
