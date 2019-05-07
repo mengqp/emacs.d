@@ -19,9 +19,6 @@
 	 ("C-x M-g" . magit-dispatch-popup)
 	 ("C-c g" . magit-file-dispatch ))
   :config
-  ((magit-file-dispatch
-    (magit-file-rename . 1)
-    (magit-file-checkout . 1)))
   ;; (use-package evil-magit
   ;;   :ensure t)
 

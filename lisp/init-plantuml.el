@@ -44,8 +44,8 @@
   :config
 
   (setq plantuml-jar-path "~/nutdata/linux/DotFiles/app/plantuml.jar")
-  (add-to-list
-   'org-src-lang-modes '("plantuml" . plantuml))
+  ;; (add-to-list
+  ;;  'org-src-lang-modes '("plantuml" . plantuml))
 
   ;; active Org-babel languages
   (org-babel-do-load-languages
@@ -53,10 +53,17 @@
    '(;; other Babel languages
      (plantuml . t)))
 
-  (setq org-plantuml-jar-path
-	(expand-file-name "~/nutdata/linux/DotFiles/app/plantuml.jar"))
+  (setq org-plantuml-jar-path plantuml-jar-path)
+	;; (expand-file-name "~/nutdata/linux/DotFiles/app/plantuml.jar"))
+
+  (use-package flycheck-plantuml
+    :disabled t
+    :ensure t
+    :config
+    (flycheck-plantuml-setup))
 
   )
+
 
 
 
