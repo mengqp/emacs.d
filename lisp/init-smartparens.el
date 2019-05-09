@@ -34,7 +34,7 @@
 ;;; Code:
 (use-package smartparens
   :ensure t
-  :defer t
+  ;; :defer t
   :bind
   (:map smartparens-mode-map
    ("C-M-a" . sp-beginning-of-sexp)

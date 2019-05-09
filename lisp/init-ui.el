@@ -66,10 +66,10 @@
 
 (set-frame-parameter nil 'alpha '(85 . 100))
 
-(when *linux*
-  (set-frame-parameter nil 'fullscreen
-		       (if (frame-parameter nil 'fullscreen) nil 'fullboth))
-  )
+;; (when *linux*
+;;   (set-frame-parameter nil 'fullscreen
+;; 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth))
+;;   )
 
 ;; (when *win64*
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
