@@ -35,7 +35,6 @@
 (require 'package)
 
 (package-initialize)
-
 ;; Set it to `t' to use safer HTTPS to download packages
 (defvar melpa-use-https-repo nil
   "By default, HTTP is used to download packages.
@@ -47,13 +46,17 @@ But you may use safer HTTPS instead.")
                          ;; ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
                          ;;  ("org-cn"   . "https://elpa.zilongshanren.com/org/")
                          ;; ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
-                         ("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+                         ;; ("melpa-stable-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
+                         ("melpa-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+                         ;; ("gnu-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ;; ("org-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+                         ;; ("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
                          ("org-cn"   . "http://elpa.emacs-china.org/org/")
                          ("gnu-cn" . "http://elpa.emacs-china.org/gnu/")
                          ;; ("melpa" . "https://melpa.org/packages/")
                          ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ))
-
+;; (package-initialize)
 
 
 ;; On-demand installation of packages

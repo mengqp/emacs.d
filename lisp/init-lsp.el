@@ -122,7 +122,7 @@
   ;; :init
   ;; (add-hook 'c-mode-common-hook (lambda () (require 'ccls) (lsp)))
   :config
-
+  ;; (setq ccls-args '("--log-file=/tmp/ccls-test.out" "-v=3"))
   (setq projectile-require-project-root t)
   (setq ccls-executable "/usr/bin/ccls")
 
