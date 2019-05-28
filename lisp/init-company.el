@@ -49,7 +49,7 @@
    ("C-p" . company-select-previous)
    ("C-n" . company-select-next)
    ("<tab>" . company-complete-common-or-cycle)
-     ;; ("C-c C-y" . my-company-yasnippet)
+   ;; ("C-c C-y" . my-company-yasnippet)
    :map company-search-map
    ("C-p" . company-select-previous)
    ("C-n" . company-select-next))
@@ -91,6 +91,18 @@
 	    ))
 
     )
+
+  (use-package eldoc-box
+    :disabled t
+    :ensure t
+    ;; :hook lsp-mode . eldoc-box-hover-mode
+    )
+
+  ;; With use-package:
+  (use-package company-box
+    :ensure t
+    :disabled t
+    :hook (company-mode . company-box-mode))
 
   (use-package company-english-helper
     :ensure nil

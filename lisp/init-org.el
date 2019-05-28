@@ -357,6 +357,17 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
   )
 
+(use-package deft
+  :ensure t
+  :defer t
+  :config
+  (setq deft-extensions '("txt" "org"))
+  (setq deft-directory "~/nutdata/myorg/")
+  (setq deft-recursive t)
+  (setq deft-use-filename-as-title t)
+  (setq deft-text-mode 'org-mode)
+  (setq deft-auto-save-interval 0)
+  )
 
 (provide 'init-org)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

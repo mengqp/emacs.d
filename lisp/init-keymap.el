@@ -193,6 +193,7 @@
     "o" '(:ignore t :wk ("o" . "org"))
     "oo" 'org-capture
     "oa" 'org-agenda
+    "od" 'deft
     ;; "op" 'org-pomodoro
     ;; "omp" 'org-mobile-push
     ;; "omg" 'org-mobile-pull

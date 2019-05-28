@@ -2,10 +2,6 @@
 	path = site-lisp/company-english-helper
 	url = https://github.com/manateelazycat/company-english-helper.git
 	ignore=untracked
-[submodule "ccls"]
-	path = site-lisp/ccls
-	url = https://github.com/MaskRay/emacs-ccls.git
-	ignore=untracked
 [submodule "site-lisp/lsp-mode"]
 	path = site-lisp/lsp-mode
 	url = https://github.com/emacs-lsp/lsp-mode.git
@@ -46,4 +42,8 @@
 [submodule "site-lisp/yasnippet-snippets"]
 	path = site-lisp/yasnippet-snippets
 	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
+	ignore=untracked
+[submodule "site-lisp/ccls"]
+	path = site-lisp/ccls
+	url = https://github.com/MaskRay/emacs-ccls.git
 	ignore=untracked
