@@ -93,10 +93,12 @@
 ;; 自动何存
 (use-package auto-save
   :defer 2
+  ;; :disabled t
   :config
   (setq auto-save-delete-trailing-whitespace t)
   (auto-save-enable)              ;; 开启自动保存功能
   (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
+  (setq auto-save-idle 10)
   )
 
 (use-package recentf
@@ -167,7 +169,7 @@
 (use-package exec-path-from-shell
   :ensure t
   :defer t;
-  :disabled t
+  ;; :disabled t
   :config
   (setq exec-path-from-shell-check-startup-files nil)
   (dolist (var '("SSH_AUTH_SOCK" "SSH_AGENT_PID" "GPG_AGENT_INFO" "LANG" "LC_CTYPE"))

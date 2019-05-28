@@ -60,9 +60,9 @@ If FILEXT is provided, return files with extension FILEXT instead."
 (defun mengqp/org-projectile-find (name)
   "Find project org as NAME."
   (setq org-root-files
-    (sa-find-org-file-recursively
-     (concat (projectile-project-root) "01docs/org") "org")
-    )
+	(sa-find-org-file-recursively
+	 (concat (projectile-project-root) "01docs/org") "org")
+	)
   (setq org-files-num 0)
   (while (< org-files-num (length org-root-files))
     (setq file-name (nth org-files-num org-root-files))
@@ -125,14 +125,14 @@ If FILEXT is provided, return files with extension FILEXT instead."
   :ensure t
   :init
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
- )
+  )
 
 (use-package toc-org
   :defer t
   :ensure t
   :init
   (add-hook 'org-mode-hook 'toc-org-mode)
-)
+  )
 
 
 (use-package org
@@ -172,6 +172,14 @@ If FILEXT is provided, return files with extension FILEXT instead."
     (setq org-agenda-files org-agenda-text-search-extra-files)
     )
 
+  (defun org-journal-find-location ()
+    ;; Open today's journal, but specify a non-nil prefix argument in order to
+    ;; inhibit inserting the heading; org-capture will insert the heading.
+    (org-journal-new-entry t)
+    ;; Position point on the journal's top-level heading so that org-capture
+    ;; will add the new entry as a child entry.
+    (goto-char (point-min)))
+
   (defconst org-capture-templates
     '(
       ("j" "Journal 日常工作记录" entry (file+datetree "~/nutdata/myorg/general/journal.org")
@@ -186,6 +194,8 @@ If FILEXT is provided, return files with extension FILEXT instead."
        "* %? \n \nEntered on %U\n %i\n ")
       ("s" "Summarize 总结" entry (file+headline "~/nutdata/myorg/general/summarize.org" "summarize")
        "*  %? \n %i\n ")
+      ("d" "diary entry" entry (function org-journal-find-location)
+       "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")
       ))
 
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
@@ -361,12 +371,59 @@ If FILEXT is provided, return files with extension FILEXT instead."
   :ensure t
   :defer t
   :config
-  (setq deft-extensions '("txt" "org"))
+  (setq deft-extensions '("txt" "org" "gpg"))
   (setq deft-directory "~/nutdata/myorg/")
   (setq deft-recursive t)
   (setq deft-use-filename-as-title t)
   (setq deft-text-mode 'org-mode)
   (setq deft-auto-save-interval 0)
+  )
+
+(use-package org-journal
+  :ensure t
+  :defer t
+  :config
+  (use-package org-crypt
+    :ensure nil
+    :config
+    (setq org-tags-exclude-from-inheritance (quote ("crypt")))
+    ;; (setq org-crypt-disable-auto-save t)
+    ;; (setq org-crypt-key "205F6507DAA68D5C9AB039DCB6DE3DCE59268D36")
+
+    )
+
+  ;; (org-crypt-use-before-save-magic)
+  (require 'epa-file)
+  (setq epa-file-enable t
+	epa-file-encrypt-to "meng_qingpu@126.com"
+  	epa-file-select-keys nil
+  	;; epa-file-cache-passphrase-for-symmetric-encryption t
+	)
+
+  (setq auto-mode-alist (cons '("\\.org.gpg$" . org-journal-mode) auto-mode-alist))
+  (setq org-journal-file-type 'monthly
+	;; org-journal-file-format "%Y-%m-%d.org"
+	org-journal-file-format "%Y-%m.org"
+	org-journal-dir "~/nutdata/myorg/diary"
+	org-journal-date-format "%A, %d %B %Y"
+	org-journal-enable-encryption t
+	org-journal-encrypt-journal t
+	org-journal-encrypt-on 'kill-buffer-hook
+	)
+  ;; When =org-journal-file-pattern= has the default value, this would be the regex.
+  (setq org-agenda-file-regexp "\\`\\\([^.].*\\.org\\\|[0-9]\\\{8\\\}\\\(\\.gpg\\\)?\\\)\\'")
+  (add-to-list 'org-agenda-files org-journal-dir)
+
+  (defun org-journal-save-entry-and-exit()
+    "Simple convenience function.
+  Saves the buffer of the current day's entry and kills the window
+  Similar to org-capture like behavior"
+    (interactive)
+    (save-buffer)
+    (kill-buffer-and-window))
+  (define-key org-journal-mode-map (kbd "C-x C-s") 'org-journal-save-entry-and-exit)
+
+
   )
 
 (provide 'init-org)
