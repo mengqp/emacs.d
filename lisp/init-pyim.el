@@ -6,7 +6,7 @@
 (use-package pyim
   :ensure t
   :commands (pyim pyim-restart-1)
-  :bind
+  :bind*
   (("M-i" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
    ;; ("C-;" . pyim-delete-word-from-personal-buffer))
    ;; ("C-;" . pyim-convert-code-at-point )
