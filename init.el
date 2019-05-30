@@ -74,7 +74,7 @@
     (require 'init-theme)
     (require 'init-pyim)
     ;; (require 'init-abbrev)
-    ;; (require 'init-hydra)
+    (require 'init-hydra)
     (require 'init-layout)
     (require 'init-color-rg)
     (require 'init-spell)

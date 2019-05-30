@@ -40,8 +40,8 @@
 ;;   )
 
 (use-package hydra
-  :defer t
   :ensure t
+  :defer t
   :config
   ;; (defhydra hydra-thing-edit ()
   ;;   "thing-edit"
