@@ -206,8 +206,8 @@
     ;; "pp" 'projectile-switch-project
     "pa" 'counsel-projectile-ag
     "pr" 'counsel-projectile-rg
-    "pfi" 'mengqp/org-projectile-find-issue
-    "pft" 'mengqp/org-projectile-find-todo
+    ;; "pfi" 'mengqp/org-projectile-find-issue
+    ;; "pft" 'mengqp/org-projectile-find-todo
 
     "q" '(:ignore t :wk ("q" . "quit"))
     ;; "qq" 'save-buffers-kill-emacs

@@ -35,6 +35,21 @@
 
 ;; recursively find .org files in provided directory
 ;; modified from an Emacs Lisp Intro example
+(setq-default mengqp-org-dir "~/nutdata/myorg/")
+(setq-default mengqp-org-mobile-dic "~/nutdata/org/")
+(when *win64*
+  (setq-default mengqp-org-dir "E:/Nutstore/myorg/")
+  (setq-default mengqp-org-mobile-dic "E:/Nutstore/org/")
+  )
+(setq-default mengqp-org-journal-file (concat mengqp-org-dir "/general/journal.org") )
+(setq-default mengqp-org-gtd-file (concat mengqp-org-dir "/general/gtd.org") )
+(setq-default mengqp-org-meet-file (concat mengqp-org-dir "/general/meet.org") )
+(setq-default mengqp-org-memo-file (concat mengqp-org-dir "/general/memo.org") )
+(setq-default mengqp-org-idea-file (concat mengqp-org-dir "/general/idea.org") )
+(setq-default mengqp-org-summarize-file (concat mengqp-org-dir "/general/summarize.org"))
+(setq-default mengqp-org-diary-dir (concat mengqp-org-dir "diary/"))
+(setq-default mengqp-org-mobile-index-file (concat mengqp-org-mobile-dic "index.org"))
+
 (defun sa-find-org-file-recursively (&optional directory filext)
   "Return .org and .org_archive files recursively from DIRECTORY.
 If FILEXT is provided, return files with extension FILEXT instead."
@@ -56,41 +71,41 @@ If FILEXT is provided, return files with extension FILEXT instead."
 			  org-file-list) ; add files found to result
 	  (add-to-list 'org-file-list org-file)))))))
 
-(autoload 'projectile-project-root "projectile" "" t)
-(defun mengqp/org-projectile-find (name)
-  "Find project org as NAME."
-  (setq org-root-files
-	(sa-find-org-file-recursively
-	 (concat (projectile-project-root) "01docs/org") "org")
-	)
-  (setq org-files-num 0)
-  (while (< org-files-num (length org-root-files))
-    (setq file-name (nth org-files-num org-root-files))
-    (if (string-match name file-name)
-	(progn
-	  (print file-name)
-	  (find-file file-name)
-	  )
-      )
+;; (autoload 'projectile-project-root "projectile" "" t)
+;; (defun mengqp/org-projectile-find (name)
+;;   "Find project org as NAME."
+;;   (setq org-root-files
+;; 	(sa-find-org-file-recursively
+;; 	 (concat (projectile-project-root) "01docs/org") "org")
+;; 	)
+;;   (setq org-files-num 0)
+;;   (while (< org-files-num (length org-root-files))
+;;     (setq file-name (nth org-files-num org-root-files))
+;;     (if (string-match name file-name)
+;; 	(progn
+;; 	  (print file-name)
+;; 	  (find-file file-name)
+;; 	  )
+;;       )
 
-    (setq org-files-num (+ org-files-num 1))
-    )
-  )
+;;     (setq org-files-num (+ org-files-num 1))
+;;     )
+;;   )
 
 
-;;;###autoload (autoload 'evil-mode "evil" nil t)
-(defun mengqp/org-projectile-find-issue ()
-  "Find issue."
-  (interactive)
-  (mengqp/org-projectile-find "issue")
-  )
+;; ;;;###autoload (autoload 'evil-mode "evil" nil t)
+;; (defun mengqp/org-projectile-find-issue ()
+;;   "Find issue."
+;;   (interactive)
+;;   (mengqp/org-projectile-find "issue")
+;;   )
 
-;;;###autoload (autoload 'evil-mode "evil" nil t)
-(defun mengqp/org-projectile-find-todo ()
-  "Find todo."
-  (interactive)
-  (mengqp/org-projectile-find "todo")
-  )
+;; ;;;###autoload (autoload 'evil-mode "evil" nil t)
+;; (defun mengqp/org-projectile-find-todo ()
+;;   "Find todo."
+;;   (interactive)
+;;   (mengqp/org-projectile-find "todo")
+;;   )
 
 (use-package htmlize
   :ensure t
@@ -141,36 +156,24 @@ If FILEXT is provided, return files with extension FILEXT instead."
   :init
   :bind
   (
-   ("C-c o a" . org-agenda )
-   ("C-c o o" . org-capture)
+   ;; ("C-c o a" . org-agenda )
+   ;; ("C-c o o" . org-capture)
    :map org-mode-map
    ("C-c T" . mengqp/evil-org-insert-todo-at-end )
-   ("C-c ." . org-time-stamp )
-
+   ;; ("C-c ." . org-time-stamp )
    )
   :config
 
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
   ;; 设置 agent 文件表
-  (when *linux*
-    (setq org-agenda-text-search-extra-files
-	  (append
-	   (sa-find-org-file-recursively "~/nutdata/myorg/" "org")
-	   ))
+  (setq org-agenda-text-search-extra-files
+	(append
+	 (sa-find-org-file-recursively mengqp-org-dir "org")
+	 ))
 
-    (setq org-agenda-files org-agenda-text-search-extra-files)
-    )
+  (setq org-agenda-files org-agenda-text-search-extra-files)
 
-
-  (when *win64*
-    (setq org-agenda-text-search-extra-files
-	  (append
-	   (sa-find-org-file-recursively "E:/Nutstore/myorg/" "org")
-	   ))
-
-    (setq org-agenda-files org-agenda-text-search-extra-files)
-    )
 
   (defun org-journal-find-location ()
     ;; Open today's journal, but specify a non-nil prefix argument in order to
@@ -182,17 +185,18 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
   (defconst org-capture-templates
     '(
-      ("j" "Journal 日常工作记录" entry (file+datetree "~/nutdata/myorg/general/journal.org")
+      ("j" "Journal 日常工作记录" entry (file+datetree mengqp-org-journal-file )
+       ;; ("j" "Journal 日常工作记录" entry (file+datetree "~/nutdata/myorg/general/journal.org")
        "*  %? \n %U\n %i\n ")
-      ("t" "Todo gdt" entry (file+headline "~/nutdata/myorg/general/gtd.org" "Tasks")
+      ("t" "Todo gdt" entry (file+headline mengqp-org-gtd-file "Tasks")
        "* TODO [#B] %? \n %i\n %a")
-      ("m" "meet 会议记录" entry (file+datetree "~/nutdata/myorg/general/meet.org")
+      ("m" "meet 会议记录" entry (file+datetree mengqp-org-meet-file)
        "* %? \n %i\n ")
-      ("M" "memo 备忘 加班记录等" entry (file+datetree "~/nutdata/myorg/general/memo.org")
+      ("M" "memo 备忘 加班记录等" entry (file+datetree mengqp-org-memo-file)
        "* %?  %i\n ")
-      ("i" "idea 乱七八糟的想法" entry (file+datetree "~/nutdata/myorg/general/idea.org")
+      ("i" "idea 乱七八糟的想法" entry (file+datetree mengqp-org-idea-file)
        "* %? \n \nEntered on %U\n %i\n ")
-      ("s" "Summarize 总结" entry (file+headline "~/nutdata/myorg/general/summarize.org" "summarize")
+      ("s" "Summarize 总结" entry (file+headline mengqp-org-summarize-file "summarize")
        "*  %? \n %i\n ")
       ("d" "diary entry" entry (function org-journal-find-location)
        "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")
@@ -242,16 +246,16 @@ If FILEXT is provided, return files with extension FILEXT instead."
    case, the CUSTOM_ID of the entry is returned."
     (interactive)
     (org-with-point-at pom
-      ;; (let ((id (org-entry-get nil "CUSTOM_ID")))
-      (let ((id (org-entry-get nil "CUSTOM_ID")))
-	(cond
-	 ((and id (stringp id) (string-match "\\S-" id))
-	  id)
-	 (create
-	  (setq id (org-id-new (concat prefix "h")))
-	  (org-entry-put pom "CUSTOM_ID" id)
-	  (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
-	  id)))))
+		       ;; (let ((id (org-entry-get nil "CUSTOM_ID")))
+		       (let ((id (org-entry-get nil "CUSTOM_ID")))
+			 (cond
+			  ((and id (stringp id) (string-match "\\S-" id))
+			   id)
+			  (create
+			   (setq id (org-id-new (concat prefix "h")))
+			   (org-entry-put pom "CUSTOM_ID" id)
+			   (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
+			   id)))))
   ;; (defun eos/org-add-ids-to-headlines-in-file ()
   ;;   "Add CUSTOM_ID properties to all headlines in the
   ;;    current file which do not already have one."
@@ -281,20 +285,20 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
 
 
-  (defun mengqp/evil-org-insert-todo-at-end ()
-    "add TODO # at the org end ."
-    (interactive)
-    (goto-char (point-max))
-    (re-search-backward "^\*+ [A-Z]+ #")
-    (re-search-forward "#")
-    (setq mengqp/evil-org-num (string-to-number (current-word)))
-    ;; (let num (string-to-number (current-word)))
-    (setq mengqp/evil-org-num (+ mengqp/evil-org-num 1))
-    (goto-char (point-max))
-    (org-insert-todo-heading "DONE")
-    (insert "#")
-    (insert (number-to-string mengqp/evil-org-num))
-    )
+  ;; (defun mengqp/evil-org-insert-todo-at-end ()
+  ;;   "add TODO # at the org end ."
+  ;;   (interactive)
+  ;;   (goto-char (point-max))
+  ;;   (re-search-backward "^\*+ [A-Z]+ #")
+  ;;   (re-search-forward "#")
+  ;;   (setq mengqp/evil-org-num (string-to-number (current-word)))
+  ;;   ;; (let num (string-to-number (current-word)))
+  ;;   (setq mengqp/evil-org-num (+ mengqp/evil-org-num 1))
+  ;;   (goto-char (point-max))
+  ;;   (org-insert-todo-heading "DONE")
+  ;;   (insert "#")
+  ;;   (insert (number-to-string mengqp/evil-org-num))
+  ;;   )
 
   ;; (use-package org-mind-map
   ;;   :defer t
@@ -303,68 +307,53 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
   ;; (define-key evil-normal-state-map (kbd "T") 'mengqp/evil-org-insert-todo-at-end)
   ;; (define-key evil-normal-state-map (kbd "t") 'org-todo)
-  (general-define-key :states '(normal motion)
-		      :keymaps '(org-mode-map)
-		      "T" 'mengqp/evil-org-insert-todo-at-end
-		      "t" 'org-todo
-		      ">" 'outline-demote
-		      "<" 'outline-promote
-		      "B" 'org-backward-heading-same-level
-		      "F" 'org-forward-heading-same-level
-		      )
+  ;; (general-define-key :states '(normal motion)
+  ;; 		      :keymaps '(org-mode-map)
+  ;; 		      "T" 'mengqp/evil-org-insert-todo-at-end
+  ;; 		      "t" 'org-todo
+  ;; 		      ">" 'outline-demote
+  ;; 		      "<" 'outline-promote
+  ;; 		      )
 
-  (general-define-key :states '(normal motion)
-		      :keymaps '(org-mode-map)
-		      :prefix ";"
-		      "." 'org-time-stamp
-		      ":" 'org-set-tags
-		      "RET" 'org-insert-todo-heading
-		      "s" 'org-schedule
-		      "d" 'org-deadline
-		      "p" 'outline-previous-visible-heading
-		      "n" 'outline-next-visible-heading
-		      "u" 'outline-up-heading
-		      "-" 'org-ctrl-c-minus
-		      "*" 'org-ctrl-c-start
-		      "l" 'org-metaright
-		      "h" 'org-metaleft
-		      "j" 'org-metaup
-		      "k" 'org-metadown
-		      "w" 'org-refile
-		      "tc" 'org-table-create
-		      "cc" 'org-ctrl-c-ctrl-c
-		      "ck" 'org-kill-note-or-show-branches
+  ;; (general-define-key :states '(normal motion)
+  ;; 		      :keymaps '(org-mode-map)
+  ;; 		      :prefix ";"
+  ;; 		      "RET" 'org-insert-todo-heading
+  ;; 		      "u" 'outline-up-heading
+  ;; 		      "-" 'org-ctrl-c-minus
+  ;; 		      "*" 'org-ctrl-c-start
+  ;; 		      "l" 'org-metaright
+  ;; 		      "h" 'org-metaleft
+  ;; 		      "j" 'org-metaup
+  ;; 		      "k" 'org-metadown
+  ;; 		      "w" 'org-refile
+  ;; 		      "tc" 'org-table-create
+  ;; 		      "cc" 'org-ctrl-c-ctrl-c
+  ;; 		      "ck" 'org-kill-note-or-show-branches
 
 
-		      )
+  ;; 		      )
 
-  (general-define-key :states '(normal motion)
-		      :keymaps '(org-capture-mode-map)
-		      :prefix ","
-		      "cc" 'org-capture-finalize
-		      "ck" 'org-capture-kill
-		      "cw" 'org-capture-refile
+  ;; (general-define-key :states '(normal motion)
+  ;; 		      :keymaps '(org-capture-mode-map)
+  ;; 		      :prefix ","
+  ;; 		      "cc" 'org-capture-finalize
+  ;; 		      "ck" 'org-capture-kill
+  ;; 		      "cw" 'org-capture-refile
 
-		      ;; (which-key-add-key-based-replacements
-		      ;; 	", c" "capture")
-		      )
+  ;; 		      ;; (which-key-add-key-based-replacements
+  ;; 		      ;; 	", c" "capture")
+  ;; 		      )
 
-  (which-key-add-major-mode-key-based-replacements 'org-capture-mode
-    ", c" "capture")
+  ;; (which-key-add-major-mode-key-based-replacements 'org-capture-mode
+  ;;   ", c" "capture")
 
 
-  (setq org-directory "~/nutdata/org/")
+  (setq org-directory mengqp-org-dir)
   ;; (advice-add 'org-agenda-quit :before 'org-mobile-push)
   ;; (advice-add 'org-agenda-quit :before 'org-mobile-pull)
-  (when *win64*
-    (defconst org-mobile-directory "E:/Nutstore/org")
-    (defconst org-mobile-inbox-for-pull "E:/Nutstore/org/index.org")
-    )
-  (when *linux*
-    (defconst org-mobile-directory "~/nutdata/org")
-    (defconst org-mobile-inbox-for-pull "~/nutdata/org/index.org")
-    )
-
+  (defconst org-mobile-directory mengqp-org-mobile-dic)
+  (defconst org-mobile-inbox-for-pull mengqp-org-mobile-index-file)
   )
 
 (use-package deft
@@ -372,7 +361,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
   :defer t
   :config
   (setq deft-extensions '("txt" "org" "gpg"))
-  (setq deft-directory "~/nutdata/myorg/")
+  (setq deft-directory mengqp-org-dir)
   (setq deft-recursive t)
   (setq deft-use-filename-as-title t)
   (setq deft-text-mode 'org-mode)
@@ -387,12 +376,8 @@ If FILEXT is provided, return files with extension FILEXT instead."
     :ensure nil
     :config
     (setq org-tags-exclude-from-inheritance (quote ("crypt")))
-    ;; (setq org-crypt-disable-auto-save t)
-    ;; (setq org-crypt-key "205F6507DAA68D5C9AB039DCB6DE3DCE59268D36")
-
     )
 
-  ;; (org-crypt-use-before-save-magic)
   (require 'epa-file)
   (setq epa-file-enable t
 	epa-file-encrypt-to "meng_qingpu@126.com"
@@ -404,7 +389,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
   (setq org-journal-file-type 'monthly
 	;; org-journal-file-format "%Y-%m-%d.org"
 	org-journal-file-format "%Y-%m.org"
-	org-journal-dir "~/nutdata/myorg/diary"
+	org-journal-dir mengqp-org-diary-dir
 	org-journal-date-format "%A, %d %B %Y"
 	org-journal-enable-encryption t
 	org-journal-encrypt-journal t
@@ -413,16 +398,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
   ;; When =org-journal-file-pattern= has the default value, this would be the regex.
   (setq org-agenda-file-regexp "\\`\\\([^.].*\\.org\\\|[0-9]\\\{8\\\}\\\(\\.gpg\\\)?\\\)\\'")
   (add-to-list 'org-agenda-files org-journal-dir)
-
-  (defun org-journal-save-entry-and-exit()
-    "Simple convenience function.
-  Saves the buffer of the current day's entry and kills the window
-  Similar to org-capture like behavior"
-    (interactive)
-    (save-buffer)
-    (kill-buffer-and-window))
-  (define-key org-journal-mode-map (kbd "C-x C-s") 'org-journal-save-entry-and-exit)
-
 
   )
 
