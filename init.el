@@ -80,10 +80,10 @@
     (require 'init-spell)
 
     ;; (require 'init-dap)
+    (require 'init-evil)
     )
 
   ;;tool
-  (require 'init-evil)
   ;; (require 'init-calendar)
   ;; (require 'init-hungry-delete)
   (require 'init-smartparens)
