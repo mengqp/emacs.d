@@ -368,22 +368,50 @@ If FILEXT is provided, return files with extension FILEXT instead."
   (setq deft-auto-save-interval 0)
   )
 
+;; (use-package epg-config
+;;   :ensure nil
+;;   :config
+;;   (setq epg-gpg-program "/usr/bin/gpg1")
+;;   )
+
+(use-package org-crypt
+  :ensure nil
+  :config
+  (org-crypt-use-before-save-magic)
+  (setq org-tags-exclude-from-inheritance (quote ("crypt")))
+  ;; (setq org-crypt-key nil)
+  )
+
+(use-package epa-file
+  :ensure nil
+  :config
+  (setq epa-file-enable t
+	epa-file-encrypt-to "meng_qingpu@126.com"
+	epa-file-select-keys 't
+	;; epa-file-select-keys 'silent
+	;; epa-file-cache-passphrase-for-symmetric-encryption t
+	)
+
+  ;; auto-save
+  (setq epa-file-inhibit-auto-save nil)
+
+  ;; (custom-set-variables
+  ;; '(epg-gpg-program "/usr/bin/gpg1"))
+
+  ;; (setq epg-config--program-alist   `((OpenPGP
+  ;;    epg-gpg-program
+  ;;    ("gpg1" . "1.4.3") ("gpg" . ,epg-gpg-minimum-version))
+  ;;   (CMS
+  ;;    epg-gpgsm-program
+  ;;    ("gpgsm" . "2.2.15"))))
+  )
+
 (use-package org-journal
   :ensure t
   :defer t
   :config
-  (use-package org-crypt
-    :ensure nil
-    :config
-    (setq org-tags-exclude-from-inheritance (quote ("crypt")))
-    )
 
-  (require 'epa-file)
-  (setq epa-file-enable t
-	epa-file-encrypt-to "meng_qingpu@126.com"
-  	epa-file-select-keys nil
-  	;; epa-file-cache-passphrase-for-symmetric-encryption t
-	)
+
 
   (setq auto-mode-alist (cons '("\\.org.gpg$" . org-journal-mode) auto-mode-alist))
   (setq org-journal-file-type 'monthly
