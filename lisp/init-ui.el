@@ -64,7 +64,7 @@
   (blink-cursor-mode -1)
   )
 
-(set-frame-parameter nil 'alpha '(85 . 100))
+;; (set-frame-parameter nil 'alpha '(85 . 100))
 
 ;; (when *linux*
 ;;   (set-frame-parameter nil 'fullscreen
