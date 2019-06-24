@@ -92,11 +92,12 @@
 	    (lambda () (load-theme 'cyberpunk t)))
   )
 
-;; (use-package zenburn-theme
-;;   :ensure t
-;;   :config
-;;   (load-theme 'zenburn t)
-;;   )
+(use-package zenburn-theme
+  :ensure t
+  :disabled t
+  :config
+  (load-theme 'zenburn t)
+  )
 
 ;; ;; (load-theme 'wombat t)
 ;; (use-package doom-themes
