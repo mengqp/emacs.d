@@ -101,6 +101,7 @@
   ;; (require 'init-which-key)
   ;; (require 'init-shell)
   (require 'init-ivy)
+  (require 'init-snails)
   ;; (require 'init-browser)
   (require 'init-func)
   (require 'init-keymap)
@@ -123,6 +124,8 @@
   (require 'init-css)
   ;; (require 'init-tex)
   (require 'init-markdown)
+  (require 'init-web)
+  (require 'init-php)
   (when *win64*
     (require 'init-ahk)
     )

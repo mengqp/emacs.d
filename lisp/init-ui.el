@@ -52,7 +52,7 @@
       (set-scroll-bar-mode nil))
   ;; no menu bar
   (if (fboundp 'menu-bar-mode)
-  (menu-bar-mode -1))
+      (menu-bar-mode -1))
 
   ;; 关闭 Tooltip
   (tooltip-mode t)
@@ -74,6 +74,68 @@
 ;; (when *win64*
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
 ;;   )
+
+(use-package centaur-tabs
+  :ensure t
+  :disabled t
+  ;; :load-path "~/.emacs.d/other/centaur-tabs"
+  :config
+  (setq centaur-tabs-style "bar")
+  (setq centaur-tabs-height 32)
+  (setq centaur-tabs-set-icons t)
+  (setq centaur-tabs-set-bar t)
+  (setq centaur-tabs-set-modified-marker t)
+  (centaur-tabs-headline-match)
+  (centaur-tabs-mode t)
+  (defun centaur-tabs-buffer-groups ()
+    "`centaur-tabs-buffer-groups' control buffers' group rules.
+
+ Group centaur-tabs with mode if buffer is derived from `eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
+ All buffer name start with * will group to \"Emacs\".
+ Other buffer group by `centaur-tabs-get-group-name' with project name."
+    (list
+     (cond
+      ((or (string-equal "*" (substring (buffer-name) 0 1))
+	   (memq major-mode '(magit-process-mode
+			      magit-status-mode
+			      magit-diff-mode
+			      magit-log-mode
+			      magit-file-mode
+			      magit-blob-mode
+			      magit-blame-mode
+			      )))
+       "Emacs")
+      ((derived-mode-p 'prog-mode)
+       "Editing")
+      ((derived-mode-p 'dired-mode)
+       "Dired")
+      ((memq major-mode '(helpful-mode
+			  help-mode))
+       "Help")
+      ((memq major-mode '(org-mode
+			  org-agenda-clockreport-mode
+			  org-src-mode
+			  org-agenda-mode
+			  org-beamer-mode
+			  org-indent-mode
+			  org-bullets-mode
+			  org-cdlatex-mode
+			  org-agenda-log-mode
+			  diary-mode))
+       "OrgMode")
+      (t
+       (centaur-tabs-get-group-name (current-buffer))))))
+  :hook
+  ;; (org-agenda-mode . centaur-tabs-local-mode)
+  ;; (helpful-mode . centaur-tabs-local-mode)
+  (prog-mode . centaur-tabs-mode)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward)
+  ("C-c t" . centaur-tabs-build-ivy-source)
+  (:map evil-normal-state-map
+	("g t" . centaur-tabs-forward)
+	("g T" . centaur-tabs-backward)))
 
 
 

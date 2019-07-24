@@ -3,7 +3,7 @@
 # key: case
 # expand-env: ((yas-also-auto-indent-first-line t))
 # --
-case ${1:constexpr}: {
+case ${1:constexpr}: ${2:{
     $0
+    }}
     break;
-    }

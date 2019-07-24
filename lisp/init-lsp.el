@@ -52,6 +52,7 @@
   (use-package company-lsp
     :config
     (push 'company-lsp company-backends)
+    (push 'company-tabnine company-backends)
     (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
     )
 
@@ -62,24 +63,24 @@
     :init
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
     (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
-     (setq lsp-ui-doc-enable t
-           lsp-ui-doc-header t
-           lsp-ui-doc-include-signature t
-           lsp-ui-doc-position 'top
-           ;; lsp-ui-doc-use-webkit t
-           lsp-ui-doc-border (face-foreground 'default)
+    (setq lsp-ui-doc-enable t
+	  lsp-ui-doc-header t
+	  lsp-ui-doc-include-signature t
+	  lsp-ui-doc-position 'top
+	  ;; lsp-ui-doc-use-webkit t
+	  lsp-ui-doc-border (face-foreground 'default)
 
-           lsp-ui-sideline-enable t
-           lsp-ui-sideline-ignore-duplicate t
-           lsp-ui-sideline-show-diagnostics nil
-           lsp-ui-sideline-show-symbol t
-           lsp-ui-sideline-show-hover t
-	   lsp-ui-sideline-show-code-actions t
-	   lsp-ui-sideline-delay 0.5
+	  lsp-ui-sideline-enable t
+	  lsp-ui-sideline-ignore-duplicate t
+	  lsp-ui-sideline-show-diagnostics nil
+	  lsp-ui-sideline-show-symbol t
+	  lsp-ui-sideline-show-hover t
+	  lsp-ui-sideline-show-code-actions t
+	  lsp-ui-sideline-delay 0.5
 
-	   lsp-ui-imenu-enable nil
-	   lsp-ui-imenu-kind-position 'left
-	   )
+	  lsp-ui-imenu-enable nil
+	  lsp-ui-imenu-kind-position 'left
+	  )
 
     :config
 

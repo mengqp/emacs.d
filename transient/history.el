@@ -7,6 +7,7 @@
  (magit-merge nil)
  (magit-pull nil)
  (magit-push nil)
+ (magit-stash nil)
  (magit-submodule nil
 		  ("--force"))
  (magit-svn nil))

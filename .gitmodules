@@ -47,3 +47,6 @@
 	path = site-lisp/ccls
 	url = https://github.com/MaskRay/emacs-ccls.git
 	ignore=untracked
+[submodule "site-lisp/snails"]
+	path = site-lisp/snails
+	url = https://github.com/manateelazycat/snails.git
