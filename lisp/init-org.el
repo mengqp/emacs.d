@@ -49,6 +49,7 @@
 (setq-default mengqp-org-summarize-file (concat mengqp-org-dir "/general/summarize.org"))
 (setq-default mengqp-org-diary-dir (concat mengqp-org-dir "diary/"))
 (setq-default mengqp-org-mobile-index-file (concat mengqp-org-mobile-dic "index.org"))
+(setq org-html-validation-link nil)
 
 (defun sa-find-org-file-recursively (&optional directory filext)
   "Return .org and .org_archive files recursively from DIRECTORY.

@@ -86,7 +86,7 @@
   ;;tool
   ;; (require 'init-calendar)
   ;; (require 'init-hungry-delete)
-  (require 'init-smartparens)
+  ;; (require 'init-smartparens)
   (require 'init-company)
   (require 'init-window)
   (require 'init-projectile)

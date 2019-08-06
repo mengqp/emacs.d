@@ -35,8 +35,13 @@
 
 (use-package snails
   :ensure nil
-  :init
-  (setq snails-frame 'child-frame)
+  :bind*
+  (
+  ("M-y" . snails)
+   )
+  ;; :config
+  ;; (set-frame-parameter (child-frame) 'fullscreen 'maximized)
+
   )
 
 
