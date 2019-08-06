@@ -39,10 +39,6 @@
 	path = site-lisp/liberime
 	url = https://gitlab.com/liberime/liberime.git
 	ignore=untracked
-[submodule "site-lisp/yasnippet-snippets"]
-	path = site-lisp/yasnippet-snippets
-	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
-	ignore=untracked
 [submodule "site-lisp/ccls"]
 	path = site-lisp/ccls
 	url = https://github.com/MaskRay/emacs-ccls.git
