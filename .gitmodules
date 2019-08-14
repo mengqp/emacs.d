@@ -51,3 +51,11 @@
 	path = site-lisp/yasnippet-snippets
 	url = https://github.com/mengqp/yasnippet-snippets.git
 	ignore=untracked
+[submodule "site-lisp/awesome-tab"]
+	path = site-lisp/awesome-tab
+	url = https://github.com/manateelazycat/awesome-tab.git
+	ignore=untracked
+[submodule "site-lisp/awesome-tray"]
+	path = site-lisp/awesome-tray
+	url = https://github.com/manateelazycat/awesome-tray.git
+	ignore=untracked

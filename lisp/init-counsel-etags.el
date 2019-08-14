@@ -1,4 +1,4 @@
-;;; init-snails.el --- xxx -*- coding: utf-8-unix -*-
+;;; init-counsel-etags.el --- xxx -*- coding: utf-8-unix -*-
 
 ;;; Copyright © 2018 - 2018 mengqp.
 
@@ -32,20 +32,19 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+(use-package counsel-etags
+  :ensure t
+  :bind (("C-]" . counsel-etags-find-tag-at-point))
+  :init
+  (add-hook 'prog-mode-hook
+        (lambda ()
+          (add-hook 'after-save-hook
+            'counsel-etags-virtual-update-tags 'append 'local)))
+  :config
+  (setq counsel-etags-update-interval 60)
+  (add-to-list 'counsel-etags-ignore-directories "build"))
 
-(use-package snails
-  :ensure nil
-  :bind*
-  (
-  ("M-y" . snails)
-  ("M-u" . snails-search-point)
-   )
-  ;; :config
-  ;; (set-frame-parameter (child-frame) 'fullscreen 'maximized)
+(provide 'init-counsel-etags)
 
-  )
-
-
-(provide 'init-snails)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-snails.el ends here
+;;; init-counsel-etags.el ends here

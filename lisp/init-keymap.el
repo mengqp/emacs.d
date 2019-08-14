@@ -219,6 +219,28 @@
     "sdi" 'color-rg-search-input
     "sds" 'color-rg-search-symbol
 
+    "tj" 'awesome-tab-backward-tab
+    "tk" 'awesome-tab-forward-tab
+    "th" 'awesome-tab-forward-group
+    "tl" 'awesome-tab-backward-group
+    "t0" 'my-select-window
+    "t1" 'my-select-window
+    "t2" 'my-select-window
+    "t3" 'my-select-window
+    "t4" 'my-select-window
+    "t5" 'my-select-window
+    "t6" 'my-select-window
+    "t7" 'my-select-window
+    "t8" 'my-select-window
+    "t9" 'my-select-window
+    "ta" 'awesome-tab-select-beg-tab
+    "te" 'awesome-tab-select-end-tab
+    "tt" 'awesome-tab-ace-jump
+    "tmj" 'awesome-tab-move-current-tab-to-left
+    "tmk" 'awesome-tab-move-current-tab-to-right
+    "tg" 'awesome-tab-counsel-switch-group
+    "tbk" 'kill-current-buffer
+
     "w" '(:ignore t :wk ("w" . "window"))
     ;; "ws" 'split-window-vertically
     ;; "wv" 'split-window-horizontally

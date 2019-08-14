@@ -108,6 +108,7 @@
 
   (when *linux*
     (require 'init-lsp)
+    ;; (require 'init-counsel-etags)
 
     (require 'init-plantuml)
     ;; (require 'init-ycmd)

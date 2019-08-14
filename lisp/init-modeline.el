@@ -43,8 +43,8 @@
 
 (use-package awesome-tray
   :init
-  :disabled t
-  (setq awesome-tray-mode-line-active-color "Gray")
+  ;; :disabled t
+  (setq awesome-tray-mode-line-active-color "Gray60")
   (setq awesome-tray-active-modules '("git" "mode-name" "location"))
   (add-hook 'after-init-hook 'awesome-tray-mode)
   :config
@@ -52,11 +52,18 @@
 
 (use-package doom-modeline
   :ensure t
+  :disabled t
   :defer t
   :hook (after-init . doom-modeline-mode)
   :init
   ;; How tall the mode-line should be (only respected in GUI Emacs).
-  (setq doom-modeline-height 10)
+  ;; (setq doom-modeline-height 5)
+  ;; (setq doom-modeline-height 1)
+  (custom-set-faces
+  '(mode-line ((t (:height 1.2))))
+  '(mode-line-inactive ((t (:height 1.2)))))
+  ;; (set-face-attribute 'mode-line nil :height 100)
+  ;; (set-face-attribute 'mode-line-inactive nil :height 100)
 
   ;; How wide the mode-line bar should be (only respected in GUI Emacs).
   (setq doom-modeline-bar-width 1)

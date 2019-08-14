@@ -52,7 +52,7 @@
   (use-package company-lsp
     :config
     (push 'company-lsp company-backends)
-    (push 'company-tabnine company-backends)
+    ;; (push 'company-tabnine company-backends)
     (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
     )
 
@@ -77,6 +77,8 @@
 	  lsp-ui-sideline-show-hover t
 	  lsp-ui-sideline-show-code-actions t
 	  lsp-ui-sideline-delay 0.5
+
+	  lsp-ui-flycheck-enable t
 
 	  lsp-ui-imenu-enable nil
 	  lsp-ui-imenu-kind-position 'left

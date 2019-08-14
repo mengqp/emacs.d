@@ -75,16 +75,24 @@
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
 ;;   )
 
+(use-package awesome-tab
+  :config
+  (awesome-tab-mode t)
+  (setq awesome-tab-face-height 130
+	awesome-tab-display-sticky-function-name t)
+)
+
 (use-package centaur-tabs
   :ensure t
   :disabled t
   ;; :load-path "~/.emacs.d/other/centaur-tabs"
   :config
   (setq centaur-tabs-style "bar")
-  (setq centaur-tabs-height 32)
+  (setq centaur-tabs-height 8)
   (setq centaur-tabs-set-icons t)
-  (setq centaur-tabs-set-bar t)
+  (setq centaur-tabs-set-bar 'left)
   (setq centaur-tabs-set-modified-marker t)
+  (centaur-tabs-group-by-projectile-project)
   (centaur-tabs-headline-match)
   (centaur-tabs-mode t)
   (defun centaur-tabs-buffer-groups ()
@@ -132,7 +140,9 @@
   :bind
   ("C-<prior>" . centaur-tabs-backward)
   ("C-<next>" . centaur-tabs-forward)
-  ("C-c t" . centaur-tabs-build-ivy-source)
+  ("C-c t s" . centaur-tabs-counsel-switch-group)
+  ("C-c t p" . centaur-tabs-group-by-projectile-project)
+  ("C-c t g" . centaur-tabs-group-buffer-groups)
   (:map evil-normal-state-map
 	("g t" . centaur-tabs-forward)
 	("g T" . centaur-tabs-backward)))

@@ -12,4 +12,5 @@
  (magit-stash nil)
  (magit-submodule nil
 		  ("--force"))
- (magit-svn nil))
+ (magit-svn nil)
+ (magit-tag nil))
