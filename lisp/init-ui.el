@@ -78,8 +78,8 @@
 (use-package awesome-tab
   :config
   (awesome-tab-mode t)
-  (setq awesome-tab-face-height 130
-	awesome-tab-display-sticky-function-name t)
+  (setq awesome-tab-face-height 130 )
+  ;; (setq awesome-tab-display-sticky-function-name t )
 )
 
 (use-package centaur-tabs

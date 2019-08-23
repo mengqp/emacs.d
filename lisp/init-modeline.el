@@ -45,7 +45,7 @@
   :init
   ;; :disabled t
   (setq awesome-tray-mode-line-active-color "Gray60")
-  (setq awesome-tray-active-modules '("git" "mode-name" "location"))
+  (setq awesome-tray-active-modules '("evil" "git" "mode-name" "location"))
   (add-hook 'after-init-hook 'awesome-tray-mode)
   :config
   )
