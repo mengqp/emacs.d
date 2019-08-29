@@ -117,7 +117,7 @@
     ;; :non-normal-prefix "M-m"
 
 
-    ;; "SPC" 'switch-window
+    "SPC" 'snails
     ;; "TAB" 'previous-buffer
     "." 'counsel-projectile-find-file
     ;; ":" 'counsel-M-x

@@ -35,14 +35,20 @@
 
 (use-package snails
   :ensure nil
-  :bind*
-  (
-  ("M-y" . snails)
-  ("M-u" . snails-search-point)
-   )
-  ;; :config
-  ;; (set-frame-parameter (child-frame) 'fullscreen 'maximized)
-
+  ;; :init
+  ;; (setq snails-prefix-backends
+  ;; 	'(("c" '(snails-backend-command))
+  ;; 	  ("m" '(snails-backend-imenu))
+  ;; 	  ("b" '(snails-backend-current-buffer))
+  ;; 	  ("r" '(snails-backend-rg))
+  ;; 	  ;; ("f" '(snails-backend-projectile snails-backend-fd snails-backend-mdfind snails-backend-everything))
+  ;; 	  ("f" '(snails-backend-projectile))
+  ;; 	  )
+  ;; 	)
+  ;; :bind*
+  ;; (
+  ;;  ("M-s" . snails)
+  ;;  )
   )
 
 

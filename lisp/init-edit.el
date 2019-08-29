@@ -122,8 +122,10 @@
     )
 
   (use-package lazy-search
-    :config
-    (global-set-key (kbd "M-s") 'lazy-search)
+    :bind
+    ("M-s" . lazy-search)
+    ;; :config
+    ;; (global-set-key (kbd "M-s") 'lazy-search)
     )
 
 

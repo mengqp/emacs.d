@@ -111,6 +111,7 @@
     )
 
   (use-package company-tabnine
+    :disabled t
     :ensure t
     :config
     (add-to-list 'company-backends #'company-tabnine) )

@@ -44,6 +44,7 @@
   :config
 
   (setq plantuml-jar-path "~/nutdata/linux/DotFiles/app/plantuml.jar")
+  (setq plantuml-default-exec-mode 'jar)
   ;; (add-to-list
   ;;  'org-src-lang-modes '("plantuml" . plantuml))
 
@@ -53,6 +54,7 @@
    '(;; other Babel languages
      (plantuml . t)))
 
+  ;; (base64-encode-string (encode-coding-string string 'utf-8-unix) t)
   (setq org-plantuml-jar-path plantuml-jar-path)
 	;; (expand-file-name "~/nutdata/linux/DotFiles/app/plantuml.jar"))
 
