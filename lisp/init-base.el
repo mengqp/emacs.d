@@ -164,6 +164,11 @@
   :ensure t
   :defer t
   :hook (after-prog . smart-tabs-mode)
+  :init
+  (add-hook 'plantuml-mode-hook
+	    (lambda ()
+	      (setq indent-tabs-mode t)
+	      (setq tab-width 2 )))
   )
 
 (use-package exec-path-from-shell

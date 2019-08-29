@@ -35,11 +35,12 @@
 
 (use-package aggressive-indent
   :ensure t
-  :disabled t
+  ;; :disabled t
   :defer t
   :diminish aggressive-indent-mode
   :init
-  (add-hook 'prog-mode-hook #'aggressive-indent-mode)
+  ;; (add-hook 'prog-mode-hook #'aggressive-indent-mode)
+  (add-hook 'plantuml-mode #'aggressive-indent-mode)
   :config
   (setq aggressive-indent-modes-to-prefer-defun '(emacs-lisp-mode lisp-mode scheme-mode clojure-mode c-mode c++-mode))
   (setq aggressive-indent-dont-electric-modes t)
@@ -282,7 +283,7 @@
   (add-hook 'cc-mode-hook 'column-enforce-mode)
   :config
   (setq column-enforce-column 81)
-)
+  )
 
 ;; (use-package insert-translated-name
 ;;   ;; :defer t
@@ -298,7 +299,7 @@
   :defer t
   :config
   (require 'imenu)
-   ;; when editing js file, this feature is very useful
+  ;; when editing js file, this feature is very useful
   (setq-default header-line-format
                 '((which-func-mode ("" which-func-format " "))))
 
