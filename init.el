@@ -72,16 +72,15 @@
     (require 'init-cnfonts)
     (require 'init-modeline)
     (require 'init-theme)
-    (require 'init-pyim)
     ;; (require 'init-abbrev)
     (require 'init-hydra)
     (require 'init-layout)
     (require 'init-color-rg)
     (require 'init-spell)
-
-    ;; (require 'init-dap)
-    (require 'init-evil)
+    ;;(require 'init-dap)
     )
+  (require 'init-pyim)
+  (require 'init-evil)
 
   ;;tool
   ;; (require 'init-calendar)

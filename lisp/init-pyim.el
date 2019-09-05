@@ -22,28 +22,47 @@
   (setq pyim-dcache-prefer-emacs-thread nil)
   ;; (setq pyim-debug t)
 
-  (use-package liberime
-    :load-path "/root/.emacs.d/site-lisp/liberime/build/liberime.so"
-    :config
-    (liberime-start (expand-file-name "/usr/share/rime-data")
-		    (expand-file-name "~/.emacs.d/rime"))
-    ;; (liberime-start "/usr/share/rime-data" "/root/.emacs.d/rime/") ;
-    (liberime-select-schema "wubi86")
+  (when *win64*
+
+    ;; 五笔用户使用 wbdict 词库
+    (use-package pyim-wbdict
+      :disabled t
+      :ensure t
+      :config
+      ;; (pyim-wbdict-gbk-enable)
+      (pyim-wbdict-v98-enable)
+      )
+
+    (setq default-input-method "pyim")
+    (setq pyim-default-scheme 'wubi)
 
     )
 
-  ;; 五笔用户使用 wbdict 词库
-  ;; (use-package pyim-wbdict
-  ;;   :disabled t
-  ;;   :ensure t
-  ;;   :config
-  ;;   ;; (pyim-wbdict-gbk-enable)
-  ;;   (pyim-wbdict-v98-enable)
-  ;;   )
+  (when *linux*
+    (use-package liberime
+      :load-path "/root/.emacs.d/site-lisp/liberime/build/liberime.so"
+      :config
+      (liberime-start (expand-file-name "/usr/share/rime-data")
+		      (expand-file-name "~/.emacs.d/rime"))
+      ;; (liberime-start "/usr/share/rime-data" "/root/.emacs.d/rime/") ;
+      (liberime-select-schema "wubi86")
 
-  (setq default-input-method "pyim")
-  (setq pyim-default-scheme 'rime)
-  ;; (setq pyim-default-scheme 'wubi)
+      )
+
+    ;; 五笔用户使用 wbdict 词库
+    ;; (use-package pyim-wbdict
+    ;;   :disabled t
+    ;;   :ensure t
+    ;;   :config
+    ;;   ;; (pyim-wbdict-gbk-enable)
+    ;;   (pyim-wbdict-v98-enable)
+    ;;   )
+
+    (setq default-input-method "pyim")
+    (setq pyim-default-scheme 'rime)
+    ;; (setq pyim-default-scheme 'wubi)
+
+    )
 
   ;; 设置 pyim 探针设置，这是 pyim 高级功能设置，可以实现 *无痛* 中英文切换 :-)
   ;; 我自己使用的中英文动态切换规则是：

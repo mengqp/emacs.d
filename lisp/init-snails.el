@@ -37,14 +37,15 @@
   :ensure nil
   ;; :init
   ;; (setq snails-prefix-backends
-  ;; 	'(("c" '(snails-backend-command))
-  ;; 	  ("m" '(snails-backend-imenu))
-  ;; 	  ("b" '(snails-backend-current-buffer))
-  ;; 	  ("r" '(snails-backend-rg))
-  ;; 	  ;; ("f" '(snails-backend-projectile snails-backend-fd snails-backend-mdfind snails-backend-everything))
-  ;; 	  ("f" '(snails-backend-projectile))
-  ;; 	  )
-  ;; 	)
+  	;; '(
+	  ;; ("c" '(snails-backend-command))
+  	  ;; ("m" '(snails-backend-imenu))
+  	  ;; ("b" '(snails-backend-current-buffer))
+  	  ;; ("r" '(snails-backend-rg))
+  	  ;; ("f" '(snails-backend-projectile snails-backend-fd snails-backend-mdfind snails-backend-everything))
+  	  ;; ("?" '(snails-backend-projectile snails-backend-fd))
+  	  ;; )
+  	;; )
   ;; :bind*
   ;; (
   ;;  ("M-s" . snails)
