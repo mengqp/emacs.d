@@ -26,7 +26,7 @@
 
     ;; 五笔用户使用 wbdict 词库
     (use-package pyim-wbdict
-      :disabled t
+      ;; :disabled t
       :ensure t
       :config
       ;; (pyim-wbdict-gbk-enable)

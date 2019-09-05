@@ -78,9 +78,9 @@
     (require 'init-color-rg)
     (require 'init-spell)
     ;;(require 'init-dap)
+    (require 'init-evil)
     )
   (require 'init-pyim)
-  (require 'init-evil)
 
   ;;tool
   ;; (require 'init-calendar)
