@@ -72,41 +72,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
 			  org-file-list) ; add files found to result
 	  (add-to-list 'org-file-list org-file)))))))
 
-;; (autoload 'projectile-project-root "projectile" "" t)
-;; (defun mengqp/org-projectile-find (name)
-;;   "Find project org as NAME."
-;;   (setq org-root-files
-;; 	(sa-find-org-file-recursively
-;; 	 (concat (projectile-project-root) "01docs/org") "org")
-;; 	)
-;;   (setq org-files-num 0)
-;;   (while (< org-files-num (length org-root-files))
-;;     (setq file-name (nth org-files-num org-root-files))
-;;     (if (string-match name file-name)
-;; 	(progn
-;; 	  (print file-name)
-;; 	  (find-file file-name)
-;; 	  )
-;;       )
-
-;;     (setq org-files-num (+ org-files-num 1))
-;;     )
-;;   )
-
-
-;; ;;;###autoload (autoload 'evil-mode "evil" nil t)
-;; (defun mengqp/org-projectile-find-issue ()
-;;   "Find issue."
-;;   (interactive)
-;;   (mengqp/org-projectile-find "issue")
-;;   )
-
-;; ;;;###autoload (autoload 'evil-mode "evil" nil t)
-;; (defun mengqp/org-projectile-find-todo ()
-;;   "Find todo."
-;;   (interactive)
-;;   (mengqp/org-projectile-find "todo")
-;;   )
 
 (use-package htmlize
   :ensure t
@@ -126,14 +91,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
   (setq-default mode-line-format
 		(cons '(pomodoro-mode-line-string pomodoro-mode-line-string)
 		      mode-line-format))
-  ;; :config
-  ;; (add-hook 'org-pomodoro-finished-hook
-  ;; 	       (lambda ()
-  ;; 		 (mukhali/terminal-notifier-notify "Pomodoro" "time-for-relax")))
-  ;; (add-hook 'org-pomodoro-short-break-finished-hook
-  ;; 	       (lambda ()
-  ;; 		 (mukhali/terminal-notifier-notify "Break-Completed" "ready-for-another?")))
-
   )
 
 (use-package org-bullets
@@ -155,14 +112,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
   :ensure t
   :defer t
   :init
-  :bind
-  (
-   ;; ("C-c o a" . org-agenda )
-   ;; ("C-c o o" . org-capture)
-   :map org-mode-map
-   ("C-c T" . mengqp/evil-org-insert-todo-at-end )
-   ;; ("C-c ." . org-time-stamp )
-   )
   :config
 
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
@@ -247,16 +196,16 @@ If FILEXT is provided, return files with extension FILEXT instead."
    case, the CUSTOM_ID of the entry is returned."
     (interactive)
     (org-with-point-at pom
-		       ;; (let ((id (org-entry-get nil "CUSTOM_ID")))
-		       (let ((id (org-entry-get nil "CUSTOM_ID")))
-			 (cond
-			  ((and id (stringp id) (string-match "\\S-" id))
-			   id)
-			  (create
-			   (setq id (org-id-new (concat prefix "h")))
-			   (org-entry-put pom "CUSTOM_ID" id)
-			   (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
-			   id)))))
+      ;; (let ((id (org-entry-get nil "CUSTOM_ID")))
+      (let ((id (org-entry-get nil "CUSTOM_ID")))
+	(cond
+	 ((and id (stringp id) (string-match "\\S-" id))
+	  id)
+	 (create
+	  (setq id (org-id-new (concat prefix "h")))
+	  (org-entry-put pom "CUSTOM_ID" id)
+	  (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
+	  id)))))
   ;; (defun eos/org-add-ids-to-headlines-in-file ()
   ;;   "Add CUSTOM_ID properties to all headlines in the
   ;;    current file which do not already have one."
@@ -283,72 +232,6 @@ If FILEXT is provided, return files with extension FILEXT instead."
 			  (when (and (eq major-mode 'org-mode)
 				     (eq buffer-read-only nil))
 			    (eos/org-add-ids-to-headlines-in-file))))))
-
-
-
-  ;; (defun mengqp/evil-org-insert-todo-at-end ()
-  ;;   "add TODO # at the org end ."
-  ;;   (interactive)
-  ;;   (goto-char (point-max))
-  ;;   (re-search-backward "^\*+ [A-Z]+ #")
-  ;;   (re-search-forward "#")
-  ;;   (setq mengqp/evil-org-num (string-to-number (current-word)))
-  ;;   ;; (let num (string-to-number (current-word)))
-  ;;   (setq mengqp/evil-org-num (+ mengqp/evil-org-num 1))
-  ;;   (goto-char (point-max))
-  ;;   (org-insert-todo-heading "DONE")
-  ;;   (insert "#")
-  ;;   (insert (number-to-string mengqp/evil-org-num))
-  ;;   )
-
-  ;; (use-package org-mind-map
-  ;;   :defer t
-  ;;   :ensure t
-  ;;   )
-
-  ;; (define-key evil-normal-state-map (kbd "T") 'mengqp/evil-org-insert-todo-at-end)
-  ;; (define-key evil-normal-state-map (kbd "t") 'org-todo)
-  ;; (general-define-key :states '(normal motion)
-  ;; 		      :keymaps '(org-mode-map)
-  ;; 		      "T" 'mengqp/evil-org-insert-todo-at-end
-  ;; 		      "t" 'org-todo
-  ;; 		      ">" 'outline-demote
-  ;; 		      "<" 'outline-promote
-  ;; 		      )
-
-  ;; (general-define-key :states '(normal motion)
-  ;; 		      :keymaps '(org-mode-map)
-  ;; 		      :prefix ";"
-  ;; 		      "RET" 'org-insert-todo-heading
-  ;; 		      "u" 'outline-up-heading
-  ;; 		      "-" 'org-ctrl-c-minus
-  ;; 		      "*" 'org-ctrl-c-start
-  ;; 		      "l" 'org-metaright
-  ;; 		      "h" 'org-metaleft
-  ;; 		      "j" 'org-metaup
-  ;; 		      "k" 'org-metadown
-  ;; 		      "w" 'org-refile
-  ;; 		      "tc" 'org-table-create
-  ;; 		      "cc" 'org-ctrl-c-ctrl-c
-  ;; 		      "ck" 'org-kill-note-or-show-branches
-
-
-  ;; 		      )
-
-  ;; (general-define-key :states '(normal motion)
-  ;; 		      :keymaps '(org-capture-mode-map)
-  ;; 		      :prefix ","
-  ;; 		      "cc" 'org-capture-finalize
-  ;; 		      "ck" 'org-capture-kill
-  ;; 		      "cw" 'org-capture-refile
-
-  ;; 		      ;; (which-key-add-key-based-replacements
-  ;; 		      ;; 	", c" "capture")
-  ;; 		      )
-
-  ;; (which-key-add-major-mode-key-based-replacements 'org-capture-mode
-  ;;   ", c" "capture")
-
 
   (setq org-directory mengqp-org-dir)
   ;; (advice-add 'org-agenda-quit :before 'org-mobile-push)

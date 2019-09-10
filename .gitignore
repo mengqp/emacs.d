@@ -33,4 +33,4 @@ custom.el
 semanticdb
 rime
 srecode-map.el
-.cache
+*.cache

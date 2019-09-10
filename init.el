@@ -74,6 +74,7 @@
   (require 'init-color-rg)
   (require 'init-cnfonts)
   (require 'init-layout)
+  (require 'init-dumb-jump)
 
   (when *linux*
     ;; (require 'init-abbrev)
