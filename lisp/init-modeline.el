@@ -34,25 +34,26 @@
 ;;; Code:
 
 (use-package moody
-  :ensure t
   :disabled t
+  :ensure t
   :config
   (setq x-underline-at-descent-line t)
   (moody-replace-mode-line-buffer-identification)
   (moody-replace-vc-mode))
 
 (use-package awesome-tray
-  :init
   ;; :disabled t
+  :defer t
+  :hook
+  (after-init . awesome-tray-mode)
+  :init
   (setq awesome-tray-mode-line-active-color "Gray60")
   (setq awesome-tray-active-modules '("evil" "git" "mode-name" "location"))
-  (add-hook 'after-init-hook 'awesome-tray-mode)
-  :config
   )
 
 (use-package doom-modeline
-  :ensure t
   :disabled t
+  :ensure t
   :defer t
   :hook (after-init . doom-modeline-mode)
   :init
