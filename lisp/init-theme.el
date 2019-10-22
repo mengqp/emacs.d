@@ -83,9 +83,18 @@
   (add-hook 'prog-mode-hook 'focus-mode)
   )
 
+(use-package lazycat-theme
+  :ensure t
+  :disabled t
+  :defer t
+  :init
+  (add-hook 'after-init-hook
+	    (lambda () (load-theme 'lazycat t)))
+  )
+
 (use-package cyberpunk-theme
   :ensure t
-  ;; :disabled t
+  :disabled t
   :defer t
   :init
   (add-hook 'after-init-hook

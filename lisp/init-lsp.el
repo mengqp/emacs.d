@@ -47,6 +47,8 @@
   (setq lsp-message-project-root-warning t)
   (setq create-lockfiles nil)
   (setq lsp-prefer-flymake nil)
+  (setq lsp-enable-file-watchers nil)
+  (setq lsp-file-watch-threshold nil)
   (flymake-mode-off)
 
   (use-package company-lsp
