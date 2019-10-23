@@ -35,7 +35,6 @@
 (require 'package)
 
 (package-initialize)
-(setq package-check-signature nil)
 ;; Set it to `t' to use safer HTTPS to download packages
 (defvar melpa-use-https-repo nil
   "By default, HTTP is used to download packages.

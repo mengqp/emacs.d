@@ -33,7 +33,7 @@
 ;;
 ;;; Code:
 ;; (load-file "~/.emacs.d/lisp/unicad.elc")
-(use-package unicad)
+;; (use-package unicad)
 
 (prefer-coding-system 'utf-8)
 ;; (when *win64*

@@ -62,3 +62,4 @@
 [submodule "site-lisp/lazycat-theme"]
 	path = site-lisp/lazycat-theme
 	url = https://github.com/manateelazycat/lazycat-theme.git
+	ignore=untracked
