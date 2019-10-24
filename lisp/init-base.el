@@ -211,6 +211,15 @@
   (keyfreq-autosave-mode 1)
   )
 
+;; pacman -S rustup
+;; rustup install stable
+(use-package fuz
+  :ensure t
+  :config
+  (unless (require 'fuz-core nil t)
+    (fuz-build-and-load-dymod))
+  )
+
 
 (provide 'init-base)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
