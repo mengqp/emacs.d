@@ -77,6 +77,7 @@
 
 (use-package awesome-tab
   :config
+  :disabled t
   (awesome-tab-mode t)
   (setq awesome-tab-face-height 130 )
   ;; (setq awesome-tab-display-sticky-function-name t )

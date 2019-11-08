@@ -3,6 +3,8 @@
  (magit-branch nil)
  (magit-commit nil)
  (magit-diff
+  (("--" "display/maindlg.ui"))
+  (("--" "display/build/ui/ui_maindlg.h"))
   ("--no-ext-diff" "--stat"))
  (magit-dispatch nil)
  (magit-fetch nil)

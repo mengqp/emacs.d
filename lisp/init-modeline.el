@@ -48,7 +48,7 @@
   (after-init . awesome-tray-mode)
   :init
   (setq awesome-tray-mode-line-active-color "Gray60")
-  (setq awesome-tray-active-modules '("evil" "git" "mode-name" "location"))
+  (setq awesome-tray-active-modules '("buffer-name" "evil" "git" "mode-name" "location"))
   )
 
 (use-package doom-modeline
@@ -58,13 +58,13 @@
   :hook (after-init . doom-modeline-mode)
   :init
   ;; How tall the mode-line should be (only respected in GUI Emacs).
-  ;; (setq doom-modeline-height 5)
+  (setq doom-modeline-height 5)
   ;; (setq doom-modeline-height 1)
-  (custom-set-faces
-  '(mode-line ((t (:height 1.2))))
-  '(mode-line-inactive ((t (:height 1.2)))))
-  ;; (set-face-attribute 'mode-line nil :height 100)
-  ;; (set-face-attribute 'mode-line-inactive nil :height 100)
+  ;; (custom-set-faces
+  ;; '(mode-line ((t (:height 1.2))))
+  ;; '(mode-line-inactive ((t (:height 1.2)))))
+  (set-face-attribute 'mode-line nil :height 20)
+  (set-face-attribute 'mode-line-inactive nil :height 20)
 
   ;; How wide the mode-line bar should be (only respected in GUI Emacs).
   (setq doom-modeline-bar-width 1)
@@ -98,13 +98,13 @@
   (setq doom-modeline-major-mode-icon t)
 
   ;; Display color icons for `major-mode'. It respects `all-the-icons-color-icons'.
-  (setq doom-modeline-major-mode-color-icon nil)
+  (setq doom-modeline-major-mode-color-icon t)
 
   ;; Whether display minor modes or not. Non-nil to display in mode-line.
   (setq doom-modeline-minor-modes nil)
 
   ;; Whether display perspective name or not. Non-nil to display in mode-line.
-  (setq doom-modeline-persp-name t)
+  (setq doom-modeline-persp-name nil)
 
   ;; Whether display `lsp' state or not. Non-nil to display in mode-line.
   (setq doom-modeline-lsp t)

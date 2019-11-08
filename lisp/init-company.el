@@ -110,6 +110,12 @@
     :commands (company-english-helper toggle-company-english-helper)
     )
 
+  (use-package company-ctags
+    :ensure t
+    :defer t
+     
+    )
+
   (use-package company-tabnine
     :disabled t
     :ensure t

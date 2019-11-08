@@ -137,7 +137,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
     '(
       ("j" "Journal 日常工作记录" entry (file+datetree mengqp-org-journal-file )
        ;; ("j" "Journal 日常工作记录" entry (file+datetree "~/nutdata/myorg/general/journal.org")
-       "*  %? \n %U\n %i\n ")
+       "*  %? %U \n %i\n ")
       ("t" "Todo gdt" entry (file+headline mengqp-org-gtd-file "Tasks")
        "* TODO [#B] %? \n %i\n")
       ("m" "meet 会议记录" entry (file+datetree mengqp-org-meet-file)
