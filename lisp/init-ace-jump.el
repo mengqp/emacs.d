@@ -35,8 +35,8 @@
 (use-package avy
   :ensure t
   :defer t
-  :bind (("C-:" . avy-goto-char)
-         ("C-'" . avy-goto-char-2)
+  :bind (("C-'" . avy-goto-char)
+         ("C-:" . avy-goto-char-2)
          ("M-g f" . avy-goto-line)
          ("M-g w" . avy-goto-word-1)
   	 ("M-g e" . avy-goto-word-0))
@@ -65,6 +65,15 @@
   ;;  ;; ("df" . avy-zap-to-char-dwim)
   ;;  )
 
+  )
+
+(use-package ace-window
+  :disabled t
+  :ensure t
+  :bind*
+  (("M-o" . ace-window)
+   )
+  :config
   )
 
 ;; (use-package ace-pinyin

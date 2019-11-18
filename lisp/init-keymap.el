@@ -136,6 +136,9 @@
     "cr" 'recompile
     "cd" 'mengqp/close-compilation-window
 
+    "d" '(:ignore t :wk ("d" . "delete"))
+    "dd" 'avy-zap-to-char-dwim
+
     "e" '(:ignore t :wk ("e" . "shell"))
     "ee" 'aweshell-new
     ;; "eh" 'eshell-here
@@ -272,8 +275,8 @@
     ;; :global-prefix "C-m"
     ;; :non-normal-prefix "C-m"
     ;; "," 'ace-jump-char-mode
-    "," 'avy-goto-word-1
-    ;; "," 'avy-goto-char-2
+    ;; "," 'avy-goto-word-1
+    "," 'avy-goto-char
 
     "b" '(:ignore t :wk ("b" . "buffer"))
     "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
