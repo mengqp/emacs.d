@@ -35,21 +35,31 @@
 
 (use-package snails
   :ensure nil
-  ;; :init
-  ;; (setq snails-prefix-backends
-  	;; '(
-	  ;; ("c" '(snails-backend-command))
-  	  ;; ("m" '(snails-backend-imenu))
-  	  ;; ("b" '(snails-backend-current-buffer))
-  	  ;; ("r" '(snails-backend-rg))
-  	  ;; ("f" '(snails-backend-projectile snails-backend-fd snails-backend-mdfind snails-backend-everything))
-  	  ;; ("?" '(snails-backend-projectile snails-backend-fd))
-  	  ;; )
-  	;; )
-  ;; :bind*
-  ;; (
-  ;;  ("M-s" . snails)
-  ;;  )
+  :bind*
+  (
+   ("M-y" . snails)
+   ;; ("M-s s" . snails)
+   ;; ("M-s p" . snails-current-project)
+   ;; ("M-s b" . snails-active-recent-buffers)
+   ;; ("M-s e" . snails-everywhere)
+
+   )
+
+  :config
+  (use-package exec-path-from-shell
+    :if (featurep 'cocoa) :defer t)
+
+  ;; Functions for specific backends
+  ;; (defun snails-current-project ()
+  ;;   (interactive)
+  ;;   (snails '(snails-backend-projectile snails-backend-rg snails-backend-fd)))
+  ;; (defun snails-active-recent-buffers ()
+  ;;   (interactive)
+  ;;   (snails '(snails-backend-buffer snails-backend-recentf)))
+  ;; (defun snails-everywhere ()
+  ;;   (interactive)
+  ;;   (snails '(snails-backend-everything snails-backend-mdfind)))
+
   )
 
 

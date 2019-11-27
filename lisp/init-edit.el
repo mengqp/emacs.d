@@ -123,8 +123,8 @@
     )
 
   (use-package lazy-search
-    :bind
-    ("M-s" . lazy-search)
+    :bind*
+    ("M-s w" . lazy-search)
     ;; :config
     ;; (global-set-key (kbd "M-s") 'lazy-search)
     )
@@ -250,16 +250,17 @@
 ;;   )
 
 
-;; (use-package key-chord
-;;   :ensure t
-;;   :disabled t
-;;   :config
-;;   (key-chord-mode t)
-;;   ;; (key-chord-define-global "ji" 'imenu)
-;;   ;; (key-chord-define-global ";;" 'comment-dwim-2)
-;;   ;; (key-chord-define-global "f." 'find-file-at-point)
+(use-package key-chord
+  :ensure t
+  :disabled t
+  :config
+  (key-chord-mode t)
+  ;; (key-chord-define-global "jj"     'avy-goto-word-1)
+  ;; (key-chord-define-global "ji" 'imenu)
+  ;; (key-chord-define-global ";;" 'comment-dwim-2)
+  ;; (key-chord-define-global "f." 'find-file-at-point)
 
-;;   )
+  )
 
 ;; (use-package electric-operator
 ;;   :ensure t

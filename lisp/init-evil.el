@@ -125,7 +125,7 @@
   (use-package evil-mc
     :ensure t
     :defer t
-    :disabled t
+    ;; :disabled t
     :diminish evil-mc-mode
     :config
     (global-evil-mc-mode 1)

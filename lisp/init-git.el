@@ -120,6 +120,12 @@
   (set-face-foreground 'git-gutter:deleted "red")
   )
 
+(use-package vc-msg
+  :ensure t
+  :defer t
+
+  )
+
 
 (provide 'init-git)
 
