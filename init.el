@@ -109,11 +109,13 @@
 
   (when *linux*
     (require 'init-lsp)
-    ;; (require 'init-counsel-etags)
 
     (require 'init-plantuml)
     ;; (require 'init-ycmd)
     ;; (require 'init-gdb)
+    )
+  (when *win64*
+    (require 'init-counsel-etags)
     )
   ;; (require 'init-cscope)
 

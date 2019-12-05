@@ -3,6 +3,7 @@
  (magit-branch nil)
  (magit-commit nil)
  (magit-diff
+  (("--" "main/src/gui.c"))
   (("--" "display/maindlg.ui"))
   (("--" "display/build/ui/ui_maindlg.h"))
   ("--no-ext-diff" "--stat"))
