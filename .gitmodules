@@ -59,7 +59,3 @@
 	path = site-lisp/awesome-tray
 	url = https://github.com/manateelazycat/awesome-tray.git
 	ignore=untracked
-[submodule "site-lisp/lazycat-theme"]
-	path = site-lisp/lazycat-theme
-	url = https://github.com/manateelazycat/lazycat-theme.git
-	ignore=untracked
