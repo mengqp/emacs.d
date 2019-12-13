@@ -9,7 +9,7 @@
 ;; On-the-fly spell checker
 (use-package flyspell
   :ensure nil
-  ;; :disabled t
+  :disabled t
   :defer t
   :diminish
   ;; :if (executable-find "aspell")

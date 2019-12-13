@@ -236,16 +236,16 @@
     "t7" 'my-select-window
     "t8" 'my-select-window
     "t9" 'my-select-window
-    "ta" 'awesome-tab-select-beg-tab
-    "te" 'awesome-tab-select-end-tab
-    "tt" 'awesome-tab-ace-jump
-    "tmj" 'awesome-tab-move-current-tab-to-left
-    "tmk" 'awesome-tab-move-current-tab-to-right
-    "tg" 'awesome-tab-counsel-switch-group
-    "tbk" 'kill-current-buffer
-    "tdo" 'awesome-tab-kill-other-buffers-in-current-group
-    "tda" 'awesome-tab-kill-all-buffers-in-current-group
-    "tdm" 'awesome-tab-kill-match-buffers-in-current-group
+    ;; "ta" 'awesome-tab-select-beg-tab
+    ;; "te" 'awesome-tab-select-end-tab
+    ;; "tt" 'awesome-tab-ace-jump
+    ;; "tmj" 'awesome-tab-move-current-tab-to-left
+    ;; "tmk" 'awesome-tab-move-current-tab-to-right
+    ;; "tg" 'awesome-tab-counsel-switch-group
+    ;; "tbk" 'kill-current-buffer
+    ;; "tdo" 'awesome-tab-kill-other-buffers-in-current-group
+    ;; "tda" 'awesome-tab-kill-all-buffers-in-current-group
+    ;; "tdm" 'awesome-tab-kill-match-buffers-in-current-group
 
 
     "w" '(:ignore t :wk ("w" . "window"))

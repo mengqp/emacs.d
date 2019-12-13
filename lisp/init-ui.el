@@ -76,6 +76,8 @@
 ;;   )
 
 (use-package awesome-tab
+  :bind*
+  (("M-t" . awesome-tab-ace-jump))
   :config
   ;; :disabled t
   (awesome-tab-mode t)
