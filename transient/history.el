@@ -3,10 +3,11 @@
  (magit-branch nil)
  (magit-commit nil)
  (magit-diff
+  ("--no-ext-diff" "--stat")
+  (("--" "display/ycdatadlg.ui"))
   (("--" "main/src/gui.c"))
   (("--" "display/maindlg.ui"))
-  (("--" "display/build/ui/ui_maindlg.h"))
-  ("--no-ext-diff" "--stat"))
+  (("--" "display/build/ui/ui_maindlg.h")))
  (magit-dispatch nil)
  (magit-fetch nil)
  (magit-file-dispatch nil)

@@ -118,6 +118,13 @@
   (load-theme 'zenburn t)
   )
 
+(use-package modus-vivendi-theme
+  :ensure t
+  :disabled t
+  :config
+  (load-theme 'modus-vivendi t)
+  )
+
 ;; ;; (load-theme 'wombat t)
 (use-package doom-themes
   :ensure t

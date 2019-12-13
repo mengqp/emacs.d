@@ -79,6 +79,11 @@
   ;; (define-key company-active-map (kbd "C-p") #'company-select-previous)
   ;; (define-key company-active-map (kbd "C-s") #'company-search-candidates)
 
+  (use-package company-quickhelp
+    :ensure t
+    :diminish company-quickhelp
+    )
+
   (use-package company-posframe
     :ensure t
     :diminish company-posframe-mode
@@ -89,10 +94,12 @@
       (push '(company-childframe-mode . nil)
 	    desktop-minor-mode-table
 	    ))
-
+    (require 'company-quickhelp)
+    (require 'company-posframe-quickhelp)
     )
 
   (use-package eldoc-box
+    :disabled t
     :disabled t
     :ensure t
     ;; :hook lsp-mode . eldoc-box-hover-mode
@@ -112,8 +119,9 @@
 
   (use-package company-ctags
     :ensure t
+    :disabled t
     :defer t
-     
+
     )
 
   (use-package company-tabnine
@@ -157,6 +165,10 @@
 	  (unless (string-match "The free version of TabNine only indexes up to" (funcall company-message-func))
 	    ad-do-it))))
     )
+  )
+
+(use-package eacl
+  :ensure t
   )
 
 
