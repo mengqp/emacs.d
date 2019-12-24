@@ -44,6 +44,11 @@
 	)
   )
 
+(use-package vterm
+  :disabled t
+  :ensure t
+  )
+
 ;; ;; (require exec-path-from-shell)
 
 ;; ;; (when (memq window-system '(mac ns x))

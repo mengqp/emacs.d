@@ -49,6 +49,8 @@
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-file-watchers nil)
   (setq lsp-file-watch-threshold nil)
+  (setq lsp-enable-indentation nil)
+  (setq lsp-enable-on-type-formatting nil)
   (flymake-mode-off)
 
   (use-package company-lsp

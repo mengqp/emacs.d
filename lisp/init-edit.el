@@ -39,7 +39,7 @@
   :defer t
   :diminish aggressive-indent-mode
   :init
-  ;; (add-hook 'prog-mode-hook #'aggressive-indent-mode)
+  (add-hook 'prog-mode-hook #'aggressive-indent-mode)
   (add-hook 'plantuml-mode #'aggressive-indent-mode)
   :config
   (setq aggressive-indent-modes-to-prefer-defun '(emacs-lisp-mode lisp-mode scheme-mode clojure-mode c-mode c++-mode))

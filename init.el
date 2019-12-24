@@ -100,7 +100,6 @@
   ;; 去掉中文的输入，如果有必要，直接使用
   ;; (require 'init-tree)
   ;; (require 'init-which-key)
-  ;; (require 'init-shell)
   (require 'init-ivy)
   (require 'init-snails)
   ;; (require 'init-browser)
@@ -109,10 +108,13 @@
 
   (when *linux*
     (require 'init-lsp)
+    (require 'init-shell)
 
     (require 'init-plantuml)
     ;; (require 'init-ycmd)
     ;; (require 'init-gdb)
+    (require 'init-leecode)
+
     )
   (when *win64*
     (require 'init-counsel-etags)
