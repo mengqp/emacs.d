@@ -44,7 +44,7 @@
   :bind
   (("M-/" . company-complete)
    ;; ("C-c C-y" . company-yasnippet)
-   ("<backtab>" . company-yasnippet)
+   ;; ("<backtab>" . company-yasnippet)
    :map company-active-map
    ("C-p" . company-select-previous)
    ("C-n" . company-select-next)
@@ -79,11 +79,6 @@
   ;; (define-key company-active-map (kbd "C-p") #'company-select-previous)
   ;; (define-key company-active-map (kbd "C-s") #'company-search-candidates)
 
-  (use-package company-quickhelp
-    :ensure t
-    :diminish company-quickhelp
-    )
-
   (use-package company-posframe
     :ensure t
     :diminish company-posframe-mode
@@ -94,12 +89,9 @@
       (push '(company-childframe-mode . nil)
 	    desktop-minor-mode-table
 	    ))
-    (require 'company-quickhelp)
-    (require 'company-posframe-quickhelp)
     )
 
   (use-package eldoc-box
-    :disabled t
     :disabled t
     :ensure t
     ;; :hook lsp-mode . eldoc-box-hover-mode
@@ -113,6 +105,7 @@
 
   (use-package company-english-helper
     :ensure nil
+    :disabled t
     :defer t
     :commands (company-english-helper toggle-company-english-helper)
     )
@@ -121,7 +114,6 @@
     :ensure t
     :disabled t
     :defer t
-
     )
 
   (use-package company-tabnine
@@ -168,6 +160,7 @@
   )
 
 (use-package eacl
+  :disabled t
   :ensure t
   )
 

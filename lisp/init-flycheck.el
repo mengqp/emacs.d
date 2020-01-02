@@ -68,14 +68,14 @@
   ;; 删除 Modline FlyC 显示为 e
   (setq flycheck-mode-line-prefix "!")
 
-;;   ;; toggle flycheck window
-;;   (defun mengqp/toggle-flycheck-error-list ()
-;;     "Toggle flycheck's error list window.
-;; If the error list is visible, hide it.  Otherwise, show it."
-;;     (interactive)
-;;     (-if-let (window (flycheck-get-error-list-window))
-;; 	(quit-window nil window)
-;;       (flycheck-list-errors)))
+  ;;   ;; toggle flycheck window
+  ;;   (defun mengqp/toggle-flycheck-error-list ()
+  ;;     "Toggle flycheck's error list window.
+  ;; If the error list is visible, hide it.  Otherwise, show it."
+  ;;     (interactive)
+  ;;     (-if-let (window (flycheck-get-error-list-window))
+  ;; 	(quit-window nil window)
+  ;;       (flycheck-list-errors)))
 
   ;; (use-package flycheck-package
   ;;   :ensure t
@@ -106,11 +106,19 @@
 
 (use-package flycheck-pos-tip
   :ensure t
+  :disabled t
   :defer t
   :after flycheck
   :init
   (add-hook 'flycheck-mode-hook #'flycheck-pos-tip-mode))
 
+(use-package flycheck-posframe
+  :ensure t
+  :after flycheck
+  :config
+  (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode)
+  (flycheck-posframe-configure-pretty-defaults)
+  )
 
 
 (provide 'init-flycheck)

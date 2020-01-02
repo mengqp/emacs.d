@@ -237,334 +237,340 @@
   ;; 	     (progn
   ;; 	       (call-interactively lzl-move)
   ;; 	       (point)))
-;;     (let ((num (prefix-numeric-value current-prefix-arg)))
-;;       (if (<= num 0)
-;; 	  (setq num (- 1 num)))
-;;       (if (string-equal lzl-arg2 "n")
-;; 	  (setq num (- num 1)))
-;;       (message "%s%d%s" lzl-arg1 num lzl-arg2))
+  ;;     (let ((num (prefix-numeric-value current-prefix-arg)))
+  ;;       (if (<= num 0)
+  ;; 	  (setq num (- 1 num)))
+  ;;       (if (string-equal lzl-arg2 "n")
+  ;; 	  (setq num (- num 1)))
+  ;;       (message "%s%d%s" lzl-arg1 num lzl-arg2))
 
-;;     ;; k
-;;     (if (and (string-match lzl-arg1 "k")
-;; 	     (string-match lzl-arg2 "<>npk"))
-;; 	(let ((pp (point)))
-;; 	  (if (and  (search-forward "\n" nil  t 1)
-;; 		    (= (1+ pp) (point)))
-;; 	      (delete-char -1))
-;; 	  (goto-char pp)))
-;;     ;; 如果复制的话，恢复其位置
-;;     (if (string-equal lzl-arg1 "m")
-;; 	(goto-char emacs-ckm-point))
-;;     (setq current-prefix-arg nil)
-;;     (if lzl-esc
-;; 	(hydra-esc/body)))
+  ;;     ;; k
+  ;;     (if (and (string-match lzl-arg1 "k")
+  ;; 	     (string-match lzl-arg2 "<>npk"))
+  ;; 	(let ((pp (point)))
+  ;; 	  (if (and  (search-forward "\n" nil  t 1)
+  ;; 		    (= (1+ pp) (point)))
+  ;; 	      (delete-char -1))
+  ;; 	  (goto-char pp)))
+  ;;     ;; 如果复制的话，恢复其位置
+  ;;     (if (string-equal lzl-arg1 "m")
+  ;; 	(goto-char emacs-ckm-point))
+  ;;     (setq current-prefix-arg nil)
+  ;;     (if lzl-esc
+  ;; 	(hydra-esc/body)))
 
-;;   (defun emacs-ckm (which-ckm)
-;;     (setq lzl-arg1 which-ckm)
-;;     (if (string-equal which-ckm "m")
-;; 	(setq lzl-kill-or-save #'kill-ring-save)
-;;       (setq lzl-kill-or-save #'kill-region))
-;;     (if (string-equal which-ckm "c")
-;; 	(setq lzl-esc nil)
-;;       (setq lzl-esc t))
-;;     (hydra-emacs/ckm/body))
+  ;;   (defun emacs-ckm (which-ckm)
+  ;;     (setq lzl-arg1 which-ckm)
+  ;;     (if (string-equal which-ckm "m")
+  ;; 	(setq lzl-kill-or-save #'kill-ring-save)
+  ;;       (setq lzl-kill-or-save #'kill-region))
+  ;;     (if (string-equal which-ckm "c")
+  ;; 	(setq lzl-esc nil)
+  ;;       (setq lzl-esc t))
+  ;;     (hydra-emacs/ckm/body))
 
-;;   (defhydra hydra-emacs/ckm (:color blue
-;; 				    :hint nil)
-;;     "
-;;     %`lzl-arg1
-;;   "
-;;     ("<" (let ((current-prefix-arg (point-min)))
-;; 	   (lzl-emacs-get #'goto-char "<")))
-;;     (">" (let ((current-prefix-arg (point-max)))
-;; 	   (lzl-emacs-get #'goto-char ">")))
-;;     ("i" (lzl-emacs-get #'beginning-of-line "i"))
-;;     ("aw" (progn
-;; 	    (forward-word)
-;; 	    (backward-word)
-;; 	    (lzl-emacs-get #'forward-word "aw")))
-;;     ("as" (progn
-;; 	    (forward-sexp)
-;; 	    (backward-sexp)
-;; 	    (lzl-emacs-get #'forward-sexp "as")))
-;;     ("aS" (progn
-;; 	    (backward-sentence)
-;; 	    (lzl-emacs-get #'forward-sentence "aS")))
-;;     ("aP" (progn
-;; 	    (backward-paragraph)
-;; 	    (lzl-emacs-get #'forward-paragraph "aP")))
-;;     ("a'" (progn
-;; 	    (lzl-look-forward-char -1 ?')
-;; 	    (lzl-emacs-get '(lambda () (interactive)
-;; 			      (lzl-look-forward-char 2 ?\')) "a'")))
-;;     ("a<" (progn
-;; 	    (lzl-look-forward-char -1 ?<)
-;; 	    (lzl-emacs-get '(lambda () (interactive)
-;; 			      (lzl-look-forward-char 1 ?>)) "a>")))
-;;     ("at" (progn
-;; 	    (web-mode-element-beginning)
-;; 	    (lzl-emacs-get #'web-mode-element-end "at")))
-;;     ("e'" (progn
-;; 	    (lzl-look-forward-char -1 ?')
-;; 	    (forward-char 1)
-;; 	    (lzl-emacs-get '(lambda () (interactive)
-;; 			      (lzl-look-forward-char 1 ?\')
-;; 			      (backward-char 1)) "e'")))
-;;     ("e<" (progn
-;; 	    (lzl-look-forward-char -1 ?<)
-;; 	    (forward-char 1)
-;; 	    (lzl-emacs-get '(lambda () (interactive)
-;; 			      (lzl-look-forward-char 1 ?>)
-;; 			      (backward-char 1)) "e>")))
+  ;;   (defhydra hydra-emacs/ckm (:color blue
+  ;; 				    :hint nil)
+  ;;     "
+  ;;     %`lzl-arg1
+  ;;   "
+  ;;     ("<" (let ((current-prefix-arg (point-min)))
+  ;; 	   (lzl-emacs-get #'goto-char "<")))
+  ;;     (">" (let ((current-prefix-arg (point-max)))
+  ;; 	   (lzl-emacs-get #'goto-char ">")))
+  ;;     ("i" (lzl-emacs-get #'beginning-of-line "i"))
+  ;;     ("aw" (progn
+  ;; 	    (forward-word)
+  ;; 	    (backward-word)
+  ;; 	    (lzl-emacs-get #'forward-word "aw")))
+  ;;     ("as" (progn
+  ;; 	    (forward-sexp)
+  ;; 	    (backward-sexp)
+  ;; 	    (lzl-emacs-get #'forward-sexp "as")))
+  ;;     ("aS" (progn
+  ;; 	    (backward-sentence)
+  ;; 	    (lzl-emacs-get #'forward-sentence "aS")))
+  ;;     ("aP" (progn
+  ;; 	    (backward-paragraph)
+  ;; 	    (lzl-emacs-get #'forward-paragraph "aP")))
+  ;;     ("a'" (progn
+  ;; 	    (lzl-look-forward-char -1 ?')
+  ;; 	    (lzl-emacs-get '(lambda () (interactive)
+  ;; 			      (lzl-look-forward-char 2 ?\')) "a'")))
+  ;;     ("a<" (progn
+  ;; 	    (lzl-look-forward-char -1 ?<)
+  ;; 	    (lzl-emacs-get '(lambda () (interactive)
+  ;; 			      (lzl-look-forward-char 1 ?>)) "a>")))
+  ;;     ("at" (progn
+  ;; 	    (web-mode-element-beginning)
+  ;; 	    (lzl-emacs-get #'web-mode-element-end "at")))
+  ;;     ("e'" (progn
+  ;; 	    (lzl-look-forward-char -1 ?')
+  ;; 	    (forward-char 1)
+  ;; 	    (lzl-emacs-get '(lambda () (interactive)
+  ;; 			      (lzl-look-forward-char 1 ?\')
+  ;; 			      (backward-char 1)) "e'")))
+  ;;     ("e<" (progn
+  ;; 	    (lzl-look-forward-char -1 ?<)
+  ;; 	    (forward-char 1)
+  ;; 	    (lzl-emacs-get '(lambda () (interactive)
+  ;; 			      (lzl-look-forward-char 1 ?>)
+  ;; 			      (backward-char 1)) "e>")))
 
-;;     ("et" (progn
-;; 	    (web-mode-element-beginning)
-;; 	    (web-mode-tag-end)
-;; 	    (lzl-emacs-get '(lambda () (interactive)
-;; 			      (web-mode-element-end)
-;; 			      (backward-char 1)
-;; 			      (web-mode-tag-beginning)) "at")))
-;;     ("el" (progn
-;; 	    (paredit-backward-up)
-;; 	    (forward-char 1)
-;; 	    (lzl-emacs-get '(lambda () (interactive)
-;; 			      (paredit-forward-up)
-;; 			      (backward-char 1)) "el")))
-;;     ("l" (progn
-;; 	   (paredit-backward-up)
-;; 	   (lzl-emacs-get #'forward-sexp "s")))
-;;     ("d" (progn
-;; 	   (end-of-defun)
-;; 	   (beginning-of-defun)
-;; 	   (lzl-emacs-get #'forward-sexp "s")))
-;;     ("S" (lzl-emacs-get #'forward-sentence "S"))
-;;     ("P" (lzl-emacs-get #'forward-paragraph "P"))
-;;     ("w" (lzl-emacs-get #'forward-word "w"))
-;;     ("s" (lzl-emacs-get #'forward-sexp "s"))
-;;     (";" (lzl-emacs-get #'end-of-line ";"))
-;;     ("n" (let ((current-prefix-arg (1+ (prefix-numeric-value current-prefix-arg))))
-;; 	   (lzl-emacs-get #'end-of-line "n")))
-;;     ("p" (let ((current-prefix-arg (- 1  (prefix-numeric-value current-prefix-arg))))
-;; 	   (lzl-emacs-get #'beginning-of-line "p")))
-;;     ("c" (lzl-emacs-get #'end-of-line "c"))
-;;     ("k" (lzl-emacs-get #'end-of-line "k"))
-;;     ("m" (lzl-emacs-get #'end-of-line "m"))
-;;     ("t" (lzl-emacs-get #'lzl-look-forward-char "t")))
-
-
-;;   (defhydra hydra-emacs/r (:body-pre (delete-char 1)
-;; 				     :post hydra-esc/body
-;; 				     :color blue
-;; 				     :hint nil)
-;;     "
-;;    --replace--
-;;   "
-;;     ("0" (progn
-;; 	   (insert-char ?0)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("1" (progn
-;; 	   (insert-char ?1)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("2" (progn
-;; 	   (insert-char ?2)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("3" (progn
-;; 	   (insert-char ?3)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("4" (progn
-;; 	   (insert-char ?4)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("5" (progn
-;; 	   (insert-char ?5)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("6" (progn
-;; 	   (insert-char ?6)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("7" (progn
-;; 	   (insert-char ?7)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("8" (progn
-;; 	   (insert-char ?8)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("9" (progn
-;; 	   (insert-char ?9)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("-" (progn
-;; 	   (insert-char ?-)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("<escape>" hydra-esc/body :exit t))
-
-;;   (defhydra hydra-emacs/spc (:body-pre (progn
-;; 					 (call-interactively #'set-mark-command)
-;; 					 (setq-default cursor-type 'bar))
-;; 				       :post (setq-default cursor-type t)
-;; 				       :color pink
-;; 				       :hint nil)
-;;     "
-;;    ---visual---
-;;   "
-;;     ("n" next-line)
-;;     ("p" previous-line)
-;;     ("b" backward-char)
-;;     ("f" forward-char)
-;;     ("a" beginning-of-line)
-;;     ("e" end-of-line)
-;;     ("M-w" (progn
-;; 	     (call-interactively #'kill-ring-save)
-;; 	     (hydra-esc/body)) :exit t)
-;;     ("w" (progn
-;; 	   (call-interactively #'kill-region)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("k" (progn
-;; 	   (call-interactively #'kill-rectangle)
-;; 	   (hydra-esc/body)) :exit t)
-;;     ("c" (progn
-;; 	   (call-interactively #'kill-region)) :exit t)
-;;     ("t" (progn
-;; 	   (call-interactively #'string-rectangle)
-;; 	   (hydra-esc/body)) :exit t))
+  ;;     ("et" (progn
+  ;; 	    (web-mode-element-beginning)
+  ;; 	    (web-mode-tag-end)
+  ;; 	    (lzl-emacs-get '(lambda () (interactive)
+  ;; 			      (web-mode-element-end)
+  ;; 			      (backward-char 1)
+  ;; 			      (web-mode-tag-beginning)) "at")))
+  ;;     ("el" (progn
+  ;; 	    (paredit-backward-up)
+  ;; 	    (forward-char 1)
+  ;; 	    (lzl-emacs-get '(lambda () (interactive)
+  ;; 			      (paredit-forward-up)
+  ;; 			      (backward-char 1)) "el")))
+  ;;     ("l" (progn
+  ;; 	   (paredit-backward-up)
+  ;; 	   (lzl-emacs-get #'forward-sexp "s")))
+  ;;     ("d" (progn
+  ;; 	   (end-of-defun)
+  ;; 	   (beginning-of-defun)
+  ;; 	   (lzl-emacs-get #'forward-sexp "s")))
+  ;;     ("S" (lzl-emacs-get #'forward-sentence "S"))
+  ;;     ("P" (lzl-emacs-get #'forward-paragraph "P"))
+  ;;     ("w" (lzl-emacs-get #'forward-word "w"))
+  ;;     ("s" (lzl-emacs-get #'forward-sexp "s"))
+  ;;     (";" (lzl-emacs-get #'end-of-line ";"))
+  ;;     ("n" (let ((current-prefix-arg (1+ (prefix-numeric-value current-prefix-arg))))
+  ;; 	   (lzl-emacs-get #'end-of-line "n")))
+  ;;     ("p" (let ((current-prefix-arg (- 1  (prefix-numeric-value current-prefix-arg))))
+  ;; 	   (lzl-emacs-get #'beginning-of-line "p")))
+  ;;     ("c" (lzl-emacs-get #'end-of-line "c"))
+  ;;     ("k" (lzl-emacs-get #'end-of-line "k"))
+  ;;     ("m" (lzl-emacs-get #'end-of-line "m"))
+  ;;     ("t" (lzl-emacs-get #'lzl-look-forward-char "t")))
 
 
-;;   (defhydra hydra-emacs/R (:body-pre (overwrite-mode)
-;; 				     :color pink
-;; 				     :hint nil)
-;;     "
-;;    --REPLACE--
-;;   "
-;;     ("0" self-insert-command)
-;;     ("1" self-insert-command)
-;;     ("2" self-insert-command)
-;;     ("3" self-insert-command)
-;;     ("4" self-insert-command)
-;;     ("5" self-insert-command)
-;;     ("6" self-insert-command)
-;;     ("7" self-insert-command)
-;;     ("8" self-insert-command)
-;;     ("9" self-insert-command)
-;;     ("-" self-insert-command)
-;;     ("<escape>"   (progn
-;; 		    (overwrite-mode -1)
-;; 		    (hydra-esc/body)) :exit t))
+  ;;   (defhydra hydra-emacs/r (:body-pre (delete-char 1)
+  ;; 				     :post hydra-esc/body
+  ;; 				     :color blue
+  ;; 				     :hint nil)
+  ;;     "
+  ;;    --replace--
+  ;;   "
+  ;;     ("0" (progn
+  ;; 	   (insert-char ?0)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("1" (progn
+  ;; 	   (insert-char ?1)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("2" (progn
+  ;; 	   (insert-char ?2)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("3" (progn
+  ;; 	   (insert-char ?3)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("4" (progn
+  ;; 	   (insert-char ?4)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("5" (progn
+  ;; 	   (insert-char ?5)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("6" (progn
+  ;; 	   (insert-char ?6)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("7" (progn
+  ;; 	   (insert-char ?7)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("8" (progn
+  ;; 	   (insert-char ?8)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("9" (progn
+  ;; 	   (insert-char ?9)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("-" (progn
+  ;; 	   (insert-char ?-)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("<escape>" hydra-esc/body :exit t))
+
+  ;;   (defhydra hydra-emacs/spc (:body-pre (progn
+  ;; 					 (call-interactively #'set-mark-command)
+  ;; 					 (setq-default cursor-type 'bar))
+  ;; 				       :post (setq-default cursor-type t)
+  ;; 				       :color pink
+  ;; 				       :hint nil)
+  ;;     "
+  ;;    ---visual---
+  ;;   "
+  ;;     ("n" next-line)
+  ;;     ("p" previous-line)
+  ;;     ("b" backward-char)
+  ;;     ("f" forward-char)
+  ;;     ("a" beginning-of-line)
+  ;;     ("e" end-of-line)
+  ;;     ("M-w" (progn
+  ;; 	     (call-interactively #'kill-ring-save)
+  ;; 	     (hydra-esc/body)) :exit t)
+  ;;     ("w" (progn
+  ;; 	   (call-interactively #'kill-region)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("k" (progn
+  ;; 	   (call-interactively #'kill-rectangle)
+  ;; 	   (hydra-esc/body)) :exit t)
+  ;;     ("c" (progn
+  ;; 	   (call-interactively #'kill-region)) :exit t)
+  ;;     ("t" (progn
+  ;; 	   (call-interactively #'string-rectangle)
+  ;; 	   (hydra-esc/body)) :exit t))
 
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;   (defhydra hydra-esc (:color pink
-;; 			      :hint nil)
-;;     "
-;;    _<f3>_:gdb  _<f4>_:until  _<f5>_:go  _<f6>_:stop  _<f7>_:step  _<f8>_:next  _<f9>_:cont  _<f10>_:finish
-;;   "
-;;     ("{" shrink-window-horizontally)
-;;     ("}" enlarge-window-horizontally)
-;;     ("^" enlarge-window)
-;;     ("(" paredit-backward-slurp-sexp)
-;;     (")" paredit-forward-slurp-sexp)
-;;     ("<" paredit-backward-barf-sexp)
-;;     (">" paredit-forward-barf-sexp)
-;;     ("S" paredit-split-sexp)
-;;     ("J" paredit-join-sexps)
-;;     ("M-<up>" paredit-splice-sexp)
-;;     ("<up>" (progn
-;; 	      (paredit-backward)
-;; 	      (paredit-raise-sexp)))
-;;     ("<down>" paredit-raise-sexp)
-;;     ("<left>"  paredit-splice-sexp-killing-forward)
-;;     ("<right>" paredit-splice-sexp-killing-backward)
-;;     ("a" beginning-of-line)
-;;     ("C-a" beginning-of-line :exit t)
-;;     ("b" backward-char)
-;;     ("B" goto-ibuffer :exit t)
-;;     ("C-b" backward-char :exit t)
-;;     ("c" (emacs-ckm "c") :exit t)
-;;     ("d" delete-char)
-;;     ("C-d" delete-char :exit t)
-;;     ("e" move-end-of-line)
-;;     ("C-e" move-end-of-line :exit t)
-;;     ("f" forward-char)
-;;     ("F" lsp-format-buffer)
-;;     ("C-f" forward-char :exit t)
-;;     ("g" avy-goto-line)
-;;     ("G" goto-line)
-;;     ("h" paredit-backward)
-;;     ("H" delete-indentation)
-;;     ("i" nil)
-;;     ("I" beginning-of-line-text)
-;;     ("j" forward-to-indentation)
-;;     ("C-j" newline-and-indent :exit t)
-;;     ("k" (emacs-ckm "k") :exit t)
-;;     ("l" paredit-forward)
-;;     ("L" (delete-indentation 1))
-;;     ("m" (emacs-ckm "m") :exit t)
-;;     ("M" (save-excursion
-;; 	   (call-interactively #'mark-whole-buffer)
-;; 	   (mytab)
-;; 	   (whitespace-cleanup)
-;; 	   (call-interactively #'untabify)))
-;;     ("n" next-line)
-;;     ("C-n" next-line :exit t)
-;;     ("N" (progn
-;; 	   (save-excursion
-;; 	     (end-of-line)
-;; 	     (open-line 1))))
-;;     ("M-n" (progn
-;; 	     (end-of-line)
-;; 	     (newline-and-indent)
-;; 	     (yank)))
-;;     ("o" (progn
-;; 	   (end-of-line)
-;; 	   (newline-and-indent)) :exit t)
-;;     ("O" (progn
-;; 	   (beginning-of-line)
-;; 	   (open-line 1)
-;; 	   (mytab)) :exit t)
-;;     ("p" previous-line)
-;;     ("C-p" previous-line :exit t)
-;;     ("M-p" (progn
-;; 	     (beginning-of-line)
-;; 	     (open-line 1)
-;; 	     (mytab)
-;; 	     (yank)))
-;;     ("P" (progn
-;; 	   (save-excursion
-;; 	     (beginning-of-line)
-;; 	     (open-line 1))))
-;;     ("q" (kill-buffer (current-buffer)))
-;;     ("r" hydra-emacs/r/body :exit t)
-;;     ("R" hydra-emacs/R/body :exit t)
-;;     ("s" isearch-forward-regexp :exit t)
-;;     ("t" (progn
-;; 	   (if (equal 'hydra-esc/lambda-t last-command)
-;; 	       (lzl-look-forward-char 2 search-forward-char)
-;; 	     (call-interactively #'lzl-look-forward-char))
-;; 	   (backward-char)))
-;;     ("u" undo)
-;;     ("U" winner-undo)
-;;     ("v" scroll-up-command)
-;;     ("w" forward-to-word)
-;;     ("x" (insert-char ?x) :exit t)
-;;     ("y" yank)
-;;     ("z" save-buffer)
-;;     ("Z" save-buffers-kill-terminal)
-;;     ("<C-SPC>" hydra-emacs/spc/body :exit t)
-;;     ("[" paredit-backward-up)
-;;     ("]" paredit-forward-up)
-;;     (";" eval-last-sexp)
-;;     ("." sp-push-position-to-ring)
-;;     ("," sp-get-position-from-ring)
-;;     ("/" sp-show-all-position-in-ring)
-;;     ("M-x" counsel-M-x :exit t)
-;;     ("M-<SPC>" hydra-f1/body :exit t)
-;;     ("<f3>" (progn
-;;               (call-interactively #'gdb-many-windows)
-;;               (call-interactively #'tool-bar-mode)))
-;;     ("<f4>" gud-until)
-;;     ("<f5>" gud-go)
-;;     ("<f6>" gud-stop-subjob)
-;;     ("<f7>" gud-step)
-;;     ("<f8>" gud-next)
-;;     ("<f9>" gud-cont)
-;;     ("<f10>" gud-finish)
-;;     ("<escape>" nil))
-;;   (global-set-key (kbd "<f1>") #'hydra-f1/body)
+  ;;   (defhydra hydra-emacs/R (:body-pre (overwrite-mode)
+  ;; 				     :color pink
+  ;; 				     :hint nil)
+  ;;     "
+  ;;    --REPLACE--
+  ;;   "
+  ;;     ("0" self-insert-command)
+  ;;     ("1" self-insert-command)
+  ;;     ("2" self-insert-command)
+  ;;     ("3" self-insert-command)
+  ;;     ("4" self-insert-command)
+  ;;     ("5" self-insert-command)
+  ;;     ("6" self-insert-command)
+  ;;     ("7" self-insert-command)
+  ;;     ("8" self-insert-command)
+  ;;     ("9" self-insert-command)
+  ;;     ("-" self-insert-command)
+  ;;     ("<escape>"   (progn
+  ;; 		    (overwrite-mode -1)
+  ;; 		    (hydra-esc/body)) :exit t))
+
+
+  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;   (defhydra hydra-esc (:color pink
+  ;; 			      :hint nil)
+  ;;     "
+  ;;    _<f3>_:gdb  _<f4>_:until  _<f5>_:go  _<f6>_:stop  _<f7>_:step  _<f8>_:next  _<f9>_:cont  _<f10>_:finish
+  ;;   "
+  ;;     ("{" shrink-window-horizontally)
+  ;;     ("}" enlarge-window-horizontally)
+  ;;     ("^" enlarge-window)
+  ;;     ("(" paredit-backward-slurp-sexp)
+  ;;     (")" paredit-forward-slurp-sexp)
+  ;;     ("<" paredit-backward-barf-sexp)
+  ;;     (">" paredit-forward-barf-sexp)
+  ;;     ("S" paredit-split-sexp)
+  ;;     ("J" paredit-join-sexps)
+  ;;     ("M-<up>" paredit-splice-sexp)
+  ;;     ("<up>" (progn
+  ;; 	      (paredit-backward)
+  ;; 	      (paredit-raise-sexp)))
+  ;;     ("<down>" paredit-raise-sexp)
+  ;;     ("<left>"  paredit-splice-sexp-killing-forward)
+  ;;     ("<right>" paredit-splice-sexp-killing-backward)
+  ;;     ("a" beginning-of-line)
+  ;;     ("C-a" beginning-of-line :exit t)
+  ;;     ("b" backward-char)
+  ;;     ("B" goto-ibuffer :exit t)
+  ;;     ("C-b" backward-char :exit t)
+  ;;     ("c" (emacs-ckm "c") :exit t)
+  ;;     ("d" delete-char)
+  ;;     ("C-d" delete-char :exit t)
+  ;;     ("e" move-end-of-line)
+  ;;     ("C-e" move-end-of-line :exit t)
+  ;;     ("f" forward-char)
+  ;;     ("F" lsp-format-buffer)
+  ;;     ("C-f" forward-char :exit t)
+  ;;     ("g" avy-goto-line)
+  ;;     ("G" goto-line)
+  ;;     ("h" paredit-backward)
+  ;;     ("H" delete-indentation)
+  ;;     ("i" nil)
+  ;;     ("I" beginning-of-line-text)
+  ;;     ("j" forward-to-indentation)
+  ;;     ("C-j" newline-and-indent :exit t)
+  ;;     ("k" (emacs-ckm "k") :exit t)
+  ;;     ("l" paredit-forward)
+  ;;     ("L" (delete-indentation 1))
+  ;;     ("m" (emacs-ckm "m") :exit t)
+  ;;     ("M" (save-excursion
+  ;; 	   (call-interactively #'mark-whole-buffer)
+  ;; 	   (mytab)
+  ;; 	   (whitespace-cleanup)
+  ;; 	   (call-interactively #'untabify)))
+  ;;     ("n" next-line)
+  ;;     ("C-n" next-line :exit t)
+  ;;     ("N" (progn
+  ;; 	   (save-excursion
+  ;; 	     (end-of-line)
+  ;; 	     (open-line 1))))
+  ;;     ("M-n" (progn
+  ;; 	     (end-of-line)
+  ;; 	     (newline-and-indent)
+  ;; 	     (yank)))
+  ;;     ("o" (progn
+  ;; 	   (end-of-line)
+  ;; 	   (newline-and-indent)) :exit t)
+  ;;     ("O" (progn
+  ;; 	   (beginning-of-line)
+  ;; 	   (open-line 1)
+  ;; 	   (mytab)) :exit t)
+  ;;     ("p" previous-line)
+  ;;     ("C-p" previous-line :exit t)
+  ;;     ("M-p" (progn
+  ;; 	     (beginning-of-line)
+  ;; 	     (open-line 1)
+  ;; 	     (mytab)
+  ;; 	     (yank)))
+  ;;     ("P" (progn
+  ;; 	   (save-excursion
+  ;; 	     (beginning-of-line)
+  ;; 	     (open-line 1))))
+  ;;     ("q" (kill-buffer (current-buffer)))
+  ;;     ("r" hydra-emacs/r/body :exit t)
+  ;;     ("R" hydra-emacs/R/body :exit t)
+  ;;     ("s" isearch-forward-regexp :exit t)
+  ;;     ("t" (progn
+  ;; 	   (if (equal 'hydra-esc/lambda-t last-command)
+  ;; 	       (lzl-look-forward-char 2 search-forward-char)
+  ;; 	     (call-interactively #'lzl-look-forward-char))
+  ;; 	   (backward-char)))
+  ;;     ("u" undo)
+  ;;     ("U" winner-undo)
+  ;;     ("v" scroll-up-command)
+  ;;     ("w" forward-to-word)
+  ;;     ("x" (insert-char ?x) :exit t)
+  ;;     ("y" yank)
+  ;;     ("z" save-buffer)
+  ;;     ("Z" save-buffers-kill-terminal)
+  ;;     ("<C-SPC>" hydra-emacs/spc/body :exit t)
+  ;;     ("[" paredit-backward-up)
+  ;;     ("]" paredit-forward-up)
+  ;;     (";" eval-last-sexp)
+  ;;     ("." sp-push-position-to-ring)
+  ;;     ("," sp-get-position-from-ring)
+  ;;     ("/" sp-show-all-position-in-ring)
+  ;;     ("M-x" counsel-M-x :exit t)
+  ;;     ("M-<SPC>" hydra-f1/body :exit t)
+  ;;     ("<f3>" (progn
+  ;;               (call-interactively #'gdb-many-windows)
+  ;;               (call-interactively #'tool-bar-mode)))
+  ;;     ("<f4>" gud-until)
+  ;;     ("<f5>" gud-go)
+  ;;     ("<f6>" gud-stop-subjob)
+  ;;     ("<f7>" gud-step)
+  ;;     ("<f8>" gud-next)
+  ;;     ("<f9>" gud-cont)
+  ;;     ("<f10>" gud-finish)
+  ;;     ("<escape>" nil))
+  ;;   (global-set-key (kbd "<f1>") #'hydra-f1/body)
+  )
+
+(use-package pretty-hydra
+  :ensure t
+  ;; :defer t
+
   )
 
 (provide 'init-hydra)

@@ -49,8 +49,8 @@
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-file-watchers nil)
   (setq lsp-file-watch-threshold nil)
-  (setq lsp-enable-indentation nil)
-  (setq lsp-enable-on-type-formatting nil)
+  ;; (setq lsp-enable-indentation nil)
+  ;; (setq lsp-enable-on-type-formatting nil)
   (flymake-mode-off)
 
   (use-package company-lsp
@@ -64,6 +64,25 @@
     :custom-face
     (lsp-ui-doc-background ((t (:background nil))))
     (lsp-ui-doc-header ((t (:inherit (font-lock-string-face italic)))))
+    ;; :pretty-hydra
+    ;; ((:title "LSP UI" :color amaranth :quit-key "q")
+    ;;  ("Doc"
+    ;;   (("d e" lsp-ui-doc-enable "enable" :toggle t)
+    ;;    ("d s" lsp-ui-doc-include-signature "signature" :toggle t)
+    ;;    ("d t" (setq lsp-ui-doc-position 'top) "top" :toggle (eq lsp-ui-doc-position 'top))
+    ;;    ("d b" (setq lsp-ui-doc-position 'bottom) "bottom" :toggle (eq lsp-ui-doc-position 'bottom))
+    ;;    ("d p" (setq lsp-ui-doc-position 'at-point) "at point" :toggle (eq lsp-ui-doc-position 'at-point))
+    ;;    ("d f" (setq lsp-ui-doc-alignment 'frame) "align frame" :toggle (eq lsp-ui-doc-alignment 'frame))
+    ;;    ("d w" (setq lsp-ui-doc-alignment 'window) "align window" :toggle (eq lsp-ui-doc-alignment 'window)))
+    ;;   "Sideline"
+    ;;   (("s e" lsp-ui-sideline-enable "enable" :toggle t)
+    ;;    ("s h" lsp-ui-sideline-show-hover "hover" :toggle t)
+    ;;    ("s d" lsp-ui-sideline-show-diagnostics "diagnostics" :toggle t)
+    ;;    ("s s" lsp-ui-sideline-show-symbol "symbol" :toggle t)
+    ;;    ("s c" lsp-ui-sideline-show-code-actions "code actions" :toggle t)
+    ;;    ("s i" lsp-ui-sideline-ignore-duplicate "ignore duplicate" :toggle t))))
+    ;; :bind
+    ;; (("M-<f6>" . lsp-ui-hydra/body))
     :init
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
     (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )

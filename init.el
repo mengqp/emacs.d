@@ -74,12 +74,12 @@
   (require 'init-color-rg)
   (require 'init-cnfonts)
   (require 'init-layout)
-  (require 'init-dumb-jump)
+  ;; (require 'init-dumb-jump)
 
   (when *linux*
     ;; (require 'init-abbrev)
     (require 'init-hydra)
-    (require 'init-spell)
+    ;; (require 'init-spell)
     ;;(require 'init-dap)
     )
   (require 'init-pyim)
@@ -102,7 +102,7 @@
   ;; (require 'init-which-key)
   (require 'init-ivy)
   (require 'init-snails)
-  ;; (require 'init-browser)
+  (require 'init-browser)
   (require 'init-func)
   (require 'init-keymap)
 

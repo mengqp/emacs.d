@@ -300,12 +300,12 @@ If FILEXT is provided, return files with extension FILEXT instead."
   (setq auto-mode-alist (cons '("\\.org.gpg$" . org-journal-mode) auto-mode-alist))
   (setq org-journal-file-type 'monthly
 	;; org-journal-file-format "%Y-%m-%d.org"
-	org-journal-file-format "%Y-%m.org"
+	org-journal-file-format "%Y.org"
 	org-journal-dir mengqp-org-diary-dir
 	org-journal-date-format "%A, %d %B %Y"
-	org-journal-enable-encryption t
-	org-journal-encrypt-journal t
-	org-journal-encrypt-on 'kill-buffer-hook
+	;; org-journal-enable-encryption t
+	;; org-journal-encrypt-journal t
+	;; org-journal-encrypt-on 'kill-buffer-hook
 	)
   ;; When =org-journal-file-pattern= has the default value, this would be the regex.
   (setq org-agenda-file-regexp "\\`\\\([^.].*\\.org\\\|[0-9]\\\{8\\\}\\\(\\.gpg\\\)?\\\)\\'")

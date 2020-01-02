@@ -38,10 +38,33 @@
   ;; :disabled t
   :defer t
   :diminish aggressive-indent-mode
-  :init
-  (add-hook 'prog-mode-hook #'aggressive-indent-mode)
-  (add-hook 'plantuml-mode #'aggressive-indent-mode)
   :config
+  (dolist (hook (list
+		 'emacs-lisp-mode-hook
+		 'lisp-interaction-mode-hook
+		 'lisp-mode-hook
+		 'sh-mode-hook
+		 'makefile-gmake-mode-hook
+		 'php-mode-hook
+		 'python-mode-hook
+		 'js-mode-hook
+		 'go-mode-hook
+		 'qml-mode-hook
+		 'jade-mode-hook
+		 'css-mode-hook
+		 'ruby-mode-hook
+		 'coffee-mode-hook
+		 'rust-mode-hook
+		 'qmake-mode-hook
+		 'lua-mode-hook
+		 'swift-mode-hook
+		 'web-mode-hook
+		 'markdown-mode-hook
+		 'llvm-mode-hook
+		 'conf-toml-mode-hook
+		 'plantuml-mode-hook
+		 ))
+    (add-hook hook #'aggressive-indent-mode))
   (setq aggressive-indent-modes-to-prefer-defun '(emacs-lisp-mode lisp-mode scheme-mode clojure-mode c-mode c++-mode))
   (setq aggressive-indent-dont-electric-modes t)
   (setq aggressive-indent-sit-for-time 0.5)
