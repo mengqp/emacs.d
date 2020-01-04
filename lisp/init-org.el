@@ -102,6 +102,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
 (use-package toc-org
   :defer t
+  :disabled t
   :ensure t
   :init
   (add-hook 'org-mode-hook 'toc-org-mode)

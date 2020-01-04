@@ -121,6 +121,13 @@
 (use-package modus-operandi-theme
   :ensure t)
 
+;; (use-package eziam-theme
+;;   :defer t
+;;   :init (load-theme 'eziam-dark))
+
+;; (use-package eziam-dark-theme
+;;   :ensure eziam-theme)
+
 (use-package modus-vivendi-theme
   :ensure t
   ;; :disabled t

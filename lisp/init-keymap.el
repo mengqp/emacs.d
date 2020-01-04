@@ -197,7 +197,7 @@
     "oo" 'org-capture
     "oa" 'org-agenda
     "od" 'deft
-    "ojj" 'org-journal-new-entry
+    "oj" 'org-journal-new-entry
     ;; "op" 'org-pomodoro
     ;; "omp" 'org-mobile-push
     ;; "omg" 'org-mobile-pull
