@@ -11,7 +11,7 @@
 ;; don't GC during startup to save time
 ;; (setq gc-cons-threshold most-positive-fixnum)
 ;; (setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
-
+ 
 ;; (setq gc-cons-threshold 402653184
 ;;       gc-cons-percentage 0.6)
 

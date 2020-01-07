@@ -346,6 +346,12 @@
   ;; 	(assq-delete-all 'which-func-mode mode-line-misc-info))
   )
 
+(use-package auto-sudoedit
+  :ensure t
+  :config
+  (auto-sudoedit-mode 1)
+  )
+
 (provide 'init-edit)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-edit.el ends here
