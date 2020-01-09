@@ -14,6 +14,9 @@
  (magit-log
   ("-n256" "--graph" "--decorate"))
  (magit-merge nil)
+ (magit-patch nil)
+ (magit-patch-apply nil)
+ (magit-patch-create nil)
  (magit-pull nil)
  (magit-push nil)
  (magit-stash nil)

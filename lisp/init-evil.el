@@ -46,6 +46,7 @@
   :config
   (evil-set-initial-state 'snails-mode 'insert)
   (evil-set-initial-state 'vterm-mode 'insert)
+  (evil-set-initial-state 'text-mode 'insert)
   ;; remove all keybindings from insert-state keymap,it is VERY VERY important
   (setcdr evil-insert-state-map nil)
   ;;;把 emacs 模式下的按键绑定到 Insert 模式下
