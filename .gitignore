@@ -35,3 +35,4 @@ rime
 srecode-map.el
 *.cache
 eaf
+session*
