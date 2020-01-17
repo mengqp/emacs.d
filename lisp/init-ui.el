@@ -64,18 +64,19 @@
   (blink-cursor-mode -1)
   )
 
-;; (set-frame-parameter nil 'alpha '(85 . 100))
+(set-frame-parameter nil 'alpha '(90 . 100))
 
-;; (when *linux*
-;;   (set-frame-parameter nil 'fullscreen
-;; 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth))
-;;   )
+(when *linux*
+  (set-frame-parameter nil 'fullscreen
+		       (if (frame-parameter nil 'fullscreen) nil 'fullboth))
+  )
 
 ;; (when *win64*
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
 ;;   )
 
 (use-package awesome-tab
+  ;; :defer 3
   :bind*
   (("M-t" . awesome-tab-ace-jump))
   :hook

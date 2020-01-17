@@ -61,7 +61,7 @@
 ;; 括号
 (use-package rainbow-delimiters
   :ensure t
-  :defer t
+  :defer 5
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   :config
@@ -86,6 +86,8 @@
 (use-package autorevert
   :diminish auto-revert-mode
   :defer 5
+  :init
+  (add-hook 'after-init-hook #'auto-revert-mode)
   :config
   (global-auto-revert-mode t)
   )

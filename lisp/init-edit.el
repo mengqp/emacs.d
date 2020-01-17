@@ -157,8 +157,9 @@
   (electric-pair-mode 1)
   (use-package awesome-pair
     ;; :disabled t
-    :init
-    (add-hook 'prog-mode-hook #'awesome-pair-mode )
+    :defer t
+    ;; :init
+    ;; (add-hook 'prog-mode-hook #'awesome-pair-mode )
     :config
     (define-key awesome-pair-mode-map (kbd "(") 'awesome-pair-open-round)
     (define-key awesome-pair-mode-map (kbd "[") 'awesome-pair-open-bracket)
@@ -348,6 +349,7 @@
 
 (use-package auto-sudoedit
   :ensure t
+  :defer 10
   :config
   (auto-sudoedit-mode 1)
   )

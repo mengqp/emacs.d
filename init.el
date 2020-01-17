@@ -11,7 +11,7 @@
 ;; don't GC during startup to save time
 ;; (setq gc-cons-threshold most-positive-fixnum)
 ;; (setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
- 
+
 ;; (setq gc-cons-threshold 402653184
 ;;       gc-cons-percentage 0.6)
 
@@ -60,7 +60,7 @@
 (let ((file-name-handler-alist nil))
 
   (require 'init-const)
-  (require 'cl)
+  (require 'cl-lib)
   (require 'init-package)
 
   ;;ui
@@ -78,7 +78,7 @@
 
   (when *linux*
     ;; (require 'init-abbrev)
-    (require 'init-hydra)
+    ;; (require 'init-hydra)
     ;; (require 'init-spell)
     ;;(require 'init-dap)
     )
@@ -102,7 +102,7 @@
   ;; (require 'init-which-key)
   (require 'init-ivy)
   (require 'init-snails)
-  (require 'init-browser)
+  ;; (require 'init-browser)
   (require 'init-func)
   (require 'init-keymap)
 

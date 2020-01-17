@@ -33,13 +33,21 @@
 ;;
 ;;; Code:
 
+
 (use-package lsp-mode
   ;; :disabled t
   ;; :load-path "~/.emacs.d/site-lisp/lsp-mode/"
   :defer t
   :diminish lsp-mode
   :init
-  (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
+  (dolist (hook (list
+		 'c-mode-hook
+		 'c++-mode-hook
+		 'cc-mode-hook
+		 ))
+    (add-hook hook #'lsp-prog-major-mode-enable)
+    )
+  ;; (add-hook hook #'lsp-prog-major-mode-enable)
   :config
   (require 'lsp-clients)
   ;; (setq lsp-auto-guess-root t)
@@ -49,6 +57,7 @@
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-file-watchers nil)
   (setq lsp-file-watch-threshold nil)
+  (setq lsp-enable-snippet nil)
   ;; (setq lsp-enable-indentation nil)
   ;; (setq lsp-enable-on-type-formatting nil)
   (flymake-mode-off)

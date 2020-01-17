@@ -53,22 +53,22 @@
 	'("~/.emacs.d/mysnippets"
 	  "~/.emacs.d/site-lisp/yasnippet-snippets/snippets"
 	  ))
-  (progn
-    (add-hook 'org-mode-hook #'yas-minor-mode)
-    (add-hook 'text-mode-hook #'yas-minor-mode)
+  ;; (progn
+    ;; (add-hook 'org-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'text-mode-hook #'yas-minor-mode)
     ;; (add-hook 'shell-script-mode #'yas-minor-mode)
     ;; (add-hook 'c-mode-hook #'yas-minor-mode)
     ;; (add-hook 'c++-mode-hook #'yas-minor-mode)
     ;; (add-hook 'git-commit-mode-hook #'yas-minor-mode)
-    (add-hook 'prog-mode-hook #'yas-minor-mode)
+    ;; (add-hook 'prog-mode-hook #'yas-minor-mode)
     ;; (add-hook 'lisp-mode-hook #'yas-minor-mode)
     ;; (add-hook 'emacs-lisp-mode-hook #'yas-minor-mode)
 
-    )
+    ;; )
 
 
   :config
-  (yas-minor-mode)
+  ;; (yas-minor-mode)
   ;; (add-to-list 'company-backends 'company-yasnippet)
   ;; (message "yasnippet")
   (yas-reload-all)
@@ -104,8 +104,7 @@
   ;; 	  (if (check-expansion)
   ;; 	      (progn
   ;; 		(company-manual-begin)
-  ;; 		(if (null company-candidates)
-  ;; 		    (progn
+  ;; 		(if (null company-candidates) ;; 		    (progn
   ;; 		      (company-abort) ;; 		      (indent-for-tab-command)))))))))
 
   ;; (defun tab-complete-or-next-field ()
