@@ -122,10 +122,10 @@
     "." 'counsel-projectile-find-file
     ;; ":" 'counsel-M-x
 
-    "a" '(:ignore t :wk ("a" . "app"))
-    "ac" 'calc
+    ;; "a" '(:ignore t :wk ("a" . "app"))
+    ;; "ac" 'calc
 
-    "b" '(:ignore t :wk ("b" . "buffers"))
+    ;; "b" '(:ignore t :wk ("b" . "buffers"))
     ;; "bb" 'ivy-switch-buffer
     ;; "bd" 'kill-buffer
     ;; "bs" 'mengqp/switch-scratch-buf
@@ -136,11 +136,11 @@
     "cr" 'recompile
     "cd" 'mengqp/close-compilation-window
 
-    "d" '(:ignore t :wk ("d" . "delete"))
-    "dd" 'avy-zap-to-char-dwim
+    ;; "d" '(:ignore t :wk ("d" . "delete"))
+    ;; "dd" 'avy-zap-to-char-dwim
 
-    "e" '(:ignore t :wk ("e" . "shell"))
-    "ee" 'aweshell-new
+    ;; "e" '(:ignore t :wk ("e" . "shell"))
+    ;; "ee" 'aweshell-new
     ;; "eh" 'eshell-here
     ;; "ee" 'ansi-term
     ;; "ea" 'shell
@@ -153,7 +153,7 @@
     "fdp" 'mengqp/open-init-package-file
     "fdk" 'mengqp/open-init-keymap-file
 
-    "g" '(:ignore t :wk ("g" . "git"))
+    ;; "g" '(:ignore t :wk ("g" . "git"))
     ;; "gst" 'magit-status
     ;; "gbl" 'magit-blame
     ;; "gbb" 'magit-branch-checkout
@@ -164,7 +164,7 @@
     ;; "gll" 'magit-log-all
     ;; "gm" 'magit-merge-plain
     ;; "gp" 'git-push-coding-request
-    "gt" 'git-timemachine
+    ;; "gt" 'git-timemachine
 
     "h" '(:ignore t :wk ("h" . "help"))
     "hf" 'find-function
@@ -172,43 +172,43 @@
     "hm" 'man
     "hw" 'woman
 
-    "l" '(:ignore t :wk ("l" . "layout"))
-    "l0" 'eyebrowse-switch-to-window-config-0
-    "l1" 'eyebrowse-switch-to-window-config-1
-    "l2" 'eyebrowse-switch-to-window-config-2
-    "l3" 'eyebrowse-switch-to-window-config-3
-    "l4" 'eyebrowse-switch-to-window-config-4
-    "l5" 'eyebrowse-switch-to-window-config-5
-    "l6" 'eyebrowse-switch-to-window-config-6
-    "l7" 'eyebrowse-switch-to-window-config-7
-    "l8" 'eyebrowse-switch-to-window-config-8
-    "l9" 'eyebrowse-switch-to-window-config-9
-    "l[" 'eyebrowse-prev-window-config
-    "l]" 'eyebrowse-next-window-config
-    "lc" 'eyebrowse-close-window-config
+    ;; "l" '(:ignore t :wk ("l" . "layout"))
+    ;; "l0" 'eyebrowse-switch-to-window-config-0
+    ;; "l1" 'eyebrowse-switch-to-window-config-1
+    ;; "l2" 'eyebrowse-switch-to-window-config-2
+    ;; "l3" 'eyebrowse-switch-to-window-config-3
+    ;; "l4" 'eyebrowse-switch-to-window-config-4
+    ;; "l5" 'eyebrowse-switch-to-window-config-5
+    ;; "l6" 'eyebrowse-switch-to-window-config-6
+    ;; "l7" 'eyebrowse-switch-to-window-config-7
+    ;; "l8" 'eyebrowse-switch-to-window-config-8
+    ;; "l9" 'eyebrowse-switch-to-window-config-9
+    ;; "l[" 'eyebrowse-prev-window-config
+    ;; "l]" 'eyebrowse-next-window-config
+    ;; "lc" 'eyebrowse-close-window-config
 
-    "m" '(:ignore t :wk ("m" . "bookmark"))
-    ;; "mx" 'counsel-M-x
-    "mk" 'bookmark-set
-    "md" 'bookmark-delete
-    "mm" 'counsel-bookmark
+    ;; "m" '(:ignore t :wk ("m" . "bookmark"))
+    ;; ;; "mx" 'counsel-M-x
+    ;; "mk" 'bookmark-set
+    ;; "md" 'bookmark-delete
+    ;; "mm" 'counsel-bookmark
 
     "o" '(:ignore t :wk ("o" . "org"))
     "oo" 'org-capture
     "oa" 'org-agenda
-    "od" 'deft
+    ;; "od" 'deft
     "oj" 'org-journal-new-entry
     ;; "op" 'org-pomodoro
     ;; "omp" 'org-mobile-push
     ;; "omg" 'org-mobile-pull
-    "oc" 'cfw:open-org-calendar
+    ;; "oc" 'cfw:open-org-calendar
 
-    "p" '(:ignore t :wk ("p" . "project"))
+    ;; "p" '(:ignore t :wk ("p" . "project"))
     ;; "pd" 'counsel-projectile-find-dir
     ;; "pb" 'counsel-projectile-switch-to-buffer
     ;; "pp" 'projectile-switch-project
-    "pa" 'counsel-projectile-ag
-    "pr" 'counsel-projectile-rg
+    ;; "pa" 'counsel-projectile-ag
+    ;; "pr" 'counsel-projectile-rg
     ;; "pfi" 'mengqp/org-projectile-find-issue
     ;; "pft" 'mengqp/org-projectile-find-todo
 
@@ -222,20 +222,20 @@
     "sdi" 'color-rg-search-input
     "sds" 'color-rg-search-symbol
 
-    "th" 'awesome-tab-backward-tab
-    "tl" 'awesome-tab-forward-tab
-    "tj" 'awesome-tab-forward-group
-    "tk" 'awesome-tab-backward-group
-    "t0" 'my-select-window
-    "t1" 'my-select-window
-    "t2" 'my-select-window
-    "t3" 'my-select-window
-    "t4" 'my-select-window
-    "t5" 'my-select-window
-    "t6" 'my-select-window
-    "t7" 'my-select-window
-    "t8" 'my-select-window
-    "t9" 'my-select-window
+    ;; "th" 'awesome-tab-backward-tab
+    ;; "tl" 'awesome-tab-forward-tab
+    ;; "tj" 'awesome-tab-forward-group
+    ;; "tk" 'awesome-tab-backward-group
+    ;; "t0" 'my-select-window
+    ;; "t1" 'my-select-window
+    ;; "t2" 'my-select-window
+    ;; "t3" 'my-select-window
+    ;; "t4" 'my-select-window
+    ;; "t5" 'my-select-window
+    ;; "t6" 'my-select-window
+    ;; "t7" 'my-select-window
+    ;; "t8" 'my-select-window
+    ;; "t9" 'my-select-window
     ;; "ta" 'awesome-tab-select-beg-tab
     ;; "te" 'awesome-tab-select-end-tab
     ;; "tt" 'awesome-tab-ace-jump
@@ -248,7 +248,7 @@
     ;; "tdm" 'awesome-tab-kill-match-buffers-in-current-group
 
 
-    "w" '(:ignore t :wk ("w" . "window"))
+    ;; "w" '(:ignore t :wk ("w" . "window"))
     ;; "ws" 'split-window-vertically
     ;; "wv" 'split-window-horizontally
     ;; "ww" 'switch-window
@@ -278,34 +278,34 @@
     ;; "," 'avy-goto-word-1
     "," 'avy-goto-char
 
-    "b" '(:ignore t :wk ("b" . "buffer"))
-    "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
-    ;; "bs" 'save-buffer
-    "bwt" 'delete-trailing-whitespace
-    "bwc" 'whitespace-cleanup
-    "bwv" 'whitespace-mode
+    ;; "b" '(:ignore t :wk ("b" . "buffer"))
+    ;; "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
+    ;; ;; "bs" 'save-buffer
+    ;; "bwt" 'delete-trailing-whitespace
+    ;; "bwc" 'whitespace-cleanup
+    ;; "bwv" 'whitespace-mode
 
     "c" '(:ignore t :wk ("c" . "coding"))
     "c2" '(:ignore t :wk ("2" . "convert"))
     ;; "cd" 'describe-current-coding-system
     ;; "cc" 'set-buffer-file-coding-system
     ;; "cr" 'revert-buffer-with-coding-system
-    "c2d" 'unix2dos
-    "c2u" 'dos2unix
+    ;; "c2d" 'unix2dos
+    ;; "c2u" 'dos2unix
     ;; "cf" 'clang-format-buffer
     "cf" 'format-all-buffer
 
-    "dd" 'avy-zap-to-char-dwim
-    "dD" 'avy-zap-up-to-char-dwim
+    ;; "dd" 'avy-zap-to-char-dwim
+    ;; "dD" 'avy-zap-up-to-char-dwim
 
     ;; "e" '(:ignore t :wk ("e" . "edit"))
     ;; "es" 'init-sp-menu/body
     ;; "et" 'init-te-menu/body
 
-    "f" '(:ignore t :wk ("f" . "file&func"))
-    ;; "fb" 'beginning-of-defun
-    ;; "fe" 'end-of-defun
-    "fr" 'recover-this-file
+    ;; "f" '(:ignore t :wk ("f" . "file&func"))
+    ;; ;; "fb" 'beginning-of-defun
+    ;; ;; "fe" 'end-of-defun
+    ;; "fr" 'recover-this-file
 
     "h" '(:ignore t :wk ("h" . "help"))
     ;; "h." 'highlight-symbol-at-point
@@ -313,43 +313,43 @@
     "h." 'symbol-overlay-put
     "hu" 'symbol-overlay-remove-all
 
-    "i" '(:ignore t :wk ("i" . "insert"))
-    "it" '(:ignore t :wk ("t" . "table"))
-    "itt" 'table-insert
-    "itr" 'table-insert-row
-    "itc" 'table-insert-column
+    ;; "i" '(:ignore t :wk ("i" . "insert"))
+    ;; "it" '(:ignore t :wk ("t" . "table"))
+    ;; "itt" 'table-insert
+    ;; "itr" 'table-insert-row
+    ;; "itc" 'table-insert-column
 
-    "j" '(:ignore t :wk ("j" . "jump"))
-    "jj" 'avy-goto-line
+    ;; "j" '(:ignore t :wk ("j" . "jump"))
+    ;; "jj" 'avy-goto-line
     ;; "jc" 'ace-jump-char-mode
-    "jw" 'avy-goto-char-2
+    ;; "jw" 'avy-goto-char-2
     ;; "jl" 'avy-goto-line
 
     "l" '(:ignore t :wk ("l" . "line"))
-    "ll" 'display-line-numbers-mode
-    "l RET" 'toggle-truncate-lines
-    "ln" 'whitespace-newline-mode
+    ;; "ll" 'display-line-numbers-mode
+    ;; "l RET" 'toggle-truncate-lines
+    ;; "ln" 'whitespace-newline-mode
 
 
     "s" '(:ignore t :wk ("s" . "search&shell&sudo"))
     "sp" 'init-sp-menu/body
-    "sc" 'shell-command
-    "sd" 'sudo-edit
+    ;; "sc" 'shell-command
+    ;; "sd" 'sudo-edit
     "sj" 'counsel-imenu
     ;; "ss" 'swiper
-    "sS" 'ivy-resume
-    "sr" 'vr/replace
+    ;; "sS" 'ivy-resume
+    ;; "sr" 'vr/replace
 
-    "t" '(:ignore t :wk ("t" . "toggle"))
-    "tt" 'mengqp/insert-time
-    "td" 'mengqp/insert-date
-    "te" 'toggle-company-english-helper
+    ;; "t" '(:ignore t :wk ("t" . "toggle"))
+    ;; "tt" 'mengqp/insert-time
+    ;; "td" 'mengqp/insert-date
+    ;; "te" 'toggle-company-english-helper
 
-    "w" '(:ignore t :wk ("w" . "evilw"))
+    ;; "w" '(:ignore t :wk ("w" . "evilw"))
     ;; "ww" 'save-buffer
     ;; "wq" 'evil-save-and-close
 
-    "y" '(:ignore t :wk ("y" . "yasnippet"))
+    ;; "y" '(:ignore t :wk ("y" . "yasnippet"))
     "yy" 'ivy-yasnippet
     )
 
