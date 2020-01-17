@@ -73,7 +73,7 @@
 ;; 空格
 (use-package pangu-spacing
   :ensure t
-  :defer 3
+  :defer 5
   :diminish global-pangu-spacing-mode
   :diminish pangu-spacing-mode
   :init
@@ -201,8 +201,6 @@
   :diminish highlight-parentheses-mode
   :init
   (add-hook 'prog-mode-hook #'highlight-parentheses-mode)
-  ;; (add-hook 'c-mode-hook #'highlight-parentheses-mode)
-  ;; (add-hook 'c++-mode-hook #'highlight-parentheses-mode)
 
   )
 
