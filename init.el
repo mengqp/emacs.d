@@ -76,12 +76,12 @@
   (require 'init-layout)
   ;; (require 'init-dumb-jump)
 
-  (when *linux*
+  ;; (when *linux*
     ;; (require 'init-abbrev)
     ;; (require 'init-hydra)
     ;; (require 'init-spell)
     ;;(require 'init-dap)
-    )
+    ;; )
   (require 'init-pyim)
 
   ;;tool
@@ -97,7 +97,6 @@
   (require 'init-git)
   (require 'init-cmake)
   ;; (require 'init-popwin)
-  ;; 去掉中文的输入，如果有必要，直接使用
   ;; (require 'init-tree)
   ;; (require 'init-which-key)
   (require 'init-ivy)
