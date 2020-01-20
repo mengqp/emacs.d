@@ -65,52 +65,8 @@
   (setq flycheck-display-errors-function
 	#'flycheck-display-error-messages-unless-error-list)
 
-  ;; 删除 Modline FlyC 显示为 e
   (setq flycheck-mode-line-prefix "!")
-
-  ;;   ;; toggle flycheck window
-  ;;   (defun mengqp/toggle-flycheck-error-list ()
-  ;;     "Toggle flycheck's error list window.
-  ;; If the error list is visible, hide it.  Otherwise, show it."
-  ;;     (interactive)
-  ;;     (-if-let (window (flycheck-get-error-list-window))
-  ;; 	(quit-window nil window)
-  ;;       (flycheck-list-errors)))
-
-  ;; (use-package flycheck-package
-  ;;   :ensure t
-  ;;   :config
-  ;;   (flycheck-package-setup)
-  ;;   )
-  ;;(eval-after-load 'flycheck
-  ;;  '(flycheck-package-setup))
-  ;; (require 'flycheck-pos-tip)
-  ;; (with-eval-after-load 'flycheck
-  ;;   (flycheck-pos-tip-mode))
-  ;; (general-define-key :states '(normal motion)
-  ;; 		      :keymaps '(c++-mode-map
-  ;; 				 c-mode-map)
-  ;; 		      :prefix ";"
-  ;; 		      "el" 'mengqp/toggle-flycheck-error-list
-  ;; 		      "en" 'flycheck-next-error
-  ;; 		      "ep" 'flycheck-previous-error
-
-  ;; 		      )
-
-  ;; (which-key-add-major-mode-key-based-replacements 'c++-mode
-  ;;   "; e" "error"
-  ;;   )
-
-
   )
-
-(use-package flycheck-pos-tip
-  :ensure t
-  :disabled t
-  :defer t
-  :after flycheck
-  :init
-  (add-hook 'flycheck-mode-hook #'flycheck-pos-tip-mode))
 
 (use-package flycheck-posframe
   :ensure t

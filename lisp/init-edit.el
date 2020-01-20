@@ -99,25 +99,25 @@
 ;; 	 ([remap move-end-of-line] . mwim-end-of-code-or-line))
 ;;   )
 
-;; ;; https://github.com/emacs-evil/goto-chg/issues/3
-;; ;; Goto last change
-;; (use-package goto-chg
-;;   :ensure t
-;;   :bind ("C-," . goto-last-change)
-;;   :preface
-;;   (defmacro undo-tree-node-p (n)
-;;     (let ((len (length (undo-tree-make-node nil nil))))
-;;       `(and (vectorp ,n) (= (length ,n) ,len))))
-;;   )
-
-(use-package multiple-cursors
+;; https://github.com/emacs-evil/goto-chg/issues/3
+;; Goto last change
+(use-package goto-chg
   :ensure t
-  :defer t
-  :bind
-  ("C->" . mc/mark-next-like-this)
-  ("C-<" . mc/mark-previous-like-this)
-  ("C-c C-<" . mc/mark-all-like-this)
+  :bind ("C-," . goto-last-change)
+  :preface
+  (defmacro undo-tree-node-p (n)
+    (let ((len (length (undo-tree-make-node nil nil))))
+      `(and (vectorp ,n) (= (length ,n) ,len))))
   )
+
+;; (use-package multiple-cursors
+;;   :ensure t
+;;   :defer t
+;;   :bind
+;;   ("C->" . mc/mark-next-like-this)
+;;   ("C-<" . mc/mark-previous-like-this)
+;;   ("C-c C-<" . mc/mark-all-like-this)
+;;   )
 
 (use-package expand-region
   :ensure t
@@ -140,6 +140,9 @@
 (when *linux*
   (use-package format-all
     :ensure t
+    :bind(
+	  ("C-c bf" . format-all-buffer)
+	  )
     :defer t
     ;; :init
     ;; (add-hook 'prog-mode-hook #'format-all-mode )
@@ -158,6 +161,7 @@
   (use-package awesome-pair
     ;; :disabled t
     :defer t
+    ;; :hook (prog-mode . #'awesome-pair-mode)
     ;; :init
     ;; (add-hook 'prog-mode-hook #'awesome-pair-mode )
     :config
@@ -298,7 +302,12 @@
 
 (use-package symbol-overlay
   :ensure t
-  :defer t)
+  :defer t
+  :bind(
+	("C-c h." . symbol-overlay-put)
+	("C-c hr" . symbol-overlay-remove-all)
+	)
+  )
 
 (use-package column-enforce-mode
   :ensure t
@@ -352,6 +361,14 @@
   :defer 10
   :config
   (auto-sudoedit-mode 1)
+  )
+
+(use-package shift-number
+  :ensure t
+  :defer t
+  :bind* (
+   ("M-_" . shift-number-down)
+   ("M-+" . shift-number-up))
   )
 
 (provide 'init-edit)

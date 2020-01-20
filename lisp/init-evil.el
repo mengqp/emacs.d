@@ -77,6 +77,7 @@
 
   (use-package evil-numbers
     :ensure t
+    :disabled t
     :commands (evil-numbers  evil-numbers/inc-at-pt)
     :commands (evil-numbers  evil-numbers/dec-at-pt)
     :defer t
@@ -128,7 +129,7 @@
   (use-package evil-mc
     :ensure t
     :defer t
-    ;; :disabled t
+    :disabled t
     :diminish evil-mc-mode
     :config
     (global-evil-mc-mode 1)

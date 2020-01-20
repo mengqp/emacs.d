@@ -150,14 +150,6 @@
   (ivy-posframe-enable)
   )
 
-(use-package ivy-xref
-  :ensure t
-  :after ivy
-  :init
-  (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
-
-  )
-
 (provide 'init-ivy)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-ivy.el ends here

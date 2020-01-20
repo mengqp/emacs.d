@@ -40,14 +40,6 @@
          ("M-g f" . avy-goto-line)
          ("M-g w" . avy-goto-word-1)
   	 ("M-g e" . avy-goto-word-0))
-  ;; :chords
-  ;; (
-  ;;  ;; ("jj" . avy-goto-word-1)
-  ;;  ;; ("jk" . avy-goto-char)
-  ;;  ;; ("jl" . avy-goto-line)
-
-  ;;  )
-
   )
 
 ;; Kill text between the point and the character CHAR
@@ -59,20 +51,11 @@
 	 ("M-Z" . avy-zap-up-to-char-dwim)
 	 )
   :config
-
-  ;; :chords
-  ;; (
-  ;;  ;; ("df" . avy-zap-to-char-dwim)
-  ;;  )
-
   )
 
 (use-package ace-window
   :disabled t
   :ensure t
-  :bind*
-  (("M-o" . ace-window)
-   )
   :config
   )
 

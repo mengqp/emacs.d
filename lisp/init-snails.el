@@ -48,18 +48,6 @@
   :config
   (use-package exec-path-from-shell
     :if (featurep 'cocoa) :defer t)
-
-  ;; Functions for specific backends
-  ;; (defun snails-current-project ()
-  ;;   (interactive)
-  ;;   (snails '(snails-backend-projectile snails-backend-rg snails-backend-fd)))
-  ;; (defun snails-active-recent-buffers ()
-  ;;   (interactive)
-  ;;   (snails '(snails-backend-buffer snails-backend-recentf)))
-  ;; (defun snails-everywhere ()
-  ;;   (interactive)
-  ;;   (snails '(snails-backend-everything snails-backend-mdfind)))
-
   )
 
 

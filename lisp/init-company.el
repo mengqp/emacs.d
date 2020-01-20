@@ -53,32 +53,14 @@
    :map company-search-map
    ("C-p" . company-select-previous)
    ("C-n" . company-select-next))
-  ;; (:map company-active-map
-  ;; 	("M-n" . nil)
-  ;; 	("M-p" . nil)
-  ;; 	("C-p" . company-select-previous)
-  ;; 	("C-n" . company-select-next)
-  ;; 	;; ("C-s" . company-search-candidates)
-  ;; 	)
   :init
-  ;; (add-hook 'after-init-hook 'global-company-mode)
   ;; 设置等待时间
-  ;; (setq company-idle-delay 0.08)
   (setq company-idle-delay 0.2)
   ;; 补全起始长度
   (setq company-minimum-prefix-length 2)
   (setq company-show-numbers t)
 
   :config
-  ;; (global-company-mode t)
-  ;; (add-to-list 'company-backends '(company-yasnippet))
-
-  ;; (define-key company-active-map (kbd "M-n") nil)
-  ;; (define-key company-active-map (kbd "M-p") nil)
-  ;; (define-key company-active-map (kbd "C-n") #'company-select-next)
-  ;; (define-key company-active-map (kbd "C-p") #'company-select-previous)
-  ;; (define-key company-active-map (kbd "C-s") #'company-search-candidates)
-
   (use-package company-posframe
     :ensure t
     :diminish company-posframe-mode
@@ -89,12 +71,6 @@
       (push '(company-childframe-mode . nil)
 	    desktop-minor-mode-table
 	    ))
-    )
-
-  (use-package eldoc-box
-    :disabled t
-    :ensure t
-    ;; :hook lsp-mode . eldoc-box-hover-mode
     )
 
   ;; With use-package:
@@ -159,10 +135,10 @@
     )
   )
 
-(use-package eacl
-  :disabled t
-  :ensure t
-  )
+;; (use-package eacl
+;;   :disabled t
+;;   :ensure t
+;;   )
 
 
 

@@ -53,20 +53,12 @@
 	'("~/.emacs.d/mysnippets"
 	  "~/.emacs.d/site-lisp/yasnippet-snippets/snippets"
 	  ))
-  ;; (progn
-    ;; (add-hook 'org-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'text-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'shell-script-mode #'yas-minor-mode)
-    ;; (add-hook 'c-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'c++-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'git-commit-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'prog-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'lisp-mode-hook #'yas-minor-mode)
-    ;; (add-hook 'emacs-lisp-mode-hook #'yas-minor-mode)
-
-    ;; )
-
-
+  (progn
+    (add-hook 'org-mode-hook #'yas-minor-mode)
+    (add-hook 'text-mode-hook #'yas-minor-mode)
+    (add-hook 'shell-script-mode #'yas-minor-mode)
+    (add-hook 'prog-mode-hook #'yas-minor-mode)
+    )
   :config
   ;; (yas-minor-mode)
   ;; (add-to-list 'company-backends 'company-yasnippet)
@@ -77,95 +69,10 @@
   (use-package ivy-yasnippet
     :ensure t
     :defer t
+    :bind (
+	   ("C-c C-y" . ivy-yasnippet)
+	   )
     )
-
-  ;; (defun check-expansion ()
-  ;;   (save-excursion
-  ;;     (if (looking-at "\\_>") t
-  ;; 	(backward-char 1)
-  ;; 	(if (looking-at "\\.") t
-  ;; 	  (backward-char 1)
-  ;; 	  (if (looking-at "->") t nil)))))
-
-  ;; (defun do-yas-expand ()
-  ;;     (yas-expand))
-  ;;   ;; (let ((yas/fallback-behavior 'return-nil))
-  ;;   ;;   (yas-expand)))
-
-  ;; (defun tab-indent-or-complete ()
-  ;;   (interactive)
-  ;;   (cond
-  ;;    ((minibufferp)
-  ;;     (minibuffer-complete))
-  ;;    (t
-  ;;     (indent-for-tab-command)
-  ;;     (if (or (not yas-minor-mode)
-  ;; 	      (null (do-yas-expand)))
-  ;; 	  (if (check-expansion)
-  ;; 	      (progn
-  ;; 		(company-manual-begin)
-  ;; 		(if (null company-candidates) ;; 		    (progn
-  ;; 		      (company-abort) ;; 		      (indent-for-tab-command)))))))))
-
-  ;; (defun tab-complete-or-next-field ()
-  ;;   (interactive)
-  ;;   (if (or (not yas-minor-mode)
-  ;; 	    (null (do-yas-expand)))
-  ;; 	(if company-candidates
-  ;; 	    (company-complete-selection)
-  ;; 	  (if (check-expansion)
-  ;; 	      (progn
-  ;; 		(company-manual-begin)
-  ;; 		(if (null company-candidates)
-  ;; 		    (progn
-  ;; 		      (company-abort)
-  ;; 		      (yas-next-field))))
-  ;; 	    (yas-next-field)))))
-
-  ;; (defun expand-snippet-or-complete-selection ()
-  ;;   (interactive)
-  ;;   (if (or (not yas-minor-mode)
-  ;; 	    (null (do-yas-expand))
-  ;; 	    (company-abort))
-  ;; 	(company-complete-selection)))
-
-  ;; (defun abort-company-or-yas ()
-  ;;   (interactive)
-  ;;   (if (null company-candidates)
-  ;; 	(yas-abort-snippet)
-  ;;     (company-abort)))
-
-  ;; ;; (global-set-key [tab] 'tab-indent-or-complete)
-  ;; ;; (global-set-key (kbd "TAB") 'tab-indent-or-complete)
-  ;; ;; (global-set-key [(control return)] 'company-complete-common)
-
-  ;; ;; (define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
-  ;; ;; (define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
-
-  ;; ;; (define-key yas-minor-mode-map [tab] nil)
-  ;; ;; (define-key yas-minor-mode-map (kbd "TAB") nil)
-
-  ;; ;; (define-key yas-keymap [tab] 'tab-complete-or-next-field)
-  ;; ;; (define-key yas-keymap (kbd "TAB") 'tab-complete-or-next-field)
-  ;; ;; (define-key yas-keymap [(control tab)] 'yas-next-field)
-  ;; ;; (define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
-
-  ;; (define-key evil-insert-state-map (kbd "M-j") 'yas-expand)
-  ;; ;; (define-key evil-emacs-state-map (kbd "M-j") 'yas-expand)
-  ;; (define-key evil-insert-state-map (kbd "TAB") 'tab-indent-or-complete)
-  ;; (define-key evil-insert-state-map (kbd "TAB") 'tab-indent-or-complete)
-  ;; (global-set-key [(control return)] 'company-complete-common)
-
-  ;; (define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
-  ;; (define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
-
-  ;; (define-key yas-minor-mode-map [tab] nil)
-  ;; (define-key yas-minor-mode-map (kbd "TAB") nil)
-
-  ;; (define-key yas-keymap [tab] 'tab-complete-or-next-field)
-  ;; (define-key yas-keymap (kbd "TAB") 'tab-complete-or-next-field)
-  ;; (define-key yas-keymap [(control tab)] 'yas-next-field)
-  ;; (define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
   )
 
 (provide 'init-yasnippet)

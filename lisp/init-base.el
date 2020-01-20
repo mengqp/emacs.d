@@ -61,7 +61,6 @@
 ;; 括号
 (use-package rainbow-delimiters
   :ensure t
-  :defer 5
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   :config
@@ -73,7 +72,6 @@
 ;; 空格
 (use-package pangu-spacing
   :ensure t
-  :defer 5
   :diminish global-pangu-spacing-mode
   :diminish pangu-spacing-mode
   :init
@@ -85,7 +83,6 @@
 ;;文件在改变时自动加载
 (use-package autorevert
   :diminish auto-revert-mode
-  :defer 5
   :init
   (add-hook 'after-init-hook #'auto-revert-mode)
   :config
@@ -95,7 +92,6 @@
 ;; 自动何存
 (use-package auto-save
   :defer 2
-  ;; :disabled t
   :config
   (setq auto-save-delete-trailing-whitespace t)
   (auto-save-enable)              ;; 开启自动保存功能
@@ -171,7 +167,7 @@
   :init
   (add-hook 'plantuml-mode-hook
 	    (lambda ()
-	      (setq indent-tabs-mode t)
+	      (setq indent-tabs-mode nil)
 	      (setq tab-width 2 )))
   )
 

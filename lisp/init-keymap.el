@@ -119,7 +119,7 @@
 
     ;; "SPC" 'snails
     ;; "TAB" 'previous-buffer
-    "." 'counsel-projectile-find-file
+    ;; "." 'counsel-projectile-find-file
     ;; ":" 'counsel-M-x
 
     ;; "a" '(:ignore t :wk ("a" . "app"))
@@ -216,11 +216,11 @@
     ;; "qq" 'save-buffers-kill-emacs
     "qr" 'restart-emacs
 
-    "sp" 'color-rg-search-project-with-type
-    "st" 'color-rg-search-symbol-with-type
-    "ss" 'color-rg-search-project
-    "sdi" 'color-rg-search-input
-    "sds" 'color-rg-search-symbol
+    ;; "sp" 'color-rg-search-project-with-type
+    ;; "st" 'color-rg-search-symbol-with-type
+    ;; "ss" 'color-rg-search-project
+    ;; "sdi" 'color-rg-search-input
+    ;; "sds" 'color-rg-search-symbol
 
     ;; "th" 'awesome-tab-backward-tab
     ;; "tl" 'awesome-tab-forward-tab
@@ -285,8 +285,8 @@
     ;; "bwc" 'whitespace-cleanup
     ;; "bwv" 'whitespace-mode
 
-    "c" '(:ignore t :wk ("c" . "coding"))
-    "c2" '(:ignore t :wk ("2" . "convert"))
+    ;; "c" '(:ignore t :wk ("c" . "coding"))
+    ;; "c2" '(:ignore t :wk ("2" . "convert"))
     ;; "cd" 'describe-current-coding-system
     ;; "cc" 'set-buffer-file-coding-system
     ;; "cr" 'revert-buffer-with-coding-system
@@ -307,11 +307,11 @@
     ;; ;; "fe" 'end-of-defun
     ;; "fr" 'recover-this-file
 
-    "h" '(:ignore t :wk ("h" . "help"))
+    ;; "h" '(:ignore t :wk ("h" . "help"))
     ;; "h." 'highlight-symbol-at-point
     ;; "hu" 'unhighlight-regexp
-    "h." 'symbol-overlay-put
-    "hu" 'symbol-overlay-remove-all
+    ;; "h." 'symbol-overlay-put
+    ;; "hu" 'symbol-overlay-remove-all
 
     ;; "i" '(:ignore t :wk ("i" . "insert"))
     ;; "it" '(:ignore t :wk ("t" . "table"))
@@ -321,21 +321,21 @@
 
     ;; "j" '(:ignore t :wk ("j" . "jump"))
     ;; "jj" 'avy-goto-line
-    ;; "jc" 'ace-jump-char-mode
+    ;; "jc" 'Ace-jump-char-mode
     ;; "jw" 'avy-goto-char-2
     ;; "jl" 'avy-goto-line
 
-    "l" '(:ignore t :wk ("l" . "line"))
+    ;; "l" '(:ignore t :wk ("l" . "line"))
     ;; "ll" 'display-line-numbers-mode
     ;; "l RET" 'toggle-truncate-lines
     ;; "ln" 'whitespace-newline-mode
 
 
-    "s" '(:ignore t :wk ("s" . "search&shell&sudo"))
-    "sp" 'init-sp-menu/body
+    ;; "s" '(:ignore t :wk ("s" . "search&shell&sudo"))
+    ;; "sp" 'init-sp-menu/body
     ;; "sc" 'shell-command
     ;; "sd" 'sudo-edit
-    "sj" 'counsel-imenu
+    ;; "sj" 'counsel-imenu
     ;; "ss" 'swiper
     ;; "sS" 'ivy-resume
     ;; "sr" 'vr/replace
@@ -350,7 +350,7 @@
     ;; "wq" 'evil-save-and-close
 
     ;; "y" '(:ignore t :wk ("y" . "yasnippet"))
-    "yy" 'ivy-yasnippet
+    ;; "yy" 'ivy-yasnippet
     )
 
 
