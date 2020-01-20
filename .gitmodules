@@ -63,3 +63,6 @@
 	path = site-lisp/eaf
 	url = https://github.com/manateelazycat/emacs-application-framework.git
 	ignore=untracked
+[submodule "site-lisp/fuz"]
+	path = site-lisp/fuz
+	url = https://github.com/rustify-emacs/fuz.el.git
