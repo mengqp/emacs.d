@@ -36,17 +36,16 @@
 
 (use-package lsp-mode
   ;; :disabled t
-  ;; :load-path "~/.emacs.d/site-lisp/lsp-mode/"
   :defer t
   :diminish lsp-mode
   :init
-  (dolist (hook (list
-		 'c-mode-hook
-		 'c++-mode-hook
-		 'cc-mode-hook
-		 ))
-    (add-hook hook #'lsp-prog-major-mode-enable)
-    )
+  ;; (dolist (hook (list
+  ;; 		 'c-mode-hook
+  ;; 		 'c++-mode-hook
+  ;; 		 'cc-mode-hook
+  ;; 		 ))
+  ;;   (add-hook hook #'lsp)
+  ;;   )
   ;; (add-hook hook #'lsp-prog-major-mode-enable)
   :config
   (require 'lsp-clients)
@@ -148,7 +147,6 @@
 
 
 (use-package ccls
-  ;; :load-path "~/.emacs.d/site-lisp/ccls/"
   ;; :ensure t
   ;; :disabled t
   :commands lsp-ccls-enable
