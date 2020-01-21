@@ -119,7 +119,7 @@
 
     ;; "SPC" 'snails
     ;; "TAB" 'previous-buffer
-    ;; "." 'counsel-projectile-find-file
+    "." 'counsel-projectile-find-file
     ;; ":" 'counsel-M-x
 
     ;; "a" '(:ignore t :wk ("a" . "app"))

@@ -44,12 +44,18 @@
    ;; ("M-s e" . snails-everywhere)
 
    )
-
   :config
   (use-package exec-path-from-shell
     :if (featurep 'cocoa) :defer t)
+  (setq snails-prefix-backends
+	'((">" '(snails-backend-command))
+	  ("@" '(snails-backend-imenu))
+	  ("#" '(snails-backend-current-buffer))
+	  ("!" '(snails-backend-rg))
+	  ("?" '(snails-backend-fd))
+	)
   )
-
+)
 
 (provide 'init-snails)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

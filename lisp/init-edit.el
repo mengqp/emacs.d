@@ -81,16 +81,17 @@
 ;;   :defer t
 ;;   :bind ([remap comment-dwim] . comment-dwim-2)) ;
 
-;; ;; Edit multiple regions in the same way simultaneously
-;; (use-package iedit
-;;   :ensure t
-;;   :bind
-;;   (("C-;" . iedit-mode)
-;;    ("C-x r RET" . iedit-rectangle-mode)
-;;    :map isearch-mode-map ("C-;" . iedit-mode-from-isearch)
-;;    :map esc-map ("C-;" . iedit-execute-last-modification)
-;;    :map help-map ("C-;" . iedit-mode-toggle-on-function))
-;;   )
+;; Edit multiple regions in the same way simultaneously
+(use-package iedit
+  :ensure t
+  :defer t
+  ;; :bind
+  ;; (("C-;" . iedit-mode)
+  ;;  ("C-x r RET" . iedit-rectangle-mode)
+  ;;  :map isearch-mode-map ("C-;" . iedit-mode-from-isearch)
+  ;;  :map esc-map ("C-;" . iedit-execute-last-modification)
+  ;;  :map help-map ("C-;" . iedit-mode-toggle-on-function))
+  )
 
 ;; ;; Move to the beginning/end of line or code
 ;; (use-package mwim
@@ -367,8 +368,17 @@
   :ensure t
   :defer t
   :bind* (
-   ("M-_" . shift-number-down)
-   ("M-+" . shift-number-up))
+	  ("M-_" . shift-number-down)
+	  ("M-+" . shift-number-up))
+  )
+
+(use-package undo-fu
+  :ensure t
+  :defer t
+  :bind(
+	("C-/" . undo-fu-only-undo)
+	("C-?" . undo-fu-only-redo)
+	)
   )
 
 (provide 'init-edit)

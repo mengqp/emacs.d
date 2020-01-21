@@ -209,14 +209,20 @@
   (keyfreq-autosave-mode 1)
   )
 
-;; pacman -S rustup
-;; rustup install stable
-(use-package fuz
+(use-package vdiff
   :ensure t
-  :disabled t
-  :config
-  (unless (require 'fuz-core nil t)
-    (fuz-build-and-load-dymod))
+  :defer t
+  )
+
+(when *linux*
+  ;; pacman -S rustup
+  ;; rustup install stable
+  (use-package fuz
+    ;; :disabled t
+    :config
+    (unless (require 'fuz-core nil t)
+      (fuz-build-and-load-dymod))
+    )
   )
 
 
