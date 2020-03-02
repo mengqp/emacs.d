@@ -7,7 +7,7 @@
   :ensure t
   :commands (pyim pyim-restart-1)
   :bind*
-  (("M-i" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
+  (("M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
    ;; ("C-;" . pyim-delete-word-from-personal-buffer))
    ;; ("C-;" . pyim-convert-code-at-point )
    )
@@ -40,10 +40,12 @@
 
   (when *linux*
     (use-package liberime
-      :load-path "/root/.emacs.d/site-lisp/liberime/build/liberime.so"
+      :load-path "/home/mengqp/.emacs.d/site-lisp/liberime/build/liberime.so"
       :config
       (liberime-start (expand-file-name "/usr/share/rime-data")
-		      (expand-file-name "~/.emacs.d/rime"))
+		      ;; (expand-file-name "~/.config/fcitx/rime")
+		      (expand-file-name "~/.emacs.d/rime")
+		      )
       ;; (liberime-start "/usr/share/rime-data" "/root/.emacs.d/rime/") ;
       (liberime-select-schema "wubi86")
 

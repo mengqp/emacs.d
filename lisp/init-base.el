@@ -214,6 +214,12 @@
   :defer t
   )
 
+(use-package imenu
+  :bind
+  (
+   ("M-g i" . imenu))
+  )
+
 (when *linux*
   ;; pacman -S rustup
   ;; rustup install stable

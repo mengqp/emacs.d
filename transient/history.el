@@ -12,7 +12,8 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
-  ("-n256" "--graph" "--decorate"))
+  ("-n256" "--graph" "--decorate")
+  (("--" "display/ycdatadlg.cpp")))
  (magit-merge nil)
  (magit-patch nil)
  (magit-patch-apply nil)

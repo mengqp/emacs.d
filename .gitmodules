@@ -49,7 +49,7 @@
 	ignore=untracked
 [submodule "site-lisp/yasnippet-snippets"]
 	path = site-lisp/yasnippet-snippets
-	url = https://github.com/mengqp/yasnippet-snippets.git
+	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
 	ignore=untracked
 [submodule "site-lisp/awesome-tab"]
 	path = site-lisp/awesome-tab
