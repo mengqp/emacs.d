@@ -37,15 +37,12 @@
   :diminish projectile-mode
   :defer t
   :hook (after-init . projectile-mode)
+  :bind (
+	 ("M-g r" . counsel-projectile-rg)
+	 ("M-g f" . counsel-projectile-find-file)
+	 ("M-g a" . projectile-find-other-file)
+   )
   :config
-  ;; (setq projectile-keymap-prefix (kbd "C-c p"))
-  (general-define-key :states '(normal motion)
-		      :keymaps '(c++-mode-map
-				 c-mode-map)
-		      :prefix ";"
-		      "a" 'projectile-find-other-file
-		      "A" 'projectile-find-other-file-other-window
-		      )
   (setq projectile-completion-system 'ivy)
   (setq projectile-indexing-method 'hybrid)
   (projectile-mode t)

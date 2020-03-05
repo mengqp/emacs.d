@@ -12,8 +12,9 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
+  (("--" "display/jxdataquerydlg.cpp"))
   ("-n256" "--graph" "--decorate")
-  (("--" "display/ycdatadlg.cpp")))
+  (("--" "02src/01v2/Protocol_EM721.cpp")))
  (magit-merge nil)
  (magit-patch nil)
  (magit-patch-apply nil)
