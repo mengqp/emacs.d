@@ -41,6 +41,7 @@
   (moody-replace-mode-line-buffer-identification)
   (moody-replace-vc-mode))
 
+
 (use-package awesome-tray
   ;; :disabled t
   :defer t
@@ -117,6 +118,12 @@
 
   )
 
+(use-package mini-modeline
+  :disabled t
+  :ensure t
+  :config
+  (mini-modeline-mode t)
+  )
 (provide 'init-modeline)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-modeline.el ends here

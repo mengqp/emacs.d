@@ -154,6 +154,8 @@
 	("g T" . centaur-tabs-backward)))
 
 
+(use-package all-the-icons
+  :ensure t)
 
 
 (provide 'init-ui)
