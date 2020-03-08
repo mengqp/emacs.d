@@ -7,6 +7,7 @@ bookmarks
 projectile.cache
 .org-id-locations
 history
+history.el
 ido.last
 irony
 persp-confs

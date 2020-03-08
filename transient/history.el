@@ -17,6 +17,7 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
+  (("--" "display/jxdataquerydlg.cpp"))
   ("-n256" "--graph" "--decorate")
   (("--" "display/sysopdlg.cpp"))
   (("--" "display/maindlg.cpp"))
