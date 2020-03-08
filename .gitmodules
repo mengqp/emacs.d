@@ -62,3 +62,8 @@
 [submodule "site-lisp/fuz"]
 	path = site-lisp/fuz
 	url = https://github.com/rustify-emacs/fuz.el.git
+	ignore=untracked
+[submodule "site-lisp/liberime"]
+	path = site-lisp/liberime
+	url = https://github.com/merrickluo/liberime.git
+	ignore=untracked
