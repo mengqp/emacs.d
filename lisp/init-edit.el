@@ -233,6 +233,8 @@
   :ensure t
   :diminish hungry-delete-mode
   :hook (after-init . global-hungry-delete-mode)
+  :config
+  (cua-mode t)
   )
 
 ;; (use-package anzu
