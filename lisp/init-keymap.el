@@ -119,7 +119,7 @@
 
     ;; "SPC" 'snails
     ;; "TAB" 'previous-buffer
-    "." 'counsel-projectile-find-file
+    ;; "." 'counsel-projectile-find-file
     ;; ":" 'counsel-M-x
 
     ;; "a" '(:ignore t :wk ("a" . "app"))
@@ -258,7 +258,7 @@
 
 
     ;; "/" 'color-rg-search-project
-    "/" 'counsel-projectile-rg
+    ;; "/" 'counsel-projectile-rg
     ;; "/" 'counsel-projectile-ag
 
     )
