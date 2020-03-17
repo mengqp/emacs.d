@@ -19,7 +19,7 @@
   ;; (add-hook 'emacs-startup-hook
   ;; 	    #'(lambda () (pyim-restart-1 t)))
   :config
-  (setq pyim-dcache-prefer-emacs-thread nil)
+  ;; (setq pyim-dcache-prefer-emacs-thread nil)
   ;; (setq pyim-debug t)
 
   (when *win64*
@@ -87,7 +87,8 @@
   ;; 使用 pupup-el 来绘制选词框
   ;; (setq pyim-page-tooltip 'pos-tip)
   ;; (setq x-gtk-use-system-tooltips t)
-  (setq pyim-page-tooltip 'child-frame)
+  ;; (setq pyim-page-tooltip 'child-frame)
+  (setq pyim-page-tooltip 'posframe)
 
   ;; 选词框显示 5 个候选词
   (setq pyim-page-length 5)

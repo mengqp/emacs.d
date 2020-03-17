@@ -37,11 +37,6 @@
   :diminish projectile-mode
   :defer t
   :hook (after-init . projectile-mode)
-  :bind (
-	 ("M-g r" . counsel-projectile-rg)
-	 ("M-g f" . counsel-projectile-find-file)
-	 ("M-g a" . projectile-find-other-file)
-   )
   :config
   (setq projectile-completion-system 'ivy)
   (setq projectile-indexing-method 'hybrid)

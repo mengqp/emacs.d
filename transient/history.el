@@ -3,12 +3,12 @@
  (magit-branch nil)
  (magit-commit nil)
  (magit-diff
+  ("--no-ext-diff" "--stat")
   (("--" "display/sysopdlg.cpp"))
   (("--" "display/maindlg.cpp"))
   ("--no-ext-diff")
   (("--" "display/soedlg.cpp"))
   (("--" "display/popdlg.cpp"))
-  ("--no-ext-diff" "--stat")
   (("--" "display/ycdatadlg.ui"))
   (("--" "main/src/gui.c"))
   (("--" "display/maindlg.ui"))

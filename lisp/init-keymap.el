@@ -276,7 +276,7 @@
     ;; :non-normal-prefix "C-m"
     ;; "," 'ace-jump-char-mode
     ;; "," 'avy-goto-word-1
-    "," 'avy-goto-char
+    ;; "," 'avy-goto-char
 
     ;; "b" '(:ignore t :wk ("b" . "buffer"))
     ;; "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
