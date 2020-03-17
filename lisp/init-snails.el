@@ -37,7 +37,7 @@
   :ensure nil
   :bind*
   (
-   ("M-y" . snails)
+   ("M-j s" . snails)
    ;; ("M-s s" . snails)
    ;; ("M-s p" . snails-current-project)
    ;; ("M-s b" . snails-active-recent-buffers)

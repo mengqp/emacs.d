@@ -7,7 +7,9 @@
   :ensure t
   :commands (pyim pyim-restart-1)
   :bind*
-  (("M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
+  (
+   ("M-i i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
+   ("M-i M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
    ;; ("C-;" . pyim-delete-word-from-personal-buffer))
    ;; ("C-;" . pyim-convert-code-at-point )
    )

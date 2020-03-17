@@ -38,7 +38,7 @@
   :ensure t
   :defer t
   :bind
-  ( "M-j" . 'yas-expand)
+  ;; ( "M-j" . 'yas-expand)
   :commands (yasnippet yas-reload-all)
   :commands (yasnippet yas-expand)
   :commands (yasnippet yas-next-field)

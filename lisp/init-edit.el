@@ -141,8 +141,10 @@
 (when *linux*
   (use-package format-all
     :ensure t
-    :bind(
-	  ("C-c bf" . format-all-buffer)
+    :bind*
+    (
+	  ;; ("C-c bf" . format-all-buffer)
+	  ("M-i ff" . format-all-buffer)
 	  )
     :defer t
     ;; :init
