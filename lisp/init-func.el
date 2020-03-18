@@ -73,6 +73,7 @@
   (find-file "~/.emacs.d/lisp/init-keymap.el")
     )
 
+
 (defun mengqp/switch-scratch-buf ()
   "Open init keymap file to config."
   (interactive)
@@ -88,7 +89,6 @@
   "Insert the datetime in current position."
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
-
 
 ;; (defun xah-insert-date ()
 ;;   "Insert current date and or time.

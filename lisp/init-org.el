@@ -41,6 +41,12 @@
 (use-package org
   :ensure t
   :defer t
+  :bind*
+  (
+   ("M-j oo" . org-capture)
+   ("M-j oa" . org-agenda)
+   ("M-j oj" . org-journal-new-entry)
+   )
   :init
   :config
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))

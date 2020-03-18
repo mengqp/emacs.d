@@ -37,6 +37,21 @@
 ;; (global-unset-key (kbd "C-SPC"))
 ;; (global-set-key (kbd "S-SPC") 'set-mark-command)
 
+(global-set-key (kbd "M-g fi") 'mengqp/open-init-file)
+(global-set-key (kbd "M-g fp") 'mengqp/open-init-package-file)
+(global-set-key (kbd "M-g fk") 'mengqp/open-init-keymap-file)
+(global-set-key (kbd "M-g fs") 'mengqp/switch-scratch-buf)
+(global-set-key (kbd "M-g hf") 'find-function)
+(global-set-key (kbd "M-g hv") 'find-variable)
+(global-set-key (kbd "M-g hm") 'man)
+(global-set-key (kbd "M-g hw") 'woman)
+
+(global-unset-key (kbd "M-t"))
+(global-set-key (kbd "M-t c") 'compile)
+
+(global-unset-key (kbd "M-q"))
+(global-set-key (kbd "M-q r") 'restart-emacs)
+
 (use-package which-key
   :ensure t
   :defer 2
@@ -130,11 +145,11 @@
     ;; "bd" 'kill-buffer
     ;; "bs" 'mengqp/switch-scratch-buf
 
-    "c" '(:ignore t :wk ("c" . "compile"))
-    "cc" 'compile
-    "ck" 'kill-compilation
-    "cr" 'recompile
-    "cd" 'mengqp/close-compilation-window
+    ;; "c" '(:ignore t :wk ("c" . "compile"))
+    ;; "cc" 'compile
+    ;; "ck" 'kill-compilation
+    ;; "cr" 'recompile
+    ;; "cd" 'mengqp/close-compilation-window
 
     ;; "d" '(:ignore t :wk ("d" . "delete"))
     ;; "dd" 'avy-zap-to-char-dwim
@@ -145,13 +160,13 @@
     ;; "ee" 'ansi-term
     ;; "ea" 'shell
 
-    "f" '(:ignore t :wk ("f" . "files"))
+    ;; "f" '(:ignore t :wk ("f" . "files"))
     ;; "ff" 'counsel-find-file  ;;
     ;; "f." 'find-file-at-point
     ;; "fr" 'counsel-recentf  ;;
-    "fdi" 'mengqp/open-init-file
-    "fdp" 'mengqp/open-init-package-file
-    "fdk" 'mengqp/open-init-keymap-file
+    ;; "fdi" 'mengqp/open-init-file
+    ;; "fdp" 'mengqp/open-init-package-file
+    ;; "fdk" 'mengqp/open-init-keymap-file
 
     ;; "g" '(:ignore t :wk ("g" . "git"))
     ;; "gst" 'magit-status
@@ -166,11 +181,11 @@
     ;; "gp" 'git-push-coding-request
     ;; "gt" 'git-timemachine
 
-    "h" '(:ignore t :wk ("h" . "help"))
-    "hf" 'find-function
-    "hv" 'find-variable
-    "hm" 'man
-    "hw" 'woman
+    ;; "h" '(:ignore t :wk ("h" . "help"))
+    ;; "hf" 'find-function
+    ;; "hv" 'find-variable
+    ;; "hm" 'man
+    ;; "hw" 'woman
 
     ;; "l" '(:ignore t :wk ("l" . "layout"))
     ;; "l0" 'eyebrowse-switch-to-window-config-0
@@ -193,11 +208,11 @@
     ;; "md" 'bookmark-delete
     ;; "mm" 'counsel-bookmark
 
-    "o" '(:ignore t :wk ("o" . "org"))
-    "oo" 'org-capture
-    "oa" 'org-agenda
-    ;; "od" 'deft
-    "oj" 'org-journal-new-entry
+    ;; "o" '(:ignore t :wk ("o" . "org"))
+    ;; "oo" 'org-capture
+    ;; "oa" 'org-agenda
+    ;; ;; "od" 'deft
+    ;; "oj" 'org-journal-new-entry
     ;; "op" 'org-pomodoro
     ;; "omp" 'org-mobile-push
     ;; "omg" 'org-mobile-pull
@@ -212,9 +227,9 @@
     ;; "pfi" 'mengqp/org-projectile-find-issue
     ;; "pft" 'mengqp/org-projectile-find-todo
 
-    "q" '(:ignore t :wk ("q" . "quit"))
-    ;; "qq" 'save-buffers-kill-emacs
-    "qr" 'restart-emacs
+    ;; "q" '(:ignore t :wk ("q" . "quit"))
+    ;; ;; "qq" 'save-buffers-kill-emacs
+    ;; "qr" 'restart-emacs
 
     ;; "sp" 'color-rg-search-project-with-type
     ;; "st" 'color-rg-search-symbol-with-type
@@ -293,7 +308,7 @@
     ;; "c2d" 'unix2dos
     ;; "c2u" 'dos2unix
     ;; "cf" 'clang-format-buffer
-    "cf" 'format-all-buffer
+    ;; "cf" 'format-all-buffer
 
     ;; "dd" 'avy-zap-to-char-dwim
     ;; "dD" 'avy-zap-up-to-char-dwim

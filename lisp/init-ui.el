@@ -80,7 +80,7 @@
   :bind*
   (
    ("M-j t" . awesome-tab-ace-jump)
-   ;; ("M-g ts" . awesome-fast-switch/body)
+   ("M-t t" . awesome-fast-switch/body)
    )
   :hook
   (after-init . awesome-tab-mode)
