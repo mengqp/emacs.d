@@ -47,15 +47,19 @@
   :config
   (use-package exec-path-from-shell
     :if (featurep 'cocoa) :defer t)
+
+  (setq snails-default-backends
+	'(snails-backend-awesome-tab-group snails-backend-buffer snails-backend-recentf snails-backend-directory-files snails-backend-bookmark)
+	)
   (setq snails-prefix-backends
 	'((">" '(snails-backend-command))
 	  ("@" '(snails-backend-imenu))
 	  ("#" '(snails-backend-current-buffer))
 	  ("!" '(snails-backend-rg))
 	  ("?" '(snails-backend-fd))
+	  )
 	)
   )
-)
 
 (provide 'init-snails)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
