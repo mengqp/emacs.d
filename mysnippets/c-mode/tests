@@ -1,0 +1,6 @@
+# -*- mode: c -*-
+# name: tests
+# key: tests
+# --
+{ "test_${1:suitname}", suite_$1_init,
+suite_$1_clean, NULL, NULL, testcase_$1 },

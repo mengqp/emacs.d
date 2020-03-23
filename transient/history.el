@@ -17,6 +17,7 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
+  (("--" "drivers/tty/serial/omap-serial.c"))
   (("--" "main/src/usart.c"))
   ("-n256" "--graph" "--decorate")
   (("--" "display/sysopdlg.cpp"))
@@ -32,6 +33,7 @@
  (magit-pull nil)
  (magit-push nil)
  (magit-stash nil)
+ (magit-status-jump nil)
  (magit-submodule nil
 		  ("--force"))
  (magit-svn nil)

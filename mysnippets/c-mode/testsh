@@ -1,0 +1,14 @@
+# -*- mode: c -*-
+# name: testsh
+# key: testsh
+# --
+
+#include <CUnit/Basic.h>
+#include <CUnit/Console.h>
+#include <CUnit/CUnit.h>
+#include <CUnit/TestDB.h>
+
+int suite_${1:file}_init(void);
+int suite_$1_clean(void);
+
+extern CU_TestInfo testcase_$1[];

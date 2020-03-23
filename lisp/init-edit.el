@@ -160,13 +160,12 @@
 
 
   ;; auto insert closing bracket
-  (electric-pair-mode 1)
+  ;; (electric-pair-mode 1)
   (use-package awesome-pair
     ;; :disabled t
-    :defer t
     ;; :hook (prog-mode . #'awesome-pair-mode)
-    ;; :init
-    ;; (add-hook 'prog-mode-hook #'awesome-pair-mode )
+    :init
+    (add-hook 'prog-mode-hook '(lambda () (awesome-pair-mode 1)))
     :config
     (define-key awesome-pair-mode-map (kbd "(") 'awesome-pair-open-round)
     (define-key awesome-pair-mode-map (kbd "[") 'awesome-pair-open-bracket)
@@ -383,6 +382,15 @@
 	("C-/" . undo-fu-only-undo)
 	("C-?" . undo-fu-only-redo)
 	)
+  )
+
+(use-package separedit
+  :ensure t
+  :defer t
+  :hook
+  (prog-mode . separedit-mode )
+  :bind
+  (("C-c '" . #'separedit))
   )
 
 (provide 'init-edit)

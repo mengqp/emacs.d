@@ -1,0 +1,76 @@
+# -*- mode: c -*-
+# name: testc
+# key: testc
+# --
+
+#include <assert.h>
+#include <ctype.h>
+#include <errno.h>
+#include <limits.h>
+#include <string.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+#include <CUnit/Basic.h>
+#include <CUnit/Console.h>
+#include <CUnit/CUnit.h>
+#include <CUnit/TestDB.h>
+
+$0
+
+//定义suite数组，包括多个suite，每个suite又会包括若干个测试方法。
+CU_SuiteInfo suites[] = {
+    CU_SUITE_INFO_NULL
+};
+
+/* 测试入口 */
+void AddTests(void)
+{
+    assert(NULL != CU_get_registry());
+    assert(!CU_is_test_running());
+
+    if (CUE_SUCCESS != CU_register_suites(suites)) {
+        exit(EXIT_FAILURE);
+    }
+}
+
+/* 运行测试入口 */
+int RunTest(void)
+{
+    if (CU_initialize_registry()) {
+        fprintf(stderr, " Initialization of Test Registry failed. ");
+        exit(EXIT_FAILURE);
+    }
+    else {
+        AddTests();
+        /* *** Automated Mode ***************** */
+        /* CU_set_output_filename("TestMax"); */
+        /* CU_list_tests_to_file(); */
+        /* CU_automated_run_tests(); */
+
+        /* CU_set_output_filename("TestMax"); */
+        /* CU_list_tests_to_file(); */
+        /* CU_automated_run_tests(); */
+
+        /* ****Basice Mode ******************* */
+        /* CU_basic_set_mode(CU_BRM_VERBOSE); */
+        CU_basic_run_tests();
+        CU_basic_set_mode(CU_BRM_VERBOSE);
+        CU_basic_run_tests();
+        /* ****Console Mode ******************** */
+        /* CU_console_run_tests(); */
+
+        /* CU_console_run_tests(); */
+
+        /* CU_cleanup_registry(); */
+
+        return CU_get_error();
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    RunTest();
+    return 0;
+}

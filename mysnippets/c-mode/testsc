@@ -1,0 +1,21 @@
+# -*- mode: c -*-
+# name: testsc
+# key: testsc
+# --
+
+#include "test_${1:file}.h"
+
+CU_TestInfo testcase_$1[] = {
+	    $0
+    CU_TEST_INFO_NULL
+};
+
+int suite_$1_init(void)
+{
+    return 0;
+}
+
+int suite_$1_clean(void)
+{
+    return 0;
+}

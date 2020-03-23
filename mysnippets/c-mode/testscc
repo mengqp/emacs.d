@@ -1,0 +1,5 @@
+# -*- mode: c -*-
+# name: testscc
+# key: testscc
+# --
+{ "${1:case}", $1 },
