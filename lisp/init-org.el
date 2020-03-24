@@ -74,7 +74,7 @@
   (require 'init-org-pomodoro)
   (require 'init-org-ui)
   (require 'init-journal)
-  (require 'org-agenda)
+  (require 'init-agenda)
 
   )
 

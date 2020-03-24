@@ -41,6 +41,7 @@
 
 (use-package counsel
   :ensure t
+  :diminish counsel-mode
   :commands (magit-utils magit-completing-read-function)
   :commands (magit-utils magit-completing-read-function)
   :hook ((after-init . ivy-mode)
