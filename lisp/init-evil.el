@@ -55,6 +55,8 @@
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
   ;; but [escape] should switch back to normal state
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
+  (define-key evil-normal-state-map "\M-." 'xref-find-definitions)
+  (define-key evil-motion-state-map "\M-." 'xref-find-definitions)
 
   ;;实现代码折叠
   (use-package hideshow

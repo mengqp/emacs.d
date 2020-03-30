@@ -38,18 +38,18 @@
   ;; :disabled t
   :defer t
   :diminish lsp-mode
-  :init
-  ;; (dolist (hook (list
-  ;; 		 'c-mode-hook
-  ;; 		 'c++-mode-hook
-  ;; 		 'cc-mode-hook
-  ;; 		 ))
-  ;;   (add-hook hook #'lsp)
-  ;;   )
-  ;; (add-hook hook #'lsp-prog-major-mode-enable)
   :config
+  (dolist (hook (list
+		 'c-mode-hook
+		 'c++-mode-hook
+		 'cc-mode-hook
+		 ))
+    (add-hook hook #'lsp)
+    )
+  ;; (add-hook hook #'lsp-prog-major-mode-enable)
+
   (require 'lsp-clients)
-  ;; (setq lsp-auto-guess-root t)
+  (setq lsp-auto-guess-root t)
   (setq lsp-inhibit-message t)
   (setq lsp-message-project-root-warning t)
   (setq create-lockfiles nil)
@@ -130,33 +130,34 @@
 
   )
 
-;; (use-package eglot
-;;   :ensure t
-;;   :disabled t
-;;   :defer t
-;;   :init
-;;   (add-hook 'c-mode-common-hook 'eglot-ensure)
-;;   ;; (add-hook 'c-mode-hook 'eglot-ensure)
-;;   ;; (add-to-list 'eglot-server-programs
-;;   ;; 	       '((c++ mode c-mode) . (eglot-cquery "ccls")))
-;;   :config
-;;   (add-to-list 'eglot-server-programs '((c++-mode c-mode) . (eglot-cquery "ccls")))
-;;   (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
+(use-package eglot
+  :ensure t
+  :disabled t
+  :defer t
+  :hook (prog-mode . eglot-ensure)
+  ;; :init
+  ;; (add-hook 'c-mode-common-hook 'eglot-ensure)
+  ;; (add-hook 'c-mode-hook 'eglot-ensure)
+  ;; (add-to-list 'eglot-server-programs
+  ;; 	       '((c++-mode c-mode) . (eglot-cquery "ccls")))
+  :config
+  (add-to-list 'eglot-server-programs '((c++-mode c-mode) . (eglot-cquery "ccls")))
+  (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
 
-;;   )
+  )
 
 
 (use-package ccls
   ;; :ensure t
   ;; :disabled t
-  :commands lsp-ccls-enable
-  :hook ((c-mode c++-mode objc-mode) .
-         (lambda () (require 'ccls) (lsp)))
+  ;; :commands lsp-ccls-enable
+  ;; :hook ((c-mode c++-mode objc-mode) .
+  ;;        (lambda () (require 'ccls) (lsp)))
   ;; :init
   ;; (add-hook 'c-mode-common-hook (lambda () (require 'ccls) (lsp)))
   :config
   ;; (setq ccls-args '("--log-file=/tmp/ccls-test.out" "-v=3"))
-  (setq projectile-require-project-root t)
+  ;; (setq projectile-require-project-root t)
   (setq ccls-executable "/usr/bin/ccls")
 
   ;; (use-package projectile
@@ -189,36 +190,49 @@
   ;; For rainbow semantic highlighting
   ;; (ccls-use-default-rainbow-sem-highlight)
 
-  (setq ccls-extra-init-params
-	'(
-	  :clang (:extraArgs ("-D__cpp_deduction_guides=0" "-Wno-macro-redefined"))
-	  :completion (:detailedLabel t)
-	  :diagnostics (:frequencyMs 5000)
-	  :index (:initialReparseForDependency :json-false)))
+  ;; (setq ccls-extra-init-params
+  ;; 	'(
+  ;; 	  :clang (:extraArgs ("-D__cpp_deduction_guides=0" "-Wno-macro-redefined"))
+  ;; 	  :completion (:detailedLabel t)
+  ;; 	  :diagnostics (:frequencyMs 5000)
+  ;; 	  :index (:initialReparseForDependency :json-false)))
 
 
-  ;; (setq ccls-extra-init-params '(:completion (:detailedLabel t)))
-  (general-define-key :states '(normal motion)
-		      :keymaps '(c++-mode-map
-				 c-mode-map)
-		      :prefix ";"
-		      "d" 'xref-find-definitions
-		      "r" 'xref-find-references
-		      ;; "m" 'lsp-ui-imenu
-		      "cm" 'ccls-member-hierarchy
-		      "cc" 'ccls-call-hierarchy
-		      "cp" 'ccls-inheritance-hierarchy
-		      ;; "n" 'ccls-navigate
-		      )
+  ;; ;; (setq ccls-extra-init-params '(:completion (:detailedLabel t)))
+  ;; (general-define-key :states '(normal motion)
+  ;; 		      :keymaps '(c++-mode-map
+  ;; 				 c-mode-map)
+  ;; 		      :prefix ";"
+  ;; 		      "d" 'xref-find-definitions
+  ;; 		      "r" 'xref-find-references
+  ;; 		      ;; "m" 'lsp-ui-imenu
+  ;; 		      "cm" 'ccls-member-hierarchy
+  ;; 		      "cc" 'ccls-call-hierarchy
+  ;; 		      "cp" 'ccls-inheritance-hierarchy
+  ;; 		      ;; "n" 'ccls-navigate
+  ;; 		      )
 
 
   )
 
 ;; lsp-auto-require-clients defaults to t, lsp-clients is required and clangd is registered.
 ;; If you don't want to see prompt for the choice between ccls and clangd for every new file
-(with-eval-after-load 'lsp-clients
-  (remhash 'clangd lsp-clients)
+;; (with-eval-after-load 'lsp-clients
+;;   (remhash 'clangd lsp-clients)
+;;   )
+
+
+(use-package nox
+  :disabled t
+  :config
+  (dolist (hook (list
+               'c-mode-common-hook
+               'c-mode-hook
+               'c++-mode-hook
+               ))
+  (add-hook hook '(lambda () (nox-ensure))))
   )
+
 
 (provide 'init-lsp)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
