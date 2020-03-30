@@ -5,6 +5,7 @@
 ;;; Code:
 (use-package pyim
   :ensure t
+  :disabled t
   :commands (pyim pyim-restart-1)
   :bind*
   (
@@ -99,6 +100,33 @@
   (global-set-key (kbd "C-\\") 'toggle-input-method)
   )
 
+
+(use-package rime
+  :ensure t
+  :diminish rime-mode
+  :hook(after-init . rime-mode)
+  ;; :bind* (
+  ;; 	("M-i i" . rime-force-enable) ;与 pyim-probe-dynamic-english 配合
+  ;; 	("M-i M-i" . rime-force-enable) ;与 pyim-probe-dynamic-english 配合
+  ;; 	)
+  :init
+  (setq rime-disable-predicates
+	'(rime-predicate-evil-mode-p
+          ;; rime-predicate-after-alphabet-char-p
+          ;; rime-predicate-prog-in-code-p
+	  )
+	)
+  (setq rime-inline-predicates '(rime-predicate-space-after-cc-p))
+  (setq rime-user-data-dir "~/.emacs.d/rime/")
+
+  (setq rime-posframe-properties
+	(list :background-color "#333333"
+	      :foreground-color "#dcdccc"
+	      ;; :font "WenQuanYi Micro Hei Mono-14"
+	      :internal-border-width 10))
+  (setq default-input-method "rime"
+	rime-show-candidate 'posframe)
+  )
 
 (provide 'init-pyim)
 ;;; init-pyim.el ends here

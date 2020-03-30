@@ -104,7 +104,7 @@
 
 (use-package cyberpunk-theme
   :ensure t
-  :disabled t
+  ;; :disabled t
   :defer t
   :init
   (add-hook 'after-init-hook
@@ -119,6 +119,7 @@
   )
 
 (use-package modus-operandi-theme
+  :disabled t
   :ensure t)
 
 ;; (use-package eziam-theme
