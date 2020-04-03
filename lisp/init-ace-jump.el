@@ -35,17 +35,17 @@
 (use-package avy
   :ensure t
   :defer t
-  :bind (("M-g c" . avy-goto-char)
+  :bind* (("M-g c" . avy-goto-char)
          ("M-g 2" . avy-goto-char-2)
          ("M-g w" . avy-goto-word-1)
-  	 ("M-g e" . avy-goto-word-0))
+  	 ("M-j w" . avy-goto-word-0))
   )
 
 ;; Kill text between the point and the character CHAR
 (use-package avy-zap
   :ensure t
   :defer t
-  :bind (
+  :bind* (
 	 ("M-z" . avy-zap-to-char-dwim)
 	 ("M-Z" . avy-zap-up-to-char-dwim)
 	 )

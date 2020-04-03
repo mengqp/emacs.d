@@ -49,7 +49,7 @@
   (after-init . awesome-tray-mode)
   :init
   (setq awesome-tray-mode-line-active-color "Gray60")
-  (setq awesome-tray-active-modules '("buffer-name" "evil" "git" "mode-name" "location"))
+  ;; (setq awesome-tray-active-modules '("buffer-name" "awesome-tab" "git" "mode-name" "location"))
   )
 
 (use-package doom-modeline

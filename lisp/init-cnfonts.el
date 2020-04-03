@@ -53,11 +53,9 @@
   (set-face-attribute
    'default nil
    :font (font-spec :name "-ADBO-Source Code Pro-ultrabold-italic-normal-*-*-*-*-*-m-0-iso10646-1"
-		    :weight 'normal
-		    :slant 'normal
-		    :background "black"
-		    :foreground "#30A339"
-		    :size 12.5))
+                    :weight 'normal
+                    :slant 'normal
+                    :size 12.5))
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font
      (frame-parameter nil 'font)
@@ -65,8 +63,6 @@
      (font-spec :name "-WenQ-WenQuanYi Zen Hei Mono-normal-normal-normal-*-*-*-*-*-*-0-iso10646-1"
 		:weight 'normal
 		:slant 'normal
-		:background "black"
-		:foreground "#30A339"
 		:size 15.0)))
   )
 

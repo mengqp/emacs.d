@@ -35,7 +35,7 @@
 
 
 (use-package lsp-mode
-  ;; :disabled t
+  :disabled t
   :defer t
   :diminish lsp-mode
   :config
@@ -49,7 +49,7 @@
   ;; (add-hook hook #'lsp-prog-major-mode-enable)
 
   (require 'lsp-clients)
-  (setq lsp-auto-guess-root t)
+  ;; (setq lsp-auto-guess-root t)
   (setq lsp-inhibit-message t)
   (setq lsp-message-project-root-warning t)
   (setq create-lockfiles nil)
@@ -94,14 +94,14 @@
     :init
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
     (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
-    (setq lsp-ui-doc-enable t
+    (setq lsp-ui-doc-enable nil
 	  lsp-ui-doc-header t
 	  lsp-ui-doc-include-signature t
 	  lsp-ui-doc-position 'top
 	  ;; lsp-ui-doc-use-webkit t
 	  lsp-ui-doc-border (face-foreground 'default)
 
-	  lsp-ui-sideline-enable t
+	  lsp-ui-sideline-enable nil
 	  lsp-ui-sideline-ignore-duplicate t
 	  lsp-ui-sideline-show-diagnostics nil
 	  lsp-ui-sideline-show-symbol t
@@ -223,7 +223,7 @@
 
 
 (use-package nox
-  :disabled t
+  ;; :disabled t
   :config
   (dolist (hook (list
                'c-mode-common-hook

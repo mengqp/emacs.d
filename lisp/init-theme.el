@@ -104,7 +104,7 @@
 
 (use-package cyberpunk-theme
   :ensure t
-  ;; :disabled t
+  :disabled t
   :defer t
   :init
   (add-hook 'after-init-hook
