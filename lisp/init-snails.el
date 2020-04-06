@@ -38,6 +38,10 @@
   :bind*
   (
    ("M-j s" . snails)
+   (:map snails-mode-map
+    ("M-n" . snails-select-next-backend)
+    ("M-p" . snails-select-prev-backend)
+    )
    ;; ("M-s s" . snails)
    ;; ("M-s p" . snails-current-project)
    ;; ("M-s b" . snails-active-recent-buffers)
@@ -49,7 +53,7 @@
     :if (featurep 'cocoa) :defer t)
 
   (setq snails-default-backends
-	'(snails-backend-awesome-tab-group snails-backend-buffer snails-backend-recentf snails-backend-directory-files snails-backend-bookmark)
+	'(snails-backend-fasd snails-backend-awesome-tab-group snails-backend-buffer snails-backend-recentf snails-backend-directory-files snails-backend-bookmark)
 	)
   (setq snails-prefix-backends
 	'((">" '(snails-backend-command))

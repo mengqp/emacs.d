@@ -83,14 +83,17 @@
   (add-hook 'prog-mode-hook 'focus-mode)
   )
 
-;; (use-package lazycat-theme
-;;   ;; :ensure t
-;;   ;; :disabled t
-;;   ;; :defer t
-;;   ;; init
-;;   ;;(add-hook 'after-init-hook
-;; ;;	    (lambda () (load-theme 'lazycat t)))
-;;   )
+(use-package lazycat-theme
+  ;; :ensure t
+  ;; :disabled t
+  ;; :defer t
+  ;; :init
+  ;; (add-hook 'after-init-hook
+  ;; 	    (lambda () (lazycat-theme-load-dark)))
+  :config
+  (lazycat-theme-load-dark)
+  (lazycat-theme-load-with-sunrise)
+  )
 
 (use-package srcery-theme
   :ensure t
@@ -131,7 +134,7 @@
 
 (use-package modus-vivendi-theme
   :ensure t
-  ;; :disabled t
+  :disabled t
   :init
   ;; Choose to render some code constructs in slanted text (italics).  The
   ;; default, shown below, is to not use italics, unless it is absolutely
