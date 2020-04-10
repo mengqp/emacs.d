@@ -79,8 +79,9 @@
   ;; :defer 3
   :bind*
   (
+   ("M-t t" . awesome-tab-ace-jump)
    ("M-j t" . awesome-tab-ace-jump)
-   ("M-t t" . awesome-fast-switch/body)
+   ("M-t j" . awesome-fast-switch/body)
    )
   :hook
   (after-init . awesome-tab-mode)
@@ -119,7 +120,6 @@
     ("C-k" kill-current-buffer)
     ("C-S-k" awesome-tab-kill-other-buffers-in-current-group)
     ("q" nil "quit"))
-  ;; :disabled t
   (awesome-tab-mode t)
   ;; (setq awesome-tab-face-height 130 )
   ;; (setq awesome-tab-style "bar")

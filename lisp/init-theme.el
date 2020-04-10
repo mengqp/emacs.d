@@ -91,7 +91,7 @@
   ;; (add-hook 'after-init-hook
   ;; 	    (lambda () (lazycat-theme-load-dark)))
   :config
-  (lazycat-theme-load-dark)
+  ;; (lazycat-theme-load-dark)
   (lazycat-theme-load-with-sunrise)
   )
 

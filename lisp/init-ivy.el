@@ -33,11 +33,11 @@
 ;;
 ;;; Code:
 
-(use-package smex
-  :ensure t
- ;; :config
-  ;; (global-set-key (kbd "M-x") 'smex)
-  )
+;; (use-package smex
+;;   :ensure t
+;;  ;; :config
+;;   ;; (global-set-key (kbd "M-x") 'smex)
+;;   )
 
 (use-package counsel
   :ensure t
@@ -53,30 +53,15 @@
 
    :map counsel-mode-map
    ([remap swiper] . counsel-grep-or-swiper)
-   ("C-x C-r" . counsel-recentf)
+   ;; ("C-x C-r" . counsel-recentf)
    ("C-x j" . counsel-mark-ring)
 
    ("C-c r" . counsel-rg)
 
    ("C-c c L" . counsel-load-library)
-   ("C-c c P" . counsel-package)
-   ("C-c c a" . counsel-apropos)
-   ("C-c c e" . counsel-colors-emacs)
-   ("C-c c f" . counsel-find-library)
    ("C-c c g" . counsel-grep)
-   ("C-c c h" . counsel-command-history)
-   ("C-c c i" . counsel-git)
-   ("C-c c j" . counsel-git-grep)
-   ("C-c c l" . counsel-locate)
-   ("C-c c m" . counsel-minibuffer-history)
-   ("C-c c o" . counsel-outline)
-   ("C-c c p" . counsel-pt)
    ("C-c c r" . counsel-rg)
    ("C-c c s" . counsel-ag)
-   ("C-c c t" . counsel-load-theme)
-   ("C-c c u" . counsel-unicode-char)
-   ("C-c c w" . counsel-colors-web)
-   ("C-c c z" . counsel-fzf)
    )
 
   :init
@@ -110,31 +95,6 @@
 	'((t   . ivy--regex-ignore-order)))
 
   )
-
-;; (use-package swiper
-;;   :ensure t
-;;   ;; :defer t
-;;   )
-
-
-;; (use-package ivy
-;;   :ensure t
-;;   :diminish (ivy-mode . "")
-
-;;   ;; :defer t
-;;   :bind
-;;   (
-
-
-;;      )
-;;   ;; (:map ivy-mode-map
-;;   ;;       ("C-s" . swiper))
-
-;;   ;; (:map ivy-mode-map
-;;   ;;       ("M-x" . counsel-M-x))
-;;   :init
-
-;;   )
 
 (use-package ivy-posframe
   :disabled t

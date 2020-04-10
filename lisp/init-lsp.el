@@ -231,6 +231,8 @@
                'c++-mode-hook
                ))
   (add-hook hook '(lambda () (nox-ensure))))
+
+  (setq nox-doc-tooltip-font-size 17)
   )
 
 
