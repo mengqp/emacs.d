@@ -85,7 +85,7 @@
 
   ;; (when *linux*
     ;; (require 'init-abbrev)
-    ;; (require 'init-hydra)
+    (require 'init-hydra)
     ;; (require 'init-spell)
     ;;(require 'init-dap)
     ;; )

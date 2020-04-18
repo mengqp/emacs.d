@@ -116,6 +116,8 @@
           rime-predicate-prog-in-code-p
 	  )
 	)
+;;; support shift-l, shift-r, control-l, control-r
+  ;; (setq rime-inline-ascii-trigger 'shift-l)
   (setq rime-inline-predicates '(rime-predicate-space-after-cc-p))
   (setq rime-user-data-dir "~/.emacs.d/rime/")
 

@@ -35,10 +35,10 @@
 
 
 (use-package yasnippet
-  :ensure t
+  ;; :ensure t
   :defer t
-  :bind
-  ;; ( "M-j" . 'yas-expand)
+  ;; :bind
+  ;; ;; ( "M-j" . 'yas-expand)
   :commands (yasnippet yas-reload-all)
   :commands (yasnippet yas-expand)
   :commands (yasnippet yas-next-field)

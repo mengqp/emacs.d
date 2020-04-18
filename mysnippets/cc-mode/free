@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: free
+# key: fr
+# --
+if(NULL != ${1:pointer}){
+    free($1);
+    $1 = NULL;
+}

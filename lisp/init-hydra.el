@@ -32,50 +32,54 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-;; (use-package thing-edit
-;;   ;; :defer t
-;;   ;; :init
-;;   ;; (global-set-key (kbd "your-keys") peng-thing-edit-map)
-;;   ;; :config
-;;   )
+(use-package thing-edit
+  :defer 2
+  :bind*
+  (
+   ("M-t h" . hydra-thing-edit/body)
+   )
+  ;; :init
+  ;; (global-set-key (kbd "your-keys") peng-thing-edit-map)
+  ;; :config
+  ;; (global-set-key (kbd ) #'hydra-thing-edit/body)
+  )
 
 (use-package hydra
   :ensure t
-  :defer t
+  ;; :defer t
   :config
-  ;; (defhydra hydra-thing-edit ()
-  ;;   "thing-edit"
-  ;;   ("w"  thing-copy-word "Copy Word")
-  ;;   ("s"  thing-copy-symbol "Copy Symbol")
-  ;;   ("f"  thing-copy-filename "Copy Filename")
-  ;;   ("x"  thing-copy-sexp "Copy Sexp")
-  ;;   ("g"  thing-copy-page "Copy Page")
-  ;;   ("t"  thing-copy-sentence "Copy Sentence")
-  ;;   ("o"  thing-copy-whitespace "Copy Whitespace")
-  ;;   ("i"  thing-copy-list "Copy List")
-  ;;   ("c"  thing-copy-comment "Copy Comment")
-  ;;   ("h"  thing-copy-defun "Copy Function")
-  ;;   ("p"  thing-copy-parentheses "Copy Parentheses")
-  ;;   ("l"  thing-copy-line "Copy Line")
-  ;;   ("a"  thing-copy-to-line-beginning "Copy To Line Begin")
-  ;;   ("e"  thing-copy-to-line-end "Copy To Line End")
-  ;;   ;; Cut
-  ;;   ("W"  thing-cut-word "Cut Word")
-  ;;   ("S"  thing-cut-symbol "Cut Symbol")
-  ;;   ("F"  thing-cut-filename "Cut Filename")
-  ;;   ("X"  thing-cut-sexp "Cut Sexp")
-  ;;   ("G"  thing-cut-page "Cut Page")
-  ;;   ("T"  thing-cut-sentence "Cut Sentence")
-  ;;   ("O"  thing-cut-whitespace "Cut Whitespace")
-  ;;   ("I"  thing-cut-list "Cut List")
-  ;;   ("C"  thing-cut-comment "Cut Comment")
-  ;;   ("H"  thing-cut-defun "Cut Function")
-  ;;   ("P"  thing-cut-parentheses "Cut Parentheses")
-  ;;   ("L"  thing-cut-line "Cut Line")
-  ;;   ("A"  thing-cut-to-line-beginning "Cut To Line Begin")
-  ;;   ("E"  thing-cut-to-line-end "Cut To Line End")
-  ;;   )
-  ;; (global-set-key (kbd "M-H") #'hydra-thing-edit/body)
+  (defhydra hydra-thing-edit ()
+    "thing-edit"
+    ("w"  thing-copy-word "Copy Word")
+    ("s"  thing-copy-symbol "Copy Symbol")
+    ("f"  thing-copy-filename "Copy Filename")
+    ("x"  thing-copy-sexp "Copy Sexp")
+    ("g"  thing-copy-page "Copy Page")
+    ("t"  thing-copy-sentence "Copy Sentence")
+    ("o"  thing-copy-whitespace "Copy Whitespace")
+    ("i"  thing-copy-list "Copy List")
+    ("c"  thing-copy-comment "Copy Comment")
+    ("h"  thing-copy-defun "Copy Function")
+    ("p"  thing-copy-parentheses "Copy Parentheses")
+    ("l"  thing-copy-line "Copy Line")
+    ("a"  thing-copy-to-line-beginning "Copy To Line Begin")
+    ("e"  thing-copy-to-line-end "Copy To Line End")
+    ;; Cut
+    ("W"  thing-cut-word "Cut Word")
+    ("S"  thing-cut-symbol "Cut Symbol")
+    ("F"  thing-cut-filename "Cut Filename")
+    ("X"  thing-cut-sexp "Cut Sexp")
+    ("G"  thing-cut-page "Cut Page")
+    ("T"  thing-cut-sentence "Cut Sentence")
+    ("O"  thing-cut-whitespace "Cut Whitespace")
+    ("I"  thing-cut-list "Cut List")
+    ("C"  thing-cut-comment "Cut Comment")
+    ("H"  thing-cut-defun "Cut Function")
+    ("P"  thing-cut-parentheses "Cut Parentheses")
+    ("L"  thing-cut-line "Cut Line")
+    ("A"  thing-cut-to-line-beginning "Cut To Line Begin")
+    ("E"  thing-cut-to-line-end "Cut To Line End")
+    )
 
   ;;   :config
   ;;   (defhydra hydra-zoom (global-map "<f2>")
