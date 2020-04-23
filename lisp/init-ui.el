@@ -79,9 +79,9 @@
   ;; :defer 3
   :bind*
   (
-   ("M-t t" . awesome-tab-ace-jump)
-   ("M-j t" . awesome-tab-ace-jump)
-   ("M-t j" . awesome-fast-switch/body)
+   ;; ("M-t t" . awesome-tab-ace-jump)
+   ;; ("M-j t" . awesome-tab-ace-jump)
+   ("M-t t" . awesome-fast-switch/body)
    )
   :hook
   (after-init . awesome-tab-mode)

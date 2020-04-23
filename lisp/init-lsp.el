@@ -34,127 +34,128 @@
 ;;; Code:
 
 
-(use-package lsp-mode
-  :disabled t
-  :defer t
-  :diminish lsp-mode
-  :config
-  (dolist (hook (list
-		 'c-mode-hook
-		 'c++-mode-hook
-		 'cc-mode-hook
-		 ))
-    (add-hook hook #'lsp)
-    )
-  ;; (add-hook hook #'lsp-prog-major-mode-enable)
+;; (use-package lsp-mode
+;;   :disabled t
+;;   :defer t
+;;   :diminish lsp-mode
+;;   :config
+;;   (dolist (hook (list
+;; 		 'c-mode-hook
+;; 		 'c++-mode-hook
+;; 		 'cc-mode-hook
+;; 		 ))
+;;     (add-hook hook #'lsp)
+;;     )
+;;   ;; (add-hook hook #'lsp-prog-major-mode-enable)
 
-  (require 'lsp-clients)
-  ;; (setq lsp-auto-guess-root t)
-  (setq lsp-inhibit-message t)
-  (setq lsp-message-project-root-warning t)
-  (setq create-lockfiles nil)
-  (setq lsp-prefer-flymake nil)
-  (setq lsp-enable-file-watchers nil)
-  (setq lsp-file-watch-threshold nil)
-  (setq lsp-enable-snippet nil)
-  ;; (setq lsp-enable-indentation nil)
-  ;; (setq lsp-enable-on-type-formatting nil)
-  (flymake-mode-off)
+;;   (require 'lsp-clients)
+;;   ;; (setq lsp-auto-guess-root t)
+;;   (setq lsp-inhibit-message t)
+;;   (setq lsp-message-project-root-warning t)
+;;   (setq create-lockfiles nil)
+;;   (setq lsp-prefer-flymake nil)
+;;   (setq lsp-enable-file-watchers nil)
+;;   (setq lsp-file-watch-threshold nil)
+;;   (setq lsp-enable-snippet nil)
+;;   ;; (setq lsp-enable-indentation nil)
+;;   ;; (setq lsp-enable-on-type-formatting nil)
+;;   (flymake-mode-off)
 
-  (use-package company-lsp
-    :config
-    (push 'company-lsp company-backends)
-    ;; (push 'company-tabnine company-backends)
-    (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
-    )
+;;   (use-package company-lsp
+;;     :config
+;;     (push 'company-lsp company-backends)
+;;     ;; (push 'company-tabnine company-backends)
+;;     (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
+;;     )
 
-  (use-package lsp-ui
-    :custom-face
-    (lsp-ui-doc-background ((t (:background nil))))
-    (lsp-ui-doc-header ((t (:inherit (font-lock-string-face italic)))))
-    ;; :pretty-hydra
-    ;; ((:title "LSP UI" :color amaranth :quit-key "q")
-    ;;  ("Doc"
-    ;;   (("d e" lsp-ui-doc-enable "enable" :toggle t)
-    ;;    ("d s" lsp-ui-doc-include-signature "signature" :toggle t)
-    ;;    ("d t" (setq lsp-ui-doc-position 'top) "top" :toggle (eq lsp-ui-doc-position 'top))
-    ;;    ("d b" (setq lsp-ui-doc-position 'bottom) "bottom" :toggle (eq lsp-ui-doc-position 'bottom))
-    ;;    ("d p" (setq lsp-ui-doc-position 'at-point) "at point" :toggle (eq lsp-ui-doc-position 'at-point))
-    ;;    ("d f" (setq lsp-ui-doc-alignment 'frame) "align frame" :toggle (eq lsp-ui-doc-alignment 'frame))
-    ;;    ("d w" (setq lsp-ui-doc-alignment 'window) "align window" :toggle (eq lsp-ui-doc-alignment 'window)))
-    ;;   "Sideline"
-    ;;   (("s e" lsp-ui-sideline-enable "enable" :toggle t)
-    ;;    ("s h" lsp-ui-sideline-show-hover "hover" :toggle t)
-    ;;    ("s d" lsp-ui-sideline-show-diagnostics "diagnostics" :toggle t)
-    ;;    ("s s" lsp-ui-sideline-show-symbol "symbol" :toggle t)
-    ;;    ("s c" lsp-ui-sideline-show-code-actions "code actions" :toggle t)
-    ;;    ("s i" lsp-ui-sideline-ignore-duplicate "ignore duplicate" :toggle t))))
-    ;; :bind
-    ;; (("M-<f6>" . lsp-ui-hydra/body))
-    :init
-    (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-    (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
-    (setq lsp-ui-doc-enable nil
-	  lsp-ui-doc-header t
-	  lsp-ui-doc-include-signature t
-	  lsp-ui-doc-position 'top
-	  ;; lsp-ui-doc-use-webkit t
-	  lsp-ui-doc-border (face-foreground 'default)
+;;   (use-package lsp-ui
+;;     :custom-face
+;;     (lsp-ui-doc-background ((t (:background nil))))
+;;     (lsp-ui-doc-header ((t (:inherit (font-lock-string-face italic)))))
+;;     ;; :pretty-hydra
+;;     ;; ((:title "LSP UI" :color amaranth :quit-key "q")
+;;     ;;  ("Doc"
+;;     ;;   (("d e" lsp-ui-doc-enable "enable" :toggle t)
+;;     ;;    ("d s" lsp-ui-doc-include-signature "signature" :toggle t)
+;;     ;;    ("d t" (setq lsp-ui-doc-position 'top) "top" :toggle (eq lsp-ui-doc-position 'top))
+;;     ;;    ("d b" (setq lsp-ui-doc-position 'bottom) "bottom" :toggle (eq lsp-ui-doc-position 'bottom))
+;;     ;;    ("d p" (setq lsp-ui-doc-position 'at-point) "at point" :toggle (eq lsp-ui-doc-position 'at-point))
+;;     ;;    ("d f" (setq lsp-ui-doc-alignment 'frame) "align frame" :toggle (eq lsp-ui-doc-alignment 'frame))
+;;     ;;    ("d w" (setq lsp-ui-doc-alignment 'window) "align window" :toggle (eq lsp-ui-doc-alignment 'window)))
+;;     ;;   "Sideline"
+;;     ;;   (("s e" lsp-ui-sideline-enable "enable" :toggle t)
+;;     ;;    ("s h" lsp-ui-sideline-show-hover "hover" :toggle t)
+;;     ;;    ("s d" lsp-ui-sideline-show-diagnostics "diagnostics" :toggle t)
+;;     ;;    ("s s" lsp-ui-sideline-show-symbol "symbol" :toggle t)
+;;     ;;    ("s c" lsp-ui-sideline-show-code-actions "code actions" :toggle t)
+;;     ;;    ("s i" lsp-ui-sideline-ignore-duplicate "ignore duplicate" :toggle t))))
+;;     ;; :bind
+;;     ;; (("M-<f6>" . lsp-ui-hydra/body))
+;;     :init
+;;     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+;;     (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
+;;     (setq lsp-ui-doc-enable nil
+;; 	  lsp-ui-doc-header t
+;; 	  lsp-ui-doc-include-signature t
+;; 	  lsp-ui-doc-position 'top
+;; 	  ;; lsp-ui-doc-use-webkit t
+;; 	  lsp-ui-doc-border (face-foreground 'default)
 
-	  lsp-ui-sideline-enable nil
-	  lsp-ui-sideline-ignore-duplicate t
-	  lsp-ui-sideline-show-diagnostics nil
-	  lsp-ui-sideline-show-symbol t
-	  lsp-ui-sideline-show-hover t
-	  lsp-ui-sideline-show-code-actions t
-	  lsp-ui-sideline-delay 0.5
+;; 	  lsp-ui-sideline-enable nil
+;; 	  lsp-ui-sideline-ignore-duplicate t
+;; 	  lsp-ui-sideline-show-diagnostics nil
+;; 	  lsp-ui-sideline-show-symbol t
+;; 	  lsp-ui-sideline-show-hover t
+;; 	  lsp-ui-sideline-show-code-actions t
+;; 	  lsp-ui-sideline-delay 0.5
 
-	  lsp-ui-flycheck-enable t
+;; 	  lsp-ui-flycheck-enable t
 
-	  lsp-ui-imenu-enable nil
-	  lsp-ui-imenu-kind-position 'left
-	  )
+;; 	  lsp-ui-imenu-enable nil
+;; 	  lsp-ui-imenu-kind-position 'left
+;; 	  )
 
-    :config
+;;     :config
 
-    (require 'imenu)
-    ;; (setq lsp-ui-sideline-enable nil)
-    ;; (lsp-ui-imenu-enable nil)
-    ;; (setq lsp-ui-imenu-enable nil)
-    ;; (setq lsp-ui-imenu nil)
-    (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-    (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+;;     (require 'imenu)
+;;     ;; (setq lsp-ui-sideline-enable nil)
+;;     ;; (lsp-ui-imenu-enable nil)
+;;     ;; (setq lsp-ui-imenu-enable nil)
+;;     ;; (setq lsp-ui-imenu nil)
+;;     (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+;;     (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
 
 
-    )
+;;     )
 
-  )
+;;   )
 
-(use-package eglot
-  :ensure t
-  :disabled t
-  :defer t
-  :hook (prog-mode . eglot-ensure)
-  ;; :init
-  ;; (add-hook 'c-mode-common-hook 'eglot-ensure)
-  ;; (add-hook 'c-mode-hook 'eglot-ensure)
-  ;; (add-to-list 'eglot-server-programs
-  ;; 	       '((c++-mode c-mode) . (eglot-cquery "ccls")))
-  :config
-  (add-to-list 'eglot-server-programs '((c++-mode c-mode) . (eglot-cquery "ccls")))
-  (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
+;; (use-package eglot
+;;   :ensure t
+;;   :disabled t
+;;   :defer t
+;;   :hook (prog-mode . eglot-ensure)
+;;   ;; :init
+;;   ;; (add-hook 'c-mode-common-hook 'eglot-ensure)
+;;   ;; (add-hook 'c-mode-hook 'eglot-ensure)
+;;   ;; (add-to-list 'eglot-server-programs
+;;   ;; 	       '((c++-mode c-mode) . (eglot-cquery "ccls")))
+;;   :config
+;;   (add-to-list 'eglot-server-programs '((c++-mode c-mode) . (eglot-cquery "ccls")))
+;;   (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
 
-  )
+;;   )
 
 
 (use-package ccls
   ;; :ensure t
+  :defer t
   ;; :disabled t
   ;; :commands lsp-ccls-enable
   ;; :hook ((c-mode c++-mode objc-mode) .
   ;;        (lambda () (require 'ccls) (lsp)))
-  ;; :init
-  ;; (add-hook 'c-mode-common-hook (lambda () (require 'ccls) (lsp)))
+  :init
+  (add-hook 'c-mode-common-hook (lambda () (require 'nox) (nox-ensure)))
   :config
   ;; (setq ccls-args '("--log-file=/tmp/ccls-test.out" "-v=3"))
   ;; (setq projectile-require-project-root t)
@@ -224,14 +225,10 @@
 
 (use-package nox
   ;; :disabled t
-  :config
-  (dolist (hook (list
-               'c-mode-common-hook
-               'c-mode-hook
-               'c++-mode-hook
-               ))
-  (add-hook hook '(lambda () (nox-ensure))))
-
+  :defer t
+  ;; :hook ((c-mode c++-mode objc-mode) .
+  ;;        (lambda () (require 'ccls) (nox-ensure)))
+  :init
   (setq nox-doc-tooltip-font-size 17)
   )
 

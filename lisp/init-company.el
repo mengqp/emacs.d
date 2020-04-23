@@ -129,7 +129,7 @@
 
   (use-package company-english-helper
     :ensure nil
-    :disabled t
+    ;; :disabled t
     :defer t
     :commands (company-english-helper toggle-company-english-helper)
     )
