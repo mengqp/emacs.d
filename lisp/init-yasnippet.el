@@ -35,7 +35,7 @@
 
 
 (use-package yasnippet
-  ;; :ensure t
+  :ensure t
   :defer t
   ;; :bind
   ;; ;; ( "M-j" . 'yas-expand)
@@ -60,6 +60,8 @@
     (add-hook 'prog-mode-hook #'yas-minor-mode)
     )
   :config
+  (use-package yasnippet-snippets
+    :ensure nil)
   ;; (yas-minor-mode)
   ;; (add-to-list 'company-backends 'company-yasnippet)
   ;; (message "yasnippet")

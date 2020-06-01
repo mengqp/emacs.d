@@ -64,6 +64,15 @@
   (blink-cursor-mode -1)
   )
 
+(progn
+  ;;显示括号匹配
+  (show-paren-mode t)
+  ;; show cursor position within line
+  (column-number-mode 1)
+
+  )
+
+
 ;; (set-frame-parameter nil 'alpha '(90 . 100))
 
 (when *linux*
@@ -77,6 +86,7 @@
 
 (use-package awesome-tab
   ;; :defer 3
+  :disabled t
   :bind*
   (
    ;; ("M-t t" . awesome-tab-ace-jump)
@@ -159,8 +169,7 @@
        "Emacs")
       ((derived-mode-p 'prog-mode)
        "Editing")
-      ((derived-mode-p 'dired-mode)
-       "Dired")
+      ((derived-mode-p 'dired-mode) "Dired")
       ((memq major-mode '(helpful-mode
 			  help-mode))
        "Help")
@@ -194,6 +203,24 @@
 
 (use-package all-the-icons
   :ensure t)
+
+;; 括号
+(use-package rainbow-delimiters
+  :disabled t
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  :config
+  (set-face-foreground 'rainbow-delimiters-depth-1-face "DeepPink")
+  (set-face-foreground 'rainbow-delimiters-depth-2-face "cyan")
+  )
+
+(use-package highlight-parentheses
+  :ensure t
+  :hook
+  (prog-mode . highlight-parentheses-mode)
+  )
+
 
 
 (provide 'init-ui)

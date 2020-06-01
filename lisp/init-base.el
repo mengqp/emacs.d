@@ -50,25 +50,6 @@
   (fset 'yes-or-no-p 'y-or-n-p)
   )
 
-(progn
-  ;;显示括号匹配
-  (show-paren-mode t)
-  ;; show cursor position within line
-  (column-number-mode 1)
-
-  )
-
-;; 括号
-(use-package rainbow-delimiters
-  :ensure t
-  :init
-  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-  :config
-  (set-face-foreground 'rainbow-delimiters-depth-1-face "DeepPink")
-  (set-face-foreground 'rainbow-delimiters-depth-2-face "cyan")
-  )
-
-
 ;; 空格
 (use-package pangu-spacing
   :ensure t
@@ -89,7 +70,7 @@
   (global-auto-revert-mode t)
   )
 
-;; 自动何存
+;; 自动保存
 (use-package auto-save
   :defer 2
   :config
@@ -119,7 +100,8 @@
   )
 
 (use-package savehist
-  ;;:ensure nil
+  ;; :ensure nil
+  ;; :disabled t
   :defer t
   :hook
   (after-init . savehist-mode)
@@ -133,6 +115,23 @@
 					regexp-search-ring
 					extended-command-history)
 	savehist-autosave-interval 60)
+  )
+
+(use-package session
+  ;; :disabled t
+  :ensure t
+  :init
+  (setq session-save-file (expand-file-name (concat "~/.emacs.d/" ".session")))
+  (setq session-globals-max-size 2048)
+  ;; can store 8Mb string
+  (setq session-globals-max-string (* 8 1024 1024))
+  (setq session-globals-include '(kill-ring
+                                  (session-file-alist 100 t)
+                                  my-dired-commands-history
+                                  file-name-history
+                                  search-ring
+                                  regexp-search-ring))
+  (add-hook 'after-init-hook 'session-initialize)
   )
 
 ;;在 minibuffer 里启用自动补全函数和变量
@@ -192,15 +191,6 @@
   (adaptive-wrap-prefix-mode t)
   )
 
-
-(use-package highlight-parentheses
-  :disabled t
-  :ensure t
-  :diminish highlight-parentheses-mode
-  :init
-  (add-hook 'prog-mode-hook #'highlight-parentheses-mode)
-
-  )
 
 (use-package keyfreq
   :ensure t

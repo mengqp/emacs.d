@@ -32,29 +32,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-;; (require 'color-theme)
-
-;; (use-package color-theme
-;;   :init
-;;   ;; (require 'color-theme-solarized)
-;;   ;; (load-theme 'solarized t)
-;;   ;; (set-frame-parameter nil 'background-mode 'dark)    ;;选择 solarized dark
-;;   ;; (enable-theme 'solarized)
-;;   (require 'spacemacs-theme)
-;;   (load-theme 'spacemacs-dark t)
-;;     )
-;; (require 'spacemacs-theme)
-;; (load-theme 'spacemacs-dark t)
-
-(use-package solarized-theme
-  :ensure t
-  :disabled t
-  :defer t
-  :init
-  (add-hook 'after-init-hook
-	    (lambda () (load-theme 'solarized-dark t)))
-  )
-
 (use-package tao-theme
   :ensure t
   :disabled t
@@ -67,25 +44,9 @@
 	      ))
   )
 
-(use-package color-identifiers-mode
-  :ensure t
-  :disabled t
-  :defer t
-  :init
-  (add-hook 'after-init-hook 'global-color-identifiers-mode)
-  )
-
-(use-package focus
-  :ensure t
-  :disabled t
-  :defer t
-  :init
-  (add-hook 'prog-mode-hook 'focus-mode)
-  )
-
 (use-package lazycat-theme
   ;; :ensure t
-  :disabled t
+  ;; :disabled t
   ;; :defer t
   ;; :init
   ;; (add-hook 'after-init-hook
@@ -95,19 +56,9 @@
   ;; (lazycat-theme-load-with-sunrise)
   )
 
-(use-package srcery-theme
-  :ensure t
-  :disabled t
-  :defer t
-  :hook
-  (after-init .
-	      (lambda () (load-theme 'srcery t))
-	      )
-  )
-
 (use-package cyberpunk-theme
   :ensure t
-  ;; :disabled t
+  :disabled t
   :defer t
   :init
   (add-hook 'after-init-hook
@@ -125,16 +76,10 @@
   :disabled t
   :ensure t)
 
-;; (use-package eziam-theme
-;;   :defer t
-;;   :init (load-theme 'eziam-dark))
-
-;; (use-package eziam-dark-theme
-;;   :ensure eziam-theme)
 
 (use-package modus-vivendi-theme
   :ensure t
-  :disabled t
+  ;; :disabled t
   :init
   ;; Choose to render some code constructs in slanted text (italics).  The
   ;; default, shown below, is to not use italics, unless it is absolutely
@@ -172,9 +117,9 @@
 
 ;; ;; (load-theme 'wombat t)
 (use-package doom-themes
+  :disabled t
   :ensure t
   :config
-  :disabled t
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
 	doom-themes-enable-italic t) ; if nil, italics is universally disabled
@@ -182,8 +127,8 @@
   ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
   ;; may have their own settings.
   ;; (load-theme 'doom-one t)
-  (load-theme 'doom-molokai t)
-  ;; (load-theme 'doom-nova t)
+  ;; (load-theme 'doom-molokai t)
+  (load-theme 'doom-nova t)
 
   ;; Enable flashing mode-line on errors
   ;; (doom-themes-visual-bell-config)

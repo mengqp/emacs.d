@@ -18,15 +18,11 @@
   :defer t
   :init
   (setq pyim-title "pyim")
-  ;; 让 Emacs 启动时自动加载 pyim 词库
-  ;; (add-hook 'emacs-startup-hook
-  ;; 	    #'(lambda () (pyim-restart-1 t)))
   :config
-  ;; (setq pyim-dcache-prefer-emacs-thread nil)
+  (setq pyim-dcache-prefer-emacs-thread t)
   ;; (setq pyim-debug t)
 
   (when *win64*
-
     ;; 五笔用户使用 wbdict 词库
     (use-package pyim-wbdict
       ;; :disabled t
@@ -35,10 +31,8 @@
       ;; (pyim-wbdict-gbk-enable)
       (pyim-wbdict-v98-enable)
       )
-
     (setq default-input-method "pyim")
     (setq pyim-default-scheme 'wubi)
-
     )
 
   (when *linux*
@@ -54,19 +48,8 @@
 
       )
 
-    ;; 五笔用户使用 wbdict 词库
-    ;; (use-package pyim-wbdict
-    ;;   :disabled t
-    ;;   :ensure t
-    ;;   :config
-    ;;   ;; (pyim-wbdict-gbk-enable)
-    ;;   (pyim-wbdict-v98-enable)
-    ;;   )
-
     (setq default-input-method "pyim")
     (setq pyim-default-scheme 'rime)
-    ;; (setq pyim-default-scheme 'wubi)
-
     )
 
   ;; 设置 pyim 探针设置，这是 pyim 高级功能设置，可以实现 *无痛* 中英文切换 :-)
@@ -95,34 +78,33 @@
 
   ;; 选词框显示 5 个候选词
   (setq pyim-page-length 5)
-
-
   (global-set-key (kbd "C-\\") 'toggle-input-method)
   )
 
 
 (use-package rime
   :ensure t
+  ;; :disabled t
+  :bind*
+  (
+   ;; ("M-i i" . toggle-input-method) ; 开启输入法
+   ;; ("M-i M-i" . toggle-input-method) ; 开启输入法
+   ("M-i i" . toggle-input-method) ; 开启输入法
+   ("M-i M-i" . rime-inline-ascii) ; 切换ascii
+   )
   :diminish rime-mode
   :hook(after-init . rime-mode)
-  ;; :bind* (
-  ;; 	("M-i i" . rime-force-enable) ;与 pyim-probe-dynamic-english 配合
-  ;; 	("M-i M-i" . rime-force-enable) ;与 pyim-probe-dynamic-english 配合
-  ;; 	)
   :init
   (setq rime-disable-predicates
 	'(rime-predicate-evil-mode-p
           ;; rime-predicate-after-alphabet-char-p
-          rime-predicate-prog-in-code-p
+          ;; rime-predicate-prog-in-code-p
 	  )
 	)
-  (setq rime-inline-predicates
-	'(rime-predicate-space-after-cc-p
-	  rime-predicate-current-uppercase-letter-p
-	  )
-	)
-;;; support shift-l, shift-r, control-l, control-r
-  ;; (setq rime-inline-ascii-trigger 'shift-l)
+  ;;  (setq rime-inline-predicates '(rime-predicate-space-after-cc-p
+  ;;  	rime-predicate-current-uppercase-letter-p ) )
+  ;; support shift-l, shift-r, control-l, control-r
+  (setq rime-inline-ascii-trigger 'shift-l)
   (setq rime-inline-predicates '(rime-predicate-space-after-cc-p))
   (setq rime-user-data-dir "~/.emacs.d/rime/")
 
@@ -133,6 +115,7 @@
 	      :internal-border-width 10))
   (setq default-input-method "rime"
 	rime-show-candidate 'posframe)
+  (setq rime-title "")
   )
 
 (provide 'init-pyim)

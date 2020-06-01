@@ -40,12 +40,14 @@
 
 (use-package org
   :ensure t
+  :commands(org-brain org-brain-prefix-map)
   :defer t
   :bind*
   (
    ("M-j oo" . org-capture)
    ("M-j oa" . org-agenda)
    ("M-j oj" . org-journal-new-entry)
+   ("M-j ob" . org-brain-prefix-map )
    )
   :init
   :config
@@ -75,6 +77,7 @@
   (require 'init-org-ui)
   (require 'init-journal)
   (require 'init-agenda)
+  (require 'init-org-brain)
 
   )
 

@@ -50,6 +50,7 @@
   :init
   ;; (setq awesome-tray-mode-line-active-color "Gray60")
   ;; (setq awesome-tray-active-modules '("buffer-name" "awesome-tab" "git" "mode-name" "location"))
+  (setq awesome-tray-active-modules '("buffer-name" "location" "git" "mode-name" ))
   )
 
 (use-package doom-modeline
@@ -59,16 +60,16 @@
   :hook (after-init . doom-modeline-mode)
   :init
   ;; How tall the mode-line should be (only respected in GUI Emacs).
-  (setq doom-modeline-height 5)
+  (setq doom-modeline-height 25)
   ;; (setq doom-modeline-height 1)
   ;; (custom-set-faces
   ;; '(mode-line ((t (:height 1.2))))
   ;; '(mode-line-inactive ((t (:height 1.2)))))
-  (set-face-attribute 'mode-line nil :height 20)
-  (set-face-attribute 'mode-line-inactive nil :height 20)
+  ;; (set-face-attribute 'mode-line nil :height 20)
+  ;; (set-face-attribute 'mode-line-inactive nil :height 20)
 
   ;; How wide the mode-line bar should be (only respected in GUI Emacs).
-  (setq doom-modeline-bar-width 1)
+  (setq doom-modeline-bar-width 3)
   ;; Determines the style used by `doom-modeline-buffer-file-name'.
   ;;
   ;; Given ~/Projects/FOSS/emacs/lisp/comint.el

@@ -86,7 +86,7 @@
   ;; (when *linux*
     ;; (require 'init-abbrev)
     (require 'init-hydra)
-    ;; (require 'init-spell)
+    (require 'init-spell)
     ;;(require 'init-dap)
     ;; )
   (require 'init-pyim)
@@ -132,7 +132,7 @@
   (require 'init-cc)
   ;; (require 'init-lisp)
   (require 'init-org)
-  ;; (require 'init-python)
+  (require 'init-python)
   (require 'init-css)
   ;; (require 'init-tex)
   (require 'init-markdown)
