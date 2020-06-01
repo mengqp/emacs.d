@@ -81,16 +81,16 @@
   (global-set-key (kbd "C-\\") 'toggle-input-method)
   )
 
-
 (use-package rime
   :ensure t
   ;; :disabled t
+  :commands (init-pyim rime-toggle-or-inline-ascii)
   :bind*
   (
    ;; ("M-i i" . toggle-input-method) ; 开启输入法
    ;; ("M-i M-i" . toggle-input-method) ; 开启输入法
-   ("M-i i" . toggle-input-method) ; 开启输入法
-   ("M-i M-i" . rime-inline-ascii) ; 切换ascii
+   ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
+   ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
    )
   :diminish rime-mode
   :hook(after-init . rime-mode)
@@ -104,7 +104,7 @@
   ;;  (setq rime-inline-predicates '(rime-predicate-space-after-cc-p
   ;;  	rime-predicate-current-uppercase-letter-p ) )
   ;; support shift-l, shift-r, control-l, control-r
-  (setq rime-inline-ascii-trigger 'shift-l)
+  ;; (setq rime-inline-ascii-trigger 'shift-l)
   (setq rime-inline-predicates '(rime-predicate-space-after-cc-p))
   (setq rime-user-data-dir "~/.emacs.d/rime/")
 
@@ -116,6 +116,16 @@
   (setq default-input-method "rime"
 	rime-show-candidate 'posframe)
   (setq rime-title "")
+  :config
+  (defun rime-toggle-or-inline-ascii()
+    "Open init package file to config."
+    (interactive)
+    (if (and (equal current-input-method "rime")
+	     (bound-and-true-p rime-mode))
+	(rime-inline-ascii)
+      (toggle-input-method)
+      )
+    )
   )
 
 (provide 'init-pyim)
