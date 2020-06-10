@@ -52,6 +52,8 @@
 (global-unset-key (kbd "M-q"))
 (global-set-key (kbd "M-q r") 'restart-emacs)
 
+;; (global-unset-key (kbd "M-h"))
+
 (use-package which-key
   :ensure t
   :defer 2

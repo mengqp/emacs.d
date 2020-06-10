@@ -221,6 +221,19 @@
   (prog-mode . highlight-parentheses-mode)
   )
 
+(use-package highlight-doxygen
+  :ensure t
+  :hook
+  (prog-mode . highlight-doxygen-mode)
+  )
+
+(use-package hl-todo
+  :ensure t
+  ;; global hook activates hl-todo-mode for prog-mode, text-mode
+  ;; mode can be explicitly defined using hl-todo-activate-in-modes variable
+  :hook (after-init . global-hl-todo-mode))
+
+
 
 
 (provide 'init-ui)
