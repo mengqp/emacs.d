@@ -118,7 +118,7 @@
 
     (require 'init-plantuml)
     ;; (require 'init-ycmd)
-    ;; (require 'init-gdb)
+    (require 'init-gdb)
     (require 'init-leecode)
 
     )

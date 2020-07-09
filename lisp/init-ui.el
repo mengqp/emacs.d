@@ -139,13 +139,32 @@
 (use-package centaur-tabs
   :ensure t
   :disabled t
+  :hook
+  (org-agenda-mode . centaur-tabs-local-mode)
+  (helpful-mode . centaur-tabs-local-mode)
+  ;; (prog-mode . centaur-tabs-mode)
+  (snails-mode . centaur-tabs-local-mode)
+  (fundamental-mode . centaur-tabs-local-mode)
+  (calendar-mode . centaur-tabs-local-mode)
+  (org-agenda-mode . centaur-tabs-local-mode)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward)
+  ("C-c t s" . centaur-tabs-counsel-switch-group)
+  ("C-c t p" . centaur-tabs-group-by-projectile-project)
+  ("C-c t g" . centaur-tabs-group-buffer-groups)
+  (:map evil-normal-state-map
+	("g t" . centaur-tabs-forward)
+	("g T" . centaur-tabs-backward))
+  ;; :disabled t
   ;; :load-path "~/.emacs.d/other/centaur-tabs"
   :config
   (setq centaur-tabs-style "bar")
   (setq centaur-tabs-height 8)
   (setq centaur-tabs-set-icons t)
-  (setq centaur-tabs-set-bar 'left)
-  (setq centaur-tabs-set-modified-marker t)
+  (setq centaur-tabs-set-bar 'over)
+  (setq centaur-tabs-set-modified-marker nil)
+  (setq centaur-tabs-set-close-button nil)
   (centaur-tabs-group-by-projectile-project)
   (centaur-tabs-headline-match)
   (centaur-tabs-mode t)
@@ -186,23 +205,11 @@
        "OrgMode")
       (t
        (centaur-tabs-get-group-name (current-buffer))))))
-  :hook
-  ;; (org-agenda-mode . centaur-tabs-local-mode)
-  ;; (helpful-mode . centaur-tabs-local-mode)
-  (prog-mode . centaur-tabs-mode)
-  :bind
-  ("C-<prior>" . centaur-tabs-backward)
-  ("C-<next>" . centaur-tabs-forward)
-  ("C-c t s" . centaur-tabs-counsel-switch-group)
-  ("C-c t p" . centaur-tabs-group-by-projectile-project)
-  ("C-c t g" . centaur-tabs-group-buffer-groups)
-  (:map evil-normal-state-map
-	("g t" . centaur-tabs-forward)
-	("g T" . centaur-tabs-backward)))
-
+  )
 
 (use-package all-the-icons
-  :ensure t)
+  :ensure t
+  )
 
 ;; 括号
 (use-package rainbow-delimiters

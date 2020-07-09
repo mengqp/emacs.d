@@ -44,12 +44,9 @@
     ("M-n" . snails-select-next-backend)
     ("M-p" . snails-select-prev-backend)
     )
-   ;; ("M-s s" . snails)
-   ;; ("M-s p" . snails-current-project)
-   ;; ("M-s b" . snails-active-recent-buffers)
-   ;; ("M-s e" . snails-everywhere)
-
    )
+  :init
+  (setq snails-default-show-prefix-tips nil)
   :config
   (use-package exec-path-from-shell
     :if (featurep 'cocoa) :defer t)
@@ -62,7 +59,7 @@
 	  ("@" '(snails-backend-imenu))
 	  ("#" '(snails-backend-current-buffer))
 	  ("!" '(snails-backend-rg))
-	  ("?" '(snails-backend-fd))
+	  ("?" '(snails-backend-fd snails-backend-projectile ))
 	  )
 	)
   )

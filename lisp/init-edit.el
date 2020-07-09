@@ -225,7 +225,6 @@
     :ensure t
     :bind*
     (
-     ;; ("C-c bf" . format-all-buffer)
      ("M-i ff" . format-all-buffer)
      )
     :defer t
@@ -242,7 +241,7 @@
 
 
   ;; auto insert closing bracket
-  ;; (electric-pair-mode 1)
+  (electric-pair-mode 1)
   (use-package awesome-pair
     ;; :disabled t
     ;; :hook (prog-mode . #'awesome-pair-mode)

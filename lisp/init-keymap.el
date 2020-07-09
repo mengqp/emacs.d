@@ -134,21 +134,21 @@
     ;; :non-normal-prefix "M-m"
 
 
-    ;; "SPC" 'snails
-    ;; "TAB" 'previous-buffer
-    ;; "." 'counsel-projectile-find-file
+    "SPC" 'switch-window
+    "TAB" 'previous-buffer
+    "." 'counsel-projectile-find-file
     ;; ":" 'counsel-M-x
 
     ;; "a" '(:ignore t :wk ("a" . "app"))
     ;; "ac" 'calc
 
     ;; "b" '(:ignore t :wk ("b" . "buffers"))
-    ;; "bb" 'ivy-switch-buffer
+    "bb" 'ivy-switch-buffer
     ;; "bd" 'kill-buffer
     ;; "bs" 'mengqp/switch-scratch-buf
 
     ;; "c" '(:ignore t :wk ("c" . "compile"))
-    ;; "cc" 'compile
+    "cc" 'compile
     ;; "ck" 'kill-compilation
     ;; "cr" 'recompile
     ;; "cd" 'mengqp/close-compilation-window
@@ -163,7 +163,7 @@
     ;; "ea" 'shell
 
     ;; "f" '(:ignore t :wk ("f" . "files"))
-    ;; "ff" 'counsel-find-file  ;;
+    "ff" 'counsel-find-file  ;;
     ;; "f." 'find-file-at-point
     ;; "fr" 'counsel-recentf  ;;
     ;; "fdi" 'mengqp/open-init-file
@@ -189,26 +189,28 @@
     ;; "hm" 'man
     ;; "hw" 'woman
 
+    "jj" 'snails
+
     ;; "l" '(:ignore t :wk ("l" . "layout"))
     ;; "l0" 'eyebrowse-switch-to-window-config-0
-    ;; "l1" 'eyebrowse-switch-to-window-config-1
-    ;; "l2" 'eyebrowse-switch-to-window-config-2
-    ;; "l3" 'eyebrowse-switch-to-window-config-3
-    ;; "l4" 'eyebrowse-switch-to-window-config-4
-    ;; "l5" 'eyebrowse-switch-to-window-config-5
-    ;; "l6" 'eyebrowse-switch-to-window-config-6
-    ;; "l7" 'eyebrowse-switch-to-window-config-7
-    ;; "l8" 'eyebrowse-switch-to-window-config-8
-    ;; "l9" 'eyebrowse-switch-to-window-config-9
-    ;; "l[" 'eyebrowse-prev-window-config
-    ;; "l]" 'eyebrowse-next-window-config
+    "l1" 'eyebrowse-switch-to-window-config-1
+    "l2" 'eyebrowse-switch-to-window-config-2
+    "l3" 'eyebrowse-switch-to-window-config-3
+    "l4" 'eyebrowse-switch-to-window-config-4
+    "l5" 'eyebrowse-switch-to-window-config-5
+    "l6" 'eyebrowse-switch-to-window-config-6
+    "l7" 'eyebrowse-switch-to-window-config-7
+    "l8" 'eyebrowse-switch-to-window-config-8
+    "l9" 'eyebrowse-switch-to-window-config-9
+    "lp" 'eyebrowse-prev-window-config
+    "ln" 'eyebrowse-next-window-config
     ;; "lc" 'eyebrowse-close-window-config
 
     ;; "m" '(:ignore t :wk ("m" . "bookmark"))
     ;; ;; "mx" 'counsel-M-x
-    ;; "mk" 'bookmark-set
-    ;; "md" 'bookmark-delete
-    ;; "mm" 'counsel-bookmark
+    "ms" 'bookmark-set
+    "md" 'bookmark-delete
+    "mm" 'counsel-bookmark
 
     ;; "o" '(:ignore t :wk ("o" . "org"))
     ;; "oo" 'org-capture
@@ -223,7 +225,7 @@
     ;; "p" '(:ignore t :wk ("p" . "project"))
     ;; "pd" 'counsel-projectile-find-dir
     ;; "pb" 'counsel-projectile-switch-to-buffer
-    ;; "pp" 'projectile-switch-project
+    "pp" 'projectile-switch-project
     ;; "pa" 'counsel-projectile-ag
     ;; "pr" 'counsel-projectile-rg
     ;; "pfi" 'mengqp/org-projectile-find-issue
@@ -266,16 +268,17 @@
 
 
     ;; "w" '(:ignore t :wk ("w" . "window"))
-    ;; "ws" 'split-window-vertically
-    ;; "wv" 'split-window-horizontally
-    ;; "ww" 'switch-window
-    ;; "wd" 'delete-window
-    ;; "wo" 'delete-other-windows
-    ;; "wq" 'quit-window
+    "ws" 'split-window-vertically
+    "wv" 'split-window-horizontally
+    "w3" 'split-window-vertically
+    "w2" 'split-window-horizontally
+    "wd" 'delete-window
+    "wo" 'delete-other-windows
+    "wq" 'quit-window
 
 
     ;; "/" 'color-rg-search-project
-    ;; "/" 'counsel-projectile-rg
+    "/" 'counsel-projectile-rg
     ;; "/" 'counsel-projectile-ag
 
     )
@@ -285,15 +288,9 @@
   ;; all keywords arguments are still supported
   ;; 本文件 侧重基本功能
   (moon-default-local-leader
-    ;; general-define-key
-    ;; :global-prefix "C-M-m"
-    ;; :keymaps '(normal visual emacs)
-    ;; :prefix ","
-    ;; :global-prefix "C-m"
-    ;; :non-normal-prefix "C-m"
     ;; "," 'ace-jump-char-mode
     ;; "," 'avy-goto-word-1
-    ;; "," 'avy-goto-char
+    "," 'avy-goto-char
 
     ;; "b" '(:ignore t :wk ("b" . "buffer"))
     ;; "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
@@ -310,9 +307,8 @@
     ;; "c2d" 'unix2dos
     ;; "c2u" 'dos2unix
     ;; "cf" 'clang-format-buffer
-    ;; "cf" 'format-all-buffer
 
-    ;; "dd" 'avy-zap-to-char-dwim
+    "dd" 'avy-zap-to-char-dwim
     ;; "dD" 'avy-zap-up-to-char-dwim
 
     ;; "e" '(:ignore t :wk ("e" . "edit"))
@@ -323,12 +319,13 @@
     ;; ;; "fb" 'beginning-of-defun
     ;; ;; "fe" 'end-of-defun
     ;; "fr" 'recover-this-file
+    "ff" 'format-all-buffer
 
     ;; "h" '(:ignore t :wk ("h" . "help"))
     ;; "h." 'highlight-symbol-at-point
     ;; "hu" 'unhighlight-regexp
-    ;; "h." 'symbol-overlay-put
-    ;; "hu" 'symbol-overlay-remove-all
+    "hh" 'symbol-overlay-put
+    "hd" 'symbol-overlay-remove-all
 
     ;; "i" '(:ignore t :wk ("i" . "insert"))
     ;; "it" '(:ignore t :wk ("t" . "table"))
@@ -337,6 +334,7 @@
     ;; "itc" 'table-insert-column
 
     ;; "j" '(:ignore t :wk ("j" . "jump"))
+    "jj" 'counsel-imenu
     ;; "jj" 'avy-goto-line
     ;; "jc" 'Ace-jump-char-mode
     ;; "jw" 'avy-goto-char-2
@@ -366,8 +364,6 @@
     ;; "ww" 'save-buffer
     ;; "wq" 'evil-save-and-close
 
-    ;; "y" '(:ignore t :wk ("y" . "yasnippet"))
-    ;; "yy" 'ivy-yasnippet
     )
 
 

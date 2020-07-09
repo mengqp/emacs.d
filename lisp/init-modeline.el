@@ -51,7 +51,10 @@
   ;; (setq awesome-tray-mode-line-active-color "Gray60")
   ;; (setq awesome-tray-active-modules '("buffer-name" "awesome-tab" "git" "mode-name" "location"))
   (setq awesome-tray-active-modules '("buffer-name" "location" "git" "mode-name" ))
+  ;; (setq awesome-tray-active-modules '("location" "git" "mode-name" ))
   )
+
+
 
 (use-package doom-modeline
   :disabled t
@@ -90,7 +93,7 @@
   (setq doom-modeline-buffer-file-name-style 'relative-to-project)
 
   ;; What executable of Python will be used (if nil nothing will be showed).
-  (setq doom-modeline-python-executable "python")
+  ;; (setq doom-modeline-python-executable "python")
 
   ;; Whether show `all-the-icons' or not (if nil nothing will be showed).
   ;; The icons may not be showed correctly on Windows. Disable to make it work.

@@ -66,6 +66,13 @@
 			   (setq c-basic-offset 4)
 			   indent-tabs-mode nil       ;; 禁止空格替换 Tab
 			   ))
+  :config
+  (general-define-key :states '(normal motion)
+		    :keymaps '(c++-mode-map
+			       c-mode-map)
+		    :prefix ";"
+		    "a" 'projectile-find-other-file
+		    )
   )
 
 
