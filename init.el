@@ -78,23 +78,20 @@
   (require 'init-evil)
   (require 'init-modeline)
   (require 'init-theme)
-  (require 'init-color-rg)
   (require 'init-cnfonts)
   (require 'init-layout)
   ;; (require 'init-dumb-jump)
+  (require 'init-hydra)
 
   ;; (when *linux*
     ;; (require 'init-abbrev)
-    (require 'init-hydra)
     ;; (require 'init-spell)
     ;;(require 'init-dap)
     ;; )
-  (require 'init-pyim)
+  (require 'init-im)
 
   ;;tool
-  ;; (require 'init-calendar)
-  ;; (require 'init-hungry-delete)
-  ;; (require 'init-smartparens)
+  (require 'init-calendar)
   (require 'init-company)
   (require 'init-window)
   (require 'init-projectile)
@@ -104,8 +101,6 @@
   (require 'init-git)
   (require 'init-cmake)
   ;; (require 'init-popwin)
-  ;; (require 'init-tree)
-  ;; (require 'init-which-key)
   (require 'init-ivy)
   (require 'init-snails)
   ;; (require 'init-browser)
@@ -130,7 +125,6 @@
   ;;
   ;; (require 'init-realgud)
   (require 'init-cc)
-  ;; (require 'init-lisp)
   (require 'init-org)
   (require 'init-python)
   (require 'init-css)

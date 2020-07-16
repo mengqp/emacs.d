@@ -1,3 +1,43 @@
+;;; init-im.el --- xxx -*- coding: utf-8-unix -*-
+
+;;; Copyright © 2018 - 2018 mengqp.
+
+;; Author: mengqp
+;; URL:
+;; Version:0.0.1
+;; Keywords:
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Commentary:
+;;
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation; either version 2, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
+;; Floor, Boston, MA 02110-1301, USA.
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Code:
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-pyim.el ends here
+
 ;;; init-pyim.el --- Config by mengqp -*- coding: utf-8-unix -*-
 
 ;;; Commentary:
@@ -83,12 +123,10 @@
 
 (use-package rime
   :ensure t
-  ;; :disabled t
+  :disabled t
   :commands (init-pyim rime-toggle-or-inline-ascii)
   :bind*
   (
-   ;; ("M-i i" . toggle-input-method) ; 开启输入法
-   ;; ("M-i M-i" . toggle-input-method) ; 开启输入法
    ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
    ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
    )
@@ -105,7 +143,7 @@
   ;;  	rime-predicate-current-uppercase-letter-p ) )
   ;; support shift-l, shift-r, control-l, control-r
   ;; (setq rime-inline-ascii-trigger 'shift-l)
-  (setq rime-inline-predicates '(rime-predicate-space-after-cc-p))
+  ;; (setq rime-inline-predicates '(rime-predicate-space-after-cc-p))
   (setq rime-user-data-dir "~/.emacs.d/rime/")
 
   (setq rime-posframe-properties
@@ -128,5 +166,57 @@
     )
   )
 
-(provide 'init-pyim)
+(use-package smart-input-source
+  :ensure t
+  :bind*
+  (
+   ("M-i i" . smart-input-source-switch) ; 开启输入法
+   ("M-i M-i" . smart-input-source-switch) ; 开启输入法
+   )
+  ;; :init
+
+  ;; set the english input source
+  ;;(setq-default smart-input-source-english "com.apple.keylayout.ABC")
+  ;; (setq-default smart-input-source-english "com.apple.keylayout.US")
+  ;; set the default other language input source for all buffer
+  ;; (setq-default smart-input-source-other "com.sogou.inputmethod.sogou.pinyin")
+
+  ;; :hook
+  ;; enable the /follow context/ and /inline region/ mode for specific buffers
+  ;; (((text-mode prog-mode) . smart-input-source-follow-context-mode)
+  ;;  ((text-mode prog-mode) . smart-input-source-inline-mode))
+
+  :config
+  (use-package rime
+    :ensure t
+    :init
+    (setq rime-user-data-dir "~/.emacs.d/rime/")
+
+    (setq rime-posframe-properties
+	  (list :background-color "#333333"
+		:foreground-color "#dcdccc"
+		;; :font "WenQuanYi Micro Hei Mono-14"
+		:internal-border-width 10))
+    (setq default-input-method "rime"
+	  rime-show-candidate 'posframe)
+    (setq default-input-method "rime"
+	  rime-show-candidate 'posframe)
+    )
+  (setq-default smart-input-source-english nil)
+  (setq-default smart-input-source-other "rime")
+  (setq-default smart-input-source-do-get (lambda() current-input-method))
+  (setq-default smart-input-source-do-set (lambda(source) (set-input-method source)))
+
+
+  ;; enable the /cursor color/ mode
+  (smart-input-source-global-cursor-color-mode t)
+  ;; enable the /respect/ mode
+  (smart-input-source-global-respect-mode t)
+  ;; enable the /follow context/ mode for all buffers
+  (smart-input-source-global-follow-context-mode t)
+  ;; enable the /inline english/ mode for all buffers
+  (smart-input-source-global-inline-mode t)
+  )
+
+(provide 'init-im)
 ;;; init-pyim.el ends here

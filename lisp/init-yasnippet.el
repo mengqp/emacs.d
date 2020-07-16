@@ -68,13 +68,15 @@
   (yas-reload-all)
   (setq yas-prompt-functions '(yas-completing-prompt))
 
-  (use-package ivy-yasnippet
-    :ensure t
-    :defer t
-    :bind (
-	   ("C-c C-y" . ivy-yasnippet)
-	   )
-    )
+  )
+
+(use-package ivy-yasnippet
+  :ensure t
+  :defer t
+  :commands (ivy-yasnippet ivy-yasnippet)
+  :bind (
+	 ("C-c C-y" . ivy-yasnippet)
+	 )
   )
 
 (provide 'init-yasnippet)

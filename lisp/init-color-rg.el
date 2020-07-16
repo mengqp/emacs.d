@@ -33,7 +33,7 @@
 ;;
 ;;; Code:
 (use-package color-rg
-  :defer t
+  :defer 10
   :commands ( color-rg color-rg-search-input )
   :commands ( color-rg color-rg-search-symbol)
   :commands ( color-rg color-rg-search-project )
