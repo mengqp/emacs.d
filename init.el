@@ -103,7 +103,7 @@
   ;; (require 'init-popwin)
   (require 'init-ivy)
   (require 'init-snails)
-  ;; (require 'init-browser)
+  (require 'init-browser)
   (require 'init-func)
   (require 'init-keymap)
 

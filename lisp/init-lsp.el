@@ -35,15 +35,15 @@
 
 
 (use-package lsp-mode
-  :disabled t
+  ;; :disabled t
   :defer t
   :diminish lsp-mode
   :hook ((c-mode c++-mode objc-mode python-mode) . #'lsp)
   :bind (:map lsp-mode-map
-            ("C-c C-d" . lsp-describe-thing-at-point)
-            ([remap xref-find-definitions] . lsp-find-definition)
-            ([remap xref-find-references] . lsp-find-references)
-	    )
+              ("C-c C-d" . lsp-describe-thing-at-point)
+              ([remap xref-find-definitions] . lsp-find-definition)
+              ([remap xref-find-references] . lsp-find-references)
+	      )
   :init
   (setq read-process-output-max (* 1024 1024)) ;; 1MB
   (setq lsp-keymap-prefix "C-c l")
@@ -118,7 +118,21 @@
 
     )
 
+  (use-package treemacs
+    :ensure t
+    :config
+    (use-package lsp-treemacs
+      :ensure t
+      :commands (lsp-treemacs lsp-treemacs--make-ref-item)
+      ;; :disabled t
+      :config
+      (lsp-treemacs-sync-mode 1)
+      )
+    )
+
+
   )
+
 
 ;; (use-package eglot
 ;;   :ensure t
@@ -214,8 +228,18 @@
 ;;   (remhash 'clangd lsp-clients)
 ;;   )
 (use-package lsp-python-ms
-  :disabled t
+  ;; :disabled t
   :ensure t
+  :hook
+  (python-mode . (lambda () (require 'lsp-python-ms)))
+  :init
+  (setq lsp-python-ms-executable (executable-find "python-language-server"))
+  (setq lsp-python-ms-auto-install-server t)
+  (when (executable-find "python3")
+    (setq lsp-python-ms-python-executable-cmd "python3"))
+  ;; :hook (python-mode . (lambda ()
+  ;;                         (require 'lsp-python-ms)
+  ;;                         (lsp))))  ; or lsp-deferred
   ;; :hook (python-mode . (lambda ()
   ;;                         (require 'lsp-python-ms)
   ;;                         (nox)))
@@ -230,7 +254,7 @@
 
 
 (use-package nox
-  ;; :disabled t
+  :disabled t
   :defer t
   :hook ((c-mode c++-mode objc-mode python-mode) .
          (lambda () (require 'nox) (nox-ensure)))

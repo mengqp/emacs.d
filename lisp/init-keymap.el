@@ -213,14 +213,14 @@
     "mm" 'counsel-bookmark
 
     ;; "o" '(:ignore t :wk ("o" . "org"))
-    ;; "oo" 'org-capture
-    ;; "oa" 'org-agenda
+    "oo" 'org-capture
+    "oa" 'org-agenda
     ;; ;; "od" 'deft
-    ;; "oj" 'org-journal-new-entry
-    ;; "op" 'org-pomodoro
-    ;; "omp" 'org-mobile-push
-    ;; "omg" 'org-mobile-pull
-    ;; "oc" 'cfw:open-org-calendar
+    "oj" 'org-journal-new-entry
+    "op" 'org-pomodoro
+    "omp" 'org-mobile-push
+    "omg" 'org-mobile-pull
+    "oc" 'cfw:open-org-calendar
 
     ;; "p" '(:ignore t :wk ("p" . "project"))
     ;; "pd" 'counsel-projectile-find-dir

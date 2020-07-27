@@ -48,6 +48,7 @@
   (evil-set-initial-state 'vterm-mode 'insert)
   ;; (evil-set-initial-state 'text-mode 'emacs)
   (evil-set-initial-state 'color-rg-mode 'emacs)
+  (evil-set-initial-state 'realgud-short-key-mode 'emacs)
   ;; remove all keybindings from insert-state keymap,it is VERY VERY important
   (setcdr evil-insert-state-map nil)
   ;;;把 emacs 模式下的按键绑定到 Insert 模式下

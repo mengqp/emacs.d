@@ -36,9 +36,9 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-pyim.el ends here
+;;; init-im.el ends here
 
-;;; init-pyim.el --- Config by mengqp -*- coding: utf-8-unix -*-
+;;; init-im.el --- Config by mengqp -*- coding: utf-8-unix -*-
 
 ;;; Commentary:
 
@@ -123,13 +123,13 @@
 
 (use-package rime
   :ensure t
-  :disabled t
-  :commands (init-pyim rime-toggle-or-inline-ascii)
-  :bind*
-  (
-   ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
-   ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
-   )
+  ;; :disabled t
+  :commands (init-im rime-toggle-or-inline-ascii)
+  ;; :bind*
+  ;; (
+  ;;  ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
+  ;;  ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
+  ;;  )
   :diminish rime-mode
   :hook(after-init . rime-mode)
   :init
@@ -153,7 +153,7 @@
 	      :internal-border-width 10))
   (setq default-input-method "rime"
 	rime-show-candidate 'posframe)
-  (setq rime-title "")
+  ;; (setq rime-title "")
   :config
   (defun rime-toggle-or-inline-ascii()
     "Open init package file to config."
@@ -166,57 +166,48 @@
     )
   )
 
-(use-package smart-input-source
+(use-package sis
   :ensure t
   :bind*
   (
-   ("M-i i" . smart-input-source-switch) ; 开启输入法
-   ("M-i M-i" . smart-input-source-switch) ; 开启输入法
+   ("M-i i" . sis-switch) ; 开启输入法
+   ("M-i M-i" . sis-switch) ; 开启输入法
    )
-  ;; :init
-
-  ;; set the english input source
-  ;;(setq-default smart-input-source-english "com.apple.keylayout.ABC")
-  ;; (setq-default smart-input-source-english "com.apple.keylayout.US")
-  ;; set the default other language input source for all buffer
-  ;; (setq-default smart-input-source-other "com.sogou.inputmethod.sogou.pinyin")
-
-  ;; :hook
-  ;; enable the /follow context/ and /inline region/ mode for specific buffers
-  ;; (((text-mode prog-mode) . smart-input-source-follow-context-mode)
-  ;;  ((text-mode prog-mode) . smart-input-source-inline-mode))
-
   :config
-  (use-package rime
-    :ensure t
-    :init
-    (setq rime-user-data-dir "~/.emacs.d/rime/")
+  ;; (sis-ism-lazyman-config nil nil 'fcitx5)
+  ;; (sis-ism-lazyman-config nil nil 'fcitx)
+  ;; (use-package rime
+  ;;   :ensure t
+  ;;   :init
+  ;;   (setq rime-user-data-dir "~/.emacs.d/rime/")
 
-    (setq rime-posframe-properties
-	  (list :background-color "#333333"
-		:foreground-color "#dcdccc"
-		;; :font "WenQuanYi Micro Hei Mono-14"
-		:internal-border-width 10))
-    (setq default-input-method "rime"
-	  rime-show-candidate 'posframe)
-    (setq default-input-method "rime"
-	  rime-show-candidate 'posframe)
-    )
-  (setq-default smart-input-source-english nil)
-  (setq-default smart-input-source-other "rime")
-  (setq-default smart-input-source-do-get (lambda() current-input-method))
-  (setq-default smart-input-source-do-set (lambda(source) (set-input-method source)))
+  ;;   (setq rime-posframe-properties
+  ;; 	  (list :background-color "#333333"
+  ;; 		:foreground-color "#dcdccc"
+  ;; 		;; :font "WenQuanYi Micro Hei Mono-14"
+  ;; 		:internal-border-width 10))
+  ;;   (setq default-input-method "rime"
+  ;; 	  rime-show-candidate 'posframe)
+  ;;   (setq default-input-method "rime"
+  ;; 	  rime-show-candidate 'posframe)
+  ;;   )
 
+  (sis-ism-lazyman-config nil "rime" 'native)
+  ;; (setq-default sis-english nil)
+  ;; (setq-default sis-other "rime")
+  ;; (setq-default sis-do-get (lambda() current-input-method))
+  ;; (setq-default sis-do-set (lambda(source) (set-input-method source)))
 
   ;; enable the /cursor color/ mode
-  (smart-input-source-global-cursor-color-mode t)
+  (sis-global-cursor-color-mode t)
   ;; enable the /respect/ mode
-  (smart-input-source-global-respect-mode t)
+  (sis-global-respect-mode t)
   ;; enable the /follow context/ mode for all buffers
-  (smart-input-source-global-follow-context-mode t)
+  (sis-global-follow-context-mode t)
   ;; enable the /inline english/ mode for all buffers
-  (smart-input-source-global-inline-mode t)
+  (sis-global-inline-mode t)
   )
 
 (provide 'init-im)
-;;; init-pyim.el ends here
+
+;;; init-im.el ends here
