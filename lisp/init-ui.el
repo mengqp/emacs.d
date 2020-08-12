@@ -44,15 +44,15 @@
   ;; Show a marker in the left fringe for lines not in the buffer
   (setq indicate-empty-lines t)
 
-  ;; NO tool bar
-  (if (fboundp 'tool-bar-mode)
-      (tool-bar-mode -1))
-  ;; no scroll bar
-  (if (fboundp 'set-scroll-bar-mode)
-      (set-scroll-bar-mode nil))
-  ;; no menu bar
-  (if (fboundp 'menu-bar-mode)
-      (menu-bar-mode -1))
+  ;; ;; NO tool bar
+  ;; (if (fboundp 'tool-bar-mode)
+  ;;     (tool-bar-mode -1))
+  ;; ;; no scroll bar
+  ;; (if (fboundp 'set-scroll-bar-mode)
+  ;;     (set-scroll-bar-mode nil))
+  ;; ;; no menu bar
+  ;; (if (fboundp 'menu-bar-mode)
+  ;;     (menu-bar-mode -1))
 
   ;; 关闭 Tooltip
   (tooltip-mode t)
@@ -209,6 +209,7 @@
 
 (use-package all-the-icons
   :ensure t
+  :defer t
   )
 
 ;; 括号

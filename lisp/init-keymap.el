@@ -204,11 +204,14 @@
     "l9" 'eyebrowse-switch-to-window-config-9
     "lp" 'eyebrowse-prev-window-config
     "ln" 'eyebrowse-next-window-config
+    "lc" 'wg-create-workgroup ; save windows layout
+    "ll" 'wg-switch-to-workgroup ; load windows layout
+    "ls" 'wg-save-session
+    "lr" 'wg-reload-session
     ;; "lc" 'eyebrowse-close-window-config
 
     ;; "m" '(:ignore t :wk ("m" . "bookmark"))
     ;; ;; "mx" 'counsel-M-x
-    "ms" 'bookmark-set
     "md" 'bookmark-delete
     "mm" 'counsel-bookmark
 
@@ -254,8 +257,7 @@
     ;; "t6" 'my-select-window
     ;; "t7" 'my-select-window
     ;; "t8" 'my-select-window
-    ;; "t9" 'my-select-window
-    ;; "ta" 'awesome-tab-select-beg-tab
+    ;; "t9" 'my-select-window ;; "ta" 'awesome-tab-select-beg-tab
     ;; "te" 'awesome-tab-select-end-tab
     ;; "tt" 'awesome-tab-ace-jump
     ;; "tmj" 'awesome-tab-move-current-tab-to-left
@@ -302,7 +304,9 @@
     ;; "c" '(:ignore t :wk ("c" . "coding"))
     ;; "c2" '(:ignore t :wk ("2" . "convert"))
     ;; "cd" 'describe-current-coding-system
-    ;; "cc" 'set-buffer-file-coding-system
+    "cc" 'langtool-check
+    "cd" 'langtool-check-done
+    "cf" 'langtool-correct-buffer
     ;; "cr" 'revert-buffer-with-coding-system
     ;; "c2d" 'unix2dos
     ;; "c2u" 'dos2unix
@@ -345,6 +349,7 @@
     ;; "l RET" 'toggle-truncate-lines
     ;; "ln" 'whitespace-newline-mode
 
+    "mm" 'bookmark-set
 
     ;; "s" '(:ignore t :wk ("s" . "search&shell&sudo"))
     ;; "sp" 'init-sp-menu/body

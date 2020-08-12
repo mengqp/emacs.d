@@ -37,6 +37,7 @@
 (use-package yasnippet
   :ensure t
   :defer t
+  :hook ((org-mode shell-script-mode prog-mode text-mode) . yas-minor-mode)
   ;; :bind
   ;; ;; ( "M-j" . 'yas-expand)
   :commands (yasnippet yas-reload-all)
@@ -53,15 +54,10 @@
 	'("~/.emacs.d/mysnippets"
 	  "~/.emacs.d/site-lisp/yasnippet-snippets/snippets"
 	  ))
-  (progn
-    (add-hook 'org-mode-hook #'yas-minor-mode)
-    (add-hook 'text-mode-hook #'yas-minor-mode)
-    (add-hook 'shell-script-mode #'yas-minor-mode)
-    (add-hook 'prog-mode-hook #'yas-minor-mode)
-    )
   :config
   (use-package yasnippet-snippets
-    :ensure nil)
+    :ensure nil
+    :defer t)
   ;; (yas-minor-mode)
   ;; (add-to-list 'company-backends 'company-yasnippet)
   ;; (message "yasnippet")

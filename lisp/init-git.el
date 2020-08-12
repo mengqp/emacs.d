@@ -9,6 +9,7 @@
 ;;; Code:
 (use-package magit-popup
   :ensure t
+  :defer t
   )
 
 (use-package magit
@@ -34,11 +35,14 @@
   ;; Walk through git revisions of a file
   (use-package git-timemachine
     :ensure t
+    :defer t
     :diminish git-timemachine-mode)
 
   (when *linux*
     (use-package magit-todos
-      :ensure t)
+      :ensure t
+      :defer t
+      )
     )
 
   ;; (defun git-push-coding-request()
@@ -82,6 +86,7 @@
 ;; Git-Svn extension for Magit
 (use-package magit-svn
   :ensure t
+  :defer t
   :diminish magit-svn-mode
   :hook (magit-mode . magit-svn-mode))
 

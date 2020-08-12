@@ -37,3 +37,5 @@ srecode-map.el
 *.cache
 eaf
 session*
+.emacs.desktop
+.emacs_workgroups

@@ -40,6 +40,7 @@
 
 (use-package org
   :ensure t
+  :mode "\\.org\\'"
   :commands(org-brain org-brain-prefix-map)
   :defer t
   :bind*
@@ -78,6 +79,9 @@
   (require 'init-journal)
   (require 'init-agenda)
   (require 'init-org-brain)
+  (require 'init-tex)
+  (require 'init-ox-latex)
+  (require 'init-org-roam)
 
   )
 

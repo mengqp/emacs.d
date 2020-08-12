@@ -47,7 +47,7 @@
 (use-package lazycat-theme
   ;; :ensure t
   :disabled t
-  ;; :defer t
+  :defer t
   ;; :init
   ;; (add-hook 'after-init-hook
   ;; 	    (lambda () (lazycat-theme-load-dark)))
@@ -74,12 +74,16 @@
 
 (use-package modus-operandi-theme
   :disabled t
+  :defer t
   :ensure t)
 
 
 (use-package modus-vivendi-theme
   :ensure t
   ;; :disabled t
+  :defer t
+  :hook (after-init . (lambda ()
+			(load-theme 'modus-vivendi t)))
   :init
   ;; Choose to render some code constructs in slanted text (italics).  The
   ;; default, shown below, is to not use italics, unless it is absolutely
@@ -111,8 +115,6 @@
   (setq modus-vivendi-theme-scale-2 1.1)
   (setq modus-vivendi-theme-scale-3 1.15)
   (setq modus-vivendi-theme-scale-4 1.2)
-  :config
-  (load-theme 'modus-vivendi t)
   )
 
 ;; ;; (load-theme 'wombat t)

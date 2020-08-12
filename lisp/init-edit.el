@@ -105,6 +105,7 @@
 ;; Goto last change
 (use-package goto-chg
   :ensure t
+  :defer t
   :bind ("C-," . goto-last-change)
   :preface
   (defmacro undo-tree-node-p (n)
@@ -195,6 +196,7 @@
     )
 
   (use-package lazy-search
+    :defer t
     :bind*
     ("M-s w" . lazy-search)
     ;; :config
@@ -205,7 +207,8 @@
   ;; auto insert closing bracket
   (use-package smartparens
     :ensure t
-    ;; :defer t
+    :defer 5
+    :hook( prog-mode . smartparens-mode)
     :bind
     (:map smartparens-mode-map
 	  ("C-M-a" . sp-beginning-of-sexp)
@@ -218,11 +221,10 @@
 	  ("C-M-p" . sp-previous-sexp)
 	  )
     :diminish smartparens-mode smartparens-global-mode
-    :init
-    (add-hook 'prog-mode-hook 'smartparens-mode)
     :config
     ;; enable the default configuration
-    (use-package smartparens-config)
+    (use-package smartparens-config
+      :defer t)
     (smartparens-strict-mode t)
 
 
@@ -333,6 +335,7 @@ _]_: []                      _\"_:\"\"             _}_: {}
 
 (use-package hungry-delete
   :ensure t
+  :defer t
   :diminish hungry-delete-mode
   :hook (after-init . global-hungry-delete-mode)
   ;; :config
@@ -341,6 +344,7 @@ _]_: []                      _\"_:\"\"             _}_: {}
 
 (use-package anzu
   :ensure t
+  :defer t
   :config
   (global-anzu-mode t)
 
@@ -463,7 +467,7 @@ _]_: []                      _\"_:\"\"             _}_: {}
 
 (use-package auto-sudoedit
   :ensure t
-  :defer 10
+  :defer t
   :config
   (auto-sudoedit-mode 1)
   )
@@ -493,6 +497,15 @@ _]_: []                      _\"_:\"\"             _}_: {}
   (prog-mode . separedit-mode )
   :bind
   (("C-c '" . #'separedit))
+  )
+
+(use-package langtool
+  :ensure t
+  :defer t
+  :init
+  (setq langtool-java-classpath
+	"/usr/share/languagetool:/usr/share/java/languagetool/*")
+  ;; (setq langtool-language-tool-server-jar "/usr/share/java/languagetool/languagetool-server.jar")
   )
 
 (require 'init-color-rg)

@@ -41,6 +41,7 @@
 
 (use-package counsel
   :ensure t
+  :defer t
   :diminish counsel-mode
   :commands (magit-utils magit-completing-read-function)
   :commands (magit-utils magit-completing-read-function)
@@ -99,6 +100,7 @@
 (use-package ivy-posframe
   :disabled t
   :ensure t
+  :defer t
   :after ivy
   :init
   (setq ivy-display-function #'ivy-posframe-display)
@@ -113,6 +115,7 @@
 
 (use-package ivy-xref
   :ensure t
+  :defer t
   :init
   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
 

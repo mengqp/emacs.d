@@ -70,6 +70,7 @@
 
 (use-package flycheck-posframe
   :ensure t
+  :defer t
   :after flycheck
   :config
   (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode)

@@ -46,7 +46,7 @@
 
 (use-package hydra
   :ensure t
-  ;; :defer t
+  :defer t
   ;; :config
   ;; (defhydra hydra-thing-edit ()
   ;;   "thing-edit"
@@ -573,8 +573,7 @@
 
 (use-package pretty-hydra
   :ensure t
-  ;; :defer t
-
+  :defer t
   )
 
 (provide 'init-hydra)

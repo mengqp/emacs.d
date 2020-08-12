@@ -93,6 +93,7 @@
 
   (use-package evil-visualstar
     :ensure t
+    :defer t
     :init
     (global-evil-visualstar-mode)
     )
@@ -100,6 +101,7 @@
 
   (use-package evil-matchit
     :ensure t
+    :defer t
     :diminish evil-matchit-mode
     :init
     (defvar evilmi-ignore-comments nil)
@@ -154,6 +156,7 @@
 
   (use-package evil-avy
     :ensure t
+    :defer t
     :after avy
     :config
     (evil-avy-mode t)

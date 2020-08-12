@@ -37,8 +37,8 @@
   :commands (org-src org-src-lang-modes)
   :commands (plantuml-mode org-src-lang-modes)
   :ensure t
-  :bind
-  ("C-c C-s" . plantuml-save-png )
+  ;; :bind
+  ;; ("C-c C-s" . plantuml-save-png )
   :defer t
   :init
   ;; Enable plantuml-mode for PlantUML files

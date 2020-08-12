@@ -61,6 +61,7 @@
 ;; (smart-tabs-advice python-indent-line-1 python-indent)
 (use-package python
   :ensure nil
+  :defer t
   :hook (inferior-python-mode . (lambda ()
                                   (process-query-on-exit-flag
                                    (get-process "Python"))))

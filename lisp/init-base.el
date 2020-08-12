@@ -53,6 +53,7 @@
 ;; 空格
 (use-package pangu-spacing
   :ensure t
+  :defer t
   :diminish global-pangu-spacing-mode
   :diminish pangu-spacing-mode
   :init
@@ -64,6 +65,7 @@
 ;;文件在改变时自动加载
 (use-package autorevert
   :diminish auto-revert-mode
+  :defer t
   :init
   (add-hook 'after-init-hook #'auto-revert-mode)
   :config
@@ -72,7 +74,7 @@
 
 ;; 自动保存
 (use-package auto-save
-  :defer 2
+  :defer t
   :config
   (setq auto-save-delete-trailing-whitespace t)
   (auto-save-enable)              ;; 开启自动保存功能
@@ -120,6 +122,7 @@
 (use-package session
   ;; :disabled t
   :ensure t
+  :defer t
   :init
   (setq session-save-file (expand-file-name (concat "~/.emacs.d/" ".session")))
   (setq session-globals-max-size 2048)
@@ -194,6 +197,7 @@
 
 (use-package keyfreq
   :ensure t
+  :defer t
   :config
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1)
@@ -205,6 +209,7 @@
   )
 
 (use-package imenu
+  :defer t
   :bind
   (
    ("M-g i" . imenu))
@@ -215,6 +220,7 @@
   ;; rustup install stable
   (use-package fuz
     ;; :disabled t
+    :defer t
     :config
     (unless (require 'fuz-core nil t)
       (fuz-build-and-load-dymod))
@@ -225,6 +231,16 @@
   :ensure t
   :defer t)
 
+(use-package english-teacher
+  :defer t
+  :hook ((Info-mode
+          elfeed-show-mode
+          eww-mode
+          Man-mode
+          Woman-Mode
+	  c++-mode
+	  ) . english-teacher-follow-mode)
+  )
 
 (provide 'init-base)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

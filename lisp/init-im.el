@@ -125,11 +125,11 @@
   :ensure t
   ;; :disabled t
   :commands (init-im rime-toggle-or-inline-ascii)
-  ;; :bind*
-  ;; (
-  ;;  ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
-  ;;  ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
-  ;;  )
+  :bind*
+  (
+   ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
+   ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
+   )
   :diminish rime-mode
   :hook(after-init . rime-mode)
   :init
@@ -168,6 +168,7 @@
 
 (use-package sis
   :ensure t
+  :disabled t
   :bind*
   (
    ("M-i i" . sis-switch) ; 开启输入法
@@ -176,21 +177,21 @@
   :config
   ;; (sis-ism-lazyman-config nil nil 'fcitx5)
   ;; (sis-ism-lazyman-config nil nil 'fcitx)
-  ;; (use-package rime
-  ;;   :ensure t
-  ;;   :init
-  ;;   (setq rime-user-data-dir "~/.emacs.d/rime/")
+  (use-package rime
+    :ensure t
+    :init
+    (setq rime-user-data-dir "~/.emacs.d/rime/")
 
-  ;;   (setq rime-posframe-properties
-  ;; 	  (list :background-color "#333333"
-  ;; 		:foreground-color "#dcdccc"
-  ;; 		;; :font "WenQuanYi Micro Hei Mono-14"
-  ;; 		:internal-border-width 10))
-  ;;   (setq default-input-method "rime"
-  ;; 	  rime-show-candidate 'posframe)
-  ;;   (setq default-input-method "rime"
-  ;; 	  rime-show-candidate 'posframe)
-  ;;   )
+    (setq rime-posframe-properties
+	  (list :background-color "#333333"
+		:foreground-color "#dcdccc"
+		;; :font "WenQuanYi Micro Hei Mono-14"
+		:internal-border-width 10))
+    (setq default-input-method "rime"
+	  rime-show-candidate 'posframe)
+    (setq default-input-method "rime"
+	  rime-show-candidate 'posframe)
+    )
 
   (sis-ism-lazyman-config nil "rime" 'native)
   ;; (setq-default sis-english nil)
