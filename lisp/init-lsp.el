@@ -39,6 +39,7 @@
   :defer t
   :diminish lsp-mode
   :hook ((c-mode c++-mode objc-mode python-mode) . #'lsp)
+  ;; :hook ((c-mode c++-mode objc-mode) . #'lsp)
   :bind (:map lsp-mode-map
               ("C-c C-d" . lsp-describe-thing-at-point)
               ([remap xref-find-definitions] . lsp-find-definition)
@@ -56,6 +57,8 @@
   (setq lsp-file-watch-threshold nil)
   (setq lsp-enable-snippet nil)
   (setq lsp-enable-symbol-highlighting nil)
+  (setq lsp-pyright t)
+  (setq lsp-python-ms-disabled t)
   :config
   (require 'lsp-clients)
   ;; (setq lsp-enable-indentation nil)
@@ -229,7 +232,7 @@
 ;;   )
 (use-package lsp-python-ms
   :disabled t
-  ;; :ensure t
+  :ensure t
   :hook
   (python-mode . (lambda () (require 'lsp-python-ms)))
   :init
@@ -253,12 +256,10 @@
   )
 
 (use-package lsp-pyright
-  ;; :disabled t
   :ensure t
-  :defer t
   :hook (python-mode . (lambda ()
-			 (require 'lsp-pyright)
-			 (lsp))))  ; or lsp-deferred
+                         (require 'lsp-pyright)
+                         (lsp))))  ; or lsp-deferred
 
 
 (use-package nox
