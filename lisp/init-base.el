@@ -232,13 +232,13 @@
   :defer t)
 
 (use-package english-teacher
+  :disabled t
   :defer t
   :hook ((Info-mode
           elfeed-show-mode
           eww-mode
           Man-mode
           Woman-Mode
-	  c++-mode
 	  ) . english-teacher-follow-mode)
   )
 
