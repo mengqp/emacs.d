@@ -84,6 +84,7 @@
 (autoload 'magit-dispatch-popup "magit" "" t)
 (autoload 'magit-file-dispatch "magit" "" t)
 (autoload 'snails "snails" "" t)
+(autoload 'yasnippet-snippets--fixed-indent "yasnippet-snippets" "" t)
 
 
 
