@@ -130,7 +130,7 @@
   )
 
 (use-package thing-edit
-  :defer 2
+  :defer t
   :disabled t
   :bind*
   (
@@ -345,12 +345,8 @@ _]_: []                      _\"_:\"\"             _}_: {}
 (use-package anzu
   :ensure t
   :defer t
-  :config
-  (global-anzu-mode t)
-
-  (set-face-attribute 'anzu-mode-line nil
-		      :foreground "yellow" :weight 'bold)
-
+  :hook(after-init . global-anzu-mode)
+  :init
   (custom-set-variables
    '(anzu-mode-lighter "")
    '(anzu-deactivate-region t)
@@ -358,7 +354,9 @@ _]_: []                      _\"_:\"\"             _}_: {}
    '(anzu-replace-threshold 50)
    '(anzu-replace-to-string-separator " => ")
    )
-
+  :config
+  (set-face-attribute 'anzu-mode-line nil
+		      :foreground "yellow" :weight 'bold)
   (global-set-key [remap query-replace] 'anzu-query-replace)
   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
   )
@@ -422,10 +420,9 @@ _]_: []                      _\"_:\"\"             _}_: {}
   :ensure t
   :defer t
   :diminish column-enforce-mode
-  :init
-  (add-hook 'cc-mode-hook 'column-enforce-mode)
+  :hook((cc-mode python-mode) . column-enforce-mode)
   :config
-  (setq column-enforce-column 81)
+  (setq column-enforce-column 80)
   )
 
 ;; (use-package insert-translated-name
@@ -468,8 +465,7 @@ _]_: []                      _\"_:\"\"             _}_: {}
 (use-package auto-sudoedit
   :ensure t
   :defer t
-  :config
-  (auto-sudoedit-mode 1)
+  :hook(after-init . auto-sudoedit-mode)
   )
 
 (use-package shift-number

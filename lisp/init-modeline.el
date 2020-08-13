@@ -152,13 +152,13 @@
   (setq doom-modeline-vcs-max-length 12)
 
   ;; Whether display the perspective name. Non-nil to display in the mode-line.
-  (setq doom-modeline-persp-name t)
+  (setq doom-modeline-persp-name nil)
 
   ;; If non nil the default perspective name is displayed in the mode-line.
   (setq doom-modeline-display-default-persp-name nil)
 
   ;; If non nil the perspective name is displayed alongside a folder icon.
-  (setq doom-modeline-persp-icon t)
+  (setq doom-modeline-persp-icon nil)
 
   ;; Whether display the `lsp' state. Non-nil to display in the mode-line.
   (setq doom-modeline-lsp t)
@@ -180,16 +180,16 @@
   (setq doom-modeline-gnus nil)
 
   ;; Wheter gnus should automatically be updated and how often (set to 0 or smaller than 0 to disable)
-  (setq doom-modeline-gnus-timer 0)
+  ;; (setq doom-modeline-gnus-timer 0)
 
   ;; Wheter groups should be excludede when gnus automatically being updated.
-  (setq doom-modeline-gnus-excluded-groups '("dummy.group"))
+  ;; (setq doom-modeline-gnus-excluded-groups '("dummy.group"))
 
   ;; Whether display the IRC notifications. It requires `circe' or `erc' package.
   (setq doom-modeline-irc nil)
 
   ;; Function to stylize the irc buffer names.
-  (setq doom-modeline-irc-stylize 'identity)
+  ;; (setq doom-modeline-irc-stylize 'identity)
 
   ;; ;; Whether display the environment version.
   ;; (setq doom-modeline-env-version nil)

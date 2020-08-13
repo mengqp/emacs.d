@@ -56,8 +56,8 @@
   :defer t
   :diminish global-pangu-spacing-mode
   :diminish pangu-spacing-mode
-  :init
-  (add-hook 'prog-mode-hook #'pangu-spacing-mode)
+  :hook
+  (prog-mode-hook . pangu-spacing-mode)
   :config
   (setq pangu-spacing-real-insert-separtor nil)
   )
@@ -66,8 +66,8 @@
 (use-package autorevert
   :diminish auto-revert-mode
   :defer t
-  :init
-  (add-hook 'after-init-hook #'auto-revert-mode)
+  :hook
+  (after-init . auto-revert-mode)
   :config
   (global-auto-revert-mode t)
   )
@@ -105,8 +105,7 @@
   ;; :ensure nil
   ;; :disabled t
   :defer t
-  :hook
-  (after-init . savehist-mode)
+  :hook (after-init . savehist-mode)
   :init
   (setq savehist-file (expand-file-name "savehist" user-emacs-directory))
   (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
@@ -122,6 +121,7 @@
 (use-package session
   ;; :disabled t
   :ensure t
+  :hook(after-init . session-initialize)
   :defer t
   :init
   (setq session-save-file (expand-file-name (concat "~/.emacs.d/" ".session")))
@@ -134,7 +134,6 @@
                                   file-name-history
                                   search-ring
                                   regexp-search-ring))
-  (add-hook 'after-init-hook 'session-initialize)
   )
 
 ;;在 minibuffer 里启用自动补全函数和变量
@@ -153,9 +152,9 @@
 
 
 
-(use-package eldoc
-  :diminish eldoc-mode
-  )
+;; (use-package eldoc
+;;   :diminish eldoc-mode
+;;   )
 
 (use-package restart-emacs
   :ensure t
@@ -189,9 +188,7 @@
   :disabled t
   :ensure t
   :defer t
-  ;; :hook (after-init . adaptive-wrap-prefix-mode)
-  :config
-  (adaptive-wrap-prefix-mode t)
+  :hook (after-init . adaptive-wrap-prefix-mode)
   )
 
 
@@ -208,13 +205,6 @@
   :defer t
   )
 
-(use-package imenu
-  :defer t
-  :bind
-  (
-   ("M-g i" . imenu))
-  )
-
 (when *linux*
   ;; pacman -S rustup
   ;; rustup install stable
@@ -228,6 +218,7 @@
   )
 
 (use-package fasd
+  :disabled t
   :ensure t
   :defer t)
 

@@ -56,22 +56,18 @@
 
 (use-package which-key
   :ensure t
-  :defer 2
+  :hook (after-init . which-key-mode)
+  :defer t
   ;; :after general-override-mode
   :diminish which-key-mode
-  :config
-
-
-  (which-key-mode)
-
-  (which-key-setup-side-window-bottom)
-  (which-key-setup-minibuffer)
-  (setq which-key-use-C-h-commands nil)
-
+  :init
   ;; Set the prefix string that will be inserted in front of prefix commands
   ;; (i.e., commands that represent a sub-map).
   (setq which-key-prefix-prefix "+" )
-
+  (setq which-key-use-C-h-commands nil)
+  :config
+  (which-key-setup-side-window-bottom)
+  (which-key-setup-minibuffer)
   )
 
 (use-package general
@@ -204,10 +200,10 @@
     "l9" 'eyebrowse-switch-to-window-config-9
     "lp" 'eyebrowse-prev-window-config
     "ln" 'eyebrowse-next-window-config
-    "lc" 'wg-create-workgroup ; save windows layout
-    "ll" 'wg-switch-to-workgroup ; load windows layout
-    "ls" 'wg-save-session
-    "lr" 'wg-reload-session
+    ;; "lc" 'wg-create-workgroup ; save windows layout
+    ;; "ll" 'wg-switch-to-workgroup ; load windows layout
+    ;; "ls" 'wg-save-session
+    ;; "lr" 'wg-reload-session
     ;; "lc" 'eyebrowse-close-window-config
 
     ;; "m" '(:ignore t :wk ("m" . "bookmark"))

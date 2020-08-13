@@ -15,21 +15,21 @@
 ;; (setq gc-cons-threshold 402653184
 ;;       gc-cons-percentage 0.6)
 
-;; Speed up startup
-;; (defvar default-file-name-handler-alist file-name-handler-alist)
-;; (setq file-name-handler-alist nil)
-;; (setq gc-cons-threshold 80000000)
-;; (add-hook 'emacs-startup-hook
-;;           (lambda ()
-;;             "Restore defalut values after init."
-;;             (setq file-name-handler-alist default-file-name-handler-alist)
-;;             (setq gc-cons-threshold 800000)
-;;             (if (boundp 'after-focus-change-function)
-;;                 (add-function :after after-focus-change-function
-;;                               (lambda ()
-;;                                 (unless (frame-focus-state)
-;;                                   (garbage-collect))))
-;; 	      (add-hook 'focus-out-hook 'garbage-collect))))
+;;Speed up startup
+(defvar default-file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
+(setq gc-cons-threshold 80000000)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            "Restore defalut values after init."
+            (setq file-name-handler-alist default-file-name-handler-alist)
+            (setq gc-cons-threshold 800000)
+            (if (boundp 'after-focus-change-function)
+                (add-function :after after-focus-change-function
+                              (lambda ()
+                                (unless (frame-focus-state)
+                                  (garbage-collect))))
+	      (add-hook 'focus-out-hook 'garbage-collect))))
 
 
 ;; Load path
@@ -59,6 +59,7 @@
 ;; Which means on every .el and .elc file loaded during start up, it has to runs those regexps against the filename.
 (let ((file-name-handler-alist nil))
 
+
   (require 'init-const)
   (require 'init-autoload)
   (require 'cl-lib)
@@ -66,7 +67,7 @@
 
   (use-package benchmark-init
     :ensure t
-    :disabled t
+    ;; :disabled t
     :config
     ;; To disable collection of benchmark data after init is done.
     (add-hook 'after-init-hook 'benchmark-init/activate))
