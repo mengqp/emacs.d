@@ -67,7 +67,7 @@
 
   (use-package benchmark-init
     :ensure t
-    ;; :disabled t
+    :disabled t
     :config
     ;; To disable collection of benchmark data after init is done.
     (add-hook 'after-init-hook 'benchmark-init/activate))

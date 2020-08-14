@@ -122,6 +122,17 @@
 (autoload 'langtool-check-done "langtool" t)
 (autoload 'langtool-correct-buffer "langtool" t)
 (autoload 'counsel-imenu "counsel" t)
+(autoload 'org-roam-find-file "org-roam" t)
+(autoload 'org-roam-graph "org-roam" t)
+(autoload 'org-roam-insert "org-roam" t)
+(autoload 'org-roam-buffer-toggle-display "org-roam" t)
+(autoload 'org-roam-insert-immediate "org-roam" t)
+(autoload 'org-roam "org-roam" t)
+
+
+
+
+
 
 
 

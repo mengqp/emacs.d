@@ -74,7 +74,7 @@
 
 ;; 自动保存
 (use-package auto-save
-  :defer t
+  :defer 3
   :config
   (setq auto-save-delete-trailing-whitespace t)
   (auto-save-enable)              ;; 开启自动保存功能

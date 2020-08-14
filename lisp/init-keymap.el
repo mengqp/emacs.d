@@ -220,6 +220,12 @@
     "omp" 'org-mobile-push
     "omg" 'org-mobile-pull
     "oc" 'cfw:open-org-calendar
+    "orl" 'org-roam
+    "orf" 'org-roam-find-file
+    "org" 'org-roam-graph
+    "ori" 'org-roam-insert
+    "orb" 'org-roam-buffer-toggle-display
+    "orm" 'org-roam-insert-immediate
 
     ;; "p" '(:ignore t :wk ("p" . "project"))
     ;; "pd" 'counsel-projectile-find-dir

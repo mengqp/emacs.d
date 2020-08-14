@@ -40,8 +40,7 @@
 
 (use-package org
   :ensure t
-  :mode "\\.org\\'"
-  :commands(org-brain org-brain-prefix-map)
+  :mode ("\\.org\\'" . org-mode)
   :defer t
   :bind*
   (
@@ -51,8 +50,6 @@
    ("M-j ob" . org-brain-prefix-map )
    )
   :init
-  :config
-  (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
 				   (org-agenda-files :maxlevel . 9))))
 
@@ -71,10 +68,12 @@
   (setq-default mengqp-org-diary-dir (concat mengqp-org-dir "diary/"))
   (setq-default mengqp-org-mobile-index-file (concat mengqp-org-mobile-dic "index.org"))
   (setq org-html-validation-link nil)
-
   (setq org-directory mengqp-org-dir)
+
+  :config
+  (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   (require 'init-deft)
-  (require 'init-org-pomodoro)
+  ;; (require 'init-org-pomodoro)
   (require 'init-org-ui)
   (require 'init-journal)
   (require 'init-agenda)
