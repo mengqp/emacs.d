@@ -133,17 +133,6 @@
 (autoload 'iedit-rectangle-mode "iedit-rect" "" t)
 (autoload 'evilmi-select-items "evil-matchit" "" t)
 
-
-
-
-
-
-
-
-
-
-
-
 (provide 'init-autoload)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-autoload.el ends here

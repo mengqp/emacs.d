@@ -71,8 +71,8 @@
 	    (lambda ()
 	      (setq indent-tabs-mode nil)
 	      (setq tab-width 4)))
-  (add-hook 'python-mode-hook
-          (lambda () (set (make-local-variable 'yas-indent-line) 'fixed)))
+  ;; (add-hook 'python-mode-hook
+  ;;         (lambda () (set (make-local-variable 'yas-indent-line) 'fixed)))
   ;; for executable of language server, if it's not symlinked on your PATH
   ;; (setq lsp-python-ms-executable
   ;;     "/usr/share/licenses/python-language-server~/python-language-server/output/bin/Release/osx-x64/publish/Microsoft.Python.LanguageServer")
