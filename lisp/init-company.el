@@ -36,11 +36,8 @@
 (use-package company
   :ensure t
   :defer t
-  :commands (company company-select-next)
-  :commands (company company-select-previous)
-  :commands (company company-search-candidates)
   :diminish company-mode
-  :hook (after-init . global-company-mode)
+  :hook ((prog-mode org-mode) . company-mode)
   :bind
   (("M-/" . company-complete)
    ;; ("C-c C-y" . company-yasnippet)
@@ -111,10 +108,12 @@
 
   (use-package company-posframe
     :ensure t
+    :defer t
     :diminish company-posframe-mode
     :config
     (company-posframe-mode 1)
     (use-package desktop
+      :defer t
       :config
       (push '(company-childframe-mode . nil)
 	    desktop-minor-mode-table
@@ -124,6 +123,7 @@
   ;; With use-package:
   (use-package company-box
     :ensure t
+    :defer t
     :disabled t
     :hook (company-mode . company-box-mode))
 
@@ -138,48 +138,6 @@
     :ensure t
     :disabled t
     :defer t
-    )
-
-  (use-package company-tabnine
-    :disabled t
-    :ensure t
-    :config
-    (add-to-list 'company-backends #'company-tabnine)
-
-    (defun company//sort-by-tabnine (candidates)
-      (if (or (functionp company-backend)
-	      (not (and (listp company-backend) (memq 'company-tabnine company-backend))))
-	  candidates
-	(let ((candidates-table (make-hash-table :test #'equal))
-	      candidates-1
-	      candidates-2)
-	  (dolist (candidate candidates)
-	    (if (eq (get-text-property 0 'company-backend candidate)
-		    'company-tabnine)
-		(unless (gethash candidate candidates-table)
-		  (push candidate candidates-2))
-	      (push candidate candidates-1)
-	      (puthash candidate t candidates-table)))
-	  (setq candidates-1 (nreverse candidates-1))
-	  (setq candidates-2 (nreverse candidates-2))
-	  (nconc (seq-take candidates-1 2)
-		 (seq-take candidates-2 2)
-		 (seq-drop candidates-1 2)
-		 (seq-drop candidates-2 2)))))
-
-    (add-to-list 'company-transformers 'company//sort-by-tabnine t)
-    ;; `:separate`  使得不同 backend 分开排序
-    (add-to-list 'company-backends '(company-lsp :with company-tabnine :separate))
-
-    ;; The free version of TabNine is good enough,
-    ;; and below code is recommended that TabNine not always
-    ;; prompt me to purchase a paid version in a large project.
-    (defadvice company-echo-show (around disable-tabnine-upgrade-message activate)
-      (let ((company-message-func (ad-get-arg 0)))
-	(when (and company-message-func
-		   (stringp (funcall company-message-func)))
-	  (unless (string-match "The free version of TabNine only indexes up to" (funcall company-message-func))
-	    ad-do-it))))
     )
   )
 

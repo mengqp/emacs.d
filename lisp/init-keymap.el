@@ -373,6 +373,11 @@
 
     )
 
+  (general-define-key
+   :keymaps '(normal visual emacs)
+   :prefix ";"
+   ";"  'evilnc-comment-or-uncomment-lines
+   )
 
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported

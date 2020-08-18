@@ -39,10 +39,10 @@
   :diminish evil-mode
   :commands(evil-core evil-local-mode )
   :defer t
+  :hook(after-init . evil-mode)
   :init
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
   (setq evil-want-keybinding nil)
-  (add-hook 'after-init-hook #'evil-mode)
   :config
   (evil-set-initial-state 'snails-mode 'insert)
   (evil-set-initial-state 'vterm-mode 'insert)
@@ -58,111 +58,88 @@
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
   (define-key evil-normal-state-map "\M-." 'xref-find-definitions)
   (define-key evil-motion-state-map "\M-." 'xref-find-definitions)
+  (add-hook 'dired-mode-hook
+	    (lambda( )
+	      (evil-emacs-state)))
+  )
 
-  ;;实现代码折叠
-  (use-package hideshow
-    :defer t
-    :diminish hs-minor-mode
-    :bind (:map hs-minor-mode-map
-		("C-`" . hs-toggle-hiding))
-    ;; :commands (evil-states evil-emacs-state)
-    ;; :after evil-mode
-    ;; :after evil-local-mode
-    :init
-    (add-hook 'prog-mode-hook
-	      (lambda()
-		(hs-minor-mode 1)
-		))
-    (add-hook 'dired-mode-hook
-	      (lambda( )
-		(evil-emacs-state)))
-    )
+;;实现代码折叠
+(use-package hideshow
+  :defer t
+  :diminish hs-minor-mode
+  :after evil
+  ;; :bind (:map hs-minor-mode-map
+  ;; 		("C-`" . hs-toggle-hiding))
+  ;; :commands (evil-states evil-emacs-state)
+  ;; :after evil-mode
+  ;; :after evil-local-mode
+  :hook (prog-mode . hs-minor-mode)
+  )
 
-  (use-package evil-numbers
-    :ensure t
-    :disabled t
-    :commands (evil-numbers  evil-numbers/inc-at-pt)
-    :commands (evil-numbers  evil-numbers/dec-at-pt)
-    :defer t
-    :init
-    ;; +/- 代替
-    (define-key evil-normal-state-map (kbd "+") 'evil-numbers/inc-at-pt)
-    (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
-    )
+(use-package evil-visualstar
+  :ensure t
+  ;; :after evil
+  :defer t
+  :hook (evil-mode . global-evil-visualstar-mode)
+  )
 
+(use-package evil-matchit
+  :ensure t
+  :defer t
+  ;; :after evil
+  :diminish evil-matchit-mode
+  :hook (evil-mode . global-evil-matchit-mode)
+  :init
+  (defvar evilmi-ignore-comments nil)
+  )
 
-  (use-package evil-visualstar
-    :ensure t
-    :defer t
-    :init
-    (global-evil-visualstar-mode)
-    )
+(use-package evil-escape
+  :ensure t
+  :diminish evil-escape-mode
+  :hook (evil-mode . evil-escape-mode )
+  :init
+  (setq-default evil-escape-key-sequence "jk")
+  (setq-default evil-escape-delay 0.2)
+  ;; :config
+  ;; (evil-escape-mode t)
+  )
 
+(use-package evil-nerd-commenter
+  :ensure t
+  :defer t
+  :after evil
+  )
 
-  (use-package evil-matchit
-    :ensure t
-    :defer t
-    :diminish evil-matchit-mode
-    :init
-    (defvar evilmi-ignore-comments nil)
-    :config
-    (global-evil-matchit-mode 1)
-    )
+(use-package evil-mc
+  :ensure t
+  :defer t
+  :disabled t
+  :diminish evil-mc-mode
+  :hook (after-init . evil-mc-mode)
+  ;; :config
+  ;; (global-evil-mc-mode 1)
+  )
 
-  (use-package evil-escape
-    :ensure t
-    ;; :after evil-mode
-    :diminish evil-escape-mode
-    :init
-    (setq-default evil-escape-key-sequence "jk")
-    (setq-default evil-escape-delay 0.2)
-    :config
-    (evil-escape-mode t)
-    )
+;; (use-package evil-collection
+;;   ;; :after evil-mode
+;;   :ensure t
+;;   :disabled t
+;;   ;; :custom (evil-collection-setup-minibuffer t)
+;;   :custom (evil-collection-company-use-tng nil)
+;;   ;; :custom (evil-collection-outline-bind-tab-p nil)
+;;   ;; :custom (evil-collection-term-sync-state-and-mode-p nil)
+;;   ;; :custom (evil-collection-setup-debugger-keys nil)
+;;   ;; :init
+;;   :config
+;;   (evil-collection-init)
+;;   )
 
-  (use-package evil-nerd-commenter
-    :ensure t
-    :after evil
-    :config
-    (general-define-key
-     :keymaps '(normal visual emacs)
-     :prefix ";"
-     ";"  'evilnc-comment-or-uncomment-lines
-     )
-    )
-
-  (use-package evil-mc
-    :ensure t
-    :defer t
-    :disabled t
-    :diminish evil-mc-mode
-    :config
-    (global-evil-mc-mode 1)
-    )
-
-  ;; (use-package evil-collection
-  ;;   ;; :after evil-mode
-  ;;   :ensure t
-  ;;   :disabled t
-  ;;   ;; :custom (evil-collection-setup-minibuffer t)
-  ;;   :custom (evil-collection-company-use-tng nil)
-  ;;   ;; :custom (evil-collection-outline-bind-tab-p nil)
-  ;;   ;; :custom (evil-collection-term-sync-state-and-mode-p nil)
-  ;;   ;; :custom (evil-collection-setup-debugger-keys nil)
-  ;;   ;; :init
-  ;;   :config
-  ;;   (evil-collection-init)
-  ;;   )
-
-  (use-package evil-avy
-    :ensure t
-    :defer t
-    :after avy
-    :config
-    (evil-avy-mode t)
-    )
-
-
+(use-package evil-avy
+  :ensure t
+  :defer t
+  :after avy
+  :config
+  (evil-avy-mode t)
   )
 
 (provide 'init-evil)

@@ -37,6 +37,8 @@
   (setq auto-save-default -1)
   ;; backup in one place. flat, no tree structure
   (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
+  (setq initial-major-mode 'fundamental-mode)
+  ;; (setq initial-scratch-message nil )
   )
 
 (progn
@@ -105,7 +107,7 @@
   ;; :ensure nil
   ;; :disabled t
   :defer t
-  :hook (after-init . savehist-mode)
+  :hook (before-save . savehist-mode)
   :init
   (setq savehist-file (expand-file-name "savehist" user-emacs-directory))
   (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
@@ -119,7 +121,7 @@
   )
 
 (use-package session
-  ;; :disabled t
+  :disabled t
   :ensure t
   :hook(after-init . session-initialize)
   :defer t

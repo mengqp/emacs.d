@@ -54,14 +54,47 @@
   ;; (if (fboundp 'menu-bar-mode)
   ;;     (menu-bar-mode -1))
 
-  ;; 关闭 Tooltip
-  (tooltip-mode t)
+  ;; ;; 关闭 Tooltip
+  ;; (tooltip-mode t)
   ;; 平滑滚动
   (pixel-scroll-mode t)
   ;;当前行高亮
   (global-hl-line-mode 1)
   ;;指针不要闪
   (blink-cursor-mode -1)
+  )
+
+;; Or if you use use-package
+(use-package dashboard
+  :ensure t
+  :defer t
+  :disabled t
+  :hook (after-init . dashboard-setup-startup-hook)
+  :init
+  (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
+  ;; Set the banner
+  (setq dashboard-startup-banner 1)
+  ;; Value can be
+  ;; 'official which displays the official emacs logo
+  ;; 'logo which displays an alternative emacs logo
+  ;; 1, 2 or 3 which displays one of the text banners
+  ;; "path/to/your/image.png" which displays whatever image you would prefer
+
+  ;; Content is not centered by default. To center, set
+  (setq dashboard-center-content t)
+
+  ;; To disable shortcut "jump" indicators for each section, set
+  (setq dashboard-show-shortcuts t)
+  (setq dashboard-set-init-info t)
+  (setq dashboard-items nil)
+  (setq dashboard-set-footer nil)
+  :config
+  ;; (dashboard-setup-startup-hook)
+  ;; Set the title
+  ;; (defun dashboard-insert-custom (list-size)
+  ;;   (insert "Custom text"))
+  ;; (add-to-list 'dashboard-item-generators  '(custom . dashboard-insert-custom))
+  ;; (add-to-list 'dashboard-items '(custom) t)
   )
 
 (progn

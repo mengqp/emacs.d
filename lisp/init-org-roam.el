@@ -34,6 +34,7 @@
 ;;; Code:
 (use-package org-roam-server
   :ensure t
+  :defer t
   :config
   (setq org-roam-server-host "127.0.0.1"
         org-roam-server-port 8080
@@ -48,14 +49,16 @@
 
 (use-package org-roam
   :ensure t
+  :defer t
   :hook
-  (after-init . org-roam-mode)
+  (org-mode . org-roam-mode)
   :custom
   (org-roam-directory "/home/mengqp/nutdata/myorg/roam/")
   )
 
 (use-package company-org-roam
   :ensure t
+  :defer t
   :config
   (push 'company-org-roam company-backends)
   )

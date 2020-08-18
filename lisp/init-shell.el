@@ -34,14 +34,7 @@
 ;;; Code:
 
 (use-package aweshell
-  :commands (aweshell aweshell-new)
-  :defer t
-  :bind
-  (:map eshell-mode-map
-	("C-c n" . aweshell-next)
-	("C-c p" . aweshell-prev)
-	("C-c c" . aweshell-clear-buffer)
-	)
+  :defer 10
   )
 
 (use-package vterm

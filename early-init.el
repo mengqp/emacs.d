@@ -43,6 +43,7 @@
 ;; loaded, but after `early-init-file'. We handle package
 ;; initialization, so we must prevent Emacs from doing it early!
 (setq package-enable-at-startup nil)
+(advice-add #'package--ensure-init-file :override #'ignore)
 
 ;; Inhibit resizing frame
 (setq frame-inhibit-implied-resize t); (scroll-bar-mode -1)
@@ -68,7 +69,11 @@
 ;;  #'(lambda ()
 ;;      (with-temp-message ""
 ;;        (require 'recentf)
-;;        (recentf-mode 1))))
+
+;; Ignore X resources; its settings would be redundant with the other settings
+;; in this file and can conflict with later config (particularly where the
+;; cursor color is concerned).
+(advice-add #'x-apply-session-resources :override #'ignore);        (recentf-mode 1))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

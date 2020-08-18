@@ -32,10 +32,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-
-;;; 全局语法检查
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
-;;; c 和 c++
 (use-package flycheck
   ;; :disabled t
   :ensure t
@@ -43,39 +39,35 @@
   :commands (flycheck flycheck-list-errors)
   :commands (flycheck flycheck-get-error-list-window)
   :defer t
+  :hook ((prog-mode org-mode) . flycheck-mode)
   :init
-  ;; (add-hook 'c-mode-hook 'flycheck-mode)
-  ;; (add-hook 'c++-mode-hook 'flycheck-mode)
-  ;; (add-hook 'after-init-hook #'global-flycheck-mode)
-  (add-hook 'prog-mode-hook #'flycheck-mode)
-  :config
-;;; 保存的时候自动检查
+  ;;; 保存的时候自动检查
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
-
-;;; Tune error list display
-  (add-to-list 'display-buffer-alist
-	       `(,(rx bos "*Flycheck errors*" eos)
-		 (display-buffer-reuse-window
-		  display-buffer-in-side-window)
-		 (side            . bottom)
-		 (reusable-frames . visible)
-		 (window-height   . 0.33)))
-
-;;; 显示 errors
+  ;;; 显示 errors
   (setq flycheck-display-errors-function
 	#'flycheck-display-error-messages-unless-error-list)
 
   (setq flycheck-mode-line-prefix "!")
+  :config
+  ;;; Tune error list display
+  ;; (add-to-list 'display-buffer-alist
+  ;; 	       `(,(rx bos "*Flycheck errors*" eos)
+  ;; 		 (display-buffer-reuse-window
+  ;; 		  display-buffer-in-side-window)
+  ;; 		 (side            . bottom)
+  ;; 		 (reusable-frames . visible)
+  ;; 		 (window-height   . 0.33)))
+
   )
 
-(use-package flycheck-posframe
-  :ensure t
-  :defer t
-  :after flycheck
-  :config
-  (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode)
-  (flycheck-posframe-configure-pretty-defaults)
-  )
+  (use-package flycheck-posframe
+    :ensure t
+    :defer t
+    :hook ((potframe-mode) . flycheck-posframe)
+    :config
+    (flycheck-posframe-configure-pretty-defaults)
+    )
+
 
 
 (provide 'init-flycheck)

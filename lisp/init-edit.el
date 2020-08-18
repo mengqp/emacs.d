@@ -37,37 +37,37 @@
   :ensure t
   ;; :disabled t
   :defer t
+  :hook ((emacs-lisp-mode-hook
+	  lisp-interaction-mode-hook
+	  lisp-mode-hook
+	  sh-mode-hook
+	  makefile-gmake-mode-hook
+	  php-mode-hook
+	  python-mode-hook
+	  js-mode-hook
+	  go-mode-hook
+	  qml-mode-hook
+	  jade-mode-hook
+	  css-mode-hook
+	  ruby-mode-hook
+	  coffee-mode-hook
+	  rust-mode-hook
+	  qmake-mode-hook
+	  lua-mode-hook
+	  swift-mode-hook
+	  web-mode-hook
+	  markdown-mode-hook
+	  llvm-mode-hook
+	  conf-toml-mode-hook
+	  plantuml-mode-hook
+	  ) . aggressive-indent-mode)
   :diminish aggressive-indent-mode
-  :config
-  (dolist (hook (list
-		 'emacs-lisp-mode-hook
-		 'lisp-interaction-mode-hook
-		 'lisp-mode-hook
-		 'sh-mode-hook
-		 'makefile-gmake-mode-hook
-		 'php-mode-hook
-		 'python-mode-hook
-		 'js-mode-hook
-		 'go-mode-hook
-		 'qml-mode-hook
-		 'jade-mode-hook
-		 'css-mode-hook
-		 'ruby-mode-hook
-		 'coffee-mode-hook
-		 'rust-mode-hook
-		 'qmake-mode-hook
-		 'lua-mode-hook
-		 'swift-mode-hook
-		 'web-mode-hook
-		 'markdown-mode-hook
-		 'llvm-mode-hook
-		 'conf-toml-mode-hook
-		 'plantuml-mode-hook
-		 ))
-    (add-hook hook #'aggressive-indent-mode))
+  ;; :config
+  :init
   (setq aggressive-indent-modes-to-prefer-defun '(emacs-lisp-mode lisp-mode scheme-mode clojure-mode c-mode c++-mode))
   (setq aggressive-indent-dont-electric-modes t)
   (setq aggressive-indent-sit-for-time 0.5)
+  :config
   (add-to-list
    'aggressive-indent-dont-indent-if
    '(and (derived-mode-p 'cc-mode)
@@ -88,9 +88,6 @@
   :bind
   (("C-;" . iedit-mode)
    ("C-x r RET" . iedit-rectangle-mode)
-   ;;  :map isearch-mode-map ("C-;" . iedit-mode-from-isearch)
-   ;;  :map esc-map ("C-;" . iedit-execute-last-modification)
-   ;;  :map help-map ("C-;" . iedit-mode-toggle-on-function))
    )
   )
 
@@ -105,12 +102,9 @@
 ;; Goto last change
 (use-package goto-chg
   :ensure t
+  :disabled t
   :defer t
   :bind ("C-," . goto-last-change)
-  :preface
-  (defmacro undo-tree-node-p (n)
-    (let ((len (length (undo-tree-make-node nil nil))))
-      `(and (vectorp ,n) (= (length ,n) ,len))))
   )
 
 (use-package multiple-cursors
@@ -186,6 +180,7 @@
 (when *linux*
   (use-package format-all
     :ensure t
+    :defer t
     :bind*
     (
      ("M-i ff" . format-all-buffer)
@@ -207,7 +202,8 @@
   ;; auto insert closing bracket
   (use-package smartparens
     :ensure t
-    :defer 5
+    :disabled t
+    :defer t
     :hook( prog-mode . smartparens-mode)
     :bind
     (:map smartparens-mode-map
@@ -228,45 +224,47 @@
     (smartparens-strict-mode t)
 
 
-    (defhydra init-sp-menu (:color pink
+        (defhydra init-sp-menu (:color pink
 				   :hint nil)
-      "
-^wrap^                        ^unwrap^            ^func^
-^^^^^^^^-----------------------------------------------------------------
-_r_: sp-rewrap-sexp          _u_: sp-unwrap-sexp   _<left>_: ()i->(i)
-_)_: ()                      _'_: '                _<right>_: (i)->()
-_]_: []                      _\"_:\"\"             _}_: {}
-"
-      ("r" sp-rewrap-sexp)
-      (")" sp-wrap-round)
-      ("]" sp-wrap-square)
-      ("}" sp-wrap-curly)
-      ("'" wrap-with-single-quotes)
-      ("\"" wrap-with-double-quotes)
+          "
+    ^wrap^                        ^unwrap^            ^func^
+    ^^^^^^^^-----------------------------------------------------------------
+    _r_: sp-rewrap-sexp          _u_: sp-unwrap-sexp   _<left>_: ()i->(i)
+    _)_: ()                      _'_: '                _<right>_: (i)->()
+    _]_: []                      _\"_:\"\"             _}_: {}
+    "
+          ("r" sp-rewrap-sexp)
+          (")" sp-wrap-round)
+          ("]" sp-wrap-square)
+          ("}" sp-wrap-curly)
+          ("'" wrap-with-single-quotes)
+          ("\"" wrap-with-double-quotes)
 
-      ("u" sp-unwrap-sexp)
-      ("[" sp-backward-unwrap-sexp)
-      ("<right>" sp-forward-barf-sexp)
-      ("<left>" sp-forward-slurp-sexp)
+          ("u" sp-unwrap-sexp)
+          ("[" sp-backward-unwrap-sexp)
+          ("<right>" sp-forward-barf-sexp)
+          ("<left>" sp-forward-slurp-sexp)
 
-      ("q" nil "quit")
-      )
+          ("q" nil "quit")
+          )
 
-    (defun init-sp-menu-func ()
-      (interactive)
-      (init-sp-menu)
-      )
+        (defun init-sp-menu-func ()
+          (interactive)
+          (init-sp-menu)
+          )
 
     )
   ;; Automatic parenthesis pairing
   (use-package elec-pair
     :ensure nil
-    :disabled t
+    ;; :disabled t
+    :defer t
     :hook (after-init . electric-pair-mode)
     :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
 
   (use-package awesome-pair
     :disabled t
+    :defer t
     :init
     (add-hook 'prog-mode-hook '(lambda () (awesome-pair-mode 1)))
     :config
@@ -298,40 +296,41 @@ _]_: []                      _\"_:\"\"             _}_: {}
 
 
 
-;; ;; Kill & Mark things easily
-;; (use-package easy-kill-extras
-;;   :ensure t
-;;   :bind (([remap kill-ring-save] . easy-kill)
-;; 	 ([remap mark-sexp] . easy-mark-sexp)
-;; 	 ([remap mark-word] . easy-mark-word)
+;; Kill & Mark things easily
+(use-package easy-kill-extras
+  :ensure t
+  :disabled t
+  :bind (([remap kill-ring-save] . easy-kill)
+	 ([remap mark-sexp] . easy-mark-sexp)
+	 ([remap mark-word] . easy-mark-word)
 
-;; 	 ;; Integrate `zap-to-char'
-;; 	 ([remap zap-to-char] . easy-mark-to-char)
-;; 	 ([remap zap-up-to-char] . easy-mark-up-to-char)
+	 ;; Integrate `zap-to-char'
+	 ([remap zap-to-char] . easy-mark-to-char)
+	 ([remap zap-up-to-char] . easy-mark-up-to-char)
 
-;; 	 ;; Integrate `expand-region'
-;; 	 :map easy-kill-base-map
-;; 	 ("o" . easy-kill-er-expand)
-;; 	 ("i" . easy-kill-er-unexpand))
-;;   :init
-;;   (setq easy-kill-alist '((?w word           " ")
-;; 			  (?s sexp           "\n")
-;; 			  (?l list           "\n")
-;; 			  (?f filename       "\n")
-;; 			  (?d defun          "\n\n")
-;; 			  (?D defun-name     " ")
-;; 			  (?e line           "\n")
-;; 			  (?b buffer-file-name)
+	 ;; Integrate `expand-region'
+	 :map easy-kill-base-map
+	 ("o" . easy-kill-er-expand)
+	 ("i" . easy-kill-er-unexpand))
+  :init
+  (setq easy-kill-alist '((?w word           " ")
+			  (?s sexp           "\n")
+			  (?l list           "\n")
+			  (?f filename       "\n")
+			  (?d defun          "\n\n")
+			  (?D defun-name     " ")
+			  (?e line           "\n")
+			  (?b buffer-file-name)
 
-;; 			  (?^ backward-line-edge "")
-;; 			  (?$ forward-line-edge "")
-;; 			  (?h buffer "")
-;; 			  (?< buffer-before-point "")
-;; 			  (?> buffer-after-point "")
-;; 			  (?f string-to-char-forward "")
-;; 			  (?F string-up-to-char-forward "")
-;; 			  (?t string-to-char-backward "")
-;; 			  (?T string-up-to-char-backward ""))))
+			  (?^ backward-line-edge "")
+			  (?$ forward-line-edge "")
+			  (?h buffer "")
+			  (?< buffer-before-point "")
+			  (?> buffer-after-point "")
+			  (?f string-to-char-forward "")
+			  (?F string-up-to-char-forward "")
+			  (?t string-to-char-backward "")
+			  (?T string-up-to-char-backward ""))))
 
 (use-package hungry-delete
   :ensure t
@@ -388,6 +387,7 @@ _]_: []                      _\"_:\"\"             _}_: {}
 (use-package key-chord
   :ensure t
   :disabled t
+  :defer t
   :config
   (key-chord-mode t)
   ;; (key-chord-define-global "jj"     'avy-goto-word-1)
@@ -497,6 +497,7 @@ _]_: []                      _\"_:\"\"             _}_: {}
 
 (use-package langtool
   :ensure t
+  :disabled t
   :defer t
   :init
   (setq langtool-java-classpath

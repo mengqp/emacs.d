@@ -37,11 +37,9 @@
   :diminish projectile-mode
   :defer t
   :hook (after-init . projectile-mode)
-  :config
+  :init
   (setq projectile-completion-system 'ivy)
   (setq projectile-indexing-method 'hybrid)
-  (projectile-mode t)
-
   )
 
 (use-package counsel-projectile

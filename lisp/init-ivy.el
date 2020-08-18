@@ -33,11 +33,12 @@
 ;;
 ;;; Code:
 
-;; (use-package smex
-;;   :ensure t
-;;  ;; :config
-;;   ;; (global-set-key (kbd "M-x") 'smex)
-;;   )
+(use-package smex
+  :defer t
+  :ensure t
+ ;; :config
+  ;; (global-set-key (kbd "M-x") 'smex)
+  )
 
 (use-package counsel
   :ensure t
