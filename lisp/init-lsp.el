@@ -159,8 +159,8 @@
   :defer t
   ;; :disabled t
   ;; :commands lsp-ccls-enable
-  ;; :hook ((c-mode c++-mode objc-mode) .
-  ;;        (lambda () (require 'ccls) (lsp)))
+  :hook ((c-mode c++-mode objc-mode) .
+         (lambda () (require 'ccls) (lsp)))
   ;; :hook ((c-mode c++-mode objc-mode) .
   ;;        (lambda () (require 'nox) (nox-ensure)))
   ;; :init
@@ -257,6 +257,7 @@
 
 (use-package lsp-pyright
   :ensure t
+  :defer t
   :hook (python-mode . (lambda ()
                          (require 'lsp-pyright)
                          (lsp))))  ; or lsp-deferred

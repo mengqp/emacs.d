@@ -86,10 +86,10 @@
   (require 'init-hydra)
 
   ;; (when *linux*
-    ;; (require 'init-abbrev)
-    ;; (require 'init-spell)
-    ;;(require 'init-dap)
-    ;; )
+  ;; (require 'init-abbrev)
+  ;; (require 'init-spell)
+  ;;(require 'init-dap)
+  ;; )
   (require 'init-im)
 
   ;;tool
@@ -137,8 +137,6 @@
     (require 'init-ahk)
     )
   ;; (require 'init-w3m)
-
-
   )
 
 (setq custom-file
