@@ -86,15 +86,15 @@
   ;; To disable shortcut "jump" indicators for each section, set
   (setq dashboard-show-shortcuts t)
   (setq dashboard-set-init-info t)
-  (setq dashboard-items nil)
+  ;; (setq dashboard-items nil)
   (setq dashboard-set-footer nil)
-  :config
-  ;; (dashboard-setup-startup-hook)
-  ;; Set the title
-  ;; (defun dashboard-insert-custom (list-size)
-  ;;   (insert "Custom text"))
-  ;; (add-to-list 'dashboard-item-generators  '(custom . dashboard-insert-custom))
-  ;; (add-to-list 'dashboard-items '(custom) t)
+  (setq dashboard-items '((recents  . 5)
+                        (bookmarks . 5)
+                        (projects . 5)
+                        ;; (agenda . 5)
+                        (registers . 5)
+			)
+	)
   )
 
 (progn

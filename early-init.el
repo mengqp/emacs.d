@@ -44,6 +44,7 @@
 ;; initialization, so we must prevent Emacs from doing it early!
 (setq package-enable-at-startup nil)
 (advice-add #'package--ensure-init-file :override #'ignore)
+;; (when (< emacs-major-version 27) (package-initialize))
 
 ;; Inhibit resizing frame
 (setq frame-inhibit-implied-resize t); (scroll-bar-mode -1)

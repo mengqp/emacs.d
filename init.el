@@ -67,7 +67,7 @@
 
   (use-package benchmark-init
     :ensure t
-    ;; :disabled t
+    :disabled t
     :config
     ;; To disable collection of benchmark data after init is done.
     (add-hook 'after-init-hook 'benchmark-init/activate))
@@ -142,6 +142,13 @@
 (setq custom-file
       (expand-file-name "custom.el" user-emacs-directory)
       )
+
+;; enable just-in-time native compilation
+;; (setq comp-deferred-compilation nil)
+
+;; native-compile all Elisp files under a directory
+;; (native-compile-async "~/.emacs.d/elpa/" 'recursively)
+;; (native-compile-async "~/.emacs.d/site-lisp/" 'recursively)
 
 
 ;; (when *win64*

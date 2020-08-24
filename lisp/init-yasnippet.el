@@ -37,9 +37,7 @@
 (use-package yasnippet
   :ensure t
   :defer t
-  :hook ((org-mode shell-script-mode prog-mode text-mode) . yas-minor-mode)
-  ;; :bind
-  ;; ;; ( "M-j" . 'yas-expand)
+  :hook ((org-mode shell-script-mode prog-mode) . yas-minor-mode)
   :commands (yasnippet yas-reload-all)
   :commands (yasnippet yas-expand)
   :commands (yasnippet yas-next-field)
@@ -69,7 +67,6 @@
 (use-package ivy-yasnippet
   :ensure t
   :defer t
-  :commands (ivy-yasnippet ivy-yasnippet)
   :bind (
 	 ("C-c C-y" . ivy-yasnippet)
 	 )

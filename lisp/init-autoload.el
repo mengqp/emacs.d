@@ -72,7 +72,6 @@
 (autoload 'switch-window-then-split-right "switch-window" "" t)
 (autoload 'switch-window-then-delete "switch-window" "" t)
 (autoload 'ivy-yasnippet "ivy-yasnippet" "" t)
-(autoload 'ivy-yasnippet "ivy-yasnippet" "" t)
 (autoload 'avy-goto-char "avy" "" t)
 (autoload 'avy-goto-char-2 "avy" "" t)
 (autoload 'avy-goto-word-1 "avy" "" t)
