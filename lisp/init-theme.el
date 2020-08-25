@@ -32,18 +32,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(use-package tao-theme
-  :ensure t
-  :disabled t
-  :defer t
-  :init
-  (add-hook 'after-init-hook
-	    (lambda ()
-	      (load-theme 'tao-yin t)
-	      ;; (load-theme 'tao-yang t)
-	      ))
-  )
-
 (use-package lazycat-theme
   ;; :ensure t
   :disabled t
@@ -116,33 +104,6 @@
   (setq modus-vivendi-theme-scale-3 1.15)
   (setq modus-vivendi-theme-scale-4 1.2)
   )
-
-;; ;; (load-theme 'wombat t)
-(use-package doom-themes
-  :disabled t
-  :ensure t
-  :config
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-	doom-themes-enable-italic t) ; if nil, italics is universally disabled
-
-  ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
-  ;; may have their own settings.
-  ;; (load-theme 'doom-one t)
-  ;; (load-theme 'doom-molokai t)
-  (load-theme 'doom-nova t)
-
-  ;; Enable flashing mode-line on errors
-  ;; (doom-themes-visual-bell-config)
-
-  ;; Enable custom neotree theme
-  ;; (doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
-
-  ;; Corrects (and improves) org-mode's native fontification.
-  ;; (doom-themes-org-config)
-
-  )
-
 
 (provide 'init-theme)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

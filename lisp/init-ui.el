@@ -44,57 +44,12 @@
   ;; Show a marker in the left fringe for lines not in the buffer
   (setq indicate-empty-lines t)
 
-  ;; ;; NO tool bar
-  ;; (if (fboundp 'tool-bar-mode)
-  ;;     (tool-bar-mode -1))
-  ;; ;; no scroll bar
-  ;; (if (fboundp 'set-scroll-bar-mode)
-  ;;     (set-scroll-bar-mode nil))
-  ;; ;; no menu bar
-  ;; (if (fboundp 'menu-bar-mode)
-  ;;     (menu-bar-mode -1))
-
-  ;; ;; 关闭 Tooltip
-  ;; (tooltip-mode t)
   ;; 平滑滚动
   (pixel-scroll-mode t)
   ;;当前行高亮
   (global-hl-line-mode 1)
   ;;指针不要闪
   (blink-cursor-mode -1)
-  )
-
-;; Or if you use use-package
-(use-package dashboard
-  :ensure t
-  :defer t
-  :disabled t
-  :hook (after-init . dashboard-setup-startup-hook)
-  :init
-  (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
-  ;; Set the banner
-  (setq dashboard-startup-banner 1)
-  ;; Value can be
-  ;; 'official which displays the official emacs logo
-  ;; 'logo which displays an alternative emacs logo
-  ;; 1, 2 or 3 which displays one of the text banners
-  ;; "path/to/your/image.png" which displays whatever image you would prefer
-
-  ;; Content is not centered by default. To center, set
-  (setq dashboard-center-content t)
-
-  ;; To disable shortcut "jump" indicators for each section, set
-  (setq dashboard-show-shortcuts t)
-  (setq dashboard-set-init-info t)
-  ;; (setq dashboard-items nil)
-  (setq dashboard-set-footer nil)
-  (setq dashboard-items '((recents  . 5)
-                        (bookmarks . 5)
-                        (projects . 5)
-                        ;; (agenda . 5)
-                        (registers . 5)
-			)
-	)
   )
 
 (progn
@@ -118,12 +73,10 @@
 ;;   )
 
 (use-package awesome-tab
-  ;; :defer 3
+  :defer t
   :disabled t
   :bind*
   (
-   ;; ("M-t t" . awesome-tab-ace-jump)
-   ;; ("M-j t" . awesome-tab-ace-jump)
    ("M-t t" . awesome-fast-switch/body)
    )
   :hook
@@ -169,77 +122,6 @@
   ;; (setq awesome-tab-display-sticky-function-name t )
   )
 
-(use-package centaur-tabs
-  :ensure t
-  :disabled t
-  :hook
-  (org-agenda-mode . centaur-tabs-local-mode)
-  (helpful-mode . centaur-tabs-local-mode)
-  ;; (prog-mode . centaur-tabs-mode)
-  (snails-mode . centaur-tabs-local-mode)
-  (fundamental-mode . centaur-tabs-local-mode)
-  (calendar-mode . centaur-tabs-local-mode)
-  (org-agenda-mode . centaur-tabs-local-mode)
-  :bind
-  ("C-<prior>" . centaur-tabs-backward)
-  ("C-<next>" . centaur-tabs-forward)
-  ("C-c t s" . centaur-tabs-counsel-switch-group)
-  ("C-c t p" . centaur-tabs-group-by-projectile-project)
-  ("C-c t g" . centaur-tabs-group-buffer-groups)
-  (:map evil-normal-state-map
-	("g t" . centaur-tabs-forward)
-	("g T" . centaur-tabs-backward))
-  ;; :disabled t
-  ;; :load-path "~/.emacs.d/other/centaur-tabs"
-  :config
-  (setq centaur-tabs-style "bar")
-  (setq centaur-tabs-height 8)
-  (setq centaur-tabs-set-icons t)
-  (setq centaur-tabs-set-bar 'over)
-  (setq centaur-tabs-set-modified-marker nil)
-  (setq centaur-tabs-set-close-button nil)
-  (centaur-tabs-group-by-projectile-project)
-  (centaur-tabs-headline-match)
-  (centaur-tabs-mode t)
-  (defun centaur-tabs-buffer-groups ()
-    "`centaur-tabs-buffer-groups' control buffers' group rules.
-
- Group centaur-tabs with mode if buffer is derived from `eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
- All buffer name start with * will group to \"Emacs\".
- Other buffer group by `centaur-tabs-get-group-name' with project name."
-    (list
-     (cond
-      ((or (string-equal "*" (substring (buffer-name) 0 1))
-	   (memq major-mode '(magit-process-mode
-			      magit-status-mode
-			      magit-diff-mode
-			      magit-log-mode
-			      magit-file-mode
-			      magit-blob-mode
-			      magit-blame-mode
-			      )))
-       "Emacs")
-      ((derived-mode-p 'prog-mode)
-       "Editing")
-      ((derived-mode-p 'dired-mode) "Dired")
-      ((memq major-mode '(helpful-mode
-			  help-mode))
-       "Help")
-      ((memq major-mode '(org-mode
-			  org-agenda-clockreport-mode
-			  org-src-mode
-			  org-agenda-mode
-			  org-beamer-mode
-			  org-indent-mode
-			  org-bullets-mode
-			  org-cdlatex-mode
-			  org-agenda-log-mode
-			  diary-mode))
-       "OrgMode")
-      (t
-       (centaur-tabs-get-group-name (current-buffer))))))
-  )
-
 (use-package all-the-icons
   :ensure t
   :defer t
@@ -270,12 +152,8 @@
 
 (use-package hl-todo
   :ensure t
-  ;; global hook activates hl-todo-mode for prog-mode, text-mode
-  ;; mode can be explicitly defined using hl-todo-activate-in-modes variable
+  :defer t
   :hook (after-init . global-hl-todo-mode))
-
-
-
 
 (provide 'init-ui)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

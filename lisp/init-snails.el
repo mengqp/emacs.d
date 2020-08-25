@@ -52,7 +52,7 @@
     :if (featurep 'cocoa) :defer t)
 
   (setq snails-default-backends
-	'(snails-backend-fasd snails-backend-awesome-tab-group snails-backend-buffer snails-backend-recentf snails-backend-directory-files snails-backend-bookmark)
+	'(snails-backend-buffer snails-backend-recentf)
 	)
   (setq snails-prefix-backends
 	'((">" '(snails-backend-command))

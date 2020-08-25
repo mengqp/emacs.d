@@ -224,34 +224,34 @@
     (smartparens-strict-mode t)
 
 
-        (defhydra init-sp-menu (:color pink
+    (defhydra init-sp-menu (:color pink
 				   :hint nil)
-          "
+      "
     ^wrap^                        ^unwrap^            ^func^
     ^^^^^^^^-----------------------------------------------------------------
     _r_: sp-rewrap-sexp          _u_: sp-unwrap-sexp   _<left>_: ()i->(i)
     _)_: ()                      _'_: '                _<right>_: (i)->()
     _]_: []                      _\"_:\"\"             _}_: {}
     "
-          ("r" sp-rewrap-sexp)
-          (")" sp-wrap-round)
-          ("]" sp-wrap-square)
-          ("}" sp-wrap-curly)
-          ("'" wrap-with-single-quotes)
-          ("\"" wrap-with-double-quotes)
+      ("r" sp-rewrap-sexp)
+      (")" sp-wrap-round)
+      ("]" sp-wrap-square)
+      ("}" sp-wrap-curly)
+      ("'" wrap-with-single-quotes)
+      ("\"" wrap-with-double-quotes)
 
-          ("u" sp-unwrap-sexp)
-          ("[" sp-backward-unwrap-sexp)
-          ("<right>" sp-forward-barf-sexp)
-          ("<left>" sp-forward-slurp-sexp)
+      ("u" sp-unwrap-sexp)
+      ("[" sp-backward-unwrap-sexp)
+      ("<right>" sp-forward-barf-sexp)
+      ("<left>" sp-forward-slurp-sexp)
 
-          ("q" nil "quit")
-          )
+      ("q" nil "quit")
+      )
 
-        (defun init-sp-menu-func ()
-          (interactive)
-          (init-sp-menu)
-          )
+    (defun init-sp-menu-func ()
+      (interactive)
+      (init-sp-menu)
+      )
 
     )
   ;; Automatic parenthesis pairing
@@ -484,26 +484,6 @@
 	("C-/" . undo-fu-only-undo)
 	("C-?" . undo-fu-only-redo)
 	)
-  )
-
-(use-package separedit
-  :ensure t
-  :disabled t
-  :defer t
-  :hook
-  (prog-mode . separedit-mode )
-  :bind
-  (("C-c '" . #'separedit))
-  )
-
-(use-package langtool
-  :ensure t
-  :disabled t
-  :defer t
-  :init
-  (setq langtool-java-classpath
-	"/usr/share/languagetool:/usr/share/java/languagetool/*")
-  ;; (setq langtool-language-tool-server-jar "/usr/share/java/languagetool/languagetool-server.jar")
   )
 
 (require 'init-color-rg)

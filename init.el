@@ -80,7 +80,7 @@
   (require 'init-cnfonts)
   (require 'init-layout)
   ;; (require 'init-dumb-jump)
-  (require 'init-hydra)
+  ;; (require 'init-hydra)
 
   ;; (when *linux*
   ;; (require 'init-abbrev)
@@ -99,7 +99,6 @@
   (require 'init-ace-jump)
   (require 'init-git)
   (require 'init-cmake)
-  ;; (require 'init-popwin)
   (require 'init-ivy)
   (require 'init-snails)
   (require 'init-browser)
@@ -113,7 +112,7 @@
     (require 'init-plantuml)
     ;; (require 'init-ycmd)
     (require 'init-gdb)
-    (require 'init-leecode)
+    ;; (require 'init-leecode)
 
     )
   (when *win64*
@@ -133,7 +132,6 @@
   (when *win64*
     (require 'init-ahk)
     )
-  ;; (require 'init-w3m)
   )
 
 (setq custom-file

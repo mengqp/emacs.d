@@ -36,10 +36,6 @@
   :ensure t
   :defer t
   :hook (after-init . eyebrowse-mode)
-  ;; :config
-  ;; (eyebrowse-mode t)
-  ;; (eyebrowse-setup-opinionated-keys)
-
   )
 
 (use-package workgroups2

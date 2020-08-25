@@ -379,6 +379,13 @@
    ";"  'evilnc-comment-or-uncomment-lines
    )
 
+  (general-define-key
+   :states '(normal motion)
+   :keymaps '(c++-mode-map c-mode-map)
+   :prefix ";"
+   "a" 'projectile-find-other-file
+   )
+
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
   ;; 本文件 侧重一些模块功能

@@ -90,28 +90,8 @@
   ;; Live Coding in Python
   (use-package live-py-mode
     :ensure t
-    ))
-
-
-
-;; (use-package lsp-python
-;;   :ensure t
-;;   :commands (lsp-python-enable)
-;;   :defer t
-;;   :init
-;;   (add-hook 'python-mode-hook #'lsp-python-enable)
-;;   :config
-
-;;   (general-define-key :states '(normal motion)
-;; 		      :keymaps '(python-mode-map)
-;; 		      :prefix ";"
-;; 		      "g" 'xref-find-definitions
-;; 		      "r" 'xref-find-references
-;; 		      "m" 'lsp-ui-imenu
-;; 		      )
-;;   )
-
-
+    )
+  )
 
 (provide 'init-python)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

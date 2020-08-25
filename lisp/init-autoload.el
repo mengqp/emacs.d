@@ -132,6 +132,7 @@
 (autoload 'iedit-mode "iedit" "" t)
 (autoload 'iedit-rectangle-mode "iedit-rect" "" t)
 (autoload 'evilmi-select-items "evil-matchit" "" t)
+(autoload 'recentf-track-opened-file "recentf" "" t)
 
 (provide 'init-autoload)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

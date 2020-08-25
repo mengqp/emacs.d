@@ -33,30 +33,6 @@
 ;;
 ;;; Code:
 
-
-;; (use-package google-c-style
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   (progn
-;; ;;; 定义 tab 和缩进
-;;     (defun mengqp/google-c-mode-hook ()
-;;       (setq c-basic-offset 4          ;; 基本缩进宽度
-;; 	    c-default-style "linux"
-;; 	    indent-tabs-mode nil       ;; 禁止空格替换 Tab
-;; 	    tab-width 4
-;; 	    ))     ;; 默认 Tab 宽度
-
-;;     (add-hook 'c-mode-common-hook 'google-set-c-style)
-;;     (add-hook 'c++-mode-common-hook 'google-set-c-style)
-;;     (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-;;     (add-hook 'c++-mode-common-hook 'google-make-newline-indent)
-;;     (add-hook 'c-mode-hook 'mengqp/google-c-mode-hook)
-;;     (add-hook 'c++-mode-hook 'mengqp/google-c-mode-hook)
-;;     )
-;;   )
-
-
 (use-package cc-mode
   :ensure nil
   :defer t
@@ -66,13 +42,6 @@
 			   (setq c-basic-offset 4)
 			   indent-tabs-mode nil       ;; 禁止空格替换 Tab
 			   ))
-  :config
-  (general-define-key :states '(normal motion)
-		    :keymaps '(c++-mode-map
-			       c-mode-map)
-		    :prefix ";"
-		    "a" 'projectile-find-other-file
-		    )
   )
 
 (use-package doxy-graph-mode
@@ -83,22 +52,6 @@
   (add-hook 'c++-mode-hook 'doxy-graph-mode)
   (add-hook 'python-mode-hook 'doxy-graph-mode)
   )
-
-
-
-
-
-;; (use-package dynamic-spaces
-;;   :ensure t
-;;   :init
-;;   (add-hook 'c-mode-common-hook 'dynamic-spaces-mode)
-;;   (add-hook 'c++-mode-common-hook 'dynamic-spaces-mode)
-;;   )
-
-
-
-
-
 
 (provide 'init-cc)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

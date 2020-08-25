@@ -55,8 +55,6 @@
   (setq require-final-newline t)
   ;; remember cursor position, for emacs 25.1 or later
   (save-place-mode 1)
-  ;; ;; 清除白块
-  ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
   ;; 以 y/n 代表 yes/no
   (fset 'yes-or-no-p 'y-or-n-p)
   )
@@ -96,7 +94,6 @@
 (use-package recentf
   ;; :ensure nil
   :defer t
-  :commands (recentf recentf-track-opened-file)
   :hook (find-file . (lambda () (unless recentf-mode
 				  (recentf-mode)
 				  (recentf-track-opened-file))))
@@ -220,28 +217,11 @@
   ;; pacman -S rustup
   ;; rustup install stable
   (use-package fuz
-    ;; :disabled t
     :defer t
     :config
     (unless (require 'fuz-core nil t)
       (fuz-build-and-load-dymod))
     )
-  )
-
-(use-package fasd
-  :disabled t
-  :ensure t
-  :defer t)
-
-(use-package english-teacher
-  :disabled t
-  :defer t
-  :hook ((Info-mode
-          elfeed-show-mode
-          eww-mode
-          Man-mode
-          Woman-Mode
-	  ) . english-teacher-follow-mode)
   )
 
 (provide 'init-base)
