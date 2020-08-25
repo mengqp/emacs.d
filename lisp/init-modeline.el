@@ -33,15 +33,6 @@
 ;;
 ;;; Code:
 
-(use-package moody
-  :disabled t
-  :ensure t
-  :config
-  (setq x-underline-at-descent-line t)
-  (moody-replace-mode-line-buffer-identification)
-  (moody-replace-vc-mode))
-
-
 (use-package awesome-tray
   :disabled t
   :defer t
@@ -53,8 +44,6 @@
   (setq awesome-tray-active-modules '("buffer-name" "location" "git" "mode-name" ))
   ;; (setq awesome-tray-active-modules '("location" "git" "mode-name" ))
   )
-
-
 
 (use-package doom-modeline
   ;; :disabled t
@@ -218,12 +207,6 @@
 
   )
 
-(use-package mini-modeline
-  :disabled t
-  :ensure t
-  :config
-  (mini-modeline-mode t)
-  )
 (provide 'init-modeline)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-modeline.el ends here

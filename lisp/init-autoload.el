@@ -64,6 +64,7 @@
 (autoload 'color-rg-search-symbol "color-rg" "" t)
 (autoload 'xref-find-definitions "xref" "" t)
 (autoload 'pyim-convert-string-at-point "pyim" "" t)
+(autoload 'pyim-restart-1 "pyim" "" t)
 (autoload 'sis-switch "sis" "" t)
 (autoload 'company-complete "company" "" t)
 (autoload 'switch-window "switch-window" "" t)

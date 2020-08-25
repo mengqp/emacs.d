@@ -45,17 +45,12 @@
 ;;; Code:
 (use-package pyim
   :ensure t
-  :disabled t
-  :commands (pyim pyim-restart-1)
+  :defer t
   :bind*
   (
    ("M-i i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
    ("M-i M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
-   ;; ("C-;" . pyim-delete-word-from-personal-buffer))
-   ;; ("C-;" . pyim-convert-code-at-point )
    )
-
-  :defer t
   :init
   (setq pyim-title "pyim")
   :config
@@ -123,7 +118,7 @@
 
 (use-package rime
   :ensure t
-  ;; :disabled t
+  :disabled t
   :commands (init-im rime-toggle-or-inline-ascii)
   :bind*
   (
