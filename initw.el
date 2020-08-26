@@ -36,5 +36,6 @@
 (require 'init-cnfonts)
 
 
+(provide 'initw)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; initw.el ends here

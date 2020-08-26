@@ -78,28 +78,6 @@ But you may use safer HTTPS instead.")
 ;;------------------------------------------------------------------------------
 ;; (package-initialize)
 
-(require-package 'use-package)
-;; (use-package general
-;;   :ensure t)
-(use-package diminish
-  :ensure t)
-
-;; (use-package use-package-chords
-;;   :ensure t
-;;   :config (key-chord-mode 1))
-(use-package dash-functional
-  :ensure t
-  :defer t
-  )
-(use-package ht
-  :ensure t
-  :defer t
-  )
-(use-package spinner
-  :ensure t
-  :defer t
-  )
-
 
 (provide 'init-package)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

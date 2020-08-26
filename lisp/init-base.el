@@ -59,6 +59,29 @@
   (fset 'yes-or-no-p 'y-or-n-p)
   )
 
+(require-package 'use-package)
+;; (use-package general
+;;   :ensure t)
+(use-package diminish
+  :ensure t)
+
+;; (use-package use-package-chords
+;;   :ensure t
+;;   :config (key-chord-mode 1))
+(use-package dash-functional
+  :ensure t
+  :defer t
+  )
+(use-package ht
+  :ensure t
+  :defer t
+  )
+(use-package spinner
+  :ensure t
+  :defer t
+  )
+
+
 ;; 空格
 (use-package pangu-spacing
   :ensure t
