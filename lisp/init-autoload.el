@@ -133,6 +133,15 @@
 (autoload 'iedit-rectangle-mode "iedit-rect" "" t)
 (autoload 'evilmi-select-items "evil-matchit" "" t)
 (autoload 'recentf-track-opened-file "recentf" "" t)
+;; (autoload 'awesome-pair-mode "awesome-pair" "" t)
+(autoload 'awesome-pair-wrap-bracke               "awesome-pair" "" t)
+(autoload 'awesome-pair-wrap-curly                "awesome-pair" "" t)
+(autoload 'awesome-pair-wrap-round                "awesome-pair" "" t)
+(autoload 'awesome-pair-unwrap                    "awesome-pair" "" t)
+(autoload 'awesome-pair-jump-left                 "awesome-pair" "" t)
+(autoload 'awesome-pair-jump-right                "awesome-pair" "" t)
+(autoload 'awesome-pair-jump-out-pair-and-newline "awesome-pair" "" t)
+(autoload 'awesome-pair-kill                      "awesome-pair" "" t)
 
 (provide 'init-autoload)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

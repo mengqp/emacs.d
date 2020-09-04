@@ -178,6 +178,7 @@
 ;;   )
 
 (when *linux*
+
   (use-package format-all
     :ensure t
     :defer t
@@ -254,6 +255,7 @@
       )
 
     )
+
   ;; Automatic parenthesis pairing
   (use-package elec-pair
     :ensure nil
@@ -263,74 +265,24 @@
     :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
 
   (use-package awesome-pair
-    :disabled t
+    ;; :disabled nil
+    ;; :load-path "/home/mengqp/.emacs.d/site-lisp/awesome-pair/awesome-pair.el"
     :defer t
-    :init
-    (add-hook 'prog-mode-hook '(lambda () (awesome-pair-mode 1)))
-    :config
-    (define-key awesome-pair-mode-map (kbd "(") 'awesome-pair-open-round)
-    (define-key awesome-pair-mode-map (kbd "[") 'awesome-pair-open-bracket)
-    (define-key awesome-pair-mode-map (kbd "{") 'awesome-pair-open-curly)
-    (define-key awesome-pair-mode-map (kbd ")") 'awesome-pair-close-round)
-    (define-key awesome-pair-mode-map (kbd "]") 'awesome-pair-close-bracket)
-    (define-key awesome-pair-mode-map (kbd "}") 'awesome-pair-close-curly)
-    (define-key awesome-pair-mode-map (kbd "\"") 'awesome-pair-double-quote)
-
-    (define-key awesome-pair-mode-map (kbd "%") 'awesome-pair-match-paren)
-
-    ;; (define-key awesome-pair-mode-map (kbd "M-o") 'awesome-pair-backward-delete)
-    ;; (define-key awesome-pair-mode-map (kbd "C-k") 'awesome-pair-kill)
-
-    (define-key awesome-pair-mode-map (kbd "M-\"") 'awesome-pair-wrap-double-quote)
-    (define-key awesome-pair-mode-map (kbd "M-[") 'awesome-pair-wrap-bracket)
-    (define-key awesome-pair-mode-map (kbd "M-{") 'awesome-pair-wrap-curly)
-    (define-key awesome-pair-mode-map (kbd "M-(") 'awesome-pair-wrap-round)
-    (define-key awesome-pair-mode-map (kbd "M-)") 'awesome-pair-unwrap)
-
-    ;; (define-key awesome-pair-mode-map (kbd "M-p") 'awesome-pair-jump-left)
-    ;; (define-key awesome-pair-mode-map (kbd "M-n") 'awesome-pair-jump-right)
-    ;; (define-key awesome-pair-mode-map (kbd "M-:") 'awesome-pair-jump-out-pair-and-newline)
-
+    ;; :hook (after-init . awesome-pair-mode)
+    ;; :bind
+    ;; (:map awesome-pair-mode-map
+    ;; 	  ("(" .  awesome-pair-open-round)
+    ;; 	  ("[" .  awesome-pair-open-bracket)
+    ;; 	  ("{" .  awesome-pair-open-curly)
+    ;; 	  (")" .  awesome-pair-close-round)
+    ;; 	  ("]" .  awesome-pair-close-bracket)
+    ;; 	  ("}" .  awesome-pair-close-curly)
+    ;; 	  ("\"" . awesome-pair-double-quote)
+    ;; 	  ("%" . awesome-pair-match-paren)
+    ;; 	  ("C-k" . awesome-pair-kill)
+    ;;  )
     )
   )
-
-
-
-;; Kill & Mark things easily
-(use-package easy-kill-extras
-  :ensure t
-  :disabled t
-  :bind (([remap kill-ring-save] . easy-kill)
-	 ([remap mark-sexp] . easy-mark-sexp)
-	 ([remap mark-word] . easy-mark-word)
-
-	 ;; Integrate `zap-to-char'
-	 ([remap zap-to-char] . easy-mark-to-char)
-	 ([remap zap-up-to-char] . easy-mark-up-to-char)
-
-	 ;; Integrate `expand-region'
-	 :map easy-kill-base-map
-	 ("o" . easy-kill-er-expand)
-	 ("i" . easy-kill-er-unexpand))
-  :init
-  (setq easy-kill-alist '((?w word           " ")
-			  (?s sexp           "\n")
-			  (?l list           "\n")
-			  (?f filename       "\n")
-			  (?d defun          "\n\n")
-			  (?D defun-name     " ")
-			  (?e line           "\n")
-			  (?b buffer-file-name)
-
-			  (?^ backward-line-edge "")
-			  (?$ forward-line-edge "")
-			  (?h buffer "")
-			  (?< buffer-before-point "")
-			  (?> buffer-after-point "")
-			  (?f string-to-char-forward "")
-			  (?F string-up-to-char-forward "")
-			  (?t string-to-char-backward "")
-			  (?T string-up-to-char-backward ""))))
 
 (use-package hungry-delete
   :ensure t
@@ -360,30 +312,6 @@
   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
   )
 
-
-
-;; (use-package crux
-;;   :ensure t
-;;   :defer t
-;;   :bind
-;;   (
-;;    ("C-k" . crux-smart-kill-line)
-;;    ("S-<return>" . crux-smart-open-line-above)
-;;    ("M-RET" . crux-smart-open-line)
-;;    ;; ("C-c d" . crux-duplicate-current-line-or-region)
-;;    ("C-M-z" . crux-indent-defun)
-;;    ("C-^" . crux-top-join-line)
-;;    )
-;;   :chords
-;;   (
-;;    ;; ("JJ" . crux-switch-to-previous-buffer)
-;;    ;; ("dd" . crux-kill-whole-line)
-;;    ;; ("cl" . crux-duplicate-current-line-or-region)
-;;    ;; ("cd" . crux-duplicate-and-comment-current-line-or-region)
-;;    )
-;;   )
-
-
 (use-package key-chord
   :ensure t
   :disabled t
@@ -396,16 +324,6 @@
   ;; (key-chord-define-global "f." 'find-file-at-point)
 
   )
-
-;; (use-package electric-operator
-;;   :ensure t
-;;   :commands  (electric-operator electric-operator-mode )
-;;   :defer t
-;;   :hook (prog-mode. electric-operator-mode)
-;;   :config
-;;   (electric-operator-add-rules-for-mode 'lisp-mode
-;; 					(cons "-" nil))
-;;   )
 
 (use-package symbol-overlay
   :ensure t
@@ -423,43 +341,6 @@
   :hook((cc-mode python-mode) . column-enforce-mode)
   :config
   (setq column-enforce-column 80)
-  )
-
-;; (use-package insert-translated-name
-;;   ;; :defer t
-;;   ;; :init
-;;   ;; :config
-;;   ;; (setq insert-translated-name-translate-engine "youdao")
-;;   )
-
-;; Show the current function name in the header line
-(use-package which-function-mode
-  :ensure nil
-  :disabled t
-  :defer t
-  :config
-  (require 'imenu)
-  ;; when editing js file, this feature is very useful
-  (setq-default header-line-format
-                '((which-func-mode ("" which-func-format " "))))
-
-  (setq-default mode-line-misc-info
-                (assq-delete-all 'which-function-mode mode-line-misc-info))
-  ;; (setq mode-line-format (delete (assoc 'which-function-mode
-  ;; 					mode-line-format) mode-line-format)
-  ;; 	which-func-header-line-format '(which-func-mode ("" which-func-format)))
-
-  ;; (defadvice which-func-ff-hook (after header-line activate)
-  ;;   (when which-func-mode
-  ;;     (setq mode-line-format (delete (assoc 'which-func-mode
-  ;; 					    mode-line-format) mode-line-format)
-  ;; 	    header-line-format which-func-header-line-format)))
-  ;; (setq-default header-line-format
-  ;; 		'((which-func-mode ("" which-func-format " "))))
-  ;; (setq mode-line-misc-info
-  ;; 	;; We remove Which Function Mode from the mode line, because it's mostly
-  ;; 	;; invisible here anyway.
-  ;; 	(assq-delete-all 'which-func-mode mode-line-misc-info))
   )
 
 (use-package auto-sudoedit

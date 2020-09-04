@@ -138,6 +138,15 @@
   (set-face-foreground 'rainbow-delimiters-depth-2-face "cyan")
   )
 
+(use-package highlight-indent-guides
+  :ensure t
+  :disabled t
+  :defer t
+  :hook(prog-mode . highlight-indent-guides-mode)
+  :init
+  (setq highlight-indent-guides-method 'character)
+  )
+
 (use-package highlight-parentheses
   :ensure t
   :hook
