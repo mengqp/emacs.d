@@ -116,9 +116,6 @@
     ;; (require 'init-leecode)
 
     )
-  (when *win64*
-    (require 'init-counsel-etags)
-    )
   ;; (require 'init-cscope)
 
   ;;
@@ -130,9 +127,6 @@
   (require 'init-markdown)
   (require 'init-web)
   (require 'init-php)
-  (when *win64*
-    (require 'init-ahk)
-    )
 
   )
 
