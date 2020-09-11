@@ -129,7 +129,7 @@
 
 ;; 括号
 (use-package rainbow-delimiters
-  :disabled t
+  ;; :disabled t
   :ensure t
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)

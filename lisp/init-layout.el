@@ -41,6 +41,7 @@
 (use-package workgroups2
   :ensure t
   :disabled t
+  :defer t
   :hook
   (after-init . workgroups-mode)
   :init

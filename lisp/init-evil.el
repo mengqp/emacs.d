@@ -91,6 +91,7 @@
   :hook (evil-mode . global-evil-matchit-mode)
   :init
   (defvar evilmi-ignore-comments nil)
+  (setq evilmi-shortcut "m")
   )
 
 (use-package evil-escape

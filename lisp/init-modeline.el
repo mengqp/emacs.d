@@ -49,7 +49,7 @@
   ;; :disabled t
   :ensure t
   :defer t
-  :hook (after-init . doom-modeline-mode)
+  :hook (window-setup . doom-modeline-mode)
   :init
   ;; How tall the mode-line should be. It's only respected in GUI.
   ;; If the actual char height is larger, it respects the actual height.

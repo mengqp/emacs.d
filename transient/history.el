@@ -10,6 +10,7 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
+  (("--" "tpcbackup/update.ini"))
   ("-n256" "--graph" "--decorate")
   (("--" "02src/01v2/CommLine.cpp"))
   (("--" "em760/SRCC/SerialPort.cpp"))

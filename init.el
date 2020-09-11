@@ -48,6 +48,8 @@
 
 (update-load-path)
 
+(require 'init-benchmarking)
+
 
 ;; @see https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
 ;; Normally file-name-handler-alist is set to
@@ -63,12 +65,12 @@
   (require 'cl-lib)
   (require 'init-package)
 
-  (use-package benchmark-init
-    :ensure t
-    :disabled t
-    :config
-    ;; To disable collection of benchmark data after init is done.
-    (add-hook 'after-init-hook 'benchmark-init/activate))
+  ;; (use-package benchmark-init
+  ;;   :ensure t
+  ;;   :disabled t
+  ;;   :config
+  ;;   ;; To disable collection of benchmark data after init is done.
+  ;;   (add-hook 'after-init-hook 'benchmark-init/activate))
 
   ;;ui
   (require 'init-base)
@@ -106,16 +108,14 @@
   (require 'init-func)
   (require 'init-keymap)
 
-  (when *linux*
-    (require 'init-lsp)
-    (require 'init-shell)
+  (require 'init-lsp)
+  ;; (require 'init-shell)
 
-    (require 'init-plantuml)
-    ;; (require 'init-ycmd)
-    (require 'init-gdb)
-    ;; (require 'init-leecode)
+  (require 'init-plantuml)
+  ;; (require 'init-ycmd)
+  (require 'init-gdb)
+  ;; (require 'init-leecode)
 
-    )
   ;; (require 'init-cscope)
 
   ;;

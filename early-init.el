@@ -77,5 +77,6 @@
 (advice-add #'x-apply-session-resources :override #'ignore);        (recentf-mode 1))))
 
 
+(provide 'early-init)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; early-init.el ends here

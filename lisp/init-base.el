@@ -34,7 +34,7 @@
 ;;; Code:
 (progn
   (setq make-backup-files nil)
-  (setq auto-save-default -1)
+  (setq auto-save-default nil)
   ;; backup in one place. flat, no tree structure
   (setq default-major-mode 'text-mode)    ;设置默认地主模式为TEXT模式
   (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
@@ -121,8 +121,8 @@
 				  (recentf-mode)
 				  (recentf-track-opened-file))))
   :init
-  (setq recentf-max-saved-items 200)
-  (setq recentf-auto-cleanup 'never)
+  (setq recentf-max-saved-items 100)
+  ;; (setq recentf-auto-cleanup 'never)
   (setq recentf-max-menu-items 15)
 
   :config
