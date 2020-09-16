@@ -166,29 +166,11 @@
    )
   )
 
-;; (use-package visual-regexp
-;;   :ensure t
-;;   )
-
-;; (use-package superword-mode
-;;   :defer t
-;;   :diminish superword-mode
-;;   ;; :init
-;;   ;; (add-hook 'prog-mode-hook #'superword-mode)
-;;   )
-
 (when *linux*
 
   (use-package format-all
     :ensure t
     :defer t
-    :bind*
-    (
-     ("M-i ff" . format-all-buffer)
-     )
-    :defer t
-    ;; :init
-    ;; (add-hook 'prog-mode-hook #'format-all-mode )
     )
 
   (use-package lazy-search
@@ -312,26 +294,9 @@
   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
   )
 
-(use-package key-chord
-  :ensure t
-  :disabled t
-  :defer t
-  :config
-  (key-chord-mode t)
-  ;; (key-chord-define-global "jj"     'avy-goto-word-1)
-  ;; (key-chord-define-global "ji" 'imenu)
-  ;; (key-chord-define-global ";;" 'comment-dwim-2)
-  ;; (key-chord-define-global "f." 'find-file-at-point)
-
-  )
-
 (use-package symbol-overlay
   :ensure t
   :defer t
-  :bind(
-	("C-c h." . symbol-overlay-put)
-	("C-c hr" . symbol-overlay-remove-all)
-	)
   )
 
 (use-package column-enforce-mode
@@ -345,7 +310,7 @@
 
 (use-package auto-sudoedit
   :ensure t
-  :disabled t
+  ;; :disabled t
   :defer t
   :hook(after-init . auto-sudoedit-mode)
   )

@@ -96,8 +96,8 @@
     ;;    ("s c" lsp-ui-sideline-show-code-actions "code actions" :toggle t)
     ;;    ("s i" lsp-ui-sideline-ignore-duplicate "ignore duplicate" :toggle t))
     ;;   ))
-    :bind
-    (("C-c lu" . lsp-ui-hydra/body))
+    ;; :bind
+    ;; (("C-c lu" . lsp-ui-hydra/body))
     :init
     (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
     (setq lsp-ui-doc-enable t
@@ -106,6 +106,7 @@
 	  lsp-ui-doc-position 'top
 	  lsp-ui-doc-use-webkit nil
 	  lsp-ui-doc-border (face-foreground 'default)
+	  ;; lsp-ui-doc-position 'at-point
 
 	  lsp-ui-sideline-enable t
 	  lsp-ui-sideline-ignore-duplicate t
@@ -118,11 +119,12 @@
 	  lsp-ui-imenu-enable nil
 	  lsp-ui-imenu-kind-position 'left
 	  )
-
     )
 
   (use-package treemacs
+    :disabled t
     :ensure t
+    :defer t
     :config
     (use-package lsp-treemacs
       :ensure t

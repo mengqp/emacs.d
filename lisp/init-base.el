@@ -72,14 +72,14 @@
   :ensure t
   :defer t
   )
-(use-package ht
-  :ensure t
-  :defer t
-  )
-(use-package spinner
-  :ensure t
-  :defer t
-  )
+;; (use-package ht
+;;   :ensure t
+;;   :defer t
+;;   )
+;; (use-package spinner
+;;   :ensure t
+;;   :defer t
+;;   )
 
 
 ;; 空格
@@ -134,7 +134,7 @@
 
 (use-package savehist
   ;; :ensure nil
-  ;; :disabled t
+  :disabled t
   :defer t
   :hook (before-save . savehist-mode)
   :init
@@ -236,15 +236,12 @@
   :defer t
   )
 
-(when *linux*
-  ;; pacman -S rustup
-  ;; rustup install stable
-  (use-package fuz
-    :defer t
-    :config
-    (unless (require 'fuz-core nil t)
-      (fuz-build-and-load-dymod))
-    )
+(use-package fuz
+  :ensure t
+  :defer t
+  :config
+  (unless (require 'fuz-core nil t)
+    (fuz-build-and-load-dymod))
   )
 
 (provide 'init-base)

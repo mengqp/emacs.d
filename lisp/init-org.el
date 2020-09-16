@@ -75,12 +75,12 @@
   (require 'init-deft)
   ;; (require 'init-org-pomodoro)
   (require 'init-org-ui)
-  (require 'init-journal)
+  ;; (require 'init-journal)
   (require 'init-agenda)
-  (require 'init-org-brain)
-  (require 'init-tex)
-  (require 'init-ox-latex)
-  (require 'init-org-roam)
+  ;; (require 'init-org-brain)
+  ;; (require 'init-tex)
+  ;; (require 'init-ox-latex)
+  ;; (require 'init-org-roam)
 
   )
 

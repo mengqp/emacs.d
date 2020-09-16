@@ -1,17 +1,6 @@
 ;;; init.el --- Config for mengqp -*- coding: utf-8-unix -*-
 ;;; Commentary:
-
-;; Copyright (C) 2017-2018 by mengqp
-
-
 ;;; Code:
-;; don't GC during startup to save time
-;; (setq gc-cons-threshold most-positive-fixnum)
-;; (setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
-
-;; (setq gc-cons-threshold 402653184
-;;       gc-cons-percentage 0.6)
-
 ;;Speed up startup
 (defvar default-file-name-handler-alist file-name-handler-alist)
 (setq file-name-handler-alist nil)
@@ -48,7 +37,6 @@
 
 (update-load-path)
 
-(require 'init-benchmarking)
 
 
 ;; @see https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
@@ -58,19 +46,13 @@
 ;; ("\\`/:" . file-name-non-special))
 ;; Which means on every .el and .elc file loaded during start up, it has to runs those regexps against the filename.
 (let ((file-name-handler-alist nil))
+  (require 'init-benchmarking)
 
 
   (require 'init-const)
   (require 'init-autoload)
   (require 'cl-lib)
   (require 'init-package)
-
-  ;; (use-package benchmark-init
-  ;;   :ensure t
-  ;;   :disabled t
-  ;;   :config
-  ;;   ;; To disable collection of benchmark data after init is done.
-  ;;   (add-hook 'after-init-hook 'benchmark-init/activate))
 
   ;;ui
   (require 'init-base)
@@ -81,7 +63,7 @@
   (require 'init-modeline)
   (require 'init-theme)
   (require 'init-cnfonts)
-  (require 'init-layout)
+  ;; (require 'init-layout)
   ;; (require 'init-dumb-jump)
   ;; (require 'init-hydra)
 
@@ -93,7 +75,7 @@
   (require 'init-im)
 
   ;;tool
-  (require 'init-calendar)
+  ;; (require 'init-calendar)
   (require 'init-company)
   (require 'init-window)
   (require 'init-projectile)
@@ -125,7 +107,7 @@
   (require 'init-python)
   (require 'init-css)
   (require 'init-markdown)
-  (require 'init-web)
+  ;; (require 'init-web)
   (require 'init-php)
 
   )
