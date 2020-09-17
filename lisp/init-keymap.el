@@ -367,19 +367,33 @@
     ;; "td" 'mengqp/insert-date
     ;; "te" 'toggle-company-english-helper
 
-    "p\"" 'awesome-pair-wrap-double-quote
-    "p[" 'awesome-pair-wrap-bracke
-    "p{" 'awesome-pair-wrap-curly
-    "p(" 'awesome-pair-wrap-round
-    "pp" 'awesome-pair-unwrap
-    "pl" 'awesome-pair-jump-left
-    "pr" 'awesome-pair-jump-right
-    "po" 'awesome-pair-jump-out-pair-and-newline
-    "pk" 'awesome-pair-kill
+    ;; awewomepiar
+    ;; "p\"" 'awesome-pair-wrap-double-quote
+    ;; "p[" 'awesome-pair-wrap-bracke
+    ;; "p{" 'awesome-pair-wrap-curly
+    ;; "p(" 'awesome-pair-wrap-round
+    ;; "pp" 'awesome-pair-unwrap
+    ;; "pl" 'awesome-pair-jump-left
+    ;; "pr" 'awesome-pair-jump-right
+    ;; "po" 'awesome-pair-jump-out-pair-and-newline
+    ;; "pk" 'awesome-pair-kill
+    ;; "pp" 'init-sp-menu/body
+    "pr" 'sp-rewrap-sexp
+    "p[" 'sp-wrap-square
+    "p{" 'sp-wrap-curly
+    "p(" 'sp-wrap-round
+    "pp" 'sp-unwrap-sexp
+    "pl" 'sp-forward-barf-sexp
+    "ph" 'sp-forward-slurp-sexp
+    "pk" 'sp-kill-sexp
+
 
     ;; "w" '(:ignore t :wk ("w" . "evilw"))
     ;; "ww" 'save-buffer
     ;; "wq" 'evil-save-and-close
+    "zz" 'avy-zap-to-char-dwim
+    "zu" 'avy-zap-up-to-char-dwim
+
 
     )
 

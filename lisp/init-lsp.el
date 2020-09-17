@@ -39,7 +39,6 @@
   :defer t
   :diminish lsp-mode
   :hook ((c-mode c++-mode objc-mode python-mode) . #'lsp)
-  ;; :hook ((c-mode c++-mode objc-mode) . #'lsp)
   :bind (:map lsp-mode-map
               ("C-c C-d" . lsp-describe-thing-at-point)
               ([remap xref-find-definitions] . lsp-find-definition)
@@ -78,26 +77,6 @@
     :custom-face
     (lsp-ui-doc-background ((t (:background nil))))
     (lsp-ui-doc-header ((t (:inherit (font-lock-string-face italic)))))
-    ;; :pretty-hydra
-    ;; ((:title "LSP UI" :color amaranth :quit-key "q")
-    ;;  ("Doc"
-    ;;   (("d e" lsp-ui-doc-enable "enable" :toggle t)
-    ;;    ("d s" lsp-ui-doc-include-signature "signature" :toggle t)
-    ;;    ("d t" (setq lsp-ui-doc-position 'top) "top" :toggle (eq lsp-ui-doc-position 'top))
-    ;;    ("d b" (setq lsp-ui-doc-position 'bottom) "bottom" :toggle (eq lsp-ui-doc-position 'bottom))
-    ;;    ("d p" (setq lsp-ui-doc-position 'at-point) "at point" :toggle (eq lsp-ui-doc-position 'at-point))
-    ;;    ("d f" (setq lsp-ui-doc-alignment 'frame) "align frame" :toggle (eq lsp-ui-doc-alignment 'frame))
-    ;;    ("d w" (setq lsp-ui-doc-alignment 'window) "align window" :toggle (eq lsp-ui-doc-alignment 'window)))
-    ;;   "Sideline"
-    ;;   (("s e" lsp-ui-sideline-enable "enable" :toggle t)
-    ;;    ("s h" lsp-ui-sideline-show-hover "hover" :toggle t)
-    ;;    ("s d" lsp-ui-sideline-show-diagnostics "diagnostics" :toggle t)
-    ;;    ("s s" lsp-ui-sideline-show-symbol "symbol" :toggle t)
-    ;;    ("s c" lsp-ui-sideline-show-code-actions "code actions" :toggle t)
-    ;;    ("s i" lsp-ui-sideline-ignore-duplicate "ignore duplicate" :toggle t))
-    ;;   ))
-    ;; :bind
-    ;; (("C-c lu" . lsp-ui-hydra/body))
     :init
     (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
     (setq lsp-ui-doc-enable t
@@ -121,21 +100,19 @@
 	  )
     )
 
-  (use-package treemacs
-    :disabled t
-    :ensure t
-    :defer t
-    :config
-    (use-package lsp-treemacs
-      :ensure t
-      :commands (lsp-treemacs lsp-treemacs--make-ref-item)
-      ;; :disabled t
-      :config
-      (lsp-treemacs-sync-mode 1)
-      )
-    )
-
-
+  ;; (use-package treemacs
+  ;;   :disabled t
+  ;;   :ensure t
+  ;;   :defer t
+  ;;   :config
+  ;;   (use-package lsp-treemacs
+  ;;     :ensure t
+  ;;     :commands (lsp-treemacs lsp-treemacs--make-ref-item)
+  ;;     ;; :disabled t
+  ;;     :config
+  ;;     (lsp-treemacs-sync-mode 1)
+  ;;     )
+  ;;   )
   )
 
 

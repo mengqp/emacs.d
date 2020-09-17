@@ -15,7 +15,6 @@
 (use-package magit
   :ensure t
   :defer t
-
   :bind (("C-x g" . magit-status)
 	 ("C-x M-g" . magit-dispatch-popup)
 	 ("C-c g" . magit-file-dispatch ))
@@ -32,56 +31,14 @@
     (magit-define-popup-action 'magit-dispatch-popup
       ?G "GitFlow" #'magit-gitflow-popup ?!))
 
-  ;; Walk through git revisions of a file
-  (use-package git-timemachine
-    :ensure t
-    :defer t
-    :diminish git-timemachine-mode)
-
-  (when *linux*
-    (use-package magit-todos
-      :ensure t
-      :defer t
-      )
-    )
-
-  ;; (defun git-push-coding-request()
-  ;;   "push current branch to coding develop branch request"
-  ;;   (interactive)
-  ;;   ;; "git push origin banana:mr/master/banana."
-  ;;   (run-hooks 'magit-credential-hook)
-  ;;   ;; (magit-run-git-async
-  ;;   ;; (magit-start-git nil
-  ;;   (shell-command-to-string
-  ;;    (format "git push origin %s:mr/develop/%s"
-  ;; 	     (magit-get-current-branch) (magit-get-current-branch))  )
-  ;;   ;; (print (magit-get-current-branch))
-  ;;   )
-
-  ;; (defun git-pull-coding-request( source args )
-  ;; "push current branch to coding develop branch request"
-  ;; "git push origin banana:mr/master/banana"
-  ;; (interactive
-  ;;  (list (magit-read-remote-branch "Pull" nil nil nil t)
-  ;;                    (magit-pull-arguments)))
-  ;; (run-hooks 'magit-credential-hook)
-  ;; ;; (magit-run-git-async
-  ;; ;; (magit-start-git nil
-  ;; (shell-command-to-string "git checkout develop")
-  ;; (shell-command-to-string "git pull")
-  ;; ;; (shell-command-to-string (format "git pull origin %s" arg))
-  ;; (magit-git-pull source args)
-  ;; ;; (magit-branch-delete (format":mr/develop/%d" 116))
-  ;; (magit-branch-delete)
-  ;; ;; (shell-command-to-string "git push")
-  ;;   ;; (print (magit-get-current-branch))
-  ;; )
-
-
-  ;; (git-push-coding-request)
-
   )
 
+
+;; Walk through git revisions of a file
+(use-package git-timemachine
+  :ensure t
+  :defer t
+  :diminish git-timemachine-mode)
 
 ;; Git-Svn extension for Magit
 (use-package magit-svn
@@ -94,11 +51,7 @@
   :ensure t
   :defer t
   :diminish git-gutter-mode
-  :init
-  (add-hook 'c-mode-hook 'git-gutter-mode)
-  (add-hook 'c++-mode-hook 'git-gutter-mode)
-  (add-hook 'org-mode-hook 'git-gutter-mode)
-  (add-hook 'lisp-mode-hook 'git-gutter-mode)
+  :hook (prog-mode . git-gutter-mode)
   :config
   (custom-set-variables
    '(git-gutter:modified-sign "==") ;; two space
@@ -113,7 +66,6 @@
 (use-package vc-msg
   :ensure t
   :defer t
-
   )
 
 

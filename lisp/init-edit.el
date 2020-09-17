@@ -185,9 +185,10 @@
   ;; auto insert closing bracket
   (use-package smartparens
     :ensure t
-    :disabled t
+    ;; :disabled t
     :defer t
-    :hook( prog-mode . smartparens-mode)
+    ;; :hook( prog-mode . smartparens-mode)
+    ;; :hook( after-init . smartparens-mode)
     :bind
     (:map smartparens-mode-map
 	  ("C-M-a" . sp-beginning-of-sexp)
@@ -207,34 +208,34 @@
     (smartparens-strict-mode t)
 
 
-    (defhydra init-sp-menu (:color pink
-				   :hint nil)
-      "
-    ^wrap^                        ^unwrap^            ^func^
-    ^^^^^^^^-----------------------------------------------------------------
-    _r_: sp-rewrap-sexp          _u_: sp-unwrap-sexp   _<left>_: ()i->(i)
-    _)_: ()                      _'_: '                _<right>_: (i)->()
-    _]_: []                      _\"_:\"\"             _}_: {}
-    "
-      ("r" sp-rewrap-sexp)
-      (")" sp-wrap-round)
-      ("]" sp-wrap-square)
-      ("}" sp-wrap-curly)
-      ("'" wrap-with-single-quotes)
-      ("\"" wrap-with-double-quotes)
+    ;; (defhydra init-sp-menu (:color pink
+    ;; 				   :hint nil)
+    ;;   "
+    ;; ^wrap^                        ^unwrap^            ^func^
+    ;; ^^^^^^^^-----------------------------------------------------------------
+    ;; _r_: sp-rewrap-sexp          _u_: sp-unwrap-sexp   _<left>_: ()i->(i)
+    ;; _)_: ()                      _'_: '                _<right>_: (i)->()
+    ;; _]_: []                      _\"_:\"\"             _}_: {}
+    ;; "
+    ;;   ("r" sp-rewrap-sexp)
+    ;;   (")" sp-wrap-round)
+    ;;   ("]" sp-wrap-square)
+    ;;   ("}" sp-wrap-curly)
+    ;;   ("'" wrap-with-single-quotes)
+    ;;   ("\"" wrap-with-double-quotes)
 
-      ("u" sp-unwrap-sexp)
-      ("[" sp-backward-unwrap-sexp)
-      ("<right>" sp-forward-barf-sexp)
-      ("<left>" sp-forward-slurp-sexp)
+    ;;   ("u" sp-unwrap-sexp)
+    ;;   ("[" sp-backward-unwrap-sexp)
+    ;;   ("<right>" sp-forward-barf-sexp)
+    ;;   ("<left>" sp-forward-slurp-sexp)
 
-      ("q" nil "quit")
-      )
+    ;;   ("q" nil "quit")
+    ;;   )
 
-    (defun init-sp-menu-func ()
-      (interactive)
-      (init-sp-menu)
-      )
+    ;; (defun init-sp-menu-func ()
+    ;;   (interactive)
+    ;;   (init-sp-menu)
+    ;;   )
 
     )
 
@@ -247,8 +248,7 @@
     :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
 
   (use-package awesome-pair
-    ;; :disabled nil
-    ;; :load-path "/home/mengqp/.emacs.d/site-lisp/awesome-pair/awesome-pair.el"
+    :disabled nil
     :defer t
     ;; :hook (after-init . awesome-pair-mode)
     ;; :bind

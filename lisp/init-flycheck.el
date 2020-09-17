@@ -48,16 +48,6 @@
 	#'flycheck-display-error-messages-unless-error-list)
 
   (setq flycheck-mode-line-prefix "!")
-  :config
-  ;;; Tune error list display
-  ;; (add-to-list 'display-buffer-alist
-  ;; 	       `(,(rx bos "*Flycheck errors*" eos)
-  ;; 		 (display-buffer-reuse-window
-  ;; 		  display-buffer-in-side-window)
-  ;; 		 (side            . bottom)
-  ;; 		 (reusable-frames . visible)
-  ;; 		 (window-height   . 0.33)))
-
   )
 
   (use-package flycheck-posframe

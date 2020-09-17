@@ -141,7 +141,14 @@
 (autoload 'awesome-pair-jump-left                 "awesome-pair" "" t)
 (autoload 'awesome-pair-jump-right                "awesome-pair" "" t)
 (autoload 'awesome-pair-jump-out-pair-and-newline "awesome-pair" "" t)
-(autoload 'awesome-pair-kill                      "awesome-pair" "" t)
+(autoload 'sp-rewrap-sexp                   "smartparens" "" t)
+(autoload 'sp-wrap-square                   "smartparens" "" t)
+(autoload 'sp-wrap-curly                    "smartparens" "" t)
+(autoload 'sp-wrap-round                    "smartparens" "" t)
+(autoload 'sp-unwrap-sexp                   "smartparens" "" t)
+(autoload 'sp-forward-barf-sexp             "smartparens" "" t)
+(autoload 'sp-forward-slurp-sexp            "smartparens" "" t)
+(autoload 'sp-kill-sexp                     "smartparens" "" t)
 
 (provide 'init-autoload)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

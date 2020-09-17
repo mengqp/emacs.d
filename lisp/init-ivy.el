@@ -36,8 +36,6 @@
 (use-package smex
   :defer t
   :ensure t
- ;; :config
-  ;; (global-set-key (kbd "M-x") 'smex)
   )
 
 (use-package counsel
@@ -98,27 +96,11 @@
 
   )
 
-(use-package ivy-posframe
-  :disabled t
-  :ensure t
-  :defer t
-  :after ivy
-  :init
-  (setq ivy-display-function #'ivy-posframe-display)
-  :config
-  ;; (setq ivy-display-function #'ivy-posframe-display-at-frame-center)
-  (setq ivy-display-function #'ivy-posframe-display-at-window-center)
-  ;; (setq ivy-display-function #'ivy-posframe-display-at-frame-bottom-left)
-  ;; (setq ivy-display-function #'ivy-posframe-display-at-window-bottom-left)
-  ;; (setq ivy-display-function #'ivy-posframe-display-at-point)
-  (ivy-posframe-enable)
-  )
-
-(use-package ivy-xref
-  :ensure t
-  :defer t
-  :init
-  (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
+;; (use-package ivy-xref
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
 
 (provide 'init-ivy)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

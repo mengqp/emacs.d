@@ -37,7 +37,7 @@
   :ensure nil
   :bind*
   (
-   ("M-j s" . snails)
+   ;; ("M-j s" . snails)
    ("M-j j" . snails)
    ("M-j M-j" . snails)
    (:map snails-mode-map
@@ -48,8 +48,8 @@
   :init
   (setq snails-default-show-prefix-tips nil)
   :config
-  (use-package exec-path-from-shell
-    :if (featurep 'cocoa) :defer t)
+  ;; (use-package exec-path-from-shell
+  ;;   :if (featurep 'cocoa) :defer t)
 
   (setq snails-default-backends
 	'(snails-backend-buffer snails-backend-recentf)
