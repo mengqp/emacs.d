@@ -123,147 +123,48 @@
   :bind ("C-=" . er/expand-region)
   )
 
-(use-package thing-edit
+(use-package format-all
+  :ensure t
   :defer t
-  :disabled t
-  :bind*
-  (
-   ;; ("M-h" . hydra-thing-edit/body)
-   ("M-h s" . thing-copy-symbol )
-   ("M-h f" . thing-copy-filename )
-   ("M-h x" . thing-copy-sexp )
-   ("M-h g" . thing-copy-page )
-   ("M-h t" . thing-copy-sentence )
-   ("M-h o" . thing-copy-whitespace )
-   ("M-h i" . thing-copy-list )
-   ("M-h c" . thing-copy-comment )
-   ("M-h d" . thing-copy-defun )
-   ("M-h p" . thing-copy-parentheses )
-   ("M-h l" . thing-copy-line )
-   ("M-h a" . thing-copy-to-line-beginning )
-   ("M-h e" . thing-copy-to-line-end )
-   ("M-h r" . thing-copy-region-or-line )
-   ("M-h n" . thing-copy-number )
-   ("M-h h" . thing-copy-whole-buffer )
-   ;; Cut
-   ("M-h W" . thing-cut-word )
-   ("M-h S" . thing-cut-symbol )
-   ("M-h F" . thing-cut-filename )
-   ("M-h X" . thing-cut-sexp )
-   ("M-h G" . thing-cut-page )
-   ("M-h T" . thing-cut-sentence )
-   ("M-h O" . thing-cut-whitespace )
-   ("M-h I" . thing-cut-list )
-   ("M-h C" . thing-cut-comment )
-   ("M-h D" . thing-cut-defun )
-   ("M-h P" . thing-cut-parentheses )
-   ("M-h L" . thing-cut-line )
-   ("M-h A" . thing-cut-to-line-beginning )
-   ("M-h E" . thing-cut-to-line-end )
-   ("M-h R" . thing-cut-region-or-line )
-   ("M-h N" . thing-cut-number )
-   ("M-h H" . thing-cut-whole-buffer )
-   )
   )
 
-(when *linux*
+;; auto insert closing bracket
+(use-package smartparens
+  :ensure t
+  ;; :disabled t
+  :defer t
+  :hook( prog-mode . smartparens-mode)
+  ;; :hook( after-init . smartparens-mode)
+  :config
+  ;; enable the default configuration
+  (require 'smartparens-config)
+  (smartparens-strict-mode t)
+  )
 
-  (use-package format-all
-    :ensure t
-    :defer t
-    )
+;; Automatic parenthesis pairing
+(use-package elec-pair
+  :ensure nil
+  :disabled t
+  :defer t
+  :hook (after-init . electric-pair-mode)
+  :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
 
-  (use-package lazy-search
-    :defer t
-    :bind*
-    ("M-s w" . lazy-search)
-    ;; :config
-    ;; (global-set-key (kbd "M-s") 'lazy-search)
-    )
-
-
-  ;; auto insert closing bracket
-  (use-package smartparens
-    :ensure t
-    ;; :disabled t
-    :defer t
-    ;; :hook( prog-mode . smartparens-mode)
-    ;; :hook( after-init . smartparens-mode)
-    :bind
-    (:map smartparens-mode-map
-	  ("C-M-a" . sp-beginning-of-sexp)
-	  ("C-M-e" . sp-end-of-sexp)
-
-	  ("C-M-f" . sp-forward-sexp)
-	  ("C-M-b" . sp-backward-sexp)
-
-	  ("C-M-n" . sp-next-sexp)
-	  ("C-M-p" . sp-previous-sexp)
-	  )
-    :diminish smartparens-mode smartparens-global-mode
-    :config
-    ;; enable the default configuration
-    (use-package smartparens-config
-      :defer t)
-    (smartparens-strict-mode t)
-
-
-    ;; (defhydra init-sp-menu (:color pink
-    ;; 				   :hint nil)
-    ;;   "
-    ;; ^wrap^                        ^unwrap^            ^func^
-    ;; ^^^^^^^^-----------------------------------------------------------------
-    ;; _r_: sp-rewrap-sexp          _u_: sp-unwrap-sexp   _<left>_: ()i->(i)
-    ;; _)_: ()                      _'_: '                _<right>_: (i)->()
-    ;; _]_: []                      _\"_:\"\"             _}_: {}
-    ;; "
-    ;;   ("r" sp-rewrap-sexp)
-    ;;   (")" sp-wrap-round)
-    ;;   ("]" sp-wrap-square)
-    ;;   ("}" sp-wrap-curly)
-    ;;   ("'" wrap-with-single-quotes)
-    ;;   ("\"" wrap-with-double-quotes)
-
-    ;;   ("u" sp-unwrap-sexp)
-    ;;   ("[" sp-backward-unwrap-sexp)
-    ;;   ("<right>" sp-forward-barf-sexp)
-    ;;   ("<left>" sp-forward-slurp-sexp)
-
-    ;;   ("q" nil "quit")
-    ;;   )
-
-    ;; (defun init-sp-menu-func ()
-    ;;   (interactive)
-    ;;   (init-sp-menu)
-    ;;   )
-
-    )
-
-  ;; Automatic parenthesis pairing
-  (use-package elec-pair
-    :ensure nil
-    ;; :disabled t
-    :defer t
-    :hook (after-init . electric-pair-mode)
-    :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
-
-  (use-package awesome-pair
-    :disabled nil
-    :defer t
-    ;; :hook (after-init . awesome-pair-mode)
-    ;; :bind
-    ;; (:map awesome-pair-mode-map
-    ;; 	  ("(" .  awesome-pair-open-round)
-    ;; 	  ("[" .  awesome-pair-open-bracket)
-    ;; 	  ("{" .  awesome-pair-open-curly)
-    ;; 	  (")" .  awesome-pair-close-round)
-    ;; 	  ("]" .  awesome-pair-close-bracket)
-    ;; 	  ("}" .  awesome-pair-close-curly)
-    ;; 	  ("\"" . awesome-pair-double-quote)
-    ;; 	  ("%" . awesome-pair-match-paren)
-    ;; 	  ("C-k" . awesome-pair-kill)
-    ;;  )
-    )
+(use-package awesome-pair
+  :disabled nil
+  :defer t
+  ;; :hook (after-init . awesome-pair-mode)
+  ;; :bind
+  ;; (:map awesome-pair-mode-map
+  ;; 	  ("(" .  awesome-pair-open-round)
+  ;; 	  ("[" .  awesome-pair-open-bracket)
+  ;; 	  ("{" .  awesome-pair-open-curly)
+  ;; 	  (")" .  awesome-pair-close-round)
+  ;; 	  ("]" .  awesome-pair-close-bracket)
+  ;; 	  ("}" .  awesome-pair-close-curly)
+  ;; 	  ("\"" . awesome-pair-double-quote)
+  ;; 	  ("%" . awesome-pair-match-paren)
+  ;; 	  ("C-k" . awesome-pair-kill)
+  ;;  )
   )
 
 (use-package hungry-delete

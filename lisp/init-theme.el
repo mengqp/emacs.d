@@ -32,18 +32,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(use-package lazycat-theme
-  ;; :ensure t
-  :disabled t
-  :defer t
-  ;; :init
-  ;; (add-hook 'after-init-hook
-  ;; 	    (lambda () (lazycat-theme-load-dark)))
-  :config
-  (lazycat-theme-load-dark)
-  ;; (lazycat-theme-load-with-sunrise)
-  )
-
 (use-package cyberpunk-theme
   :ensure t
   :disabled t

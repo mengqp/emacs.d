@@ -19,17 +19,9 @@
 	url = https://github.com/manateelazycat/auto-save.git
 	ignore=untracked
 
-[submodule "site-lisp/thing-edit"]
-	path = site-lisp/thing-edit
-	url = https://github.com/manateelazycat/thing-edit.git
-	ignore=untracked
 [submodule "site-lisp/awesome-pair"]
 	path = site-lisp/awesome-pair
 	url = https://github.com/manateelazycat/awesome-pair.git
-	ignore=untracked
-[submodule "site-lisp/lazy-search"]
-	path = site-lisp/lazy-search
-	url = https://github.com/manateelazycat/lazy-search.git
 	ignore=untracked
 [submodule "site-lisp/color-rg"]
 	path = site-lisp/color-rg
@@ -66,8 +58,4 @@
 [submodule "site-lisp/nox"]
 	path = site-lisp/nox
 	url = https://github.com/manateelazycat/nox.git
-	ignore=untracked
-[submodule "site-lisp/lazycat-theme"]
-	path = site-lisp/lazycat-theme
-	url = https://github.com/manateelazycat/lazycat-theme.git
 	ignore=untracked
