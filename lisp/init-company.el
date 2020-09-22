@@ -127,13 +127,6 @@
     :disabled t
     :hook (company-mode . company-box-mode))
 
-  (use-package company-english-helper
-    :ensure nil
-    ;; :disabled t
-    :defer t
-    :commands (company-english-helper toggle-company-english-helper)
-    )
-
   (use-package company-ctags
     :ensure t
     :disabled t

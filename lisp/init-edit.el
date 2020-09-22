@@ -134,7 +134,6 @@
   ;; :disabled t
   :defer t
   :hook( prog-mode . smartparens-mode)
-  ;; :hook( after-init . smartparens-mode)
   :config
   ;; enable the default configuration
   (require 'smartparens-config)
