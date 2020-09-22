@@ -35,12 +35,12 @@
 
 
 (use-package lsp-mode
-  ;; :disabled t
   :defer t
+  :ensure t
   :diminish lsp-mode
   :hook ((c-mode c++-mode objc-mode python-mode) . #'lsp)
   :bind (:map lsp-mode-map
-              ("C-c C-d" . lsp-describe-thing-at-point)
+              ;; ("C-c C-d" . lsp-describe-thing-at-point)
               ([remap xref-find-definitions] . lsp-find-definition)
               ([remap xref-find-references] . lsp-find-references)
 	      )
@@ -54,51 +54,16 @@
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-file-watchers nil)
   (setq lsp-file-watch-threshold nil)
-  (setq lsp-enable-snippet nil)
+  (setq lsp-enable-snippet t)
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-pyright t)
   (setq lsp-python-ms-disabled t)
-  :config
-  (require 'lsp-clients)
+  ;; :config
+  ;; (require 'lsp-clients)
   ;; (setq lsp-enable-indentation nil)
   ;; (setq lsp-enable-on-type-formatting nil)
   ;; (flymake-mode-off)
 
-  (use-package company-lsp
-    :config
-    (push 'company-lsp company-backends)
-    ;; (push 'company-tabnine company-backends)
-    (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
-    )
-
-  (use-package lsp-ui
-    :hook
-    (lsp-mode . lsp-ui-mode)
-    :custom-face
-    (lsp-ui-doc-background ((t (:background nil))))
-    (lsp-ui-doc-header ((t (:inherit (font-lock-string-face italic)))))
-    :init
-    (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
-    (setq lsp-ui-doc-enable t
-	  lsp-ui-doc-header t
-	  lsp-ui-doc-include-signature t
-	  lsp-ui-doc-position 'top
-	  lsp-ui-doc-use-webkit nil
-	  lsp-ui-doc-border (face-foreground 'default)
-	  ;; lsp-ui-doc-position 'at-point
-
-	  lsp-ui-sideline-enable t
-	  lsp-ui-sideline-ignore-duplicate t
-	  lsp-ui-sideline-show-diagnostics nil
-	  lsp-ui-sideline-show-symbol t
-	  lsp-ui-sideline-show-hover t
-	  lsp-ui-sideline-show-code-actions t
-	  lsp-ui-sideline-delay 1
-	  lsp-ui-flycheck-enable t
-	  lsp-ui-imenu-enable nil
-	  lsp-ui-imenu-kind-position 'left
-	  )
-    )
 
   ;; (use-package treemacs
   ;;   :disabled t
@@ -113,6 +78,35 @@
   ;;     (lsp-treemacs-sync-mode 1)
   ;;     )
   ;;   )
+  )
+
+(use-package lsp-ui
+  :ensure t
+  :hook
+  (lsp-mode . lsp-ui-mode)
+  :custom-face
+  (lsp-ui-doc-background ((t (:background nil))))
+  (lsp-ui-doc-header ((t (:inherit (font-lock-string-face italic)))))
+  :init
+  (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
+  (setq lsp-ui-doc-enable t
+	lsp-ui-doc-header t
+	lsp-ui-doc-include-signature t
+	lsp-ui-doc-position 'top
+	lsp-ui-doc-use-webkit nil
+	lsp-ui-doc-border (face-foreground 'default)
+	;; lsp-ui-doc-position 'at-point
+	lsp-ui-sideline-enable t
+	lsp-ui-sideline-ignore-duplicate t
+	lsp-ui-sideline-show-diagnostics nil
+	lsp-ui-sideline-show-symbol t
+	lsp-ui-sideline-show-hover t
+	lsp-ui-sideline-show-code-actions t
+	lsp-ui-sideline-delay 1
+	lsp-ui-flycheck-enable t
+	lsp-ui-imenu-enable nil
+	lsp-ui-imenu-kind-position 'left
+	)
   )
 
 

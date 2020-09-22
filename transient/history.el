@@ -24,7 +24,7 @@
  (magit-push nil)
  (magit-stash nil)
  (magit-status-jump nil)
- (magit-submodule nil
-		  ("--force"))
+ (magit-submodule
+  ("--force"))
  (magit-svn nil)
  (magit-tag nil))

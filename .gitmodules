@@ -1,15 +1,3 @@
-[submodule "site-lisp/lsp-mode"]
-	path = site-lisp/lsp-mode
-	url = https://github.com/emacs-lsp/lsp-mode.git
-	ignore=untracked
-[submodule "site-lisp/lsp-ui"]
-	path = site-lisp/lsp-ui
-	url = https://github.com/emacs-lsp/lsp-ui.git
-	ignore=untracked
-[submodule "site-lisp/company-lsp"]
-	path = site-lisp/company-lsp
-	url = https://github.com/tigersoldier/company-lsp.git
-	ignore=untracked
 [submodule "site-lisp/auto-save"]
 	path = site-lisp/auto-save
 	url = https://github.com/manateelazycat/auto-save.git

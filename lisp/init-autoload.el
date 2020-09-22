@@ -149,6 +149,7 @@
 (autoload 'sp-forward-barf-sexp             "smartparens" "" t)
 (autoload 'sp-forward-slurp-sexp            "smartparens" "" t)
 (autoload 'sp-kill-sexp                     "smartparens" "" t)
+(autoload 'company-backends                     "company" "" t)
 
 (provide 'init-autoload)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

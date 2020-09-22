@@ -37,13 +37,8 @@
 (use-package yasnippet
   :ensure t
   :defer t
-  :hook ((org-mode shell-script-mode prog-mode) . yas-minor-mode)
+  :hook ((org-mode prog-mode) . yas-minor-mode)
   :commands (yasnippet yas-reload-all)
-  :commands (yasnippet yas-expand)
-  :commands (yasnippet yas-next-field)
-  :commands (yasnippet yas-abort-snippet)
-  :commands (init-yasnippet do-yas-expand)
-  :commands (init-yasnippet check-expansion)
   :commands (company company-abort)
   :commands (company company-complete-selection)
   :diminish yas-minor-mode
