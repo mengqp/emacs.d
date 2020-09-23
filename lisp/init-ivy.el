@@ -33,7 +33,7 @@
 ;;
 ;;; Code:
 
-(use-package smex
+(use-package amx
   :defer t
   :ensure t
   )
