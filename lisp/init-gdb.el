@@ -72,13 +72,6 @@
   ;; ;; (setq gud-gdb-history t)
   ;; (defvar gdb-many-windows t)
 
-  ;; (general-define-key :states '(normal motion)
-  ;; 		      :keymaps '(c++-mode-map
-  ;; 				 c-mode-map)
-  ;; 		      :prefix ";"
-  ;; 		      "b" 'gdb
-  ;; 		      )
-
   (general-define-key :states '(normal motion)
 		      :keymaps '(c++-mode-map
 				 c-mode-map)
@@ -96,46 +89,6 @@
 
 
   )
-
-
-
-(use-package realgud
-  :disabled t
-  :ensure t
-  :defer t
-  )
-
-(use-package dap-mode
-  :ensure t
-  :defer t
-  :disabled t
-  :commands (lsp-treemacs lsp-treemacs--make-ref-item)
-  :hook ((c-mode c++-mode objc-mode python-mode) . #'dap-mode)
-  :init
-  (dap-mode 1)
-  (dap-ui-mode 1)
-  (dap-tooltip-mode 1)
-  (tooltip-mode 1)
-  (dap-ui-controls-mode 1)
-  (setq dap-auto-configure-features '(sessions locals breakpoints expressions controls))
-  :config
-  (require 'dap-lldb)
-  (add-hook 'dap-stopped-hook
-	  (lambda (arg) (call-interactively #'dap-hydra)))
-  (dap-register-debug-template
-   "EM761_BV2"
-   (list :type "lldb"
-	 :args ""
-	 :cwd "/media/sf_code/EM761-BV2/02src/01v2/Debug"
-	 ;; :env '(("DEBUG" . "1"))
-	 :program "EM761_BV2"
-	 ;; :request "launch"
-	 :name "EM761_BV2"))
-  ;; (setq dap-lldb-debug-program "/usr/bin/lldb-server")
-  ;; (setq dap-lldb-debugged-program-function "/media/sf_workspace/EM761_BV2/02_src/V2/02src/01v2/Debug/EM761_BV2")
-  )
-
-
 (provide 'init-gdb)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-gdb.el ends here

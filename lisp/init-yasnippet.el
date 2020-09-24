@@ -51,9 +51,6 @@
   (use-package yasnippet-snippets
     :ensure nil
     :defer t)
-  ;; (yas-minor-mode)
-  ;; (add-to-list 'company-backends 'company-yasnippet)
-  ;; (message "yasnippet")
   (yas-reload-all)
   (setq yas-prompt-functions '(yas-completing-prompt))
 
@@ -62,9 +59,7 @@
 (use-package ivy-yasnippet
   :ensure t
   :defer t
-  :bind (
-	 ("C-c C-y" . ivy-yasnippet)
-	 )
+  :bind (("C-c C-y" . ivy-yasnippet))
   )
 
 (provide 'init-yasnippet)

@@ -65,22 +65,10 @@
 (use-package diminish
   :ensure t)
 
-;; (use-package use-package-chords
-;;   :ensure t
-;;   :config (key-chord-mode 1))
 (use-package dash-functional
   :ensure t
   :defer t
   )
-;; (use-package ht
-;;   :ensure t
-;;   :defer t
-;;   )
-;; (use-package spinner
-;;   :ensure t
-;;   :defer t
-;;   )
-
 
 ;; 空格
 (use-package pangu-spacing
@@ -166,26 +154,6 @@
                                   search-ring
                                   regexp-search-ring))
   )
-
-;;在 minibuffer 里启用自动补全函数和变量
-;; (icomplete-mode 1)
-;;允许 minibuffer 自由变化其宽度大小
-;; (setq resize-mini-windows t)
-
-;; (use-package undo-tree
-;;   :ensure t
-;;   :defer t
-;;   :diminish undo-tree-mode
-;;   :config
-;;   (setq x-wait-for-event-timeout nil)
-;;   (undo-tree-mode 1)
-;;   )
-
-
-
-;; (use-package eldoc
-;;   :diminish eldoc-mode
-;;   )
 
 (use-package restart-emacs
   :ensure t

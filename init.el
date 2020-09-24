@@ -47,7 +47,7 @@
 ;; ("\\`/:" . file-name-non-special))
 ;; Which means on every .el and .elc file loaded during start up, it has to runs those regexps against the filename.
 (let ((file-name-handler-alist nil))
-  (require 'init-benchmarking)
+  ;; (require 'init-benchmarking)
 
 
   (require 'init-const)
@@ -113,9 +113,7 @@
 
   )
 
-(setq custom-file
-      (expand-file-name "custom.el" user-emacs-directory)
-      )
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 ;; enable just-in-time native compilation
 ;; (setq comp-deferred-compilation nil)

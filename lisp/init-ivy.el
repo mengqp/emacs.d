@@ -53,15 +53,6 @@
 
    :map counsel-mode-map
    ([remap swiper] . counsel-grep-or-swiper)
-   ;; ("C-x C-r" . counsel-recentf)
-   ("C-x j" . counsel-mark-ring)
-
-   ("C-c r" . counsel-rg)
-
-   ("C-c c L" . counsel-load-library)
-   ("C-c c g" . counsel-grep)
-   ("C-c c r" . counsel-rg)
-   ("C-c c s" . counsel-ag)
    )
 
   :init
@@ -95,12 +86,6 @@
 	'((t   . ivy--regex-ignore-order)))
 
   )
-
-;; (use-package ivy-xref
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
 
 (provide 'init-ivy)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

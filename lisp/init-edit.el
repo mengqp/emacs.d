@@ -37,30 +37,16 @@
   :ensure t
   ;; :disabled t
   :defer t
-  :hook ((emacs-lisp-mode-hook
-	  lisp-interaction-mode-hook
-	  lisp-mode-hook
-	  sh-mode-hook
-	  makefile-gmake-mode-hook
-	  php-mode-hook
-	  python-mode-hook
-	  js-mode-hook
-	  go-mode-hook
-	  qml-mode-hook
-	  jade-mode-hook
-	  css-mode-hook
-	  ruby-mode-hook
-	  coffee-mode-hook
-	  rust-mode-hook
-	  qmake-mode-hook
-	  lua-mode-hook
-	  swift-mode-hook
-	  web-mode-hook
-	  markdown-mode-hook
-	  llvm-mode-hook
-	  conf-toml-mode-hook
-	  plantuml-mode-hook
-	  ) . aggressive-indent-mode)
+  :hook ((prog-mode) . aggressive-indent-mode)
+  ;; :hook ((emacs-lisp-mode-hook
+  ;; 	  lisp-interaction-mode-hook
+  ;; 	  lisp-mode-hook
+  ;; 	  makefile-gmake-mode-hook
+  ;; 	  php-mode-hook
+  ;; 	  python-mode-hook
+  ;; 	  css-mode-hook
+  ;; 	  plantuml-mode-hook
+  ;; 	  ) . aggressive-indent-mode)
   :diminish aggressive-indent-mode
   ;; :config
   :init
@@ -75,12 +61,6 @@
 			     (thing-at-point 'line)))))
   )
 
-;; ;; An all-in-one comment command to rule them all
-;; (use-package comment-dwim-2
-;;   :ensure t
-;;   :defer t
-;;   :bind ([remap comment-dwim] . comment-dwim-2)) ;
-
 ;; Edit multiple regions in the same way simultaneously
 (use-package iedit
   :ensure t
@@ -90,13 +70,6 @@
    ("C-x r RET" . iedit-rectangle-mode)
    )
   )
-
-;; ;; Move to the beginning/end of line or code
-;; (use-package mwim
-;;   :ensure t
-;;   :bind (([remap move-beginning-of-line] . mwim-beginning-of-code-or-line)
-;; 	 ([remap move-end-of-line] . mwim-end-of-code-or-line))
-;;   )
 
 ;; https://github.com/emacs-evil/goto-chg/issues/3
 ;; Goto last change
@@ -171,8 +144,6 @@
   :defer t
   :diminish hungry-delete-mode
   :hook (after-init . global-hungry-delete-mode)
-  ;; :config
-  ;; (cua-mode t)
   )
 
 (use-package anzu
