@@ -161,49 +161,6 @@
     )
   )
 
-(use-package sis
-  :ensure t
-  :disabled t
-  :bind*
-  (
-   ("M-i i" . sis-switch) ; 开启输入法
-   ("M-i M-i" . sis-switch) ; 开启输入法
-   )
-  :config
-  ;; (sis-ism-lazyman-config nil nil 'fcitx5)
-  ;; (sis-ism-lazyman-config nil nil 'fcitx)
-  (use-package rime
-    :ensure t
-    :init
-    (setq rime-user-data-dir "~/.emacs.d/rime/")
-
-    (setq rime-posframe-properties
-	  (list :background-color "#333333"
-		:foreground-color "#dcdccc"
-		;; :font "WenQuanYi Micro Hei Mono-14"
-		:internal-border-width 10))
-    (setq default-input-method "rime"
-	  rime-show-candidate 'posframe)
-    (setq default-input-method "rime"
-	  rime-show-candidate 'posframe)
-    )
-
-  (sis-ism-lazyman-config nil "rime" 'native)
-  ;; (setq-default sis-english nil)
-  ;; (setq-default sis-other "rime")
-  ;; (setq-default sis-do-get (lambda() current-input-method))
-  ;; (setq-default sis-do-set (lambda(source) (set-input-method source)))
-
-  ;; enable the /cursor color/ mode
-  (sis-global-cursor-color-mode t)
-  ;; enable the /respect/ mode
-  (sis-global-respect-mode t)
-  ;; enable the /follow context/ mode for all buffers
-  (sis-global-follow-context-mode t)
-  ;; enable the /inline english/ mode for all buffers
-  (sis-global-inline-mode t)
-  )
-
 (provide 'init-im)
 
 ;;; init-im.el ends here

@@ -35,7 +35,7 @@
 
 (use-package aggressive-indent
   :ensure t
-  ;; :disabled t
+  :disabled t
   :defer t
   :hook ((prog-mode) . aggressive-indent-mode)
   ;; :hook ((emacs-lisp-mode-hook
@@ -82,6 +82,7 @@
 
 (use-package multiple-cursors
   :ensure t
+  :disabled t
   :defer t
   :bind
   ("C->" . mc/mark-next-like-this)
@@ -111,32 +112,6 @@
   ;; enable the default configuration
   (require 'smartparens-config)
   (smartparens-strict-mode t)
-  )
-
-;; Automatic parenthesis pairing
-(use-package elec-pair
-  :ensure nil
-  :disabled t
-  :defer t
-  :hook (after-init . electric-pair-mode)
-  :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
-
-(use-package awesome-pair
-  :disabled nil
-  :defer t
-  ;; :hook (after-init . awesome-pair-mode)
-  ;; :bind
-  ;; (:map awesome-pair-mode-map
-  ;; 	  ("(" .  awesome-pair-open-round)
-  ;; 	  ("[" .  awesome-pair-open-bracket)
-  ;; 	  ("{" .  awesome-pair-open-curly)
-  ;; 	  (")" .  awesome-pair-close-round)
-  ;; 	  ("]" .  awesome-pair-close-bracket)
-  ;; 	  ("}" .  awesome-pair-close-curly)
-  ;; 	  ("\"" . awesome-pair-double-quote)
-  ;; 	  ("%" . awesome-pair-match-paren)
-  ;; 	  ("C-k" . awesome-pair-kill)
-  ;;  )
   )
 
 (use-package hungry-delete

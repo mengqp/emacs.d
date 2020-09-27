@@ -10,8 +10,9 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
-  (("--" "tpcbackup/update.ini"))
   ("-n256" "--graph" "--decorate")
+  (("--" "include/linux/serial_core.h"))
+  (("--" "tpcbackup/update.ini"))
   (("--" "02src/01v2/CommLine.cpp"))
   (("--" "em760/SRCC/SerialPort.cpp"))
   (("--" "02src/01v2/SerialPort.cpp"))
@@ -24,7 +25,7 @@
  (magit-push nil)
  (magit-stash nil)
  (magit-status-jump nil)
- (magit-submodule
-  ("--force"))
+ (magit-submodule nil
+		  ("--force"))
  (magit-svn nil)
  (magit-tag nil))

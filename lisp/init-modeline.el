@@ -34,7 +34,7 @@
 ;;; Code:
 
 (use-package awesome-tray
-  :disabled t
+  ;; :disabled t
   :defer t
   :hook
   (after-init . awesome-tray-mode)
@@ -42,11 +42,10 @@
   ;; (setq awesome-tray-mode-line-active-color "Gray60")
   ;; (setq awesome-tray-active-modules '("buffer-name" "awesome-tab" "git" "mode-name" "location"))
   (setq awesome-tray-active-modules '("buffer-name" "location" "git" "mode-name" ))
-  ;; (setq awesome-tray-active-modules '("location" "git" "mode-name" ))
   )
 
 (use-package doom-modeline
-  ;; :disabled t
+  :disabled t
   :ensure t
   :defer t
   :hook (window-setup . doom-modeline-mode)
@@ -176,30 +175,6 @@
 
   ;; Whether display the IRC notifications. It requires `circe' or `erc' package.
   (setq doom-modeline-irc nil)
-
-  ;; Function to stylize the irc buffer names.
-  ;; (setq doom-modeline-irc-stylize 'identity)
-
-  ;; ;; Whether display the environment version.
-  ;; (setq doom-modeline-env-version nil)
-  ;; ;; Or for individual languages
-  ;; (setq doom-modeline-env-enable-python t)
-  ;; (setq doom-modeline-env-enable-ruby t)
-  ;; (setq doom-modeline-env-enable-perl t)
-  ;; (setq doom-modeline-env-enable-go t)
-  ;; (setq doom-modeline-env-enable-elixir t)
-  ;; (setq doom-modeline-env-enable-rust t)
-
-  ;; ;; Change the executables to use for the language version string
-  ;; (setq doom-modeline-env-python-executable "python") ; or `python-shell-interpreter'
-  ;; (setq doom-modeline-env-ruby-executable "ruby")
-  ;; (setq doom-modeline-env-perl-executable "perl")
-  ;; (setq doom-modeline-env-go-executable "go")
-  ;; (setq doom-modeline-env-elixir-executable "iex")
-  ;; (setq doom-modeline-env-rust-executable "rustc")
-
-  ;; ;; What to dispaly as the version while a new one is being loaded
-  ;; (setq doom-modeline-env-load-string "...")
 
   ;; Hooks that run before/after the modeline version string is updated
   (setq doom-modeline-before-update-env-hook nil)

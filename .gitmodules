@@ -3,17 +3,9 @@
 	url = https://github.com/manateelazycat/auto-save.git
 	ignore=untracked
 
-[submodule "site-lisp/awesome-pair"]
-	path = site-lisp/awesome-pair
-	url = https://github.com/manateelazycat/awesome-pair.git
-	ignore=untracked
 [submodule "site-lisp/color-rg"]
 	path = site-lisp/color-rg
 	url = https://github.com/manateelazycat/color-rg.git
-	ignore=untracked
-[submodule "site-lisp/ccls"]
-	path = site-lisp/ccls
-	url = https://github.com/MaskRay/emacs-ccls.git
 	ignore=untracked
 [submodule "site-lisp/snails"]
 	path = site-lisp/snails

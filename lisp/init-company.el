@@ -64,12 +64,6 @@
     :diminish company-posframe-mode
     :config
     (company-posframe-mode 1)
-    ;; (use-package desktop
-    ;;   :defer t
-    ;;   :config
-    ;;   (push '(company-childframe-mode . nil)
-    ;; 	    desktop-minor-mode-table
-    ;; 	    ))
     )
 
   )

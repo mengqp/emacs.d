@@ -68,17 +68,11 @@
   :defer t
   :diminish hs-minor-mode
   :after evil
-  ;; :bind (:map hs-minor-mode-map
-  ;; 		("C-`" . hs-toggle-hiding))
-  ;; :commands (evil-states evil-emacs-state)
-  ;; :after evil-mode
-  ;; :after evil-local-mode
   :hook (prog-mode . hs-minor-mode)
   )
 
 (use-package evil-visualstar
   :ensure t
-  ;; :after evil
   :defer t
   :hook (evil-mode . global-evil-visualstar-mode)
   )
@@ -86,7 +80,6 @@
 (use-package evil-matchit
   :ensure t
   :defer t
-  ;; :after evil
   :diminish evil-matchit-mode
   :hook (evil-mode . global-evil-matchit-mode)
   :init
@@ -101,8 +94,6 @@
   :init
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.2)
-  ;; :config
-  ;; (evil-escape-mode t)
   )
 
 (use-package evil-nerd-commenter
@@ -118,12 +109,6 @@
   :config
   (evil-avy-mode t)
   )
-
-(use-package evil-collection
-  :after evil
-  :ensure t
-  :config
-  (evil-collection-init))
 
 (provide 'init-evil)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

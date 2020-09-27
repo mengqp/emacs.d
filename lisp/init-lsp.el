@@ -36,6 +36,7 @@
 
 (use-package lsp-mode
   :defer t
+  ;; :disabled t
   :ensure t
   :diminish lsp-mode
   :hook ((c-mode c++-mode objc-mode python-mode) . #'lsp)
@@ -82,6 +83,8 @@
 
 (use-package lsp-ui
   :ensure t
+  ;; :disabled t
+  :defer t
   :hook
   (lsp-mode . lsp-ui-mode)
   :custom-face
@@ -128,7 +131,7 @@
 
 
 (use-package ccls
-  ;; :ensure t
+  :ensure t
   :defer t
   ;; :disabled t
   ;; :commands lsp-ccls-enable
@@ -229,6 +232,7 @@
   )
 
 (use-package lsp-pyright
+  :disabled t
   :ensure t
   :defer t
   :hook (python-mode . (lambda ()
