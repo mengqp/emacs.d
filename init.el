@@ -86,11 +86,11 @@
   (require 'init-git)
   (require 'init-ivy)
   (require 'init-snails)
+  (require 'init-lsp)
   ;; (require 'init-browser)
   (require 'init-func)
   (require 'init-keymap)
 
-  (require 'init-lsp)
   ;; (require 'init-shell)
 
   (require 'init-plantuml)

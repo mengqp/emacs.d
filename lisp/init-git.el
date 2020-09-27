@@ -1,11 +1,5 @@
 ;;; init-git.el --- git function  -*- coding: utf-8-unix -*-
 ;;; Commentary:
-;;; Copyright (C) 2017-2018 by mengqp
-
-;; (require 'magit)
-;; (require 'evil-magit)
-;; (require 'git-gutter)
-
 ;;; Code:
 (use-package magit-popup
   :ensure t
