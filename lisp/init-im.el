@@ -33,14 +33,11 @@
       :load-path "/home/mengqp/.emacs.d/site-lisp/liberime/build/liberime.so"
       :config
       (liberime-start (expand-file-name "/usr/share/rime-data")
-		      ;; (expand-file-name "~/.config/fcitx/rime")
 		      (expand-file-name "~/.emacs.d/rime")
 		      )
-      ;; (liberime-start "/usr/share/rime-data" "/root/.emacs.d/rime/") ;
       (liberime-select-schema "wubi86")
 
       )
-
     (setq default-input-method "pyim")
     (setq pyim-default-scheme 'rime)
     )
@@ -63,10 +60,6 @@
   ;; 开启拼音搜索功能
   ;; (pyim-isearch-mode 1)
 
-  ;; 使用 pupup-el 来绘制选词框
-  ;; (setq pyim-page-tooltip 'pos-tip)
-  ;; (setq x-gtk-use-system-tooltips t)
-  ;; (setq pyim-page-tooltip 'child-frame)
   (setq pyim-page-tooltip 'posframe)
 
   ;; 选词框显示 5 个候选词

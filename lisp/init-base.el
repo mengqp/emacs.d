@@ -30,15 +30,8 @@
   )
 
 (require-package 'use-package)
-;; (use-package general
-;;   :ensure t)
-(use-package diminish
-  :ensure t)
-
-(use-package dash-functional
-  :ensure t
-  :defer t
-  )
+(require-package 'diminish)
+(require-package 'dash-functional)
 
 ;; 空格
 (use-package pangu-spacing
@@ -56,24 +49,21 @@
 (use-package autorevert
   :diminish auto-revert-mode
   :defer t
-  :hook
-  (after-init . auto-revert-mode)
-  :config
-  (global-auto-revert-mode t)
+  :hook (after-init . global-auto-revert-mode)
   )
 
 ;; 自动保存
 (use-package auto-save
   :defer 3
-  :config
+  :init
   (setq auto-save-delete-trailing-whitespace t)
-  (auto-save-enable)              ;; 开启自动保存功能
   (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
   (setq auto-save-idle 10)
+  :config
+  (auto-save-enable)              ;; 开启自动保存功能
   )
 
 (use-package recentf
-  ;; :ensure nil
   :defer t
   :hook (find-file . (lambda () (unless recentf-mode
 				  (recentf-mode)
@@ -91,7 +81,6 @@
   )
 
 (use-package savehist
-  ;; :ensure nil
   :disabled t
   :defer t
   :hook (before-save . savehist-mode)
@@ -133,7 +122,7 @@
 (use-package smart-tabs-mode
   :ensure t
   :defer t
-  :hook (after-prog . smart-tabs-mode)
+  :hook (prog-mode . smart-tabs-mode)
   :init
   (add-hook 'plantuml-mode-hook
 	    (lambda ()

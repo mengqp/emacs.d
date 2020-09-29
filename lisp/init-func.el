@@ -7,7 +7,7 @@
   "Open init file to config."
   (interactive)
   (find-file "~/.emacs.d/init.el")
-    )
+  )
 
 ;; Dos2Unix/Unix2Dos
 (defun dos2unix ()
@@ -19,11 +19,7 @@
   "Convert the current buffer to DOS file format."
   (interactive)
   (set-buffer-file-coding-system 'undecided-dos nil))
-;; (defun mengqp/find-readme
-;;   "find root/readme.org in the project"
-;;   (interactive)
-;;   (projectile-find-file "readme.org")
-;;     )
+
 (defun mengqp/clearM ()
   "Clear buffer is ^M."
   (interactive)
@@ -40,14 +36,14 @@
   "Open init keymap file to config."
   (interactive)
   (find-file "~/.emacs.d/lisp/init-keymap.el")
-    )
+  )
 
 
 (defun mengqp/switch-scratch-buf ()
   "Open init keymap file to config."
   (interactive)
   (switch-to-buffer "*scratch*")
-    )
+  )
 
 (defun mengqp/insert-date ()
   "Insert the date in current position."

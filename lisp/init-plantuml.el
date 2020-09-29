@@ -31,12 +31,6 @@
   (setq org-plantuml-jar-path plantuml-jar-path)
   ;; (expand-file-name "~/nutdata/linux/DotFiles/app/plantuml.jar"))
 
-  (use-package flycheck-plantuml
-    :disabled t
-    :ensure t
-    :config
-    (flycheck-plantuml-setup))
-
   )
 
 

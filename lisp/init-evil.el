@@ -36,7 +36,6 @@
   :defer t
   :diminish hs-minor-mode
   :after evil
-  :hook (prog-mode . hs-minor-mode)
   )
 
 (use-package evil-visualstar
@@ -68,14 +67,6 @@
   :ensure t
   :defer t
   :after evil
-  )
-
-(use-package evil-avy
-  :ensure t
-  :defer t
-  :after avy
-  :config
-  (evil-avy-mode t)
   )
 
 (provide 'init-evil)

@@ -19,16 +19,6 @@
   (setq flycheck-mode-line-prefix "!")
   )
 
-  ;; (use-package flycheck-posframe
-  ;;   :ensure t
-  ;;   :defer t
-  ;;   :hook ((potframe-mode) . flycheck-posframe)
-  ;;   :config
-  ;;   (flycheck-posframe-configure-pretty-defaults)
-  ;;   )
-
-
-
 (provide 'init-flycheck)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-flycheck.el ends here

@@ -35,7 +35,6 @@
 ;; Goto last change
 (use-package goto-chg
   :ensure t
-  :disabled t
   :defer t
   :bind ("C-," . goto-last-change)
   )
@@ -65,7 +64,6 @@
 ;; auto insert closing bracket
 (use-package smartparens
   :ensure t
-  ;; :disabled t
   :defer t
   :hook( prog-mode . smartparens-mode)
   :config

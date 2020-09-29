@@ -32,10 +32,10 @@
 
 ;; (set-frame-parameter nil 'alpha '(90 . 100))
 
-(when *linux*
+;; (when *linux*
   (set-frame-parameter nil 'fullscreen
 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth))
-  )
+;;   )
 
 ;; (when *win64*
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
@@ -55,15 +55,6 @@
   :config
   (set-face-foreground 'rainbow-delimiters-depth-1-face "DeepPink")
   (set-face-foreground 'rainbow-delimiters-depth-2-face "cyan")
-  )
-
-(use-package highlight-indent-guides
-  :ensure t
-  :disabled t
-  :defer t
-  :hook(prog-mode . highlight-indent-guides-mode)
-  :init
-  (setq highlight-indent-guides-method 'character)
   )
 
 (use-package highlight-doxygen
