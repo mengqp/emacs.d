@@ -12,19 +12,14 @@
   :bind (("C-x g" . magit-status)
 	 ("C-x M-g" . magit-dispatch-popup)
 	 ("C-c g" . magit-file-dispatch ))
-  :config
-  ;; Gitflow externsion for Magit
-  (use-package magit-gitflow
-    :ensure t
-    :diminish magit-gitflow-mode
-    :commands (magit-popup magit-define-popup-action)
-    :bind (:map magit-status-mode-map
-		("G" . magit-gitflow-popup))
-    :init (add-hook 'magit-mode-hook #'turn-on-magit-gitflow)
-    :config
-    (magit-define-popup-action 'magit-dispatch-popup
-      ?G "GitFlow" #'magit-gitflow-popup ?!))
+  )
 
+(use-package magit-gitflow
+  :ensure t
+  :defer t
+  :diminish magit-gitflow-mode
+  :hook
+  (magit-mode . turn-on-magit-gitflow)
   )
 
 
@@ -46,15 +41,6 @@
   :defer t
   :diminish git-gutter-mode
   :hook (prog-mode . git-gutter-mode)
-  :config
-  (custom-set-variables
-   '(git-gutter:modified-sign "==") ;; two space
-   '(git-gutter:added-sign "++")    ;; multiple character is OK
-   '(git-gutter:deleted-sign "--"))
-
-  (set-face-background 'git-gutter:modified "yellow") ;; background color
-  (set-face-foreground 'git-gutter:added "green")
-  (set-face-foreground 'git-gutter:deleted "red")
   )
 
 (use-package vc-msg

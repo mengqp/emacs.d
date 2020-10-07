@@ -2,25 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package aggressive-indent
-  :ensure t
-  :disabled t
-  :defer t
-  :hook ((prog-mode) . aggressive-indent-mode)
-  :diminish aggressive-indent-mode
-  ;; :config
-  :init
-  (setq aggressive-indent-modes-to-prefer-defun '(emacs-lisp-mode lisp-mode scheme-mode clojure-mode c-mode c++-mode))
-  (setq aggressive-indent-dont-electric-modes t)
-  (setq aggressive-indent-sit-for-time 0.5)
-  :config
-  (add-to-list
-   'aggressive-indent-dont-indent-if
-   '(and (derived-mode-p 'cc-mode)
-	 (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
-			     (thing-at-point 'line)))))
-  )
-
 ;; Edit multiple regions in the same way simultaneously
 (use-package iedit
   :ensure t
@@ -37,16 +18,6 @@
   :ensure t
   :defer t
   :bind ("C-," . goto-last-change)
-  )
-
-(use-package multiple-cursors
-  :ensure t
-  :disabled t
-  :defer t
-  :bind
-  ("C->" . mc/mark-next-like-this)
-  ("C-<" . mc/mark-previous-like-this)
-  ("C-c C-<" . mc/mark-all-like-this)
   )
 
 (use-package expand-region
@@ -84,16 +55,11 @@
   :defer t
   :hook(after-init . global-anzu-mode)
   :init
-  (custom-set-variables
-   '(anzu-mode-lighter "")
-   '(anzu-deactivate-region t)
-   '(anzu-search-threshold 1000)
-   '(anzu-replace-threshold 50)
-   '(anzu-replace-to-string-separator " => ")
-   )
-  :config
-  (set-face-attribute 'anzu-mode-line nil
-		      :foreground "yellow" :weight 'bold)
+  (setq anzu-mode-lighter "")
+  (setq anzu-deactivate-region t)
+  (setq anzu-search-threshold 1000)
+  (setq anzu-replace-threshold 50)
+  (setq anzu-replace-to-string-separator " => ")
   (global-set-key [remap query-replace] 'anzu-query-replace)
   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
   )
@@ -114,7 +80,6 @@
 
 (use-package auto-sudoedit
   :ensure t
-  ;; :disabled t
   :defer t
   :hook(after-init . auto-sudoedit-mode)
   )

@@ -11,12 +11,6 @@
   (setq initial-major-mode 'text-mode)
   ;; (setq initial-scratch-message nil )
   (setq inhibit-compacting-font-caches t) ;使用字体缓存，避免卡顿
-
-  ;; ;; 不显示 *scratch*
-  ;; (defun remove-scratch-buffer ()
-  ;;   (if (get-buffer "*scratch*")
-  ;; 	(kill-buffer "*scratch*")))
-  ;; (add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
   (setq split-width-threshold nil)        ;分屏的时候使用上下分屏
   )
 
@@ -41,7 +35,7 @@
   :diminish pangu-spacing-mode
   :hook
   (prog-mode-hook . pangu-spacing-mode)
-  :config
+  :init
   (setq pangu-spacing-real-insert-separtor nil)
   )
 
@@ -81,7 +75,6 @@
   )
 
 (use-package savehist
-  :disabled t
   :defer t
   :hook (before-save . savehist-mode)
   :init
@@ -97,7 +90,6 @@
   )
 
 (use-package session
-  :disabled t
   :ensure t
   :hook(after-init . session-initialize)
   :defer t
@@ -143,7 +135,7 @@
   )
 
 (use-package adaptive-wrap
-  :disabled t
+  ;; :disabled t
   :ensure t
   :defer t
   :hook (after-init . adaptive-wrap-prefix-mode)

@@ -52,7 +52,6 @@
 		      "r" 'gud-go
 		      "c" 'gud-cout
 		      "u" 'gud-until
-		      "d" 'gud-until
 		      )
 
 

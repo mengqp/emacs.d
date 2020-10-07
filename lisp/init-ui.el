@@ -46,28 +46,6 @@
   :defer t
   )
 
-;; 括号
-(use-package rainbow-delimiters
-  :disabled t
-  :ensure t
-  :init
-  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-  :config
-  (set-face-foreground 'rainbow-delimiters-depth-1-face "DeepPink")
-  (set-face-foreground 'rainbow-delimiters-depth-2-face "cyan")
-  )
-
-(use-package highlight-doxygen
-  :ensure t
-  :hook
-  (prog-mode . highlight-doxygen-mode)
-  )
-
-(use-package hl-todo
-  :ensure t
-  :defer t
-  :hook (after-init . global-hl-todo-mode))
-
 (provide 'init-ui)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-ui.el ends here
