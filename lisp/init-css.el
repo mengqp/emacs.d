@@ -8,9 +8,6 @@
   :init
   (add-to-list 'auto-mode-alist '("\\.qss$" . css-mode))
   )
-
-
-
 (provide 'init-css)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-css.el ends here

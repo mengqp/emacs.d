@@ -12,10 +12,11 @@
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
   (setq evil-want-keybinding nil)
   :config
-  (evil-set-initial-state 'snails-mode 'insert)
-  (evil-set-initial-state 'vterm-mode 'insert)
+  (evil-set-initial-state 'snails-mode 'emacs)
+  (evil-set-initial-state 'vterm-mode 'emacs)
   ;; (evil-set-initial-state 'text-mode 'emacs)
   (evil-set-initial-state 'color-rg-mode 'emacs)
+  (evil-set-initial-state 'xref--xfef-buffer-mode 'emacs)
   (evil-set-initial-state 'realgud-short-key-mode 'emacs)
   (evil-set-initial-state 'dired-mode 'emacs)
   ;; remove all keybindings from insert-state keymap,it is VERY VERY important

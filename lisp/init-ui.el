@@ -46,6 +46,11 @@
   :defer t
   )
 
+(use-package ranger
+  :ensure t
+  :defer t
+  )
+
 (provide 'init-ui)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-ui.el ends here

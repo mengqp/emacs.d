@@ -356,6 +356,12 @@
     "ph" 'sp-forward-slurp-sexp
     "pk" 'sp-kill-sexp
 
+    "xo" 'switch-window
+    "x1" 'switch-window-then-maximize
+    "x2" 'switch-window-then-split-below
+    "x3" 'switch-window-then-split-right
+    "x0" 'switch-window-then-delete
+
 
     ;; "w" '(:ignore t :wk ("w" . "evilw"))
     ;; "ww" 'save-buffer

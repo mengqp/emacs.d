@@ -1,8 +1,6 @@
 ;;; init-func.el --- xxx -*- coding: utf-8-unix -*-
 ;;; Commentary:
 ;;; Code:
-
-
 (defun mengqp/open-init-file ()
   "Open init file to config."
   (interactive)
@@ -38,7 +36,6 @@
   (find-file "~/.emacs.d/lisp/init-keymap.el")
   )
 
-
 (defun mengqp/switch-scratch-buf ()
   "Open init keymap file to config."
   (interactive)
@@ -56,8 +53,6 @@
   (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
 
 (provide 'init-func)
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-func.el ends here

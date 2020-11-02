@@ -28,26 +28,6 @@
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-pyright t)
   (setq lsp-python-ms-disabled t)
-  ;; :config
-  ;; (require 'lsp-clients)
-  ;; (setq lsp-enable-indentation nil)
-  ;; (setq lsp-enable-on-type-formatting nil)
-  ;; (flymake-mode-off)
-
-
-  ;; (use-package treemacs
-  ;;   :disabled t
-  ;;   :ensure t
-  ;;   :defer t
-  ;;   :config
-  ;;   (use-package lsp-treemacs
-  ;;     :ensure t
-  ;;     :commands (lsp-treemacs lsp-treemacs--make-ref-item)
-  ;;     ;; :disabled t
-  ;;     :config
-  ;;     (lsp-treemacs-sync-mode 1)
-  ;;     )
-  ;;   )
   )
 
 (use-package lsp-ui
@@ -82,23 +62,6 @@
   )
 
 
-;; (use-package eglot
-;;   :ensure t
-;;   :disabled t
-;;   :defer t
-;;   :hook (prog-mode . eglot-ensure)
-;;   ;; :init
-;;   ;; (add-hook 'c-mode-common-hook 'eglot-ensure)
-;;   ;; (add-hook 'c-mode-hook 'eglot-ensure)
-;;   ;; (add-to-list 'eglot-server-programs
-;;   ;; 	       '((c++-mode c-mode) . (eglot-cquery "ccls")))
-;;   :config
-;;   (add-to-list 'eglot-server-programs '((c++-mode c-mode) . (eglot-cquery "ccls")))
-;;   (setq eglot-ignored-server-capabilites '(:hoverProvider)) ;disable show help document in minibuffer
-
-;;   )
-
-
 (use-package ccls
   :ensure t
   :defer t
@@ -108,66 +71,8 @@
          (lambda () (require 'ccls) (lsp)))
   ;; :hook ((c-mode c++-mode objc-mode) .
   ;;        (lambda () (require 'nox) (nox-ensure)))
-  ;; :init
-  ;; (add-hook 'c-mode-common-hook (lambda () (require 'nox) (nox-ensure)))
   :config
-  ;; (setq ccls-args '("--log-file=/tmp/ccls-test.out" "-v=3"))
-  ;; (setq projectile-require-project-root t)
   (setq ccls-executable "/usr/bin/ccls")
-
-  ;; (use-package projectile
-  ;;   :config
-  ;;   (setq projectile-project-root-files-top-down-recurring
-  ;; 	  (append '("compile_commands.json"
-  ;; 		    ".ccls")
-  ;; 		  projectile-project-root-files-top-down-recurring))
-  ;;   (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
-  ;;   )
-
-  ;; (ccls-navigate "D") ;; roughly sp-down-sexp
-  ;; (ccls-navigate "L")
-  ;; (ccls-navigate "R")
-  ;; (ccls-navigate "U")
-
-  ;; (ccls-xref-find-custom "$ccls/base")
-  ;; (ccls-xref-find-custom "$ccls/callers")
-  ;; (ccls-xref-find-custom "$ccls/derived")
-  ;; (ccls-xref-find-custom "$ccls/vars")
-
-  ;; ;; Alternatively, use lsp-ui-peek interface
-  ;; (lsp-ui-peek-find-custom 'base "$ccls/base")
-  ;; (lsp-ui-peek-find-custom 'callers "$ccls/callers")
-  ;; (lsp-ui-peek-find-custom 'random "$ccls/random") ;; jump to a random declaration
-
-  ;; (setq ccls-sem-highlight-method 'font-lock)
-  ;; alternatively, (setq ccls-sem-highlight-method 'overlay)
-
-  ;; For rainbow semantic highlighting
-  ;; (ccls-use-default-rainbow-sem-highlight)
-
-  ;; (setq ccls-extra-init-params
-  ;; 	'(
-  ;; 	  :clang (:extraArgs ("-D__cpp_deduction_guides=0" "-Wno-macro-redefined"))
-  ;; 	  :completion (:detailedLabel t)
-  ;; 	  :diagnostics (:frequencyMs 5000)
-  ;; 	  :index (:initialReparseForDependency :json-false)))
-
-
-  ;; ;; (setq ccls-extra-init-params '(:completion (:detailedLabel t)))
-  ;; (general-define-key :states '(normal motion)
-  ;; 		      :keymaps '(c++-mode-map
-  ;; 				 c-mode-map)
-  ;; 		      :prefix ";"
-  ;; 		      "d" 'xref-find-definitions
-  ;; 		      "r" 'xref-find-references
-  ;; 		      ;; "m" 'lsp-ui-imenu
-  ;; 		      "cm" 'ccls-member-hierarchy
-  ;; 		      "cc" 'ccls-call-hierarchy
-  ;; 		      "cp" 'ccls-inheritance-hierarchy
-  ;; 		      ;; "n" 'ccls-navigate
-  ;; 		      )
-
-
   )
 
 ;; lsp-auto-require-clients defaults to t, lsp-clients is required and clangd is registered.

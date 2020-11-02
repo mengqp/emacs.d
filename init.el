@@ -83,10 +83,6 @@
   (require 'init-css)
   (require 'init-markdown)
   (require 'init-php)
-
   )
-
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-
 
 ;;; init.el ends here

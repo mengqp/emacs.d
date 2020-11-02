@@ -5,13 +5,6 @@
   :ensure t
   :mode ("\\.org\\'" . org-mode)
   :defer t
-  :bind*
-  (
-   ("M-j oo" . org-capture)
-   ("M-j oa" . org-agenda)
-   ("M-j oj" . org-journal-new-entry)
-   ("M-j ob" . org-brain-prefix-map )
-   )
   :init
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
 				   (org-agenda-files :maxlevel . 9))))

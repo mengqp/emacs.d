@@ -23,6 +23,8 @@
   (fset 'yes-or-no-p 'y-or-n-p)
   )
 
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
 (require-package 'use-package)
 (require-package 'diminish)
 (require-package 'dash-functional)

@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package cc-mode
-  :ensure nil
   :defer t
   :hook (c-mode-common . (lambda ()
                            (c-set-style "linux")
