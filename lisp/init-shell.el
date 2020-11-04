@@ -38,8 +38,10 @@
   )
 
 (use-package vterm
-  :disabled t
+  ;; :disabled t
   :ensure t
+  :init
+  (setq vterm-shell "zsh")
   )
 
 ;; ;; (require exec-path-from-shell)

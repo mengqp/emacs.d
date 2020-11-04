@@ -54,7 +54,7 @@
   (require 'init-modeline)
   (require 'init-theme)
   (require 'init-cnfonts)
-  ;; (require 'init-layout)
+  (require 'init-layout)
   (require 'init-im)
 
   ;;tool
@@ -73,9 +73,10 @@
   (require 'init-func)
   (require 'init-keymap)
 
-  (require 'init-plantuml)
   (require 'init-gdb)
+  (require 'init-shell)
   ;;
+  (require 'init-plantuml)
   (require 'init-cc)
   (require 'init-cmake)
   (require 'init-org)
