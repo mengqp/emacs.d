@@ -122,7 +122,7 @@
     ;; "dd" 'avy-zap-to-char-dwim
 
     ;; "e" '(:ignore t :wk ("e" . "shell"))
-    ;; "ee" 'aweshell-new
+    "ee" 'vterm
     ;; "eh" 'eshell-here
     ;; "ee" 'ansi-term
     ;; "ea" 'shell
