@@ -104,6 +104,17 @@
     "." 'counsel-projectile-find-file
     ;; ":" 'counsel-M-x
 
+    "1" 'eyebrowse-switch-to-window-config-1
+    "2" 'eyebrowse-switch-to-window-config-2
+    "3" 'eyebrowse-switch-to-window-config-3
+    "4" 'eyebrowse-switch-to-window-config-4
+    "5" 'eyebrowse-switch-to-window-config-5
+    "6" 'eyebrowse-switch-to-window-config-6
+    "7" 'eyebrowse-switch-to-window-config-7
+    "8" 'eyebrowse-switch-to-window-config-8
+    "9" 'eyebrowse-prev-window-config
+    "0" 'eyebrowse-next-window-config
+
     ;; "a" '(:ignore t :wk ("a" . "app"))
     ;; "ac" 'calc
 
@@ -158,17 +169,17 @@
 
     ;; "l" '(:ignore t :wk ("l" . "layout"))
     ;; "l0" 'eyebrowse-switch-to-window-config-0
-    "l1" 'eyebrowse-switch-to-window-config-1
-    "l2" 'eyebrowse-switch-to-window-config-2
-    "l3" 'eyebrowse-switch-to-window-config-3
-    "l4" 'eyebrowse-switch-to-window-config-4
-    "l5" 'eyebrowse-switch-to-window-config-5
-    "l6" 'eyebrowse-switch-to-window-config-6
-    "l7" 'eyebrowse-switch-to-window-config-7
-    "l8" 'eyebrowse-switch-to-window-config-8
-    "l9" 'eyebrowse-switch-to-window-config-9
-    "lp" 'eyebrowse-prev-window-config
-    "ln" 'eyebrowse-next-window-config
+    ;; "l1" 'eyebrowse-switch-to-window-config-1
+    ;; "l2" 'eyebrowse-switch-to-window-config-2
+    ;; "l3" 'eyebrowse-switch-to-window-config-3
+    ;; "l4" 'eyebrowse-switch-to-window-config-4
+    ;; "l5" 'eyebrowse-switch-to-window-config-5
+    ;; "l6" 'eyebrowse-switch-to-window-config-6
+    ;; "l7" 'eyebrowse-switch-to-window-config-7
+    ;; "l8" 'eyebrowse-switch-to-window-config-8
+    ;; "l9" 'eyebrowse-switch-to-window-config-9
+    ;; "lp" 'eyebrowse-prev-window-config
+    ;; "ln" 'eyebrowse-next-window-config
     ;; "lc" 'wg-create-workgroup ; save windows layout
     ;; "ll" 'wg-switch-to-workgroup ; load windows layout
     ;; "ls" 'wg-save-session
@@ -215,30 +226,8 @@
     ;; "sdi" 'color-rg-search-input
     ;; "sds" 'color-rg-search-symbol
 
-    ;; "th" 'awesome-tab-backward-tab
-    ;; "tl" 'awesome-tab-forward-tab
-    ;; "tj" 'awesome-tab-forward-group
-    ;; "tk" 'awesome-tab-backward-group
-    ;; "t0" 'my-select-window
-    ;; "t1" 'my-select-window
-    ;; "t2" 'my-select-window
-    ;; "t3" 'my-select-window
-    ;; "t4" 'my-select-window
-    ;; "t5" 'my-select-window
-    ;; "t6" 'my-select-window
-    ;; "t7" 'my-select-window
-    ;; "t8" 'my-select-window
-    ;; "t9" 'my-select-window ;; "ta" 'awesome-tab-select-beg-tab
-    ;; "te" 'awesome-tab-select-end-tab
-    ;; "tt" 'awesome-tab-ace-jump
-    ;; "tmj" 'awesome-tab-move-current-tab-to-left
-    ;; "tmk" 'awesome-tab-move-current-tab-to-right
-    ;; "tg" 'awesome-tab-counsel-switch-group
-    ;; "tbk" 'kill-current-buffer
-    ;; "tdo" 'awesome-tab-kill-other-buffers-in-current-group
-    ;; "tda" 'awesome-tab-kill-all-buffers-in-current-group
-    ;; "tdm" 'awesome-tab-kill-match-buffers-in-current-group
-
+    "tt" 'eshell
+    "tv" 'vterm
 
     ;; "w" '(:ignore t :wk ("w" . "window"))
     "ws" 'split-window-vertically
