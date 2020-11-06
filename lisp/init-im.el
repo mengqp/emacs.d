@@ -3,6 +3,7 @@
 ;;; Code:
 (use-package pyim
   :ensure t
+  :disabled t
   :defer t
   :bind*
   (
@@ -14,6 +15,8 @@
   :config
   (setq pyim-dcache-prefer-emacs-thread t)
   ;; (setq pyim-debug t)
+  (setq default-input-method "pyim")
+  (global-set-key (kbd "C-\\") 'toggle-input-method)
 
   (when *win64*
     ;; 五笔用户使用 wbdict 词库
@@ -24,7 +27,6 @@
       ;; (pyim-wbdict-gbk-enable)
       (pyim-wbdict-v98-enable)
       )
-    (setq default-input-method "pyim")
     (setq pyim-default-scheme 'wubi)
     )
 
@@ -38,7 +40,6 @@
       (liberime-select-schema "wubi86")
 
       )
-    (setq default-input-method "pyim")
     (setq pyim-default-scheme 'rime)
     )
 
@@ -69,12 +70,16 @@
 
 (use-package rime
   :ensure t
-  :disabled t
+  ;; :disabled t
   :commands (init-im rime-toggle-or-inline-ascii)
   :bind*
   (
    ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
    ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
+   (:map
+    rime-active-mode-map
+    ("<tab>" . 'rime-inline-ascii)
+    )
    )
   :diminish rime-mode
   :hook(after-init . rime-mode)
@@ -89,8 +94,9 @@
   ;;  	rime-predicate-current-uppercase-letter-p ) )
   ;; support shift-l, shift-r, control-l, control-r
   ;; (setq rime-inline-ascii-trigger 'shift-l)
-  ;; (setq rime-inline-predicates '(rime-predicate-space-after-cc-p))
-  (setq rime-user-data-dir "~/.emacs.d/rime/")
+  (setq rime-inline-predicates '(rime-predicate-space-after-cc-p))
+  ;; (setq rime-user-data-dir "~/.emacs.d/rime/")
+  (setq rime-user-data-dir "~/.local/share/fcitx5/rime/")
 
   (setq rime-posframe-properties
 	(list :background-color "#333333"
@@ -99,7 +105,7 @@
 	      :internal-border-width 10))
   (setq default-input-method "rime"
 	rime-show-candidate 'posframe)
-  ;; (setq rime-title "")
+  (setq rime-title "")
   :config
   (defun rime-toggle-or-inline-ascii()
     "Open init package file to config."
