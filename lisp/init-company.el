@@ -6,13 +6,28 @@
   :ensure t
   :defer t
   :diminish company-mode
-  :hook ((prog-mode org-mode) . company-mode)
+  :hook ((prog-mode org-mode vterm-mode) . company-mode)
+  :bind
+  (
+   :map company-mode-map
+	("<backtab>" . company-yasnippet)
+   :map company-active-map
+         ("C-p" . company-select-previous)
+         ("C-n" . company-select-next)
+         ("<tab>" . company-complete-common-or-cycle)
+         ("<backtab>" . my-company-yasnippet)
+   )
   :init
   ;; 设置等待时间
   (setq company-idle-delay 0.2)
   ;; 补全起始长度
   (setq company-minimum-prefix-length 2)
   (setq company-show-numbers t)
+  (defun my-company-yasnippet ()
+    "Hide the current completeions and show snippets."
+    (interactive)
+    (company-cancel)
+    (call-interactively 'company-yasnippet))
   )
 
 (use-package company-posframe
