@@ -226,9 +226,6 @@
     ;; "sdi" 'color-rg-search-input
     ;; "sds" 'color-rg-search-symbol
 
-    "tt" 'eshell
-    "tv" 'vterm
-
     ;; "w" '(:ignore t :wk ("w" . "window"))
     "ws" 'split-window-vertically
     "wv" 'split-window-horizontally
@@ -301,8 +298,8 @@
     "jj" 'counsel-imenu
     ;; "jj" 'avy-goto-line
     ;; "jc" 'Ace-jump-char-mode
-    ;; "jw" 'avy-goto-char-2
-    ;; "jl" 'avy-goto-line
+    "jw" 'avy-goto-char-2
+    "jl" 'avy-goto-line
 
     ;; "l" '(:ignore t :wk ("l" . "line"))
     ;; "ll" 'display-line-numbers-mode

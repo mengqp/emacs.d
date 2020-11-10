@@ -19,9 +19,9 @@
    )
   :init
   ;; 设置等待时间
-  (setq company-idle-delay 0.2)
+  (setq company-idle-delay 0)
   ;; 补全起始长度
-  (setq company-minimum-prefix-length 2)
+  (setq company-minimum-prefix-length 1)
   (setq company-show-numbers t)
   (defun my-company-yasnippet ()
     "Hide the current completeions and show snippets."

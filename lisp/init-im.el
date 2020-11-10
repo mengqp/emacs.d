@@ -107,14 +107,19 @@
   (setq default-input-method "rime"
 	rime-show-candidate 'posframe)
   (setq rime-title "")
-  :config
   (defun rime-toggle-or-inline-ascii()
     "Open init package file to config."
     (interactive)
     (if (and (equal current-input-method "rime")
 	     (bound-and-true-p rime-mode))
+	(progn
+	  (rime-inline-ascii)
+	  )
+
+      (progn
+	(toggle-input-method)
 	(rime-inline-ascii)
-      (toggle-input-method)
+      )
       )
     )
   )
