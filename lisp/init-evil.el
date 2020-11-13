@@ -28,6 +28,8 @@
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
   (define-key evil-normal-state-map "\M-." 'xref-find-definitions)
   (define-key evil-motion-state-map "\M-." 'xref-find-definitions)
+  (define-key evil-motion-state-map "t" 'avy-goto-char)
+  (define-key evil-motion-state-map "T" 'avy-goto-char-2)
   )
 
 ;;实现代码折叠
