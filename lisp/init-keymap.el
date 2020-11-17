@@ -6,21 +6,6 @@
 ;; (global-unset-key (kbd "C-SPC"))
 ;; (global-set-key (kbd "S-SPC") 'set-mark-command)
 
-(global-set-key (kbd "M-g fi") 'mengqp/open-init-file)
-(global-set-key (kbd "M-g fp") 'mengqp/open-init-package-file)
-(global-set-key (kbd "M-g fk") 'mengqp/open-init-keymap-file)
-(global-set-key (kbd "M-g fs") 'mengqp/switch-scratch-buf)
-(global-set-key (kbd "M-g hf") 'find-function)
-(global-set-key (kbd "M-g hv") 'find-variable)
-(global-set-key (kbd "M-g hm") 'man)
-(global-set-key (kbd "M-g hw") 'woman)
-
-(global-unset-key (kbd "M-t"))
-(global-set-key (kbd "M-t c") 'compile)
-
-(global-unset-key (kbd "M-q"))
-(global-set-key (kbd "M-q r") 'restart-emacs)
-
 ;; (global-unset-key (kbd "M-h"))
 
 (use-package which-key
@@ -121,7 +106,6 @@
     ;; "b" '(:ignore t :wk ("b" . "buffers"))
     "bb" 'ivy-switch-buffer
     ;; "bd" 'kill-buffer
-    ;; "bs" 'mengqp/switch-scratch-buf
 
     ;; "c" '(:ignore t :wk ("c" . "compile"))
     "cc" 'compile
@@ -141,10 +125,11 @@
     ;; "f" '(:ignore t :wk ("f" . "files"))
     "ff" 'counsel-find-file  ;;
     ;; "f." 'find-file-at-point
-    ;; "fr" 'counsel-recentf  ;;
-    ;; "fdi" 'mengqp/open-init-file
-    ;; "fdp" 'mengqp/open-init-package-file
-    ;; "fdk" 'mengqp/open-init-keymap-file
+    "fr" 'counsel-recentf  ;;
+    "fdi" 'mengqp/open-init-file
+    "fdp" 'mengqp/open-init-package-file
+    "fdk" 'mengqp/open-init-keymap-file
+    "fds" 'mengqp/switch-scratch-buf
 
     ;; "g" '(:ignore t :wk ("g" . "git"))
     ;; "gst" 'magit-status
@@ -160,31 +145,10 @@
     ;; "gt" 'git-timemachine
 
     ;; "h" '(:ignore t :wk ("h" . "help"))
-    ;; "hf" 'find-function
-    ;; "hv" 'find-variable
-    ;; "hm" 'man
-    ;; "hw" 'woman
+    "hf" 'find-function
+    "hv" 'find-variable
 
     "jj" 'snails
-
-    ;; "l" '(:ignore t :wk ("l" . "layout"))
-    ;; "l0" 'eyebrowse-switch-to-window-config-0
-    ;; "l1" 'eyebrowse-switch-to-window-config-1
-    ;; "l2" 'eyebrowse-switch-to-window-config-2
-    ;; "l3" 'eyebrowse-switch-to-window-config-3
-    ;; "l4" 'eyebrowse-switch-to-window-config-4
-    ;; "l5" 'eyebrowse-switch-to-window-config-5
-    ;; "l6" 'eyebrowse-switch-to-window-config-6
-    ;; "l7" 'eyebrowse-switch-to-window-config-7
-    ;; "l8" 'eyebrowse-switch-to-window-config-8
-    ;; "l9" 'eyebrowse-switch-to-window-config-9
-    ;; "lp" 'eyebrowse-prev-window-config
-    ;; "ln" 'eyebrowse-next-window-config
-    ;; "lc" 'wg-create-workgroup ; save windows layout
-    ;; "ll" 'wg-switch-to-workgroup ; load windows layout
-    ;; "ls" 'wg-save-session
-    ;; "lr" 'wg-reload-session
-    ;; "lc" 'eyebrowse-close-window-config
 
     ;; "m" '(:ignore t :wk ("m" . "bookmark"))
     ;; ;; "mx" 'counsel-M-x
@@ -218,7 +182,7 @@
 
     ;; "q" '(:ignore t :wk ("q" . "quit"))
     ;; ;; "qq" 'save-buffers-kill-emacs
-    ;; "qr" 'restart-emacs
+    "qr" 'restart-emacs
 
     ;; "sp" 'color-rg-search-project-with-type
     ;; "st" 'color-rg-search-symbol-with-type
@@ -236,6 +200,7 @@
     "wq" 'quit-window
 
 
+
     ;; "/" 'color-rg-search-project
     "/" 'counsel-projectile-rg
     ;; "/" 'counsel-projectile-ag
@@ -250,6 +215,7 @@
     ;; "," 'ace-jump-char-mode
     ;; "," 'avy-goto-word-1
     "," 'avy-goto-char
+    "." 'avy-goto-char-2
 
     ;; "b" '(:ignore t :wk ("b" . "buffer"))
     ;; "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
@@ -261,9 +227,9 @@
     ;; "c" '(:ignore t :wk ("c" . "coding"))
     ;; "c2" '(:ignore t :wk ("2" . "convert"))
     ;; "cd" 'describe-current-coding-system
-    "cc" 'langtool-check
-    "cd" 'langtool-check-done
-    "cf" 'langtool-correct-buffer
+    ;; "cc" 'langtool-check
+    ;; "cd" 'langtool-check-done
+    ;; "cf" 'langtool-correct-buffer
     ;; "cr" 'revert-buffer-with-coding-system
     ;; "c2d" 'unix2dos
     ;; "c2u" 'dos2unix
@@ -287,6 +253,8 @@
     ;; "hu" 'unhighlight-regexp
     "hh" 'symbol-overlay-put
     "hd" 'symbol-overlay-remove-all
+    "hm" 'man
+    "hw" 'woman
 
     ;; "i" '(:ignore t :wk ("i" . "insert"))
     ;; "it" '(:ignore t :wk ("t" . "table"))
@@ -302,7 +270,7 @@
     "jl" 'avy-goto-line
 
     ;; "l" '(:ignore t :wk ("l" . "line"))
-    ;; "ll" 'display-line-numbers-mode
+    "ll" 'display-line-numbers-mode
     ;; "l RET" 'toggle-truncate-lines
     ;; "ln" 'whitespace-newline-mode
 
@@ -362,6 +330,7 @@
    :keymaps '(normal visual emacs)
    :prefix ";"
    ";"  'evilnc-comment-or-uncomment-lines
+   "w"  'avy-goto-word-0
    )
 
   (general-define-key

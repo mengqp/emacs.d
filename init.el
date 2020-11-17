@@ -86,5 +86,5 @@
   (require 'init-php)
   )
 
+;; (put 'list-threads 'disabled nil)
 ;;; init.el ends here
-(put 'list-threads 'disabled nil)
