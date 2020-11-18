@@ -234,6 +234,11 @@
     ;; "c2d" 'unix2dos
     ;; "c2u" 'dos2unix
     ;; "cf" 'clang-format-buffer
+    "ci" 'evilnc-comment-or-uncomment-lines
+    "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+    "cc" 'evilnc-copy-and-comment-lines
+    "cp" 'evilnc-comment-or-uncomment-paragraphs
+
 
     "dd" 'avy-zap-to-char-dwim
     ;; "dD" 'avy-zap-up-to-char-dwim
@@ -324,13 +329,14 @@
     "zu" 'avy-zap-up-to-char-dwim
 
 
+
     )
 
   (general-define-key
    :keymaps '(normal visual emacs)
    :prefix ";"
    ";"  'evilnc-comment-or-uncomment-lines
-   "w"  'avy-goto-word-0
+   "w"  'avy-goto-word-1
    )
 
   (general-define-key

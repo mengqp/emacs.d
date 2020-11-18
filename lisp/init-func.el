@@ -52,6 +52,17 @@
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
 
+(defvar mengqp-disable-idle-timer nil
+  "Function passed to `mengqp-run-with-idle-timer' is run immediately.")
+
+(defun mengqp-run-with-idle-timer (seconds func)
+  "After SECONDS, run function FUNC once."
+  (cond
+   (mengqp-disable-idle-timer
+    (funcall func))
+   (t
+    (run-with-idle-timer seconds nil func))))
+
 (provide 'init-func)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

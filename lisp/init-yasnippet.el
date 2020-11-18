@@ -5,7 +5,7 @@
 
 (use-package yasnippet
   :ensure t
-  :defer t
+  :defer 5
   :hook ((org-mode prog-mode) . yas-minor-mode)
   :diminish yas-minor-mode
   :init
