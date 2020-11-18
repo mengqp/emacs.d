@@ -8,7 +8,8 @@
   ;; backup in one place. flat, no tree structure
   (setq default-major-mode 'text-mode)    ;设置默认地主模式为TEXT模式
   (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
-  (setq initial-major-mode 'fundamental-mode)
+  ;; (setq initial-major-mode 'fundamental-mode)
+  (setq initial-major-mode 'text-mode)
   ;; (setq initial-scratch-message nil )
   (setq inhibit-compacting-font-caches t) ;使用字体缓存，避免卡顿
   (setq split-width-threshold nil)        ;分屏的时候使用上下分屏
@@ -54,7 +55,7 @@
   :init
   (setq auto-save-delete-trailing-whitespace t)
   (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
-  (setq auto-save-idle 10)
+  (setq auto-save-idle 5)
   :config
   (auto-save-enable)              ;; 开启自动保存功能
   )
@@ -137,7 +138,7 @@
   )
 
 (use-package adaptive-wrap
-  ;; :disabled t
+  :disabled t
   :ensure t
   :defer t
   :hook (after-init . adaptive-wrap-prefix-mode)
@@ -146,7 +147,7 @@
 
 (use-package keyfreq
   :ensure t
-  :defer t
+  :defer 10
   :config
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1)

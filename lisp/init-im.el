@@ -3,12 +3,12 @@
 ;;; Code:
 (use-package pyim
   :ensure t
-  :disabled t
+  ;; :disabled t
   :defer t
   :bind*
   (
-   ("M-i i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
-   ("M-i M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
+   ("M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
+   ;; ("M-i M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
    )
   :init
   (setq pyim-title "pyim")
@@ -70,12 +70,13 @@
 
 (use-package rime
   :ensure t
-  ;; :disabled t
+  :disabled t
   :commands (init-im rime-toggle-or-inline-ascii)
   :bind*
   (
-   ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
-   ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
+   ("M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
+   ;; ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
+   ;; ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
    (:map
     rime-active-mode-map
     ("<tab>" . 'rime-inline-ascii)

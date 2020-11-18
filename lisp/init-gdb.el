@@ -45,13 +45,15 @@
 				 c-mode-map)
 		      ;; :keymaps '(gud-mode-map)
 		      :prefix ";"
-		      "b" 'gud-break
-		      "n" 'gud-next
-		      "s" 'gud-stepi
-		      "f" 'gud-finish
-		      "r" 'gud-go
-		      "c" 'gud-cout
-		      "u" 'gud-until
+		      "ur" 'gud-remove
+		      "ub" 'gud-break
+		      "uu" 'gud-run
+		      "up" 'gud-print
+		      "un" 'gud-next
+		      "us" 'gud-step
+		      "ui" 'gud-stepi
+		      "uc" 'gud-cont
+		      "uf" 'gud-finish
 		      )
 
 

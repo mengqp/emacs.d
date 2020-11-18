@@ -45,21 +45,27 @@
 	lsp-ui-doc-header t
 	lsp-ui-doc-include-signature t
 	lsp-ui-doc-position 'top
-	lsp-ui-doc-use-webkit nil
+	;; lsp-ui-doc-use-webkit nil
+	lsp-ui-doc-use-webkit t
 	lsp-ui-doc-border (face-foreground 'default)
-	;; lsp-ui-doc-position 'at-point
+	lsp-ui-doc-position 'at-point
+	lsp-ui-doc-delay 1
 	lsp-ui-sideline-enable t
 	lsp-ui-sideline-ignore-duplicate t
 	lsp-ui-sideline-show-diagnostics nil
 	lsp-ui-sideline-show-symbol t
 	lsp-ui-sideline-show-hover t
 	lsp-ui-sideline-show-code-actions t
-	lsp-ui-sideline-delay 1
+	lsp-ui-sideline-delay 2
 	lsp-ui-flycheck-enable t
 	lsp-ui-imenu-enable nil
 	lsp-ui-imenu-kind-position 'left
 	)
   )
+
+(use-package lsp-ivy
+  :ensure t
+  :defer t)
 
 
 (use-package ccls

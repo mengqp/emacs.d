@@ -150,6 +150,9 @@
 
     "jj" 'snails
 
+    "ll" 'lsp-ivy-workspace-symbol
+    "lg" 'lsp-ivy-global-workspace-symbol
+
     ;; "m" '(:ignore t :wk ("m" . "bookmark"))
     ;; ;; "mx" 'counsel-M-x
     "md" 'bookmark-delete

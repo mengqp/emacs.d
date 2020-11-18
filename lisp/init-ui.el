@@ -1,8 +1,10 @@
 ;;; init-ui.el --- xxx -*- coding: utf-8-unix -*-
 ;;; Commentary:
 ;;; Code:
-;; 设置基本界面
+
 (progn
+  (when (featurep 'ns)
+  (push '(ns-transparent-titlebar . t) default-frame-alist))
   (setq use-file-dialog nil)
   (setq use-dialog-box nil)
   (setq ring-bell-function 'ignore)
@@ -19,16 +21,11 @@
   (global-hl-line-mode 1)
   ;;指针不要闪
   (blink-cursor-mode -1)
-  )
-
-(progn
   ;;显示括号匹配
   (show-paren-mode t)
   ;; show cursor position within line
   (column-number-mode 1)
-
   )
-
 
 ;; (set-frame-parameter nil 'alpha '(90 . 100))
 
