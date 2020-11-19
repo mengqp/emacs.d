@@ -31,7 +31,3 @@
 	path = site-lisp/liberime
 	url = https://github.com/merrickluo/liberime.git
 	ignore=untracked
-[submodule "site-lisp/nox"]
-	path = site-lisp/nox
-	url = https://github.com/manateelazycat/nox.git
-	ignore=untracked

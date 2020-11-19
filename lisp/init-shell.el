@@ -38,7 +38,7 @@
   )
 
 (use-package vterm
-  ;; :disabled t
+  :disabled t
   :ensure t
   :init
   (setq vterm-shell "zsh")
