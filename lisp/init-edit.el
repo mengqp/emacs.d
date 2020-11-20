@@ -101,6 +101,10 @@
 	)
   )
 
+(use-package wgrep
+  :ensure t
+  :defer t)
+
 (require 'init-color-rg)
 
 (provide 'init-edit)

@@ -35,7 +35,7 @@
   (require 'init-ivy)
   ;; (require 'init-snails)
   (require 'init-lsp)
-  ;; (require 'init-browser)
+  (require 'init-browser)
   (require 'init-gdb)
   ;; (require 'init-shell)
 
