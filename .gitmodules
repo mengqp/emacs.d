@@ -31,3 +31,6 @@
 	path = site-lisp/liberime
 	url = https://github.com/merrickluo/liberime.git
 	ignore=untracked
+[submodule "eaf"]
+	path = site-lisp/eaf
+	url = https://github.com/manateelazycat/emacs-application-framework.git
