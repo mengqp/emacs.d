@@ -15,18 +15,20 @@
   (require 'init-ui)
   (require 'init-edit)
   (require 'init-coding)
-  (require 'init-evil)
   (require 'init-modeline)
   (require 'init-theme)
   (require 'init-cnfonts)
-  (require 'init-layout)
-  (require 'init-im)
 
   ;;tool
   ;; (require 'init-calendar)
+  (require 'init-evil)
+  (require 'init-im)
+
+  (require 'init-layout)
   (require 'init-window)
   (require 'init-projectile)
   (require 'init-lsp)
+
 
   (require 'init-git)
   (require 'init-gdb)

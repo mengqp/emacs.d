@@ -1,9 +1,5 @@
 ;;; init-spell.el --- Config for mengqp -*- coding: utf-8-unix -*-
 ;;; Commentary:
-
-;; Copyright (C) 2017-2018 by mengqp
-
-
 ;;; Code:
 
 ;; On-the-fly spell checker
