@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;  这就一个进行基本配置的文件
 ;;; Code:
-(require 'init-const)
-
 (progn
   (setq make-backup-files nil)
   (setq auto-save-default nil)
@@ -70,7 +68,7 @@
 				  (recentf-mode)
 				  (recentf-track-opened-file))))
   :init
-  (setq recentf-max-saved-items 100)
+  (setq recentf-max-saved-items 1000)
   ;; (setq recentf-auto-cleanup 'never)
   (setq recentf-max-menu-items 15)
 
@@ -94,23 +92,6 @@
 					regexp-search-ring
 					extended-command-history)
 	savehist-autosave-interval 60)
-  )
-
-(use-package session
-  :ensure t
-  :hook(after-init . session-initialize)
-  :defer t
-  :init
-  (setq session-save-file (expand-file-name (concat user-emacs-directory ".session")))
-  (setq session-globals-max-size 2048)
-  ;; can store 8Mb string
-  (setq session-globals-max-string (* 8 1024 1024))
-  (setq session-globals-include '(kill-ring
-                                  (session-file-alist 100 t)
-                                  my-dired-commands-history
-                                  file-name-history
-                                  search-ring
-                                  regexp-search-ring))
   )
 
 (use-package restart-emacs
@@ -162,6 +143,7 @@
   )
 
 (use-package fuz
+  :disabled t
   :ensure t
   :defer t
   :config

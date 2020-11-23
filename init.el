@@ -42,13 +42,13 @@
   ;; (require 'init-shell)
 
   ;; lang
-  (require 'init-cmake)
-  (require 'init-css)
   (require 'init-org)
   (require 'init-cc)
   (require 'init-python)
-  (require 'init-markdown)
   (require 'init-php)
+  (require 'init-cmake)
+  (require 'init-css)
+  (require 'init-markdown)
   (require 'init-plantuml)
 
   ;; other
