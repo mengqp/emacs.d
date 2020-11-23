@@ -33,7 +33,7 @@
 ;;
 ;;; Code:
 (use-package eaf
-  :defer 5
+  :defer t
   :init
   (setq eaf-find-alternate-file-in-dired t)
   ;; :config

@@ -8,7 +8,6 @@
   ;; (require 'init-benchmarking)
   (require 'init-const)
   (require 'init-autoload)
-  (require 'cl-lib)
   (require 'init-package)
 
   ;;ui
@@ -25,29 +24,32 @@
 
   ;;tool
   ;; (require 'init-calendar)
-  (require 'init-company)
   (require 'init-window)
   (require 'init-projectile)
-  (require 'init-yasnippet)
-  (require 'init-flycheck)
-  (require 'init-ace-jump)
+  (require 'init-lsp)
+
   (require 'init-git)
+  (require 'init-gdb)
+
+  (require 'init-company)
+  (require 'init-flycheck)
+  (require 'init-yasnippet)
+
+  (require 'init-ace-jump)
   (require 'init-ivy)
   ;; (require 'init-snails)
-  (require 'init-lsp)
-  (require 'init-browser)
-  (require 'init-gdb)
+  ;; (require 'init-browser)
   ;; (require 'init-shell)
 
   ;; lang
-  (require 'init-plantuml)
-  (require 'init-cc)
   (require 'init-cmake)
-  (require 'init-org)
-  (require 'init-python)
   (require 'init-css)
+  (require 'init-org)
+  (require 'init-cc)
+  (require 'init-python)
   (require 'init-markdown)
   (require 'init-php)
+  (require 'init-plantuml)
 
   ;; other
   (require 'init-func)

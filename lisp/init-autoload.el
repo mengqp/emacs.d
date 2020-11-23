@@ -102,7 +102,6 @@
 (autoload 'iedit-rectangle-mode "iedit-rect" "" t)
 (autoload 'evilmi-select-items "evil-matchit" "" t)
 (autoload 'recentf-track-opened-file "recentf" "" t)
-;; (autoload 'awesome-pair-mode "awesome-pair" "" t)
 (autoload 'awesome-pair-wrap-bracke               "awesome-pair" "" t)
 (autoload 'awesome-pair-wrap-curly                "awesome-pair" "" t)
 (autoload 'awesome-pair-wrap-round                "awesome-pair" "" t)
@@ -119,6 +118,7 @@
 (autoload 'sp-forward-slurp-sexp            "smartparens" "" t)
 (autoload 'sp-kill-sexp                     "smartparens" "" t)
 (autoload 'company-backends                     "company" "" t)
+(autoload 'eaf-open                          "eaf.el" "" t)
 
 (provide 'init-autoload)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

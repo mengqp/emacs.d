@@ -2,12 +2,14 @@
 ;;; Commentary:
 ;;  这就一个进行基本配置的文件
 ;;; Code:
+(require 'init-const)
+
 (progn
   (setq make-backup-files nil)
   (setq auto-save-default nil)
   ;; backup in one place. flat, no tree structure
-  (setq default-major-mode 'text-mode)    ;设置默认地主模式为TEXT模式
-  (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
+  (setq-default default-major-mode 'text-mode)    ;设置默认地主模式为TEXT模式
+  (setq backup-directory-alist '(("" . (caocat my-emacs-d "/emacs-backup"))))
   ;; (setq initial-major-mode 'fundamental-mode)
   (setq initial-major-mode 'text-mode)
   ;; (setq initial-scratch-message nil )
@@ -52,6 +54,8 @@
 ;; 自动保存
 (use-package auto-save
   :defer 3
+  ;; :load-path (concat my-site-lisp-d "/auto-save/autosave.el")
+  :load-path auto-save-path
   :init
   (setq auto-save-delete-trailing-whitespace t)
   (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
@@ -97,7 +101,7 @@
   :hook(after-init . session-initialize)
   :defer t
   :init
-  (setq session-save-file (expand-file-name (concat "~/.emacs.d/" ".session")))
+  (setq session-save-file (expand-file-name (concat user-emacs-directory ".session")))
   (setq session-globals-max-size 2048)
   ;; can store 8Mb string
   (setq session-globals-max-string (* 8 1024 1024))
@@ -130,7 +134,7 @@
   :defer t;
   ;; :disabled t
   :config
-  (setq exec-path-from-shell-check-startup-files nil)
+  ;; (setq exec-path-from-shell-check-startup-files nil)
   (dolist (var '("SSH_AUTH_SOCK" "SSH_AGENT_PID" "GPG_AGENT_INFO" "LANG" "LC_CTYPE"))
     (add-to-list 'exec-path-from-shell-variables var))
   (when (memq window-system '(mac ns x))
@@ -143,7 +147,6 @@
   :defer t
   :hook (after-init . adaptive-wrap-prefix-mode)
   )
-
 
 (use-package keyfreq
   :ensure t

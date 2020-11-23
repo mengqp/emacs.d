@@ -30,8 +30,14 @@
 ;; (set-frame-parameter nil 'alpha '(90 . 100))
 
 ;; (when *linux*
+(defun linux-fullscreen ()
+    "Linux fullscreen."
+  (interactive)
   (set-frame-parameter nil 'fullscreen
 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth))
+    )
+
+(linux-fullscreen)
 ;;   )
 
 ;; (when *win64*

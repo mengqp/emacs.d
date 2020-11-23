@@ -48,6 +48,7 @@
                (speedbar-mode . emacs)
                (ivy-occur-mode . emacs)
                (ffip-file-mode . emacs)
+               (eaf-mode . emacs)
                (ivy-occur-grep-mode . normal)
                (messages-buffer-mode . normal)
                (js2-error-buffer-mode . emacs)))

@@ -102,6 +102,7 @@
 
     ;; "a" '(:ignore t :wk ("a" . "app"))
     ;; "ac" 'calc
+    "aa" 'eaf-open
 
     ;; "b" '(:ignore t :wk ("b" . "buffers"))
     "bb" 'ivy-switch-buffer
