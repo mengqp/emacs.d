@@ -63,6 +63,7 @@
    (t
     (run-with-idle-timer seconds nil func))))
 
+
 (provide 'init-func)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

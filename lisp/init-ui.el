@@ -29,7 +29,6 @@
 
 ;; (set-frame-parameter nil 'alpha '(90 . 100))
 
-;; (when *linux*
 (defun linux-fullscreen ()
     "Linux fullscreen."
   (interactive)
@@ -38,18 +37,12 @@
     )
 
 (linux-fullscreen)
-;;   )
 
 ;; (when *win64*
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
 ;;   )
 
 (use-package all-the-icons
-  :ensure t
-  :defer t
-  )
-
-(use-package ranger
   :ensure t
   :defer t
   )

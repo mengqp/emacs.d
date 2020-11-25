@@ -36,8 +36,6 @@
   ;; (setq projectile-completion-system 'ivy)
   ;; 去除 M-x 里面的 ^
   (setq ivy-initial-inputs-alist nil)
-  :config
-  (ivy-mode 1)
   (setq ivy-use-virtual-buffers t
 	ivy-count-format "%d/%d ")
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
@@ -53,7 +51,6 @@
   (setq ivy-re-builders-alist
 	;; allow input not in order
 	'((t   . ivy--regex-ignore-order)))
-
   )
 
 (provide 'init-ivy)

@@ -118,7 +118,8 @@
 (autoload 'sp-forward-slurp-sexp            "smartparens" "" t)
 (autoload 'sp-kill-sexp                     "smartparens" "" t)
 (autoload 'company-backends                     "company" "" t)
-(autoload 'eaf-open                          "eaf.el" "" t)
+(autoload 'eaf-open                          "eaf" "" t)
+(autoload 'evil-set-initial-state                          "evil-core" "" t)
 
 (provide 'init-autoload)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

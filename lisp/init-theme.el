@@ -1,6 +1,8 @@
 ;;; init-theme.el --- init-theme -*- coding: utf-8-unix -*-
 ;;; Commentary:
 ;;; Code:
+;; (load-theme 'manoj-dark)
+
 (use-package cyberpunk-theme
   :ensure t
   :disabled t
@@ -8,13 +10,6 @@
   :init
   (add-hook 'after-init-hook
 	    (lambda () (load-theme 'cyberpunk t)))
-  )
-
-(use-package zenburn-theme
-  :ensure t
-  :disabled t
-  :config
-  (load-theme 'zenburn t)
   )
 
 (use-package modus-operandi-theme
@@ -25,7 +20,7 @@
 
 (use-package modus-vivendi-theme
   :ensure t
-  ;; :disabled t
+  :disabled t
   :defer t
   :hook (after-init . (lambda ()
 			(load-theme 'modus-vivendi t)))

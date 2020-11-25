@@ -31,13 +31,6 @@
   ;; :after evil
   :config
 
-  (use-package which-key-posframe
-    :disabled t
-    :ensure t
-    :config
-    (which-key-posframe-mode)
-    ;; (setq which-key-posframe-poshandler 'posframe-poshandler-window-bottom-left-corner)
-    )
   ;; (general-evil-setup t)
   (general-create-definer moon--default-leader
     :states '(normal visual )
@@ -83,11 +76,9 @@
     ;; :global-prefix "M-m"
     ;; :non-normal-prefix "M-m"
 
-
     "SPC" 'switch-window
     "TAB" 'previous-buffer
     "." 'counsel-projectile-find-file
-    ;; ":" 'counsel-M-x
 
     "1" 'eyebrowse-switch-to-window-config-1
     "2" 'eyebrowse-switch-to-window-config-2
@@ -152,6 +143,8 @@
     "jj" 'snails
 
     "ll" 'lsp-ivy-workspace-symbol
+    "lf" 'lsp-format-buffer
+    "lr" 'lsp-rename
     "lg" 'lsp-ivy-global-workspace-symbol
 
     ;; "m" '(:ignore t :wk ("m" . "bookmark"))
@@ -339,7 +332,9 @@
   (general-define-key
    :keymaps '(normal visual emacs)
    :prefix ";"
+   "." 'xref-find-definitions
    ";"  'evilnc-comment-or-uncomment-lines
+   "r" 'xref-find-references
    "w"  'avy-goto-word-1
    )
 

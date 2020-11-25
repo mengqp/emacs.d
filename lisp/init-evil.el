@@ -5,7 +5,6 @@
 (use-package evil
   :ensure t
   :diminish evil-mode
-  :commands(evil-core evil-local-mode )
   :defer t
   :hook(after-init . evil-mode)
   :init
@@ -53,9 +52,6 @@
                (messages-buffer-mode . normal)
                (js2-error-buffer-mode . emacs)))
     (evil-set-initial-state (car p) (cdr p)))
-
-
-
 
   ;; remove all keybindings from insert-state keymap,it is VERY VERY important
   (setcdr evil-insert-state-map nil)

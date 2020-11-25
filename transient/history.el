@@ -10,8 +10,8 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
-  (\.\.\.)
-  ("-n256" "--graph" "--decorate"))
+  ("-n256" "--graph" "--decorate")
+  (\.\.\.))
  (magit-merge nil)
  (magit-patch nil)
  (magit-patch-apply nil)

@@ -5,8 +5,7 @@
 (use-package awesome-tray
   ;; :disabled t
   :defer t
-  :hook
-  (after-init . awesome-tray-mode)
+  :hook (window-setup . awesome-tray-mode)
   :init
   ;; (setq awesome-tray-mode-line-active-color "Gray60")
   ;; (setq awesome-tray-active-modules '("buffer-name" "awesome-tab" "git" "mode-name" "location"))

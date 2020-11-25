@@ -10,13 +10,11 @@
   :bind
   (
    :map company-mode-map
-	;; ("<backtab>" . company-yasnippet)
 	("M-y" . company-yasnippet)
    :map company-active-map
          ("C-p" . company-select-previous)
          ("C-n" . company-select-next)
          ("<tab>" . company-complete-common-or-cycle)
-         ;; ("<backtab>" . my-company-yasnippet)
          ("M-y" . my-company-yasnippet)
    )
   :init

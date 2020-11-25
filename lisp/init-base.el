@@ -137,11 +137,6 @@
   (keyfreq-autosave-mode 1)
   )
 
-(use-package vdiff
-  :ensure t
-  :defer t
-  )
-
 (use-package fuz
   :disabled t
   :ensure t

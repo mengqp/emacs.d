@@ -1,5 +1,6 @@
 ;;; init-coding.el --- xxx -*- coding: utf-8-unix -*-
 ;;; Commentary:
+;;; Code:
 (prefer-coding-system 'utf-8)
 (set-language-environment 'utf-8)
 (set-default-coding-systems 'utf-8)

@@ -81,11 +81,6 @@
   (setq ccls-executable "/usr/bin/ccls")
   )
 
-;; lsp-auto-require-clients defaults to t, lsp-clients is required and clangd is registered.
-;; If you don't want to see prompt for the choice between ccls and clangd for every new file
-;; (with-eval-after-load 'lsp-clients
-;;   (remhash 'clangd lsp-clients)
-;;   )
 (use-package lsp-python-ms
   :disabled t
   :ensure t
