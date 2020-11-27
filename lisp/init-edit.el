@@ -64,20 +64,6 @@
   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
   )
 
-(use-package symbol-overlay
-  :ensure t
-  :defer t
-  )
-
-(use-package column-enforce-mode
-  :ensure t
-  :defer t
-  :diminish column-enforce-mode
-  :hook((cc-mode python-mode) . column-enforce-mode)
-  :config
-  (setq column-enforce-column 80)
-  )
-
 (use-package auto-sudoedit
   :ensure t
   :defer t

@@ -47,6 +47,20 @@
   :defer t
   )
 
+(use-package symbol-overlay
+  :ensure t
+  :defer t
+  )
+
+(use-package column-enforce-mode
+  :ensure t
+  :defer t
+  :diminish column-enforce-mode
+  :hook((cc-mode python-mode) . column-enforce-mode)
+  :config
+  (setq column-enforce-column 80)
+  )
+
 (provide 'init-ui)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-ui.el ends here
