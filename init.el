@@ -5,10 +5,10 @@
 
 (let ((file-name-handler-alist nil))
   (load-file "~/.emacs.d/lisp/init-load-path.el")
-  ;; (require 'init-benchmarking)
   (require 'init-const)
   (require 'init-autoload)
   (require 'init-package)
+  (require 'init-benchmarking)
 
   ;;ui
   (require 'init-base)

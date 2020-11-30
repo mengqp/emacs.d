@@ -2,27 +2,56 @@
 ;;; Commentary:
 ;;  这就一个进行基本配置的文件
 ;;; Code:
-(progn
+
+(use-package files
+  :defer t
+  :init
+  ;; backup in one place. flat, no tree structure
   (setq make-backup-files nil)
   (setq auto-save-default nil)
-  ;; backup in one place. flat, no tree structure
-  (setq-default default-major-mode 'text-mode)    ;设置默认地主模式为TEXT模式
   (setq backup-directory-alist '(("" . (caocat my-emacs-d "/emacs-backup"))))
-  ;; (setq initial-major-mode 'fundamental-mode)
-  (setq initial-major-mode 'text-mode)
-  ;; (setq initial-scratch-message nil )
-  (setq inhibit-compacting-font-caches t) ;使用字体缓存，避免卡顿
-  (setq split-width-threshold nil)        ;分屏的时候使用上下分屏
-  )
-
-(progn
   ;; 末尾加空行
   (setq require-final-newline t)
-  ;; remember cursor position, for emacs 25.1 or later
-  (save-place-mode 1)
-  ;; 以 y/n 代表 yes/no
-  (fset 'yes-or-no-p 'y-or-n-p)
   )
+
+(use-package pixel-scroll
+  :defer t
+  :hook (after-init . pixel-scroll-mode)
+  )
+
+(use-package hl-line
+  :defer t
+  :hook (after-init . global-hl-line-mode)
+  )
+
+(use-package paren
+  :defer t
+  :hook (after-init . show-paren-mode)
+  )
+
+(use-package simple
+  :defer t
+  :hook (after-init . column-number-mode)
+  )
+
+;; remember cursor position, for emacs 25.1 or later
+(use-package save-place
+  :defer t
+  :hook (after-init . save-place-mode)
+  )
+
+(use-package startup
+  :defer t
+  :init
+  (setq initial-major-mode 'fundamental-mode)
+  (setq ring-bell-function 'ignore)
+  (setq inhibit-startup-screen t)
+  (setq inhibit-startup-echo-area-message t)
+  (setq inhibit-splash-screen t)
+  )
+
+;; 以 y/n 代表 yes/no
+(fset 'yes-or-no-p 'y-or-n-p)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
@@ -51,7 +80,7 @@
 
 ;; 自动保存
 (use-package auto-save
-  :defer 3
+  :defer 10
   ;; :load-path (concat my-site-lisp-d "/auto-save/autosave.el")
   :load-path auto-save-path
   :init

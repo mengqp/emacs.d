@@ -1,4 +1,5 @@
 ;;; init-load-path.el --- xxx -*- coding: utf-8-unix -*-
+;;; Commentary:
 ;;; Code:
 ;; Load path
 ;; Optimize: Force "lisp"" and "site-lisp" at the head to reduce the startup time.

@@ -73,7 +73,7 @@
 (use-package shift-number
   :ensure t
   :defer t
-  :bind* (
+  :bind (
 	  ("M-_" . shift-number-down)
 	  ("M-+" . shift-number-up))
   )
