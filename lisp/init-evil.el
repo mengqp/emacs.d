@@ -37,7 +37,7 @@
                (xref--xref-buffer-mode . emacs)
                ;;(message-mode . emacs)
                (epa-key-list-mode . emacs)
-               (fundamental-mode . emacs)
+               ;; (fundamental-mode . emacs)
                (woman-mode . emacs)
                (sr-mode . emacs)
                (profiler-report-mode . emacs)

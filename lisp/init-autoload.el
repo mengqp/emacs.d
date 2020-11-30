@@ -68,6 +68,7 @@
 (autoload 'counsel-find-file "counsel" "" t)
 (autoload 'counsel-projectile-rg "counsel"  "" t)
 (autoload 'counsel-bookmark "counsel" "" t)
+(autoload 'counsel-recentf "counsel" "" t)
 (autoload 'bookmark-delete "bookmark" "" t)
 (autoload 'bookmark-set "bookmark" "" t)
 (autoload 'eyebrowse-switch-to-window-config-1 "eyebrowse" "" t)
@@ -98,6 +99,9 @@
 (autoload 'org-roam-insert-immediate "org-roam" "" t)
 (autoload 'org-roam "org-roam" "" t)
 (autoload 'evilnc-comment-or-uncomment-lines "evil-nerd-commenter" "" t)
+(autoload 'evilnc-quick-comment-or-uncomment-to-the-line "evil-nerd-commenter" "" t)
+(autoload 'evilnc-copy-and-comment-lines "evil-nerd-commenter" "" t)
+(autoload 'evilnc-comment-or-uncomment-paragraphs "evil-nerd-commenter" "" t)
 (autoload 'iedit-mode "iedit" "" t)
 (autoload 'iedit-rectangle-mode "iedit-rect" "" t)
 (autoload 'evilmi-select-items "evil-matchit" "" t)
@@ -120,6 +124,12 @@
 (autoload 'company-backends                     "company" "" t)
 (autoload 'eaf-open                          "eaf" "" t)
 (autoload 'evil-set-initial-state                          "evil-core" "" t)
+(autoload 'lsp-ivy-workspace-symbol                          "lsp-ivy" "" t)
+(autoload 'lsp-ivy-global-workspace-symbol                          "lsp-ivy" "" t)
+(autoload 'lsp-format-buffer                          "lsp-mode" "" t)
+(autoload 'lsp-rename                          "lsp-mode" "" t)
+(autoload 'display-line-numbers-mode          "display-line-numbers" "" t)
+
 
 (provide 'init-autoload)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

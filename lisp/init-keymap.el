@@ -12,7 +12,6 @@
   :ensure t
   :hook (after-init . which-key-mode)
   :defer t
-  ;; :after general-override-mode
   :diminish which-key-mode
   :init
   ;; Set the prefix string that will be inserted in front of prefix commands
@@ -27,9 +26,11 @@
 (use-package general
   :ensure t
   :defer t
+  :hook (after-init . general-override-mode)
   ;; :commands (init-keymap nvmap)
   ;; :after evil
-  :config
+  ;; :config
+  :init
 
   ;; (general-evil-setup t)
   (general-create-definer moon--default-leader
@@ -93,7 +94,7 @@
 
     ;; "a" '(:ignore t :wk ("a" . "app"))
     ;; "ac" 'calc
-    "aa" 'eaf-open
+    ;; "aa" 'eaf-open
 
     ;; "b" '(:ignore t :wk ("b" . "buffers"))
     "bb" 'ivy-switch-buffer
@@ -109,7 +110,7 @@
     ;; "dd" 'avy-zap-to-char-dwim
 
     ;; "e" '(:ignore t :wk ("e" . "shell"))
-    "ee" 'vterm
+    ;; "ee" 'vterm
     ;; "eh" 'eshell-here
     ;; "ee" 'ansi-term
     ;; "ea" 'shell
@@ -140,7 +141,7 @@
     "hf" 'find-function
     "hv" 'find-variable
 
-    "jj" 'snails
+    ;; "jj" 'snails
 
     "ll" 'lsp-ivy-workspace-symbol
     "lf" 'lsp-format-buffer
@@ -157,16 +158,6 @@
     "oa" 'org-agenda
     ;; ;; "od" 'deft
     "oj" 'org-journal-new-entry
-    "op" 'org-pomodoro
-    "omp" 'org-mobile-push
-    "omg" 'org-mobile-pull
-    "oc" 'cfw:open-org-calendar
-    "orl" 'org-roam
-    "orf" 'org-roam-find-file
-    "org" 'org-roam-graph
-    "ori" 'org-roam-insert
-    "orb" 'org-roam-buffer-toggle-display
-    "orm" 'org-roam-insert-immediate
 
     ;; "p" '(:ignore t :wk ("p" . "project"))
     ;; "pd" 'counsel-projectile-find-dir
