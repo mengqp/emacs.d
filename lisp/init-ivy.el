@@ -13,7 +13,7 @@
   :diminish counsel-mode
   :commands (magit-utils magit-completing-read-function)
   :commands (magit-utils magit-completing-read-function)
-  :hook ((after-init . ivy-mode)
+  :hook ((emacs-startup . ivy-mode)
 	 (ivy-mode . counsel-mode))
   :bind
   (

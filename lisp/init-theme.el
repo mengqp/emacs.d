@@ -20,7 +20,7 @@
 
 (use-package modus-vivendi-theme
   :ensure t
-  ;; :disabled t
+  :disabled t
   :defer t
   :hook (after-init . (lambda ()
 			(load-theme 'modus-vivendi t)))

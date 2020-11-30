@@ -129,6 +129,7 @@
 (autoload 'lsp-format-buffer                          "lsp-mode" "" t)
 (autoload 'lsp-rename                          "lsp-mode" "" t)
 (autoload 'display-line-numbers-mode          "display-line-numbers" "" t)
+(autoload 'easy-mmode-defmap           "easy-mmode" "" t)
 
 
 (provide 'init-autoload)

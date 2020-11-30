@@ -1,14 +1,13 @@
 ;;; init.el --- Config for mengqp -*- coding: utf-8-unix -*-
 ;;; Commentary:
 ;;; Code:
-
+(load-file "~/.emacs.d/lisp/init-load-path.el")
 
 (let ((file-name-handler-alist nil))
-  (load-file "~/.emacs.d/lisp/init-load-path.el")
   (require 'init-const)
   (require 'init-autoload)
   (require 'init-package)
-  (require 'init-benchmarking)
+  ;; (require 'init-benchmarking)
 
   ;;ui
   (require 'init-base)

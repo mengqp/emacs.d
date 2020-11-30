@@ -66,6 +66,7 @@
 
 (use-package auto-sudoedit
   :ensure t
+  :disabled t
   :defer t
   :hook(after-init . auto-sudoedit-mode)
   )
@@ -74,8 +75,8 @@
   :ensure t
   :defer t
   :bind (
-	  ("M-_" . shift-number-down)
-	  ("M-+" . shift-number-up))
+	 ("M-_" . shift-number-down)
+	 ("M-+" . shift-number-up))
   )
 
 (use-package undo-fu

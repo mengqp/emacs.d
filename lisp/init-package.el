@@ -47,6 +47,9 @@ But you may use safer HTTPS instead.")
 ;;------------------------------------------------------------------------------
 ;; (package-initialize)
 
+(require-package 'use-package)
+(require-package 'diminish)
+(require-package 'dash-functional)
 
 (provide 'init-package)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

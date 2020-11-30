@@ -3,7 +3,7 @@
 ;;; Code:
 
 (use-package awesome-tray
-  :disabled t
+  ;; :disabled t
   :defer t
   :hook (window-setup . awesome-tray-mode)
   :init
@@ -13,7 +13,7 @@
   )
 
 (use-package doom-modeline
-  ;; :disabled t
+  :disabled t
   :ensure t
   :defer t
   :hook (window-setup . doom-modeline-mode)

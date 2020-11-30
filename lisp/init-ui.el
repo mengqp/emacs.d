@@ -8,20 +8,9 @@
   ;; Show a marker in the left fringe for lines not in the buffer
   (setq indicate-empty-lines t)
 
-
-  ;; 平滑滚动
-  ;; (pixel-scroll-mode t)
-  ;;当前行高亮
-  ;; (global-hl-line-mode 1)
   ;;指针不要闪
   (blink-cursor-mode -1)
-  ;;显示括号匹配
-  ;; (show-paren-mode t)
-  ;; show cursor position within line
-  ;; (column-number-mode 1)
   )
-
-
 
 ;; (set-frame-parameter nil 'alpha '(90 . 100))
 
@@ -55,6 +44,31 @@
   :hook((cc-mode python-mode) . column-enforce-mode)
   :config
   (setq column-enforce-column 80)
+  )
+
+(use-package dashboard
+  :ensure t
+  :disabled t
+  :init
+  ;; Set the banner
+  (setq dashboard-startup-banner 2)
+  ;; Value can be
+  ;; 'official which displays the official emacs logo
+  ;; 'logo which displays an alternative emacs logo
+  ;; 1, 2 or 3 which displays one of the text banners
+  ;; "path/to/your/image.png" or "path/to/your/text.txt" which displays whatever image/text you would prefer
+  ;; Set the title
+  (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
+  ;; Content is not centered by default. To center, set
+  (setq dashboard-center-content t)
+  (setq dashboard-set-navigator t)
+  (setq dashboard-items '(
+			  (recents  . 5)
+			  (bookmarks . 5)
+			  (projects . 5)
+			  ))
+  :config
+  (dashboard-setup-startup-hook)
   )
 
 (provide 'init-ui)

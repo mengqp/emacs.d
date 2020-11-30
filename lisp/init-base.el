@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;  这就一个进行基本配置的文件
 ;;; Code:
-
 (use-package files
   :defer t
   :init
@@ -43,6 +42,7 @@
 (use-package startup
   :defer t
   :init
+  ;; (setq initial-major-mode 'fundamental-mode)
   (setq initial-major-mode 'fundamental-mode)
   (setq ring-bell-function 'ignore)
   (setq inhibit-startup-screen t)
@@ -55,9 +55,6 @@
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(require-package 'use-package)
-(require-package 'diminish)
-(require-package 'dash-functional)
 
 ;; 空格
 (use-package pangu-spacing
@@ -80,7 +77,7 @@
 
 ;; 自动保存
 (use-package auto-save
-  :defer 10
+  ;; :defer t
   ;; :load-path (concat my-site-lisp-d "/auto-save/autosave.el")
   :load-path auto-save-path
   :init

@@ -4,8 +4,9 @@
 (use-package projectile
   :ensure t
   :diminish projectile-mode
+  ;; :disabled t
   :defer t
-  :hook (after-init . projectile-mode)
+  :hook (emacs-startup . projectile-mode)
   :init
   (setq projectile-completion-system 'ivy)
   (setq projectile-indexing-method 'hybrid)
@@ -14,7 +15,7 @@
   )
 
 (use-package counsel-projectile
-  ;; :disabled t
+  :disabled t
   :ensure t
   :defer t
   :preface (setq projectile-keymap-prefix (kbd "C-c p"))

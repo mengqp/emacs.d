@@ -1,6 +1,8 @@
 ;;; init-color-rg.el --- xxx -*- coding: utf-8-unix -*-
 ;;; Commentary:
 ;;; Code:
+(require 'init-autoload)
+
 (use-package color-rg
   :defer t
   :commands ( color-rg color-rg-search-input )
