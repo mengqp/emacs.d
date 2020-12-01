@@ -3,6 +3,14 @@
 ;;; Code:
 ;; (load-theme 'manoj-dark)
 
+(use-package nano
+  :disabled t
+  :load-path "~/.emacs.d/site-lisp/nano-emacs/"
+  ;; :init
+  ;; (add-hook 'after-init-hook
+  ;; 	    (lambda () (load-theme 'nano-theme-dark t)))
+  )
+
 (use-package cyberpunk-theme
   :ensure t
   :disabled t
@@ -20,7 +28,7 @@
 
 (use-package modus-vivendi-theme
   :ensure t
-  :disabled t
+  ;; :disabled t
   :defer t
   :hook (after-init . (lambda ()
 			(load-theme 'modus-vivendi t)))
