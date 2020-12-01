@@ -39,7 +39,7 @@
   (require 'init-ace-jump)
   (require 'init-ivy)
   ;; (require 'init-snails)
-  ;; (require 'init-browser)
+  (require 'init-browser)
   ;; (require 'init-shell)
 
   ;; lang
