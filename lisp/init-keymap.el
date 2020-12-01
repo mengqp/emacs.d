@@ -205,6 +205,8 @@
     "," 'avy-goto-char
     "." 'avy-goto-char-2
 
+    "aa" 'prelude-copy-file-name-to-clipboard
+
     ;; "b" '(:ignore t :wk ("b" . "buffer"))
     ;; "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
     ;; ;; "bs" 'save-buffer
@@ -242,8 +244,8 @@
     "ff" 'format-all-buffer
 
     ;; "h" '(:ignore t :wk ("h" . "help"))
-    ;; "h." 'highlight-symbol-at-point
-    ;; "hu" 'unhighlight-regexp
+    "h." 'highlight-symbol-at-point
+    "hu" 'unhighlight-regexp
     "hh" 'symbol-overlay-put
     "hd" 'symbol-overlay-remove-all
     "hm" 'man
@@ -257,7 +259,7 @@
 
     ;; "j" '(:ignore t :wk ("j" . "jump"))
     "jj" 'counsel-imenu
-    ;; "jj" 'avy-goto-line
+    "jj" 'avy-goto-line
     ;; "jc" 'Ace-jump-char-mode
     "jw" 'avy-goto-char-2
     "jl" 'avy-goto-line
