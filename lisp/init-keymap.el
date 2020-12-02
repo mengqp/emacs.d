@@ -110,8 +110,10 @@
     ;; "dd" 'avy-zap-to-char-dwim
 
     ;; "e" '(:ignore t :wk ("e" . "shell"))
-    ;; "ee" 'vterm
-    ;; "eh" 'eshell-here
+    "ee" 'eaf-open
+    "et" 'eaf-open-terminal
+    "eb" 'eaf-open-browser
+    "eg" 'eaf-open-git
     ;; "ee" 'ansi-term
     ;; "ea" 'shell
 
@@ -125,7 +127,10 @@
     "fds" 'mengqp/switch-scratch-buf
 
     ;; "g" '(:ignore t :wk ("g" . "git"))
-    ;; "gst" 'magit-status
+    "gs" 'magit-status
+    "gt" 'git-timemachine
+    "gm" 'vc-msg-show
+    "gf" 'magit-gitflow-popup
     ;; "gbl" 'magit-blame
     ;; "gbb" 'magit-branch-checkout
     ;; "gcc" 'magit-file-checkout
@@ -259,7 +264,7 @@
 
     ;; "j" '(:ignore t :wk ("j" . "jump"))
     "jj" 'counsel-imenu
-    "jj" 'avy-goto-line
+    ;; "jj" 'avy-goto-line
     ;; "jc" 'Ace-jump-char-mode
     "jw" 'avy-goto-char-2
     "jl" 'avy-goto-line
