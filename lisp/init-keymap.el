@@ -113,6 +113,7 @@
     "ee" 'eaf-open
     "et" 'eaf-open-terminal
     "eb" 'eaf-open-browser
+    "eh" 'eaf-open-browser-with-history
     "eg" 'eaf-open-git
     ;; "ee" 'ansi-term
     ;; "ea" 'shell
