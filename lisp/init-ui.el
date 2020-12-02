@@ -12,7 +12,7 @@
   (blink-cursor-mode -1)
   )
 
-;; (set-frame-parameter nil 'alpha '(90 . 100))
+(set-frame-parameter nil 'alpha '(90 . 100))
 
 (defun linux-fullscreen ()
   "Linux fullscreen."

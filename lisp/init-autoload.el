@@ -128,6 +128,7 @@
 (autoload 'eaf-open                          "eaf" "" t)
 (autoload 'eaf-open-terminal                          "eaf" "" t)
 (autoload 'eaf-open-browser                          "eaf" "" t)
+(autoload 'eaf-open-browser-with-history                          "eaf" "" t)
 (autoload 'eaf-open-git                          "eaf" "" t)
 (autoload 'evil-set-initial-state                          "evil-core" "" t)
 (autoload 'lsp-ivy-workspace-symbol                          "lsp-ivy" "" t)
