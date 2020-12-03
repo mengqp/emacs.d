@@ -88,6 +88,12 @@
    [remap xref-find-references]  'lsp-find-references
    )
 
+  ;; anzu
+  (general-define-key
+   [remap query-replace]  'anzu-query-replace
+   [remap query-replace-regexp]  'anzu-query-replace-regexp
+   )
+
   ;; company
   (general-define-key
    :keymaps 'company-mode-map

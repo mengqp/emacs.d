@@ -43,14 +43,15 @@ But you may use safer HTTPS instead.")
         (require-package package min-version t)))))
 
 
-;;------------------------------------------------------------------------------
-;; Fire up package.el and ensure the following packages are installed.
-;;------------------------------------------------------------------------------
-;; (package-initialize)
 ;; Should set before loading `use-package'
 (require-package 'use-package)
-(require-package 'diminish)
-(require-package 'dash-functional)
+;; (require-package 'diminish)
+;; (require-package 'dash-functional)
+(use-package diminish
+  :ensure t)
+
+(use-package dash-functional
+  :ensure t)
 
 (provide 'init-package)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

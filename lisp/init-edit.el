@@ -52,16 +52,16 @@
 
 (use-package anzu
   :ensure t
-  :defer t
-  :hook(after-init . global-anzu-mode)
+  :defer 1
+  ;; :hook(after-init . global-anzu-mode)
   :init
   (setq anzu-mode-lighter "")
   (setq anzu-deactivate-region t)
   (setq anzu-search-threshold 1000)
   (setq anzu-replace-threshold 50)
   (setq anzu-replace-to-string-separator " => ")
-  (global-set-key [remap query-replace] 'anzu-query-replace)
-  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+  ;; (global-set-key [remap query-replace] 'anzu-query-replace)
+  ;; (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
   )
 
 (use-package auto-sudoedit

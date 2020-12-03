@@ -7,7 +7,7 @@
   (require 'init-const)
   (require 'init-autoload)
   (require 'init-package)
-  (require 'init-benchmarking)
+  ;; (require 'init-benchmarking)
 
   ;;ui
   (require 'init-base)

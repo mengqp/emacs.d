@@ -6,11 +6,11 @@
   :ensure nil
   ;; :disabled t
   :defer t
-  :hook (window-setup . awesome-tray-mode)
+  :hook (after-init . awesome-tray-mode)
   :init
   ;; (setq awesome-tray-mode-line-active-color "Gray60")
   ;; (setq awesome-tray-active-modules '("buffer-name" "awesome-tab" "git" "mode-name" "location"))
-  (setq awesome-tray-active-modules '("buffer-name" "location" "git" "mode-name" ))
+  (setq awesome-tray-active-modules '("evil" "circe" "input-method" "buffer-name" "location" "git" "mode-name" ))
   )
 
 (use-package doom-modeline
