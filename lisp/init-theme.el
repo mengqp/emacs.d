@@ -20,7 +20,7 @@
 
 (use-package modus-vivendi-theme
   :ensure t
-  ;; :disabled t
+  :disabled t
   :defer t
   :hook (after-init . (lambda ()
 			(load-theme 'modus-vivendi t)))
@@ -55,6 +55,7 @@
   (setq modus-vivendi-theme-scale-2 1.1)
   (setq modus-vivendi-theme-scale-3 1.15)
   (setq modus-vivendi-theme-scale-4 1.2)
+  ;; (load-theme 'modus-vivendi t)
   )
 
 (provide 'init-theme)

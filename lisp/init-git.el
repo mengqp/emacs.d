@@ -9,9 +9,10 @@
 (use-package magit
   :ensure t
   :defer t
-  :bind (("C-x g" . magit-status)
-	 ("C-x M-g" . magit-dispatch-popup)
-	 ("C-c g" . magit-file-dispatch ))
+  ;; :bind (
+  ;; 	 ("C-x g" . magit-status)
+  ;; 	 ("C-x M-g" . magit-dispatch-popup)
+  ;; 	 ("C-c g" . magit-file-dispatch ))
   )
 
 (use-package magit-gitflow

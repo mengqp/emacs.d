@@ -165,7 +165,7 @@
 
 (use-package keyfreq
   :ensure t
-  :defer 10
+  :defer 1
   :config
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1)

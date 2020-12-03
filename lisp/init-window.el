@@ -4,11 +4,12 @@
 (use-package switch-window
   :ensure t
   :defer t
-  :bind ("C-x o" . switch-window)
-  :bind ("C-x 1" . switch-window-then-maximize)
-  :bind ("C-x 2" . switch-window-then-split-below)
-  :bind ("C-x 3" . switch-window-then-split-right)
-  :bind ("C-x 0" . switch-window-then-delete)
+  ;; :defer t
+  ;; :bind ("C-x o" . switch-window)
+  ;; :bind ("C-x 1" . switch-window-then-maximize)
+  ;; :bind ("C-x 2" . switch-window-then-split-below)
+  ;; :bind ("C-x 3" . switch-window-then-split-right)
+  ;; :bind ("C-x 0" . switch-window-then-delete)
   :init
   (setq switch-window-shortcut-style 'qwerty)
   (setq switch-window-qwerty-shortcuts

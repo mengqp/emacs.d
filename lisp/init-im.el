@@ -5,10 +5,10 @@
   :ensure t
   ;; :disabled t
   :defer t
-  :bind*
-  (
-   ("M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
-   )
+  ;; :bind*
+  ;; (
+  ;;  ("M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
+  ;;  )
   :init
   (setq pyim-title "pyim")
   (setq pyim-dcache-prefer-emacs-thread t)

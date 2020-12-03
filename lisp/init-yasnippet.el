@@ -26,7 +26,7 @@
 (use-package ivy-yasnippet
   :ensure t
   :defer t
-  :bind (("C-c C-y" . ivy-yasnippet))
+  ;; :bind (("C-c C-y" . ivy-yasnippet))
   )
 
 (provide 'init-yasnippet)

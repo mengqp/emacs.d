@@ -9,11 +9,11 @@
   :ensure t
   :diminish lsp-mode
   :hook ((c-mode c++-mode objc-mode python-mode) . #'lsp)
-  :bind (:map lsp-mode-map
-              ;; ("C-c C-d" . lsp-describe-thing-at-point)
-              ([remap xref-find-definitions] . lsp-find-definition)
-              ([remap xref-find-references] . lsp-find-references)
-	      )
+  ;; :bind (:map lsp-mode-map
+  ;;             ;; ("C-c C-d" . lsp-describe-thing-at-point)
+  ;;             ([remap xref-find-definitions] . lsp-find-definition)
+  ;;             ([remap xref-find-references] . lsp-find-references)
+  ;; 	      )
   :init
   (setq read-process-output-max (* 1024 1024)) ;; 1MB
   (setq lsp-keymap-prefix "C-c l")

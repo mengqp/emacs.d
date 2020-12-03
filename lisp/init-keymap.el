@@ -8,6 +8,7 @@
 
 ;; (global-unset-key (kbd "M-h"))
 
+
 (use-package which-key
   :ensure t
   :hook (after-init . which-key-mode)
@@ -31,6 +32,82 @@
   ;; :after evil
   ;; :config
   :init
+  (general-define-key
+   ;; iedit
+   "C-;" 'iedit-mode
+   ;; goto-chg
+   "C-," 'goto-last-change
+   ;; expand-region
+   "C-=" 'er/expand-region
+   ;; shift-number
+   "M-_" 'shift-number-down
+   "M-+" 'shift-number-up
+   ;; undo-fu
+   "C-/" 'undo-fu-only-undo
+   "C-?" 'undo-fu-only-redo
+
+   ;; pyim
+   "M-i" 'pyim-convert-string-at-point ;与 pyim-probe-dynamic-english 配合
+
+   ;; counsel
+   "M-x"  'counsel-M-x
+   "C-s"  'swiper
+
+   ;; avy-zap
+   "M-z"  'avy-zap-to-char-dwim
+   "M-Z"  'avy-zap-up-to-char-dwim
+   )
+
+  (general-define-key
+   :prefix "C-x"
+   ;; switch-window
+   "o"  'switch-window
+   "1"  'switch-window-then-maximize
+   "2"  'switch-window-then-split-below
+   "3"  'switch-window-then-split-right
+   "0"  'switch-window-then-delete
+
+   ;; magit
+   "g"  'magit-status
+   "M-g"  'magit-dispatch-popup
+   )
+
+  (general-define-key
+   :prefix "C-c"
+   ;; ivy-yasnippet
+   "C-y"  'ivy-yasnippet
+   ;; magit
+   "g" 'magit-file-dispatch
+
+   )
+
+  ;; lsp
+  (general-define-key
+   :keymaps 'lsp-mode-map
+   [remap xref-find-definitions]  'lsp-find-definition
+   [remap xref-find-references]  'lsp-find-references
+   )
+
+  ;; company
+  (general-define-key
+   :keymaps 'company-mode-map
+   "M-y"  'company-yasnippet
+   )
+
+  ;; counsel
+  (general-define-key
+   :keymaps 'counsel-mode-map
+   [remap swiper]  'counsel-grep-or-swiper
+   )
+
+  ;; company
+  (general-define-key
+   :keymaps 'company-active-map
+   "C-p"  'company-select-previous
+   "C-n"  'company-select-next
+   "<tab>"  'company-complete-common-or-cycle
+   "M-y"  'my-company-yasnippet
+   )
 
   ;; (general-evil-setup t)
   (general-create-definer moon--default-leader

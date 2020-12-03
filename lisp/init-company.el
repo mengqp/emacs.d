@@ -7,16 +7,16 @@
   :defer t
   :diminish company-mode
   :hook ((prog-mode org-mode vterm-mode) . company-mode)
-  :bind
-  (
-   :map company-mode-map
-	("M-y" . company-yasnippet)
-   :map company-active-map
-         ("C-p" . company-select-previous)
-         ("C-n" . company-select-next)
-         ("<tab>" . company-complete-common-or-cycle)
-         ("M-y" . my-company-yasnippet)
-   )
+  ;; :bind
+  ;; (
+  ;;  :map company-mode-map
+  ;; 	("M-y" . company-yasnippet)
+  ;;  :map company-active-map
+  ;;        ("C-p" . company-select-previous)
+  ;;        ("C-n" . company-select-next)
+  ;;        ("<tab>" . company-complete-common-or-cycle)
+  ;;        ("M-y" . my-company-yasnippet)
+  ;;  )
   :init
   ;; 设置等待时间
   (setq company-idle-delay 0)

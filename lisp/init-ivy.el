@@ -9,20 +9,20 @@
 
 (use-package counsel
   :ensure t
-  :defer t
+  :defer 2
   :diminish counsel-mode
   :commands (magit-utils magit-completing-read-function)
   :commands (magit-utils magit-completing-read-function)
-  :hook ((emacs-startup . ivy-mode)
-	 (ivy-mode . counsel-mode))
-  :bind
-  (
-   ("M-x" . counsel-M-x)
-   ("C-s" . swiper)
+  ;; :hook ((after-init . ivy-mode)
+  ;; 	 (ivy-mode . counsel-mode))
+  ;; :bind
+  ;; (
+  ;;  ("M-x" . counsel-M-x)
+  ;;  ("C-s" . swiper)
 
-   :map counsel-mode-map
-   ([remap swiper] . counsel-grep-or-swiper)
-   )
+  ;;  :map counsel-mode-map
+  ;;  ([remap swiper] . counsel-grep-or-swiper)
+  ;;  )
 
   :init
   ;; Integration with `projectile'
@@ -51,6 +51,9 @@
   (setq ivy-re-builders-alist
 	;; allow input not in order
 	'((t   . ivy--regex-ignore-order)))
+  :config
+  (ivy-mode 1)
+  (counsel-mode 1)
   )
 
 (provide 'init-ivy)

@@ -6,10 +6,10 @@
 (use-package iedit
   :ensure t
   :defer t
-  :bind
-  (("C-;" . iedit-mode)
-   ("C-x r RET" . iedit-rectangle-mode)
-   )
+  ;; :bind
+  ;; (("C-;" . iedit-mode)
+  ;;  ("C-x r RET" . iedit-rectangle-mode)
+  ;;  )
   )
 
 ;; https://github.com/emacs-evil/goto-chg/issues/3
@@ -17,14 +17,14 @@
 (use-package goto-chg
   :ensure t
   :defer t
-  :bind ("C-," . goto-last-change)
+  ;; :bind ("C-," . goto-last-change)
   )
 
 (use-package expand-region
   :ensure t
   :defer t
-  :commands er/expand-region
-  :bind ("C-=" . er/expand-region)
+  ;; :commands er/expand-region
+  ;; :bind ("C-=" . er/expand-region)
   )
 
 (use-package format-all
@@ -74,18 +74,18 @@
 (use-package shift-number
   :ensure t
   :defer t
-  :bind (
-	 ("M-_" . shift-number-down)
-	 ("M-+" . shift-number-up))
+  ;; :bind (
+  ;; 	 ("M-_" . shift-number-down)
+  ;; 	 ("M-+" . shift-number-up))
   )
 
 (use-package undo-fu
   :ensure t
   :defer t
-  :bind(
-	("C-/" . undo-fu-only-undo)
-	("C-?" . undo-fu-only-redo)
-	)
+  ;; :bind(
+  ;; 	("C-/" . undo-fu-only-undo)
+  ;; 	("C-?" . undo-fu-only-redo)
+  ;; 	)
   )
 
 (use-package wgrep

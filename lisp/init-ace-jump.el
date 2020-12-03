@@ -10,10 +10,10 @@
 (use-package avy-zap
   :ensure t
   :defer t
-  :bind* (
-	 ("M-z" . avy-zap-to-char-dwim)
-	 ("M-Z" . avy-zap-up-to-char-dwim)
-	 )
+  ;; :bind* (
+  ;; 	 ("M-z" . avy-zap-to-char-dwim)
+  ;; 	 ("M-Z" . avy-zap-up-to-char-dwim)
+  ;; 	 )
   )
 
 (provide 'init-ace-jump)

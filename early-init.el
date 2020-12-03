@@ -16,12 +16,12 @@
 ;; 设置基本界面
 (progn
   ;; Faster to disable these here (before they've been initialized)
-  ;; (push '(menu-bar-lines . 0) default-frame-alist)
-  ;; (push '(tool-bar-lines . 0) default-frame-alist)
-  ;; (push '(vertical-scroll-bars) default-frame-alist)
-  (menu-bar-mode -1)
-  (tool-bar-mode -1)
-  (tooltip-mode -1)
+  (push '(menu-bar-lines . 0) default-frame-alist)
+  (push '(tool-bar-lines . 0) default-frame-alist)
+  (push '(vertical-scroll-bars) default-frame-alist)
+  ;; (menu-bar-mode -1)
+  ;; (tool-bar-mode -1)
+  ;; (tooltip-mode -1)
   ;; (vertical-scroll-bars-mode -1)
   ;; Inhibit resizing frame
   (setq frame-inhibit-implied-resize t);
