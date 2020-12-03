@@ -4,6 +4,7 @@
 (require 'init-autoload)
 
 (use-package color-rg
+  :ensure nil
   :defer t
   :commands ( color-rg color-rg-search-input )
   :commands ( color-rg color-rg-search-symbol)

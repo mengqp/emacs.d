@@ -77,6 +77,7 @@
 
 ;; 自动保存
 (use-package auto-save
+  :ensure nil
   ;; :defer t
   ;; :load-path (concat my-site-lisp-d "/auto-save/autosave.el")
   :load-path auto-save-path

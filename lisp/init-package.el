@@ -4,6 +4,7 @@
 (require 'package)
 
 (package-initialize)
+
 ;; Set it to `t' to use safer HTTPS to download packages
 (defvar melpa-use-https-repo nil
   "By default, HTTP is used to download packages.
@@ -46,10 +47,27 @@ But you may use safer HTTPS instead.")
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
 ;; (package-initialize)
+;; Should set before loading `use-package'
+(eval-and-compile
+  ;; (setq use-package-always-ensure t)
+  (setq use-package-always-defer t)
+  (setq use-package-expand-minimally t)
+  (setq use-package-enable-imenu-support t))
 
 (require-package 'use-package)
 (require-package 'diminish)
 (require-package 'dash-functional)
+
+;; Update GPG keyring for GNU ELPA
+(use-package gnu-elpa-keyring-update)
+
+;; Auto update packages
+(use-package auto-package-update
+  :ensure t
+  :init
+  (setq auto-package-update-delete-old-versions t
+        auto-package-update-hide-results t)
+  (defalias 'upgrade-packages #'auto-package-update-now))
 
 (provide 'init-package)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

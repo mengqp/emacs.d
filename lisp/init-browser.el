@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (use-package eaf
+  :ensure nil
   :defer t
   :init
   (setq eaf-find-alternate-file-in-dired t)

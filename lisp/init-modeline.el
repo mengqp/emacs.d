@@ -3,6 +3,7 @@
 ;;; Code:
 
 (use-package awesome-tray
+  :ensure nil
   ;; :disabled t
   :defer t
   :hook (window-setup . awesome-tray-mode)
