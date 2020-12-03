@@ -52,10 +52,15 @@
 
   (when *linux*
     (use-package liberime
+      :ensure nil
+      ;; :defer nil
       :load-path "/home/mengqp/.emacs.d/site-lisp/liberime/build/liberime.so"
+
+      ;; :init
+      ;; (setq liberime-user-data-dir (expand-file-name "~/.local/share/fcitx5/rime/") )
       :config
       (liberime-start (expand-file-name "/usr/share/rime-data")
-		      (expand-file-name "~/.emacs.d/rime")
+		      liberime-user-data-dir
 		      )
       (liberime-select-schema "wubi86")
       )

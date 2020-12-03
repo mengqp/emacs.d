@@ -3,6 +3,7 @@
 ;;  这就一个进行基本配置的文件
 ;;; Code:
 (use-package files
+  :ensure nil
   :defer t
   :init
   ;; backup in one place. flat, no tree structure
@@ -14,32 +15,38 @@
   )
 
 (use-package pixel-scroll
+  :ensure nil
   :defer t
   :hook (after-init . pixel-scroll-mode)
   )
 
 (use-package hl-line
+  :ensure nil
   :defer t
   :hook (after-init . global-hl-line-mode)
   )
 
 (use-package paren
+  :ensure nil
   :defer t
   :hook (after-init . show-paren-mode)
   )
 
 (use-package simple
+  :ensure nil
   :defer t
   :hook (after-init . column-number-mode)
   )
 
 ;; remember cursor position, for emacs 25.1 or later
 (use-package save-place
+  :ensure nil
   :defer t
   :hook (after-init . save-place-mode)
   )
 
 (use-package startup
+  :ensure nil
   :defer t
   :init
   ;; (setq initial-major-mode 'fundamental-mode)
@@ -165,8 +172,8 @@
   )
 
 (use-package fuz
+  :ensure nil
   :disabled t
-  :ensure t
   :defer t
   :config
   (unless (require 'fuz-core nil t)
