@@ -39,6 +39,7 @@
    "C-," 'goto-last-change
    ;; expand-region
    "C-=" 'er/expand-region
+   "C--" 'er/contract-region
    ;; shift-number
    "M-_" 'shift-number-down
    "M-+" 'shift-number-up
@@ -81,39 +82,6 @@
 
    )
 
-  ;; lsp
-  (general-define-key
-   :keymaps 'lsp-mode-map
-   [remap xref-find-definitions]  'lsp-find-definition
-   [remap xref-find-references]  'lsp-find-references
-   )
-
-  ;; anzu
-  (general-define-key
-   [remap query-replace]  'anzu-query-replace
-   [remap query-replace-regexp]  'anzu-query-replace-regexp
-   )
-
-  ;; company
-  (general-define-key
-   :keymaps 'company-mode-map
-   "M-y"  'company-yasnippet
-   )
-
-  ;; counsel
-  (general-define-key
-   :keymaps 'counsel-mode-map
-   [remap swiper]  'counsel-grep-or-swiper
-   )
-
-  ;; company
-  (general-define-key
-   :keymaps 'company-active-map
-   "C-p"  'company-select-previous
-   "C-n"  'company-select-next
-   "<tab>"  'company-complete-common-or-cycle
-   "M-y"  'my-company-yasnippet
-   )
 
   ;; (general-evil-setup t)
   (general-create-definer moon--default-leader
@@ -181,7 +149,6 @@
 
     ;; "b" '(:ignore t :wk ("b" . "buffers"))
     "bb" 'ivy-switch-buffer
-    ;; "bd" 'kill-buffer
 
     ;; "c" '(:ignore t :wk ("c" . "compile"))
     "cc" 'compile
@@ -224,7 +191,6 @@
     ;; "gll" 'magit-log-all
     ;; "gm" 'magit-merge-plain
     ;; "gp" 'git-push-coding-request
-    ;; "gt" 'git-timemachine
 
     ;; "h" '(:ignore t :wk ("h" . "help"))
     "hf" 'find-function
@@ -295,6 +261,8 @@
     "." 'avy-goto-char-2
 
     "aa" 'prelude-copy-file-name-to-clipboard
+    "al" 'avy-copy-line
+    "ar" 'avy-copy-region
 
     ;; "b" '(:ignore t :wk ("b" . "buffer"))
     ;; "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
@@ -363,7 +331,7 @@
     ;; "s" '(:ignore t :wk ("s" . "search&shell&sudo"))
     ;; "sp" 'init-sp-menu/body
     ;; "sc" 'shell-command
-    ;; "sd" 'sudo-edit
+    "sd" 'sudo-edit
     ;; "sj" 'counsel-imenu
     ;; "ss" 'swiper
     ;; "sS" 'ivy-resume
@@ -394,29 +362,17 @@
     "ph" 'sp-forward-slurp-sexp
     "pk" 'sp-kill-sexp
 
-    "xo" 'switch-window
-    "x1" 'switch-window-then-maximize
-    "x2" 'switch-window-then-split-below
-    "x3" 'switch-window-then-split-right
-    "x0" 'switch-window-then-delete
-
-
     ;; "w" '(:ignore t :wk ("w" . "evilw"))
     ;; "ww" 'save-buffer
     ;; "wq" 'evil-save-and-close
     "zz" 'avy-zap-to-char-dwim
     "zu" 'avy-zap-up-to-char-dwim
-
-
-
     )
 
   (general-define-key
    :keymaps '(normal visual emacs)
    :prefix ";"
-   "." 'xref-find-definitions
    ";"  'evilnc-comment-or-uncomment-lines
-   "r" 'xref-find-references
    "w"  'avy-goto-word-1
    )
 
@@ -425,6 +381,40 @@
    :keymaps '(c++-mode-map c-mode-map)
    :prefix ";"
    "a" 'projectile-find-other-file
+   )
+
+  ;; lsp
+  (general-define-key
+   :keymaps 'lsp-mode-map
+   [remap xref-find-definitions]  'lsp-find-definition
+   [remap xref-find-references]  'lsp-find-references
+   )
+
+  ;; anzu
+  (general-define-key
+   [remap query-replace]  'anzu-query-replace
+   [remap query-replace-regexp]  'anzu-query-replace-regexp
+   )
+
+  ;; company
+  (general-define-key
+   :keymaps 'company-mode-map
+   "M-y"  'company-yasnippet
+   )
+
+  ;; counsel
+  (general-define-key
+   :keymaps 'counsel-mode-map
+   [remap swiper]  'counsel-grep-or-swiper
+   )
+
+  ;; company
+  (general-define-key
+   :keymaps 'company-active-map
+   "C-p"  'company-select-previous
+   "C-n"  'company-select-next
+   "<tab>"  'company-complete-common-or-cycle
+   "M-y"  'my-company-yasnippet
    )
 
   ;; {{ Use `SPC` as leader key
