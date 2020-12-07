@@ -4,16 +4,6 @@
 
 (use-package snails
   :ensure nil
-  :bind*
-  (
-   ;; ("M-j s" . snails)
-   ("M-j j" . snails)
-   ("M-j M-j" . snails)
-   (:map snails-mode-map
-    ("M-n" . snails-select-next-backend)
-    ("M-p" . snails-select-prev-backend)
-    )
-   )
   :init
   (setq snails-default-show-prefix-tips nil)
   (setq snails-default-backends

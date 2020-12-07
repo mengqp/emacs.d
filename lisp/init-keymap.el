@@ -50,6 +50,9 @@
    ;; pyim
    "M-i" 'pyim-convert-string-at-point ;与 pyim-probe-dynamic-english 配合
 
+   ;; pyim
+   "M-j" 'snails ;与 pyim-probe-dynamic-english 配合
+
    ;; counsel
    "M-x"  'counsel-M-x
    "C-s"  'swiper
@@ -415,6 +418,13 @@
    "C-n"  'company-select-next
    "<tab>"  'company-complete-common-or-cycle
    "M-y"  'my-company-yasnippet
+   )
+
+  ;; snails
+  (general-define-key
+   :keymaps 'snails-mod-map
+   "M-n" 'snails-select-next-backend
+   "M-p" 'snails-select-prev-backend
    )
 
   ;; {{ Use `SPC` as leader key
