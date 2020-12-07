@@ -4,7 +4,7 @@
 
 (use-package awesome-tray
   :ensure nil
-  ;; :disabled t
+  :disabled t
   :defer t
   :hook (after-init . awesome-tray-mode)
   :init
@@ -14,7 +14,7 @@
   )
 
 (use-package doom-modeline
-  :disabled t
+  ;; :disabled t
   :ensure t
   :defer t
   :hook (window-setup . doom-modeline-mode)

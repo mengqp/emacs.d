@@ -11,6 +11,19 @@
   (add-hook 'after-init-hook
 	    (lambda () (load-theme 'cyberpunk t)))
   )
+(use-package doom-themes
+  :ensure t
+  :init
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  ;; (add-hook 'after-init-hook
+  ;; 	    (lambda () (load-theme 'doom-one t)))
+  (add-hook 'after-init-hook
+	    (lambda () (load-theme 'doom-tomorrow-night t)))
+  :config
+  (doom-themes-org-config)
+  )
 
 (use-package modus-operandi-theme
   :disabled t

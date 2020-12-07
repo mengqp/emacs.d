@@ -9,12 +9,13 @@
 
 (use-package counsel
   :ensure t
-  :defer 2
+  ;; :defer 1
   :diminish counsel-mode
+  :diminish ivy-mode
   :commands (magit-utils magit-completing-read-function)
   :commands (magit-utils magit-completing-read-function)
-  ;; :hook ((after-init . ivy-mode)
-  ;; 	 (ivy-mode . counsel-mode))
+  :hook ((after-init . ivy-mode)
+	 (ivy-mode . counsel-mode))
   ;; :bind
   ;; (
   ;;  ("M-x" . counsel-M-x)

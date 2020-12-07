@@ -20,6 +20,10 @@
   :hook (after-init . pixel-scroll-mode)
   )
 
+(use-package eldoc
+  :ensure nil
+  :diminish eldoc-mode)
+
 (use-package hl-line
   :ensure nil
   :defer t

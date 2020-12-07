@@ -5,15 +5,15 @@
 (use-package evil
   :ensure t
   :diminish evil-mode
-  :defer 1
-  ;; :hook(after-init . evil-mode)
+  ;; :defer 1
+  :hook(after-init . evil-mode)
   ;; :hook(after-init . evil-mode)
   ;; :hook((prog-mode org-mode) . evil-mode)
   :init
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
   (setq evil-want-keybinding nil)
   :config
-  (evil-mode 1)
+  ;; (evil-mode 1)
   ;; {{ specify major mode uses Evil (vim) NORMAL state or EMACS original state.
   ;; You may delete this setup to use Evil NORMAL state always.
   (dolist (p '((minibuffer-inactive-mode . emacs)

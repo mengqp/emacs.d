@@ -36,6 +36,7 @@
 (use-package smartparens
   :ensure t
   :defer t
+  :diminish smartparens-mode
   :hook( prog-mode . smartparens-mode)
   :config
   ;; enable the default configuration
