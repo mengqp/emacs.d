@@ -33,6 +33,7 @@
   ;; :config
   :init
   (general-define-key
+    :keymaps 'override
    ;; iedit
    "C-;" 'iedit-mode
    ;; goto-chg
@@ -63,6 +64,7 @@
    )
 
   (general-define-key
+   :keymaps 'override
    :prefix "C-x"
    ;; switch-window
    "o"  'switch-window
@@ -77,6 +79,7 @@
    )
 
   (general-define-key
+   :keymaps 'override
    :prefix "C-c"
    ;; ivy-yasnippet
    "C-y"  'ivy-yasnippet
