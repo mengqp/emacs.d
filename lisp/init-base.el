@@ -24,18 +24,6 @@
   :ensure nil
   :diminish eldoc-mode)
 
-(use-package hl-line
-  :ensure nil
-  :defer t
-  :hook (after-init . global-hl-line-mode)
-  )
-
-(use-package paren
-  :ensure nil
-  :defer t
-  :hook (after-init . show-paren-mode)
-  )
-
 (use-package simple
   :ensure nil
   :defer t

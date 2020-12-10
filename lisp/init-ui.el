@@ -12,7 +12,7 @@
   (blink-cursor-mode -1)
   )
 
-;; (set-frame-parameter nil 'alpha '(90 . 100))
+(set-frame-parameter nil 'alpha '(90 . 100))
 
 (defun linux-fullscreen ()
   "Linux fullscreen."
@@ -22,6 +22,18 @@
   )
 
 (linux-fullscreen)
+
+(use-package hl-line
+  :ensure nil
+  :defer t
+  :hook (after-init . global-hl-line-mode)
+  )
+
+(use-package highlight-parentheses
+  :ensure t
+  :defer t
+  :hook (prog-mode . highlight-parentheses-mode)
+  )
 
 ;; (when *win64*
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
