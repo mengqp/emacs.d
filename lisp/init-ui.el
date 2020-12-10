@@ -53,8 +53,8 @@
   :ensure t
   :defer 1
   :diminish column-enforce-mode
-  ;; :hook((cc-mode python-mode) . column-enforce-mode)
-  :config
+  :hook((prog-mode) . column-enforce-mode)
+  :init
   (setq column-enforce-column 80)
   )
 
