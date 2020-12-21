@@ -10,7 +10,9 @@
   ;; :hook(after-init . evil-mode)
   ;; :hook((prog-mode org-mode) . evil-mode)
   :init
-  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+
+  ;; This is optional since it's already set to t by default.
+  (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
   :config
   ;; (evil-mode 1)

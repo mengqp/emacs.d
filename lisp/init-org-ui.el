@@ -9,18 +9,17 @@
 
 
 (use-package org-bullets
-  :defer t
   :ensure t
-  :init
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  :defer t
+  :hook
+  (org-mode . org-bullets-mode)
   )
 
 (use-package toc-org
-  :defer t
-  :disabled t
   :ensure t
-  :init
-  (add-hook 'org-mode-hook 'toc-org-mode)
+  :defer t
+  :hook
+  (org-mode . toc-org-mode)
   )
 
 (setq org-tag-alist '(

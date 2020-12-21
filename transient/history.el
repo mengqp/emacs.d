@@ -14,6 +14,7 @@
  (magit-file-dispatch nil)
  (magit-log
   ("-n256" "--graph" "--decorate")
+  (("--" "02src/01v2/version.h"))
   (("--" "main/inc/public.h"))
   (("--" "main/src/public.c"))
   (\.\.\.))

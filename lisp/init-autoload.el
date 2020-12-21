@@ -138,6 +138,10 @@
 (autoload 'lsp-rename                          "lsp-mode" "" t)
 (autoload 'display-line-numbers-mode          "display-line-numbers" "" t)
 (autoload 'easy-mmode-defmap           "easy-mmode" "" t)
+(autoload 'flycheck-current-errors "flycheck" "" t)
+(autoload 'flycheck-last-status-change "flycheck" "" t)
+(autoload 'flycheck-mode-line "flycheck" "" t)
+(autoload 'flycheck-mode-line-status-text "flycheck" "" t)
 
 
 (provide 'init-autoload)

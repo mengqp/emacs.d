@@ -171,6 +171,7 @@
     "eb" 'eaf-open-browser
     "eh" 'eaf-open-browser-with-history
     "eg" 'eaf-open-git
+    "eo" 'eaf-open-office
     ;; "ee" 'ansi-term
     ;; "ea" 'shell
 
