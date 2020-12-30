@@ -28,6 +28,33 @@
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-pyright t)
   (setq lsp-python-ms-disabled t)
+  :custom-face
+  (lsp-headerline-breadcrumb-path-error-face
+   ((t :underline (:style line :color ,(face-foreground 'error))
+       :inherit lsp-headerline-breadcrumb-path-face)))
+  (lsp-headerline-breadcrumb-path-warning-face
+   ((t :underline (:style line :color ,(face-foreground 'warning))
+       :inherit lsp-headerline-breadcrumb-path-face)))
+  (lsp-headerline-breadcrumb-path-info-face
+   ((t :underline (:style line :color ,(face-foreground 'success))
+       :inherit lsp-headerline-breadcrumb-path-face)))
+  (lsp-headerline-breadcrumb-path-hint-face
+   ((t :underline (:style line :color ,(face-foreground 'success))
+       :inherit lsp-headerline-breadcrumb-path-face)))
+
+  (lsp-headerline-breadcrumb-symbols-error-face
+   ((t :inherit lsp-headerline-breadcrumb-symbols-face
+       :underline (:style line :color ,(face-foreground 'error)))))
+  (lsp-headerline-breadcrumb-symbols-warning-face
+   ((t :inherit lsp-headerline-breadcrumb-symbols-face
+       :underline (:style line :color ,(face-foreground 'warning)))))
+  (lsp-headerline-breadcrumb-symbols-info-face
+   ((t :inherit lsp-headerline-breadcrumb-symbols-face
+       :underline (:style line :color ,(face-foreground 'success)))))
+  (lsp-headerline-breadcrumb-symbols-hint-face
+   ((t :inherit lsp-headerline-breadcrumb-symbols-face
+       :underline (:style line :color ,(face-foreground 'success)))))
+  ;; (setq lsp-headerline-breadcrumb-enable nil)
   )
 
 (use-package lsp-ui

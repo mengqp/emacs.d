@@ -21,7 +21,7 @@
 (defun mengqp/clearM ()
   "Clear buffer is ^M."
   (interactive)
-  (replace-match "" "")
+  (replace-string "" "")
   )
 
 (defun mengqp/open-init-package-file ()

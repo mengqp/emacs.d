@@ -1,91 +1,73 @@
 ;;; init-modeline.el --- modeline -*- coding: utf-8-unix -*-
 ;;; Commentary:
 ;;; Code:
-;; (setq my-flycheck-mode-line
-;;         '(:eval
-;;           (pcase flycheck-last-status-change
-;;             (`not-checked nil)
-;;             (`no-checker (propertize " -" 'face 'warning))
-;;             (`running (propertize " ✷" 'face 'success))
-;;             (`errored (propertize " !" 'face 'error))
-;;             (`finished
-;;              (let* ((error-counts (flycheck-count-errors flycheck-current-errors))
-;;                     (no-errors (cdr (assq 'error error-counts)))
-;;                     (no-warnings (cdr (assq 'warning error-counts)))
-;;                     (face (cond (no-errors 'error)
-;;                                 (no-warnings 'warning)
-;;                                 (t 'success))))
-;;                (propertize (format "[%s/%s]" (or no-errors 0) (or no-warnings 0))
-;;                            'face face)))
-;;             (`interrupted " -")
-;;             (`suspicious '(propertize " ?" 'face 'warning)))))
 
-(setq-default mode-line-format
-	      (list
-	       ;; the buffer name; the file name as a tool tip
-	       '(:eval (propertize "%b " 'face nil 'help-echo (buffer-file-name)))
+;; (setq-default mode-line-format
+;; 	      (list
+;; 	       ;; the buffer name; the file name as a tool tip
+;; 	       '(:eval (propertize "%b " 'face nil 'help-echo (buffer-file-name)))
 
-	       ;; line and column
-	       "(" ;; '%02' to set to 2 chars at least; prevents flickering
-	       "%02l" "," "%01c"
-	       ") "
+;; 	       ;; line and column
+;; 	       "(" ;; '%02' to set to 2 chars at least; prevents flickering
+;; 	       "%02l" "," "%01c"
+;; 	       ") "
 
-	       ;; @see https://www.gnu.org/software/emacs/manual/html_node/emacs/Help-Echo.html
-	       "["
-	       ;; the current major mode for the buffer.
-	       '(:eval (propertize "%m" 'face nil 'help-echo buffer-file-coding-system))
+;; 	       ;; @see https://www.gnu.org/software/emacs/manual/html_node/emacs/Help-Echo.html
+;; 	       "["
+;; 	       ;; the current major mode for the buffer.
+;; 	       '(:eval (propertize "%m" 'face nil 'help-echo buffer-file-coding-system))
 
-	       " "
-	       ;; buffer file encoding
-	       '(:eval (let ((sys (coding-system-plist buffer-file-coding-system)))
-			 (if (memq (plist-get sys :category)
-				   '(coding-category-undecided coding-category-utf-8))
-			     "UTF-8"
-			   (upcase (symbol-name (plist-get sys :name))))))
-	       ;; " "
-	       ;; ;; insert vs overwrite mode, input-method in a tooltip
-	       ;; '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
-	       ;;           'face nil
-	       ;;           'help-echo (concat "Buffer is in "
-	       ;;                        (if overwrite-mode "overwrite" "insert") " mode")))
+;; 	       " "
+;; 	       ;; buffer file encoding
+;; 	       '(:eval (let ((sys (coding-system-plist buffer-file-coding-system)))
+;; 			 (if (memq (plist-get sys :category)
+;; 				   '(coding-category-undecided coding-category-utf-8))
+;; 			     "UTF-8"
+;; 			   (upcase (symbol-name (plist-get sys :name))))))
+;; 	       ;; " "
+;; 	       ;; ;; insert vs overwrite mode, input-method in a tooltip
+;; 	       ;; '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
+;; 	       ;;           'face nil
+;; 	       ;;           'help-echo (concat "Buffer is in "
+;; 	       ;;                        (if overwrite-mode "overwrite" "insert") " mode")))
 
-	       ;; was this buffer modified since the last save?
-	       '(:eval (when (buffer-modified-p)
-			 (concat ","  (propertize "Mod"
-						  'face nil
-						  'help-echo "Buffer has been modified"))))
+;; 	       ;; was this buffer modified since the last save?
+;; 	       '(:eval (when (buffer-modified-p)
+;; 			 (concat ","  (propertize "Mod"
+;; 						  'face nil
+;; 						  'help-echo "Buffer has been modified"))))
 
-	       ;; is this buffer read-only?
-	       '(:eval (when buffer-read-only
-			 (concat ","  (propertize "RO" 'face nil 'help-echo "Buffer is read-only"))))
-	       "] "
+;; 	       ;; is this buffer read-only?
+;; 	       '(:eval (when buffer-read-only
+;; 			 (concat ","  (propertize "RO" 'face nil 'help-echo "Buffer is read-only"))))
+;; 	       "] "
 
-	       '(:eval
-		(pcase flycheck-last-status-change
-		  (`not-checked nil)
-		  (`no-checker (propertize " -" 'face 'warning))
-		  (`running (propertize " ✷" 'face 'success))
-		  (`errored (propertize " !" 'face 'error))
-		  (`finished
-		   (let* ((error-counts (flycheck-count-errors flycheck-current-errors))
-			  (no-errors (cdr (assq 'error error-counts)))
-			  (no-warnings (cdr (assq 'warning error-counts)))
-			  (face (cond (no-errors 'error)
-                                      (no-warnings 'warning)
-                                      (t 'success))))
-		     (propertize (format "[%s/%s]" (or no-errors 0) (or no-warnings 0))
-				 'face face)))
-		  (`interrupted " -")
-		  (`suspicious '(propertize " ?" 'face 'warning))))
+;; 	       '(:eval
+;; 		(pcase flycheck-last-status-change
+;; 		  (`not-checked nil)
+;; 		  (`no-checker (propertize " -" 'face 'warning))
+;; 		  (`running (propertize " ✷" 'face 'success))
+;; 		  (`errored (propertize " !" 'face 'error))
+;; 		  (`finished
+;; 		   (let* ((error-counts (flycheck-count-errors flycheck-current-errors))
+;; 			  (no-errors (cdr (assq 'error error-counts)))
+;; 			  (no-warnings (cdr (assq 'warning error-counts)))
+;; 			  (face (cond (no-errors 'error)
+;;                                       (no-warnings 'warning)
+;;                                       (t 'success))))
+;; 		     (propertize (format "[%s/%s]" (or no-errors 0) (or no-warnings 0))
+;; 				 'face face)))
+;; 		  (`interrupted " -")
+;; 		  (`suspicious '(propertize " ?" 'face 'warning))))
 
-	       ;;global-mode-string, org-timer-set-timer in org-mode need this
-	       ;; (propertize "%M" 'face nil)
+;; 	       ;;global-mode-string, org-timer-set-timer in org-mode need this
+;; 	       ;; (propertize "%M" 'face nil)
 
-	       ;; " --"
-	       ;; Don't show `minor-mode'
-	       ;; minor-mode-alist  ;; list of minor modes
-	       ;; "%-" ;; fill with '-'
-	       ))
+;; 	       ;; " --"
+;; 	       ;; Don't show `minor-mode'
+;; 	       ;; minor-mode-alist  ;; list of minor modes
+;; 	       ;; "%-" ;; fill with '-'
+;; 	       ))
 
 (use-package awesome-tray
   :ensure nil
@@ -99,10 +81,10 @@
   )
 
 (use-package doom-modeline
-  :disabled t
+  ;; :disabled t
   :ensure t
   :defer t
-  :hook (window-setup . doom-modeline-mode)
+  :hook (after-init . doom-modeline-mode)
   :init
   ;; How tall the mode-line should be. It's only respected in GUI.
   ;; If the actual char height is larger, it respects the actual height.
