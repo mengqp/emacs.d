@@ -165,7 +165,7 @@
 
 (use-package fuz
   :ensure nil
-  :disabled t
+  ;; :disabled t
   :defer t
   :config
   (unless (require 'fuz-core nil t)

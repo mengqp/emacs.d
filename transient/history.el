@@ -6,6 +6,8 @@
  (magit-commit nil)
  (magit-diff
   ("--no-ext-diff" "--stat")
+  (("--" "src/RL-ARM/Config/Net_Config.c"))
+  (("--" "src/libiec61850/config/stack_config.h"))
   (("--" "main/src/public.c"))
   (\.\.\.)
   ("--no-ext-diff"))
@@ -13,7 +15,10 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
+  (("--" "src/libiec61850/src/mms/iso_server/iso_server.c"))
+  (("--" "src/libiec61850/src/iec61850/server/impl/ied_server.c"))
   ("-n256" "--graph" "--decorate")
+  (("--" "main/src/modbus.c"))
   (("--" "02src/01v2/version.h"))
   (("--" "main/inc/public.h"))
   (("--" "main/src/public.c"))
