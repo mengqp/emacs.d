@@ -15,9 +15,10 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
+  ("-n256" "--graph" "--decorate")
+  (("--" "main/src/relay.c"))
   (("--" "src/libiec61850/src/mms/iso_server/iso_server.c"))
   (("--" "src/libiec61850/src/iec61850/server/impl/ied_server.c"))
-  ("-n256" "--graph" "--decorate")
   (("--" "main/src/modbus.c"))
   (("--" "02src/01v2/version.h"))
   (("--" "main/inc/public.h"))
