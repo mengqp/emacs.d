@@ -41,7 +41,7 @@
 
 (use-package all-the-icons
   :ensure t
-  :defer 1
+  :defer t
   )
 
 (use-package symbol-overlay

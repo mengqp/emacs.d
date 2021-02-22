@@ -50,9 +50,6 @@ But you may use safer HTTPS instead.")
 (use-package diminish
   :ensure t)
 
-(use-package dash-functional
-  :ensure t)
-
 (provide 'init-package)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-package.el ends here

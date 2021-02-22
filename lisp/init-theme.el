@@ -11,8 +11,17 @@
   (add-hook 'after-init-hook
 	    (lambda () (load-theme 'cyberpunk t)))
   )
+
+(use-package joker-theme
+  ;; :defer t
+  :init
+  (add-hook 'after-init-hook
+	    (lambda () (load-theme 'joker t)))
+  )
+
 (use-package doom-themes
   :ensure t
+  :disabled t
   :init
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled

@@ -15,6 +15,9 @@
   (use-package deferred
     :ensure t
     :defer t)
+  (use-package s
+    :defer t
+    :ensure t)
   (setq eaf-find-alternate-file-in-dired t)
   ;; :config
   ;; (eaf-bind-key scroll_up "RET" eaf-pdf-viewer-keybinding)
