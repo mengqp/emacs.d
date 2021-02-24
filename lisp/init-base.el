@@ -2,6 +2,10 @@
 ;;; Commentary:
 ;;  这就一个进行基本配置的文件
 ;;; Code:
+
+;; Don’t compact font caches during GC.
+(setq inhibit-compacting-font-caches t)
+
 (use-package files
   :ensure nil
   :defer t
