@@ -35,3 +35,6 @@
 	path = site-lisp/eaf
 	url = https://github.com/manateelazycat/emacs-application-framework.git
 	ignore=untracked
+[submodule "site-lisp/joker-theme"]
+	path = site-lisp/joker-theme
+	url = https://github.com/DogLooksGood/joker-theme.git
