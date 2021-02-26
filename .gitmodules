@@ -38,3 +38,6 @@
 [submodule "site-lisp/joker-theme"]
 	path = site-lisp/joker-theme
 	url = https://github.com/DogLooksGood/joker-theme.git
+[submodule "site-lisp/awesome-pair"]
+	path = site-lisp/awesome-pair
+	url = https://github.com/manateelazycat/awesome-pair.git

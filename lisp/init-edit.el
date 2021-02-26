@@ -35,6 +35,7 @@
 ;; auto insert closing bracket
 (use-package smartparens
   :ensure t
+  :disabled t
   :defer t
   :diminish smartparens-mode
   :hook( prog-mode . smartparens-mode)
@@ -42,6 +43,24 @@
   ;; enable the default configuration
   (require 'smartparens-config)
   (smartparens-strict-mode t)
+  )
+
+(use-package awesome-pair
+  :load-path "~/.emacs.d/site-lisp/awesome-pair"
+  :hook
+  (prog-mode . awesome-pair-mode)
+  :config
+  (define-key awesome-pair-mode-map (kbd "(") 'awesome-pair-open-round)
+  (define-key awesome-pair-mode-map (kbd "[") 'awesome-pair-open-bracket)
+  (define-key awesome-pair-mode-map (kbd "{") 'awesome-pair-open-curly)
+  (define-key awesome-pair-mode-map (kbd ")") 'awesome-pair-close-round)
+  (define-key awesome-pair-mode-map (kbd "]") 'awesome-pair-close-bracket)
+  (define-key awesome-pair-mode-map (kbd "}") 'awesome-pair-close-curly)
+  (define-key awesome-pair-mode-map (kbd "=") 'awesome-pair-equal)
+  ;; (define-key awesome-pair-mode-map (kbd "%") 'awesome-pair-match-paren)
+  (define-key awesome-pair-mode-map (kbd "\"") 'awesome-pair-double-quote)
+  (define-key awesome-pair-mode-map (kbd "SPC") 'awesome-pair-space)
+
   )
 
 (use-package hungry-delete

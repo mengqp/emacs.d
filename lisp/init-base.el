@@ -167,6 +167,7 @@
   (keyfreq-autosave-mode 1)
   )
 
+
 (use-package fuz
   :ensure nil
   ;; :disabled t
