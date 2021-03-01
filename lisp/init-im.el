@@ -59,6 +59,7 @@
       ;; :init
       ;; (setq liberime-user-data-dir (expand-file-name "~/.local/share/fcitx5/rime/") )
       :config
+      (require 'pyim-liberime)
       (liberime-start (expand-file-name "/usr/share/rime-data")
 		      liberime-user-data-dir
 		      )
