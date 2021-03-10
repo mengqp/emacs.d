@@ -73,25 +73,21 @@
 
   )
 
-;;实现代码折叠
-(use-package hideshow
-  :defer t
-  :diminish hs-minor-mode
-  :after evil
-  )
-
 (use-package evil-visualstar
   :ensure t
-  :defer t
-  :hook (evil-mode . global-evil-visualstar-mode)
+  :defer 2
+  ;; :hook (evil-mode . global-evil-visualstar-mode)
+  :init
+  (global-evil-visualstar-mode t)
   )
 
 (use-package evil-matchit
   :ensure t
-  :defer t
+  :defer 4
   :diminish evil-matchit-mode
-  :hook (evil-mode . global-evil-matchit-mode)
+  ;; :hook (evil-mode . global-evil-matchit-mode)
   :init
+  (global-evil-matchit-mode t)
   (defvar evilmi-ignore-comments nil)
   (setq evilmi-shortcut "m")
   )
@@ -108,7 +104,7 @@
 (use-package evil-nerd-commenter
   :ensure t
   :defer t
-  :after evil
+  ;; :after evil
   )
 
 (provide 'init-evil)

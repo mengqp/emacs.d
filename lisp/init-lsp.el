@@ -15,6 +15,18 @@
   ;;             ([remap xref-find-references] . lsp-find-references)
   ;; 	      )
   :init
+  ;; enable log only for debug
+  (setq lsp-log-io nil)
+
+  ;; use `evil-matchit' instead
+  (setq lsp-enable-folding nil)
+
+  ;; no real time syntax check
+  (setq lsp-diagnostic-package :none)
+
+  ;; handle yasnippet by myself
+  (setq lsp-enable-snippet nil)
+
   (setq read-process-output-max (* 1024 1024)) ;; 1MB
   (setq lsp-keymap-prefix "C-c l")
   ;; (setq lsp-auto-guess-root t)
@@ -24,10 +36,18 @@
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-file-watchers nil)
   (setq lsp-file-watch-threshold nil)
-  (setq lsp-enable-snippet t)
+  ;; (setq lsp-enable-snippet t)
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-pyright t)
   (setq lsp-python-ms-disabled t)
+  ;; don't ping LSP lanaguage server too frequently
+  (defvar lsp-on-touch-time 0)
+  (defadvice lsp-on-change (around lsp-on-change-hack activate)
+    ;; don't run `lsp-on-change' too frequently
+    (when (> (- (float-time (current-time))
+                lsp-on-touch-time) 30) ;; 30 seconds
+      (setq lsp-on-touch-time (float-time (current-time)))
+      ad-do-it))
   :custom-face
   (lsp-headerline-breadcrumb-path-error-face
    ((t :underline (:style line :color ,(face-foreground 'error))

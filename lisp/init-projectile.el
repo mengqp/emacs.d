@@ -5,9 +5,10 @@
   :ensure t
   :diminish projectile-mode
   ;; :disabled t
-  ;; :defer 2
-  :hook (after-init . projectile-mode)
+  :defer t
+  ;; :hook (after-init . projectile-mode)
   :init
+  (projectile-mode t)
   (setq projectile-completion-system 'ivy)
   (setq projectile-indexing-method 'hybrid)
   (when (executable-find "rg")

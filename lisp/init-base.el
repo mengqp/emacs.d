@@ -168,6 +168,14 @@
   )
 
 
+;;实现代码折叠
+(use-package hideshow
+  :defer t
+  :diminish hs-minor-mode
+  ;; :init
+  ;; (hs-minor-mode t)
+  )
+
 (use-package fuz
   :ensure nil
   ;; :disabled t
