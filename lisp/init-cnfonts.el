@@ -1,19 +1,19 @@
 ;;; init-cnfonts.el --- xxx -*- coding: utf-8-unix -*-
 ;;; Commentary:
 ;;; Code:
-(use-package cnfonts
-  :ensure t
-  :disabled t
-  ;; :defer t
-  :config
-  (defconst cnfonts-personal-fontnames
-    '(()
-      ("思源黑体" "思源黑体 CN")
-      ()
-      ))
-  ;; 让 cnfonts 随着 Emacs 自动生效。
-  (cnfonts-enable)
-  )
+;; (use-package cnfonts
+;;   :ensure t
+;;   :disabled t
+;;   ;; :defer t
+;;   :config
+;;   (defconst cnfonts-personal-fontnames
+;;     '(()
+;;       ("思源黑体" "思源黑体 CN")
+;;       ()
+;;       ))
+;;   ;; 让 cnfonts 随着 Emacs 自动生效。
+;;   (cnfonts-enable)
+;;   )
 
 (if (display-graphic-p)
     (progn
@@ -40,7 +40,7 @@
        :font (font-spec :name "-GOOG-Roboto Mono-light-normal-normal-*-*-*-*-*-m-0-iso10646-1"
 			:weight 'normal
 			:slant 'normal
-			:size 12.5))
+			:size 11.5))
       (dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font
 	 (frame-parameter nil 'font)
@@ -48,7 +48,7 @@
 	 (font-spec :name "-WenQ-WenQuanYi Zen Hei-normal-normal-normal-*-*-*-*-*-*-0-iso10646-1"
 		    :weight 'normal
 		    :slant 'normal
-		    :size 15.0)))
+		    :size 13.5)))
       )
 
   )

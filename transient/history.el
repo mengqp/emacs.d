@@ -15,6 +15,7 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
+  (("--" "lisp/init-lsp.el"))
   ("-n256" "--graph" "--decorate")
   (("--" "display/yxdatadlg.cpp"))
   (("--" "main/src/relay.c"))
@@ -23,8 +24,7 @@
   (("--" "main/src/modbus.c"))
   (("--" "02src/01v2/version.h"))
   (("--" "main/inc/public.h"))
-  (("--" "main/src/public.c"))
-  (\.\.\.))
+  (("--" "main/src/public.c")))
  (magit-merge nil)
  (magit-patch nil)
  (magit-patch-apply nil)
