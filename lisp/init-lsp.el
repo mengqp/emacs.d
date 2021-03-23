@@ -22,7 +22,7 @@
   (setq lsp-enable-folding nil)
 
   ;; no real time syntax check
-  (setq lsp-diagnostic-package :none)
+  ;; (setq lsp-diagnostic-package :none)
 
   ;; handle yasnippet by myself
   (setq lsp-enable-snippet nil)
@@ -80,7 +80,7 @@
   (lsp-ui-doc-header ((t (:inherit (font-lock-string-face italic)))))
   :init
   (remove-hook 'lsp-ui-imenu-mode-hook 'lsp-ui-imenu-enable )
-  (setq lsp-ui-doc-enable t
+  (setq lsp-ui-doc-enable nil
 	lsp-ui-doc-header t
 	lsp-ui-doc-include-signature t
 	lsp-ui-doc-position 'top
@@ -89,14 +89,14 @@
 	lsp-ui-doc-border (face-foreground 'default)
 	lsp-ui-doc-position 'at-point
 	lsp-ui-doc-delay 1
-	lsp-ui-sideline-enable t
+	lsp-ui-sideline-enable nil
 	lsp-ui-sideline-ignore-duplicate t
 	lsp-ui-sideline-show-diagnostics nil
 	lsp-ui-sideline-show-symbol t
 	lsp-ui-sideline-show-hover t
 	lsp-ui-sideline-show-code-actions t
 	lsp-ui-sideline-delay 2
-	lsp-ui-flycheck-enable t
+	lsp-ui-flycheck-enable nil
 	lsp-ui-imenu-enable nil
 	lsp-ui-imenu-kind-position 'left
 	)

@@ -98,7 +98,7 @@
 				  (recentf-mode)
 				  (recentf-track-opened-file))))
   :init
-  (setq recentf-max-saved-items 1000)
+  (setq recentf-max-saved-items 128)
   ;; (setq recentf-auto-cleanup 'never)
   (setq recentf-max-menu-items 15)
 

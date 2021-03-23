@@ -15,8 +15,8 @@
  (magit-fetch nil)
  (magit-file-dispatch nil)
  (magit-log
-  (("--" "lisp/init-lsp.el"))
   ("-n256" "--graph" "--decorate")
+  (("--" "lisp/init-lsp.el"))
   (("--" "display/yxdatadlg.cpp"))
   (("--" "main/src/relay.c"))
   (("--" "src/libiec61850/src/mms/iso_server/iso_server.c"))
