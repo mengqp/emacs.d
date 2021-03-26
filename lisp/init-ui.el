@@ -49,6 +49,11 @@
   :defer 1
   )
 
+(use-package eldoc-box
+  :ensure t
+  :defer t
+  :hook (prog-mode . eldoc-box-hover-at-point-mode))
+
 (use-package column-enforce-mode
   :ensure t
   :defer 1
