@@ -5,7 +5,7 @@
 
 (use-package joker-theme
   ;; :defer t
-  ;; :disabled t
+  :disabled
   :init
   (add-hook 'after-init-hook
 	    (lambda () (load-theme 'joker t)))
@@ -27,7 +27,7 @@
   )
 
 (use-package modus-themes
-  :disabled
+  ;; :disabled
   :ensure
   :init
   ;; Add all your customizations prior to loading the themes
