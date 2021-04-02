@@ -3,21 +3,11 @@
 ;;; Code:
 (use-package eaf
   :ensure nil
-  :defer t
   :init
-  (use-package epc
-    :ensure t
-    :defer t)
-  (use-package ctable
-    :ensure t
-    :defer t
-    )
-  (use-package deferred
-    :ensure t
-    :defer t)
-  (use-package s
-    :defer t
-    :ensure t)
+  (use-package epc)
+  (use-package ctable)
+  (use-package deferred)
+  (use-package s)
   (setq eaf-find-alternate-file-in-dired t)
   ;; :config
   ;; (eaf-bind-key scroll_up "RET" eaf-pdf-viewer-keybinding)

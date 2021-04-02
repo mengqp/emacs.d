@@ -4,7 +4,6 @@
 
 ;; set gdb multi-windows when open
 (use-package gud
-  :defer t
   ;; :disabled t
   :config
   (gud-tooltip-mode 1)
@@ -60,9 +59,7 @@
   )
 
 (use-package realgud
-  :ensure t
   :disabled t
-  :defer t
   )
 
 (provide 'init-gdb)

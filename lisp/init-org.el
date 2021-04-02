@@ -2,9 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (use-package org
-  :ensure t
   :mode ("\\.org\\'" . org-mode)
-  :defer t
   :init
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
 				   (org-agenda-files :maxlevel . 9))))

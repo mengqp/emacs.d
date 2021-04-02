@@ -2,15 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 (use-package eyebrowse
-  :ensure t
-  :defer t
   :hook (after-init . eyebrowse-mode)
   )
 
 (use-package workgroups2
-  :ensure t
   :disabled t
-  :defer t
   :hook
   (after-init . workgroups-mode)
   :init

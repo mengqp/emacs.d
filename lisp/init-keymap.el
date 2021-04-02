@@ -10,9 +10,7 @@
 
 
 (use-package which-key
-  :ensure t
   :hook (after-init . which-key-mode)
-  :defer t
   :diminish which-key-mode
   :init
   ;; Set the prefix string that will be inserted in front of prefix commands
@@ -25,8 +23,6 @@
   )
 
 (use-package general
-  :ensure t
-  :defer t
   :hook (after-init . general-override-mode)
   ;; :commands (init-keymap nvmap)
   ;; :after evil

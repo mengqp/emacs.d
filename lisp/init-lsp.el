@@ -4,9 +4,7 @@
 
 
 (use-package lsp-mode
-  :defer t
   ;; :disabled t
-  :ensure t
   :diminish lsp-mode
   :hook ((c-mode c++-mode objc-mode python-mode) . #'lsp)
   ;; :bind (:map lsp-mode-map
@@ -70,9 +68,7 @@
   )
 
 (use-package lsp-ui
-  :ensure t
   ;; :disabled t
-  :defer t
   :hook
   (lsp-mode . lsp-ui-mode)
   :custom-face
@@ -102,14 +98,10 @@
 	)
   )
 
-(use-package lsp-ivy
-  :ensure t
-  :defer t)
+(use-package lsp-ivy)
 
 
 (use-package ccls
-  :ensure t
-  :defer t
   ;; :disabled t
   ;; :commands lsp-ccls-enable
   ;; :hook ((c-mode c++-mode objc-mode) .
@@ -122,7 +114,6 @@
 
 (use-package lsp-python-ms
   :disabled t
-  :ensure t
   :hook
   (python-mode . (lambda () (require 'lsp-python-ms)))
   :init

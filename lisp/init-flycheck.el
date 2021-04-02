@@ -3,11 +3,9 @@
 ;;; Code:
 (use-package flycheck
   ;; :disabled t
-  :ensure t
   :commands (flycheck flycheck-display-error-messages-unless-error-list)
   :commands (flycheck flycheck-list-errors)
   :commands (flycheck flycheck-get-error-list-window)
-  :defer t
   :hook ((prog-mode org-mode) . flycheck-mode)
   :init
   ;;; 保存的时候自动检查

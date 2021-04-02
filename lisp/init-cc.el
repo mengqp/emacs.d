@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package cc-mode
-  :defer t
   :hook (c-mode-common . (lambda ()
                            (c-set-style "linux")
                            (setq tab-width 4)

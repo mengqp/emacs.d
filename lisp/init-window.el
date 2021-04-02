@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 (use-package switch-window
-  :ensure t
-  :defer t
   ;; :defer t
   ;; :bind ("C-x o" . switch-window)
   ;; :bind ("C-x 1" . switch-window-then-maximize)
@@ -17,10 +15,7 @@
   (setq switch-window-threshold 2)
   )
 
-(use-package zoom
-  :ensure t
-  :defer t
-  )
+(use-package zoom)
 
 (provide 'init-window)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

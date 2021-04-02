@@ -122,7 +122,6 @@
 (use-package awesome-tray
   :ensure nil
   :disabled t
-  :defer t
   :hook (after-init . awesome-tray-mode)
   :init
   ;; (setq awesome-tray-mode-line-active-color "Gray60")
@@ -132,8 +131,6 @@
 
 (use-package doom-modeline
   ;; :disabled t
-  :ensure t
-  :defer t
   :hook (after-init . doom-modeline-mode)
   :init
   ;; How tall the mode-line should be. It's only respected in GUI.

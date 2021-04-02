@@ -25,13 +25,10 @@
 
 (use-package hl-line
   :ensure nil
-  :defer t
   :hook (after-init . global-hl-line-mode)
   )
 
 (use-package highlight-parentheses
-  :ensure t
-  :defer t
   :hook (prog-mode . highlight-parentheses-mode)
   )
 
@@ -39,24 +36,14 @@
 ;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
 ;;   )
 
-(use-package all-the-icons
-  :ensure t
-  :defer t
-  )
+(use-package all-the-icons)
 
-(use-package symbol-overlay
-  :ensure t
-  :defer 1
-  )
+(use-package symbol-overlay)
 
 (use-package eldoc-box
-  :ensure t
-  :defer t
   :hook (prog-mode . eldoc-box-hover-at-point-mode))
 
 (use-package column-enforce-mode
-  :ensure t
-  :defer 1
   :diminish column-enforce-mode
   :hook((prog-mode) . column-enforce-mode)
   :init

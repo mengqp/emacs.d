@@ -2,10 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 (use-package projectile
-  :ensure t
   :diminish projectile-mode
   ;; :disabled t
-  :defer t
   ;; :hook (after-init . projectile-mode)
   :init
   (projectile-mode t)
@@ -17,8 +15,6 @@
 
 (use-package counsel-projectile
   :disabled t
-  :ensure t
-  :defer t
   :preface (setq projectile-keymap-prefix (kbd "C-c p"))
   )
 

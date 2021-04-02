@@ -3,8 +3,6 @@
 ;;; Code:
 
 (use-package company
-  :ensure t
-  :defer t
   :diminish company-mode
   :hook ((prog-mode org-mode vterm-mode) . company-mode)
   ;; :bind
@@ -31,8 +29,6 @@
   )
 
 (use-package company-posframe
-  :ensure t
-  :defer t
   :hook (company-mode . company-posframe-mode)
   :diminish company-posframe-mode
   )

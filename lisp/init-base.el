@@ -8,7 +8,6 @@
 
 (use-package files
   :ensure nil
-  :defer t
   :init
   ;; backup in one place. flat, no tree structure
   (setq make-backup-files nil)
@@ -20,7 +19,6 @@
 
 (use-package pixel-scroll
   :ensure nil
-  :defer t
   :hook (after-init . pixel-scroll-mode)
   )
 
@@ -30,20 +28,17 @@
 
 (use-package simple
   :ensure nil
-  :defer t
   :hook (after-init . column-number-mode)
   )
 
 ;; remember cursor position, for emacs 25.1 or later
 (use-package save-place
   :ensure nil
-  :defer t
   :hook (after-init . save-place-mode)
   )
 
 (use-package startup
   :ensure nil
-  :defer t
   :init
   ;; (setq initial-major-mode 'fundamental-mode)
   (setq initial-major-mode 'fundamental-mode)
@@ -61,8 +56,6 @@
 
 ;; 空格
 (use-package pangu-spacing
-  :ensure t
-  :defer t
   :diminish global-pangu-spacing-mode
   :diminish pangu-spacing-mode
   :hook
@@ -74,7 +67,6 @@
 ;;文件在改变时自动加载
 (use-package autorevert
   :diminish auto-revert-mode
-  :defer t
   :hook (after-init . global-auto-revert-mode)
   )
 
@@ -93,7 +85,6 @@
   )
 
 (use-package recentf
-  :defer t
   :hook (find-file . (lambda () (unless recentf-mode
 				  (recentf-mode)
 				  (recentf-track-opened-file))))
@@ -110,7 +101,6 @@
   )
 
 (use-package savehist
-  :defer t
   :hook (before-save . savehist-mode)
   :init
   (setq savehist-file (expand-file-name "savehist" user-emacs-directory))
@@ -124,14 +114,9 @@
 	savehist-autosave-interval 60)
   )
 
-(use-package restart-emacs
-  :ensure t
-  :defer t
-  )
+(use-package restart-emacs)
 
 (use-package smart-tabs-mode
-  :ensure t
-  :defer t
   :hook (prog-mode . smart-tabs-mode)
   :init
   (add-hook 'plantuml-mode-hook
@@ -141,8 +126,6 @@
   )
 
 (use-package exec-path-from-shell
-  :ensure t
-  :defer t;
   ;; :disabled t
   :config
   ;; (setq exec-path-from-shell-check-startup-files nil)
@@ -154,14 +137,10 @@
 
 (use-package adaptive-wrap
   :disabled t
-  :ensure t
-  :defer t
   :hook (after-init . adaptive-wrap-prefix-mode)
   )
 
 (use-package keyfreq
-  :ensure t
-  :defer 1
   :config
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1)
@@ -170,7 +149,6 @@
 
 ;;实现代码折叠
 (use-package hideshow
-  :defer t
   :diminish hs-minor-mode
   ;; :init
   ;; (hs-minor-mode t)
@@ -179,7 +157,6 @@
 (use-package fuz
   :ensure nil
   ;; :disabled t
-  :defer t
   :config
   (unless (require 'fuz-core nil t)
     (fuz-build-and-load-dymod))

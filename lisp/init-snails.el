@@ -4,7 +4,6 @@
 
 (use-package snails
   :ensure nil
-  :defer t
   :init
   (setq snails-show-with-frame nil)
   (setq snails-default-show-prefix-tips nil)

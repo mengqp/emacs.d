@@ -2,13 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package amx
-  :defer t
-  :ensure t
-  )
+(use-package amx)
 
 (use-package counsel
-  :ensure t
   ;; :defer 1
   :diminish counsel-mode
   :diminish ivy-mode

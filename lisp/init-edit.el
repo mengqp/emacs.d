@@ -3,40 +3,24 @@
 ;;; Code:
 
 ;; Edit multiple regions in the same way simultaneously
-(use-package iedit
-  :ensure t
-  :defer t
-  ;; :bind
-  ;; (("C-;" . iedit-mode)
-  ;;  ("C-x r RET" . iedit-rectangle-mode)
-  ;;  )
-  )
+(use-package iedit)
 
 ;; https://github.com/emacs-evil/goto-chg/issues/3
 ;; Goto last change
 (use-package goto-chg
-  :ensure t
-  :defer t
   ;; :bind ("C-," . goto-last-change)
   )
 
 (use-package expand-region
-  :ensure t
-  :defer t
   ;; :commands er/expand-region
   ;; :bind ("C-=" . er/expand-region)
   )
 
-(use-package format-all
-  :ensure t
-  :defer t
-  )
+(use-package format-all)
 
 ;; auto insert closing bracket
 (use-package smartparens
-  :ensure t
   :disabled t
-  :defer t
   :diminish smartparens-mode
   :hook( prog-mode . smartparens-mode)
   :config
@@ -64,15 +48,11 @@
   )
 
 (use-package hungry-delete
-  :ensure t
-  :defer t
   :diminish hungry-delete-mode
   :hook (after-init . global-hungry-delete-mode)
   )
 
 (use-package anzu
-  :ensure t
-  :defer 1
   ;; :hook(after-init . global-anzu-mode)
   :init
   (setq anzu-mode-lighter "")
@@ -85,32 +65,15 @@
   )
 
 (use-package auto-sudoedit
-  :ensure t
   :disabled t
-  :defer t
   :hook(after-init . auto-sudoedit-mode)
   )
 
-(use-package shift-number
-  :ensure t
-  :defer t
-  ;; :bind (
-  ;; 	 ("M-_" . shift-number-down)
-  ;; 	 ("M-+" . shift-number-up))
-  )
+(use-package shift-number)
 
-(use-package undo-fu
-  :ensure t
-  :defer t
-  ;; :bind(
-  ;; 	("C-/" . undo-fu-only-undo)
-  ;; 	("C-?" . undo-fu-only-redo)
-  ;; 	)
-  )
+(use-package undo-fu)
 
-(use-package wgrep
-  :ensure t
-  :defer t)
+(use-package wgrep)
 
 (require 'init-color-rg)
 

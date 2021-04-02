@@ -5,8 +5,6 @@
 (use-package plantuml-mode
   :commands (org-src org-src-lang-modes)
   :commands (plantuml-mode org-src-lang-modes)
-  :ensure t
-  :defer t
   :init
   ;; Enable plantuml-mode for PlantUML files
   (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))

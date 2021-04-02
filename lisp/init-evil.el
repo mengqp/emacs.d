@@ -3,9 +3,7 @@
 ;;; Code:
 
 (use-package evil
-  :ensure t
   :diminish evil-mode
-  ;; :defer 1
   :hook(after-init . evil-mode)
   ;; :hook(after-init . evil-mode)
   ;; :hook((prog-mode org-mode) . evil-mode)
@@ -74,7 +72,6 @@
   )
 
 (use-package evil-visualstar
-  :ensure t
   :defer 2
   ;; :hook (evil-mode . global-evil-visualstar-mode)
   :init
@@ -82,7 +79,6 @@
   )
 
 (use-package evil-matchit
-  :ensure t
   :defer 4
   :diminish evil-matchit-mode
   ;; :hook (evil-mode . global-evil-matchit-mode)
@@ -93,7 +89,6 @@
   )
 
 (use-package evil-escape
-  :ensure t
   :diminish evil-escape-mode
   :hook (evil-mode . evil-escape-mode )
   :init
@@ -101,11 +96,7 @@
   (setq-default evil-escape-delay 0.2)
   )
 
-(use-package evil-nerd-commenter
-  :ensure t
-  :defer t
-  ;; :after evil
-  )
+(use-package evil-nerd-commenter)
 
 (provide 'init-evil)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

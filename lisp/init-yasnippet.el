@@ -4,8 +4,6 @@
 
 
 (use-package yasnippet
-  :ensure t
-  :defer t
   :hook ((org-mode prog-mode) . yas-minor-mode)
   :diminish yas-minor-mode
   :init
@@ -21,13 +19,9 @@
 
 (use-package yasnippet-snippets
   :ensure nil
-  :defer t)
-
-(use-package ivy-yasnippet
-  :ensure t
-  :defer t
-  ;; :bind (("C-c C-y" . ivy-yasnippet))
   )
+
+(use-package ivy-yasnippet)
 
 (provide 'init-yasnippet)
 

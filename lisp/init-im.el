@@ -2,9 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (use-package pyim
-  :ensure t
   ;; :disabled t
-  :defer t
   ;; :bind*
   ;; (
   ;;  ("M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
@@ -70,7 +68,6 @@
   )
 
 (use-package rime
-  :ensure t
   :disabled t
   :commands (init-im rime-toggle-or-inline-ascii)
   :bind*
