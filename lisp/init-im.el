@@ -1,17 +1,13 @@
 ;;; init-im.el --- xxx -*- coding: utf-8-unix -*-
 ;;; Commentary:
 ;;; Code:
+
 (use-package pyim
-  ;; :disabled t
-  ;; :bind*
-  ;; (
-  ;;  ("M-i" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
-  ;;  )
+  :disabled t
   :init
   (setq pyim-title "pyim")
   (setq pyim-dcache-prefer-emacs-thread t)
   (setq default-input-method "pyim")
-  (setq pyim-default-scheme 'rime)
 
   ;; 设置 pyim 探针设置，这是 pyim 高级功能设置，可以实现 *无痛* 中英文切换 :-)
   ;; 我自己使用的中英文动态切换规则是：
@@ -34,52 +30,47 @@
   ;; 选词框显示 5 个候选词
   (setq pyim-page-length 5)
   :config
+
   (global-set-key (kbd "C-\\") 'toggle-input-method)
 
-  (when *win64*
-    ;; 五笔用户使用 wbdict 词库
-    (use-package pyim-wbdict
-      ;; :disabled t
-      :ensure t
-      :config
-      ;; (pyim-wbdict-gbk-enable)
-      (pyim-wbdict-v98-enable)
-      )
-    (setq pyim-default-scheme 'wubi)
-    )
+  ;; (require 'liberime)
+  ;; (with-eval-after-load "liberime"
+  ;;   (setq liberime-user-data-dir (expand-file-name "/usr/share/rime-data/") )
+  ;;   (liberime-try-select-schema "wubi86")
+    ;; )
 
-  (when *linux*
-    (use-package liberime
-      :ensure nil
-      ;; :defer nil
-      :load-path "/home/mengqp/.emacs.d/site-lisp/liberime/build/liberime.so"
+  (use-package liberime
+    :ensure nil
+    :defer nil
+    :load-path "/home/mengqp/.emacs.d/site-lisp/liberime/src/liberime-core.so"
+    :init
+    (add-hook 'after-init-hook #'liberime-sync)
+    (setq pyim-default-scheme 'rime-wubi86)
+    (setq liberime-user-data-dir (expand-file-name "/usr/share/rime-data/") )
 
-      ;; :init
-      ;; (setq liberime-user-data-dir (expand-file-name "~/.local/share/fcitx5/rime/") )
-      :config
-      (require 'pyim-liberime)
-      (liberime-start (expand-file-name "/usr/share/rime-data")
-		      liberime-user-data-dir
-		      )
-      (liberime-select-schema "wubi86")
-      )
+    ;; :init
+    ;; (setq liberime-user-data-dir (expand-file-name "~/.local/share/fcitx5/rime/") )
+    :config
+    ;; (liberime-start (expand-file-name "/usr/share/rime-data")
+    ;;     	    liberime-user-data-dir
+    ;;     	    )
+    ;; (liberime-try-select-schema "wubi86")
+    (liberime-select-schema "wubi86")
     )
 
   )
 
 (use-package rime
-  :disabled t
+  ;; :disabled t
   :commands (init-im rime-toggle-or-inline-ascii)
-  :bind*
-  (
-   ("M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
-   ;; ("M-i i" . rime-toggle-or-inline-ascii) ; 开启输入法
-   ;; ("M-i M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
-   (:map
-    rime-active-mode-map
-    ("<tab>" . 'rime-inline-ascii)
-    )
-   )
+  ;; :bind*
+  ;; (
+  ;;  ("M-i" . rime-toggle-or-inline-ascii) ; 开启输入法
+  ;;  (:map
+  ;;   rime-active-mode-map
+  ;;   ("<tab>" . 'rime-inline-ascii)
+  ;;   )
+  ;;  )
   :diminish rime-mode
   :hook(after-init . rime-mode)
   :init
@@ -105,7 +96,7 @@
 	      :internal-border-width 10))
   (setq default-input-method "rime"
 	rime-show-candidate 'posframe)
-  (setq rime-title "")
+  ;; (setq rime-title "")
   (defun rime-toggle-or-inline-ascii()
     "Open init package file to config."
     (interactive)
@@ -124,5 +115,4 @@
   )
 
 (provide 'init-im)
-
 ;;; init-im.el ends here

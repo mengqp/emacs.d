@@ -142,6 +142,7 @@
 (autoload 'flycheck-last-status-change "flycheck" "" t)
 (autoload 'flycheck-mode-line "flycheck" "" t)
 (autoload 'flycheck-mode-line-status-text "flycheck" "" t)
+(autoload 'liberime-try-select-schema "liberime" "" t)
 
 
 (provide 'init-autoload)

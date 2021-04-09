@@ -53,8 +53,7 @@ But you may use safer HTTPS instead.")
     (setq use-package-expand-minimally t)
     (setq use-package-verbose t))
 
-(use-package diminish
-  :ensure t)
+(use-package diminish)
 
 (provide 'init-package)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

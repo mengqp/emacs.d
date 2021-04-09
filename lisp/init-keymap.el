@@ -45,10 +45,10 @@
    "C-?" 'undo-fu-only-redo
 
    ;; pyim
-   "M-i" 'pyim-convert-string-at-point ;与 pyim-probe-dynamic-english 配合
+   ;; "M-i" 'pyim-convert-string-at-point ;与 pyim-probe-dynamic-english 配合
+   "M-i" 'rime-toggle-or-inline-ascii ;
 
-   ;; pyim
-   "M-j" 'snails ;与 pyim-probe-dynamic-english 配合
+   "M-j" 'snails ;
 
    ;; counsel
    "M-x"  'counsel-M-x
@@ -92,7 +92,7 @@
     :prefix "SPC")
 
   (general-create-definer moon-global-leader
-    :prefix "M-SPC"
+    :prefix "M-m"
     :keymaps 'override)
 
   (general-create-definer moon--default-local-leader
