@@ -3,6 +3,7 @@
 ;;; Code:
 (require 'package)
 
+(setq package-quickstart t)
 (package-initialize)
 
 ;; Set it to `t' to use safer HTTPS to download packages
@@ -17,14 +18,14 @@ But you may use safer HTTPS instead.")
 			 ;; ("org-cn"   . "https://elpa.zilongshanren.com/org/")
 			 ;; ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
                          ;; ("melpa-stable-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
-			 ("melpa-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-			 ("gnu-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-			 ("org-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+			 ;; ("melpa-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+			 ;; ("gnu-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+			 ;; ("org-tuna" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
                          ;; ("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
                          ;; ("org-cn"   . "http://elpa.emacs-china.org/org/")
                          ;; ("gnu-cn" . "http://elpa.emacs-china.org/gnu/")
-                         ;; ("melpa" . "https://melpa.org/packages/")
-			 ;; ("gnu" . "https://elpa.gnu.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")
+			 ("gnu" . "https://elpa.gnu.org/packages/")
 			 ;; ("popkit" . "http://elpa.popkit.org/packages/")
                          ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ))
