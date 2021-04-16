@@ -29,6 +29,11 @@
 ;;   ;; (prefer-coding-system 'utf-8-unix)
 ;;   )
 
+(use-package unicad
+  :hook
+  (after-init . unicad-mode)
+  )
+
 
 
 (provide 'init-coding)

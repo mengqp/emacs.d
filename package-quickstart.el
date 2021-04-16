@@ -1236,6 +1236,37 @@ with the specified `:load-path' the module cannot be found." t nil)
 
 
 )
+(let ((load-file-name "/home/mengqp/.emacs.d/elpa/unicad-20200914.1500/unicad-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/unicad-20200914.1500/unicad-autoloads.el") (car load-path))))
+
+
+
+(defvar unicad-mode nil "\
+Non-nil if Unicad mode is enabled.
+See the `unicad-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `unicad-mode'.")
+
+(custom-autoload 'unicad-mode "unicad" nil)
+
+(autoload 'unicad-mode "unicad" "\
+Toggle unicad mode
+
+If called interactively, enable Unicad mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "unicad" '("unicad-")))
+
+
+)
 (let ((load-file-name "/home/mengqp/.emacs.d/elpa/undo-fu-20200701.1435/undo-fu-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
@@ -1655,10 +1686,10 @@ this is right: (pfuture-new \"git\" \"status\")
 
 
 )
-(let ((load-file-name "/home/mengqp/.emacs.d/elpa/posframe-20210410.528/posframe-autoloads.el"))
+(let ((load-file-name "/home/mengqp/.emacs.d/elpa/posframe-20210416.358/posframe-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/posframe-20210410.528/posframe-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/posframe-20210416.358/posframe-autoloads.el") (car load-path))))
 
 
 
@@ -3482,10 +3513,10 @@ same as writing (provide \\='bar-foo).
 
 
 )
-(let ((load-file-name "/home/mengqp/.emacs.d/elpa/realgud-20210411.1241/realgud-autoloads.el"))
+(let ((load-file-name "/home/mengqp/.emacs.d/elpa/realgud-20210414.235/realgud-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/realgud-20210411.1241/realgud-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/realgud-20210414.235/realgud-autoloads.el") (car load-path))))
 
 
 
@@ -5945,10 +5976,10 @@ contrast ratio between new and existing colors.")
 
 
 )
-(let ((load-file-name "/home/mengqp/.emacs.d/elpa/modus-themes-20210412.616/modus-themes-autoloads.el"))
+(let ((load-file-name "/home/mengqp/.emacs.d/elpa/modus-themes-20210414.1025/modus-themes-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/modus-themes-20210412.616/modus-themes-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/modus-themes-20210414.1025/modus-themes-autoloads.el") (car load-path))))
 
 
 
@@ -6151,10 +6182,10 @@ current line.
 
 
 )
-(let ((load-file-name "/home/mengqp/.emacs.d/elpa/magit-20210411.2036/magit-autoloads.el"))
+(let ((load-file-name "/home/mengqp/.emacs.d/elpa/magit-20210414.1306/magit-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/magit-20210411.2036/magit-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/magit-20210414.1306/magit-autoloads.el") (car load-path))))
 
 
 
@@ -8637,10 +8668,10 @@ Unconditionally turn on `magit-gitflow-mode'." nil nil)
 
 
 )
-(let ((load-file-name "/home/mengqp/.emacs.d/elpa/lsp-mode-20210413.2320/lsp-mode-autoloads.el"))
+(let ((load-file-name "/home/mengqp/.emacs.d/elpa/lsp-mode-20210415.615/lsp-mode-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/lsp-mode-20210413.2320/lsp-mode-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/home/mengqp/.emacs.d/elpa/lsp-mode-20210415.615/lsp-mode-autoloads.el") (car load-path))))
 
 
 
@@ -14623,14 +14654,14 @@ and toggle it if ARG is `toggle'; disable the mode otherwise.
 )
 (setq package-activated-list
       (append
-       '(zoom yasnippet xr workgroups2 with-editor dash winum which-key wgrep web-mode lv hydra vdiff popup vc-msg bind-key use-package undo-fu s avy ace-window pfuture ht posframe cfrs treemacs transient toc-org test-simple tao-theme symbol-overlay switch-window ivy swiper spinner smex smartparens smart-tabs-mode f shrink-path shift-number rime restart-emacs load-relative loc-changes realgud ranger rainbow-delimiters async pyim epl pkg-info projectile powerline plantuml-mode php-mode pcre2el pangu-spacing org-journal org-bullets org-brain multiple-cursors modus-vivendi-theme modus-themes markdown-mode hl-todo git-commit magit magit-todos magit-svn magit-popup magit-gitflow lsp-mode lsp-ui lsp-treemacs lsp-pyright lsp-ivy language-id keyfreq json-snatcher json-reformat json-mode ivy-yasnippet ivy-xref ivy-posframe inheritenv iedit hungry-delete htmlize highlight-parentheses highlight-indent-guides highlight-doxygen goto-chg gnu-elpa-keyring-update git-timemachine git-gutter general format-all flycheck flycheck-posframe flx eyebrowse expand-region exec-path-from-shell evil evil-visualstar evil-nerd-commenter evil-matchit evil-escape evil-avy deferred concurrent ctable epc emmet-mode eldoc-box doom-themes all-the-icons doom-modeline diminish cyberpunk-theme counsel counsel-projectile counsel-etags company company-posframe company-lsp column-enforce-mode cnfonts cmake-mode centaur-tabs ccls calfw benchmark-init avy-zap auto-sudoedit auto-package-update auctex anzu annalist amx aggressive-indent adaptive-wrap)
+       '(zoom yasnippet xr workgroups2 with-editor dash winum which-key wgrep web-mode lv hydra vdiff popup vc-msg bind-key use-package unicad undo-fu s avy ace-window pfuture ht posframe cfrs treemacs transient toc-org test-simple tao-theme symbol-overlay switch-window ivy swiper spinner smex smartparens smart-tabs-mode f shrink-path shift-number rime restart-emacs load-relative loc-changes realgud ranger rainbow-delimiters async pyim epl pkg-info projectile powerline plantuml-mode php-mode pcre2el pangu-spacing org-journal org-bullets org-brain multiple-cursors modus-vivendi-theme modus-themes markdown-mode hl-todo git-commit magit magit-todos magit-svn magit-popup magit-gitflow lsp-mode lsp-ui lsp-treemacs lsp-pyright lsp-ivy language-id keyfreq json-snatcher json-reformat json-mode ivy-yasnippet ivy-xref ivy-posframe inheritenv iedit hungry-delete htmlize highlight-parentheses highlight-indent-guides highlight-doxygen goto-chg gnu-elpa-keyring-update git-timemachine git-gutter general format-all flycheck flycheck-posframe flx eyebrowse expand-region exec-path-from-shell evil evil-visualstar evil-nerd-commenter evil-matchit evil-escape evil-avy deferred concurrent ctable epc emmet-mode eldoc-box doom-themes all-the-icons doom-modeline diminish cyberpunk-theme counsel counsel-projectile counsel-etags company company-posframe company-lsp column-enforce-mode cnfonts cmake-mode centaur-tabs ccls calfw benchmark-init avy-zap auto-sudoedit auto-package-update auctex anzu annalist amx aggressive-indent adaptive-wrap)
        package-activated-list))
 (progn
   (require 'info)
   (info-initialize)
   (setq Info-directory-list
 	(append
-	 '("/home/mengqp/.emacs.d/elpa/annalist-20190929.207" "/home/mengqp/.emacs.d/elpa/auctex-13.0.6" "/home/mengqp/.emacs.d/elpa/evil-20210411.2050" "/home/mengqp/.emacs.d/elpa/magit-popup-20200719.1015" "/home/mengqp/.emacs.d/elpa/magit-20210411.2036" "/home/mengqp/.emacs.d/elpa/modus-themes-20210412.616" "/home/mengqp/.emacs.d/elpa/modus-vivendi-theme-20201114.729" "/home/mengqp/.emacs.d/elpa/ivy-20210404.1241" "/home/mengqp/.emacs.d/elpa/transient-20210315.1902" "/home/mengqp/.emacs.d/elpa/use-package-20210207.1926" "/home/mengqp/.emacs.d/elpa/dash-20210330.1544" "/home/mengqp/.emacs.d/elpa/with-editor-20210319.1930")
+	 '("/home/mengqp/.emacs.d/elpa/annalist-20190929.207" "/home/mengqp/.emacs.d/elpa/auctex-13.0.6" "/home/mengqp/.emacs.d/elpa/evil-20210411.2050" "/home/mengqp/.emacs.d/elpa/magit-popup-20200719.1015" "/home/mengqp/.emacs.d/elpa/magit-20210414.1306" "/home/mengqp/.emacs.d/elpa/modus-themes-20210414.1025" "/home/mengqp/.emacs.d/elpa/modus-vivendi-theme-20201114.729" "/home/mengqp/.emacs.d/elpa/ivy-20210404.1241" "/home/mengqp/.emacs.d/elpa/transient-20210315.1902" "/home/mengqp/.emacs.d/elpa/use-package-20210207.1926" "/home/mengqp/.emacs.d/elpa/dash-20210330.1544" "/home/mengqp/.emacs.d/elpa/with-editor-20210319.1930")
 	 Info-directory-list)))
 
 ;; Local Variables:
