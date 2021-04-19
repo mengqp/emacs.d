@@ -3,7 +3,7 @@
 ;;; Code:
 (require 'package)
 
-(setq package-quickstart t)
+;; (setq package-quickstart t)
 (package-initialize)
 
 ;; Set it to `t' to use safer HTTPS to download packages

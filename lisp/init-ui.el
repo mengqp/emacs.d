@@ -40,8 +40,8 @@
 
 (use-package symbol-overlay)
 
-(use-package eldoc-box
-  :hook (prog-mode . eldoc-box-hover-at-point-mode))
+;; (use-package eldoc-box
+;;   :hook (prog-mode . eldoc-box-hover-at-point-mode))
 
 (use-package column-enforce-mode
   :diminish column-enforce-mode

@@ -5,7 +5,6 @@
 (use-package amx)
 
 (use-package counsel
-  ;; :defer 1
   :diminish counsel-mode
   :diminish ivy-mode
   :commands (magit-utils magit-completing-read-function)

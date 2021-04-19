@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (use-package eaf
+  :load-path "site-lisp/eaf"
   :ensure nil
   :init
   (use-package epc)

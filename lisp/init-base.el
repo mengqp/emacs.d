@@ -74,8 +74,7 @@
 (use-package auto-save
   :ensure nil
   ;; :defer t
-  ;; :load-path (concat my-site-lisp-d "/auto-save/autosave.el")
-  :load-path auto-save-path
+  :load-path "site-lisp/auto-save" 
   :init
   (setq auto-save-delete-trailing-whitespace t)
   (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
@@ -155,6 +154,7 @@
   )
 
 (use-package fuz
+  :load-path "site-lisp/fuz"
   :ensure nil
   ;; :disabled t
   :config

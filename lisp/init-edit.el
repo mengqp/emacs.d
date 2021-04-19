@@ -30,7 +30,7 @@
   )
 
 (use-package awesome-pair
-  :load-path "~/.emacs.d/site-lisp/awesome-pair"
+  :load-path "site-lisp/awesome-pair"
   :hook
   (prog-mode . awesome-pair-mode)
   :config

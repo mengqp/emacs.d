@@ -5,14 +5,14 @@
 (setq gc-cons-threshold most-positive-fixnum ; 2^61 bytes
       gc-cons-percentage 0.6)
 
-(add-hook 'emacs-startup-hook
-          (lambda ()
-            "Restore defalut values after startup."
-            ;; (setq file-name-handler-alist default-file-name-handler-alist)
-            (setq gc-cons-threshold 6000000
-                  gc-cons-percentage 0.1)
-	    )
-	  )
+;; (add-hook 'emacs-startup-hook
+;;           (lambda ()
+;;             "Restore defalut values after startup."
+;;             ;; (setq file-name-handler-alist default-file-name-handler-alist)
+;;             (setq gc-cons-threshold 6000000
+;;                   gc-cons-percentage 0.1)
+;; 	    )
+;; 	  )
 
 
 ;; initialization, so we must prevent Emacs from doing it early!

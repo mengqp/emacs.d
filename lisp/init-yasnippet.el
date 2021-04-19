@@ -18,6 +18,7 @@
   )
 
 (use-package yasnippet-snippets
+  :load-path "yasnippet-snippets"
   :ensure nil
   )
 

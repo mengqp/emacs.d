@@ -58,10 +58,6 @@
 
   )
 
-(use-package realgud
-  :disabled t
-  )
-
 (provide 'init-gdb)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-gdb.el ends here

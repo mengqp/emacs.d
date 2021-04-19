@@ -4,6 +4,7 @@
 
 (use-package snails
   :ensure nil
+  :load-path "site-lisp/snails" 
   :init
   (setq snails-show-with-frame nil)
   (setq snails-default-show-prefix-tips nil)

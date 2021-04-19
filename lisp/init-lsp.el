@@ -145,16 +145,6 @@
                          (lsp))))  ; or lsp-deferred
 
 
-(use-package nox
-  :disabled t
-  :defer t
-  :hook ((c-mode c++-mode objc-mode python-mode) .
-         (lambda () (require 'nox) (nox-ensure)))
-  :init
-  (setq nox-doc-tooltip-font-size 17)
-  )
-
-
 (provide 'init-lsp)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-lsp.el ends here

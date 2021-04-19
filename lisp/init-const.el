@@ -6,7 +6,6 @@
 (setq-default my-emacs-d "~/.emacs.d")
 (setq-default my-lisp-d (concat my-emacs-d "/lisp"))
 (setq-default my-site-lisp-d (concat my-emacs-d "/site-lisp"))
-(setq-default auto-save-path (concat my-site-lisp-d "/auto-save"))
 
 (defconst *linux*
   (eq system-type 'gnu/linux)

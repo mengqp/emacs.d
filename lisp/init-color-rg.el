@@ -5,7 +5,7 @@
 
 (use-package color-rg
   :ensure nil
-  :defer t
+  :load-path "site-lisp/color-rg"
   ;; :commands ( color-rg color-rg-search-input )
   ;; :commands ( color-rg color-rg-search-symbol)
   ;; :commands ( color-rg color-rg-search-project )

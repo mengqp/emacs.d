@@ -3,13 +3,6 @@
 ;;; Code:
 ;; (load-theme 'manoj-dark)
 
-(use-package joker-theme
-  :disabled
-  :init
-  (add-hook 'after-init-hook
-	    (lambda () (load-theme 'joker t)))
-  )
-
 (use-package doom-themes
   :disabled t
   :init
