@@ -30,21 +30,28 @@
   )
 
 (use-package awesome-pair
+  ;; :ensure nil
   :load-path "site-lisp/awesome-pair"
   :hook
   (prog-mode . awesome-pair-mode)
-  :config
-  (define-key awesome-pair-mode-map (kbd "(") 'awesome-pair-open-round)
-  (define-key awesome-pair-mode-map (kbd "[") 'awesome-pair-open-bracket)
-  (define-key awesome-pair-mode-map (kbd "{") 'awesome-pair-open-curly)
-  (define-key awesome-pair-mode-map (kbd ")") 'awesome-pair-close-round)
-  (define-key awesome-pair-mode-map (kbd "]") 'awesome-pair-close-bracket)
-  (define-key awesome-pair-mode-map (kbd "}") 'awesome-pair-close-curly)
-  (define-key awesome-pair-mode-map (kbd "=") 'awesome-pair-equal)
-  ;; (define-key awesome-pair-mode-map (kbd "%") 'awesome-pair-match-paren)
-  (define-key awesome-pair-mode-map (kbd "\"") 'awesome-pair-double-quote)
-  (define-key awesome-pair-mode-map (kbd "SPC") 'awesome-pair-space)
-
+  :bind
+  (:map awesome-pair-mode-map
+        ("(" . awesome-pair-open-round)
+        ("[" . awesome-pair-open-bracket)
+        ("{" . awesome-pair-open-curly)
+        (")" . awesome-pair-close-round)
+        ("]" . awesome-pair-close-bracket)
+        ("}" . awesome-pair-close-curly)
+        ("C-d" . awesome-pair-forward-delete)
+        ("C-k" . awesome-pair-kill)
+        ("M-\"" . awesome-pair-wrap-double-quote)
+        ("M-[" . awesome-pair-wrap-bracket)
+        ("M-{" . awesome-pair-wrap-curly)
+        ("M-(" . awesome-pair-wrap-round)
+        ("M-)" . awesome-pair-unwrap))
+	("M-p" . awesome-pair-jump-left)
+        ("M-n" . awesome-pair-jump-right)
+        ("M-:" . awesome-pair-jump-out-pair-and-newline) ;跳出括号并换行
   )
 
 (use-package hungry-delete

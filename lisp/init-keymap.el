@@ -346,15 +346,15 @@
     ;; "te" 'toggle-company-english-helper
 
     ;; awewomepiar
-    "p\"" 'awesome-pair-wrap-double-quote
-    "p[" 'awesome-pair-wrap-bracke
-    "p{" 'awesome-pair-wrap-curly
-    "p(" 'awesome-pair-wrap-round
-    "pp" 'awesome-pair-unwrap
-    "pl" 'awesome-pair-jump-left
-    "pr" 'awesome-pair-jump-right
-    "po" 'awesome-pair-jump-out-pair-and-newline
-    "pk" 'awesome-pair-kill
+    ;; "p\"" 'awesome-pair-wrap-double-quote
+    ;; "p[" 'awesome-pair-wrap-bracke
+    ;; "p{" 'awesome-pair-wrap-curly
+    ;; "p(" 'awesome-pair-wrap-round
+    ;; "pp" 'awesome-pair-unwrap
+    ;; "pl" 'awesome-pair-jump-left
+    ;; "pr" 'awesome-pair-jump-right
+    ;; "po" 'awesome-pair-jump-out-pair-and-newline
+    ;; "pk" 'awesome-pair-kill
     ;; "pp" 'init-sp-menu/body
     ;; "pr" 'sp-rewrap-sexp
     ;; "p[" 'sp-wrap-square
@@ -390,8 +390,8 @@
   (general-define-key
    :keymaps 'lsp-mode-map
    [remap xref-find-definitions]  'lsp-find-definition
-   [remap xref-find-references]  'lsp-find-references
-   )
+   [remap xref-find-references]  'lsp-find-references)
+  
 
   ;; anzu
   (general-define-key
@@ -447,8 +447,9 @@
   ;;  ;; "p"  'sp-up-sexp
   ;;  "b" 'switch-to-prev-buffer
   ;;  )
-
   )
+
+
 
 (provide 'init-keymap)
 
