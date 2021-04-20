@@ -17,10 +17,7 @@
 
   )
 
-(use-package yasnippet-snippets
-  :load-path "yasnippet-snippets"
-  :ensure nil
-  )
+(use-package yasnippet-snippets)
 
 (use-package ivy-yasnippet)
 

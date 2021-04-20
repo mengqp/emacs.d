@@ -11,10 +11,6 @@
 	path = site-lisp/snails
 	url = https://github.com/manateelazycat/snails.git
 	ignore=untracked
-[submodule "site-lisp/yasnippet-snippets"]
-	path = site-lisp/yasnippet-snippets
-	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
-	ignore=untracked
 [submodule "site-lisp/awesome-tray"]
 	path = site-lisp/awesome-tray
 	url = https://github.com/manateelazycat/awesome-tray.git
