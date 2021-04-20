@@ -243,10 +243,10 @@
     "qr" 'restart-emacs
 
     ;; "sp" 'color-rg-search-project-with-type
-    ;; "st" 'color-rg-search-symbol-with-type
-    ;; "ss" 'color-rg-search-project
-    ;; "sdi" 'color-rg-search-input
-    ;; "sds" 'color-rg-search-symbol
+    "st" 'color-rg-search-symbol-with-type
+    "sp" 'color-rg-search-project
+    "si" 'color-rg-search-input
+    "ss" 'color-rg-search-symbol
 
     ;; "w" '(:ignore t :wk ("w" . "window"))
     "ws" 'split-window-vertically

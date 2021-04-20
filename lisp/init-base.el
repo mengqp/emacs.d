@@ -73,14 +73,13 @@
 ;; 自动保存
 (use-package auto-save
   :ensure nil
-  ;; :defer t
-  :load-path "site-lisp/auto-save" 
+  :load-path "site-lisp/auto-save"
+  :hook
+  (after-init . auto-save-enable)
   :init
   (setq auto-save-delete-trailing-whitespace t)
   (setq auto-save-silent t)       ;; 自动保存的时候静悄悄的， 不要打扰我
-  (setq auto-save-idle 5)
-  :config
-  (auto-save-enable)              ;; 开启自动保存功能
+  (setq auto-save-idle 3)
   )
 
 (use-package recentf

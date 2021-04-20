@@ -30,7 +30,6 @@
   )
 
 (use-package awesome-pair
-  ;; :ensure nil
   :load-path "site-lisp/awesome-pair"
   :hook
   (prog-mode . awesome-pair-mode)
