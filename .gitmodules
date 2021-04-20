@@ -11,10 +11,6 @@
 	path = site-lisp/snails
 	url = https://github.com/manateelazycat/snails.git
 	ignore=untracked
-[submodule "site-lisp/awesome-tray"]
-	path = site-lisp/awesome-tray
-	url = https://github.com/manateelazycat/awesome-tray.git
-	ignore=untracked
 [submodule "site-lisp/eaf"]
 	path = site-lisp/eaf
 	url = https://github.com/manateelazycat/emacs-application-framework.git
