@@ -46,9 +46,9 @@
 
    ;; pyim
    ;; "M-i" 'pyim-convert-string-at-point ;与 pyim-probe-dynamic-english 配合
-   "M-i" 'rime-toggle-or-inline-ascii ;
+   "M-i" 'rime-toggle-or-inline-ascii   ;
 
-   "M-j" 'snails ;
+   "M-j" 'snails                        ;
 
    ;; counsel
    "M-x"  'counsel-M-x
@@ -57,6 +57,18 @@
    ;; avy-zap
    "M-z"  'avy-zap-to-char-dwim
    "M-Z"  'avy-zap-up-to-char-dwim
+
+   ;; awesome-pair-mode
+   "C-d"  'awesome-pair-forward-delete
+   "C-k"  'awesome-pair-kill
+   "M-\""  'awesome-pair-wrap-double-quote
+   "M-["  'awesome-pair-wrap-bracket
+   "M-{"  'awesome-pair-wrap-curly
+   "M-("  'awesome-pair-wrap-round
+   "M-)"  'awesome-pair-unwrap
+   "M-p"  'awesome-pair-jump-left
+   "M-n"  'awesome-pair-jump-right
+   "M-:"  'awesome-pair-jump-out-pair-and-newline ;跳出括号并换行
    )
 
   (general-define-key
@@ -391,7 +403,7 @@
    :keymaps 'lsp-mode-map
    [remap xref-find-definitions]  'lsp-find-definition
    [remap xref-find-references]  'lsp-find-references)
-  
+
 
   ;; anzu
   (general-define-key

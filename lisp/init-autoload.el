@@ -110,6 +110,8 @@
 (autoload 'iedit-rectangle-mode "iedit-rect" "" t)
 (autoload 'evilmi-select-items "evil-matchit" "" t)
 (autoload 'recentf-track-opened-file "recentf" "" t)
+(autoload 'awesome-pair-forward-delete            "awesome-pair" "" t)
+(autoload 'awesome-pair-kill                      "awesome-pair" "" t)
 (autoload 'awesome-pair-wrap-bracke               "awesome-pair" "" t)
 (autoload 'awesome-pair-wrap-curly                "awesome-pair" "" t)
 (autoload 'awesome-pair-wrap-round                "awesome-pair" "" t)

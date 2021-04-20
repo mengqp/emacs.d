@@ -42,16 +42,7 @@
         (")" . awesome-pair-close-round)
         ("]" . awesome-pair-close-bracket)
         ("}" . awesome-pair-close-curly)
-        ("C-d" . awesome-pair-forward-delete)
-        ("C-k" . awesome-pair-kill)
-        ("M-\"" . awesome-pair-wrap-double-quote)
-        ("M-[" . awesome-pair-wrap-bracket)
-        ("M-{" . awesome-pair-wrap-curly)
-        ("M-(" . awesome-pair-wrap-round)
-        ("M-)" . awesome-pair-unwrap))
-	("M-p" . awesome-pair-jump-left)
-        ("M-n" . awesome-pair-jump-right)
-        ("M-:" . awesome-pair-jump-out-pair-and-newline) ;跳出括号并换行
+	)
   )
 
 (use-package hungry-delete
