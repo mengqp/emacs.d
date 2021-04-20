@@ -154,8 +154,6 @@
   )
 
 (use-package fuz
-  :load-path "site-lisp/fuz"
-  :ensure nil
   ;; :disabled t
   :config
   (unless (require 'fuz-core nil t)
