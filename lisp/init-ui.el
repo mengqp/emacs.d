@@ -32,10 +32,6 @@
   :hook (prog-mode . highlight-parentheses-mode)
   )
 
-;; (when *win64*
-;;   (run-with-idle-timer 0.2 nil 'w32-send-sys-command 61488)
-;;   )
-
 (use-package all-the-icons)
 
 (use-package symbol-overlay)

@@ -9,6 +9,7 @@
   ;; Enable plantuml-mode for PlantUML files
   (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
   (setq tab-width 2);
+  (setq indent-tabs-mode nil)
   :config
   (setq plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar")
   (setq plantuml-default-exec-mode 'jar)

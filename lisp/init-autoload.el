@@ -145,6 +145,10 @@
 (autoload 'flycheck-mode-line "flycheck" "" t)
 (autoload 'flycheck-mode-line-status-text "flycheck" "" t)
 (autoload 'liberime-try-select-schema "liberime" "" t)
+(autoload 'auto-sudoedit-mode "auto-sudoedit" "" t)
+(autoload 'fuz-build-and-load-dymod "fuz" "" t)
+(autoload 'recentf-track-opened-file "recentf" "" t)
+
 
 
 (provide 'init-autoload)

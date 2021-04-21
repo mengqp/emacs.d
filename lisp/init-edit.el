@@ -7,27 +7,11 @@
 
 ;; https://github.com/emacs-evil/goto-chg/issues/3
 ;; Goto last change
-(use-package goto-chg
-  ;; :bind ("C-," . goto-last-change)
-  )
+(use-package goto-chg)
 
-(use-package expand-region
-  ;; :commands er/expand-region
-  ;; :bind ("C-=" . er/expand-region)
-  )
+(use-package expand-region)
 
 (use-package format-all)
-
-;; auto insert closing bracket
-(use-package smartparens
-  :disabled t
-  :diminish smartparens-mode
-  :hook( prog-mode . smartparens-mode)
-  :config
-  ;; enable the default configuration
-  (require 'smartparens-config)
-  (smartparens-strict-mode t)
-  )
 
 (use-package awesome-pair
   :load-path "site-lisp/awesome-pair"
@@ -41,6 +25,8 @@
         (")" . awesome-pair-close-round)
         ("]" . awesome-pair-close-bracket)
         ("}" . awesome-pair-close-curly)
+	("\"" . awesome-pair-double-quote)
+	("SPC" . awesome-pair-space)
 	)
   )
 
@@ -61,10 +47,7 @@
   ;; (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
   )
 
-(use-package auto-sudoedit
-  :disabled t
-  :hook(after-init . auto-sudoedit-mode)
-  )
+(use-package auto-sudoedit)
 
 (use-package shift-number)
 
@@ -72,7 +55,10 @@
 
 (use-package wgrep)
 
-(require 'init-color-rg)
+(use-package color-rg
+  :ensure nil
+  :load-path "site-lisp/color-rg"
+  )
 
 (provide 'init-edit)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

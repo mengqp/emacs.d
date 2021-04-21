@@ -3,8 +3,22 @@
 ;;  这就一个进行基本配置的文件
 ;;; Code:
 
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 ;; Don’t compact font caches during GC.
 (setq inhibit-compacting-font-caches t)
+;; 以 y/n 代表 yes/no
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(use-package startup
+  :ensure nil
+  :init
+  ;; (setq initial-major-mode 'fundamental-mode)
+  (setq initial-major-mode 'fundamental-mode)
+  (setq ring-bell-function 'ignore)
+  (setq inhibit-startup-screen t)
+  (setq inhibit-startup-echo-area-message t)
+  (setq inhibit-splash-screen t)
+  )
 
 (use-package files
   :ensure nil
@@ -36,23 +50,6 @@
   :ensure nil
   :hook (after-init . save-place-mode)
   )
-
-(use-package startup
-  :ensure nil
-  :init
-  ;; (setq initial-major-mode 'fundamental-mode)
-  (setq initial-major-mode 'fundamental-mode)
-  (setq ring-bell-function 'ignore)
-  (setq inhibit-startup-screen t)
-  (setq inhibit-startup-echo-area-message t)
-  (setq inhibit-splash-screen t)
-  )
-
-;; 以 y/n 代表 yes/no
-(fset 'yes-or-no-p 'y-or-n-p)
-
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-
 
 ;; 空格
 (use-package pangu-spacing
@@ -116,11 +113,6 @@
 
 (use-package smart-tabs-mode
   :hook (prog-mode . smart-tabs-mode)
-  :init
-  (add-hook 'plantuml-mode-hook
-	    (lambda ()
-	      (setq indent-tabs-mode nil)
-	      (setq tab-width 2 )))
   )
 
 (use-package exec-path-from-shell
@@ -146,14 +138,9 @@
 
 
 ;;实现代码折叠
-(use-package hideshow
-  :diminish hs-minor-mode
-  ;; :init
-  ;; (hs-minor-mode t)
-  )
+(use-package hideshow)
 
 (use-package fuz
-  ;; :disabled t
   :config
   (unless (require 'fuz-core nil t)
     (fuz-build-and-load-dymod))
