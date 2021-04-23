@@ -21,7 +21,7 @@
 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth))
   )
 
-(linux-fullscreen)
+;; (linux-fullscreen)
 
 (use-package hl-line
   :ensure nil
