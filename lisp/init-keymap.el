@@ -59,6 +59,14 @@
    "M-Z"  'avy-zap-up-to-char-dwim
 
    ;; awesome-pair-mode
+   "("  'awesome-pair-open-round
+   "["  'awesome-pair-open-bracket
+   "{"  'awesome-pair-open-curly
+   ")"  'awesome-pair-close-round
+   "]"  'awesome-pair-close-bracket
+   "}"  'awesome-pair-close-curly
+   "\""  'awesome-pair-double-quote
+   "SPC"  'awesome-pair-space
    "C-d"  'awesome-pair-forward-delete
    "C-k"  'awesome-pair-kill
    "M-\""  'awesome-pair-wrap-double-quote

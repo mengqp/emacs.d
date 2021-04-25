@@ -5,12 +5,14 @@
   :diminish projectile-mode
   ;; :disabled t
   ;; :hook (after-init . projectile-mode)
+  :defer 2
   :init
-  (projectile-mode t)
   (setq projectile-completion-system 'ivy)
   (setq projectile-indexing-method 'hybrid)
   (when (executable-find "rg")
     (setq-default projectile-generic-command "rg --files --hidden"))
+  :config
+  (projectile-mode t)
   )
 
 (use-package counsel-projectile

@@ -4,16 +4,18 @@
 
 (use-package evil
   :diminish evil-mode
-  :hook(after-init . evil-mode)
+  ;; :disabled t
+  ;; :hook(after-init . evil-mode)
   ;; :hook(after-init . evil-mode)
   ;; :hook((prog-mode org-mode) . evil-mode)
+  :defer 2
   :init
 
   ;; This is optional since it's already set to t by default.
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
   :config
-  ;; (evil-mode 1)
+  (evil-mode t)
   ;; {{ specify major mode uses Evil (vim) NORMAL state or EMACS original state.
   ;; You may delete this setup to use Evil NORMAL state always.
   (dolist (p '((minibuffer-inactive-mode . emacs)
@@ -65,14 +67,12 @@
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
   (define-key evil-normal-state-map "\M-." 'xref-find-definitions)
   (define-key evil-motion-state-map "\M-." 'xref-find-definitions)
-  (define-key evil-motion-state-map "t" 'avy-goto-char)
-  (define-key evil-motion-state-map "T" 'avy-goto-char-2)
   (define-key evil-visual-state-map (kbd "v") 'er/expand-region)
 
   )
 
 (use-package evil-visualstar
-  :defer 2
+  :defer 3
   ;; :hook (evil-mode . global-evil-visualstar-mode)
   :init
   (global-evil-visualstar-mode t)

@@ -25,11 +25,12 @@
         modus-themes-bold-constructs nil)
 
   ;; Load the theme files before enabling a theme
-  (modus-themes-load-themes)
-  :config
+  ;; (modus-themes-load-themes)
+  (modus-themes-load-vivendi)
+  ;; :config
   ;; Load the theme of your choice:
   ;; (modus-themes-load-operandi) ;; OR (modus-themes-load-vivendi)
-  (modus-themes-load-vivendi)
+  ;; (modus-themes-load-vivendi)
   )
 
 
