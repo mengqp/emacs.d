@@ -37,7 +37,7 @@
 (use-package symbol-overlay)
 
 ;; (use-package eldoc-box
-;;   :hook (prog-mode . eldoc-box-hover-at-point-mode))
+;;   :hook (prog-mode . eldoc-box-hover-at-point- mode))
 
 (use-package column-enforce-mode
   :diminish column-enforce-mode
@@ -45,6 +45,8 @@
   :init
   (setq column-enforce-column 80)
   )
+
+
 
 (provide 'init-ui)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

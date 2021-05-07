@@ -9,16 +9,17 @@
   :init
   (setq rime-disable-predicates
 	'(rime-predicate-evil-mode-p
-          rime-predicate-after-alphabet-char-p
+          ;; rime-predicate-after-alphabet-char-p
           rime-predicate-prog-in-code-p
 	  )
 	)
   ;;  (setq rime-inline-predicates '(rime-predicate-space-after-cc-p
   ;;  	rime-predicate-current-uppercase-letter-p ) )
   ;; support shift-l, shift-r, control-l, control-r
-  ;; (setq rime-inline-ascii-trigger 'shift-l)
-  (setq rime-inline-predicates '(rime-predicate-space-after-cc-p
-				 rime-predicate-current-uppercase-letter-p))
+  (setq rime-inline-ascii-trigger 'shift-l)
+  ;; (setq rime-inline-predicates '(rime-predicate-space-after-cc-p
+  ;; 				 rime-predicate-current-uppercase-letter-p))
+  (setq rime-inline-predicates '(rime-predicate-current-uppercase-letter-p))
   ;; (setq rime-user-data-dir "~/.emacs.d/rime/")
   (setq rime-user-data-dir "~/.local/share/fcitx5/rime/")
 

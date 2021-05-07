@@ -5,8 +5,8 @@
   ("--ff"))
  (magit-commit nil)
  (magit-diff
-  (("--" "lisp/init-edit.el"))
   ("--no-ext-diff" "--stat")
+  (("--" "lisp/init-edit.el"))
   (("--" "src/RL-ARM/Config/Net_Config.c"))
   (("--" "src/libiec61850/config/stack_config.h"))
   (("--" "main/src/public.c"))
