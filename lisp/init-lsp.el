@@ -112,30 +112,6 @@
   (setq ccls-executable "/usr/bin/ccls")
   )
 
-(use-package lsp-python-ms
-  :disabled t
-  :hook
-  (python-mode . (lambda () (require 'lsp-python-ms)))
-  :init
-  (setq lsp-python-ms-executable (executable-find "python-language-server"))
-  (setq lsp-python-ms-auto-install-server t)
-  (when (executable-find "python3")
-    (setq lsp-python-ms-python-executable-cmd "python3"))
-  ;; :hook (python-mode . (lambda ()
-  ;;                         (require 'lsp-python-ms)
-  ;;                         (lsp))))  ; or lsp-deferred
-  ;; :hook (python-mode . (lambda ()
-  ;;                         (require 'lsp-python-ms)
-  ;;                         (nox)))
-  ;; :init
-  ;; (when (executable-find "python3")
-  ;;      (setq lsp-python-ms-python-executable-cmd "python3"))
-  ;; (setq lsp-python-ms-executable
-  ;;     "~/.emacs.d/.cache/lsp/mspyls/Microsoft.Python.LanguageServer")
-  ;; (nox-print-mspyls-download-url)
-
-  )
-
 (use-package lsp-pyright
   :disabled t
   :ensure t

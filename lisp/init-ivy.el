@@ -47,9 +47,6 @@
   (setq ivy-re-builders-alist
 	;; allow input not in order
 	'((t   . ivy--regex-ignore-order)))
-  :config
-  (ivy-mode 1)
-  (counsel-mode 1)
   )
 
 (provide 'init-ivy)

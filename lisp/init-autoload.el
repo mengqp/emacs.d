@@ -148,6 +148,7 @@
 (autoload 'auto-sudoedit-mode "auto-sudoedit" "" t)
 (autoload 'fuz-build-and-load-dymod "fuz" "" t)
 (autoload 'recentf-track-opened-file "recentf" "" t)
+(autoload 'yas-reload-all "yasnippet" "" t)
 
 
 

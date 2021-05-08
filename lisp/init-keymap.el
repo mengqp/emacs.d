@@ -105,44 +105,44 @@
 
 
   ;; (general-evil-setup t)
-  (general-create-definer moon--default-leader
+  (general-create-definer mengqp--default-leader
     :states '(normal visual )
     :keymaps 'override
     :prefix "SPC")
 
-  (general-create-definer moon-global-leader
+  (general-create-definer mengqp-global-leader
     :prefix "M-m"
     :keymaps 'override)
 
-  (general-create-definer moon--default-local-leader
+  (general-create-definer mengqp--default-local-leader
     :states '(normal visual )
     :keymaps 'override
     :prefix ",")
 
-  (general-create-definer moon-local-leader
+  (general-create-definer mengqp-local-leader
     :prefix "M-,"
     :keymaps 'override)
 
-  (defmacro moon-default-leader (&rest args)
+  (defmacro mengqp-default-leader (&rest args)
     "Define for both default leader and global leader."
     (declare (indent defun))
     `(progn
-       (moon--default-leader
+       (mengqp--default-leader
 	 ,@args)
-       (moon-global-leader
+       (mengqp-global-leader
 	 ,@args)))
 
-  (defmacro moon-default-local-leader (&rest args)
+  (defmacro mengqp-default-local-leader (&rest args)
     "Define for both default leader and global leader."
     (declare (indent defun))
     `(progn
-       (moon--default-local-leader
+       (mengqp--default-local-leader
 	 ,@args)
-       (moon-local-leader
+       (mengqp-local-leader
 	 ,@args)))
 
 
-  (moon-default-leader
+  (mengqp-default-leader
     ;; general-define-key
     ;; :keymaps '(normal visual emacs)
     ;; :prefix "SPC"
@@ -164,10 +164,6 @@
     "9" 'eyebrowse-prev-window-config
     "0" 'eyebrowse-next-window-config
 
-    ;; "a" '(:ignore t :wk ("a" . "app"))
-    ;; "ac" 'calc
-    ;; "aa" 'eaf-open
-
     ;; "b" '(:ignore t :wk ("b" . "buffers"))
     "bb" 'ivy-switch-buffer
 
@@ -176,9 +172,6 @@
     ;; "ck" 'kill-compilation
     ;; "cr" 'recompile
     ;; "cd" 'mengqp/close-compilation-window
-
-    ;; "d" '(:ignore t :wk ("d" . "delete"))
-    ;; "dd" 'avy-zap-to-char-dwim
 
     ;; "e" '(:ignore t :wk ("e" . "shell"))
     "ee" 'eaf-open
@@ -192,7 +185,6 @@
 
     ;; "f" '(:ignore t :wk ("f" . "files"))
     "ff" 'counsel-find-file  ;;
-    ;; "f." 'find-file-at-point
     "fr" 'counsel-recentf  ;;
     "fdi" 'mengqp/open-init-file
     "fdp" 'mengqp/open-init-package-file
@@ -218,8 +210,6 @@
     "hf" 'find-function
     "hv" 'find-variable
 
-    ;; "jj" 'snails
-
     "ll" 'lsp-ivy-workspace-symbol
     "lf" 'lsp-format-buffer
     "lr" 'lsp-rename
@@ -237,13 +227,7 @@
     "oj" 'org-journal-new-entry
 
     ;; "p" '(:ignore t :wk ("p" . "project"))
-    ;; "pd" 'counsel-projectile-find-dir
-    ;; "pb" 'counsel-projectile-switch-to-buffer
     "pp" 'projectile-switch-project
-    ;; "pa" 'counsel-projectile-ag
-    ;; "pr" 'counsel-projectile-rg
-    ;; "pfi" 'mengqp/org-projectile-find-issue
-    ;; "pft" 'mengqp/org-projectile-find-todo
 
     ;; "q" '(:ignore t :wk ("q" . "quit"))
     ;; ;; "qq" 'save-buffers-kill-emacs
@@ -264,9 +248,6 @@
     "wo" 'delete-other-windows
     "wq" 'quit-window
 
-
-
-    ;; "/" 'color-rg-search-project
     "/" 'counsel-projectile-rg
     ;; "/" 'counsel-projectile-ag
 
@@ -276,9 +257,7 @@
   ;; {{ Use `SPC` as leader key
   ;; all keywords arguments are still supported
   ;; 本文件 侧重基本功能
-  (moon-default-local-leader
-    ;; "," 'ace-jump-char-mode
-    ;; "," 'avy-goto-word-1
+  (mengqp-default-local-leader
     "," 'avy-goto-char
     "." 'avy-goto-char-2
 
@@ -286,40 +265,12 @@
     "al" 'avy-copy-line
     "ar" 'avy-copy-region
 
-    ;; "b" '(:ignore t :wk ("b" . "buffer"))
-    ;; "bw" '(:ignore t :wk ("w" . "buffer whitespace"))
-    ;; ;; "bs" 'save-buffer
-    ;; "bwt" 'delete-trailing-whitespace
-    ;; "bwc" 'whitespace-cleanup
-    ;; "bwv" 'whitespace-mode
-
-    ;; "c" '(:ignore t :wk ("c" . "coding"))
-    ;; "c2" '(:ignore t :wk ("2" . "convert"))
-    ;; "cd" 'describe-current-coding-system
-    ;; "cc" 'langtool-check
-    ;; "cd" 'langtool-check-done
-    ;; "cf" 'langtool-correct-buffer
-    ;; "cr" 'revert-buffer-with-coding-system
-    ;; "c2d" 'unix2dos
-    ;; "c2u" 'dos2unix
-    ;; "cf" 'clang-format-buffer
     "ci" 'evilnc-comment-or-uncomment-lines
     "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
     "cc" 'evilnc-copy-and-comment-lines
     "cp" 'evilnc-comment-or-uncomment-paragraphs
 
-
-    "dd" 'avy-zap-to-char-dwim
-    ;; "dD" 'avy-zap-up-to-char-dwim
-
-    ;; "e" '(:ignore t :wk ("e" . "edit"))
-    ;; "es" 'init-sp-menu/body
-    ;; "et" 'init-te-menu/body
-
     ;; "f" '(:ignore t :wk ("f" . "file&func"))
-    ;; ;; "fb" 'beginning-of-defun
-    ;; ;; "fe" 'end-of-defun
-    ;; "fr" 'recover-this-file
     "ff" 'format-all-buffer
 
     ;; "h" '(:ignore t :wk ("h" . "help"))
@@ -338,8 +289,6 @@
 
     ;; "j" '(:ignore t :wk ("j" . "jump"))
     "jj" 'counsel-imenu
-    ;; "jj" 'avy-goto-line
-    ;; "jc" 'Ace-jump-char-mode
     "jw" 'avy-goto-char-2
     "jl" 'avy-goto-line
 
@@ -363,26 +312,6 @@
     ;; "tt" 'mengqp/insert-time
     ;; "td" 'mengqp/insert-date
     ;; "te" 'toggle-company-english-helper
-
-    ;; awewomepiar
-    ;; "p\"" 'awesome-pair-wrap-double-quote
-    ;; "p[" 'awesome-pair-wrap-bracke
-    ;; "p{" 'awesome-pair-wrap-curly
-    ;; "p(" 'awesome-pair-wrap-round
-    ;; "pp" 'awesome-pair-unwrap
-    ;; "pl" 'awesome-pair-jump-left
-    ;; "pr" 'awesome-pair-jump-right
-    ;; "po" 'awesome-pair-jump-out-pair-and-newline
-    ;; "pk" 'awesome-pair-kill
-    ;; "pp" 'init-sp-menu/body
-    ;; "pr" 'sp-rewrap-sexp
-    ;; "p[" 'sp-wrap-square
-    ;; "p{" 'sp-wrap-curly
-    ;; "p(" 'sp-wrap-round
-    ;; "pp" 'sp-unwrap-sexp
-    ;; "pl" 'sp-forward-barf-sexp
-    ;; "ph" 'sp-forward-slurp-sexp
-    ;; "pk" 'sp-kill-sexp
 
     ;; "w" '(:ignore t :wk ("w" . "evilw"))
     ;; "ww" 'save-buffer

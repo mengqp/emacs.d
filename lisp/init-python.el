@@ -3,7 +3,6 @@
 ;;; Code:
 (use-package python
   :ensure nil
-  :disabled t
   :hook (inferior-python-mode . (lambda ()
                                   (process-query-on-exit-flag
                                    (get-process "Python"))))

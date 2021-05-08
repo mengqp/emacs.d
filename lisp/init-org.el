@@ -9,6 +9,7 @@
 
   (setq org-html-validation-link nil)
   (setq org-directory mengqp-org-dir)
+  (setq truncate-lines nil)
 
   (defun org-export-docx ()
     (interactive)
@@ -18,7 +19,6 @@
       (message "Convert finish: %s" docx-file)))
 
   :config
-  (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   ;; (require 'init-deft)
   (require 'init-org-ui)
   ;; (require 'init-journal)

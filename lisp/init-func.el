@@ -7,23 +7,6 @@
   (find-file "~/.emacs.d/init.el")
   )
 
-;; Dos2Unix/Unix2Dos
-(defun dos2unix ()
-  "Convert the current buffer to UNIX file format."
-  (interactive)
-  (set-buffer-file-coding-system 'undecided-unix nil))
-
-(defun unix2dos ()
-  "Convert the current buffer to DOS file format."
-  (interactive)
-  (set-buffer-file-coding-system 'undecided-dos nil))
-
-(defun mengqp/clearM ()
-  "Clear buffer is ^M."
-  (interactive)
-  (replace-string "" "")
-  )
-
 (defun mengqp/open-init-package-file ()
   "Open init package file to config."
   (interactive)
@@ -40,6 +23,23 @@
   "Open init keymap file to config."
   (interactive)
   (switch-to-buffer "*scratch*")
+  )
+
+;; Dos2Unix/Unix2Dos
+(defun dos2unix ()
+  "Convert the current buffer to UNIX file format."
+  (interactive)
+  (set-buffer-file-coding-system 'undecided-unix nil))
+
+(defun unix2dos ()
+  "Convert the current buffer to DOS file format."
+  (interactive)
+  (set-buffer-file-coding-system 'undecided-dos nil))
+
+(defun mengqp/clearM ()
+  "Clear buffer is ^M."
+  (interactive)
+  (replace-match "" "")
   )
 
 (defun mengqp/insert-date ()

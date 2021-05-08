@@ -15,11 +15,6 @@
   (projectile-mode t)
   )
 
-(use-package counsel-projectile
-  :disabled t
-  :preface (setq projectile-keymap-prefix (kbd "C-c p"))
-  )
-
 (provide 'init-projectile)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-projectile.el ends here
