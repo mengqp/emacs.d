@@ -20,7 +20,6 @@
   :config
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   ;; (require 'init-deft)
-  ;; (require 'init-org-pomodoro)
   (require 'init-org-ui)
   ;; (require 'init-journal)
   (require 'init-agenda)
