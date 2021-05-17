@@ -15,6 +15,10 @@
   (projectile-mode t)
   )
 
+(use-package counsel-projectile
+  :after projectile
+  )
+
 (provide 'init-projectile)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-projectile.el ends here

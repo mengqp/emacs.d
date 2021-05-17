@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'replace)
 (use-package snails
   :ensure nil
   :load-path "site-lisp/snails"
